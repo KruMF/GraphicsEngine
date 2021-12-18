@@ -10,6 +10,8 @@ Copy-paste all this project wherever, just remember to mark the `src` folder as 
 
 <i>Best done using git.</i>
 
+<i>Latest working version available at `master` branch.</i>
+
 <h2>Notes</h2>
 
 Work is under progress, expect changes.
