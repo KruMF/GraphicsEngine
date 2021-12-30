@@ -4,7 +4,7 @@ import graphicsEngine.GraphicsManager;
 import graphicsEngine.data.colors.ButtonColors;
 import graphicsEngine.utilities.parts.MouseDetectablePart;
 
-import java.awt.*;
+import java.awt.Graphics;
 
 public abstract class Button extends MouseDetectablePart {
 
@@ -39,7 +39,7 @@ public abstract class Button extends MouseDetectablePart {
     @Override
     public void drawHovered(Graphics g, int[] _location) {
         ButtonColors colors = GraphicsManager.data.palette.buttonColors;
-        backgroundColor = colors.bodyColor_hovered;
+        backgroundColor = colors.bodyColor;
         borderColor = colors.borderColor_active;
 
         super.drawHovered(g, _location);
@@ -48,7 +48,7 @@ public abstract class Button extends MouseDetectablePart {
     @Override
     public void drawClicked(Graphics g, int[] _location) {
         ButtonColors colors = GraphicsManager.data.palette.buttonColors;
-        backgroundColor = colors.bodyColor_clicked;
+        backgroundColor = colors.bodyColor_active;
         borderColor = colors.borderColor_active;
 
         super.drawClicked(g, _location);
