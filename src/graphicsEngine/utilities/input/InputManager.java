@@ -1,7 +1,7 @@
 package graphicsEngine.utilities.input;
 
-import graphicsEngine.ExitManager;
 import graphicsEngine.data.WindowParameters;
+import graphicsEngine.ExitManager;
 import graphicsEngine.utilities.input.listeners.ListenerAdder;
 
 import javax.swing.JFrame;

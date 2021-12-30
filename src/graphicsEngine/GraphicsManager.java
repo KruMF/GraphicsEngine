@@ -1,10 +1,10 @@
 package graphicsEngine;
 
 import graphicsEngine.data.GraphicsData;
+import graphicsEngine.utilities.input.InputManager;
 import graphicsEngine.pages.Page;
 import graphicsEngine.pages.Page_0;
 import graphicsEngine.pages.Page_1;
-import graphicsEngine.utilities.input.InputManager;
 
 import java.util.ArrayList;
 
@@ -34,6 +34,7 @@ public class GraphicsManager {
 
         graphics = new GraphicsClass();
         graphics.initialize();
+
         exitManager = new ExitManager();
         input = new InputManager(
                 graphics.window, data.windowParameters,
