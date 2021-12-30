@@ -12,14 +12,17 @@ public class DemoSimple {
     public static void main(String[] args){
         System.out.println("Simple graphics demo started.");
 
+        setup();
+        run();
+    }
+
+    private static void setup(){
         GraphicsManager.initialize(
                 new ArrayList<>(){{
                     add(new Page_0());
                     add(new Page_1());
                 }}
         );
-
-        run();
     }
 
     private static void run(){
