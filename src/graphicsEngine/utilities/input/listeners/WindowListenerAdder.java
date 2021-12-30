@@ -11,19 +11,28 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
 class WindowListenerAdder {
-    WindowListenerAdder(JFrame window, WindowParameters windowParameters, InputData inputData){
-        addWindowListener(window, windowParameters, inputData);
+    WindowListenerAdder(
+            JFrame window, WindowParameters windowParameters,
+            InputData inputData,
+            GraphicsManager.ExitManager exitManager){
+        addWindowListener(
+                window, windowParameters,
+                inputData,
+                exitManager);
         addWindowResizeListener(window, windowParameters);
     }
 
-    private void addWindowListener(JFrame window, WindowParameters windowParameters, InputData inputData){
+    private void addWindowListener(
+            JFrame window, WindowParameters windowParameters,
+            InputData inputData,
+            GraphicsManager.ExitManager exitManager){
         window.addWindowListener(new WindowListener() {
             @Override
             public void windowOpened(WindowEvent e) {}
 
             @Override
             public void windowClosing(WindowEvent e) {
-                GraphicsManager.close();
+                exitManager.close();
             }
 
             @Override

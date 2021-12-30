@@ -16,6 +16,7 @@ public class GraphicsManager {
 
     public static GraphicsClass graphics;
     public static InputManager input;
+    public static ExitManager exitManager;
 
     public static boolean running;
 
@@ -33,7 +34,10 @@ public class GraphicsManager {
 
         graphics = new GraphicsClass();
         graphics.initialize();
-        input = new InputManager(graphics.window, data.windowParameters);
+        exitManager = new ExitManager();
+        input = new InputManager(
+                graphics.window, data.windowParameters,
+                exitManager);
 
         data.windowParameters.minimized = false;
         running = true;
@@ -46,12 +50,20 @@ public class GraphicsManager {
         }
     }
 
-    public static void close(){
-        System.out.println("GraphicsManager: Closing.");
-        data.windowParameters.updateWindowValues();
-        data.windowParameters.saveValues();
-        graphics.window.dispose();
-        running = false;
+    public static class ExitManager{
+        String exitMessage;
+
+        ExitManager(){
+            exitMessage = "GraphicsManager: Closing.";
+        }
+
+        public void close(){
+            System.out.println(exitMessage);
+            //data.windowParameters.updateWindowValues();
+            //data.windowParameters.saveValues();
+            graphics.window.dispose();
+            running = false;
+        }
     }
 
     private static void userInputCheck(){

@@ -1,5 +1,6 @@
 package graphicsEngine.utilities.input.listeners;
 
+import graphicsEngine.GraphicsManager;
 import graphicsEngine.data.WindowParameters;
 import graphicsEngine.utilities.input.InputData;
 
@@ -9,10 +10,18 @@ public class ListenerAdder {
     public ListenerAdder(
             JFrame window, WindowParameters windowParameters,
             InputData inputData,
+            GraphicsManager.ExitManager exitManager,
             boolean extra){
-        new WindowListenerAdder(window, windowParameters, inputData);
-        new KeyboardListenerAdder(window, inputData);
-        new MouseListenerAdder(window, inputData);
+        new WindowListenerAdder(
+                window, windowParameters,
+                inputData,
+                exitManager);
+        new KeyboardListenerAdder(
+                window,
+                inputData);
+        new MouseListenerAdder(
+                window,
+                inputData);
 
         if(extra) addExtraListeners();
     }
