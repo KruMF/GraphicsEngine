@@ -1,1 +1,0 @@
-this is a directory for advanced graphics demo
