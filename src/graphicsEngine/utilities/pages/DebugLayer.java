@@ -4,7 +4,6 @@ import graphicsEngine.GraphicsManager;
 import graphicsEngine.utilities.input.InputData;
 
 import java.awt.*;
-import java.util.ArrayList;
 
 import static graphicsEngine.utilities.GraphicsHelper.*;
 
@@ -15,12 +14,6 @@ public class DebugLayer {
         int rowCount = drawHeader(g, drawLocation);
         rowCount += 2; //empty lines for vertical separation
 
-        /*
-        drawLocation = new int[]{drawLocation[0], drawLocation[1] + rowsTotalHeight(rowCount)};
-        rowCount = fileHandlerTest(g, drawLocation);
-        rowCount += 2; //empty lines for vertical separation
-         */
-
         drawLocation = new int[]{drawLocation[0], drawLocation[1] + rowsTotalHeight(rowCount)};
         inputTest(g, drawLocation);
     }
@@ -28,19 +21,7 @@ public class DebugLayer {
     private static int drawHeader(Graphics g, int[] location){
         return drawStrings_VA(
                 g, 0,
-                new String[]{"This is debug panel!"},
-                location);
-    }
-
-    private static int fileHandlerTest(Graphics g, int[] location){
-        return drawTable(
-                g,
-                new String[]{"File handler test data."},
-                new ArrayList<>() {{
-                    add(new Column("Name", 50));
-                    add(new Column("Value", 200));
-                }},
-                GraphicsManager.data.fileHandlerTestData,
+                new String[]{"This is debug layer!"},
                 location);
     }
 
