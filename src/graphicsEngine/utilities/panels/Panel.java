@@ -82,7 +82,7 @@ public abstract class Panel extends SimplePart {
         public void draw(Graphics g, int[] panelLocation){
             if(buttons != null){
                 int offsetX = separation;
-                int offsetY = separation + buttonHeight;
+                int offsetY = separation;
 
                 for (Button button : buttons) {
                     button.draw(

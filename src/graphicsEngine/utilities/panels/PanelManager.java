@@ -12,7 +12,7 @@ public class PanelManager {
         header = new Header(
                 background, border,
                 headerHeight,
-                10, 50);
+                10, 100);
         footer = new Footer(
                 background, border,
                 footerHeight);

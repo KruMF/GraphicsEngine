@@ -55,6 +55,7 @@ public abstract class Button extends MouseDetectablePart {
     }
 
     private void drawButtonText(Graphics g){
+        g.setColor(GraphicsManager.data.palette.buttonColors.textColor);
         g.drawString(
                 text,
                 location[0] + size[0] / 2,
