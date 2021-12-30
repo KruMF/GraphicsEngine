@@ -37,12 +37,7 @@ public class GraphicsManager {
     public static void run(){
         if (!data.windowParameters.minimized) {
             graphics.main();
-            userInputCheck();
+            pages.pages.get(pages.activePage).inputCheck.check(input);
         }
-    }
-
-    private static void userInputCheck(){
-        //Button.checkButtonActions(this); //uz ekrâna redzamo pogu notikumi
-        //InputData.keyboardActionCheck(); //keyboard nospiesto pogu notikumi
     }
 }

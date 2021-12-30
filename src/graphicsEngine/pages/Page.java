@@ -1,6 +1,7 @@
 package graphicsEngine.pages;
 
 import graphicsEngine.GraphicsManager;
+import graphicsEngine.utilities.input.InputManager;
 import graphicsEngine.utilities.panels.PanelManager;
 import graphicsEngine.utilities.parts.Background;
 
@@ -9,6 +10,7 @@ import java.awt.*;
 public abstract class Page {
     Background background;
     PanelManager panelManager;
+    public InputCheck inputCheck;
 
     public Page() {
         background = new Background(GraphicsManager.data.palette.backgroundColor);
@@ -21,6 +23,7 @@ public abstract class Page {
                 panelColor, borderColor,
                 header,
                 footer);
+        inputCheck = new InputCheck();
     }
 
     public void draw(Graphics g) {
@@ -31,6 +34,9 @@ public abstract class Page {
                 pageSize);
 
         int headerHeight = panelManager.header.size[1];
+
+        //side panels not added yet
+
         int[] centerSize = new int[]{
                 pageSize[0],
                 Math.max(
@@ -45,5 +51,29 @@ public abstract class Page {
     }
 
     public void drawCenter(Graphics g, int[] location, int[] size) {
+
+    }
+
+    public static class InputCheck{
+        InputCheck(){}
+
+        public void check(InputManager input){
+            keyboardActions(input);
+            buttonCheck(input);
+        }
+
+        private void keyboardActions(InputManager input){
+            for(int key : input.inputData.keys){
+                System.out.println("Key " + key + " pressed");
+                /*switch (key) {
+                    case 66 -> {
+                    }
+                }*/
+            }
+        }
+
+        private void buttonCheck(InputManager input){
+            //uz ekrâna redzamo pogu notikumi
+        }
     }
 }
