@@ -8,17 +8,15 @@ public class GraphicsData {
     public ColorParameters colorParameters;
 
     public boolean debugLayer;
-    public boolean printInputToConsole;
 
     public ArrayList<String[]> fileHandlerTestData;
 
     public GraphicsData(
             boolean loadWindowParameters, boolean loadColorParameters,
-            boolean _debugLayer, boolean inputToConsole){
+            boolean _debugLayer){
         windowParameters = new WindowParameters(loadWindowParameters);
         colorParameters = new ColorParameters(loadColorParameters);
 
         debugLayer = _debugLayer;
-        printInputToConsole = inputToConsole;
     }
 }

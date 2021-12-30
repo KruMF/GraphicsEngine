@@ -25,7 +25,7 @@ public class GraphicsManager {
 
         data = new GraphicsData(
                 true, true,
-                true, true);
+                true);
         pages = new ArrayList<>(){{
             add(new Page_0());
             add(new Page_1());
