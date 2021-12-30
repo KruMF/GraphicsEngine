@@ -1,18 +1,14 @@
 package graphicsEngine;
 
 import graphicsEngine.data.GraphicsData;
+import graphicsEngine.pages.PageManager;
 import graphicsEngine.utilities.input.InputManager;
-import graphicsEngine.pages.Page;
-import graphicsEngine.pages.Page_0;
-import graphicsEngine.pages.Page_1;
-
-import java.util.ArrayList;
 
 public class GraphicsManager {
 
     public static GraphicsData data;
-    public static ArrayList<Page> pages;
-    public static int activePage;
+    public static PageManager pages;
+
 
     public static GraphicsClass graphics;
     public static InputManager input;
@@ -24,11 +20,7 @@ public class GraphicsManager {
         System.out.println("GraphicsManager: Initializing.");
 
         data = new GraphicsData(true, true);
-        pages = new ArrayList<>(){{
-            add(new Page_0());
-            add(new Page_1());
-        }};
-        activePage = 0;
+        pages = new PageManager();
 
         graphics = new GraphicsClass();
         graphics.initialize();

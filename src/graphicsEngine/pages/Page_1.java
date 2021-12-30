@@ -4,8 +4,8 @@ import graphicsEngine.GraphicsHelper;
 
 import java.awt.*;
 
-public class Page_1 extends Page {
-    public Page_1() {
+class Page_1 extends Page {
+    Page_1() {
         super();
     }
 

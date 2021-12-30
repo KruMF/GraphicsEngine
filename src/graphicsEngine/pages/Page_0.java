@@ -2,12 +2,12 @@ package graphicsEngine.pages;
 
 import java.awt.*;
 
-public class Page_0 extends Page {
+class Page_0 extends Page {
 
     //This is page 1
     //Temporarily displaying calendar
 
-    public Page_0() {
+    Page_0() {
         super();
     }
 
