@@ -3,8 +3,9 @@ package graphicsEngine;
 import graphicsEngine.data.WindowParameters;
 import graphicsEngine.pages.DebugLayer;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.JPanel;
+import javax.swing.JFrame;
+import java.awt.Graphics;
 
 public class GraphicsClass extends JPanel {
 
@@ -35,7 +36,7 @@ public class GraphicsClass extends JPanel {
     }
 
     protected void paintComponent(Graphics g) {
-        GraphicsManager.pages.get(GraphicsManager.activePage).draw(g);
+        GraphicsManager.pages.draw(g);
         if(GraphicsManager.data.debugLayer) DebugLayer.draw(g);
     }
 }

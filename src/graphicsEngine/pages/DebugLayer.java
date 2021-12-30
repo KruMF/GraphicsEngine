@@ -54,7 +54,7 @@ public class DebugLayer {
                 "x:" + input.mouse[0]
                         + " y: " + input.mouse[1]
                         + ", click: " + input.mouseClick,
-                "Buttons pressed:"};
+                "Keys pressed:"};
 
         int[] keys = input.keys;
         String[] rows = new String[header.length + keys.length];

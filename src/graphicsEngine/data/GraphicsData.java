@@ -5,20 +5,16 @@ import java.util.ArrayList;
 public class GraphicsData {
 
     public WindowParameters windowParameters;
-    public ColorParameters colorParameters;
+    public Palette palette;
 
     public boolean debugLayer;
-    public boolean printInputToConsole;
 
     public ArrayList<String[]> fileHandlerTestData;
 
-    public GraphicsData(
-            boolean loadWindowParameters, boolean loadColorParameters,
-            boolean _debugLayer, boolean inputToConsole){
+    public GraphicsData(boolean loadWindowParameters, boolean _debugLayer){
         windowParameters = new WindowParameters(loadWindowParameters);
-        colorParameters = new ColorParameters(loadColorParameters);
+        palette = new Palette();
 
         debugLayer = _debugLayer;
-        printInputToConsole = inputToConsole;
     }
 }

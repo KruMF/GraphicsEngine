@@ -1,10 +1,10 @@
 package graphicsEngine.utilities;
 
 import graphicsEngine.GraphicsManager;
-import graphicsEngine.data.ColorParameters;
+import graphicsEngine.data.colors.ButtonColors;
 import graphicsEngine.utilities.parts.MouseDetectablePart;
 
-import java.awt.*;
+import java.awt.Graphics;
 
 public abstract class Button extends MouseDetectablePart {
 
@@ -14,8 +14,8 @@ public abstract class Button extends MouseDetectablePart {
             String _text,
             int[] _size) {
         super(
-                GraphicsManager.data.colorParameters.buttonColors.bodyColor,
-                GraphicsManager.data.colorParameters.buttonColors.borderColor, true,
+                GraphicsManager.data.palette.buttonColors.bodyColor,
+                GraphicsManager.data.palette.buttonColors.borderColor, true,
                 _size);
 
         text = _text;
@@ -29,7 +29,7 @@ public abstract class Button extends MouseDetectablePart {
 
     @Override
     public void drawInactive(Graphics g, int[] _location) {
-        ColorParameters.ButtonColors colors = GraphicsManager.data.colorParameters.buttonColors;
+        ButtonColors colors = GraphicsManager.data.palette.buttonColors;
         backgroundColor = colors.bodyColor;
         borderColor = colors.borderColor;
 
@@ -38,8 +38,8 @@ public abstract class Button extends MouseDetectablePart {
 
     @Override
     public void drawHovered(Graphics g, int[] _location) {
-        ColorParameters.ButtonColors colors = GraphicsManager.data.colorParameters.buttonColors;
-        backgroundColor = colors.bodyColor_hovered;
+        ButtonColors colors = GraphicsManager.data.palette.buttonColors;
+        backgroundColor = colors.bodyColor;
         borderColor = colors.borderColor_active;
 
         super.drawHovered(g, _location);
@@ -47,8 +47,8 @@ public abstract class Button extends MouseDetectablePart {
 
     @Override
     public void drawClicked(Graphics g, int[] _location) {
-        ColorParameters.ButtonColors colors = GraphicsManager.data.colorParameters.buttonColors;
-        backgroundColor = colors.bodyColor_clicked;
+        ButtonColors colors = GraphicsManager.data.palette.buttonColors;
+        backgroundColor = colors.bodyColor_active;
         borderColor = colors.borderColor_active;
 
         super.drawClicked(g, _location);
@@ -68,6 +68,7 @@ public abstract class Button extends MouseDetectablePart {
 
     public void actionCheck(){
         if (activated) action();
+        activated = false; //debounce
     }
 
     public void action(){

@@ -1,6 +1,7 @@
 package graphicsEngine.pages;
 
 import graphicsEngine.GraphicsManager;
+import graphicsEngine.utilities.input.InputManager;
 import graphicsEngine.utilities.panels.PanelManager;
 import graphicsEngine.utilities.parts.Background;
 
@@ -9,9 +10,10 @@ import java.awt.*;
 public abstract class Page {
     Background background;
     PanelManager panelManager;
+    public InputCheck inputCheck;
 
     public Page() {
-        background = new Background(GraphicsManager.data.colorParameters.backgroundColor);
+        background = new Background(GraphicsManager.data.palette.backgroundColor);
 
         Color panelColor = Color.gray;
         Color borderColor = Color.darkGray;
@@ -21,6 +23,7 @@ public abstract class Page {
                 panelColor, borderColor,
                 header,
                 footer);
+        inputCheck = new InputCheck();
     }
 
     public void draw(Graphics g) {
@@ -31,6 +34,9 @@ public abstract class Page {
                 pageSize);
 
         int headerHeight = panelManager.header.size[1];
+
+        //side panels not added yet
+
         int[] centerSize = new int[]{
                 pageSize[0],
                 Math.max(
@@ -45,5 +51,36 @@ public abstract class Page {
     }
 
     public void drawCenter(Graphics g, int[] location, int[] size) {
+
+    }
+
+    public static class InputCheck{
+
+        InputCheck(){}
+
+        public void check(InputManager input, Page page){
+            keyboardActions(input);
+            buttonCheck(input, page);
+        }
+
+        private void keyboardActions(InputManager input){
+            for(int key : input.inputData.keys){
+                String keyText = java.awt.event.KeyEvent.getKeyText(key);
+
+                switch (keyText) {
+                    case "0" -> GraphicsManager.pages.activePage = 0;
+                    case "1" -> GraphicsManager.pages.activePage = 1;
+                    case "2", "3", "4", "5", "6", "7", "8", "9" ->
+                            System.out.println("Page " + keyText + " does not exist");
+                    default ->
+                            System.out.println("Key " + keyText + " pressed");
+                }
+            }
+        }
+
+        private void buttonCheck(InputManager input, Page page){
+            page.panelManager.buttonInteractionCheck();
+            page.panelManager.buttonActionCheck();
+        }
     }
 }
