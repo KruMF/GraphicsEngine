@@ -23,9 +23,7 @@ public class GraphicsManager {
     public static void initialize(){
         System.out.println("GraphicsManager: Initializing.");
 
-        data = new GraphicsData(
-                true, true,
-                true);
+        data = new GraphicsData(true, true);
         pages = new ArrayList<>(){{
             add(new Page_0());
             add(new Page_1());

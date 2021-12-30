@@ -11,7 +11,7 @@ public abstract class Page {
     PanelManager panelManager;
 
     public Page() {
-        background = new Background(GraphicsManager.data.colorParameters.backgroundColor);
+        background = new Background(GraphicsManager.data.palette.backgroundColor);
 
         Color panelColor = Color.gray;
         Color borderColor = Color.darkGray;
