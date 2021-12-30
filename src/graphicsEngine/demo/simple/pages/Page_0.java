@@ -4,10 +4,10 @@ import graphicsEngine.utilities.pages.Page;
 
 import java.awt.*;
 
+/**
+ * This is page 0
+ */
 public class Page_0 extends Page {
-
-    //This is page 1
-    //Temporarily displaying calendar
 
     public Page_0() {
         super();
