@@ -1,15 +1,16 @@
 package graphicsEngine.utilities.input.listeners;
 
+import graphicsEngine.data.WindowParameters;
 import graphicsEngine.utilities.input.InputData;
 
-import javax.swing.*;
+import javax.swing.JFrame;
 
 public class ListenerAdder {
     public ListenerAdder(
-            JFrame window,
+            JFrame window, WindowParameters windowParameters,
             InputData inputData,
             boolean extra){
-        new WindowListenerAdder(window, inputData);
+        new WindowListenerAdder(window, windowParameters, inputData);
         new KeyboardListenerAdder(window, inputData);
         new MouseListenerAdder(window, inputData);
 

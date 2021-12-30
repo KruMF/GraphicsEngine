@@ -2,7 +2,7 @@ package graphicsEngine.utilities.input.listeners;
 
 import graphicsEngine.utilities.input.InputData;
 
-import javax.swing.*;
+import javax.swing.JFrame;
 import java.awt.event.*;
 
 class MouseListenerAdder {

@@ -10,6 +10,8 @@ public class WindowParameters {
     public static final int defaultCloseAction = JFrame.DO_NOTHING_ON_CLOSE;//DISPOSE_ON_CLOSE;//
     public String windowTitle;
 
+    public boolean minimized, windowActive;
+
     private static final String saveFilePath = "userData/windowPreferences";
 
     public int[]
@@ -20,6 +22,9 @@ public class WindowParameters {
     protected WindowParameters(boolean load) {
         String versionNumber = "versionNumberPlaceholder";
         windowTitle = "windowTitlePlaceholder (version: " + versionNumber + ")";
+
+        minimized = false;
+        windowActive = true;
 
         if (!load || !loadSavedValues()) defaultValues();
     }

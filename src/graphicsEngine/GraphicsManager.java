@@ -17,7 +17,6 @@ public class GraphicsManager {
     public static GraphicsClass graphics;
     public static InputManager input;
 
-    public static boolean minimized;
     public static boolean running;
 
     public static void initialize(){
@@ -34,14 +33,14 @@ public class GraphicsManager {
 
         graphics = new GraphicsClass();
         graphics.initialize();
-        input = new InputManager();
+        input = new InputManager(graphics.window, data.windowParameters);
 
-        minimized = false;
+        data.windowParameters.minimized = false;
         running = true;
     }
 
     public static void run(){
-        if (!minimized) {
+        if (!data.windowParameters.minimized) {
             graphics.main();
             userInputCheck();
         }

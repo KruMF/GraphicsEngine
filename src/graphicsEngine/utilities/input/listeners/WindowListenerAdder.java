@@ -4,19 +4,19 @@ import graphicsEngine.GraphicsManager;
 import graphicsEngine.data.WindowParameters;
 import graphicsEngine.utilities.input.InputData;
 
-import javax.swing.*;
+import javax.swing.JFrame;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
 class WindowListenerAdder {
-    WindowListenerAdder(JFrame window, InputData inputData){
-        addWindowListener(window, inputData);
-        addWindowResizeListener(window);
+    WindowListenerAdder(JFrame window, WindowParameters windowParameters, InputData inputData){
+        addWindowListener(window, windowParameters, inputData);
+        addWindowResizeListener(window, windowParameters);
     }
 
-    private void addWindowListener(JFrame window, InputData inputData){
+    private void addWindowListener(JFrame window, WindowParameters windowParameters, InputData inputData){
         window.addWindowListener(new WindowListener() {
             @Override
             public void windowOpened(WindowEvent e) {}
@@ -31,34 +31,32 @@ class WindowListenerAdder {
 
             @Override
             public void windowIconified(WindowEvent e) {
-                GraphicsManager.minimized = true;
+                windowParameters.minimized = true;
                 inputData.keys = new int[] {};
             }
 
             @Override
             public void windowDeiconified(WindowEvent e) {
-                GraphicsManager.minimized = false;
+                windowParameters.minimized = false;
             }
 
             @Override
             public void windowActivated(WindowEvent e) {
-                //windowActive = true;
+                windowParameters.windowActive = true;
             }
 
             @Override
             public void windowDeactivated(WindowEvent e) {
-                //windowActive = false;
+                windowParameters.windowActive = false;
                 inputData.keys = new int[] {};
             }
         });
     }
 
-    private void addWindowResizeListener(JFrame window){
+    private void addWindowResizeListener(JFrame window, WindowParameters windowParameters){
         window.addComponentListener(new ComponentAdapter() {
             @Override
             public void componentResized(ComponentEvent componentEvent) {
-                WindowParameters windowParameters = GraphicsManager.data.windowParameters;
-
                 windowParameters.updateWindowValues();
                 windowParameters.setDrawableSize();
             }
