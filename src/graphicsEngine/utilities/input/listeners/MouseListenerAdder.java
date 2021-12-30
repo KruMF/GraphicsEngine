@@ -39,14 +39,12 @@ class MouseListenerAdder {
         window.getContentPane().addMouseMotionListener(new MouseMotionListener() {
             @Override
             public void mouseDragged(MouseEvent e) {
-                inputData.mouse[0] = e.getX();
-                inputData.mouse[1] = e.getY();
+                updateMouseCoordinates(inputData, e);
             }
 
             @Override
             public void mouseMoved(MouseEvent e) {
-                inputData.mouse[0] = e.getX();
-                inputData.mouse[1] = e.getY();
+                updateMouseCoordinates(inputData, e);
             }
         });
     }
@@ -58,5 +56,10 @@ class MouseListenerAdder {
                 //mouse wheel listener placeholder - not implemented yet
             }
         });
+    }
+
+    private static void updateMouseCoordinates(InputData inputData, MouseEvent e){
+        inputData.mouse[0] = e.getX();
+        inputData.mouse[1] = e.getY();
     }
 }
