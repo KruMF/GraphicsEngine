@@ -19,5 +19,8 @@ public class Page_1 extends Page {
                 new int[]{
                         location[0] + size[0] / 2,
                         location[1] + size[1] / 2});
+
+        //draw stuff here
+
     }
 }

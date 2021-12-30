@@ -22,11 +22,8 @@ public class Page_0 extends Page {
                 size[1] - 2 * margin[1]};
 
         //draw stuff here
-        /*TimelineTemp.draw(
-                g,
-                location,
-                size);*/
 
+        //red rectangle offset from sides
         g.setColor(Color.red);
         g.drawRect(
                 location[0] + margin[0],
