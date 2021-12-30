@@ -1,6 +1,7 @@
 package graphicsEngine;
 
 import graphicsEngine.data.GraphicsData;
+import graphicsEngine.pages.Page;
 import graphicsEngine.pages.PageManager;
 import graphicsEngine.utilities.input.InputManager;
 
@@ -37,7 +38,8 @@ public class GraphicsManager {
     public static void run(){
         if (!data.windowParameters.minimized) {
             graphics.main();
-            pages.pages.get(pages.activePage).inputCheck.check(input);
+            Page activePage = pages.pages.get(pages.activePage);
+            activePage.inputCheck.check(input, activePage);
         }
     }
 }

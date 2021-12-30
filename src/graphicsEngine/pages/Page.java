@@ -58,9 +58,9 @@ public abstract class Page {
 
         InputCheck(){}
 
-        public void check(InputManager input){
+        public void check(InputManager input, Page page){
             keyboardActions(input);
-            buttonCheck(input);
+            buttonCheck(input, page);
         }
 
         private void keyboardActions(InputManager input){
@@ -78,8 +78,9 @@ public abstract class Page {
             }
         }
 
-        private void buttonCheck(InputManager input){
-            //uz ekrâna redzamo pogu notikumi
+        private void buttonCheck(InputManager input, Page page){
+            page.panelManager.buttonInteractionCheck();
+            page.panelManager.buttonActionCheck();
         }
     }
 }

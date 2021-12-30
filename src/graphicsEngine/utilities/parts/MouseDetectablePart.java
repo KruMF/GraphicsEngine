@@ -65,13 +65,11 @@ public abstract class MouseDetectablePart extends SimplePart {
     }
 
     private void mouseClickCheck(){
-        if (hovered && checkXY()) clicked = true;
+        if (hovered) clicked = true;
     }
 
     private void mouseReleaseCheck(){
-        if (clicked && checkXY()) activated = true;
-
+        if (clicked && hovered) activated = true;
         clicked = false;
-        hovered = false;
     }
 }

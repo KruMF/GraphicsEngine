@@ -25,11 +25,11 @@ public class PanelManager {
 
     public void buttonInteractionCheck(){
         header.buttonInteractionCheck();
-        footer.buttonInteractionCheck();
+        //footer.buttonInteractionCheck();
     }
 
     public void buttonActionCheck(){
         header.buttonActionCheck();
-        footer.buttonActionCheck();
+        //footer.buttonActionCheck();
     }
 }

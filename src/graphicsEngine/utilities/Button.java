@@ -68,6 +68,7 @@ public abstract class Button extends MouseDetectablePart {
 
     public void actionCheck(){
         if (activated) action();
+        activated = false; //debounce
     }
 
     public void action(){
