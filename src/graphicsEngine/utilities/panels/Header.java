@@ -1,6 +1,7 @@
 package graphicsEngine.utilities.panels;
 
-import graphicsEngine.utilities.Button;
+import graphicsEngine.utilities.buttons.Button;
+import graphicsEngine.utilities.buttons.ButtonRow;
 
 import java.awt.*;
 import java.util.ArrayList;

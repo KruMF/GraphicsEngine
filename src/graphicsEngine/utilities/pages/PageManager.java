@@ -1,4 +1,4 @@
-package graphicsEngine.pages;
+package graphicsEngine.utilities.pages;
 
 import java.util.ArrayList;
 import java.awt.Graphics;
@@ -7,11 +7,8 @@ public class PageManager {
     public ArrayList<Page> pages;
     public int activePage;
 
-    public PageManager(){
-        pages = new ArrayList<>(){{
-            add(new Page_0());
-            add(new Page_1());
-        }};
+    public PageManager(ArrayList<Page> _pages){
+        pages = _pages;
         activePage = 0;
     }
 

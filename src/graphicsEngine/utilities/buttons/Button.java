@@ -1,8 +1,8 @@
-package graphicsEngine.utilities;
+package graphicsEngine.utilities.buttons;
 
 import graphicsEngine.GraphicsManager;
 import graphicsEngine.data.colors.ButtonColors;
-import graphicsEngine.utilities.parts.MouseDetectablePart;
+import graphicsEngine.utilities.simpleParts.MouseDetectablePart;
 
 import java.awt.Graphics;
 

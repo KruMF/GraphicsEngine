@@ -1,6 +1,6 @@
-package graphicsEngine.utilities.parts;
+package graphicsEngine.utilities.simpleParts;
 
-import graphicsEngine.GraphicsHelper;
+import graphicsEngine.utilities.GraphicsHelper;
 
 import java.awt.*;
 

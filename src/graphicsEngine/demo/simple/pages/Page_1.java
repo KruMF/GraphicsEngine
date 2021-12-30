@@ -1,14 +1,16 @@
-package graphicsEngine.pages;
+package graphicsEngine.demo.simple.pages;
 
-import graphicsEngine.GraphicsHelper;
+import graphicsEngine.utilities.pages.Page;
+import graphicsEngine.utilities.GraphicsHelper;
 
 import java.awt.*;
 
-class Page_1 extends Page {
-    Page_1() {
+public class Page_1 extends Page {
+    public Page_1() {
         super();
     }
 
+    //gotta be overriden for central
     @Override
     public void drawCenter(Graphics g, int[] location, int[] size) {
         GraphicsHelper.drawStrings_VA(

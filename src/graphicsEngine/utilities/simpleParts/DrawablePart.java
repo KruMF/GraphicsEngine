@@ -1,4 +1,4 @@
-package graphicsEngine.utilities.parts;
+package graphicsEngine.utilities.simpleParts;
 
 import java.awt.*;
 

@@ -1,13 +1,12 @@
-package graphicsEngine.pages;
+package graphicsEngine.utilities.pages;
 
-import graphicsEngine.GraphicsHelper.*;
 import graphicsEngine.GraphicsManager;
 import graphicsEngine.utilities.input.InputData;
 
 import java.awt.*;
 import java.util.ArrayList;
 
-import static graphicsEngine.GraphicsHelper.*;
+import static graphicsEngine.utilities.GraphicsHelper.*;
 
 public class DebugLayer {
     public static void draw(Graphics g){

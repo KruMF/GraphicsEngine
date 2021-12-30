@@ -1,16 +1,19 @@
-package graphicsEngine.pages;
+package graphicsEngine.demo.simple.pages;
+
+import graphicsEngine.utilities.pages.Page;
 
 import java.awt.*;
 
-class Page_0 extends Page {
+public class Page_0 extends Page {
 
     //This is page 1
     //Temporarily displaying calendar
 
-    Page_0() {
+    public Page_0() {
         super();
     }
 
+    //gotta be overriden for central
     @Override
     public void drawCenter(Graphics g, int[] location, int[] size) {
         int[] margin = new int[]{20, 20};
