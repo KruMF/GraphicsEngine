@@ -50,22 +50,6 @@ public class GraphicsManager {
         }
     }
 
-    public static class ExitManager{
-        String exitMessage;
-
-        ExitManager(){
-            exitMessage = "GraphicsManager: Closing.";
-        }
-
-        public void close(){
-            System.out.println(exitMessage);
-            //data.windowParameters.updateWindowValues();
-            //data.windowParameters.saveValues();
-            graphics.window.dispose();
-            running = false;
-        }
-    }
-
     private static void userInputCheck(){
         //Button.checkButtonActions(this); //uz ekrâna redzamo pogu notikumi
         //InputData.keyboardActionCheck(); //keyboard nospiesto pogu notikumi

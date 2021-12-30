@@ -1,6 +1,6 @@
 package graphicsEngine.utilities.input;
 
-import graphicsEngine.GraphicsManager;
+import graphicsEngine.ExitManager;
 import graphicsEngine.data.WindowParameters;
 import graphicsEngine.utilities.input.listeners.ListenerAdder;
 
@@ -11,7 +11,7 @@ public class InputManager {
 
     public InputManager(
             JFrame window, WindowParameters windowParameters,
-            GraphicsManager.ExitManager exitManager) {
+            ExitManager exitManager) {
         inputData = new InputData();
         new ListenerAdder(
                 window, windowParameters,
