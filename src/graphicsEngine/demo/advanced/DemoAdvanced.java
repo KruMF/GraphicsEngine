@@ -1,10 +1,24 @@
 package graphicsEngine.demo.advanced;
 
-public class DemoAdvanced {
+public class DemoAdvanced{
+
+    private static ThreadRunner threadRunner;
+
     public static void main(String[] args){
-        System.err.println("Advanced graphics demo not ready yet.");
+        initialize();
+        run();
+    }
 
-        //do something
+    private static void initialize(){
+        System.out.println("Advanced graphics demo: starting");
 
+        threadRunner = new ThreadRunner();
+
+        System.err.println("Graphics Engine not added to advanced demo.");
+    }
+
+    private static void run(){
+        System.out.println("Starting thread.");
+        threadRunner.run();
     }
 }
