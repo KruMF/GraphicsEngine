@@ -19,24 +19,8 @@ class KeyboardListenerAdder {
             @Override
             public void keyPressed(KeyEvent e) {
                 int key = e.getKeyCode();
-                boolean newKey = true;
-
-                for (int i = 0; i < inputData.keys.length; i++) { //pârbauda vai piespiestâ poga ir jauna
-                    if (key == inputData.keys[i]) {
-                        newKey = false;
-                        break;
-                    }
-                }
-
-                if (newKey) {
-                    int[] keysTemp = new int[inputData.keys.length + 1];
-
-                    for (int i = 0; i < inputData.keys.length; i++) {
-                        keysTemp[i] = inputData.keys[i];
-                    }
-                    keysTemp[inputData.keys.length] = key;
-
-                    inputData.keys = keysTemp;
+                if (!keyAlreadyPressedCheck(inputData.keys, key)){
+                    inputData.keys = addNewKey(inputData.keys, key);
                 }
             }
 
@@ -44,18 +28,36 @@ class KeyboardListenerAdder {
             public void keyReleased(KeyEvent e) {
                 if (inputData.keys.length > 1) {
                     int key = e.getKeyCode();
-                    int[] keysTemp = new int[inputData.keys.length - 1];
-
-                    for (int i = 0, j = 0; i < inputData.keys.length; i++) {
-                        if (key != inputData.keys[i]) {
-                            keysTemp[j] = inputData.keys[i];
-                            j++;
-                        }
-                    }
-
-                    inputData.keys = keysTemp;
+                    inputData.keys = removeKey(inputData.keys, key);
                 } else inputData.keys = new int[] {};
             }
         });
+    }
+
+    private boolean keyAlreadyPressedCheck(int[] keyArray, int key){
+        for (int i : keyArray) {
+            if (key == i) return true;
+        }
+        return false;
+    }
+
+    private int[] addNewKey(int[] keyArray, int key){
+        int[] newArray = new int[keyArray.length + 1];
+        System.arraycopy(
+                keyArray, 0,
+                newArray, 0, keyArray.length);
+        newArray[keyArray.length] = key;
+        return newArray;
+    }
+
+    private int[] removeKey(int[] keyArray, int key){
+        int[] newArray = new int[keyArray.length - 1];
+        for (int i = 0, j = 0; i < keyArray.length; i++) {
+            if (key != keyArray[i]) {
+                newArray[j] = keyArray[i];
+                j++;
+            }
+        }
+        return newArray;
     }
 }
