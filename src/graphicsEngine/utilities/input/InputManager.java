@@ -8,6 +8,9 @@ public class InputManager {
 
     public InputManager() {
         inputData = new InputData();
-        new ListenerAdder(GraphicsManager.graphics.window, inputData);
+        new ListenerAdder(
+                GraphicsManager.graphics.window,
+                inputData,
+                false);
     }
 }
