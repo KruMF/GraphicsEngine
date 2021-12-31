@@ -1,14 +1,10 @@
 package graphicsEngine.data.colors;
 
-import java.awt.*;
+import java.awt.Color;
 
 public class ButtonColors {
-    public Color bodyColor;
-    public Color bodyColor_active;
-
-    public Color borderColor;
-    public Color borderColor_active;
-
+    public Color bodyColor, bodyColor_active;
+    public Color borderColor, borderColor_active;
     public Color textColor;
 
     public ButtonColors(

@@ -1,16 +1,18 @@
 package graphicsEngine.utilities.panels;
 
+import graphicsEngine.utilities.buttons.ButtonRow;
+
 import java.awt.*;
 
-public class Footer extends Panel {
-    public Footer(
+public abstract class AbstractFooter extends Panel{
+    public AbstractFooter(
+            int height,
             Color _backgroundColor, Color _borderColor,
-            int height) {
+            ButtonRow _buttons) {
         super(
-                _backgroundColor, _borderColor,
-                true, false, false, false,
                 new int[]{0, height},
-                null);
+                _backgroundColor, _borderColor,
+                _buttons);
     }
 
     public void draw(Graphics g, int[] pageSize) {

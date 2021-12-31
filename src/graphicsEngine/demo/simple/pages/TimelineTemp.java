@@ -1,14 +1,15 @@
-package graphicsEngine.pages;
-
-import graphicsEngine.GraphicsHelper;
+package graphicsEngine.demo.simple.pages;
 
 import java.awt.*;
-import java.util.Map;
 
-import static graphicsEngine.GraphicsHelper.drawStrings_VA;
-
+/**
+ * Drawing of a calendar.
+ * Copied from a different repo.
+ * Calendar itself not copied.
+ * Thus everything is commented and non-working.
+ * Don't use this class.
+ */
 public class TimelineTemp {
-
     private static final Color
             fillColor = Color.gray,
             borderColor = Color.black,

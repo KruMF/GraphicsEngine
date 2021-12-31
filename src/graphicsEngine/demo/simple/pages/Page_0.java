@@ -1,16 +1,21 @@
-package graphicsEngine.pages;
+package graphicsEngine.demo.simple.pages;
+
+import graphicsEngine.demo.simple.common.Footer;
+import graphicsEngine.demo.simple.common.Header;
+import graphicsEngine.utilities.pages.Page;
 
 import java.awt.*;
 
-class Page_0 extends Page {
+/**
+ * This is page 0
+ */
+public class Page_0 extends Page {
 
-    //This is page 1
-    //Temporarily displaying calendar
-
-    Page_0() {
-        super();
+    public Page_0() {
+        super(new Header(), new Footer());
     }
 
+    //gotta be overriden for central
     @Override
     public void drawCenter(Graphics g, int[] location, int[] size) {
         int[] margin = new int[]{20, 20};
@@ -19,11 +24,8 @@ class Page_0 extends Page {
                 size[1] - 2 * margin[1]};
 
         //draw stuff here
-        /*TimelineTemp.draw(
-                g,
-                location,
-                size);*/
 
+        //red rectangle offset from sides
         g.setColor(Color.red);
         g.drawRect(
                 location[0] + margin[0],

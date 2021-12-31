@@ -1,8 +1,8 @@
-package graphicsEngine.utilities.parts;
+package graphicsEngine.utilities.simpleParts;
 
-import java.awt.*;
+import java.awt.Graphics;
 
-public interface DrawablePart {
+public interface DrawablePartInterface {
 
     void draw(Graphics g, int[] location, int[] size);
 

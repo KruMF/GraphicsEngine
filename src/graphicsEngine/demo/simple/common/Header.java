@@ -1,25 +1,28 @@
-package graphicsEngine.utilities.panels;
+package graphicsEngine.demo.simple.common;
 
-import graphicsEngine.utilities.Button;
+import graphicsEngine.utilities.buttons.Button;
+import graphicsEngine.utilities.buttons.ButtonRow;
+import graphicsEngine.utilities.panels.AbstractHeader;
 
 import java.awt.*;
 import java.util.ArrayList;
 
-public class Header extends Panel {
-    public Header(
-            Color _backgroundColor, Color _borderColor,
-            int height,
-            int buttonSeparation, int buttonWidth) {
+public class Header extends AbstractHeader {
+
+    private static final int  height = 100;
+    private static final int  buttonSeparation = 10, buttonWidth = 100;
+
+    public Header() {
         super(
-                _backgroundColor, _borderColor,
-                false, false, true, false,
-                new int[]{0, height},
-                prepareButtons(height, buttonSeparation, buttonWidth)
-        );
+                height,
+                Color.gray, Color.darkGray,
+                prepareButtons(height, buttonSeparation, buttonWidth));
     }
 
     private static ButtonRow prepareButtons(int panelHeight, int buttonSeparation, int buttonWidth){
-        int[] buttonSize = new int[]{buttonWidth, panelHeight - buttonSeparation * 2};
+        int[] buttonSize = new int[]{
+                buttonWidth,
+                panelHeight - buttonSeparation * 2};
         return new ButtonRow(
                 new int[]{0,0},
                 buttonSeparation, buttonSize[1], buttonSize[0],
@@ -30,15 +33,7 @@ public class Header extends Panel {
         );
     }
 
-    public void draw(Graphics g, int width) {
-        super.draw(
-                g,
-                new int[]{0, 0},
-                new int[]{width, size[1]});
-    }
-
-
-    static class Button_1 extends Button {
+    static class Button_1 extends graphicsEngine.utilities.buttons.Button {
         public Button_1(int[] _size) {
             super("Button 1", _size);
         }
