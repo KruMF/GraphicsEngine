@@ -13,7 +13,9 @@ public abstract class Page {
     public InputCheck inputCheck;
 
     public Page() {
-        background = new Background(GraphicsManager.data.palette.backgroundColor);
+        background = new Background(
+                GraphicsManager.data.windowParameters.drawSize,
+                GraphicsManager.data.palette.backgroundColor);
 
         Color panelColor = Color.gray;
         Color borderColor = Color.darkGray;

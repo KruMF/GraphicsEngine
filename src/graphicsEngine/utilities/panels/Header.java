@@ -1,26 +1,27 @@
 package graphicsEngine.utilities.panels;
 
 import graphicsEngine.utilities.buttons.Button;
+import graphicsEngine.utilities.buttons.ButtonContainer;
 import graphicsEngine.utilities.buttons.ButtonRow;
 
 import java.awt.*;
 import java.util.ArrayList;
 
-public class Header extends Panel {
+public class Header extends Panel implements ButtonContainer {
     public Header(
-            Color _backgroundColor, Color _borderColor,
             int height,
+            Color _backgroundColor, Color _borderColor,
             int buttonSeparation, int buttonWidth) {
         super(
-                _backgroundColor, _borderColor,
-                false, false, true, false,
                 new int[]{0, height},
-                prepareButtons(height, buttonSeparation, buttonWidth)
-        );
+                _backgroundColor, _borderColor,
+                prepareButtons(height, buttonSeparation, buttonWidth));
     }
 
     private static ButtonRow prepareButtons(int panelHeight, int buttonSeparation, int buttonWidth){
-        int[] buttonSize = new int[]{buttonWidth, panelHeight - buttonSeparation * 2};
+        int[] buttonSize = new int[]{
+                buttonWidth,
+                panelHeight - buttonSeparation * 2};
         return new ButtonRow(
                 new int[]{0,0},
                 buttonSeparation, buttonSize[1], buttonSize[0],

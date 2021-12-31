@@ -1,9 +1,11 @@
 package graphicsEngine.utilities.buttons;
 
+import graphicsEngine.utilities.input.InputData;
+
 import java.awt.*;
 import java.util.ArrayList;
 
-public class ButtonRow {
+public class ButtonRow implements ButtonContainer {
     int[] location; //relative to panel
 
     ArrayList<Button> buttons;
@@ -40,15 +42,17 @@ public class ButtonRow {
         }
     }
 
-    public void interactionCheck() {
+    @Override
+    public void buttonInteractionCheck(InputData input) {
         if (buttons != null) {
             for (Button button : buttons) {
-                button.interactionCheck();
+                button.interactionCheck(input);
             }
         }
     }
 
-    public void actionCheck() {
+    @Override
+    public void buttonActionCheck() {
         if (buttons != null) {
             for (Button button : buttons) {
                 button.actionCheck();

@@ -8,18 +8,6 @@ public class GraphicsHelper {
     private static final int rowHeight = 20, textOffsetFromBottom = 5;
 
     /**
-     * Fills a rectangle with specified color.
-     * @param g Graphics to use.
-     * @param color Color to use.
-     * @param location Starting location.
-     * @param size Size.
-     */
-    public static void drawBackground(Graphics g, Color color, int[] location, int[] size){
-        g.setColor(color);
-        g.fillRect(location[0], location[1], size[0], size[1]);
-    }
-
-    /**
      * Method for calculating vertical size of rows printed.
      * @param count Number of rows.
      * @return Height.

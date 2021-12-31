@@ -27,7 +27,7 @@ public class InputCheck {
     }
 
     private void buttonCheck(InputManager input, Page page) {
-        page.panelManager.buttonInteractionCheck();
+        page.panelManager.buttonInteractionCheck(input.inputData);
         page.panelManager.buttonActionCheck();
     }
 }

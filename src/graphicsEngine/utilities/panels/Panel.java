@@ -1,24 +1,21 @@
 package graphicsEngine.utilities.panels;
 
+import graphicsEngine.utilities.buttons.ButtonContainer;
 import graphicsEngine.utilities.buttons.ButtonRow;
+import graphicsEngine.utilities.input.InputData;
 import graphicsEngine.utilities.simpleParts.SimplePart;
 
 import java.awt.*;
 
-public abstract class Panel extends SimplePart {
+public abstract class Panel extends SimplePart implements ButtonContainer {
 
     public ButtonRow buttons;
 
     public Panel(
-            Color _backgroundColor, Color _borderColor,
-            boolean _borderN, boolean _borderE, boolean _borderS, boolean _borderW,
             int[] _size,
+            Color _backgroundColor, Color _borderColor,
             ButtonRow _buttons) {
-        super(
-                _backgroundColor, true,
-                _borderColor,
-                _borderN, _borderE, _borderS, _borderW,
-                _size);
+        super(_size, _backgroundColor, _borderColor);
 
         buttons = _buttons;
     }
@@ -27,21 +24,23 @@ public abstract class Panel extends SimplePart {
     public void draw(Graphics g, int[] _location, int[] _size){
         super.draw(g, _location, _size);
 
-        if(buttons != null) buttons.draw(g, location);
+        if(buttons != null) drawButtons(g);
 
-        //draw text
+        //draw text etc
     }
 
-    private void drawButtons(Graphics g, int[] panelLocation){
-        buttons.draw(g, panelLocation);
+    private void drawButtons(Graphics g){
+        buttons.draw(g, location);
     }
 
-    public void buttonInteractionCheck(){
-        buttons.interactionCheck();
+    @Override
+    public void buttonInteractionCheck(InputData input){
+        if (buttons != null) buttons.buttonInteractionCheck(input);
     }
 
+    @Override
     public void buttonActionCheck(){
-        buttons.actionCheck();
+        if (buttons != null) buttons.buttonActionCheck();
     }
 
     /*
