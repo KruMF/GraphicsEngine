@@ -1,17 +1,18 @@
 package graphicsEngine.utilities.panels;
 
-import graphicsEngine.utilities.buttons.ButtonContainer;
+import graphicsEngine.utilities.buttons.ButtonRow;
 
 import java.awt.*;
 
-public class Footer extends Panel implements ButtonContainer {
-    public Footer(
+public abstract class AbstractFooter extends Panel{
+    public AbstractFooter(
             int height,
-            Color _backgroundColor, Color _borderColor) {
+            Color _backgroundColor, Color _borderColor,
+            ButtonRow _buttons) {
         super(
                 new int[]{0, height},
                 _backgroundColor, _borderColor,
-                null);
+                _buttons);
     }
 
     public void draw(Graphics g, int[] pageSize) {

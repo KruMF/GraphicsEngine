@@ -2,6 +2,8 @@ package graphicsEngine.utilities.pages;
 
 import graphicsEngine.GraphicsManager;
 import graphicsEngine.utilities.input.InputCheck;
+import graphicsEngine.utilities.panels.AbstractFooter;
+import graphicsEngine.utilities.panels.AbstractHeader;
 import graphicsEngine.utilities.panels.PanelManager;
 import graphicsEngine.utilities.simpleParts.Background;
 
@@ -12,19 +14,12 @@ public abstract class Page {
     public PanelManager panelManager;
     public InputCheck inputCheck;
 
-    public Page() {
+    public Page(AbstractHeader header, AbstractFooter footer) {
         background = new Background(
                 GraphicsManager.data.windowParameters.drawSize,
                 GraphicsManager.data.palette.backgroundColor);
 
-        Color panelColor = Color.gray;
-        Color borderColor = Color.darkGray;
-        int header = 100, footer = 150;
-
-        panelManager = new PanelManager(
-                panelColor, borderColor,
-                header,
-                footer);
+        panelManager = new PanelManager(header, footer);
         inputCheck = new InputCheck();
     }
 

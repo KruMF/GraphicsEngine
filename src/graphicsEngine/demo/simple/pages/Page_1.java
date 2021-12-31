@@ -1,5 +1,7 @@
 package graphicsEngine.demo.simple.pages;
 
+import graphicsEngine.demo.simple.common.Footer;
+import graphicsEngine.demo.simple.common.Header;
 import graphicsEngine.utilities.pages.Page;
 import graphicsEngine.utilities.GraphicsHelper;
 
@@ -11,7 +13,7 @@ import java.awt.*;
 public class Page_1 extends Page {
 
     public Page_1() {
-        super();
+        super(new Header(), new Footer());
     }
 
     //gotta be overriden for central

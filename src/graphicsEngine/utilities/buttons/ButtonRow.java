@@ -2,7 +2,7 @@ package graphicsEngine.utilities.buttons;
 
 import graphicsEngine.utilities.input.InputData;
 
-import java.awt.*;
+import java.awt.Graphics;
 import java.util.ArrayList;
 
 public class ButtonRow implements ButtonContainer {

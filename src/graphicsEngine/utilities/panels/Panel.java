@@ -42,21 +42,4 @@ public abstract class Panel extends SimplePart implements ButtonContainer {
     public void buttonActionCheck(){
         if (buttons != null) buttons.buttonActionCheck();
     }
-
-    /*
-    static class LeftSide extends Panel {
-        public LeftSide(Color backgroundColor) {
-            super(backgroundColor);
-        }
-    }
-
-    static class RightSide extends Panel {
-        public RightSide(Color backgroundColor) {
-            super(backgroundColor);
-        }
-    }
-    */
-
-    //static class Center extends Panel {}
-
 }

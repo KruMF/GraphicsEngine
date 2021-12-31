@@ -6,35 +6,30 @@ import graphicsEngine.utilities.input.InputData;
 import java.awt.*;
 
 public class PanelManager implements ButtonContainer {
-    public Header header;
-    public Footer footer;
+    public AbstractHeader header;
+    public AbstractFooter footer;
 
-    public PanelManager(
-            Color background, Color border,
-            int headerHeight, int footerHeight) {
-        header = new Header(
-                headerHeight,
-                background, border,
-                10, 100);
-        footer = new Footer(
-                footerHeight,
-                background, border);
+    public PanelManager(AbstractHeader _header, AbstractFooter _footer) {
+        header = _header;
+        footer = _footer;
+
+        //gotta add side panels
     }
 
     public void draw(Graphics g, int[] pageSize) {
-        footer.draw(g, pageSize);
-        header.draw(g, pageSize[0]);
+        if (footer != null) footer.draw(g, pageSize);
+        if (header != null) header.draw(g, pageSize[0]);
     }
 
     @Override
     public void buttonInteractionCheck(InputData input){
-        header.buttonInteractionCheck(input);
-        //footer.buttonInteractionCheck();
+        if (header != null) header.buttonInteractionCheck(input);
+        if (footer != null) footer.buttonInteractionCheck(input);
     }
 
     @Override
     public void buttonActionCheck(){
-        header.buttonActionCheck();
-        //footer.buttonActionCheck();
+        if (header != null) header.buttonActionCheck();
+        if (footer != null) footer.buttonActionCheck();
     }
 }

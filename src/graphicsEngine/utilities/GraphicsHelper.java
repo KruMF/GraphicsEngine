@@ -1,6 +1,6 @@
 package graphicsEngine.utilities;
 
-import java.awt.*;
+import java.awt.Graphics;
 import java.util.ArrayList;
 
 public class GraphicsHelper {
