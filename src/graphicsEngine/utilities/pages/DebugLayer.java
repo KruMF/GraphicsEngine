@@ -8,9 +8,9 @@ import java.awt.*;
 import static graphicsEngine.utilities.GraphicsHelper.*;
 
 public class DebugLayer {
-    public static void draw(Graphics g){
+    public static void draw(Graphics g) {
         g.setColor(Color.white);
-        int[] drawLocation = new int[]{100, 150};
+        int[] drawLocation = new int[] {100, 150};
         int rowCount = drawHeader(g, drawLocation);
         rowCount += 2; //empty lines for vertical separation
 
@@ -18,18 +18,17 @@ public class DebugLayer {
         inputTest(g, drawLocation);
     }
 
-    private static int drawHeader(Graphics g, int[] location){
+    private static int drawHeader(Graphics g, int[] location) {
         return drawStrings_VA(
                 g, 0,
-                new String[]{"This is debug layer!"},
+                new String[] {"This is debug layer!"},
                 location);
     }
 
-    private static void inputTest(Graphics g, int[] location){
-
+    private static void inputTest(Graphics g, int[] location) {
         InputData input = GraphicsManager.input.inputData;
 
-        String[] header = new String[]{
+        String[] header = new String[] {
                 "InputData test.",
                 "x:" + input.mouse[0]
                         + " y: " + input.mouse[1]
@@ -39,9 +38,13 @@ public class DebugLayer {
         int[] keys = input.keys;
         String[] rows = new String[header.length + keys.length];
 
-        for (int i = 0; i < header.length; i++) rows[i] = header[i];
+        for (int i = 0; i < header.length; i++) {
+            rows[i] = header[i];
+        }
 
-        for (int i = 0; i < keys.length; i++) rows[i + header.length] = String.valueOf(keys[i]);
+        for (int i = 0; i < keys.length; i++) {
+            rows[i + header.length] = String.valueOf(keys[i]);
+        }
 
         drawStrings_VA(
                 g, 0,

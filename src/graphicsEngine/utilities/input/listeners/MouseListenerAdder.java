@@ -6,13 +6,13 @@ import javax.swing.JFrame;
 import java.awt.event.*;
 
 class MouseListenerAdder {
-    MouseListenerAdder(JFrame window, InputData inputData){
+    MouseListenerAdder(JFrame window, InputData inputData) {
         addMouseListener(window, inputData);
         addMouseMotionListener(window, inputData);
         addMouseWheelListener(window);
     }
 
-    private void addMouseListener(JFrame window, InputData inputData){
+    private void addMouseListener(JFrame window, InputData inputData) {
         window.getContentPane().addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {}
@@ -35,7 +35,7 @@ class MouseListenerAdder {
         });
     }
 
-    private void addMouseMotionListener(JFrame window, InputData inputData){
+    private void addMouseMotionListener(JFrame window, InputData inputData) {
         window.getContentPane().addMouseMotionListener(new MouseMotionListener() {
             @Override
             public void mouseDragged(MouseEvent e) {
@@ -49,7 +49,7 @@ class MouseListenerAdder {
         });
     }
 
-    private void addMouseWheelListener(JFrame window){
+    private void addMouseWheelListener(JFrame window) {
         window.addMouseWheelListener(new MouseWheelListener() {
             @Override
             public void mouseWheelMoved(MouseWheelEvent e) {
@@ -58,7 +58,7 @@ class MouseListenerAdder {
         });
     }
 
-    private static void updateMouseCoordinates(InputData inputData, MouseEvent e){
+    private static void updateMouseCoordinates(InputData inputData, MouseEvent e) {
         inputData.mouse[0] = e.getX();
         inputData.mouse[1] = e.getY();
     }

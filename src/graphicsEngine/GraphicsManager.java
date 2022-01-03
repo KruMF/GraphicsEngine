@@ -7,8 +7,7 @@ import graphicsEngine.utilities.input.InputManager;
 
 import java.util.ArrayList;
 
-public class GraphicsManager implements Runnable{
-
+public class GraphicsManager implements Runnable {
     public static GraphicsData data;
     public static PageManager pages;
 
@@ -16,15 +15,15 @@ public class GraphicsManager implements Runnable{
     public static InputManager input;
     public static ExitManager exitManager;
 
-    private static final long refreshDelay = 30; //screen refresh delay in millis
     public static boolean running;
+    private static final long refreshDelay = 30; //screen refresh delay in millis
 
-    public GraphicsManager(){
+    public GraphicsManager() {
         System.out.println("Graphics Engine: Creating.");
         data = new GraphicsData(true, true);
     }
 
-    public static void initialize(ArrayList<Page> _pages){
+    public static void initialize(ArrayList<Page> _pages) {
         System.out.println("Graphics Engine: Initializing.");
 
         pages = new PageManager(_pages);
@@ -43,8 +42,8 @@ public class GraphicsManager implements Runnable{
 
     @SuppressWarnings("BusyWait")
     @Override
-    public void run(){
-        while(running){
+    public void run() {
+        while (running) {
             if (!data.windowParameters.minimized) {
                 graphics.main();
                 Page activePage = pages.pages.get(pages.activePage);

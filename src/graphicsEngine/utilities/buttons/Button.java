@@ -8,12 +8,10 @@ import graphicsEngine.utilities.simpleParts.MouseDetectablePart;
 import java.awt.Graphics;
 
 public abstract class Button extends MouseDetectablePart {
-
     String text;
 
     public Button(String _text, int[] _size) {
-        super(
-                _size,
+        super(_size,
                 GraphicsManager.data.palette.buttonColors.bodyColor,
                 GraphicsManager.data.palette.buttonColors.borderColor);
         text = _text;
@@ -52,25 +50,26 @@ public abstract class Button extends MouseDetectablePart {
         super.drawClicked(g, _location);
     }
 
-    private void drawButtonText(Graphics g){
+    private void drawButtonText(Graphics g) {
         g.setColor(GraphicsManager.data.palette.buttonColors.textColor);
-        g.drawString(
-                text,
+        g.drawString(text,
                 location[0] + size[0] / 2,
                 location[1] + size[1] / 2);
     }
 
     @Override
-    public void interactionCheck(InputData input){
+    public void interactionCheck(InputData input) {
         super.interactionCheck(input);
     }
 
-    public void actionCheck(){
-        if (activated) action();
+    public void actionCheck() {
+        if (activated) {
+            action();
+        }
         activated = false; //debounce
     }
 
-    public void action(){
+    public void action() {
         System.out.println("Button action placeholder");
     }
 }

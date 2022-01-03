@@ -17,19 +17,31 @@ public class PanelManager implements ButtonContainer {
     }
 
     public void draw(Graphics g, int[] pageSize) {
-        if (footer != null) footer.draw(g, pageSize);
-        if (header != null) header.draw(g, pageSize[0]);
+        if (footer != null) {
+            footer.draw(g, pageSize);
+        }
+        if (header != null) {
+            header.draw(g, pageSize[0]);
+        }
     }
 
     @Override
-    public void buttonInteractionCheck(InputData input){
-        if (header != null) header.buttonInteractionCheck(input);
-        if (footer != null) footer.buttonInteractionCheck(input);
+    public void buttonInteractionCheck(InputData input) {
+        if (header != null) {
+            header.buttonInteractionCheck(input);
+        }
+        if (footer != null) {
+            footer.buttonInteractionCheck(input);
+        }
     }
 
     @Override
-    public void buttonActionCheck(){
-        if (header != null) header.buttonActionCheck();
-        if (footer != null) footer.buttonActionCheck();
+    public void buttonActionCheck() {
+        if (header != null) {
+            header.buttonActionCheck();
+        }
+        if (footer != null) {
+            footer.buttonActionCheck();
+        }
     }
 }

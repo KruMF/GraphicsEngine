@@ -9,14 +9,8 @@ import javax.swing.JFrame;
 public class InputManager {
     public InputData inputData;
 
-    public InputManager(
-            JFrame window, WindowParameters windowParameters,
-            ExitManager exitManager) {
+    public InputManager(JFrame window, WindowParameters windowParameters, ExitManager exitManager) {
         inputData = new InputData();
-        new ListenerAdder(
-                window, windowParameters,
-                inputData,
-                exitManager,
-                false);
+        new ListenerAdder(window, windowParameters, inputData, exitManager, false);
     }
 }

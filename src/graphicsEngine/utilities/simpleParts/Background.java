@@ -3,7 +3,6 @@ package graphicsEngine.utilities.simpleParts;
 import java.awt.*;
 
 public class Background extends DrawablePart {
-
     public Color color;
 
     public Background(int[] _size, Color _color) {
@@ -22,9 +21,12 @@ public class Background extends DrawablePart {
      * Fills transparent, if color is null.
      * @param g Graphics to use.
      */
-    private void fillBackground(Graphics g){
-        if (color != null) g.setColor(color);
-        else g.setColor(new Color(0,0,0,0));
+    private void fillBackground(Graphics g) {
+        if (color != null) {
+            g.setColor(color);
+        } else {
+            g.setColor(new Color(0,0,0,0));
+        }
 
         g.fillRect(location[0], location[1], size[0], size[1]);
     }

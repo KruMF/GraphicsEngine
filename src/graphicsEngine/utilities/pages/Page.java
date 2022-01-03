@@ -34,14 +34,14 @@ public abstract class Page {
 
         //side panels not added yet
 
-        int[] centerSize = new int[]{
+        int[] centerSize = new int[] {
                 pageSize[0],
                 Math.max(
                         0,
                         pageSize[1] - headerHeight - panelManager.footer.size[1])};
         drawCenter(
                 g,
-                new int[]{0, headerHeight},
+                new int[] {0, headerHeight},
                 centerSize);
 
         panelManager.draw(g, pageSize);

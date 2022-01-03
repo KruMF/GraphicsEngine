@@ -13,10 +13,9 @@ public class ButtonRow implements ButtonContainer {
     int buttonHeight;
     int buttonWidth;
 
-    public ButtonRow(
-            int[] _location, int _separation,
-            int _buttonHeight, int _buttonWidth,
-            ArrayList<Button> _buttons) {
+    public ButtonRow(int[] _location, int _separation,
+                     int _buttonHeight, int _buttonWidth,
+                     ArrayList<Button> _buttons) {
         location = _location;
 
         separation = _separation;
@@ -32,11 +31,9 @@ public class ButtonRow implements ButtonContainer {
             int offsetY = separation;
 
             for (Button button : buttons) {
-                button.draw(
-                        g,
-                        new int[]{
-                                panelLocation[0] + location[0] + offsetX,
-                                panelLocation[1] + location[1] + offsetY});
+                button.draw(g, new int[] {
+                        panelLocation[0] + location[0] + offsetX,
+                        panelLocation[1] + location[1] + offsetY});
                 offsetX += (separation + button.size[0]);
             }
         }

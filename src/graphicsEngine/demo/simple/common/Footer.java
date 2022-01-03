@@ -9,9 +9,6 @@ public class Footer extends AbstractFooter {
     private static final int height = 50;
 
     public Footer() {
-        super(
-                height,
-                Color.gray, Color.darkGray,
-                null);
+        super(height, Color.gray, Color.darkGray, null);
     }
 }

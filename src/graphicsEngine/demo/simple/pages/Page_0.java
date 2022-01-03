@@ -18,8 +18,8 @@ public class Page_0 extends Page {
     //gotta be overriden for central
     @Override
     public void drawCenter(Graphics g, int[] location, int[] size) {
-        int[] margin = new int[]{20, 20};
-        int[] drawSize = new int[]{
+        int[] margin = new int[] {20, 20};
+        int[] drawSize = new int[] {
                 size[0] - 2 * margin[0],
                 size[1] - 2 * margin[1]};
 

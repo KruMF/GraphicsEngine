@@ -12,7 +12,7 @@ public class Palette {
 
     public ButtonColors buttonColors;
 
-    protected Palette(){
+    protected Palette() {
         backgroundColor = Color.black;
 
         panelColor_dark = Color.darkGray;
@@ -22,11 +22,10 @@ public class Palette {
         buttonColors = defaultButtonColors();
     }
 
-    private ButtonColors defaultButtonColors(){
+    private ButtonColors defaultButtonColors() {
         return new ButtonColors(
                 Color.lightGray, Color.darkGray,
                 Color.black, Color.yellow,
-                Color.black
-        );
+                Color.black);
     }
 }

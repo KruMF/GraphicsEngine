@@ -8,7 +8,6 @@ import graphicsEngine.utilities.simpleParts.SimplePart;
 import java.awt.*;
 
 public abstract class Panel extends SimplePart implements ButtonContainer {
-
     public ButtonRow buttons;
 
     public Panel(
@@ -21,25 +20,31 @@ public abstract class Panel extends SimplePart implements ButtonContainer {
     }
 
     @Override
-    public void draw(Graphics g, int[] _location, int[] _size){
+    public void draw(Graphics g, int[] _location, int[] _size) {
         super.draw(g, _location, _size);
 
-        if(buttons != null) drawButtons(g);
+        if (buttons != null) {
+            drawButtons(g);
+        }
 
         //draw text etc
     }
 
-    private void drawButtons(Graphics g){
+    private void drawButtons(Graphics g) {
         buttons.draw(g, location);
     }
 
     @Override
-    public void buttonInteractionCheck(InputData input){
-        if (buttons != null) buttons.buttonInteractionCheck(input);
+    public void buttonInteractionCheck(InputData input) {
+        if (buttons != null) {
+            buttons.buttonInteractionCheck(input);
+        }
     }
 
     @Override
-    public void buttonActionCheck(){
-        if (buttons != null) buttons.buttonActionCheck();
+    public void buttonActionCheck() {
+        if (buttons != null) {
+            buttons.buttonActionCheck();
+        }
     }
 }

@@ -3,7 +3,6 @@ package graphicsEngine.utilities.simpleParts;
 import java.awt.*;
 
 public abstract class SimplePart extends DrawablePart {
-
     public Background background;
     public Border border;
 

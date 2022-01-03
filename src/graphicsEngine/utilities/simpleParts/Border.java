@@ -3,7 +3,6 @@ package graphicsEngine.utilities.simpleParts;
 import java.awt.*;
 
 public class Border extends DrawablePart {
-
     public Color color;
 
     public Border(int[] _size, Color _color) {
@@ -22,9 +21,12 @@ public class Border extends DrawablePart {
      * Draws transparent, if color is null.
      * @param g Graphics to use.
      */
-    private void drawBorders(Graphics g){
-        if (color != null) g.setColor(color);
-        else g.setColor(new Color(0,0,0,0));
+    private void drawBorders(Graphics g) {
+        if (color != null) {
+            g.setColor(color);
+        } else {
+            g.setColor(new Color(0,0,0,0));
+        }
 
         g.drawRect(location[0], location[1], size[0], size[1]);
     }

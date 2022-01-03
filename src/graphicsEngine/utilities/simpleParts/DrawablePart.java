@@ -8,7 +8,7 @@ public abstract class DrawablePart implements DrawablePartInterface {
     public int[] size;
 
     public DrawablePart(int[] _size) {
-        relocate(new int[]{0, 0});
+        relocate(new int[] {0, 0});
         resize(_size);
     }
 

@@ -7,10 +7,9 @@ public class ButtonColors {
     public Color borderColor, borderColor_active;
     public Color textColor;
 
-    public ButtonColors(
-            Color body, Color body_active,
-            Color border, Color border_active,
-            Color text) {
+    public ButtonColors(Color body, Color body_active,
+                        Color border, Color border_active,
+                        Color text) {
         bodyColor = body;
         bodyColor_active = body_active;
 
