@@ -1,33 +1,30 @@
 package graphicsEngine.utilities.simpleParts;
 
 import java.awt.*;
+import java.util.Objects;
 
-public class Background extends DrawablePart {
+public class Background extends SimplePart {
     public Color color;
 
-    public Background(int[] _size, Color _color) {
-        super(_size);
-        color = _color;
+    public Background(int[] size, boolean[] fixedSize, Color color) {
+        super(size, fixedSize);
+        this.color = Objects.requireNonNullElse(
+                color,
+                new Color(0, 0, 0, 0));
     }
 
     @Override
-    public void draw(Graphics g, int[] _location, int[] _size) {
-        super.draw(g, _location, _size);
+    public void draw(Graphics g, int[] location, int[] size) {
+        super.draw(g, location, size);
         fillBackground(g);
     }
 
     /**
      * Fills a rectangle with specified color.
-     * Fills transparent, if color is null.
      * @param g Graphics to use.
      */
     private void fillBackground(Graphics g) {
-        if (color != null) {
-            g.setColor(color);
-        } else {
-            g.setColor(new Color(0,0,0,0));
-        }
-
+        g.setColor(color);
         g.fillRect(location[0], location[1], size[0], size[1]);
     }
 }

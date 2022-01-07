@@ -1,22 +1,18 @@
 package graphicsEngine.demo.simple.pages;
 
-import graphicsEngine.demo.simple.common.Footer;
-import graphicsEngine.demo.simple.common.Header;
-import graphicsEngine.utilities.pages.Page;
+import graphicsEngine.demo.simple.common.CommonPage;
 
 import java.awt.*;
 
 /**
  * This is page 0
  */
-public class Page_0 extends Page {
+public class Page_0 extends CommonPage {
 
     public Page_0() {
-        super(new Header(), new Footer());
+        super(null);
     }
 
-    //gotta be overriden for central
-    @Override
     public void drawCenter(Graphics g, int[] location, int[] size) {
         int[] margin = new int[] {20, 20};
         int[] drawSize = new int[] {

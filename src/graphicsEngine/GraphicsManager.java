@@ -46,8 +46,7 @@ public class GraphicsManager implements Runnable {
         while (running) {
             if (!data.windowParameters.minimized) {
                 graphics.main();
-                Page activePage = pages.pages.get(pages.activePage);
-                activePage.inputCheck.check(input, activePage);
+                pages.activityCheck(input);
             }
 
             try {

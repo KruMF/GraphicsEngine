@@ -1,6 +1,7 @@
-package graphicsEngine.utilities.simpleParts;
+package graphicsEngine.utilities.buttons;
 
 import graphicsEngine.utilities.input.InputData;
+import graphicsEngine.utilities.simpleParts.SimplePart;
 
 import java.awt.*;
 
@@ -9,10 +10,13 @@ public abstract class MouseDetectablePart extends SimplePart {
     public boolean clicked;
     public boolean activated;
 
-    public MouseDetectablePart(
-            int[] _size,
-            Color _backgroundColor, Color _borderColor) {
-        super(_size, _backgroundColor, _borderColor);
+    /**
+     * Constructor for mouse detectable part.
+     * @param size      Size of the part.
+     * @param fixedSize Size fixation by axis.
+     */
+    public MouseDetectablePart(int[] size, boolean[] fixedSize) {
+        super(size, fixedSize);
         prepareActivityBooleans();
     }
 
@@ -22,27 +26,21 @@ public abstract class MouseDetectablePart extends SimplePart {
         activated = false;
     }
 
-    public void draw(Graphics g, int[] _location) {
+    @Override
+    public void draw(Graphics g, int[] location, int[] size) {
+        super.draw(g, location, size);
         if (clicked) {
-            drawClicked(g, _location);
+            drawClicked();
         } else if (hovered) {
-            drawHovered(g, _location);
+            drawHovered();
         } else {
-            drawInactive(g, _location);
+            drawInactive();
         }
     }
 
-    public void drawClicked(Graphics g, int[] _location) {
-        super.draw(g, _location, size);
-    }
-
-    public void drawHovered(Graphics g, int[] _location) {
-        super.draw(g, _location, size);
-    }
-
-    public void drawInactive(Graphics g, int[] _location) {
-        super.draw(g, _location, size);
-    }
+    public void drawClicked() {}
+    public void drawHovered() {}
+    public void drawInactive() {}
 
     public void interactionCheck(InputData input) {
         mouseLocationCheck(input.mouse);

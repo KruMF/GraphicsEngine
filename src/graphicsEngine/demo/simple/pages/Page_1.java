@@ -1,8 +1,6 @@
 package graphicsEngine.demo.simple.pages;
 
-import graphicsEngine.demo.simple.common.Footer;
-import graphicsEngine.demo.simple.common.Header;
-import graphicsEngine.utilities.pages.Page;
+import graphicsEngine.demo.simple.common.CommonPage;
 import graphicsEngine.utilities.GraphicsHelper;
 
 import java.awt.*;
@@ -10,14 +8,12 @@ import java.awt.*;
 /**
  * This is page 1
  */
-public class Page_1 extends Page {
+public class Page_1 extends CommonPage {
 
     public Page_1() {
-        super(new Header(), new Footer());
+        super(null);
     }
 
-    //gotta be overriden for central
-    @Override
     public void drawCenter(Graphics g, int[] location, int[] size) {
         g.setColor(Color.green);
         GraphicsHelper.drawStrings_VA(
