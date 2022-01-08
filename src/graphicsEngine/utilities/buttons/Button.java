@@ -3,74 +3,85 @@ package graphicsEngine.utilities.buttons;
 import graphicsEngine.GraphicsManager;
 import graphicsEngine.data.colors.ButtonColors;
 import graphicsEngine.utilities.input.InputData;
-import graphicsEngine.utilities.simpleParts.MouseDetectablePart;
+import graphicsEngine.utilities.simpleParts.Background;
+import graphicsEngine.utilities.simpleParts.Border;
 
 import java.awt.Graphics;
+import java.util.Objects;
 
+// TODO: add javadoc
 public abstract class Button extends MouseDetectablePart {
-
+    Background background;
+    Border border;
     String text;
+    int[] textOffset;
 
-    public Button(String _text, int[] _size) {
-        super(
-                _size,
-                GraphicsManager.data.palette.buttonColors.bodyColor,
-                GraphicsManager.data.palette.buttonColors.borderColor);
-        text = _text;
+    // TODO: add javadoc
+    public Button(int[] size, boolean[] fixedSize, String text, int[] textOffset) {
+        super(size, fixedSize);
+        background = new Background(null);
+        border = new Border(null);
+        this.text = Objects.requireNonNullElse(text, "");
+        this.textOffset = Objects.requireNonNullElse(textOffset, new int[] {0, 0});
     }
 
+    // TODO: add javadoc
     @Override
-    public void draw(Graphics g, int[] _location) {
-        super.draw(g, _location);
+    public void draw(Graphics g, int[] location, int[] size) {
+        super.draw(g, location, size);
+        background.draw(g, this.location, this.size);
+        border.draw(g, this.location, this.size);
         drawButtonText(g);
     }
 
+    // TODO: add javadoc
     @Override
-    public void drawInactive(Graphics g, int[] _location) {
+    public void drawInactive() {
         ButtonColors colors = GraphicsManager.data.palette.buttonColors;
         background.color = colors.bodyColor;
         border.color = colors.borderColor;
-
-        super.drawInactive(g, _location);
     }
 
+    // TODO: add javadoc
     @Override
-    public void drawHovered(Graphics g, int[] _location) {
+    public void drawHovered() {
         ButtonColors colors = GraphicsManager.data.palette.buttonColors;
         background.color = colors.bodyColor;
         border.color = colors.borderColor_active;
-
-        super.drawHovered(g, _location);
     }
 
+    // TODO: add javadoc
     @Override
-    public void drawClicked(Graphics g, int[] _location) {
+    public void drawClicked() {
         ButtonColors colors = GraphicsManager.data.palette.buttonColors;
         background.color = colors.bodyColor_active;
         border.color = colors.borderColor_active;
-
-        super.drawClicked(g, _location);
     }
 
-    private void drawButtonText(Graphics g){
+    // TODO: add javadoc
+    private void drawButtonText(Graphics g) {
         g.setColor(GraphicsManager.data.palette.buttonColors.textColor);
-        g.drawString(
-                text,
-                location[0] + size[0] / 2,
-                location[1] + size[1] / 2);
+        g.drawString(text,
+                location[0] + size[0] / 2 + textOffset[0],
+                location[1] + size[1] / 2 + textOffset[1]);
     }
 
+    // TODO: add javadoc
     @Override
-    public void interactionCheck(InputData input){
+    public void interactionCheck(InputData input) {
         super.interactionCheck(input);
     }
 
-    public void actionCheck(){
-        if (activated) action();
+    // TODO: add javadoc
+    public void actionCheck() {
+        if (activated) {
+            action();
+        }
         activated = false; //debounce
     }
 
-    public void action(){
+    // TODO: add javadoc
+    public void action() {
         System.out.println("Button action placeholder");
     }
 }

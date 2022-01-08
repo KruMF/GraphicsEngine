@@ -7,8 +7,8 @@ import graphicsEngine.utilities.input.InputManager;
 
 import java.util.ArrayList;
 
-public class GraphicsManager implements Runnable{
-
+// TODO: add javadoc
+public class GraphicsManager implements Runnable {
     public static GraphicsData data;
     public static PageManager pages;
 
@@ -16,43 +16,64 @@ public class GraphicsManager implements Runnable{
     public static InputManager input;
     public static ExitManager exitManager;
 
-    private static final long refreshDelay = 30; //screen refresh delay in millis
     public static boolean running;
+    private static final long REFRESH_DELAY = 30; //screen refresh delay in millis
 
-    public GraphicsManager(){
-        System.out.println("Graphics Engine: Creating.");
-        data = new GraphicsData(true, true);
+    private static final String GRAPHICS_ENGINE_NAME = "Graphics Engine";
+
+    /**
+     * Creates a blank GraphicsManager thread with graphics data with specified parameters.
+     * Has to be initialized. (Call initialize(?) to initialize)
+     *
+     * @param windowParameters Window parameters. (Null - default parameters)
+     */
+    public GraphicsManager(ArrayList<String[]> windowParameters) {
+        System.out.println(GRAPHICS_ENGINE_NAME + ": Creating.");
+
+        data = new GraphicsData(windowParameters, true);
     }
 
-    public static void initialize(ArrayList<Page> _pages){
-        System.out.println("Graphics Engine: Initializing.");
+    /**
+     * Initializes GraphicsManager.
+     * Gets it ready for thread running.
+     *
+     * @param pages Pages to display.
+     */
+    public static void initialize(ArrayList<Page> pages) {
+        System.out.println(GRAPHICS_ENGINE_NAME + ": Initializing.");
 
-        pages = new PageManager(_pages);
+        // Has to be before graphics.
+        GraphicsManager.pages = new PageManager(pages);
 
+        // Graphics.
         graphics = new GraphicsClass();
         graphics.initialize();
 
-        exitManager = new ExitManager();
+        // Has to be before input.
+        exitManager = new ExitManager(GRAPHICS_ENGINE_NAME);
+
+        // Input.
         input = new InputManager(
                 graphics.window, data.windowParameters,
                 exitManager);
 
-        data.windowParameters.minimized = false;
+        // Get ready for running.
         running = true;
     }
 
+    // TODO: add javadoc
     @SuppressWarnings("BusyWait")
     @Override
-    public void run(){
-        while(running){
+    public void run() {
+        System.out.println(GRAPHICS_ENGINE_NAME + ": Running.");
+        while (running) {
             if (!data.windowParameters.minimized) {
                 graphics.main();
-                Page activePage = pages.pages.get(pages.activePage);
-                activePage.inputCheck.check(input, activePage);
+                pages.activityCheck(input);
             }
 
             try {
-                Thread.sleep(refreshDelay);
+                Thread.sleep(REFRESH_DELAY);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

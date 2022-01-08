@@ -5,23 +5,20 @@ import graphicsEngine.demo.simple.pages.*;
 
 import java.util.ArrayList;
 
+// TODO: needs rework
 public class DemoSimple {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         System.out.println("Simple graphics demo started.");
         start();
     }
 
-    private static void start(){
-        GraphicsManager graphics = new GraphicsManager();
-
-        GraphicsManager.initialize(
-                new ArrayList<>(){{
-                    add(new Page_0());
-                    add(new Page_1());
-                }}
-        );
-
+    private static void start() {
+        GraphicsManager graphics = new GraphicsManager(null);
+        GraphicsManager.initialize(new ArrayList<>() {{
+            add(new Page_0());
+            add(new Page_1());
+        }});
         graphics.run();
     }
 }

@@ -2,29 +2,38 @@ package graphicsEngine.utilities.simpleParts;
 
 import java.awt.Graphics;
 
-public abstract class DrawablePart implements DrawablePartInterface {
+/**
+ * Interface for a drawable part.
+ */
+public interface DrawablePart {
 
-    public int[] location;
-    public int[] size;
+    /**
+     * Draws this part.
+     *
+     * @param g        Graphics to use.
+     * @param location Starting location for drawing.
+     * @param size     Maximum drawing size.
+     */
+    void draw(Graphics g, int[] location, int[] size);
 
-    public DrawablePart(int[] _size) {
-        relocate(new int[]{0, 0});
-        resize(_size);
-    }
+    /**
+     * A helper method for relocating part.
+     *
+     * @param location New location.
+     */
+    void relocate(int[] location);
 
-    @Override
-    public void draw(Graphics g, int[] _location, int[] _size) {
-        relocate(_location);
-        resize(_size);
-    }
+    /**
+     * A helper method for resizing part.
+     *
+     * @param size New size.
+     */
+    void resize(int[] size);
 
-    @Override
-    public void relocate(int[] _location) {
-        location = _location;
-    }
-
-    @Override
-    public void resize(int[] _size) {
-        size = _size;
-    }
+    /**
+     * Manual resize of the part. Intended for fixed parts.
+     *
+     * @param size New size.
+     */
+    void manualResize(int[] size);
 }

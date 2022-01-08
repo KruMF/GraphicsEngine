@@ -5,14 +5,18 @@ import graphicsEngine.utilities.input.InputData;
 import javax.swing.JFrame;
 import java.awt.event.*;
 
+// TODO: add javadoc
 class MouseListenerAdder {
-    MouseListenerAdder(JFrame window, InputData inputData){
+
+    // TODO: add javadoc
+    MouseListenerAdder(JFrame window, InputData inputData) {
         addMouseListener(window, inputData);
         addMouseMotionListener(window, inputData);
         addMouseWheelListener(window);
     }
 
-    private void addMouseListener(JFrame window, InputData inputData){
+    // TODO: add javadoc
+    private void addMouseListener(JFrame window, InputData inputData) {
         window.getContentPane().addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {}
@@ -35,7 +39,8 @@ class MouseListenerAdder {
         });
     }
 
-    private void addMouseMotionListener(JFrame window, InputData inputData){
+    // TODO: add javadoc
+    private void addMouseMotionListener(JFrame window, InputData inputData) {
         window.getContentPane().addMouseMotionListener(new MouseMotionListener() {
             @Override
             public void mouseDragged(MouseEvent e) {
@@ -49,7 +54,8 @@ class MouseListenerAdder {
         });
     }
 
-    private void addMouseWheelListener(JFrame window){
+    // TODO: add javadoc
+    private void addMouseWheelListener(JFrame window) {
         window.addMouseWheelListener(new MouseWheelListener() {
             @Override
             public void mouseWheelMoved(MouseWheelEvent e) {
@@ -58,7 +64,8 @@ class MouseListenerAdder {
         });
     }
 
-    private static void updateMouseCoordinates(InputData inputData, MouseEvent e){
+    // TODO: add javadoc
+    private static void updateMouseCoordinates(InputData inputData, MouseEvent e) {
         inputData.mouse[0] = e.getX();
         inputData.mouse[1] = e.getY();
     }

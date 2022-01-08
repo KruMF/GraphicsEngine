@@ -1,14 +1,14 @@
 package graphicsEngine.demo.advanced;
 
+// TODO: add javadoc
 public class ThreadRunner implements Runnable {
+    private static final long delay = 50;
     private boolean running;
 
-    private static final long delay = 50;
-
-    private int x;
     private static final int xmax = 100;
+    private int x;
 
-    ThreadRunner(){
+    ThreadRunner() {
         x = 0;
         running = true;
     }
@@ -16,7 +16,7 @@ public class ThreadRunner implements Runnable {
     @SuppressWarnings("BusyWait")
     @Override
     public void run() {
-        while(running){
+        while (running) {
             System.out.println("Thread running. X = " + x);
 
             x++;
@@ -30,7 +30,9 @@ public class ThreadRunner implements Runnable {
         }
     }
 
-    private void endCheck(){
-        if(x == xmax) running = false;
+    private void endCheck() {
+        if(x == xmax) {
+            running = false;
+        }
     }
 }

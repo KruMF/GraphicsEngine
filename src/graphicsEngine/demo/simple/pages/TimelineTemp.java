@@ -2,6 +2,7 @@ package graphicsEngine.demo.simple.pages;
 
 import java.awt.*;
 
+// TODO: remove this class
 /**
  * Drawing of a calendar.
  * Copied from a different repo.

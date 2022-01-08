@@ -4,6 +4,7 @@ import graphicsEngine.data.colors.ButtonColors;
 
 import java.awt.Color;
 
+// TODO: add javadoc
 public class Palette {
     public Color backgroundColor;
 
@@ -12,7 +13,8 @@ public class Palette {
 
     public ButtonColors buttonColors;
 
-    protected Palette(){
+    // TODO: add javadoc
+    protected Palette() {
         backgroundColor = Color.black;
 
         panelColor_dark = Color.darkGray;
@@ -22,11 +24,11 @@ public class Palette {
         buttonColors = defaultButtonColors();
     }
 
-    private ButtonColors defaultButtonColors(){
+    // TODO: add javadoc
+    private ButtonColors defaultButtonColors() {
         return new ButtonColors(
                 Color.lightGray, Color.darkGray,
                 Color.black, Color.yellow,
-                Color.black
-        );
+                Color.black);
     }
 }
