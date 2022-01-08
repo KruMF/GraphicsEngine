@@ -1,7 +1,7 @@
 package graphicsEngine;
 
 public class ExitManager {
-    private static final String exitMessage = ": Closing.";
+    private static final String EXIT_MESSAGE = ": Closing.";
     private final String graphicsEngineName;
 
     ExitManager(String graphicsEngineName) {
@@ -9,7 +9,7 @@ public class ExitManager {
     }
 
     public void close() {
-        System.out.println(graphicsEngineName + exitMessage);
+        System.out.println(graphicsEngineName + EXIT_MESSAGE);
         GraphicsManager.graphics.window.dispose();
         GraphicsManager.running = false;
     }
