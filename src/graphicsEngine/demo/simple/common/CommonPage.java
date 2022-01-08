@@ -22,24 +22,18 @@ public abstract class CommonPage extends Page {
 
     private PartContainer makeHeaderContainer(ArrayList<? extends SimplePart> centralParts,
                                               AlignmentType centralAlignment) {
-        return new PartContainer(
-                new int[] {0, CommonHeader.HEIGHT},
-                new boolean[] {false, true},
-                new ArrayList<>() {{
-                    add(new CommonHeader());
-                    add(makeFooterContainer(centralParts, centralAlignment));
-                }}, AlignmentType.TOP);
+        return new PartContainer(null, null, new ArrayList<>() {{
+            add(new CommonHeader());
+            add(makeFooterContainer(centralParts, centralAlignment));
+        }}, AlignmentType.TOP);
     }
 
     private PartContainer makeFooterContainer(ArrayList<? extends SimplePart> centralParts,
                                               AlignmentType centralAlignment) {
-        return new PartContainer(
-                new int[] {0, CommonFooter.HEIGHT},
-                new boolean[] {false, true},
-                new ArrayList<>() {{
-                    add(new CommonFooter());
-                    add(makeCentralContainer(centralParts, centralAlignment));
-                }}, AlignmentType.BOTTOM);
+        return new PartContainer(null, null,new ArrayList<>() {{
+            add(new CommonFooter());
+            add(makeCentralContainer(centralParts, centralAlignment));
+        }}, AlignmentType.BOTTOM);
     }
 
     private PartContainer makeCentralContainer(ArrayList<? extends SimplePart> centralParts,
