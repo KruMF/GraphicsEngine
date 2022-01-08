@@ -4,10 +4,9 @@ import graphicsEngine.GraphicsClass;
 import graphicsEngine.GraphicsManager;
 
 import javax.swing.*;
+import java.util.ArrayList;
 
 public class WindowParameters {
-    private static final String saveFilePath = "userData/windowPreferences";
-
     public static final int defaultCloseAction = JFrame.DO_NOTHING_ON_CLOSE;//DISPOSE_ON_CLOSE;//
     public boolean minimized, windowActive;
 
@@ -17,43 +16,86 @@ public class WindowParameters {
             windowLocation,
             drawSize;
 
-    protected WindowParameters(boolean load) {
-        String versionNumber = "versionNumberPlaceholder";
-        windowTitle = "windowTitlePlaceholder (version: " + versionNumber + ")";
+    private static final String
+            WINDOW_SIZE_KEY = "windowSize",
+            WINDOW_LOCATION_KEY = "windowLocation";
 
-        minimized = false;
-        windowActive = true;
-
-        if (!load || !loadSavedValues()) {
-            defaultValues();
-        }
-    }
-
-    private boolean loadSavedValues() {
-        // ArrayList<String[]> readLines = FileHandler.readText(saveFilePath);
-        // if (readLines != null) {
-        //     System.out.println("Trying to load saved window parameters.");
-        //     for (String[] row : readLines){
-        //         switch (row[0]){
-        //             case "windowSize" -> windowSize = new int[]{
-        //                     Integer.parseInt(row[1]),
-        //                     Integer.parseInt(row[2])};
-        //             case "windowLocation" -> windowLocation = new int[]{
-        //                     Integer.parseInt(row[1]),
-        //                     Integer.parseInt(row[2])};
-        //             default -> {}
-        //         }
-        //     }
-        //     return true;
-        // }
-        System.out.println("Parameters not saved - nothing to load.");
-        return false;
+    /**
+     * Creates window parameters.
+     *
+     * @param outsideDataLines ArrayList of outside data lines separated as arrays of strings.
+     *                         (Leave null for default values)
+     */
+    protected WindowParameters(ArrayList<String[]> outsideDataLines) {
+        defaultValues();
+        loadOutsideData(outsideDataLines);
     }
 
     private void defaultValues() {
-        System.out.println("Using default window parameters.");
+        System.out.println("Applying default window parameters.");
+
+        String versionNumber = "versionNumberPlaceholder";
+        windowTitle = "windowTitlePlaceholder (version: " + versionNumber + ")";
+
         windowSize = new int[] {1300, 700};
         windowLocation = new int[] {30, 30};
+
+        minimized = false;
+        windowActive = true;
+    }
+
+    private void loadOutsideData(ArrayList<String[]> readLines) {
+        if (readLines != null && readLines.size() > 0) {
+            System.out.println("Trying to load passed window parameters.");
+            for (String[] row : readLines) {
+                 if (row != null && row.length >= 2) {
+                     outsideDataSwitch(row);
+                 }
+            }
+        }
+        System.out.println("Parameters not loaded - null or empty lines.");
+    }
+
+    private void outsideDataSwitch(String[] row) {
+        switch (row[0]) {
+            case WINDOW_SIZE_KEY -> {
+                if (row.length == 3) {
+                    windowSize = new int[] {
+                            Integer.parseInt(row[1]),
+                            Integer.parseInt(row[2])};
+                }
+            }
+            case WINDOW_LOCATION_KEY -> {
+                if (row.length == 3) {
+                    windowLocation = new int[] {
+                            Integer.parseInt(row[1]),
+                            Integer.parseInt(row[2])};
+                }
+            }
+            default -> {}
+        }
+    }
+
+    /**
+     * Prepares window parameters for exporting.
+     *
+     * @return An arraylist of arrays of strings containing keys and values .
+     */
+    public ArrayList<String[]> getValuesForExport() {
+        System.out.println("Exporting window parameters.");
+
+        return new ArrayList<>() {{
+            add(new String[] {
+                    WINDOW_SIZE_KEY,
+                    String.valueOf(windowSize[0]),
+                    String.valueOf(windowSize[1])
+            });
+            add(new String[] {
+                    WINDOW_LOCATION_KEY,
+                    String.valueOf(windowLocation[0]),
+                    String.valueOf(windowLocation[1])
+            });
+        }};
     }
 
     /**
@@ -71,23 +113,6 @@ public class WindowParameters {
      */
     public void setDrawableSize() {
         GraphicsClass graphics = GraphicsManager.graphics.graphics;
-        drawSize = new int[]{graphics.getWidth(), graphics.getHeight()};
-    }
-
-    /**
-     * Saves window size and location to a file.
-     */
-    public void saveValues() {
-        System.out.println("Saving window parameters.");
-        // FileHandler.writeText(saveFilePath, new ArrayList<>(){{
-        //     add(new String[]{
-        //             "windowSize",
-        //             Integer.toString(windowSize[0]),
-        //             Integer.toString(windowSize[1])});
-        //     add(new String[]{
-        //             "windowLocation",
-        //             Integer.toString(windowLocation[0]),
-        //             Integer.toString(windowLocation[1])});
-        // }});
+        drawSize = new int[] {graphics.getWidth(), graphics.getHeight()};
     }
 }

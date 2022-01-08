@@ -13,7 +13,7 @@ public class DemoSimple {
     }
 
     private static void start() {
-        GraphicsManager graphics = new GraphicsManager();
+        GraphicsManager graphics = new GraphicsManager(null);
         GraphicsManager.initialize(new ArrayList<>() {{
             add(new Page_0());
             add(new Page_1());

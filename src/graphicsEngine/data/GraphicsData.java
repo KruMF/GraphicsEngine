@@ -1,15 +1,17 @@
 package graphicsEngine.data;
 
+import java.util.ArrayList;
+
 public class GraphicsData {
     public WindowParameters windowParameters;
     public Palette palette;
 
     public boolean debugLayer;
 
-    public GraphicsData(boolean loadWindowParameters, boolean _debugLayer) {
-        windowParameters = new WindowParameters(loadWindowParameters);
+    public GraphicsData(ArrayList<String[]> windowParameters, boolean debugLayer) {
+        this.windowParameters = new WindowParameters(windowParameters);
         palette = new Palette();
 
-        debugLayer = _debugLayer;
+        this.debugLayer = debugLayer;
     }
 }

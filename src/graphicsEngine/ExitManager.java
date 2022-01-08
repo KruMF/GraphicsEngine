@@ -1,14 +1,15 @@
 package graphicsEngine;
 
 public class ExitManager {
-    String exitMessage;
+    private static final String exitMessage = ": Closing.";
+    private final String graphicsEngineName;
 
-    ExitManager() {
-        exitMessage = "GraphicsEngine: Closing.";
+    ExitManager(String graphicsEngineName) {
+        this.graphicsEngineName = graphicsEngineName;
     }
 
     public void close() {
-        System.out.println(exitMessage);
+        System.out.println(graphicsEngineName + exitMessage);
         GraphicsManager.graphics.window.dispose();
         GraphicsManager.running = false;
     }

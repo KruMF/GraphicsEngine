@@ -18,7 +18,7 @@ public class CommonHeader extends Panel {
                 prepareParts(), AlignmentType.LEFT);
     }
 
-    private static ArrayList<DrawablePart> prepareParts(){
+    private static ArrayList<DrawablePart> prepareParts() {
         int logoWidth = 200, buttonWidth = 100;
         int[] logoSize = new int[] {logoWidth, HEIGHT};
         int[] buttonSize = new int[] {buttonWidth, HEIGHT};
