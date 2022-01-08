@@ -28,7 +28,12 @@ public class DebugLayer {
     private static void inputTest(Graphics g, int[] location) {
         InputData input = GraphicsManager.input.inputData;
 
+        int[] drawableSize = GraphicsManager.data.windowParameters.drawSize;
+
         String[] header = new String[] {
+                "Screen size (drawable) :",
+                drawableSize[0] + " x " + drawableSize[1],
+                "",
                 "InputData test.",
                 "x:" + input.mouse[0]
                         + " y: " + input.mouse[1]

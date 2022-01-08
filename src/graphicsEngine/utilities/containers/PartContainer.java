@@ -47,12 +47,12 @@ public class PartContainer extends GenericContainer {
     }
 
     private void drawSinglePart(Graphics g, SimplePart part,
-                                RemainderHelper remainingSize, RemainderHelper drawLocation){
+                                RemainderHelper remainingSize, RemainderHelper drawLocation) {
         int[] partLocation;
         int[] partSize;
         int sizeDifference;
         switch (alignment) {
-            case LEFT: {
+            case LEFT : {
                 part.resize(new int[] {remainingSize.x, size[1]}); // stretches if possible
                 partSize = part.size;
                 sizeDifference = partSize[0];
@@ -62,7 +62,7 @@ public class PartContainer extends GenericContainer {
                         location[1]};
                 break;
             }
-            case RIGHT: {
+            case RIGHT : {
                 part.resize(new int[] {remainingSize.x, size[1]}); // stretches if possible
                 partSize = part.size;
                 sizeDifference = partSize[0];
@@ -72,7 +72,7 @@ public class PartContainer extends GenericContainer {
                         location[1]};
                 break;
             }
-            case BOTTOM: {
+            case BOTTOM : {
                 part.resize(new int[] {size[0], remainingSize.x}); // stretches if possible
                 partSize = part.size;
                 sizeDifference = partSize[1];
@@ -82,8 +82,8 @@ public class PartContainer extends GenericContainer {
                         location[1] + size[1] - drawLocation.x - sizeDifference};
                 break;
             }
-            case TOP:
-            default: { // TOP alignment by default
+            case TOP : {}
+            default : { // TOP alignment by default
                 part.resize(new int[] {size[0], remainingSize.x}); // stretches if possible
                 partSize = part.size;
                 sizeDifference = partSize[1];
@@ -91,14 +91,16 @@ public class PartContainer extends GenericContainer {
                 partLocation = new int[] {
                         location[0],
                         location[1] + drawLocation.x};
-                break;
             }
         }
-        remainingSize.modify(sizeDifference);
+        remainingSize.modify((-1) * sizeDifference);
         drawLocation.modify(sizeDifference);
         part.draw(g, partLocation, partSize);
     }
 
+    /**
+     * A helper class for calculating remainders
+     */
     private static class RemainderHelper {
         int x;
 
@@ -110,7 +112,7 @@ public class PartContainer extends GenericContainer {
             x += delta;
         }
 
-        boolean checkRemaining(){
+        boolean checkRemaining() {
             return x > 0;
         }
 
@@ -127,7 +129,7 @@ public class PartContainer extends GenericContainer {
         }
 
         static int getInitialLocation(PartContainer container) {
-            switch (container.alignment) {
+            /*switch (container.alignment) {
                 case LEFT : {
                     return container.location[0];
                 }
@@ -141,7 +143,8 @@ public class PartContainer extends GenericContainer {
                 default : {
                     return container.location[1];
                 }
-            }
+            }*/
+            return 0;
         }
     }
 }

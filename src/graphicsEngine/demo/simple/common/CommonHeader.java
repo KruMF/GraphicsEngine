@@ -15,7 +15,7 @@ public class CommonHeader extends Panel {
     public CommonHeader() {
         super(new int[] {0, HEIGHT}, new boolean[] {false, true},
                 CommonPage.PANEL_BACKGROUND_COLOR, CommonPage.PANEL_BORDER_COLOR,
-                prepareParts(), AlignmentType.LEFT);
+                prepareParts(), AlignmentType.RIGHT);
     }
 
     private static ArrayList<DrawablePart> prepareParts(){
@@ -25,7 +25,7 @@ public class CommonHeader extends Panel {
         return new ArrayList<>() {{
             add(new Logo(logoSize, new boolean[] {true, false}));
             add(new Button_1(buttonSize));
-            add(new Button_1(buttonSize));
+            add(new Button_2(buttonSize));
         }};
     }
 
