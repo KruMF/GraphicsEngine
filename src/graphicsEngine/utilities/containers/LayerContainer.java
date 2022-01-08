@@ -5,6 +5,7 @@ import graphicsEngine.utilities.simpleParts.DrawablePart;
 import java.awt.*;
 import java.util.ArrayList;
 
+// TODO: add javadoc
 public class LayerContainer extends GenericContainer {
 
     /**
@@ -30,15 +31,5 @@ public class LayerContainer extends GenericContainer {
                 part.draw(g, location, size);
             }
         }
-
-        //Draws parts in reverse order.
-        /*
-        for (int i = parts.size() - 1; i >= 0; i--) {
-            DrawablePart part = parts.get(i);
-            if (part != null) {
-                part.draw(g, location, size);
-            }
-        }
-         */
     }
 }

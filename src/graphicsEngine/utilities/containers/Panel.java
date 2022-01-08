@@ -8,6 +8,7 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.Objects;
 
+// TODO: add javadoc
 public class Panel extends LayerContainer {
     public Panel(int[] size, boolean[] fixedSize,
                  Color background, Color border,

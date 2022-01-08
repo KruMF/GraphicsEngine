@@ -5,6 +5,7 @@ import graphicsEngine.utilities.simpleParts.SimplePart;
 
 import java.awt.*;
 
+// TODO: add javadoc
 public abstract class MouseDetectablePart extends SimplePart {
     public boolean hovered;
     public boolean clicked;
@@ -20,12 +21,14 @@ public abstract class MouseDetectablePart extends SimplePart {
         prepareActivityBooleans();
     }
 
+    // TODO: add javadoc
     private void prepareActivityBooleans() {
         hovered = false;
         clicked = false;
         activated = false;
     }
 
+    // TODO: add javadoc
     @Override
     public void draw(Graphics g, int[] location, int[] size) {
         super.draw(g, location, size);
@@ -38,10 +41,14 @@ public abstract class MouseDetectablePart extends SimplePart {
         }
     }
 
+    // TODO: add javadoc
     public void drawClicked() {}
+    // TODO: add javadoc
     public void drawHovered() {}
+    // TODO: add javadoc
     public void drawInactive() {}
 
+    // TODO: add javadoc
     public void interactionCheck(InputData input) {
         mouseLocationCheck(input.mouse);
         if (input.mouseClick) {
@@ -51,6 +58,7 @@ public abstract class MouseDetectablePart extends SimplePart {
         }
     }
 
+    // TODO: add javadoc
     private boolean checkXY(int[] mouse) {
         return mouse[0] > location[0]
                 && mouse[1] > location[1]
@@ -58,16 +66,19 @@ public abstract class MouseDetectablePart extends SimplePart {
                 && mouse[1] < location[1] + size[1];
     }
 
+    // TODO: add javadoc
     private void mouseLocationCheck(int[] mouse) {
         hovered = checkXY(mouse);
     }
 
+    // TODO: add javadoc
     private void mouseClickCheck() {
         if (hovered) {
             clicked = true;
         }
     }
 
+    // TODO: add javadoc
     private void mouseReleaseCheck() {
         if (clicked && hovered) {
             activated = true;

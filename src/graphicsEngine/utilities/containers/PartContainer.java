@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.awt.*;
 import java.util.Objects;
 
+// TODO: add javadoc
 public class PartContainer extends GenericContainer {
     public AlignmentType alignment;
 
@@ -32,7 +33,7 @@ public class PartContainer extends GenericContainer {
     @Override
     public void drawParts(Graphics g) {
         RemainderHelper remainingSize = new RemainderHelper(RemainderHelper.getInitialSize(this));
-        RemainderHelper drawingLocation = new RemainderHelper(RemainderHelper.getInitialLocation(this));
+        RemainderHelper drawingLocation = new RemainderHelper(0);
 
         for (DrawablePart drawablePart : parts) {
             if (!remainingSize.checkRemaining()) {
@@ -46,6 +47,7 @@ public class PartContainer extends GenericContainer {
         }
     }
 
+    // TODO: add javadoc
     private void drawSinglePart(Graphics g, SimplePart part,
                                 RemainderHelper remainingSize, RemainderHelper drawLocation) {
         int[] partLocation;
@@ -98,6 +100,7 @@ public class PartContainer extends GenericContainer {
         part.draw(g, partLocation, partSize);
     }
 
+    // TODO: update javadoc
     /**
      * A helper class for calculating remainders
      */
@@ -126,25 +129,6 @@ public class PartContainer extends GenericContainer {
                     return container.size[1];
                 }
             }
-        }
-
-        static int getInitialLocation(PartContainer container) {
-            /*switch (container.alignment) {
-                case LEFT : {
-                    return container.location[0];
-                }
-                case RIGHT : {
-                    return container.location[0] + getInitialSize(container);
-                }
-                case BOTTOM : {
-                    return container.location[1] + getInitialSize(container);
-                }
-                case TOP : {}
-                default : {
-                    return container.location[1];
-                }
-            }*/
-            return 0;
         }
     }
 }

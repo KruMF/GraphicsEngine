@@ -8,6 +8,9 @@ import graphicsEngine.utilities.simpleParts.SimplePart;
 import java.awt.*;
 import java.util.ArrayList;
 
+/**
+ * A generic container containing parts with ability to check interact-ability of said parts.
+ */
 public abstract class GenericContainer extends SimplePart implements ButtonContainer {
     public ArrayList<DrawablePart> parts;
 
@@ -41,12 +44,17 @@ public abstract class GenericContainer extends SimplePart implements ButtonConta
 
     /**
      * Draws contained parts.
-     * Must be overriden.
+     * Has to be overriden.
      *
      * @param g Graphics to use
      */
     public void drawParts(Graphics g) {}
 
+    /**
+     * Check interaction of contained buttons or containers.
+     *
+     * @param input Input data to check.
+     */
     @Override
     public void buttonInteractionCheck(InputData input) {
         if (parts != null) {
@@ -60,6 +68,9 @@ public abstract class GenericContainer extends SimplePart implements ButtonConta
         }
     }
 
+    /**
+     * Check actions of contained buttons or containers.
+     */
     @Override
     public void buttonActionCheck() {
         if (parts != null) {
