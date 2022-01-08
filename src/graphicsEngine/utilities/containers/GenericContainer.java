@@ -39,14 +39,21 @@ public abstract class GenericContainer extends SimplePart implements ButtonConta
         }
     }
 
+    /**
+     * Draws contained parts.
+     * Must be overriden.
+     *
+     * @param g Graphics to use
+     */
     public void drawParts(Graphics g) {}
 
     @Override
     public void buttonInteractionCheck(InputData input) {
         if (parts != null) {
             for (DrawablePart part : parts) {
-                if (part != null && part.getClass().isAssignableFrom(graphicsEngine.utilities.buttons.Button.class))
-                    ((graphicsEngine.utilities.buttons.Button) part).interactionCheck(input);
+                if (part != null && part.getClass().isAssignableFrom(Button.class)) {
+                    ((Button) part).interactionCheck(input);
+                }
             }
         }
     }
@@ -55,8 +62,9 @@ public abstract class GenericContainer extends SimplePart implements ButtonConta
     public void buttonActionCheck() {
         if (parts != null) {
             for (DrawablePart part : parts) {
-                if (part != null && part.getClass().isAssignableFrom(graphicsEngine.utilities.buttons.Button.class))
+                if (part != null && part.getClass().isAssignableFrom(Button.class)) {
                     ((Button) part).actionCheck();
+                }
             }
         }
     }

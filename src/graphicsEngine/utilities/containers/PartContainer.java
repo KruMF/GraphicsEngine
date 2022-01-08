@@ -25,7 +25,7 @@ public class PartContainer extends GenericContainer {
     }
 
     /**
-     * Draws parts in reverse order.
+     * Draws contained parts one after another.
      *
      * @param g Graphics to use.
      */

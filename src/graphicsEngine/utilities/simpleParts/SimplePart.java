@@ -41,14 +41,14 @@ public abstract class SimplePart implements DrawablePart {
 
     @Override
     public void relocate(int[] location) {
-        if (location != null && location.length >= 2) {
+        if (location != null && location.length == 2) {
             this.location = location;
         }
     }
 
     @Override
     public void resize(int[] size) {
-        if (size != null && size.length >= 2) {
+        if (size != null && size.length == 2) {
             if (!fixedSize[0]) {
                 this.size[0] = size[0];
             }
@@ -59,7 +59,7 @@ public abstract class SimplePart implements DrawablePart {
     }
 
     public void manualResize(int[] size) {
-        if (size != null && size.length >= 2) {
+        if (size != null && size.length == 2) {
             this.size = size;
         }
     }

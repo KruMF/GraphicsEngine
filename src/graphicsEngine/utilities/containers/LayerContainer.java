@@ -19,7 +19,7 @@ public class LayerContainer extends GenericContainer {
     }
 
     /**
-     *
+     * Draws contained parts as layers.
      *
      * @param g Graphics to use.
      */
