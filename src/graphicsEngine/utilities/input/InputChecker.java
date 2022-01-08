@@ -1,7 +1,7 @@
 package graphicsEngine.utilities.input;
 
 import graphicsEngine.GraphicsManager;
-import graphicsEngine.utilities.containers.GenericContainer;
+import graphicsEngine.utilities.containers.ButtonContainer;
 
 /**
  * A class for checking user input.
@@ -21,7 +21,7 @@ public class InputChecker {
      * @param input     Input to check.
      * @param container Relevant container.
      */
-    public void check(InputManager input, GenericContainer container) {
+    public void check(InputManager input, ButtonContainer container) {
         if (input != null) {
             keyboardActionCheck(input);
             if (container != null) {
@@ -64,7 +64,7 @@ public class InputChecker {
      * @param input     Input to check.
      * @param container Relevant container.
      */
-    private void buttonCheck(InputManager input, GenericContainer container) {
+    private void buttonCheck(InputManager input, ButtonContainer container) {
         container.buttonInteractionCheck(input.inputData);
         container.buttonActionCheck();
     }

@@ -15,7 +15,7 @@ public class CommonHeader extends Panel {
     public CommonHeader() {
         super(new int[] {0, HEIGHT}, new boolean[] {false, true},
                 CommonPage.PANEL_BACKGROUND_COLOR, CommonPage.PANEL_BORDER_COLOR,
-                prepareParts(), AlignmentType.RIGHT);
+                prepareParts(), AlignmentType.LEFT);
     }
 
     private static ArrayList<DrawablePart> prepareParts(){

@@ -51,8 +51,10 @@ public abstract class GenericContainer extends SimplePart implements ButtonConta
     public void buttonInteractionCheck(InputData input) {
         if (parts != null) {
             for (DrawablePart part : parts) {
-                if (part != null && part.getClass().isAssignableFrom(Button.class)) {
+                if (part instanceof Button) {
                     ((Button) part).interactionCheck(input);
+                } else if (part instanceof GenericContainer) {
+                    ((GenericContainer) part).buttonInteractionCheck(input);
                 }
             }
         }
@@ -62,8 +64,10 @@ public abstract class GenericContainer extends SimplePart implements ButtonConta
     public void buttonActionCheck() {
         if (parts != null) {
             for (DrawablePart part : parts) {
-                if (part != null && part.getClass().isAssignableFrom(Button.class)) {
+                if (part instanceof Button) {
                     ((Button) part).actionCheck();
+                } else if (part instanceof GenericContainer) {
+                    ((GenericContainer) part).buttonActionCheck();
                 }
             }
         }
