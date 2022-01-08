@@ -5,6 +5,7 @@ import graphicsEngine.demo.simple.pages.*;
 
 import java.util.ArrayList;
 
+// TODO: needs rework
 public class DemoSimple {
 
     public static void main(String[] args) {

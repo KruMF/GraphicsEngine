@@ -7,6 +7,7 @@ import java.awt.*;
 
 import static graphicsEngine.utilities.GraphicsHelper.*;
 
+// TODO: needs rework
 public class DebugLayer {
     public static void draw(Graphics g) {
         g.setColor(Color.white);

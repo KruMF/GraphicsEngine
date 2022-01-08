@@ -5,6 +5,7 @@ import graphicsEngine.utilities.GraphicsHelper;
 
 import java.awt.*;
 
+// TODO: needs rework
 /**
  * This is page 1
  */

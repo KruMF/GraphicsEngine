@@ -7,6 +7,7 @@ import graphicsEngine.utilities.input.InputManager;
 
 import java.util.ArrayList;
 
+// TODO: add javadoc
 public class GraphicsManager implements Runnable {
     public static GraphicsData data;
     public static PageManager pages;
@@ -60,6 +61,7 @@ public class GraphicsManager implements Runnable {
         running = true;
     }
 
+    // TODO: add javadoc
     @SuppressWarnings("BusyWait")
     @Override
     public void run() {

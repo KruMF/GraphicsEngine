@@ -5,13 +5,17 @@ import graphicsEngine.utilities.input.InputData;
 import javax.swing.JFrame;
 import java.awt.event.*;
 
+// TODO: add javadoc
 class MouseListenerAdder {
+
+    // TODO: add javadoc
     MouseListenerAdder(JFrame window, InputData inputData) {
         addMouseListener(window, inputData);
         addMouseMotionListener(window, inputData);
         addMouseWheelListener(window);
     }
 
+    // TODO: add javadoc
     private void addMouseListener(JFrame window, InputData inputData) {
         window.getContentPane().addMouseListener(new MouseListener() {
             @Override
@@ -35,6 +39,7 @@ class MouseListenerAdder {
         });
     }
 
+    // TODO: add javadoc
     private void addMouseMotionListener(JFrame window, InputData inputData) {
         window.getContentPane().addMouseMotionListener(new MouseMotionListener() {
             @Override
@@ -49,6 +54,7 @@ class MouseListenerAdder {
         });
     }
 
+    // TODO: add javadoc
     private void addMouseWheelListener(JFrame window) {
         window.addMouseWheelListener(new MouseWheelListener() {
             @Override
@@ -58,6 +64,7 @@ class MouseListenerAdder {
         });
     }
 
+    // TODO: add javadoc
     private static void updateMouseCoordinates(InputData inputData, MouseEvent e) {
         inputData.mouse[0] = e.getX();
         inputData.mouse[1] = e.getY();

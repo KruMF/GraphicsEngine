@@ -6,7 +6,10 @@ import graphicsEngine.ExitManager;
 
 import javax.swing.JFrame;
 
+// TODO: add javadoc
 public class ListenerAdder {
+
+    // TODO: add javadoc
     public ListenerAdder(JFrame window, WindowParameters windowParameters,
                          InputData inputData, ExitManager exitManager,
                          boolean extra) {
@@ -19,6 +22,7 @@ public class ListenerAdder {
         }
     }
 
+    // TODO: add javadoc
     private static void addExtraListeners() {
         //placeholder for adding new listeners (joysticks, controllers, etc)
     }

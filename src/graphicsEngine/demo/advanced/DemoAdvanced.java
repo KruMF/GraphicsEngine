@@ -1,5 +1,6 @@
 package graphicsEngine.demo.advanced;
 
+// TODO: needs rework
 public class DemoAdvanced {
     private static ThreadRunner threadRunner;
 

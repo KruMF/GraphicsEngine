@@ -6,6 +6,7 @@ import graphicsEngine.GraphicsManager;
 import javax.swing.*;
 import java.util.ArrayList;
 
+// TODO: add javadoc
 public class WindowParameters {
     public static final int defaultCloseAction = JFrame.DO_NOTHING_ON_CLOSE;//DISPOSE_ON_CLOSE;//
     public boolean minimized, windowActive;
@@ -31,6 +32,7 @@ public class WindowParameters {
         loadOutsideData(outsideDataLines);
     }
 
+    // TODO: add javadoc
     private void defaultValues() {
         System.out.println("Applying default window parameters.");
 
@@ -44,6 +46,7 @@ public class WindowParameters {
         windowActive = true;
     }
 
+    // TODO: add javadoc
     private void loadOutsideData(ArrayList<String[]> readLines) {
         if (readLines != null && readLines.size() > 0) {
             System.out.println("Trying to load passed window parameters.");
@@ -56,6 +59,7 @@ public class WindowParameters {
         System.out.println("Parameters not loaded - null or empty lines.");
     }
 
+    // TODO: add javadoc
     private void outsideDataSwitch(String[] row) {
         switch (row[0]) {
             case WINDOW_SIZE_KEY -> {

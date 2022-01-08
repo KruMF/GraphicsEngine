@@ -6,11 +6,15 @@ import javax.swing.JFrame;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+// TODO: add javadoc
 class KeyboardListenerAdder {
+
+    // TODO: add javadoc
     KeyboardListenerAdder(JFrame window, InputData inputData) {
         addKeyListener(window, inputData);
     }
 
+    // TODO: add javadoc
     private void addKeyListener(JFrame window, InputData inputData) {
         window.addKeyListener(new KeyListener() {
             @Override
@@ -36,6 +40,7 @@ class KeyboardListenerAdder {
         });
     }
 
+    // TODO: add javadoc
     private boolean keyAlreadyPressedCheck(int[] keyArray, int key) {
         for (int i : keyArray) {
             if (key == i) {
@@ -45,6 +50,7 @@ class KeyboardListenerAdder {
         return false;
     }
 
+    // TODO: add javadoc
     private int[] addNewKey(int[] keyArray, int key) {
         int[] newArray = new int[keyArray.length + 1];
         System.arraycopy(
@@ -54,6 +60,7 @@ class KeyboardListenerAdder {
         return newArray;
     }
 
+    // TODO: add javadoc
     private int[] removeKey(int[] keyArray, int key) {
         int[] newArray = new int[keyArray.length - 1];
         for (int i = 0, j = 0; i < keyArray.length; i++) {

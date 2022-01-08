@@ -10,6 +10,8 @@ import java.util.Objects;
 
 // TODO: add javadoc
 public class Panel extends LayerContainer {
+
+    // TODO: add javadoc
     public Panel(int[] size, boolean[] fixedSize,
                  Color background, Color border,
                  ArrayList<DrawablePart> panelParts, AlignmentType alignment) {

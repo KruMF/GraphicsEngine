@@ -9,15 +9,18 @@ import graphicsEngine.utilities.simpleParts.SimplePart;
 import java.awt.*;
 import java.util.ArrayList;
 
+// TODO: add javadoc
 public class CommonHeader extends Panel {
     public static final int HEIGHT = 100;
 
+    // TODO: add javadoc
     public CommonHeader() {
         super(new int[] {0, HEIGHT}, new boolean[] {false, true},
                 CommonPage.PANEL_BACKGROUND_COLOR, CommonPage.PANEL_BORDER_COLOR,
                 prepareParts(), AlignmentType.LEFT);
     }
 
+    // TODO: add javadoc
     private static ArrayList<DrawablePart> prepareParts() {
         int logoWidth = 200, buttonWidth = 100;
         int[] logoSize = new int[] {logoWidth, HEIGHT};
@@ -29,6 +32,7 @@ public class CommonHeader extends Panel {
         }};
     }
 
+    // TODO: add javadoc
     static class Logo extends SimplePart {
         private static final double PROPORTIONS = 0.8;
         private static final Color
@@ -63,6 +67,7 @@ public class CommonHeader extends Panel {
         }
     }
 
+    // TODO: add javadoc
     static class Button_1 extends graphicsEngine.utilities.buttons.Button {
         public Button_1(int[] size) {
             super(size, new boolean[] {true, false},
@@ -76,6 +81,7 @@ public class CommonHeader extends Panel {
         }
     }
 
+    // TODO: add javadoc
     static class Button_2 extends Button {
         public Button_2(int[] size) {
             super(size, new boolean[] {true, false},

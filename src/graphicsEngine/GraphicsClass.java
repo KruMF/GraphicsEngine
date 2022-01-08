@@ -7,11 +7,13 @@ import javax.swing.JPanel;
 import javax.swing.JFrame;
 import java.awt.Graphics;
 
+// TODO: add javadoc
 public class GraphicsClass extends JPanel {
 
     public JFrame window;
     public GraphicsClass graphics;
 
+    // TODO: add javadoc
     public void initialize() {
         WindowParameters windowParameters = GraphicsManager.data.windowParameters;
         window = new JFrame(windowParameters.windowTitle);
@@ -39,6 +41,8 @@ public class GraphicsClass extends JPanel {
         window.repaint();
     }
 
+    // TODO: add javadoc
+    @Override
     protected void paintComponent(Graphics g) {
         GraphicsManager.pages.draw(g);
         if (GraphicsManager.data.debugLayer) {

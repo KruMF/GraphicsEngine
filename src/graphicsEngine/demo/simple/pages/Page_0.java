@@ -4,6 +4,7 @@ import graphicsEngine.demo.simple.common.CommonPage;
 
 import java.awt.*;
 
+// TODO: needs rework
 /**
  * This is page 0
  */
