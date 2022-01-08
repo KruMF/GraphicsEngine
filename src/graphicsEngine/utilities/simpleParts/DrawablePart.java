@@ -2,6 +2,9 @@ package graphicsEngine.utilities.simpleParts;
 
 import java.awt.Graphics;
 
+/**
+ * Interface for a drawable part.
+ */
 public interface DrawablePart {
 
     /**
@@ -16,21 +19,21 @@ public interface DrawablePart {
     /**
      * A helper method for relocating part.
      *
-     * @param location New location for drawing.
+     * @param location New location.
      */
     void relocate(int[] location);
 
     /**
      * A helper method for resizing part.
      *
-     * @param size New maximum size for drawing.
+     * @param size New size.
      */
     void resize(int[] size);
 
     /**
      * Manual resize of the part. Intended for fixed parts.
      *
-     * @param size New size for drawing.
+     * @param size New size.
      */
     void manualResize(int[] size);
 }

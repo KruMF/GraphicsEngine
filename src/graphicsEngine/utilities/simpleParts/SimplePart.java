@@ -1,8 +1,11 @@
 package graphicsEngine.utilities.simpleParts;
 
-import java.awt.*;
+import java.awt.Graphics;
 import java.util.Objects;
 
+/**
+ * A simple drawable part with updatable size and location.
+ */
 public abstract class SimplePart implements DrawablePart {
     public int[] location;
     public int[] size;
@@ -33,22 +36,39 @@ public abstract class SimplePart implements DrawablePart {
                 new int[] {0, 0});
     }
 
+    /**
+     * Draws this part.
+     *
+     * @param g        Graphics to use.
+     * @param location Starting location for drawing.
+     * @param size     Maximum drawing size.
+     */
     @Override
     public void draw(Graphics g, int[] location, int[] size) {
         relocate(location);
         resize(size);
     }
 
+    /**
+     * Relocates part to final position for drawing.
+     *
+     * @param location New location. (Null - unchanged)
+     */
     @Override
     public void relocate(int[] location) {
-        if (location != null && location.length == 2) {
+        if (validateCoordinates(location)) {
             this.location = location;
         }
     }
 
+    /**
+     * Resizes part to provided size if not fixed in corresponding direction.
+     *
+     * @param size New size. (Null - unchanged)
+     */
     @Override
     public void resize(int[] size) {
-        if (size != null && size.length == 2) {
+        if (validateCoordinates(size)) {
             if (!fixedSize[0]) {
                 this.size[0] = size[0];
             }
@@ -58,9 +78,26 @@ public abstract class SimplePart implements DrawablePart {
         }
     }
 
+    /**
+     * Manual resize of the part. Intended for fixed parts.
+     *
+     * @param size New size.
+     */
+    @Override
     public void manualResize(int[] size) {
-        if (size != null && size.length == 2) {
+        if (validateCoordinates(size)) {
             this.size = size;
         }
+    }
+
+    /**
+     * Validates if provided coordinates are valid 2D integer array.
+     *
+     * @param x Array of integers to check. (Accepts null)
+     *
+     * @return True - if valid, false - if null or incorrect size.
+     */
+    private boolean validateCoordinates(int[] x) {
+        return (x != null) && (x.length == 2);
     }
 }

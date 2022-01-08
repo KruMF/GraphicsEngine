@@ -3,6 +3,9 @@ package graphicsEngine.utilities.simpleParts;
 import java.awt.*;
 import java.util.Objects;
 
+/**
+ * A simple border with some color.
+ */
 public class Border extends SimplePart {
     public Color color;
 
@@ -18,6 +21,13 @@ public class Border extends SimplePart {
                 new Color(0,0,0,0));
     }
 
+    /**
+     * Draws border.
+     *
+     * @param g        Graphics to use.
+     * @param location Starting location for drawing.
+     * @param size     Maximum drawing size.
+     */
     @Override
     public void draw(Graphics g, int[] location, int[] size) {
         super.draw(g, location, size);
@@ -26,6 +36,7 @@ public class Border extends SimplePart {
 
     /**
      * Draws a rectangle with specified color.
+     *
      * @param g Graphics to use.
      */
     private void drawBorders(Graphics g) {

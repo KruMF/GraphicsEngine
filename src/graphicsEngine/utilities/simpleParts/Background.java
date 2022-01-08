@@ -3,6 +3,9 @@ package graphicsEngine.utilities.simpleParts;
 import java.awt.*;
 import java.util.Objects;
 
+/**
+ * A simple background with some color.
+ */
 public class Background extends SimplePart {
     public Color color;
 
@@ -18,6 +21,13 @@ public class Background extends SimplePart {
                 new Color(0, 0, 0, 0));
     }
 
+    /**
+     * Draws background.
+     *
+     * @param g        Graphics to use.
+     * @param location Starting location for drawing.
+     * @param size     Maximum drawing size.
+     */
     @Override
     public void draw(Graphics g, int[] location, int[] size) {
         super.draw(g, location, size);
@@ -26,6 +36,7 @@ public class Background extends SimplePart {
 
     /**
      * Fills a rectangle with specified color.
+     *
      * @param g Graphics to use.
      */
     private void fillBackground(Graphics g) {
