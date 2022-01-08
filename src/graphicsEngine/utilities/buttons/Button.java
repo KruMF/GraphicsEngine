@@ -17,8 +17,8 @@ public abstract class Button extends MouseDetectablePart {
 
     public Button(int[] size, boolean[] fixedSize, String text, int[] textOffset) {
         super(size, fixedSize);
-        background = new Background(this.size, this.fixedSize, null);
-        border = new Border(this.size, this.fixedSize, null);
+        background = new Background(null);
+        border = new Border(null);
         this.text = Objects.requireNonNullElse(text, "");
         this.textOffset = Objects.requireNonNullElse(textOffset, new int[] {0, 0});
     }

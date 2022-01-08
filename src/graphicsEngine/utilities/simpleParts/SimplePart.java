@@ -8,6 +8,21 @@ public abstract class SimplePart implements DrawablePart {
     public int[] size;
     public boolean[] fixedSize;
 
+    /**
+     * Creates a stretchable part.
+     */
+    public SimplePart() {
+        relocate(new int[] {0, 0});
+        fixedSize = new boolean[] {false, false};
+        size = new int[] {0, 0};
+    }
+
+    /**
+     * Creates a part with fixable size in either or both directions.
+     *
+     * @param size      Preferred size (accepts null)
+     * @param fixedSize Directions for fixed size (null -> non-fixed)
+     */
     public SimplePart(int[] size, boolean[] fixedSize) {
         relocate(new int[] {0, 0});
         this.fixedSize = Objects.requireNonNullElse(

@@ -11,7 +11,7 @@ import java.awt.*;
 public class Page_1 extends CommonPage {
 
     public Page_1() {
-        super(null);
+        super(null, null);
     }
 
     public void drawCenter(Graphics g, int[] location, int[] size) {

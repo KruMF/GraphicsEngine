@@ -6,8 +6,13 @@ import java.util.Objects;
 public class Border extends SimplePart {
     public Color color;
 
-    public Border(int[] size, boolean[] fixedSize, Color color) {
-        super(size, fixedSize);
+    /**
+     * Creates a border.
+     *
+     * @param color Color. (null = transparent)
+     */
+    public Border(Color color) {
+        super();
         this.color = Objects.requireNonNullElse(
                 color,
                 new Color(0,0,0,0));

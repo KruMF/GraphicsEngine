@@ -10,7 +10,7 @@ import java.awt.*;
 public class Page_0 extends CommonPage {
 
     public Page_0() {
-        super(null);
+        super(null, null);
     }
 
     public void drawCenter(Graphics g, int[] location, int[] size) {

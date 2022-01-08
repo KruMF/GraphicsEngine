@@ -2,48 +2,31 @@ package graphicsEngine.demo.simple.common;
 
 import graphicsEngine.utilities.buttons.Button;
 import graphicsEngine.utilities.containers.AlignmentType;
-import graphicsEngine.utilities.containers.LayerContainer;
-import graphicsEngine.utilities.containers.PartContainer;
-import graphicsEngine.utilities.simpleParts.Background;
-import graphicsEngine.utilities.simpleParts.Border;
+import graphicsEngine.utilities.containers.Panel;
+import graphicsEngine.utilities.simpleParts.DrawablePart;
 import graphicsEngine.utilities.simpleParts.SimplePart;
 
 import java.awt.*;
 import java.util.ArrayList;
 
-public class CommonHeader extends LayerContainer {
+public class CommonHeader extends Panel {
     public static final int HEIGHT = 100;
-    private static final int
-            BUTTON_SEPARATION = 10,
-            BUTTON_WIDTH = 100,
-            BUTTON_COUNT = 2;
 
     public CommonHeader() {
-        super(new int[] {0, HEIGHT}, new boolean[] {false, true}, new ArrayList<>());
-        parts.addAll(prepareLayers());
+        super(new int[] {0, HEIGHT}, new boolean[] {false, true},
+                CommonPage.PANEL_BACKGROUND_COLOR, CommonPage.PANEL_BORDER_COLOR,
+                prepareParts(), AlignmentType.LEFT);
     }
 
-    private ArrayList<? extends SimplePart> prepareLayers() {
-        Color backgroundColor = Color.gray;
-        Color borderColor = Color.darkGray;
-
-        Background background = new Background(this.size, this.fixedSize, backgroundColor);
-        Border border = new Border(this.size, this.fixedSize, borderColor);
-
+    private static ArrayList<DrawablePart> prepareParts(){
+        int logoWidth = 200, buttonWidth = 100;
+        int[] logoSize = new int[] {logoWidth, HEIGHT};
+        int[] buttonSize = new int[] {buttonWidth, HEIGHT};
         return new ArrayList<>() {{
-            add(background);
-            add(border);
-            add(prepareParts());
+            add(new Logo(logoSize, new boolean[] {true, false}));
+            add(new Button_1(buttonSize));
+            add(new Button_1(buttonSize));
         }};
-    }
-
-    private PartContainer prepareParts(){
-        int logoWidth = 200;
-        return new PartContainer(new int[] {0,0}, new boolean[] {false, false},
-                new ArrayList<>(){{
-                    add(new Logo(new int[] {logoWidth, HEIGHT}, new boolean[] {true, false}));
-                    add(prepareButtons(HEIGHT, BUTTON_SEPARATION, BUTTON_WIDTH));}},
-                AlignmentType.LEFT);
     }
 
     static class Logo extends SimplePart {
@@ -78,20 +61,6 @@ public class CommonHeader extends LayerContainer {
 
             g.fillOval(location[0], location[1], (int) size, (int) size);
         }
-    }
-
-
-
-    private static PartContainer prepareButtons(int panelHeight, int buttonSeparation, int buttonWidth) {
-        int[] buttonSize = new int[] {
-                buttonWidth,
-                panelHeight/* - buttonSeparation * 2*/};
-        return new PartContainer(
-                new int[] {0,0}, new boolean[] {false, false},
-                new ArrayList<>() {{
-                    add(new Button_1(buttonSize));
-                    add(new Button_2(buttonSize));
-                }}, AlignmentType.LEFT);
     }
 
     static class Button_1 extends graphicsEngine.utilities.buttons.Button {

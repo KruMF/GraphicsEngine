@@ -13,12 +13,10 @@ public abstract class Page extends LayerContainer {
     public InputChecker inputCheck;
 
     public Page(ArrayList<DrawablePart> layers) {
-        super(new int[] {0, 0}, new boolean[] {false, false}, new ArrayList<>());
-        Background background = new Background(
-                this.size, this.fixedSize,
-                GraphicsManager.data.palette.backgroundColor);
-        parts.add(background);
-        parts.addAll(layers);
+        super(null, null, new ArrayList<>() {{
+            add(new Background(GraphicsManager.data.palette.backgroundColor));
+            addAll(layers);
+        }});
         inputCheck = new InputChecker();
     }
 

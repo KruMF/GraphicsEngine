@@ -6,8 +6,13 @@ import java.util.Objects;
 public class Background extends SimplePart {
     public Color color;
 
-    public Background(int[] size, boolean[] fixedSize, Color color) {
-        super(size, fixedSize);
+    /**
+     * Creates a background.
+     *
+     * @param color Color. (null = transparent)
+     */
+    public Background(Color color) {
+        super();
         this.color = Objects.requireNonNullElse(
                 color,
                 new Color(0, 0, 0, 0));

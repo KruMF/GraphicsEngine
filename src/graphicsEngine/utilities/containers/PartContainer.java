@@ -33,27 +33,41 @@ public class PartContainer extends GenericContainer {
     public void drawParts(Graphics g) {
         LocationAndSize temporaryLocationAndSize = getInitialRemainder();
 
-        for (int i = parts.size() - 1; i >= 0; i--) {
-            if (temporaryLocationAndSize.size <= 0 ){
+        for (DrawablePart drawablePart : parts) {
+            if (temporaryLocationAndSize.size <= 0) {
                 break;
             }
 
-            SimplePart part = (SimplePart) parts.get(i);
+            SimplePart part = (SimplePart) drawablePart;
             if (part != null) {
                 switch (alignment) {
-                    case LEFT, RIGHT : {
+                    case LEFT: {
+                        part.draw(g,
+                                temporaryLocationAndSize.location,
+                                new int[]{part.size[0], size[1]});
+                        temporaryLocationAndSize.modify(alignment, part.size[0]);
+                        break;
+                    }
+                    case RIGHT: {
                         temporaryLocationAndSize.modify(alignment, part.size[0]);
                         part.draw(g,
                                 temporaryLocationAndSize.location,
-                                new int[] {part.size[0], size[1]});
+                                new int[]{part.size[0], size[1]});
                         break;
                     }
-                    case TOP, BOTTOM : {}
-                    default : { // TOP alignment by default
+                    case BOTTOM: {
                         temporaryLocationAndSize.modify(alignment, part.size[1]);
                         part.draw(g,
                                 temporaryLocationAndSize.location,
-                                new int[] {size[0], part.size[1]});
+                                new int[]{size[0], part.size[1]});
+                        break;
+                    }
+                    case TOP:
+                    default: { // TOP alignment by default
+                        part.draw(g,
+                                temporaryLocationAndSize.location,
+                                new int[]{size[0], part.size[1]});
+                        temporaryLocationAndSize.modify(alignment, part.size[1]);
                     }
                 }
             }
