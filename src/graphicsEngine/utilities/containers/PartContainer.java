@@ -13,10 +13,10 @@ public class PartContainer extends GenericContainer {
     /**
      * Creates a part container with specified alignment.
      *
-     * @param size      Size of the container.
-     * @param fixedSize Size fixation by axis.
-     * @param parts     Parts to contain.
-     * @param alignment Alignment to use.
+     * @param size      Size of the container. (Accepts null)
+     * @param fixedSize Size fixation by axis. (Null - non-fixed)
+     * @param parts     Parts to contain. (Accepts null)
+     * @param alignment Alignment to use. (By default aligned to top)
      */
     public PartContainer(int[] size, boolean[] fixedSize,
                          ArrayList<DrawablePart> parts, AlignmentType alignment) {
@@ -31,124 +31,116 @@ public class PartContainer extends GenericContainer {
      */
     @Override
     public void drawParts(Graphics g) {
-        LocationAndSize temporaryLocationAndSize = getInitialRemainder();
+        RemainderHelper remainingSize = new RemainderHelper(RemainderHelper.getInitialSize(this));
+        RemainderHelper drawingLocation = new RemainderHelper(RemainderHelper.getInitialLocation(this));
 
         for (DrawablePart drawablePart : parts) {
-            if (temporaryLocationAndSize.size <= 0) {
+            if (!remainingSize.checkRemaining()) {
                 break;
             }
 
             SimplePart part = (SimplePart) drawablePart;
             if (part != null) {
-                switch (alignment) {
-                    case LEFT: {
-                        part.draw(g,
-                                temporaryLocationAndSize.location,
-                                new int[]{part.size[0], size[1]});
-                        temporaryLocationAndSize.modify(alignment, part.size[0]);
-                        break;
-                    }
-                    case RIGHT: {
-                        temporaryLocationAndSize.modify(alignment, part.size[0]);
-                        part.draw(g,
-                                temporaryLocationAndSize.location,
-                                new int[]{part.size[0], size[1]});
-                        break;
-                    }
-                    case BOTTOM: {
-                        temporaryLocationAndSize.modify(alignment, part.size[1]);
-                        part.draw(g,
-                                temporaryLocationAndSize.location,
-                                new int[]{size[0], part.size[1]});
-                        break;
-                    }
-                    case TOP:
-                    default: { // TOP alignment by default
-                        part.draw(g,
-                                temporaryLocationAndSize.location,
-                                new int[]{size[0], part.size[1]});
-                        temporaryLocationAndSize.modify(alignment, part.size[1]);
-                    }
-                }
+                drawSinglePart(g, part, remainingSize, drawingLocation);
             }
         }
     }
 
-    /**
-     * A helper class for aligning parts.
-     */
-    private static class LocationAndSize {
-        int[] location;
-        int size;
+    private void drawSinglePart(Graphics g, SimplePart part,
+                                RemainderHelper remainingSize, RemainderHelper drawLocation){
+        int[] partLocation;
+        int[] partSize;
+        int sizeDifference;
+        switch (alignment) {
+            case LEFT: {
+                part.resize(new int[] {remainingSize.x, size[1]}); // stretches if possible
+                partSize = part.size;
+                sizeDifference = partSize[0];
 
-        LocationAndSize(int[] location, int size) {
-            this.location = location;
-            this.size = size;
+                partLocation = new int[] {
+                        location[0] + drawLocation.x,
+                        location[1]};
+                break;
+            }
+            case RIGHT: {
+                part.resize(new int[] {remainingSize.x, size[1]}); // stretches if possible
+                partSize = part.size;
+                sizeDifference = partSize[0];
+
+                partLocation = new int[] {
+                        location[0] + size[0] - drawLocation.x - sizeDifference,
+                        location[1]};
+                break;
+            }
+            case BOTTOM: {
+                part.resize(new int[] {size[0], remainingSize.x}); // stretches if possible
+                partSize = part.size;
+                sizeDifference = partSize[1];
+
+                partLocation = new int[] {
+                        location[0],
+                        location[1] + size[1] - drawLocation.x - sizeDifference};
+                break;
+            }
+            case TOP:
+            default: { // TOP alignment by default
+                part.resize(new int[] {size[0], remainingSize.x}); // stretches if possible
+                partSize = part.size;
+                sizeDifference = partSize[1];
+
+                partLocation = new int[] {
+                        location[0],
+                        location[1] + drawLocation.x};
+                break;
+            }
+        }
+        remainingSize.modify(sizeDifference);
+        drawLocation.modify(sizeDifference);
+        part.draw(g, partLocation, partSize);
+    }
+
+    private static class RemainderHelper {
+        int x;
+
+        RemainderHelper(int x) {
+            this.x = x;
         }
 
-        void modify(AlignmentType alignment, int amount) {
-            switch (alignment) {
-                case BOTTOM : {
-                    location = new int[] {
-                            location[0],
-                            location[1] - amount
-                    };
-                    break;
+        void modify(int delta) {
+            x += delta;
+        }
+
+        boolean checkRemaining(){
+            return x > 0;
+        }
+
+        static int getInitialSize(PartContainer container) {
+            switch (container.alignment) {
+                case LEFT, RIGHT : {
+                    return container.size[0];
                 }
+                case TOP, BOTTOM : {}
+                default : {
+                    return container.size[1];
+                }
+            }
+        }
+
+        static int getInitialLocation(PartContainer container) {
+            switch (container.alignment) {
                 case LEFT : {
-                    location = new int[] {
-                            location[0] + amount,
-                            location[1]
-                    };
-                    break;
+                    return container.location[0];
                 }
                 case RIGHT : {
-                    location = new int[] {
-                            location[0] - amount,
-                            location[1]
-                    };
-                    break;
+                    return container.location[0] + getInitialSize(container);
                 }
-                case TOP : {} // default alignment type
+                case BOTTOM : {
+                    return container.location[1] + getInitialSize(container);
+                }
+                case TOP : {}
                 default : {
-                    location = new int[] {
-                            location[0],
-                            location[1] + amount
-                    };
-                    break;
+                    return container.location[1];
                 }
-            }
-
-            size -= amount;
-        }
-    }
-
-    private LocationAndSize getInitialRemainder() {
-        switch (alignment) {
-            case BOTTOM : {
-                return new LocationAndSize(
-                        new int[] {
-                                location[0],
-                                location[1] + size[1]},
-                        size[1]);
-            }
-            case LEFT : {
-                return new LocationAndSize(
-                        location,
-                        size[0]);
-            }
-            case RIGHT : {
-                return new LocationAndSize(
-                        new int[] {
-                                location[0] + size[0],
-                                location[1]},
-                        size[0]);
-            }
-            case TOP : {} // default alignment type
-            default : {
-                return new LocationAndSize(
-                        location,
-                        size[1]);
             }
         }
     }
