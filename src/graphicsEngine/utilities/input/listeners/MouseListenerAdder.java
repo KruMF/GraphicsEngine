@@ -22,7 +22,12 @@ class MouseListenerAdder {
         addMouseWheelListener(window);
     }
 
-    // TODO: add javadoc
+    /**
+     * Adds a mouse listener to the window for checking various mouse actions.
+     *
+     * @param window    Window to add listener to.
+     * @param inputData Input data to modify.
+     */
     private void addMouseListener(JFrame window, InputData inputData) {
         window.getContentPane().addMouseListener(new MouseListener() {
             @Override
@@ -46,7 +51,12 @@ class MouseListenerAdder {
         });
     }
 
-    // TODO: add javadoc
+    /**
+     * Adds a mouse motion listener to the window.
+     *
+     * @param window    Window to add listener to.
+     * @param inputData Input data to modify.
+     */
     private void addMouseMotionListener(JFrame window, InputData inputData) {
         window.getContentPane().addMouseMotionListener(new MouseMotionListener() {
             @Override
@@ -61,7 +71,13 @@ class MouseListenerAdder {
         });
     }
 
-    // TODO: add javadoc
+    /**
+     * Adds a mouse wheel listener to the window.
+     * Currently not implemented.
+     * TODO: implement
+     *
+     * @param window Window to add listener to.
+     */
     private void addMouseWheelListener(JFrame window) {
         window.addMouseWheelListener(new MouseWheelListener() {
             @Override
@@ -71,7 +87,12 @@ class MouseListenerAdder {
         });
     }
 
-    // TODO: add javadoc
+    /**
+     * Updates mouse coordinates when mouse moved.
+     *
+     * @param inputData Input data to modify.
+     * @param e         Mouse event for getting coordinates.
+     */
     private static void updateMouseCoordinates(InputData inputData, MouseEvent e) {
         inputData.mouse[0] = e.getX();
         inputData.mouse[1] = e.getY();

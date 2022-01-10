@@ -21,7 +21,12 @@ class KeyboardListenerAdder {
         addKeyListener(window, inputData);
     }
 
-    // TODO: add javadoc
+    /**
+     * Adds keyboard listeners to the window.
+     *
+     * @param window    Window to add listeners to.
+     * @param inputData Input data to modify.
+     */
     private void addKeyListener(JFrame window, InputData inputData) {
         window.addKeyListener(new KeyListener() {
             @Override
@@ -47,7 +52,14 @@ class KeyboardListenerAdder {
         });
     }
 
-    // TODO: add javadoc
+    /**
+     * Checks if key has already been pressed.
+     *
+     * @param keyArray Array of pressed keys.
+     * @param key      Key to check.
+     *
+     * @return True if key already pressed, false if not.
+     */
     private boolean keyAlreadyPressedCheck(int[] keyArray, int key) {
         for (int i : keyArray) {
             if (key == i) {
@@ -57,7 +69,14 @@ class KeyboardListenerAdder {
         return false;
     }
 
-    // TODO: add javadoc
+    /**
+     * Adds new key to the array of pressed keys.
+     *
+     * @param keyArray Array of pressed keys.
+     * @param key      Key to add.
+     *
+     * @return New array of pressed keys.
+     */
     private int[] addNewKey(int[] keyArray, int key) {
         int[] newArray = new int[keyArray.length + 1];
         System.arraycopy(
@@ -67,7 +86,14 @@ class KeyboardListenerAdder {
         return newArray;
     }
 
-    // TODO: add javadoc
+    /**
+     * Removes a key from the array of pressed keys.
+     *
+     * @param keyArray Array of pressed keys.
+     * @param key      Key to remove.
+     *
+     * @return New array of pressed keys.
+     */
     private int[] removeKey(int[] keyArray, int key) {
         int[] newArray = new int[keyArray.length - 1];
         for (int i = 0, j = 0; i < keyArray.length; i++) {
