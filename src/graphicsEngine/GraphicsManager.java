@@ -7,7 +7,9 @@ import graphicsEngine.utilities.input.InputManager;
 
 import java.util.ArrayList;
 
-// TODO: add javadoc
+/**
+ * Graphics manager for managing graphics.
+ */
 public class GraphicsManager implements Runnable {
     public static GraphicsData data;
     public static PageManager pages;
@@ -61,7 +63,9 @@ public class GraphicsManager implements Runnable {
         running = true;
     }
 
-    // TODO: add javadoc
+    /**
+     * Runs when GraphicsManager thread is being run.
+     */
     @SuppressWarnings("BusyWait")
     @Override
     public void run() {
