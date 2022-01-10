@@ -7,10 +7,13 @@
    * flexible container in center
 2. Add centering container
    * single central container
-3. Improve `SimpleDemo`
+3. Add textbox
+4. Improve `SimpleDemo`
    * Side panels
    * demo data
    * simple animation in middle
+5. Add checkbox, maybe radio buttons?
+6. Maybe a slider?
 
 ## For first release
 

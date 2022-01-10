@@ -9,14 +9,23 @@ import graphicsEngine.utilities.simpleParts.Border;
 import java.awt.Graphics;
 import java.util.Objects;
 
-// TODO: add javadoc
+/**
+ * A simple abstract button. Must be extended.
+ */
 public abstract class Button extends MouseDetectablePart {
     Background background;
     Border border;
     String text;
     int[] textOffset;
 
-    // TODO: add javadoc
+    /**
+     * Creates a simple button.
+     *
+     * @param size       Size.
+     * @param fixedSize  Size fixation in either direction.
+     * @param text       Text to display. (Null - empty)
+     * @param textOffset Text offset for manual centering. (Null - no offset)
+     */
     public Button(int[] size, boolean[] fixedSize, String text, int[] textOffset) {
         super(size, fixedSize);
         background = new Background(null);
@@ -25,7 +34,9 @@ public abstract class Button extends MouseDetectablePart {
         this.textOffset = Objects.requireNonNullElse(textOffset, new int[] {0, 0});
     }
 
-    // TODO: add javadoc
+    /**
+     * General drawing of a button.
+     */
     @Override
     public void draw(Graphics g, int[] location, int[] size) {
         super.draw(g, location, size);
@@ -34,7 +45,9 @@ public abstract class Button extends MouseDetectablePart {
         drawButtonText(g);
     }
 
-    // TODO: add javadoc
+    /**
+     * Drawing a button when inactive.
+     */
     @Override
     public void drawInactive() {
         ButtonColors colors = GraphicsManager.data.palette.buttonColors;
@@ -42,7 +55,9 @@ public abstract class Button extends MouseDetectablePart {
         border.color = colors.borderColor;
     }
 
-    // TODO: add javadoc
+    /**
+     * Drawing a button when hovered.
+     */
     @Override
     public void drawHovered() {
         ButtonColors colors = GraphicsManager.data.palette.buttonColors;
@@ -50,7 +65,9 @@ public abstract class Button extends MouseDetectablePart {
         border.color = colors.borderColor_active;
     }
 
-    // TODO: add javadoc
+    /**
+     * Drawing a button when clicked.
+     */
     @Override
     public void drawClicked() {
         ButtonColors colors = GraphicsManager.data.palette.buttonColors;
@@ -58,7 +75,11 @@ public abstract class Button extends MouseDetectablePart {
         border.color = colors.borderColor_active;
     }
 
-    // TODO: add javadoc
+    /**
+     * Draws the text of a button.
+     *
+     * TODO: needs improvements
+     */
     private void drawButtonText(Graphics g) {
         g.setColor(GraphicsManager.data.palette.buttonColors.textColor);
         g.drawString(text,
@@ -66,13 +87,17 @@ public abstract class Button extends MouseDetectablePart {
                 location[1] + size[1] / 2 + textOffset[1]);
     }
 
-    // TODO: add javadoc
+    /**
+     * Check interaction of a button.
+     */
     @Override
     public void interactionCheck(InputData input) {
         super.interactionCheck(input);
     }
 
-    // TODO: add javadoc
+    /**
+     * Check if button is activated and perform its action, if it is.
+     */
     public void actionCheck() {
         if (activated) {
             action();
@@ -80,7 +105,9 @@ public abstract class Button extends MouseDetectablePart {
         activated = false; //debounce
     }
 
-    // TODO: add javadoc
+    /**
+     * Action to perform upon button activation.
+     */
     public void action() {
         System.out.println("Button action placeholder");
     }
