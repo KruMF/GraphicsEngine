@@ -5,7 +5,9 @@ import graphicsEngine.utilities.simpleParts.SimplePart;
 
 import java.awt.*;
 
-// TODO: add javadoc
+/**
+ * A simple mouse detectable part.
+ */
 public abstract class MouseDetectablePart extends SimplePart {
     public boolean hovered;
     public boolean clicked;
@@ -21,14 +23,22 @@ public abstract class MouseDetectablePart extends SimplePart {
         prepareActivityBooleans();
     }
 
-    // TODO: add javadoc
+    /**
+     * Prepares default activity booleans.
+     */
     private void prepareActivityBooleans() {
         hovered = false;
         clicked = false;
         activated = false;
     }
 
-    // TODO: add javadoc
+    /**
+     * Draws the part.
+     *
+     * @param g        Graphics to use.
+     * @param location Location of the part.
+     * @param size     Size of the part.
+     */
     @Override
     public void draw(Graphics g, int[] location, int[] size) {
         super.draw(g, location, size);
@@ -41,14 +51,26 @@ public abstract class MouseDetectablePart extends SimplePart {
         }
     }
 
-    // TODO: add javadoc
+    /**
+     * Draws the part when clicked.
+     */
     public void drawClicked() {}
-    // TODO: add javadoc
+
+    /**
+     * Draws the part when hovered.
+     */
     public void drawHovered() {}
-    // TODO: add javadoc
+
+    /**
+     * Draws the part when inactive.
+     */
     public void drawInactive() {}
 
-    // TODO: add javadoc
+    /**
+     * Checks interaction of this part.
+     *
+     * @param input Input data to use for checking interaction.
+     */
     public void interactionCheck(InputData input) {
         mouseLocationCheck(input.mouse);
         if (input.mouseClick) {
@@ -58,7 +80,13 @@ public abstract class MouseDetectablePart extends SimplePart {
         }
     }
 
-    // TODO: add javadoc
+    /**
+     * Check if mouse coordinates are within this part.
+     *
+     * @param mouse Coordinates of the mouse.
+     *
+     * @return True if within, false if outside.
+     */
     private boolean checkXY(int[] mouse) {
         return mouse[0] > location[0]
                 && mouse[1] > location[1]
@@ -66,19 +94,28 @@ public abstract class MouseDetectablePart extends SimplePart {
                 && mouse[1] < location[1] + size[1];
     }
 
-    // TODO: add javadoc
+    /**
+     * Checks if mouse is hovering above this part and sets status accordingly.
+     *
+     * @param mouse Coordinates of the mouse.
+     */
     private void mouseLocationCheck(int[] mouse) {
         hovered = checkXY(mouse);
     }
 
-    // TODO: add javadoc
+    /**
+     * Checks if mouse is being clicked inside ths part and sets status accordingly.
+     */
     private void mouseClickCheck() {
         if (hovered) {
             clicked = true;
         }
     }
 
-    // TODO: add javadoc
+    /**
+     * Checks if mouse click is released inside this part.
+     * Sets activity status accordingly.
+     */
     private void mouseReleaseCheck() {
         if (clicked && hovered) {
             activated = true;

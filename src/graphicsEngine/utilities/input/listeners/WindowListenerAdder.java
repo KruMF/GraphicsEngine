@@ -10,17 +10,33 @@ import java.awt.event.ComponentEvent;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
-// TODO: add javadoc
+/**
+ * Window listener adder class.
+ */
 class WindowListenerAdder {
 
-    // TODO: add javadoc
+    /**
+     * Creates a window listener adder.
+     *
+     * @param window           Window to add listeners to.
+     * @param windowParameters Window parameters to modify.
+     * @param inputData        Input data to modify.
+     * @param exitManager      Exit manager to call upon exit.
+     */
     WindowListenerAdder(JFrame window, WindowParameters windowParameters,
                         InputData inputData, ExitManager exitManager) {
         addWindowListener(window, windowParameters, inputData, exitManager);
         addWindowResizeListener(window, windowParameters);
     }
 
-    // TODO: add javadoc
+    /**
+     * Adds window listeners to the window.
+     *
+     * @param window           Window to add listeners to.
+     * @param windowParameters Window parameters to modify.
+     * @param inputData        Input data to modify.
+     * @param exitManager      Exit manager to call upon exit.
+     */
     private void addWindowListener(JFrame window, WindowParameters windowParameters,
                                    InputData inputData, ExitManager exitManager) {
         window.addWindowListener(new WindowListener() {
@@ -59,7 +75,12 @@ class WindowListenerAdder {
         });
     }
 
-    // TODO: add javadoc
+    /**
+     * Adds window resize listener to the window.
+     *
+     * @param window           Window to add listener to.
+     * @param windowParameters Window parameters to modify.
+     */
     private void addWindowResizeListener(JFrame window, WindowParameters windowParameters) {
         window.addComponentListener(new ComponentAdapter() {
             @Override

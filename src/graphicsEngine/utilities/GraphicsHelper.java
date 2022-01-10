@@ -3,7 +3,11 @@ package graphicsEngine.utilities;
 import java.awt.Graphics;
 import java.util.ArrayList;
 
-// TODO: needs rework and javadoc
+/**
+ * Helper class for graphics.
+ *
+ * TODO: needs rework
+ */
 public class GraphicsHelper {
     private static final int rowHeight = 20, textOffsetFromBottom = 5;
 

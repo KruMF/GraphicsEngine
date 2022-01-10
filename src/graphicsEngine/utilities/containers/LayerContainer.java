@@ -5,7 +5,9 @@ import graphicsEngine.utilities.simpleParts.DrawablePart;
 import java.awt.*;
 import java.util.ArrayList;
 
-// TODO: add javadoc
+/**
+ * A container containing simple parts that draws them as layers on top of one another.
+ */
 public class LayerContainer extends GenericContainer {
 
     /**

@@ -6,13 +6,21 @@ import graphicsEngine.utilities.input.listeners.ListenerAdder;
 
 import javax.swing.JFrame;
 
-// TODO: add javadoc
+/**
+ * Input manager for managing input.
+ */
 public class InputManager {
     public InputData inputData;
 
-    // TODO: add javadoc
+    /**
+     * Creates new input manager with default listeners.
+     *
+     * @param window           Window to add listeners to.
+     * @param windowParameters Window parameters.
+     * @param exitManager      Exit manager to call upon exit.
+     */
     public InputManager(JFrame window, WindowParameters windowParameters, ExitManager exitManager) {
         inputData = new InputData();
-        new ListenerAdder(window, windowParameters, inputData, exitManager, false);
+        new ListenerAdder(window, windowParameters, inputData, exitManager);
     }
 }
