@@ -2,23 +2,26 @@ package graphicsEngine.data;
 
 import java.util.ArrayList;
 
+/**
+ * Class for graphics data.
+ */
 public class GraphicsData {
-
     public WindowParameters windowParameters;
-    public ColorParameters colorParameters;
+    public Palette palette;
 
     public boolean debugLayer;
-    public boolean printInputToConsole;
 
-    public ArrayList<String[]> fileHandlerTestData;
+    /**
+     * Creates graphics data.
+     *
+     * @param windowParameters Array of importable window parameters.
+     * @param debugLayer       Drawing of the debug layer.
+     *                         TODO: remove
+     */
+    public GraphicsData(ArrayList<String[]> windowParameters, boolean debugLayer) {
+        this.windowParameters = new WindowParameters(windowParameters);
+        palette = new Palette();
 
-    public GraphicsData(
-            boolean loadWindowParameters, boolean loadColorParameters,
-            boolean _debugLayer, boolean inputToConsole){
-        windowParameters = new WindowParameters(loadWindowParameters);
-        colorParameters = new ColorParameters(loadColorParameters);
-
-        debugLayer = _debugLayer;
-        printInputToConsole = inputToConsole;
+        this.debugLayer = debugLayer;
     }
 }

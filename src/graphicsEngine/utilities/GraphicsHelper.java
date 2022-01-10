@@ -1,30 +1,22 @@
-package graphicsEngine;
+package graphicsEngine.utilities;
 
-import java.awt.*;
+import java.awt.Graphics;
 import java.util.ArrayList;
 
+/**
+ * Helper class for graphics.
+ *
+ * TODO: needs rework
+ */
 public class GraphicsHelper {
-
     private static final int rowHeight = 20, textOffsetFromBottom = 5;
-
-    /**
-     * Fills a rectangle with specified color.
-     * @param g Graphics to use.
-     * @param color Color to use.
-     * @param location Starting location.
-     * @param size Size.
-     */
-    public static void drawBackground(Graphics g, Color color, int[] location, int[] size){
-        g.setColor(color);
-        g.fillRect(location[0], location[1], size[0], size[1]);
-    }
 
     /**
      * Method for calculating vertical size of rows printed.
      * @param count Number of rows.
      * @return Height.
      */
-    public static int rowsTotalHeight(int count){
+    public static int rowsTotalHeight(int count) {
         return count * rowHeight;
     }
 
@@ -36,11 +28,8 @@ public class GraphicsHelper {
      * @param location Starting XY location.
      * @return Number of rows printed.
      */
-    public static int drawStrings_VA(
-            Graphics g,
-            int rowNumber, String[] rows,
-            int[] location){
-        for (String row : rows){
+    public static int drawStrings_VA(Graphics g, int rowNumber, String[] rows, int[] location) {
+        for (String row : rows) {
             rowNumber++;
             int drawY = location[1] + (rowNumber) * rowHeight - textOffsetFromBottom;
             g.drawString(row, location[0], drawY);
@@ -57,10 +46,9 @@ public class GraphicsHelper {
      * @param location Starting location for whole table.
      * @return Total row count (including header and column titles).
      */
-    public static int drawTable(
-            Graphics g,
-            String[] header, ArrayList<Column> columnData, ArrayList<String[]> rows,
-            int[] location){
+    public static int drawTable(Graphics g,
+                                String[] header, ArrayList<Column> columnData, ArrayList<String[]> rows,
+                                int[] location) {
         int rowNumber = drawStrings_VA(
                 g, 0,
                 header,
@@ -69,19 +57,19 @@ public class GraphicsHelper {
 
         //checks every column
         int columnX = location[0];
-        for (int i = 0; i < columnData.size(); i++){
+        for (int i = 0; i < columnData.size(); i++) {
             //title row
             columnX += columnData.get(i).separation;
             int rowNumberTemp = drawStrings_VA(
                     g, rowNumber,
-                    new String[]{columnData.get(i).title},
-                    new int[]{columnX, location[1]});
+                    new String[] {columnData.get(i).title},
+                    new int[] {columnX, location[1]});
 
             //data rows
             rowNumberTemp = drawStrings_VA(
                     g, rowNumberTemp,
                     rows.get(i),
-                    new int[]{columnX, location[1]});
+                    new int[] {columnX, location[1]});
 
             rowNumberMax = Math.max(rowNumberMax, rowNumberTemp);
         }

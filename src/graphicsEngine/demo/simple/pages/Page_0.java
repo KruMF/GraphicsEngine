@@ -1,29 +1,28 @@
-package graphicsEngine.pages;
+package graphicsEngine.demo.simple.pages;
+
+import graphicsEngine.demo.simple.common.CommonPage;
 
 import java.awt.*;
 
-public class Page_0 extends Page {
-
-    //This is page 1
-    //Temporarily displaying calendar
+// TODO: needs rework
+/**
+ * This is page 0
+ */
+public class Page_0 extends CommonPage {
 
     public Page_0() {
-        super();
+        super(null, null);
     }
 
-    @Override
     public void drawCenter(Graphics g, int[] location, int[] size) {
-        int[] margin = new int[]{20, 20};
-        int[] drawSize = new int[]{
+        int[] margin = new int[] {20, 20};
+        int[] drawSize = new int[] {
                 size[0] - 2 * margin[0],
                 size[1] - 2 * margin[1]};
 
         //draw stuff here
-        /*TimelineTemp.draw(
-                g,
-                location,
-                size);*/
 
+        //red rectangle offset from sides
         g.setColor(Color.red);
         g.drawRect(
                 location[0] + margin[0],
