@@ -8,10 +8,21 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.Objects;
 
-// TODO: add javadoc
+/**
+ * A layer container with background and border pre-prepared.
+ */
 public class Panel extends LayerContainer {
 
-    // TODO: add javadoc
+    /**
+     * Creates a simple panel.
+     *
+     * @param size       Size of the panel.
+     * @param fixedSize  Size fixation status for either direction.
+     * @param background Background color.
+     * @param border     Border color.
+     * @param panelParts ArrayList of containable parts. (Alignable)
+     * @param alignment  Alignment type of containable parts. (Null - align to top)
+     */
     public Panel(int[] size, boolean[] fixedSize,
                  Color background, Color border,
                  ArrayList<DrawablePart> panelParts, AlignmentType alignment) {

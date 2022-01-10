@@ -7,7 +7,9 @@ import java.util.ArrayList;
 import java.awt.*;
 import java.util.Objects;
 
-// TODO: add javadoc
+/**
+ * A part container for containing simple parts and aligning them in specified way.
+ */
 public class PartContainer extends GenericContainer {
     public AlignmentType alignment;
 
@@ -47,7 +49,14 @@ public class PartContainer extends GenericContainer {
         }
     }
 
-    // TODO: add javadoc
+    /**
+     * Draws a single contained part.
+     *
+     * @param g             Graphics to use.
+     * @param part          Part to draw.
+     * @param remainingSize Remaining size for drawing.
+     * @param drawLocation  Location offset from containers location.
+     */
     private void drawSinglePart(Graphics g, SimplePart part,
                                 RemainderHelper remainingSize, RemainderHelper drawLocation) {
         int[] partLocation;
@@ -100,9 +109,10 @@ public class PartContainer extends GenericContainer {
         part.draw(g, partLocation, partSize);
     }
 
-    // TODO: update javadoc
     /**
      * A helper class for calculating remainders
+     *
+     * TODO: update javadoc
      */
     private static class RemainderHelper {
         int x;
