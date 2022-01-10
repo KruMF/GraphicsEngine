@@ -5,10 +5,17 @@ import graphicsEngine.utilities.input.InputData;
 import javax.swing.JFrame;
 import java.awt.event.*;
 
-// TODO: add javadoc
+/**
+ * Mouse listener adder class.
+ */
 class MouseListenerAdder {
 
-    // TODO: add javadoc
+    /**
+     * Creates a mouse listener adder.
+     *
+     * @param window    Window to add listeners to.
+     * @param inputData Input data to modify.
+     */
     MouseListenerAdder(JFrame window, InputData inputData) {
         addMouseListener(window, inputData);
         addMouseMotionListener(window, inputData);

@@ -6,10 +6,17 @@ import javax.swing.JFrame;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-// TODO: add javadoc
+/**
+ * Keyboard listener adder class.
+ */
 class KeyboardListenerAdder {
 
-    // TODO: add javadoc
+    /**
+     * Creates a keyboard listener adder.
+     *
+     * @param window    Window to add listeners to.
+     * @param inputData Input data to modify.
+     */
     KeyboardListenerAdder(JFrame window, InputData inputData) {
         addKeyListener(window, inputData);
     }
