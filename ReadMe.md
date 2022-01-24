@@ -7,16 +7,14 @@ Free to use and modify for whatever purposes. No copyrights apply.
 
 <h2>Instructions</h2>
 
-Copy-paste all this project wherever, just remember to mark the `src` folder as source.
-
-<i>Best done using git.</i>
+Maven support recently added. Detailed info coming...
 
 <i>Latest working version available at `master` branch.</i>
 
 
 <h2>Standalone demo</h2>
 
-Check `src\graphicsEngine\demo` for standalone demo versions.
+Check `graphicsEngine\demo` for standalone demo versions.
 
 <i>Launch instructions available there.</i>
 

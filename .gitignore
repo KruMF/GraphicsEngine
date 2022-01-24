@@ -1,3 +1,7 @@
-# Default ignored files
+# IntelliJ generated files
 /.idea/
-/out/
+*.iml
+
+# Maven generated files with potentially sensitive data
+/target/maven-status/
+/target/surefire-reports/
