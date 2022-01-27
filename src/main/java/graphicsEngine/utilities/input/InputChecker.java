@@ -1,6 +1,7 @@
 package graphicsEngine.utilities.input;
 
 import graphicsEngine.utilities.containers.ButtonContainer;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * A class for checking user input.
@@ -34,7 +35,7 @@ public class InputChecker {
      *
      * @param input InputManager containing inputData with array of pressed keys.
      */
-    private void keyboardActionCheck(InputManager input) {
+    private void keyboardActionCheck(@NotNull InputManager input) {
         for (int key : input.inputData.keys) {
             String keyText = java.awt.event.KeyEvent.getKeyText(key);
             keyboardActions(keyText);
@@ -47,7 +48,7 @@ public class InputChecker {
      *
      * @param keyText Text of key pressed.
      */
-    public void keyboardActions(String keyText){
+    public void keyboardActions(@NotNull String keyText){
         System.out.println("Key " + keyText + " pressed. No actions set up.");
     }
 

@@ -1,6 +1,7 @@
 package graphicsEngine.demo.simple.common;
 
 import graphicsEngine.utilities.simpleParts.SimplePart;
+import org.jetbrains.annotations.NotNull;
 
 import java.awt.*;
 
@@ -16,7 +17,7 @@ public class Logo extends SimplePart {
     }
 
     @Override
-    public void draw(Graphics g, int[] location, int[] size){
+    public void draw(@NotNull Graphics g, int[] location, int[] size){
         super.draw(g, location, size);
         drawLogo(g);
     }

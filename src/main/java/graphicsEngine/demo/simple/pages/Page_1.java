@@ -5,6 +5,7 @@ import graphicsEngine.demo.simple.common.CommonPage;
 import graphicsEngine.utilities.GraphicsHelper;
 import graphicsEngine.utilities.containers.AlignmentType;
 import graphicsEngine.utilities.simpleParts.SimplePart;
+import org.jetbrains.annotations.NotNull;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -31,7 +32,7 @@ public class Page_1 extends CommonPage {
         }
 
         @Override
-        public void draw(Graphics g, int[] location, int[] size) {
+        public void draw(@NotNull Graphics g, int[] location, int[] size) {
             super.draw(g, location, size);
 
             g.setColor(Color.green);

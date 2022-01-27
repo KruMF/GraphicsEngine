@@ -1,5 +1,8 @@
 package graphicsEngine.utilities.simpleParts;
 
+import com.google.inject.internal.Nullable;
+import org.jetbrains.annotations.NotNull;
+
 import java.awt.Graphics;
 
 /**
@@ -14,21 +17,22 @@ public interface DrawablePart {
      * @param location Starting location for drawing.
      * @param size     Maximum drawing size.
      */
-    void draw(Graphics g, int[] location, int[] size);
+    void draw(@NotNull Graphics g,
+              @Nullable int[] location, @Nullable int[] size);
 
     /**
      * A helper method for relocating part.
      *
      * @param location New location.
      */
-    void relocate(int[] location);
+    void relocate(@Nullable int[] location);
 
     /**
      * A helper method for resizing part.
      *
      * @param size New size.
      */
-    void resize(int[] size);
+    void resize(@Nullable int[] size);
 
     /**
      * Manual resize of the part. Intended for fixed parts.

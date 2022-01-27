@@ -3,6 +3,9 @@ package graphicsEngine.utilities.simpleParts;
 import java.awt.Graphics;
 import java.util.Objects;
 
+import com.google.inject.internal.Nullable;
+import org.jetbrains.annotations.NotNull;
+
 /**
  * A simple drawable part with updatable size and location.
  */
@@ -26,7 +29,7 @@ public abstract class SimplePart implements DrawablePart {
      * @param size      Preferred size (accepts null)
      * @param fixedSize Directions for fixed size (null -> non-fixed)
      */
-    public SimplePart(int[] size, boolean[] fixedSize) {
+    public SimplePart(@Nullable int[] size, @Nullable boolean[] fixedSize) {
         relocate(new int[] {0, 0});
         this.fixedSize = Objects.requireNonNullElse(
                 fixedSize,
@@ -44,7 +47,8 @@ public abstract class SimplePart implements DrawablePart {
      * @param size     Maximum drawing size.
      */
     @Override
-    public void draw(Graphics g, int[] location, int[] size) {
+    public void draw(@NotNull Graphics g,
+                     @Nullable int[] location, @Nullable int[] size) {
         relocate(location);
         resize(size);
     }
@@ -55,7 +59,7 @@ public abstract class SimplePart implements DrawablePart {
      * @param location New location. (Null - unchanged)
      */
     @Override
-    public void relocate(int[] location) {
+    public void relocate(@Nullable int[] location) {
         if (validateCoordinates(location)) {
             this.location = location;
         }
@@ -67,7 +71,7 @@ public abstract class SimplePart implements DrawablePart {
      * @param size New size. (Null - unchanged)
      */
     @Override
-    public void resize(int[] size) {
+    public void resize(@Nullable int[] size) {
         if (validateCoordinates(size)) {
             if (!fixedSize[0]) {
                 this.size[0] = size[0];
@@ -81,10 +85,10 @@ public abstract class SimplePart implements DrawablePart {
     /**
      * Manual resize of the part. Intended for fixed parts.
      *
-     * @param size New size.
+     * @param size New size. (Null - doesn't resize)
      */
     @Override
-    public void manualResize(int[] size) {
+    public void manualResize(@Nullable int[] size) {
         if (validateCoordinates(size)) {
             this.size = size;
         }
@@ -93,11 +97,11 @@ public abstract class SimplePart implements DrawablePart {
     /**
      * Validates if provided coordinates are valid 2D integer array.
      *
-     * @param x Array of integers to check. (Accepts null)
+     * @param x Array of integers to check.
      *
      * @return True - if valid, false - if null or incorrect size.
      */
-    private boolean validateCoordinates(int[] x) {
+    private boolean validateCoordinates(@Nullable int[] x) {
         return (x != null) && (x.length == 2);
     }
 }

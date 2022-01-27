@@ -4,6 +4,7 @@ import graphicsEngine.data.colors.Palette;
 import graphicsEngine.demo.simple.common.CommonPage;
 import graphicsEngine.utilities.containers.AlignmentType;
 import graphicsEngine.utilities.simpleParts.SimplePart;
+import org.jetbrains.annotations.NotNull;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -30,7 +31,7 @@ public class Page_0 extends CommonPage {
         }
 
         @Override
-        public void draw(Graphics g, int[] location, int[] size) {
+        public void draw(@NotNull Graphics g, int[] location, int[] size) {
             super.draw(g, location, size);
 
             int[] margin = new int[] {20, 20};

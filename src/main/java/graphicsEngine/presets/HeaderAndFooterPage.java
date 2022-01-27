@@ -1,5 +1,6 @@
 package graphicsEngine.presets;
 
+import com.google.inject.internal.Nullable;
 import graphicsEngine.data.colors.Palette;
 import graphicsEngine.data.colors.PanelColors;
 import graphicsEngine.presets.panels.CommonFooter;
@@ -17,8 +18,8 @@ import java.util.Objects;
 public abstract class HeaderAndFooterPage extends Page {
 
     // TODO: add javadoc
-    public HeaderAndFooterPage(InputChecker inputChecker,
-                               Palette palette,
+    public HeaderAndFooterPage(@Nullable InputChecker inputChecker,
+                               @Nullable Palette palette,
                                CommonHeader header, CommonFooter footer,
                                ArrayList<? extends SimplePart> centralParts,
                                AlignmentType centralAlignment) {
@@ -52,13 +53,13 @@ public abstract class HeaderAndFooterPage extends Page {
         }}, AlignmentType.BOTTOM);
     }
 
-    private static CommonFooter makeCommonFooter(CommonFooter footer, PanelColors panelColors) {
+    private static CommonFooter makeCommonFooter(@Nullable CommonFooter footer, PanelColors panelColors) {
         return Objects.requireNonNullElse(footer, new CommonFooter(0, panelColors, null));
     }
 
     // TODO: add javadoc
-    private PartContainer makeCentralContainer(ArrayList<? extends SimplePart> centralParts,
-                                               AlignmentType centralAlignment) {
+    private PartContainer makeCentralContainer(@Nullable ArrayList<? extends SimplePart> centralParts,
+                                               @Nullable AlignmentType centralAlignment) {
         return new PartContainer(null,null, new ArrayList<>() {{
             addAll(Objects.requireNonNullElse(centralParts, new ArrayList<>()));
         }}, Objects.requireNonNullElse(centralAlignment, AlignmentType.TOP));

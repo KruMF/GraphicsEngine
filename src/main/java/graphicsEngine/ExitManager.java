@@ -3,16 +3,15 @@ package graphicsEngine;
 // TODO: add javadoc
 public class ExitManager {
     private static final String EXIT_MESSAGE = ": Closing.";
-    private final String graphicsEngineName;
 
-    // TODO: add javadoc
-    ExitManager(String graphicsEngineName) {
-        this.graphicsEngineName = graphicsEngineName;
-    }
+    /**
+     * Creates an ExitManager object.
+     */
+    public ExitManager() {}
 
     // TODO: add javadoc
     public void close() {
-        System.out.println(graphicsEngineName + EXIT_MESSAGE);
+        System.out.println(GraphicsManager.GRAPHICS_ENGINE_NAME + EXIT_MESSAGE);
         GraphicsManager.graphics.window.dispose();
         GraphicsManager.running = false;
     }

@@ -5,6 +5,9 @@ import graphicsEngine.utilities.simpleParts.DrawablePart;
 import java.awt.*;
 import java.util.ArrayList;
 
+import com.google.inject.internal.Nullable;
+import org.jetbrains.annotations.NotNull;
+
 /**
  * A container containing simple parts that draws them as layers on top of one another.
  */
@@ -17,7 +20,7 @@ public class LayerContainer extends GenericContainer {
      * @param fixedSize Size fixation by axis.
      * @param parts     Parts to contain.
      */
-    public LayerContainer(int[] size, boolean[] fixedSize, ArrayList<DrawablePart> parts) {
+    public LayerContainer(@Nullable int[] size, @Nullable boolean[] fixedSize, @Nullable ArrayList<DrawablePart> parts) {
         super(size, fixedSize, parts);
     }
 
@@ -27,7 +30,7 @@ public class LayerContainer extends GenericContainer {
      * @param g Graphics to use.
      */
     @Override
-    public void drawParts(Graphics g) {
+    public void drawParts(@NotNull Graphics g) {
         for (DrawablePart part : parts) {
             if (part != null) {
                 part.draw(g, location, size);

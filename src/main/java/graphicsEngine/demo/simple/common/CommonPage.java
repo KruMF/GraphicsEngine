@@ -7,6 +7,7 @@ import graphicsEngine.presets.panels.CommonFooter;
 import graphicsEngine.utilities.containers.AlignmentType;
 import graphicsEngine.utilities.input.InputChecker;
 import graphicsEngine.utilities.simpleParts.SimplePart;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
@@ -29,7 +30,7 @@ public class CommonPage extends HeaderAndFooterPage {
         }
 
         @Override
-        public void keyboardActions(String keyText) {
+        public void keyboardActions(@NotNull String keyText) {
             switch (keyText) {
                 case "0" -> GraphicsManager.pages.activePage = 0;
                 case "1" -> GraphicsManager.pages.activePage = 1;

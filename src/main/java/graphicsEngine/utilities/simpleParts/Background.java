@@ -1,5 +1,8 @@
 package graphicsEngine.utilities.simpleParts;
 
+import com.google.inject.internal.Nullable;
+import org.jetbrains.annotations.NotNull;
+
 import java.awt.*;
 
 /**
@@ -12,7 +15,7 @@ public class Background extends ColoredSimplePart {
      *
      * @param color Color. (null = transparent)
      */
-    public Background(Color color) {
+    public Background(@Nullable Color color) {
         super(color);
     }
 
@@ -24,7 +27,8 @@ public class Background extends ColoredSimplePart {
      * @param size     Maximum drawing size.
      */
     @Override
-    public void draw(Graphics g, int[] location, int[] size) {
+    public void draw(@NotNull Graphics g,
+                     @Nullable int[] location, @Nullable int[] size) {
         super.draw(g, location, size);
         fillBackground(g);
     }
@@ -34,7 +38,7 @@ public class Background extends ColoredSimplePart {
      *
      * @param g Graphics to use.
      */
-    private void fillBackground(Graphics g) {
+    private void fillBackground(@NotNull Graphics g) {
         g.setColor(getColor());
         g.fillRect(location[0], location[1], size[0], size[1]);
     }

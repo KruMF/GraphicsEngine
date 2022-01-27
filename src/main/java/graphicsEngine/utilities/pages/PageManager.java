@@ -1,5 +1,6 @@
 package graphicsEngine.utilities.pages;
 
+import com.google.inject.internal.Nullable;
 import graphicsEngine.utilities.input.InputManager;
 
 import java.util.ArrayList;
@@ -18,7 +19,7 @@ public class PageManager {
      *
      * @param pages ArrayList of pages to add. (Null - no pages)
      */
-    public PageManager(ArrayList<Page> pages) {
+    public PageManager(@Nullable ArrayList<Page> pages) {
         this.pages = Objects.requireNonNullElse(pages, new ArrayList<>());
         activePage = 0;
     }
