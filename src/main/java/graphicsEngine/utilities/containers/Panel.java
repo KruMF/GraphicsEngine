@@ -27,10 +27,27 @@ public class Panel extends LayerContainer {
                  Color background, Color border,
                  ArrayList<DrawablePart> panelParts, AlignmentType alignment) {
         super(size, fixedSize, new ArrayList<>());
+
         parts.add(new Background(background));
         parts.add(new Border(border));
-        parts.add(new PartContainer(
+
+        parts.add(partContainer(panelParts, alignment));
+    }
+
+    private static PartContainer partContainer(ArrayList<DrawablePart> panelParts, AlignmentType alignment) {
+        return new PartContainer(
                 null, null,
-                panelParts, Objects.requireNonNullElse(alignment, AlignmentType.TOP)));
+                panelParts,
+                Objects.requireNonNullElse(alignment, AlignmentType.TOP));
+    }
+
+    //TODO: add javadoc
+    public void setBackgroundColor(Color color) {
+        ((Background) parts.get(0)).setColor(color);
+    }
+
+    //TODO: add javadoc
+    public void setBorderColor(Color color) {
+        ((Border) parts.get(1)).setColor(color);
     }
 }

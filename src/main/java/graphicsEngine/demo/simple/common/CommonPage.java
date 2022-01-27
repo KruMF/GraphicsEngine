@@ -1,50 +1,43 @@
 package graphicsEngine.demo.simple.common;
 
+import graphicsEngine.GraphicsManager;
+import graphicsEngine.data.colors.PanelColors;
+import graphicsEngine.presets.HeaderAndFooterPage;
+import graphicsEngine.presets.panels.CommonFooter;
+import graphicsEngine.presets.panels.CommonHeader;
 import graphicsEngine.utilities.containers.AlignmentType;
-import graphicsEngine.utilities.containers.PartContainer;
-import graphicsEngine.utilities.pages.Page;
+import graphicsEngine.utilities.input.InputChecker;
 import graphicsEngine.utilities.simpleParts.SimplePart;
 
-import java.awt.*;
 import java.util.ArrayList;
-import java.util.Objects;
 
-// TODO: add javadoc
-public abstract class CommonPage extends Page {
-    static final Color
-            PANEL_BACKGROUND_COLOR = Color.gray,
-            PANEL_BORDER_COLOR = Color.darkGray;
+public class CommonPage extends HeaderAndFooterPage {
 
-    // TODO: add javadoc
-    public CommonPage(ArrayList<? extends SimplePart> centralParts,
-                      AlignmentType centralAlignment) {
-        super(new ArrayList<>());
-        this.parts.add(makeHeaderContainer(centralParts, centralAlignment));
+    public CommonPage(PanelColors panelColors,
+               ArrayList<? extends SimplePart> centralParts,
+               AlignmentType centralAlignment){
+        super(
+                new CommonKeyboardActions(),
+                panelColors,
+                new HeaderWithButtons(100, panelColors),
+                new CommonFooter(50, panelColors, null),
+                centralParts, centralAlignment);
     }
 
-    // TODO: add javadoc
-    private PartContainer makeHeaderContainer(ArrayList<? extends SimplePart> centralParts,
-                                              AlignmentType centralAlignment) {
-        return new PartContainer(null, null, new ArrayList<>() {{
-            add(new CommonHeader());
-            add(makeFooterContainer(centralParts, centralAlignment));
-        }}, AlignmentType.TOP);
-    }
+    static class CommonKeyboardActions extends InputChecker {
+        CommonKeyboardActions() {
+            super();
+        }
 
-    // TODO: add javadoc
-    private PartContainer makeFooterContainer(ArrayList<? extends SimplePart> centralParts,
-                                              AlignmentType centralAlignment) {
-        return new PartContainer(null, null,new ArrayList<>() {{
-            add(new CommonFooter());
-            add(makeCentralContainer(centralParts, centralAlignment));
-        }}, AlignmentType.BOTTOM);
-    }
-
-    // TODO: add javadoc
-    private PartContainer makeCentralContainer(ArrayList<? extends SimplePart> centralParts,
-                                               AlignmentType centralAlignment) {
-        return new PartContainer(null,null, new ArrayList<>() {{
-            addAll(Objects.requireNonNullElse(centralParts, new ArrayList<>()));
-        }}, Objects.requireNonNullElse(centralAlignment, AlignmentType.TOP));
+        @Override
+        public void keyboardActions(String keyText) {
+            switch (keyText) {
+                case "0" -> GraphicsManager.pages.activePage = 0;
+                case "1" -> GraphicsManager.pages.activePage = 1;
+                case "2", "3", "4", "5", "6", "7", "8", "9" ->
+                        System.out.println("Page " + keyText + " does not exist");
+                default ->super.keyboardActions(keyText);
+            }
+        }
     }
 }
