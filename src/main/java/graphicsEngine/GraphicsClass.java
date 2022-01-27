@@ -1,6 +1,6 @@
 package graphicsEngine;
 
-import graphicsEngine.data.WindowParameters;
+import graphicsEngine.data.windowParameters.WindowParameters;
 import graphicsEngine.utilities.pages.DebugLayer;
 
 import javax.swing.JPanel;
@@ -21,7 +21,7 @@ public class GraphicsClass extends JPanel {
     public void initialize() {
         WindowParameters windowParameters = GraphicsManager.data.windowParameters;
         window = new JFrame(windowParameters.windowTitle);
-        window.setDefaultCloseOperation(WindowParameters.defaultCloseAction);
+        window.setDefaultCloseOperation(WindowParameters.DEFAULT_CLOSE_ACTION);
 
         graphics = new GraphicsClass();
 

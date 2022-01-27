@@ -1,9 +1,15 @@
 package graphicsEngine.demo.simple.pages;
 
+import graphicsEngine.data.colors.PanelColors;
 import graphicsEngine.demo.simple.common.CommonPage;
+import graphicsEngine.demo.simple.common.HeaderWithButtons;
+import graphicsEngine.presets.panels.CommonFooter;
 import graphicsEngine.utilities.GraphicsHelper;
+import graphicsEngine.utilities.containers.AlignmentType;
+import graphicsEngine.utilities.simpleParts.SimplePart;
 
 import java.awt.*;
+import java.util.ArrayList;
 
 // TODO: needs rework
 /**
@@ -11,19 +17,34 @@ import java.awt.*;
  */
 public class Page_1 extends CommonPage {
 
-    public Page_1() {
-        super(null, null);
+    public Page_1(PanelColors panelColors) {
+        super(panelColors, prepareCenter(), AlignmentType.TOP);
     }
 
-    public void drawCenter(Graphics g, int[] location, int[] size) {
-        g.setColor(Color.green);
-        GraphicsHelper.drawStrings_VA(
-                g,0,
-                new String[] {"This is the second page"},
-                new int[] {
-                        location[0] + size[0] / 2,
-                        location[1] + size[1] / 2});
+    private static ArrayList<? extends SimplePart> prepareCenter() {
+        return new ArrayList<>() {{
+            add(new Center());
+        }};
+    }
 
-        //draw stuff here
+    static class Center extends SimplePart {
+        Center() {
+            super();
+        }
+
+        @Override
+        public void draw(Graphics g, int[] location, int[] size) {
+            super.draw(g, location, size);
+
+            g.setColor(Color.green);
+            GraphicsHelper.drawStrings_VA(
+                    g,0,
+                    new String[] {"This is the second page"},
+                    new int[] {
+                            location[0] + size[0] / 2,
+                            location[1] + size[1] / 2});
+
+            //draw stuff here
+        }
     }
 }

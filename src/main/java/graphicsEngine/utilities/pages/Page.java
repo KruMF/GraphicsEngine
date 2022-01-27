@@ -8,6 +8,7 @@ import graphicsEngine.utilities.simpleParts.DrawablePart;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Objects;
 
 /**
  * A simple page with a background and layer container.
@@ -22,12 +23,16 @@ public abstract class Page extends LayerContainer {
      *
      * @param layers ArrayList of layers to add.
      */
-    public Page(ArrayList<DrawablePart> layers) {
+    public Page(InputChecker inputChecker, ArrayList<DrawablePart> layers) {
         super(null, null, new ArrayList<>() {{
             add(new Background(GraphicsManager.data.palette.backgroundColor));
             addAll(layers);
         }});
-        inputCheck = new InputChecker();
+        setInputChecker(inputChecker);
+    }
+
+    private void setInputChecker(InputChecker inputChecker) {
+        inputCheck = Objects.requireNonNullElse(inputChecker, new InputChecker());
     }
 
     /**

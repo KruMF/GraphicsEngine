@@ -49,13 +49,7 @@ public class InputChecker {
      * @param keyText Text of key pressed.
      */
     public void keyboardActions(String keyText){
-        switch (keyText) {
-            case "0" -> GraphicsManager.pages.activePage = 0;
-            case "1" -> GraphicsManager.pages.activePage = 1;
-            case "2", "3", "4", "5", "6", "7", "8", "9" ->
-                    System.out.println("Page " + keyText + " does not exist");
-            default -> System.out.println("Key " + keyText + " pressed");
-        }
+        System.out.println("Key " + keyText + " pressed. No actions set up.");
     }
 
     /**
