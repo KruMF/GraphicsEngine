@@ -3,13 +3,15 @@ package graphicsEngine.utilities.pages;
 import graphicsEngine.GraphicsManager;
 import graphicsEngine.utilities.input.InputData;
 
+import static graphicsEngine.utilities.GraphicsHelper.*;
+
 import java.awt.*;
 
-import static graphicsEngine.utilities.GraphicsHelper.*;
+import org.jetbrains.annotations.NotNull;
 
 // TODO: needs rework
 public class DebugLayer {
-    public static void draw(Graphics g) {
+    public static void draw(@NotNull Graphics g) {
         g.setColor(Color.white);
         int[] drawLocation = new int[] {100, 150};
         int rowCount = drawHeader(g, drawLocation);
@@ -19,14 +21,14 @@ public class DebugLayer {
         inputTest(g, drawLocation);
     }
 
-    private static int drawHeader(Graphics g, int[] location) {
+    private static int drawHeader(@NotNull Graphics g, int[] location) {
         return drawStrings_VA(
                 g, 0,
                 new String[] {"This is debug layer!"},
                 location);
     }
 
-    private static void inputTest(Graphics g, int[] location) {
+    private static void inputTest(@NotNull Graphics g, int[] location) {
         InputData input = GraphicsManager.input.inputData;
 
         int[] drawableSize = GraphicsManager.data.windowParameters.drawSize;

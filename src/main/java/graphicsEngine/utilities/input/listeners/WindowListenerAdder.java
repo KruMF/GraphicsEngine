@@ -10,6 +10,9 @@ import java.awt.event.ComponentEvent;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
+
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Window listener adder class.
  */
@@ -23,8 +26,8 @@ class WindowListenerAdder {
      * @param inputData        Input data to modify.
      * @param exitManager      Exit manager to call upon exit.
      */
-    WindowListenerAdder(JFrame window, WindowParameters windowParameters,
-                        InputData inputData, ExitManager exitManager) {
+    WindowListenerAdder(@NotNull JFrame window, @NotNull WindowParameters windowParameters,
+                        @NotNull InputData inputData, @NotNull ExitManager exitManager) {
         addWindowListener(window, windowParameters, inputData, exitManager);
         addWindowResizeListener(window, windowParameters);
     }
@@ -37,8 +40,8 @@ class WindowListenerAdder {
      * @param inputData        Input data to modify.
      * @param exitManager      Exit manager to call upon exit.
      */
-    private void addWindowListener(JFrame window, WindowParameters windowParameters,
-                                   InputData inputData, ExitManager exitManager) {
+    private void addWindowListener(@NotNull JFrame window, @NotNull WindowParameters windowParameters,
+                                   @NotNull InputData inputData, @NotNull ExitManager exitManager) {
         window.addWindowListener(new WindowListener() {
             @Override
             public void windowOpened(WindowEvent e) {}
@@ -81,7 +84,7 @@ class WindowListenerAdder {
      * @param window           Window to add listener to.
      * @param windowParameters Window parameters to modify.
      */
-    private void addWindowResizeListener(JFrame window, WindowParameters windowParameters) {
+    private void addWindowResizeListener(@NotNull JFrame window, @NotNull WindowParameters windowParameters) {
         window.addComponentListener(new ComponentAdapter() {
             @Override
             public void componentResized(ComponentEvent componentEvent) {

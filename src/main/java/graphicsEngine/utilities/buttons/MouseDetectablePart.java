@@ -5,6 +5,9 @@ import graphicsEngine.utilities.simpleParts.SimplePart;
 
 import java.awt.*;
 
+import com.google.inject.internal.Nullable;
+import org.jetbrains.annotations.NotNull;
+
 /**
  * A simple mouse detectable part.
  */
@@ -18,7 +21,7 @@ public abstract class MouseDetectablePart extends SimplePart {
      * @param size      Size of the part.
      * @param fixedSize Size fixation by axis.
      */
-    public MouseDetectablePart(int[] size, boolean[] fixedSize) {
+    public MouseDetectablePart(@Nullable int[] size, @Nullable boolean[] fixedSize) {
         super(size, fixedSize);
         prepareActivityBooleans();
     }
@@ -40,7 +43,8 @@ public abstract class MouseDetectablePart extends SimplePart {
      * @param size     Size of the part.
      */
     @Override
-    public void draw(Graphics g, int[] location, int[] size) {
+    public void draw(@NotNull Graphics g,
+                     @Nullable int[] location, @Nullable int[] size) {
         super.draw(g, location, size);
         if (clicked) {
             drawClicked();
@@ -71,7 +75,7 @@ public abstract class MouseDetectablePart extends SimplePart {
      *
      * @param input Input data to use for checking interaction.
      */
-    public void interactionCheck(InputData input) {
+    public void interactionCheck(@NotNull InputData input) {
         mouseLocationCheck(input.mouse);
         if (input.mouseClick) {
             mouseClickCheck();

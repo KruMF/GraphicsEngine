@@ -1,7 +1,9 @@
 package graphicsEngine.utilities.input;
 
-import graphicsEngine.GraphicsManager;
 import graphicsEngine.utilities.containers.ButtonContainer;
+
+import com.google.inject.internal.Nullable;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * A class for checking user input.
@@ -21,7 +23,7 @@ public class InputChecker {
      * @param input     Input to check.
      * @param container Relevant container.
      */
-    public void check(InputManager input, ButtonContainer container) {
+    public void check(@Nullable InputManager input, @Nullable ButtonContainer container) {
         if (input != null) {
             keyboardActionCheck(input);
             if (container != null) {
@@ -35,7 +37,7 @@ public class InputChecker {
      *
      * @param input InputManager containing inputData with array of pressed keys.
      */
-    private void keyboardActionCheck(InputManager input) {
+    private void keyboardActionCheck(@NotNull InputManager input) {
         for (int key : input.inputData.keys) {
             String keyText = java.awt.event.KeyEvent.getKeyText(key);
             keyboardActions(keyText);
@@ -48,7 +50,7 @@ public class InputChecker {
      *
      * @param keyText Text of key pressed.
      */
-    public void keyboardActions(String keyText){
+    public void keyboardActions(@NotNull String keyText){
         System.out.println("Key " + keyText + " pressed. No actions set up.");
     }
 
@@ -58,7 +60,7 @@ public class InputChecker {
      * @param input     Input to check.
      * @param container Relevant container.
      */
-    private void buttonCheck(InputManager input, ButtonContainer container) {
+    private void buttonCheck(@NotNull InputManager input, @NotNull ButtonContainer container) {
         container.buttonInteractionCheck(input.inputData);
         container.buttonActionCheck();
     }

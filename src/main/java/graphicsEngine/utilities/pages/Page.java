@@ -1,6 +1,7 @@
 package graphicsEngine.utilities.pages;
 
 import graphicsEngine.GraphicsManager;
+import graphicsEngine.data.colors.Palette;
 import graphicsEngine.utilities.containers.LayerContainer;
 import graphicsEngine.utilities.input.InputChecker;
 import graphicsEngine.utilities.simpleParts.Background;
@@ -9,6 +10,9 @@ import graphicsEngine.utilities.simpleParts.DrawablePart;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Objects;
+
+import com.google.inject.internal.Nullable;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * A simple page with a background and layer container.
@@ -23,22 +27,34 @@ public abstract class Page extends LayerContainer {
      *
      * @param layers ArrayList of layers to add.
      */
-    public Page(InputChecker inputChecker, ArrayList<DrawablePart> layers) {
+    public Page(@Nullable InputChecker inputChecker, @Nullable Palette palette,
+                @Nullable ArrayList<DrawablePart> layers) {
         super(null, null, new ArrayList<>() {{
-            add(new Background(GraphicsManager.data.palette.backgroundColor));
-            addAll(layers);
+            add(setBackground(palette));
+            addAll(Objects.requireNonNullElse(layers, new ArrayList<>()));
         }});
         setInputChecker(inputChecker);
     }
 
-    private void setInputChecker(InputChecker inputChecker) {
+    private static Background setBackground(@Nullable Palette palette) {
+        palette = Objects.requireNonNullElse(
+                palette,
+                new Palette(null, null, null));
+        Color backgroundColor = Objects.requireNonNullElse(
+                palette.backgroundColor,
+                (new Palette(null, null, null)).backgroundColor);
+
+        return new Background(backgroundColor);
+    }
+
+    private void setInputChecker(@Nullable InputChecker inputChecker) {
         inputCheck = Objects.requireNonNullElse(inputChecker, new InputChecker());
     }
 
     /**
      * Draws this page.
      */
-    public void draw(Graphics g) {
+    public void draw(@NotNull Graphics g) {
         int[] pageSize = GraphicsManager.data.windowParameters.drawSize;
         super.draw(g, new int[] {0, 0}, pageSize);
     }

@@ -8,6 +8,8 @@ import graphicsEngine.utilities.input.InputManager;
 import java.util.ArrayList;
 import java.util.Objects;
 
+import com.google.inject.internal.Nullable;
+
 /**
  * Graphics manager for managing graphics.
  */
@@ -22,16 +24,21 @@ public class GraphicsManager implements Runnable {
     public static boolean running;
     private static final long REFRESH_DELAY = 30; //screen refresh delay in millis
 
-    private static final String GRAPHICS_ENGINE_NAME = "Graphics Engine";
+    public static final String GRAPHICS_ENGINE_NAME = "Graphics Engine";
 
     /**
      * Creates a blank GraphicsManager thread with graphics data with specified parameters.
      * Has to be initialized. (Call initialize(?) to initialize)
      */
-    public GraphicsManager() {
+    public GraphicsManager(@Nullable GraphicsData graphicsData) {
         System.out.println(GRAPHICS_ENGINE_NAME + ": Creating.");
+        setGraphicsData(graphicsData);
+    }
 
-        data = new GraphicsData(null, null, true);
+    private static void setGraphicsData(@Nullable GraphicsData graphicsData) {
+        data = Objects.requireNonNullElse(graphicsData, new GraphicsData(
+                null, null,
+                true));
     }
 
     /**
@@ -41,14 +48,14 @@ public class GraphicsManager implements Runnable {
      * @param exitManager Extended ExitManager for ending controller upon closing graphics. (Null - default)
      * @param pages Pages to display.
      */
-    public static void initialize(ExitManager exitManager, ArrayList<Page> pages) {
+    public static void initialize(@Nullable ExitManager exitManager, @Nullable ArrayList<Page> pages) {
         System.out.println(GRAPHICS_ENGINE_NAME + ": Initializing.");
         setupGraphics(pages);
         setupIO(exitManager);
         running = true;
     }
 
-    private static void setupGraphics(ArrayList<Page> pages) {
+    private static void setupGraphics(@Nullable ArrayList<Page> pages) {
         // Has to be before graphics.
         GraphicsManager.pages = new PageManager(pages);
 
@@ -57,11 +64,11 @@ public class GraphicsManager implements Runnable {
         graphics.initialize();
     }
 
-    private static void setupIO(ExitManager exitManager) {
+    private static void setupIO(@Nullable ExitManager exitManager) {
         // Has to be before input.
         GraphicsManager.exitManager = Objects.requireNonNullElse(
                 exitManager,
-                new ExitManager(GRAPHICS_ENGINE_NAME));
+                new ExitManager());
 
         // Input.
         input = new InputManager(

@@ -7,6 +7,8 @@ import javax.swing.JPanel;
 import javax.swing.JFrame;
 import java.awt.Graphics;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Graphics class.
  */
@@ -52,7 +54,7 @@ public class GraphicsClass extends JPanel {
      * @param g Graphics to use.
      */
     @Override
-    protected void paintComponent(Graphics g) {
+    protected void paintComponent(@NotNull Graphics g) {
         GraphicsManager.pages.draw(g);
         if (GraphicsManager.data.debugLayer) {
             DebugLayer.draw(g);

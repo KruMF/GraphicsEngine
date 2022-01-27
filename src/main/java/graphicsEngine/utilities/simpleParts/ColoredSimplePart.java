@@ -3,6 +3,8 @@ package graphicsEngine.utilities.simpleParts;
 import java.awt.*;
 import java.util.Objects;
 
+import com.google.inject.internal.Nullable;
+
 /**
  * A simple part with a color assigned to it.
  */
@@ -18,7 +20,7 @@ public abstract class ColoredSimplePart extends SimplePart {
      *
      * @param color Color of the part.
      */
-    public ColoredSimplePart(Color color) {
+    public ColoredSimplePart(@Nullable Color color) {
         super();
         setColor(color);
     }
@@ -28,7 +30,7 @@ public abstract class ColoredSimplePart extends SimplePart {
      *
      * @param color Color. (null = transparent)
      */
-    public void setColor(Color color) {
+    public void setColor(@Nullable Color color) {
         this.color = Objects.requireNonNullElse(color, DEFAULT_COLOR);
     }
 

@@ -3,6 +3,8 @@ package graphicsEngine.utilities;
 import java.awt.Graphics;
 import java.util.ArrayList;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Helper class for graphics.
  *
@@ -28,7 +30,9 @@ public class GraphicsHelper {
      * @param location Starting XY location.
      * @return Number of rows printed.
      */
-    public static int drawStrings_VA(Graphics g, int rowNumber, String[] rows, int[] location) {
+    public static int drawStrings_VA(@NotNull Graphics g,
+                                     int rowNumber, @NotNull String[] rows,
+                                     int[] location) {
         for (String row : rows) {
             rowNumber++;
             int drawY = location[1] + (rowNumber) * rowHeight - textOffsetFromBottom;
@@ -46,8 +50,10 @@ public class GraphicsHelper {
      * @param location Starting location for whole table.
      * @return Total row count (including header and column titles).
      */
-    public static int drawTable(Graphics g,
-                                String[] header, ArrayList<Column> columnData, ArrayList<String[]> rows,
+    public static int drawTable(@NotNull Graphics g,
+                                @NotNull String[] header,
+                                @NotNull ArrayList<Column> columnData,
+                                @NotNull ArrayList<String[]> rows,
                                 int[] location) {
         int rowNumber = drawStrings_VA(
                 g, 0,
@@ -83,9 +89,9 @@ public class GraphicsHelper {
         public String title;
         public int separation;
 
-        public Column(String _title, int _separation){
-            title = _title;
-            separation = _separation;
+        public Column(@NotNull String title, int separation){
+            this.title = title;
+            this.separation = separation;
         }
     }
 }
