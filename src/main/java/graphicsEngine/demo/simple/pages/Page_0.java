@@ -1,9 +1,7 @@
 package graphicsEngine.demo.simple.pages;
 
-import graphicsEngine.data.colors.PanelColors;
+import graphicsEngine.data.colors.Palette;
 import graphicsEngine.demo.simple.common.CommonPage;
-import graphicsEngine.demo.simple.common.HeaderWithButtons;
-import graphicsEngine.presets.panels.CommonFooter;
 import graphicsEngine.utilities.containers.AlignmentType;
 import graphicsEngine.utilities.simpleParts.SimplePart;
 
@@ -16,8 +14,8 @@ import java.util.ArrayList;
  */
 public class Page_0 extends CommonPage {
 
-    public Page_0(PanelColors panelColors) {
-        super(panelColors, prepareCenter(), AlignmentType.TOP);
+    public Page_0(Palette palette) {
+        super(palette, prepareCenter(), AlignmentType.TOP);
     }
 
     private static ArrayList<? extends SimplePart> prepareCenter() {

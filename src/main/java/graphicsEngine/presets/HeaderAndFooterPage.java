@@ -1,5 +1,6 @@
 package graphicsEngine.presets;
 
+import graphicsEngine.data.colors.Palette;
 import graphicsEngine.data.colors.PanelColors;
 import graphicsEngine.presets.panels.CommonFooter;
 import graphicsEngine.presets.panels.CommonHeader;
@@ -17,12 +18,12 @@ public abstract class HeaderAndFooterPage extends Page {
 
     // TODO: add javadoc
     public HeaderAndFooterPage(InputChecker inputChecker,
-                               PanelColors panelColors,
+                               Palette palette,
                                CommonHeader header, CommonFooter footer,
                                ArrayList<? extends SimplePart> centralParts,
                                AlignmentType centralAlignment) {
-        super(inputChecker, new ArrayList<>());
-        this.parts.add(makeHeaderContainer(panelColors, header, footer, centralParts, centralAlignment));
+        super(inputChecker, palette, new ArrayList<>());
+        this.parts.add(makeHeaderContainer(palette.panelColors, header, footer, centralParts, centralAlignment));
     }
 
     // TODO: add javadoc

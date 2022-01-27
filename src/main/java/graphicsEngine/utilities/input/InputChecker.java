@@ -1,6 +1,5 @@
 package graphicsEngine.utilities.input;
 
-import graphicsEngine.GraphicsManager;
 import graphicsEngine.utilities.containers.ButtonContainer;
 
 /**

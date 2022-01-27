@@ -1,10 +1,9 @@
 package graphicsEngine.demo.simple.common;
 
 import graphicsEngine.GraphicsManager;
-import graphicsEngine.data.colors.PanelColors;
+import graphicsEngine.data.colors.Palette;
 import graphicsEngine.presets.HeaderAndFooterPage;
 import graphicsEngine.presets.panels.CommonFooter;
-import graphicsEngine.presets.panels.CommonHeader;
 import graphicsEngine.utilities.containers.AlignmentType;
 import graphicsEngine.utilities.input.InputChecker;
 import graphicsEngine.utilities.simpleParts.SimplePart;
@@ -13,14 +12,14 @@ import java.util.ArrayList;
 
 public class CommonPage extends HeaderAndFooterPage {
 
-    public CommonPage(PanelColors panelColors,
-               ArrayList<? extends SimplePart> centralParts,
-               AlignmentType centralAlignment){
+    public CommonPage(Palette palette,
+                      ArrayList<? extends SimplePart> centralParts,
+                      AlignmentType centralAlignment){
         super(
                 new CommonKeyboardActions(),
-                panelColors,
-                new HeaderWithButtons(100, panelColors),
-                new CommonFooter(50, panelColors, null),
+                palette,
+                new HeaderWithButtons(100, palette.panelColors),
+                new CommonFooter(50, palette.panelColors, null),
                 centralParts, centralAlignment);
     }
 

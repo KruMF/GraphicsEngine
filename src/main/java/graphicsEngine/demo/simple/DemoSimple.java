@@ -1,7 +1,7 @@
 package graphicsEngine.demo.simple;
 
 import graphicsEngine.GraphicsManager;
-import graphicsEngine.data.colors.PanelColors;
+import graphicsEngine.data.colors.Palette;
 import graphicsEngine.demo.simple.pages.*;
 
 import java.util.ArrayList;
@@ -17,11 +17,11 @@ public class DemoSimple {
     private static void start() {
         GraphicsManager graphics = new GraphicsManager();
 
-        PanelColors panelColors = GraphicsManager.data.palette.panelColors;
+        Palette palette = GraphicsManager.data.palette;
 
         GraphicsManager.initialize(null, new ArrayList<>() {{
-            add(new Page_0(panelColors));
-            add(new Page_1(panelColors));
+            add(new Page_0(palette));
+            add(new Page_1(palette));
         }});
         graphics.run();
     }
