@@ -1,23 +1,24 @@
 package graphicsEngine.demo.simple.common;
 
-import graphicsEngine.GraphicsManager;
 import graphicsEngine.data.colors.Palette;
 import graphicsEngine.demo.simple.common.header.HeaderWithButtons;
 import graphicsEngine.presets.HeaderAndFooterPage;
 import graphicsEngine.presets.panels.CommonFooter;
 import graphicsEngine.utilities.containers.AlignmentType;
-import graphicsEngine.utilities.input.InputChecker;
 import graphicsEngine.utilities.simpleParts.SimplePart;
 
 import java.util.ArrayList;
 
+import com.google.inject.internal.Nullable;
 import org.jetbrains.annotations.NotNull;
 
+//TODO: add javadoc
 public class CommonPage extends HeaderAndFooterPage {
 
-    public CommonPage(Palette palette,
-                      ArrayList<? extends SimplePart> centralParts,
-                      AlignmentType centralAlignment){
+    //TODO: add javadoc
+    public CommonPage(@NotNull Palette palette,
+                      @Nullable ArrayList<? extends SimplePart> centralParts,
+                      @Nullable AlignmentType centralAlignment){
         super(
                 new CommonKeyboardActions(),
                 palette,
@@ -26,20 +27,4 @@ public class CommonPage extends HeaderAndFooterPage {
                 centralParts, centralAlignment);
     }
 
-    static class CommonKeyboardActions extends InputChecker {
-        CommonKeyboardActions() {
-            super();
-        }
-
-        @Override
-        public void keyboardActions(@NotNull String keyText) {
-            switch (keyText) {
-                case "0" -> GraphicsManager.pages.activePage = 0;
-                case "1" -> GraphicsManager.pages.activePage = 1;
-                case "2", "3", "4", "5", "6", "7", "8", "9" ->
-                        System.out.println("Page " + keyText + " does not exist");
-                default ->super.keyboardActions(keyText);
-            }
-        }
-    }
 }

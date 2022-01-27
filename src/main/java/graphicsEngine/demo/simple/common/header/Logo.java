@@ -1,9 +1,10 @@
 package graphicsEngine.demo.simple.common.header;
 
 import graphicsEngine.utilities.simpleParts.SimplePart;
-import org.jetbrains.annotations.NotNull;
 
 import java.awt.*;
+
+import org.jetbrains.annotations.NotNull;
 
 // TODO: add javadoc
 public class Logo extends SimplePart {
@@ -12,17 +13,19 @@ public class Logo extends SimplePart {
             BACKGROUND_COLOR = Color.red,
             CIRCLE_COLOR = Color.white;
 
+    //TODO: add javadoc
     public Logo(int[] size, boolean[] fixedSize) {
         super(size, fixedSize);
     }
 
+    //TODO: add javadoc
     @Override
     public void draw(@NotNull Graphics g, int[] location, int[] size){
         super.draw(g, location, size);
         drawLogo(g);
     }
 
-    private void drawLogo(Graphics g){
+    private void drawLogo(@NotNull Graphics g){
         g.setColor(BACKGROUND_COLOR);
         g.fillRect(this.location[0], this.location[1], this.size[0], this.size[1]);
 

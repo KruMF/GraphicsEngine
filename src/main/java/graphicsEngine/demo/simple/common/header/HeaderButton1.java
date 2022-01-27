@@ -6,6 +6,8 @@ import com.google.inject.internal.Nullable;
 
 // TODO: add javadoc
 public class HeaderButton1 extends Button {
+
+    //TODO: add javadoc
     public HeaderButton1(@Nullable int[] size) {
         super(size, new boolean[] {true, false},
                 "Button 1",

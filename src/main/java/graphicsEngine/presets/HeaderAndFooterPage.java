@@ -1,6 +1,5 @@
 package graphicsEngine.presets;
 
-import com.google.inject.internal.Nullable;
 import graphicsEngine.data.colors.Palette;
 import graphicsEngine.data.colors.PanelColors;
 import graphicsEngine.presets.panels.CommonFooter;
@@ -10,29 +9,31 @@ import graphicsEngine.utilities.containers.PartContainer;
 import graphicsEngine.utilities.input.InputChecker;
 import graphicsEngine.utilities.pages.Page;
 import graphicsEngine.utilities.simpleParts.SimplePart;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Objects;
+
+import com.google.inject.internal.Nullable;
+import org.jetbrains.annotations.NotNull;
 
 // TODO: add javadoc
 public abstract class HeaderAndFooterPage extends Page {
 
     // TODO: add javadoc
     public HeaderAndFooterPage(@Nullable InputChecker inputChecker,
-                               @Nullable Palette palette,
-                               CommonHeader header, CommonFooter footer,
-                               ArrayList<? extends SimplePart> centralParts,
-                               AlignmentType centralAlignment) {
+                               @NotNull Palette palette,
+                               @Nullable CommonHeader header, @Nullable CommonFooter footer,
+                               @Nullable ArrayList<? extends SimplePart> centralParts,
+                               @Nullable AlignmentType centralAlignment) {
         super(inputChecker, palette, new ArrayList<>());
         this.parts.add(makeHeaderContainer(palette.panelColors, header, footer, centralParts, centralAlignment));
     }
 
     // TODO: add javadoc
-    private PartContainer makeHeaderContainer(PanelColors panelColors,
-                                              CommonHeader header, CommonFooter footer,
-                                              ArrayList<? extends SimplePart> centralParts,
-                                              AlignmentType centralAlignment) {
+    private PartContainer makeHeaderContainer(@NotNull PanelColors panelColors,
+                                              @Nullable CommonHeader header, @Nullable CommonFooter footer,
+                                              @Nullable ArrayList<? extends SimplePart> centralParts,
+                                              @Nullable AlignmentType centralAlignment) {
         return new PartContainer(null, null, new ArrayList<>() {{
             add(makeCommonHeader(header, panelColors));
             add(makeFooterContainer(panelColors, footer, centralParts, centralAlignment));

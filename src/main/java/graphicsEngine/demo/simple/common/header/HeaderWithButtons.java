@@ -3,13 +3,15 @@ package graphicsEngine.demo.simple.common.header;
 import graphicsEngine.data.colors.PanelColors;
 import graphicsEngine.presets.panels.CommonHeader;
 import graphicsEngine.utilities.simpleParts.DrawablePart;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
 // TODO: add javadoc
 public class HeaderWithButtons extends CommonHeader {
 
-    public HeaderWithButtons(int height, PanelColors panelColors) {
+    // TODO: add javadoc
+    public HeaderWithButtons(int height, @NotNull PanelColors panelColors) {
         super(height, panelColors, prepareParts(getHeight(height)));
     }
 
