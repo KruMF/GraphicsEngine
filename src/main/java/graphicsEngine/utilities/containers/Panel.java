@@ -8,6 +8,8 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.Objects;
 
+import com.google.inject.internal.Nullable;
+
 /**
  * A layer container with background and border pre-prepared.
  */
@@ -23,9 +25,9 @@ public class Panel extends LayerContainer {
      * @param panelParts ArrayList of containable parts. (Alignable)
      * @param alignment  Alignment type of containable parts. (Null - align to top)
      */
-    public Panel(int[] size, boolean[] fixedSize,
-                 Color background, Color border,
-                 ArrayList<DrawablePart> panelParts, AlignmentType alignment) {
+    public Panel(@Nullable int[] size, @Nullable boolean[] fixedSize,
+                 @Nullable Color background, @Nullable Color border,
+                 @Nullable ArrayList<DrawablePart> panelParts, @Nullable AlignmentType alignment) {
         super(size, fixedSize, new ArrayList<>());
 
         parts.add(new Background(background));
@@ -34,20 +36,31 @@ public class Panel extends LayerContainer {
         parts.add(partContainer(panelParts, alignment));
     }
 
-    private static PartContainer partContainer(ArrayList<DrawablePart> panelParts, AlignmentType alignment) {
+    private static PartContainer partContainer(@Nullable ArrayList<DrawablePart> panelParts,
+                                               @Nullable AlignmentType alignment) {
         return new PartContainer(
                 null, null,
                 panelParts,
                 Objects.requireNonNullElse(alignment, AlignmentType.TOP));
     }
 
-    //TODO: add javadoc
-    public void setBackgroundColor(Color color) {
+    /**
+     * Sets the background color of the panel.
+     *
+     * @param color New color.
+     */
+    @SuppressWarnings("unused")
+    public void setBackgroundColor(@Nullable Color color) {
         ((Background) parts.get(0)).setColor(color);
     }
 
-    //TODO: add javadoc
-    public void setBorderColor(Color color) {
+    /**
+     * Sets the border color of the panel.
+     *
+     * @param color New color.
+     */
+    @SuppressWarnings("unused")
+    public void setBorderColor(@Nullable Color color) {
         ((Border) parts.get(1)).setColor(color);
     }
 }

@@ -7,6 +7,9 @@ import java.util.ArrayList;
 import java.awt.*;
 import java.util.Objects;
 
+import com.google.inject.internal.Nullable;
+import org.jetbrains.annotations.NotNull;
+
 /**
  * A part container for containing simple parts and aligning them in specified way.
  */
@@ -21,8 +24,8 @@ public class PartContainer extends GenericContainer {
      * @param parts     Parts to contain. (Accepts null)
      * @param alignment Alignment to use. (By default aligned to top)
      */
-    public PartContainer(int[] size, boolean[] fixedSize,
-                         ArrayList<DrawablePart> parts, AlignmentType alignment) {
+    public PartContainer(@Nullable int[] size, @Nullable boolean[] fixedSize,
+                         @Nullable ArrayList<DrawablePart> parts, @Nullable AlignmentType alignment) {
         super(size, fixedSize, parts);
         this.alignment = Objects.requireNonNullElse(alignment, AlignmentType.TOP);
     }
@@ -33,7 +36,7 @@ public class PartContainer extends GenericContainer {
      * @param g Graphics to use.
      */
     @Override
-    public void drawParts(Graphics g) {
+    public void drawParts(@NotNull Graphics g) {
         RemainderHelper remainingSize = new RemainderHelper(RemainderHelper.getInitialSize(this));
         RemainderHelper drawingLocation = new RemainderHelper(0);
 
@@ -57,8 +60,9 @@ public class PartContainer extends GenericContainer {
      * @param remainingSize Remaining size for drawing.
      * @param drawLocation  Location offset from containers location.
      */
-    private void drawSinglePart(Graphics g, SimplePart part,
-                                RemainderHelper remainingSize, RemainderHelper drawLocation) {
+    private void drawSinglePart(@NotNull Graphics g, @NotNull SimplePart part,
+                                @NotNull RemainderHelper remainingSize,
+                                @NotNull RemainderHelper drawLocation) {
         int[] partLocation;
         int[] partSize;
         int sizeDifference;
@@ -129,7 +133,7 @@ public class PartContainer extends GenericContainer {
             return x > 0;
         }
 
-        static int getInitialSize(PartContainer container) {
+        static int getInitialSize(@NotNull PartContainer container) {
             switch (container.alignment) {
                 case LEFT, RIGHT : {
                     return container.size[0];

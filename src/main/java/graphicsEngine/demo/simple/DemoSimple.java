@@ -1,28 +1,43 @@
 package graphicsEngine.demo.simple;
 
 import graphicsEngine.GraphicsManager;
-import graphicsEngine.data.colors.PanelColors;
-import graphicsEngine.demo.simple.pages.*;
+import graphicsEngine.data.GraphicsData;
+import graphicsEngine.data.colors.Palette;
+import graphicsEngine.demo.simple.pages.page0.Page_0;
+import graphicsEngine.demo.simple.pages.page1.Page_1;
+import graphicsEngine.utilities.pages.Page;
 
 import java.util.ArrayList;
 
-// TODO: needs rework
+import org.jetbrains.annotations.NotNull;
+
+//TODO: add javadoc
 public class DemoSimple {
 
+    //TODO: add javadoc
     public static void main(String[] args) {
         System.out.println("Simple graphics demo started.");
         start();
     }
 
     private static void start() {
-        GraphicsManager graphics = new GraphicsManager();
+        GraphicsData startingParameters = startingParameters();
+        GraphicsManager graphics = new GraphicsManager(startingParameters);
 
-        PanelColors panelColors = GraphicsManager.data.palette.panelColors;
+        Palette palette = startingParameters.palette;
+        GraphicsManager.initialize(null, preparePages(palette));
 
-        GraphicsManager.initialize(null, new ArrayList<>() {{
-            add(new Page_0(panelColors));
-            add(new Page_1(panelColors));
-        }});
         graphics.run();
+    }
+
+    private static GraphicsData startingParameters() {
+        return new GraphicsData(null, null, true);
+    }
+
+    private static ArrayList<Page> preparePages(@NotNull Palette palette) {
+        return new ArrayList<>() {{
+            add(new Page_0(palette));
+            add(new Page_1(palette));
+        }};
     }
 }

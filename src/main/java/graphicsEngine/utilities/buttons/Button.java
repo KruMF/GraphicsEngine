@@ -9,6 +9,9 @@ import graphicsEngine.utilities.simpleParts.Border;
 import java.awt.Graphics;
 import java.util.Objects;
 
+import com.google.inject.internal.Nullable;
+import org.jetbrains.annotations.NotNull;
+
 /**
  * A simple abstract button. Must be extended.
  */
@@ -26,7 +29,8 @@ public abstract class Button extends MouseDetectablePart {
      * @param text       Text to display. (Null - empty)
      * @param textOffset Text offset for manual centering. (Null - no offset)
      */
-    public Button(int[] size, boolean[] fixedSize, String text, int[] textOffset) {
+    public Button(@Nullable int[] size, @Nullable boolean[] fixedSize,
+                  @Nullable String text, @Nullable int[] textOffset) {
         super(size, fixedSize);
         background = new Background(null);
         border = new Border(null);
@@ -38,7 +42,8 @@ public abstract class Button extends MouseDetectablePart {
      * General drawing of a button.
      */
     @Override
-    public void draw(Graphics g, int[] location, int[] size) {
+    public void draw(@NotNull Graphics g,
+                     @Nullable int[] location, @Nullable int[] size) {
         super.draw(g, location, size);
         background.draw(g, this.location, this.size);
         border.draw(g, this.location, this.size);
@@ -80,7 +85,7 @@ public abstract class Button extends MouseDetectablePart {
      *
      * TODO: needs improvements
      */
-    private void drawButtonText(Graphics g) {
+    private void drawButtonText(@NotNull Graphics g) {
         g.setColor(GraphicsManager.data.palette.buttonColors.textColor);
         g.drawString(text,
                 location[0] + size[0] / 2 + textOffset[0],
@@ -91,7 +96,7 @@ public abstract class Button extends MouseDetectablePart {
      * Check interaction of a button.
      */
     @Override
-    public void interactionCheck(InputData input) {
+    public void interactionCheck(@NotNull InputData input) {
         super.interactionCheck(input);
     }
 

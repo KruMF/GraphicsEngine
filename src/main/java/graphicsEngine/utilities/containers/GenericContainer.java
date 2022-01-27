@@ -8,6 +8,9 @@ import graphicsEngine.utilities.simpleParts.SimplePart;
 import java.awt.*;
 import java.util.ArrayList;
 
+import com.google.inject.internal.Nullable;
+import org.jetbrains.annotations.NotNull;
+
 /**
  * A generic container containing parts with ability to check interact-ability of said parts.
  */
@@ -21,8 +24,8 @@ public abstract class GenericContainer extends SimplePart implements ButtonConta
      * @param fixedSize Size fixation by axis.
      * @param parts     Parts to contain.
      */
-    public GenericContainer(int[] size, boolean[] fixedSize,
-                            ArrayList<DrawablePart> parts) {
+    public GenericContainer(@Nullable int[] size, @Nullable boolean[] fixedSize,
+                            @Nullable ArrayList<DrawablePart> parts) {
         super(size, fixedSize);
         this.parts = parts;
     }
@@ -35,7 +38,7 @@ public abstract class GenericContainer extends SimplePart implements ButtonConta
      * @param size     Container size.
      */
     @Override
-    public void draw(Graphics g, int[] location, int[] size) {
+    public void draw(@NotNull Graphics g, @Nullable int[] location, @Nullable int[] size) {
         super.draw(g, location, size);
         if (parts != null){
             drawParts(g);
@@ -48,7 +51,7 @@ public abstract class GenericContainer extends SimplePart implements ButtonConta
      *
      * @param g Graphics to use
      */
-    public void drawParts(Graphics g) {}
+    public void drawParts(@NotNull Graphics g) {}
 
     /**
      * Check interaction of contained buttons or containers.
@@ -56,7 +59,7 @@ public abstract class GenericContainer extends SimplePart implements ButtonConta
      * @param input Input data to check.
      */
     @Override
-    public void buttonInteractionCheck(InputData input) {
+    public void buttonInteractionCheck(@NotNull InputData input) {
         if (parts != null) {
             for (DrawablePart part : parts) {
                 if (part instanceof Button) {
@@ -75,12 +78,16 @@ public abstract class GenericContainer extends SimplePart implements ButtonConta
     public void buttonActionCheck() {
         if (parts != null) {
             for (DrawablePart part : parts) {
-                if (part instanceof Button) {
-                    ((Button) part).actionCheck();
-                } else if (part instanceof GenericContainer) {
-                    ((GenericContainer) part).buttonActionCheck();
-                }
+                instanceCheck(part);
             }
+        }
+    }
+
+    private void instanceCheck(@Nullable DrawablePart part) {
+        if (part instanceof Button) {
+            ((Button) part).actionCheck();
+        } else if (part instanceof GenericContainer) {
+            ((GenericContainer) part).buttonActionCheck();
         }
     }
 }

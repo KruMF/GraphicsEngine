@@ -2,6 +2,9 @@ package graphicsEngine.utilities.simpleParts;
 
 import java.awt.*;
 
+import com.google.inject.internal.Nullable;
+import org.jetbrains.annotations.NotNull;
+
 /**
  * A simple border with some color.
  */
@@ -12,7 +15,7 @@ public class Border extends ColoredSimplePart {
      *
      * @param color Color. (null = transparent)
      */
-    public Border(Color color) {
+    public Border(@Nullable Color color) {
         super(color);
     }
 
@@ -24,7 +27,8 @@ public class Border extends ColoredSimplePart {
      * @param size     Maximum drawing size.
      */
     @Override
-    public void draw(Graphics g, int[] location, int[] size) {
+    public void draw(@NotNull Graphics g,
+                     @Nullable int[] location, @Nullable int[] size) {
         super.draw(g, location, size);
         drawBorders(g);
     }
@@ -34,7 +38,7 @@ public class Border extends ColoredSimplePart {
      *
      * @param g Graphics to use.
      */
-    private void drawBorders(Graphics g) {
+    private void drawBorders(@NotNull Graphics g) {
         g.setColor(getColor());
         g.drawRect(location[0], location[1], size[0], size[1]);
     }

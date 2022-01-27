@@ -6,6 +6,8 @@ import javax.swing.JFrame;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Keyboard listener adder class.
  */
@@ -17,7 +19,7 @@ class KeyboardListenerAdder {
      * @param window    Window to add listeners to.
      * @param inputData Input data to modify.
      */
-    KeyboardListenerAdder(JFrame window, InputData inputData) {
+    KeyboardListenerAdder(@NotNull JFrame window, @NotNull InputData inputData) {
         addKeyListener(window, inputData);
     }
 
@@ -27,7 +29,7 @@ class KeyboardListenerAdder {
      * @param window    Window to add listeners to.
      * @param inputData Input data to modify.
      */
-    private void addKeyListener(JFrame window, InputData inputData) {
+    private void addKeyListener(@NotNull JFrame window, @NotNull InputData inputData) {
         window.addKeyListener(new KeyListener() {
             @Override
             public void keyTyped(KeyEvent e) {}
