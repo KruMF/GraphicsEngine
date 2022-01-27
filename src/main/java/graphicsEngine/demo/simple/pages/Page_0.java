@@ -1,12 +1,10 @@
 package graphicsEngine.demo.simple.pages;
 
 import graphicsEngine.data.colors.PanelColors;
+import graphicsEngine.demo.simple.common.CommonPage;
 import graphicsEngine.demo.simple.common.HeaderWithButtons;
-import graphicsEngine.presets.HeaderAndFooterPage;
 import graphicsEngine.presets.panels.CommonFooter;
-import graphicsEngine.presets.panels.CommonHeader;
 import graphicsEngine.utilities.containers.AlignmentType;
-import graphicsEngine.utilities.simpleParts.DrawablePart;
 import graphicsEngine.utilities.simpleParts.SimplePart;
 
 import java.awt.*;
@@ -16,14 +14,10 @@ import java.util.ArrayList;
 /**
  * This is page 0
  */
-public class Page_0 extends HeaderAndFooterPage {
+public class Page_0 extends CommonPage {
 
     public Page_0(PanelColors panelColors) {
-        super(panelColors,
-                new HeaderWithButtons(100, panelColors),
-                new CommonFooter(50, panelColors, null),
-                prepareCenter(),
-                AlignmentType.TOP);
+        super(panelColors, prepareCenter(), AlignmentType.TOP);
     }
 
     private static ArrayList<? extends SimplePart> prepareCenter() {

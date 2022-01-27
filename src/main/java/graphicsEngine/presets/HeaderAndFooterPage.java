@@ -5,6 +5,7 @@ import graphicsEngine.presets.panels.CommonFooter;
 import graphicsEngine.presets.panels.CommonHeader;
 import graphicsEngine.utilities.containers.AlignmentType;
 import graphicsEngine.utilities.containers.PartContainer;
+import graphicsEngine.utilities.input.InputChecker;
 import graphicsEngine.utilities.pages.Page;
 import graphicsEngine.utilities.simpleParts.SimplePart;
 
@@ -15,11 +16,12 @@ import java.util.Objects;
 public abstract class HeaderAndFooterPage extends Page {
 
     // TODO: add javadoc
-    public HeaderAndFooterPage(PanelColors panelColors,
+    public HeaderAndFooterPage(InputChecker inputChecker,
+                               PanelColors panelColors,
                                CommonHeader header, CommonFooter footer,
                                ArrayList<? extends SimplePart> centralParts,
                                AlignmentType centralAlignment) {
-        super(new ArrayList<>());
+        super(inputChecker, new ArrayList<>());
         this.parts.add(makeHeaderContainer(panelColors, header, footer, centralParts, centralAlignment));
     }
 

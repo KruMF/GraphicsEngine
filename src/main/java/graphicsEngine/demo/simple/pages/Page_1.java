@@ -1,8 +1,8 @@
 package graphicsEngine.demo.simple.pages;
 
 import graphicsEngine.data.colors.PanelColors;
+import graphicsEngine.demo.simple.common.CommonPage;
 import graphicsEngine.demo.simple.common.HeaderWithButtons;
-import graphicsEngine.presets.HeaderAndFooterPage;
 import graphicsEngine.presets.panels.CommonFooter;
 import graphicsEngine.utilities.GraphicsHelper;
 import graphicsEngine.utilities.containers.AlignmentType;
@@ -15,14 +15,10 @@ import java.util.ArrayList;
 /**
  * This is page 1
  */
-public class Page_1 extends HeaderAndFooterPage {
+public class Page_1 extends CommonPage {
 
     public Page_1(PanelColors panelColors) {
-        super(panelColors,
-                new HeaderWithButtons(100, panelColors),
-                new CommonFooter(50, panelColors, null),
-                prepareCenter(),
-                AlignmentType.TOP);
+        super(panelColors, prepareCenter(), AlignmentType.TOP);
     }
 
     private static ArrayList<? extends SimplePart> prepareCenter() {
