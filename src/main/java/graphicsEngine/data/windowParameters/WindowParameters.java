@@ -6,6 +6,9 @@ import graphicsEngine.GraphicsManager;
 import javax.swing.*;
 import java.util.Objects;
 
+import com.google.inject.internal.Nullable;
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Window parameters class.
  */
@@ -26,7 +29,8 @@ public class WindowParameters {
 
     public boolean minimized, windowActive;
 
-    public WindowParameters(String windowTitle, String version, int[] windowSize, int[] windowLocation) {
+    public WindowParameters(@Nullable String windowTitle, @Nullable String version,
+                            @Nullable int[] windowSize, @Nullable int[] windowLocation) {
         setWindowTitle(windowTitle, version);
 
         setWindowSize(windowSize);
@@ -36,14 +40,14 @@ public class WindowParameters {
         windowActive = true;
     }
 
-    public void setWindowTitle(String windowTitle, String version) {
+    public void setWindowTitle(@Nullable String windowTitle, @Nullable String version) {
         String windowTitleString = Objects.requireNonNullElse(windowTitle, WINDOW_TITLE_DEFAULT);
         String versionString = Objects.requireNonNullElse(version, "versionNumberPlaceholder");
 
         this.windowTitle = windowTitleString + versionNumberAppendix(versionString);
     }
 
-    private String versionNumberAppendix(String versionNumber) {
+    private String versionNumberAppendix(@NotNull String versionNumber) {
         return " (version: " + versionNumber + ")";
     }
 

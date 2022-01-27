@@ -1,4 +1,4 @@
-package graphicsEngine.demo.simple.common;
+package graphicsEngine.demo.simple.common.header;
 
 import graphicsEngine.data.colors.PanelColors;
 import graphicsEngine.presets.panels.CommonHeader;

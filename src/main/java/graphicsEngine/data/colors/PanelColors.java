@@ -3,6 +3,8 @@ package graphicsEngine.data.colors;
 import java.awt.*;
 import java.util.Objects;
 
+import com.google.inject.internal.Nullable;
+
 //TODO: add javadoc
 public class PanelColors {
     private static final Color
@@ -11,16 +13,19 @@ public class PanelColors {
 
     public Color light, dark;
 
-    public PanelColors(Color light, Color dark) {
+    //TODO: add javadoc
+    public PanelColors(@Nullable Color light, @Nullable Color dark) {
         setLight(light);
         setDark(dark);
     }
 
-    public void setLight(Color color) {
+    //TODO: add javadoc
+    public void setLight(@Nullable Color color) {
         this.light = Objects.requireNonNullElse(color, DEFAULT_LIGHT);
     }
 
-    public void setDark(Color color) {
+    //TODO: add javadoc
+    public void setDark(@Nullable Color color) {
         this.dark = Objects.requireNonNullElse(color, DEFAULT_DARK);
     }
 }

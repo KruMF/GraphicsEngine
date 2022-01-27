@@ -1,4 +1,4 @@
-package graphicsEngine.demo.simple.common;
+package graphicsEngine.demo.simple.common.header;
 
 import graphicsEngine.utilities.simpleParts.SimplePart;
 import org.jetbrains.annotations.NotNull;

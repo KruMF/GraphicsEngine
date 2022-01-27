@@ -1,9 +1,9 @@
 package graphicsEngine.utilities.simpleParts;
 
+import java.awt.*;
+
 import com.google.inject.internal.Nullable;
 import org.jetbrains.annotations.NotNull;
-
-import java.awt.*;
 
 /**
  * A simple background with some color.

@@ -32,7 +32,7 @@ public class GraphicsHelper {
      */
     public static int drawStrings_VA(@NotNull Graphics g,
                                      int rowNumber, @NotNull String[] rows,
-                                     @NotNull int[] location) {
+                                     int[] location) {
         for (String row : rows) {
             rowNumber++;
             int drawY = location[1] + (rowNumber) * rowHeight - textOffsetFromBottom;
@@ -54,7 +54,7 @@ public class GraphicsHelper {
                                 @NotNull String[] header,
                                 @NotNull ArrayList<Column> columnData,
                                 @NotNull ArrayList<String[]> rows,
-                                @NotNull int[] location) {
+                                int[] location) {
         int rowNumber = drawStrings_VA(
                 g, 0,
                 header,

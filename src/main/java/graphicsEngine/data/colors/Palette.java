@@ -3,6 +3,8 @@ package graphicsEngine.data.colors;
 import java.awt.Color;
 import java.util.Objects;
 
+import com.google.inject.internal.Nullable;
+
 /**
  * Color palette class.
  */
@@ -25,7 +27,7 @@ public class Palette {
      * @param panelColors   A PanelColors object. (Null - PanelColors with default values)
      * @param textColor     Main text color. (Null - default text color)
      */
-    public Palette(ButtonColors buttonColors, PanelColors panelColors, Color textColor) {
+    public Palette(@Nullable ButtonColors buttonColors, @Nullable PanelColors panelColors, @Nullable Color textColor) {
         setBackgroundColor(null);
 
         setButtonColors(buttonColors);
@@ -34,11 +36,13 @@ public class Palette {
         setTextColor(textColor);
     }
 
-    public void setBackgroundColor(Color color) {
+    //TODO: add javadoc
+    public void setBackgroundColor(@Nullable Color color) {
         this.backgroundColor = Objects.requireNonNullElse(color, BACKGROUND_DEFAULT);
     }
 
-    public void setButtonColors(ButtonColors buttonColors) {
+    //TODO: add javadoc
+    public void setButtonColors(@Nullable ButtonColors buttonColors) {
         this.buttonColors = Objects.requireNonNullElse(
                 buttonColors,
                 new ButtonColors(
@@ -47,13 +51,15 @@ public class Palette {
                         null));
     }
 
-    public void setPanelColors(PanelColors panelColors) {
+    //TODO: add javadoc
+    public void setPanelColors(@Nullable PanelColors panelColors) {
         this.panelColors = Objects.requireNonNullElse(
                 panelColors,
                 new PanelColors(null, null));
     }
 
-    public void setTextColor(Color color) {
+    //TODO: add javadoc
+    public void setTextColor(@Nullable Color color) {
         this.textColor = Objects.requireNonNullElse(color, TEXT_COLOR_DEFAULT);
     }
 }

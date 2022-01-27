@@ -1,6 +1,8 @@
 package graphicsEngine.utilities.input;
 
 import graphicsEngine.utilities.containers.ButtonContainer;
+
+import com.google.inject.internal.Nullable;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -21,7 +23,7 @@ public class InputChecker {
      * @param input     Input to check.
      * @param container Relevant container.
      */
-    public void check(InputManager input, ButtonContainer container) {
+    public void check(@Nullable InputManager input, @Nullable ButtonContainer container) {
         if (input != null) {
             keyboardActionCheck(input);
             if (container != null) {
@@ -58,7 +60,7 @@ public class InputChecker {
      * @param input     Input to check.
      * @param container Relevant container.
      */
-    private void buttonCheck(InputManager input, ButtonContainer container) {
+    private void buttonCheck(@NotNull InputManager input, @NotNull ButtonContainer container) {
         container.buttonInteractionCheck(input.inputData);
         container.buttonActionCheck();
     }

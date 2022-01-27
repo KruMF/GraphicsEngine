@@ -5,12 +5,12 @@ import graphicsEngine.demo.simple.common.CommonPage;
 import graphicsEngine.utilities.GraphicsHelper;
 import graphicsEngine.utilities.containers.AlignmentType;
 import graphicsEngine.utilities.simpleParts.SimplePart;
-import org.jetbrains.annotations.NotNull;
 
 import java.awt.*;
 import java.util.ArrayList;
 
-// TODO: needs rework
+import org.jetbrains.annotations.NotNull;
+
 /**
  * This is page 1
  */

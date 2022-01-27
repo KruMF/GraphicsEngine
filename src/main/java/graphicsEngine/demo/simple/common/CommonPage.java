@@ -2,14 +2,16 @@ package graphicsEngine.demo.simple.common;
 
 import graphicsEngine.GraphicsManager;
 import graphicsEngine.data.colors.Palette;
+import graphicsEngine.demo.simple.common.header.HeaderWithButtons;
 import graphicsEngine.presets.HeaderAndFooterPage;
 import graphicsEngine.presets.panels.CommonFooter;
 import graphicsEngine.utilities.containers.AlignmentType;
 import graphicsEngine.utilities.input.InputChecker;
 import graphicsEngine.utilities.simpleParts.SimplePart;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
+
+import org.jetbrains.annotations.NotNull;
 
 public class CommonPage extends HeaderAndFooterPage {
 

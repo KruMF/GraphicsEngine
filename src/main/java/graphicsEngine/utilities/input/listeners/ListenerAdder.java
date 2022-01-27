@@ -6,6 +6,8 @@ import graphicsEngine.ExitManager;
 
 import javax.swing.JFrame;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Default window, keyboard and mouse listener adder for input.
  * Extendable for extra listeners.
@@ -20,8 +22,8 @@ public class ListenerAdder {
      * @param inputData        Input data.
      * @param exitManager      Exit manager to call upon exit.
      */
-    public ListenerAdder(JFrame window, WindowParameters windowParameters,
-                         InputData inputData, ExitManager exitManager) {
+    public ListenerAdder(@NotNull JFrame window, @NotNull WindowParameters windowParameters,
+                         @NotNull InputData inputData, @NotNull ExitManager exitManager) {
         defaultListeners(window, windowParameters, inputData, exitManager);
         addExtraListeners();
     }
@@ -34,8 +36,8 @@ public class ListenerAdder {
      * @param inputData        Input data.
      * @param exitManager      Exit manager to call upon exit.
      */
-    private void defaultListeners(JFrame window, WindowParameters windowParameters,
-                                  InputData inputData, ExitManager exitManager) {
+    private void defaultListeners(@NotNull JFrame window, @NotNull WindowParameters windowParameters,
+                                  @NotNull InputData inputData, @NotNull ExitManager exitManager) {
         new WindowListenerAdder(window, windowParameters, inputData, exitManager);
         new KeyboardListenerAdder(window, inputData);
         new MouseListenerAdder(window, inputData);
