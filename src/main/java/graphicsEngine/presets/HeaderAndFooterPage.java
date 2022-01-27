@@ -10,6 +10,7 @@ import graphicsEngine.utilities.containers.PartContainer;
 import graphicsEngine.utilities.input.InputChecker;
 import graphicsEngine.utilities.pages.Page;
 import graphicsEngine.utilities.simpleParts.SimplePart;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -38,22 +39,24 @@ public abstract class HeaderAndFooterPage extends Page {
         }}, AlignmentType.TOP);
     }
 
-    private static CommonHeader makeCommonHeader(CommonHeader header, PanelColors panelColors) {
+    private static CommonHeader makeCommonHeader(@Nullable CommonHeader header,
+                                                 @NotNull PanelColors panelColors) {
         return Objects.requireNonNullElse(header, new CommonHeader(0, panelColors, null));
     }
 
     // TODO: add javadoc
-    private PartContainer makeFooterContainer(PanelColors panelColors,
-                                              CommonFooter footer,
-                                              ArrayList<? extends SimplePart> centralParts,
-                                              AlignmentType centralAlignment) {
+    private PartContainer makeFooterContainer(@NotNull PanelColors panelColors,
+                                              @Nullable CommonFooter footer,
+                                              @Nullable ArrayList<? extends SimplePart> centralParts,
+                                              @Nullable AlignmentType centralAlignment) {
         return new PartContainer(null, null,new ArrayList<>() {{
             add(makeCommonFooter(footer, panelColors));
             add(makeCentralContainer(centralParts, centralAlignment));
         }}, AlignmentType.BOTTOM);
     }
 
-    private static CommonFooter makeCommonFooter(@Nullable CommonFooter footer, PanelColors panelColors) {
+    private static CommonFooter makeCommonFooter(@Nullable CommonFooter footer,
+                                                 @NotNull PanelColors panelColors) {
         return Objects.requireNonNullElse(footer, new CommonFooter(0, panelColors, null));
     }
 

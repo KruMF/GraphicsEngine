@@ -20,7 +20,8 @@ public class LayerContainer extends GenericContainer {
      * @param fixedSize Size fixation by axis.
      * @param parts     Parts to contain.
      */
-    public LayerContainer(@Nullable int[] size, @Nullable boolean[] fixedSize, @Nullable ArrayList<DrawablePart> parts) {
+    public LayerContainer(@Nullable int[] size, @Nullable boolean[] fixedSize,
+                          @Nullable ArrayList<DrawablePart> parts) {
         super(size, fixedSize, parts);
     }
 

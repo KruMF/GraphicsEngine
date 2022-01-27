@@ -61,7 +61,8 @@ public class PartContainer extends GenericContainer {
      * @param drawLocation  Location offset from containers location.
      */
     private void drawSinglePart(@NotNull Graphics g, @NotNull SimplePart part,
-                                @NotNull RemainderHelper remainingSize, @NotNull RemainderHelper drawLocation) {
+                                @NotNull RemainderHelper remainingSize,
+                                @NotNull RemainderHelper drawLocation) {
         int[] partLocation;
         int[] partSize;
         int sizeDifference;

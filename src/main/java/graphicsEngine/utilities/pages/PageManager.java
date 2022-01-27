@@ -1,11 +1,13 @@
 package graphicsEngine.utilities.pages;
 
-import com.google.inject.internal.Nullable;
 import graphicsEngine.utilities.input.InputManager;
 
 import java.util.ArrayList;
 import java.awt.Graphics;
 import java.util.Objects;
+
+import com.google.inject.internal.Nullable;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Page manager for drawing and checking interaction of contained pages.
@@ -29,7 +31,7 @@ public class PageManager {
      *
      * @param g Graphics to use.
      */
-    public void draw(Graphics g) {
+    public void draw(@NotNull Graphics g) {
         if (checkPageStatus()) {
             pages.get(activePage).draw(g);
         }
@@ -40,7 +42,7 @@ public class PageManager {
      *
      * @param input Input to use for checking.
      */
-    public void activityCheck(InputManager input) {
+    public void activityCheck(@Nullable InputManager input) {
         if (checkPageStatus()) {
             Page activePage = pages.get(this.activePage);
             activePage.inputCheck.check(input, activePage);
