@@ -6,6 +6,7 @@ import graphicsEngine.utilities.pages.PageManager;
 import graphicsEngine.utilities.input.InputManager;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 /**
  * Graphics manager for managing graphics.
@@ -26,41 +27,46 @@ public class GraphicsManager implements Runnable {
     /**
      * Creates a blank GraphicsManager thread with graphics data with specified parameters.
      * Has to be initialized. (Call initialize(?) to initialize)
-     *
-     * @param windowParameters Window parameters. (Null - default parameters)
      */
-    public GraphicsManager(ArrayList<String[]> windowParameters) {
+    public GraphicsManager() {
         System.out.println(GRAPHICS_ENGINE_NAME + ": Creating.");
 
-        data = new GraphicsData(windowParameters, true);
+        data = new GraphicsData(null, null, true);
     }
 
     /**
      * Initializes GraphicsManager.
      * Gets it ready for thread running.
      *
+     * @param exitManager Extended ExitManager for ending controller upon closing graphics. (Null - default)
      * @param pages Pages to display.
      */
-    public static void initialize(ArrayList<Page> pages) {
+    public static void initialize(ExitManager exitManager, ArrayList<Page> pages) {
         System.out.println(GRAPHICS_ENGINE_NAME + ": Initializing.");
+        setupGraphics(pages);
+        setupIO(exitManager);
+        running = true;
+    }
 
+    private static void setupGraphics(ArrayList<Page> pages) {
         // Has to be before graphics.
         GraphicsManager.pages = new PageManager(pages);
 
         // Graphics.
         graphics = new GraphicsClass();
         graphics.initialize();
+    }
 
+    private static void setupIO(ExitManager exitManager) {
         // Has to be before input.
-        exitManager = new ExitManager(GRAPHICS_ENGINE_NAME);
+        GraphicsManager.exitManager = Objects.requireNonNullElse(
+                exitManager,
+                new ExitManager(GRAPHICS_ENGINE_NAME));
 
         // Input.
         input = new InputManager(
                 graphics.window, data.windowParameters,
-                exitManager);
-
-        // Get ready for running.
-        running = true;
+                GraphicsManager.exitManager);
     }
 
     /**

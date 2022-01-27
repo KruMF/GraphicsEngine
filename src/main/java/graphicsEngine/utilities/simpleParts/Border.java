@@ -1,13 +1,11 @@
 package graphicsEngine.utilities.simpleParts;
 
 import java.awt.*;
-import java.util.Objects;
 
 /**
  * A simple border with some color.
  */
-public class Border extends SimplePart {
-    public Color color;
+public class Border extends ColoredSimplePart {
 
     /**
      * Creates a border.
@@ -15,10 +13,7 @@ public class Border extends SimplePart {
      * @param color Color. (null = transparent)
      */
     public Border(Color color) {
-        super();
-        this.color = Objects.requireNonNullElse(
-                color,
-                new Color(0,0,0,0));
+        super(color);
     }
 
     /**
@@ -40,7 +35,7 @@ public class Border extends SimplePart {
      * @param g Graphics to use.
      */
     private void drawBorders(Graphics g) {
-        g.setColor(color);
+        g.setColor(getColor());
         g.drawRect(location[0], location[1], size[0], size[1]);
     }
 }

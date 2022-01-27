@@ -1,6 +1,6 @@
 package graphicsEngine.utilities.input;
 
-import graphicsEngine.data.WindowParameters;
+import graphicsEngine.data.windowParameters.WindowParameters;
 import graphicsEngine.ExitManager;
 import graphicsEngine.utilities.input.listeners.ListenerAdder;
 

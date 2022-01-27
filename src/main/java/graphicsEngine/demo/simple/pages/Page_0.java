@@ -1,33 +1,60 @@
 package graphicsEngine.demo.simple.pages;
 
-import graphicsEngine.demo.simple.common.CommonPage;
+import graphicsEngine.data.colors.PanelColors;
+import graphicsEngine.demo.simple.common.HeaderWithButtons;
+import graphicsEngine.presets.HeaderAndFooterPage;
+import graphicsEngine.presets.panels.CommonFooter;
+import graphicsEngine.presets.panels.CommonHeader;
+import graphicsEngine.utilities.containers.AlignmentType;
+import graphicsEngine.utilities.simpleParts.DrawablePart;
+import graphicsEngine.utilities.simpleParts.SimplePart;
 
 import java.awt.*;
+import java.util.ArrayList;
 
 // TODO: needs rework
 /**
  * This is page 0
  */
-public class Page_0 extends CommonPage {
+public class Page_0 extends HeaderAndFooterPage {
 
-    public Page_0() {
-        super(null, null);
+    public Page_0(PanelColors panelColors) {
+        super(panelColors,
+                new HeaderWithButtons(100, panelColors),
+                new CommonFooter(50, panelColors, null),
+                prepareCenter(),
+                AlignmentType.TOP);
     }
 
-    public void drawCenter(Graphics g, int[] location, int[] size) {
-        int[] margin = new int[] {20, 20};
-        int[] drawSize = new int[] {
-                size[0] - 2 * margin[0],
-                size[1] - 2 * margin[1]};
+    private static ArrayList<? extends SimplePart> prepareCenter() {
+        return new ArrayList<>() {{
+            add(new Center());
+        }};
+    }
 
-        //draw stuff here
+    static class Center extends SimplePart {
+        Center() {
+            super();
+        }
 
-        //red rectangle offset from sides
-        g.setColor(Color.red);
-        g.drawRect(
-                location[0] + margin[0],
-                location[1] + margin[1],
-                drawSize[0],
-                drawSize[1]);
+        @Override
+        public void draw(Graphics g, int[] location, int[] size) {
+            super.draw(g, location, size);
+
+            int[] margin = new int[] {20, 20};
+            int[] drawSize = new int[] {
+                    size[0] - 2 * margin[0],
+                    size[1] - 2 * margin[1]};
+
+            //draw stuff here
+
+            //red rectangle offset from sides
+            g.setColor(Color.red);
+            g.drawRect(
+                    location[0] + margin[0],
+                    location[1] + margin[1],
+                    drawSize[0],
+                    drawSize[1]);
+        }
     }
 }
