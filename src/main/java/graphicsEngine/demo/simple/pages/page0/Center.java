@@ -19,8 +19,8 @@ class Center extends SimplePart {
     public void draw(@NotNull Graphics g, int[] location, int[] size) {
         super.draw(g, location, size);
 
-        int[] margin = new int[]{20, 20};
-        int[] drawSize = new int[]{
+        int[] margin = new int[] {20, 20};
+        int[] drawSize = new int[] {
                 size[0] - 2 * margin[0],
                 size[1] - 2 * margin[1]};
 

@@ -1,6 +1,6 @@
 package graphicsEngine.demo.simple.common;
 
-import graphicsEngine.GraphicsManager;
+import graphicsEngine.engine.GraphicsManager;
 import graphicsEngine.utilities.input.InputChecker;
 
 import org.jetbrains.annotations.NotNull;

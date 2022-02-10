@@ -1,8 +1,8 @@
 package graphicsEngine.utilities.input.listeners;
 
-import graphicsEngine.data.windowParameters.WindowParameters;
+import graphicsEngine.engine.data.windowParameters.WindowParameters;
 import graphicsEngine.utilities.input.InputData;
-import graphicsEngine.ExitManager;
+import graphicsEngine.engine.ExitManager;
 
 import javax.swing.JFrame;
 import java.awt.event.ComponentAdapter;

@@ -1,7 +1,7 @@
-package graphicsEngine.data;
+package graphicsEngine.engine.data;
 
-import graphicsEngine.data.colors.Palette;
-import graphicsEngine.data.windowParameters.WindowParameters;
+import graphicsEngine.engine.data.colors.Palette;
+import graphicsEngine.engine.data.windowParameters.WindowParameters;
 
 import java.util.Objects;
 

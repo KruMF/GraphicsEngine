@@ -1,6 +1,6 @@
 package graphicsEngine.demo.simple.common;
 
-import graphicsEngine.data.colors.Palette;
+import graphicsEngine.engine.data.colors.Palette;
 import graphicsEngine.demo.simple.common.header.HeaderWithButtons;
 import graphicsEngine.presets.HeaderAndFooterPage;
 import graphicsEngine.presets.panels.CommonFooter;

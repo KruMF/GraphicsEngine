@@ -1,7 +1,7 @@
 package graphicsEngine.presets;
 
-import graphicsEngine.data.colors.Palette;
-import graphicsEngine.data.colors.PanelColors;
+import graphicsEngine.engine.data.colors.Palette;
+import graphicsEngine.engine.data.colors.PanelColors;
 import graphicsEngine.presets.panels.CommonFooter;
 import graphicsEngine.presets.panels.CommonHeader;
 import graphicsEngine.utilities.containers.AlignmentType;

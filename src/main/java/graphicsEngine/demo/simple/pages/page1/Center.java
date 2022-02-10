@@ -22,8 +22,8 @@ class Center extends SimplePart {
         g.setColor(Color.green);
         GraphicsHelper.drawStrings_VA(
                 g, 0,
-                new String[]{"This is the second page"},
-                new int[]{
+                new String[] {"This is the second page"},
+                new int[] {
                         location[0] + size[0] / 2,
                         location[1] + size[1] / 2});
 

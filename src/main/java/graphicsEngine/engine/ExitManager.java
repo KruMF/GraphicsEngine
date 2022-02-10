@@ -1,4 +1,4 @@
-package graphicsEngine;
+package graphicsEngine.engine;
 
 /**
  * Exit manager for managing exit.

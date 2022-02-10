@@ -1,6 +1,6 @@
 package graphicsEngine.demo.simple.pages.page0;
 
-import graphicsEngine.data.colors.Palette;
+import graphicsEngine.engine.data.colors.Palette;
 import graphicsEngine.demo.simple.common.CommonPage;
 import graphicsEngine.utilities.containers.AlignmentType;
 import graphicsEngine.utilities.simpleParts.SimplePart;
@@ -22,5 +22,4 @@ public class Page_0 extends CommonPage {
     private static ArrayList<? extends SimplePart> prepareCenter() {
         return new ArrayList<>() {{add(new Center());}};
     }
-
 }

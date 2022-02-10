@@ -1,6 +1,6 @@
-package graphicsEngine;
+package graphicsEngine.engine;
 
-import graphicsEngine.data.GraphicsData;
+import graphicsEngine.engine.data.GraphicsData;
 import graphicsEngine.utilities.pages.Page;
 import graphicsEngine.utilities.pages.PageManager;
 import graphicsEngine.utilities.input.InputManager;

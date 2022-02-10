@@ -1,8 +1,8 @@
 package graphicsEngine.demo.simple;
 
-import graphicsEngine.GraphicsManager;
-import graphicsEngine.data.GraphicsData;
-import graphicsEngine.data.colors.Palette;
+import graphicsEngine.engine.GraphicsManager;
+import graphicsEngine.engine.data.GraphicsData;
+import graphicsEngine.engine.data.colors.Palette;
 import graphicsEngine.demo.simple.pages.page0.Page_0;
 import graphicsEngine.demo.simple.pages.page1.Page_1;
 import graphicsEngine.utilities.pages.Page;

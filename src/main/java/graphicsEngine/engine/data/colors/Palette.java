@@ -1,4 +1,4 @@
-package graphicsEngine.data.colors;
+package graphicsEngine.engine.data.colors;
 
 import java.awt.Color;
 import java.util.Objects;

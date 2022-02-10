@@ -1,6 +1,6 @@
 package graphicsEngine.utilities.pages;
 
-import graphicsEngine.GraphicsManager;
+import graphicsEngine.engine.GraphicsManager;
 import graphicsEngine.utilities.input.InputData;
 
 import static graphicsEngine.utilities.GraphicsHelper.*;

@@ -1,7 +1,7 @@
 package graphicsEngine.utilities.pages;
 
-import graphicsEngine.GraphicsManager;
-import graphicsEngine.data.colors.Palette;
+import graphicsEngine.engine.GraphicsManager;
+import graphicsEngine.engine.data.colors.Palette;
 import graphicsEngine.utilities.containers.LayerContainer;
 import graphicsEngine.utilities.input.InputChecker;
 import graphicsEngine.utilities.simpleParts.Background;

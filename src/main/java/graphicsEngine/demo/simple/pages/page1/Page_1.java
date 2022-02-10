@@ -1,6 +1,6 @@
 package graphicsEngine.demo.simple.pages.page1;
 
-import graphicsEngine.data.colors.Palette;
+import graphicsEngine.engine.data.colors.Palette;
 import graphicsEngine.demo.simple.common.CommonPage;
 import graphicsEngine.utilities.containers.AlignmentType;
 import graphicsEngine.utilities.simpleParts.SimplePart;

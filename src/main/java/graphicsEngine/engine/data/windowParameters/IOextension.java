@@ -1,4 +1,4 @@
-package graphicsEngine.data.windowParameters;
+package graphicsEngine.engine.data.windowParameters;
 
 import java.util.ArrayList;
 

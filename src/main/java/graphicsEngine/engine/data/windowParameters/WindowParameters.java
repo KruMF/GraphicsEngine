@@ -1,7 +1,7 @@
-package graphicsEngine.data.windowParameters;
+package graphicsEngine.engine.data.windowParameters;
 
-import graphicsEngine.GraphicsClass;
-import graphicsEngine.GraphicsManager;
+import graphicsEngine.engine.GraphicsClass;
+import graphicsEngine.engine.GraphicsManager;
 
 import javax.swing.*;
 import java.util.Objects;

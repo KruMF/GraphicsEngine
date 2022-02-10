@@ -1,6 +1,6 @@
 package graphicsEngine.demo.simple.common.header;
 
-import graphicsEngine.data.colors.PanelColors;
+import graphicsEngine.engine.data.colors.PanelColors;
 import graphicsEngine.presets.panels.CommonHeader;
 import graphicsEngine.utilities.simpleParts.DrawablePart;
 import org.jetbrains.annotations.NotNull;

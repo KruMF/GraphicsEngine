@@ -1,7 +1,7 @@
 package graphicsEngine.utilities.buttons;
 
-import graphicsEngine.GraphicsManager;
-import graphicsEngine.data.colors.ButtonColors;
+import graphicsEngine.engine.GraphicsManager;
+import graphicsEngine.engine.data.colors.ButtonColors;
 import graphicsEngine.utilities.input.InputData;
 import graphicsEngine.utilities.simpleParts.Background;
 import graphicsEngine.utilities.simpleParts.Border;

@@ -1,6 +1,6 @@
-package graphicsEngine;
+package graphicsEngine.engine;
 
-import graphicsEngine.data.windowParameters.WindowParameters;
+import graphicsEngine.engine.data.windowParameters.WindowParameters;
 import graphicsEngine.utilities.pages.DebugLayer;
 
 import javax.swing.JPanel;
