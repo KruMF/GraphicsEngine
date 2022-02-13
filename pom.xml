@@ -14,7 +14,16 @@
         <maven.compiler.target>17</maven.compiler.target>
         <junit.jupiter.version>5.8.2</junit.jupiter.version>
         <maven.surefire.version>3.0.0-M5</maven.surefire.version>
+
+        <fileHandler.version>0.2.2</fileHandler.version>
     </properties>
+
+    <repositories>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
 
     <dependencies>
         <dependency>
@@ -39,6 +48,12 @@
             <artifactId>annotations</artifactId>
             <version>22.0.0</version>
             <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.Krumuvecis</groupId>
+            <artifactId>FileHandler</artifactId>
+            <version>${fileHandler.version}</version>
         </dependency>
     </dependencies>
 
