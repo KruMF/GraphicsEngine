@@ -1,4 +1,4 @@
-package graphicsEngine.demo.simple.pages.page1;
+package graphicsEngine.demo.simple.pages.page2;
 
 import graphicsEngine.utilities.GraphicsHelper;
 import graphicsEngine.utilities.simpleParts.SimplePart;
@@ -22,7 +22,7 @@ class Center extends SimplePart {
         g.setColor(Color.green);
         GraphicsHelper.drawStrings_VA(
                 g, 0,
-                new String[] {"This is the page 1"},
+                new String[] {"This is the page 2"},
                 new int[] {
                         location[0] + size[0] / 2,
                         location[1] + size[1] / 2});

@@ -19,7 +19,8 @@ class CommonKeyboardActions extends InputChecker {
         switch (keyText) {
             case "0" -> GraphicsManager.pages.activePage = 0;
             case "1" -> GraphicsManager.pages.activePage = 1;
-            case "2", "3", "4", "5", "6", "7", "8", "9" -> System.out.println("Page " + keyText + " does not exist");
+            case "2" -> GraphicsManager.pages.activePage = 2;
+            case "3", "4", "5", "6", "7", "8", "9" -> System.out.println("Page " + keyText + " does not exist");
             default -> super.keyboardActions(keyText);
         }
     }

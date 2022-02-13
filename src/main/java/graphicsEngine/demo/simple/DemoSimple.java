@@ -3,9 +3,10 @@ package graphicsEngine.demo.simple;
 import graphicsEngine.engine.GraphicsManager;
 import graphicsEngine.engine.data.GraphicsData;
 import graphicsEngine.engine.data.colors.Palette;
+import graphicsEngine.utilities.pages.Page;
 import graphicsEngine.demo.simple.pages.page0.Page_0;
 import graphicsEngine.demo.simple.pages.page1.Page_1;
-import graphicsEngine.utilities.pages.Page;
+import graphicsEngine.demo.simple.pages.page2.Page_2;
 
 import java.util.ArrayList;
 
@@ -38,6 +39,7 @@ public class DemoSimple {
         return new ArrayList<>() {{
             add(new Page_0(palette));
             add(new Page_1(palette));
+            add(new Page_2(palette));
         }};
     }
 }
