@@ -1,4 +1,4 @@
-package graphicsEngine.demo.simple.pages.page2;
+package graphicsEngine.demo.simple.pages.demoPages.page2;
 
 import graphicsEngine.engine.data.colors.Palette;
 import graphicsEngine.demo.simple.common.CommonPage;
@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * This is page 2
+ * This is page 2 for the Simple Demo.
  */
 public class Page_2 extends CommonPage {
 

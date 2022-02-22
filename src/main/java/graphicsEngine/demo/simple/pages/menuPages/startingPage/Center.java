@@ -1,4 +1,4 @@
-package graphicsEngine.demo.simple.pages.page0;
+package graphicsEngine.demo.simple.pages.menuPages.startingPage;
 
 import graphicsEngine.utilities.simpleParts.SimplePart;
 
@@ -6,7 +6,9 @@ import java.awt.*;
 
 import org.jetbrains.annotations.NotNull;
 
-//TODO: add javadoc
+/**
+ * Central section of the main menu page.
+ */
 class Center extends SimplePart {
 
     //TODO: add javadoc
@@ -14,7 +16,13 @@ class Center extends SimplePart {
         super();
     }
 
-    //TODO: add javadoc
+    /**
+     * Drawing of the center.
+     *
+     * @param g        Graphics to use.
+     * @param location Starting location for drawing.
+     * @param size     Maximum drawing size.
+     */
     @Override
     public void draw(@NotNull Graphics g, int[] location, int[] size) {
         super.draw(g, location, size);
@@ -34,4 +42,7 @@ class Center extends SimplePart {
                 drawSize[0],
                 drawSize[1]);
     }
+
+    //welcome message
+    //
 }

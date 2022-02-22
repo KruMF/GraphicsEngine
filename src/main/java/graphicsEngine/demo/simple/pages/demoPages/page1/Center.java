@@ -1,4 +1,4 @@
-package graphicsEngine.demo.simple.pages.page1;
+package graphicsEngine.demo.simple.pages.demoPages.page1;
 
 import graphicsEngine.utilities.GraphicsHelper;
 import graphicsEngine.utilities.simpleParts.SimplePart;

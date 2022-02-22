@@ -1,4 +1,4 @@
-package graphicsEngine.demo.simple.pages.page2.grid;
+package graphicsEngine.demo.simple.pages.demoPages.page2.grid;
 
 import java.awt.*;
 import java.util.ArrayList;

@@ -1,9 +1,9 @@
-package graphicsEngine.demo.simple.pages.page2;
+package graphicsEngine.demo.simple.pages.demoPages.page2;
 
 import graphicsEngine.utilities.GraphicsHelper;
 import graphicsEngine.utilities.simpleParts.SimplePart;
 
-import graphicsEngine.demo.simple.pages.page2.grid.Table;
+import graphicsEngine.demo.simple.pages.demoPages.page2.grid.Table;
 
 import java.awt.*;
 
