@@ -10,7 +10,6 @@ import java.awt.event.ComponentEvent;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
-
 import org.jetbrains.annotations.NotNull;
 
 /**

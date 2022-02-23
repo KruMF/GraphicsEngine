@@ -1,7 +1,7 @@
 package graphicsEngine.engine.data.colors;
 
-import java.awt.Color;
 import java.util.Objects;
+import java.awt.Color;
 
 import com.google.inject.internal.Nullable;
 

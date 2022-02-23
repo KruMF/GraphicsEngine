@@ -6,7 +6,9 @@ import java.awt.*;
 
 import org.jetbrains.annotations.NotNull;
 
-// TODO: add javadoc
+/**
+ * A simple logo object for simple demo.
+ */
 public class Logo extends SimplePart {
     private static final double PROPORTIONS = 0.8;
     private static final Color
@@ -20,12 +22,12 @@ public class Logo extends SimplePart {
 
     //TODO: add javadoc
     @Override
-    public void draw(@NotNull Graphics g, int[] location, int[] size){
+    public void draw(@NotNull Graphics g, int[] location, int[] size) {
         super.draw(g, location, size);
         drawLogo(g);
     }
 
-    private void drawLogo(@NotNull Graphics g){
+    private void drawLogo(@NotNull Graphics g) {
         g.setColor(BACKGROUND_COLOR);
         g.fillRect(this.location[0], this.location[1], this.size[0], this.size[1]);
 

@@ -1,7 +1,7 @@
 package graphicsEngine.utilities.simpleParts;
 
-import java.awt.Graphics;
 import java.util.Objects;
+import java.awt.Graphics;
 
 import com.google.inject.internal.Nullable;
 import org.jetbrains.annotations.NotNull;

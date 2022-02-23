@@ -2,6 +2,7 @@ package graphicsEngine.demo.simple.withPages.pages.menuPages.settingsPage;
 
 import graphicsEngine.engine.data.colors.Palette;
 import graphicsEngine.utilities.simpleParts.SimplePart;
+
 import graphicsEngine.demo.simple.withPages.pages.menuPages.CommonMenuPage;
 
 import java.util.ArrayList;

@@ -3,8 +3,8 @@ package graphicsEngine.utilities.pages;
 import graphicsEngine.utilities.input.InputManager;
 
 import java.util.ArrayList;
-import java.awt.Graphics;
 import java.util.Objects;
+import java.awt.Graphics;
 
 import com.google.inject.internal.Nullable;
 import org.jetbrains.annotations.NotNull;

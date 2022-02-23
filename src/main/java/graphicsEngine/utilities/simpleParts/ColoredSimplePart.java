@@ -1,7 +1,7 @@
 package graphicsEngine.utilities.simpleParts;
 
-import java.awt.*;
 import java.util.Objects;
+import java.awt.*;
 
 import com.google.inject.internal.Nullable;
 

@@ -1,9 +1,10 @@
 package graphicsEngine.demo.simple.withPages.pages.menuPages.demoSelectPage;
 
 import graphicsEngine.utilities.simpleParts.SimplePart;
-import org.jetbrains.annotations.NotNull;
 
 import java.awt.*;
+
+import org.jetbrains.annotations.NotNull;
 
 //TODO: finish this and add javadoc
 public class Center extends SimplePart {

@@ -1,7 +1,7 @@
 package graphicsEngine.demo.simple.withPages.pages.demoPages.page2.grid;
 
-import java.awt.*;
 import java.util.Random;
+import java.awt.*;
 
 //TODO: add javadoc
 public class Cell {

@@ -1,9 +1,10 @@
 package graphicsEngine.demo.simple.withPages.pages.demoPages.page2;
 
 import graphicsEngine.engine.data.colors.Palette;
-import graphicsEngine.demo.simple.withPages.common.CommonPage;
-import graphicsEngine.utilities.containers.AlignmentType;
 import graphicsEngine.utilities.simpleParts.SimplePart;
+import graphicsEngine.utilities.containers.AlignmentType;
+
+import graphicsEngine.demo.simple.withPages.common.CommonPage;
 
 import java.util.ArrayList;
 

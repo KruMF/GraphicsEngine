@@ -19,7 +19,7 @@ public class HeaderButton2 extends Button {
      */
     @Override
     public void action() {
-        //TODO: Finish this
+        //TODO: finish this
         System.out.println("Placeholder for Button 2 action.");
     }
 }

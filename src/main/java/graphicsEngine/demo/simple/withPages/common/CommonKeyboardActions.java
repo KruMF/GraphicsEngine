@@ -17,13 +17,16 @@ class CommonKeyboardActions extends InputChecker {
     @Override
     public void keyboardActions(@NotNull String keyText) {
         switch (keyText) {
-            case "0" -> GraphicsManager.pages.activePage = 0; //selects the starting page
+            case "1" -> GraphicsManager.pages.activePage = 3; // selects page 1
+            case "2" -> GraphicsManager.pages.activePage = 4; // selects page 2
 
-            //TODO: in order to add a settings page, convert page manager for using map instead of list
+            case "0" -> GraphicsManager.pages.activePage = 0; // selects the starting page
+            case "9" -> GraphicsManager.pages.activePage = 1; // selects the settings page
+            case "8" -> GraphicsManager.pages.activePage = 2; // selects the demo select page
 
-            case "1" -> GraphicsManager.pages.activePage = 1; //selects page 1
-            case "2" -> GraphicsManager.pages.activePage = 2; //selects page 2
-            case "3", "4", "5", "6", "7", "8", "9" -> System.out.println("Page " + keyText + " does not exist");
+            //TODO: convert page manager for using map instead of list
+
+            case "3", "4", "5", "6", "7" -> System.out.println("Page " + keyText + " does not exist");
             default -> super.keyboardActions(keyText);
         }
     }

@@ -2,13 +2,14 @@ package graphicsEngine.presets;
 
 import graphicsEngine.engine.data.colors.Palette;
 import graphicsEngine.engine.data.colors.PanelColors;
-import graphicsEngine.presets.panels.CommonFooter;
-import graphicsEngine.presets.panels.CommonHeader;
+import graphicsEngine.utilities.input.InputChecker;
+import graphicsEngine.utilities.simpleParts.SimplePart;
 import graphicsEngine.utilities.containers.AlignmentType;
 import graphicsEngine.utilities.containers.PartContainer;
-import graphicsEngine.utilities.input.InputChecker;
 import graphicsEngine.utilities.pages.Page;
-import graphicsEngine.utilities.simpleParts.SimplePart;
+
+import graphicsEngine.presets.panels.CommonHeader;
+import graphicsEngine.presets.panels.CommonFooter;
 
 import java.util.ArrayList;
 import java.util.Objects;

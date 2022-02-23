@@ -2,14 +2,14 @@ package graphicsEngine.utilities.pages;
 
 import graphicsEngine.engine.GraphicsManager;
 import graphicsEngine.engine.data.colors.Palette;
-import graphicsEngine.utilities.containers.LayerContainer;
 import graphicsEngine.utilities.input.InputChecker;
 import graphicsEngine.utilities.simpleParts.Background;
 import graphicsEngine.utilities.simpleParts.DrawablePart;
+import graphicsEngine.utilities.containers.LayerContainer;
 
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.Objects;
+import java.awt.*;
 
 import com.google.inject.internal.Nullable;
 import org.jetbrains.annotations.NotNull;

@@ -1,11 +1,13 @@
 package graphicsEngine.demo.simple.withPages.pages.menuPages.demoSelectPage;
 
-import graphicsEngine.demo.simple.withPages.pages.menuPages.CommonMenuPage;
 import graphicsEngine.engine.data.colors.Palette;
 import graphicsEngine.utilities.simpleParts.SimplePart;
-import org.jetbrains.annotations.NotNull;
+
+import graphicsEngine.demo.simple.withPages.pages.menuPages.CommonMenuPage;
 
 import java.util.ArrayList;
+
+import org.jetbrains.annotations.NotNull;
 
 /**
  * This is the page for selecting demo type for the Simple Demo.

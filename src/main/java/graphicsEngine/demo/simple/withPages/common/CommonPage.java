@@ -1,11 +1,12 @@
 package graphicsEngine.demo.simple.withPages.common;
 
 import graphicsEngine.engine.data.colors.Palette;
-import graphicsEngine.demo.simple.withPages.common.header.HeaderWithButtons;
+import graphicsEngine.utilities.simpleParts.SimplePart;
+import graphicsEngine.utilities.containers.AlignmentType;
 import graphicsEngine.presets.HeaderAndFooterPage;
 import graphicsEngine.presets.panels.CommonFooter;
-import graphicsEngine.utilities.containers.AlignmentType;
-import graphicsEngine.utilities.simpleParts.SimplePart;
+
+import graphicsEngine.demo.simple.withPages.common.header.HeaderWithButtons;
 
 import java.util.ArrayList;
 
@@ -26,5 +27,4 @@ public class CommonPage extends HeaderAndFooterPage {
                 new CommonFooter(50, palette.panelColors, null),
                 centralParts, centralAlignment);
     }
-
 }

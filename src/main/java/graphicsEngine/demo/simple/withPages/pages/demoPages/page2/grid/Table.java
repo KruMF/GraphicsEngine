@@ -1,7 +1,7 @@
 package graphicsEngine.demo.simple.withPages.pages.demoPages.page2.grid;
 
-import java.awt.*;
 import java.util.ArrayList;
+import java.awt.*;
 
 public class Table {
     private static final int

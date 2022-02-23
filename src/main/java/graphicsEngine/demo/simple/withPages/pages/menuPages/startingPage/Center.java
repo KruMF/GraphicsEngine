@@ -41,8 +41,11 @@ class Center extends SimplePart {
                 location[1] + margin[1],
                 drawSize[0],
                 drawSize[1]);
-    }
 
-    //welcome message
-    //
+        /*
+         * TODO:
+         *      welcome message
+         *      some instructions
+         */
+    }
 }

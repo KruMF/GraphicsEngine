@@ -4,7 +4,10 @@ import graphicsEngine.engine.GraphicsManager;
 import graphicsEngine.engine.data.GraphicsData;
 import graphicsEngine.engine.data.colors.Palette;
 import graphicsEngine.utilities.pages.Page;
+
 import graphicsEngine.demo.simple.withPages.pages.menuPages.startingPage.StartingPage;
+import graphicsEngine.demo.simple.withPages.pages.menuPages.settingsPage.SettingsPage;
+import graphicsEngine.demo.simple.withPages.pages.menuPages.demoSelectPage.DemoSelectPage;
 import graphicsEngine.demo.simple.withPages.pages.demoPages.page1.Page_1;
 import graphicsEngine.demo.simple.withPages.pages.demoPages.page2.Page_2;
 
@@ -38,6 +41,8 @@ public class DemoSimple {
     private static ArrayList<Page> preparePages(@NotNull Palette palette) {
         return new ArrayList<>() {{
             add(new StartingPage(palette));
+            add(new SettingsPage(palette));
+            add(new DemoSelectPage(palette));
             add(new Page_1(palette));
             add(new Page_2(palette));
         }};

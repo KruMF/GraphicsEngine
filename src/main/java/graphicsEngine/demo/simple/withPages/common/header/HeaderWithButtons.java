@@ -1,11 +1,12 @@
 package graphicsEngine.demo.simple.withPages.common.header;
 
 import graphicsEngine.engine.data.colors.PanelColors;
-import graphicsEngine.presets.panels.CommonHeader;
 import graphicsEngine.utilities.simpleParts.DrawablePart;
-import org.jetbrains.annotations.NotNull;
+import graphicsEngine.presets.panels.CommonHeader;
 
 import java.util.ArrayList;
+
+import org.jetbrains.annotations.NotNull;
 
 // TODO: add javadoc
 public class HeaderWithButtons extends CommonHeader {
