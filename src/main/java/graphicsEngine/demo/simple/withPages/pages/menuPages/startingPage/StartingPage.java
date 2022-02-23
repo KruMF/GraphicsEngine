@@ -13,6 +13,7 @@ import org.jetbrains.annotations.NotNull;
  * This is the starting page of the Simple Demo.
  */
 public class StartingPage extends CommonMenuPage {
+    public static final String PAGE_KEY = "startingPage";
 
     /**
      * Constructor for the starting page.

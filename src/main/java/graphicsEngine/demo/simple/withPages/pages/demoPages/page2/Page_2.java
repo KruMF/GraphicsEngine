@@ -14,6 +14,7 @@ import org.jetbrains.annotations.NotNull;
  * This is page 2 for the Simple Demo.
  */
 public class Page_2 extends CommonPage {
+    public static final String PAGE_KEY = "page2";
 
     //TODO: add javadoc
     public Page_2(@NotNull Palette palette) {

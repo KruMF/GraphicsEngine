@@ -2,7 +2,7 @@ package graphicsEngine.utilities.pages;
 
 import graphicsEngine.utilities.input.InputManager;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Objects;
 import java.awt.Graphics;
 
@@ -13,17 +13,54 @@ import org.jetbrains.annotations.NotNull;
  * Page manager for drawing and checking interaction of contained pages.
  */
 public class PageManager {
-    public ArrayList<Page> pages;
-    public int activePage;
+    public HashMap<String, Page> pages;
+    public String activePage;
 
     /**
      * Creates a page manager and sets active page to 0.
      *
-     * @param pages ArrayList of pages to add. (Null - no pages)
+     * @param pages Map of pages to add. (Null or empty - no pages)
      */
-    public PageManager(@Nullable ArrayList<Page> pages) {
-        this.pages = Objects.requireNonNullElse(pages, new ArrayList<>());
-        activePage = 0;
+    public PageManager(@Nullable HashMap<String, Page> pages, @Nullable String activePage) {
+        this.pages = initialPages(pages);
+        setActivePage(initialActivePage(activePage));
+    }
+
+    /**
+     * Empty constructor for a blank page manager containing no pages.
+     */
+    public PageManager() {
+        this(null, null);
+    }
+
+    private HashMap<String, Page> initialPages(@Nullable HashMap<String, Page> pages) {
+        return Objects.requireNonNullElse(pages, new HashMap<>());
+    }
+
+    private String initialActivePage(@Nullable String activePage) {
+        return Objects.requireNonNullElse(activePage, "");
+    }
+
+    //todo: add javadoc
+    public void setActivePage(@Nullable String activePage) {
+        if ((activePage != null) && (pages.containsKey(activePage))) {
+            this.activePage = activePage;
+        }
+    }
+
+    //todo: add javadoc
+    public void addPage(@Nullable String key, @Nullable Page page) {
+        if (checkAddableKeyValidity(key) && checkAddablePageValidity(page)) {
+            pages.put(key, page);
+        }
+    }
+
+    private boolean checkAddableKeyValidity(@Nullable String key) {
+        return !(key == null || pages.containsKey(key));
+    }
+
+    private boolean checkAddablePageValidity(@Nullable Page page) {
+        return !(page == null);
     }
 
     /**
@@ -52,9 +89,9 @@ public class PageManager {
     /**
      * Check if active page is valid.
      *
-     * @return True if valid, false if no pages exist or index out of bounds.
+     * @return True if valid, false if no pages exist or no such page key found.
      */
     private boolean checkPageStatus() {
-        return (pages.size() > 0) && (activePage < pages.size());
+        return (pages.size() > 0) && (pages.containsKey(activePage));
     }
 }

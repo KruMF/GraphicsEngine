@@ -11,7 +11,7 @@ import graphicsEngine.demo.simple.withPages.pages.menuPages.demoSelectPage.DemoS
 import graphicsEngine.demo.simple.withPages.pages.demoPages.page1.Page_1;
 import graphicsEngine.demo.simple.withPages.pages.demoPages.page2.Page_2;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -29,7 +29,7 @@ public class DemoSimple {
         GraphicsManager graphics = new GraphicsManager(startingParameters);
 
         Palette palette = startingParameters.palette;
-        GraphicsManager.initialize(null, preparePages(palette));
+        GraphicsManager.initialize(null, preparePages(palette), StartingPage.PAGE_KEY);
 
         graphics.run();
     }
@@ -38,13 +38,13 @@ public class DemoSimple {
         return new GraphicsData(null, null, true);
     }
 
-    private static ArrayList<Page> preparePages(@NotNull Palette palette) {
-        return new ArrayList<>() {{
-            add(new StartingPage(palette));
-            add(new SettingsPage(palette));
-            add(new DemoSelectPage(palette));
-            add(new Page_1(palette));
-            add(new Page_2(palette));
+    private static HashMap<String, Page> preparePages(@NotNull Palette palette) {
+        return new HashMap<>() {{
+            put(StartingPage.PAGE_KEY, new StartingPage(palette));
+            put(SettingsPage.PAGE_KEY, new SettingsPage(palette));
+            put(DemoSelectPage.PAGE_KEY, new DemoSelectPage(palette));
+            put(Page_1.PAGE_KEY, new Page_1(palette));
+            put(Page_2.PAGE_KEY, new Page_2(palette));
         }};
     }
 }

@@ -5,7 +5,7 @@ import graphicsEngine.utilities.input.InputManager;
 import graphicsEngine.utilities.pages.Page;
 import graphicsEngine.utilities.pages.PageManager;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Objects;
 
 import com.google.inject.internal.Nullable;
@@ -46,18 +46,20 @@ public class GraphicsManager implements Runnable {
      * Gets it ready for thread running.
      *
      * @param exitManager Extended ExitManager for ending controller upon closing graphics. (Null - default)
-     * @param pages Pages to display.
+     * @param pages Pages to display. (Null or empty - no pages)
+     * @param activePage Key of the first active page. (Null - acts as if no pages present)
      */
-    public static void initialize(@Nullable ExitManager exitManager, @Nullable ArrayList<Page> pages) {
+    public static void initialize(@Nullable ExitManager exitManager,
+                                  @Nullable HashMap<String, Page> pages, @Nullable String activePage) {
         System.out.println(GRAPHICS_ENGINE_NAME + ": Initializing.");
-        setupGraphics(pages);
+        setupGraphics(pages, activePage);
         setupIO(exitManager);
         running = true;
     }
 
-    private static void setupGraphics(@Nullable ArrayList<Page> pages) {
+    private static void setupGraphics(@Nullable HashMap<String, Page> pages, @Nullable String activePage) {
         // Has to be before graphics.
-        GraphicsManager.pages = new PageManager(pages);
+        GraphicsManager.pages = new PageManager(pages, activePage);
 
         // Graphics.
         graphics = new GraphicsClass();

@@ -13,6 +13,7 @@ import org.jetbrains.annotations.NotNull;
  * This is the page for selecting demo type for the Simple Demo.
  */
 public class DemoSelectPage extends CommonMenuPage {
+    public static final String PAGE_KEY = "demoSelectPage";
 
     /**
      * Constructor for the demo select page.

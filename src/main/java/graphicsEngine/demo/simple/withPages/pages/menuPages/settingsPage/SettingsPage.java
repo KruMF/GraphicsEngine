@@ -13,6 +13,7 @@ import org.jetbrains.annotations.NotNull;
  * This is the settings page for the Simple Demo.
  */
 public class SettingsPage extends CommonMenuPage {
+    public static final String PAGE_KEY = "settingsPage";
 
     /**
      * Constructor for the settings page.
