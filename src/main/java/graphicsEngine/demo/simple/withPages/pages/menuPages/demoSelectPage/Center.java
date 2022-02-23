@@ -5,7 +5,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.awt.*;
 
-//TODO: add javadoc
+//TODO: finish this and add javadoc
 public class Center extends SimplePart {
 
     protected Center() {
