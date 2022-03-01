@@ -1,9 +1,11 @@
 package graphicsEngine.demo.demoLauncher;
 
+import graphicsEngine.demo.demoLauncher.graphicalSelector.GraphicalDemoSelector;
+
 /**
  * A class for launching various demo variants.
  *
- * TODO: finish this class
+ * TODO: finish javadoc
  */
 public class DemoLauncher {
 
@@ -24,14 +26,17 @@ public class DemoLauncher {
         } else {
             switch (args[0]) {
                 case "1" -> {
-                    unfinishedLauncherMessage("simplest possible demo");
+                    LaunchTypes.launchSimple_simplest();
                 }
                 case "2" -> {
-                    unfinishedLauncherMessage("simple demo with pages");
+                    LaunchTypes.launchSimple_withPages();
                 }
                 case "3" -> {
-                    unfinishedLauncherMessage("advanced demo");
+                    LaunchTypes.launchAdvanced();
                 }
+
+                //add new demo types here
+
                 default -> {
                     return false;
                 }
@@ -41,11 +46,6 @@ public class DemoLauncher {
     }
 
     private static void graphicalSelector() {
-        unfinishedLauncherMessage("graphical demo selector");
-    }
-
-    private static void unfinishedLauncherMessage(String actionMessage) {
-        System.out.println(
-                "Demo launcher not finished. Trying to launch: " + actionMessage);
+        GraphicalDemoSelector.launch();
     }
 }
