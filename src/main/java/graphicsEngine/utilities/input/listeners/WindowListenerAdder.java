@@ -1,15 +1,14 @@
 package graphicsEngine.utilities.input.listeners;
 
-import graphicsEngine.data.windowParameters.WindowParameters;
+import graphicsEngine.engine.data.windowParameters.WindowParameters;
 import graphicsEngine.utilities.input.InputData;
-import graphicsEngine.ExitManager;
+import graphicsEngine.engine.ExitManager;
 
 import javax.swing.JFrame;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
-
 
 import org.jetbrains.annotations.NotNull;
 

@@ -2,8 +2,8 @@ package graphicsEngine.utilities.containers;
 
 import graphicsEngine.utilities.simpleParts.DrawablePart;
 
-import java.awt.*;
 import java.util.ArrayList;
+import java.awt.*;
 
 import com.google.inject.internal.Nullable;
 import org.jetbrains.annotations.NotNull;
