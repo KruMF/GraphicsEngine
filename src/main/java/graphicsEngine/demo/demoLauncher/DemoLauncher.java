@@ -25,18 +25,10 @@ public class DemoLauncher {
             return false;
         } else {
             switch (args[0]) {
-                case "1" -> {
-                    LaunchTypes.launchSimple_simplest();
-                }
-                case "2" -> {
-                    LaunchTypes.launchSimple_withPages();
-                }
-                case "3" -> {
-                    LaunchTypes.launchAdvanced();
-                }
-
+                case "1" -> LaunchTypes.launchSimple_simplest();
+                case "2" -> LaunchTypes.launchSimple_withPages();
+                case "3" -> LaunchTypes.launchAdvanced();
                 //add new demo types here
-
                 default -> {
                     return false;
                 }
