@@ -15,9 +15,10 @@ import org.jetbrains.annotations.NotNull;
 // TODO: add javadoc
 public abstract class HeaderWithButtons extends CommonHeader {
     public static final int
-            LOGO_WIDTH = 200,
-            BUTTON_WIDTH = 150,
-            HEIGHT = 100;
+            HEIGHT = 60,
+            BUTTON_WIDTH = 150;
+
+    public static final double LOGO_PROPORTIONS = (double) 16 / 9;
 
     // TODO: add javadoc
     public HeaderWithButtons(int height,
@@ -35,8 +36,13 @@ public abstract class HeaderWithButtons extends CommonHeader {
     }
 
     private static Logo prepareLogo(int height) {
-        int[] logoSize = new int[] {LOGO_WIDTH, height};
-        return new Logo(logoSize, new boolean[] {true, false});
+        return new Logo(getLogoSize(height), new boolean[] {true, false});
+    }
+
+    private static int[] getLogoSize(int height) {
+        return new int[] {
+                (int) (height * LOGO_PROPORTIONS),
+                height};
     }
 
     private static PartContainer alignButtonsRight(int height,

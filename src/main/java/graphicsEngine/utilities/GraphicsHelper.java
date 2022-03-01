@@ -1,7 +1,8 @@
 package graphicsEngine.utilities;
 
+import java.awt.*;
+import java.awt.font.TextLayout;
 import java.util.ArrayList;
-import java.awt.Graphics;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -13,7 +14,14 @@ public class GraphicsHelper {
 
     //TODO: add javadoc
     public static void drawStringCentered(Graphics g, String string, int[] location) {
-        int x = location[0], y = location[1] + ROW_HEIGHT / 2 - TEXT_OFFSET_FROM_BOTTOM;
+        Font font = g.getFont();
+        FontMetrics fm = g.getFontMetrics();
+        TextLayout textLayout = new TextLayout(string, font, fm.getFontRenderContext());
+
+        int x = location[0] - (int) (textLayout.getBounds().getWidth() / 2);
+        int height = fm.getAscent() + fm.getDescent();
+        int y = location[1] - height / 2 + fm.getAscent();
+
         g.drawString(string, x, y);
     }
 

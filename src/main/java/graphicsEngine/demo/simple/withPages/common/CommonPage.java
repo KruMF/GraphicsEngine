@@ -26,7 +26,7 @@ public abstract class CommonPage extends HeaderAndFooterPage {
         super(
                 Objects.requireNonNullElse(keyboardActions, new BlankKeyboardActions()),
                 palette,
-                header, new CommonFooter(50, palette.panelColors, null),
+                header, new CommonFooter(30, palette.panelColors, null),
                 centralParts, centralAlignment);
     }
 }
