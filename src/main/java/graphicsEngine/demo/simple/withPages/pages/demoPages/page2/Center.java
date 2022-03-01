@@ -47,9 +47,7 @@ class Center extends SimplePart {
 
     private void drawPageMessage(Graphics g) {
         g.setColor(Color.green);
-        GraphicsHelper.drawStrings_VA(
-                g, 0,
-                new String[] {"This is the demo page 2"},
+        GraphicsHelper.drawStringCentered(g, "This is the demo page 2",
                 new int[] {
                         location[0] + size[0] / 2,
                         location[1] + size[1] / 2});

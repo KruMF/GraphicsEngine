@@ -20,9 +20,7 @@ class Center extends SimplePart {
         super.draw(g, location, size);
 
         g.setColor(Color.green);
-        GraphicsHelper.drawStrings_VA(
-                g, 0,
-                new String[] {"This is the demo page 1"},
+        GraphicsHelper.drawStringCentered(g, "This is the demo page 1",
                 new int[] {
                         location[0] + size[0] / 2,
                         location[1] + size[1] / 2});
