@@ -1,4 +1,4 @@
-package graphicsEngine.demo.simple.withPages.pages.menuPages;
+package graphicsEngine.demo.simple.withPages.pages.menuPages.common;
 
 import graphicsEngine.engine.data.colors.Palette;
 import graphicsEngine.utilities.simpleParts.SimplePart;
@@ -20,9 +20,10 @@ public abstract class CommonMenuPage extends CommonPage {
      * Constructor for a common menu page
      *
      * @param palette Color palette to use.
+     * @param centralParts Central parts. (Null - empty)
      */
     public CommonMenuPage(@NotNull Palette palette,
                           @Nullable ArrayList<? extends SimplePart> centralParts) {
-        super(palette, centralParts, AlignmentType.TOP);
+        super(palette, new MenuPageHeader(palette.panelColors), centralParts, AlignmentType.TOP);
     }
 }

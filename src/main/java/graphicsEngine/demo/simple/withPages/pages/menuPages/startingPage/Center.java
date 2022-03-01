@@ -7,7 +7,7 @@ import java.awt.*;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * Central section of the main menu page.
+ * Central section of the starting page.
  */
 class Center extends SimplePart {
 

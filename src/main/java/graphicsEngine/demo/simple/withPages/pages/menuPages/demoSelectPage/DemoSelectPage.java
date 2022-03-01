@@ -3,7 +3,7 @@ package graphicsEngine.demo.simple.withPages.pages.menuPages.demoSelectPage;
 import graphicsEngine.engine.data.colors.Palette;
 import graphicsEngine.utilities.simpleParts.SimplePart;
 
-import graphicsEngine.demo.simple.withPages.pages.menuPages.CommonMenuPage;
+import graphicsEngine.demo.simple.withPages.pages.menuPages.common.CommonMenuPage;
 
 import java.util.ArrayList;
 

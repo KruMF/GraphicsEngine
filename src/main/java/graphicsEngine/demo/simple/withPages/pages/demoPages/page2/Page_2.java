@@ -2,23 +2,22 @@ package graphicsEngine.demo.simple.withPages.pages.demoPages.page2;
 
 import graphicsEngine.engine.data.colors.Palette;
 import graphicsEngine.utilities.simpleParts.SimplePart;
-import graphicsEngine.utilities.containers.AlignmentType;
 
-import graphicsEngine.demo.simple.withPages.common.CommonPage;
+import graphicsEngine.demo.simple.withPages.pages.demoPages.common.CommonDemoPage;
 
 import java.util.ArrayList;
 
 import org.jetbrains.annotations.NotNull;
 
 /**
- * This is page 2 for the Simple Demo.
+ * This is the demo page 2.
  */
-public class Page_2 extends CommonPage {
-    public static final String PAGE_KEY = "page2";
+public class Page_2 extends CommonDemoPage {
+    public static final String PAGE_KEY = "demoPage2";
 
     //TODO: add javadoc
     public Page_2(@NotNull Palette palette) {
-        super(palette, prepareCenter(), AlignmentType.TOP);
+        super(palette, prepareCenter());
     }
 
     private static ArrayList<? extends SimplePart> prepareCenter() {

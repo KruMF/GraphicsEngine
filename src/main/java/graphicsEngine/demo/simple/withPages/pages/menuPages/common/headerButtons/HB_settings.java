@@ -1,16 +1,16 @@
-package graphicsEngine.demo.simple.withPages.common.header;
+package graphicsEngine.demo.simple.withPages.pages.menuPages.common.headerButtons;
 
 import graphicsEngine.utilities.buttons.Button;
 
 import com.google.inject.internal.Nullable;
 
 // TODO: add javadoc
-public class HeaderButton2 extends Button {
+public class HB_settings extends Button {
 
     //TODO: add javadoc
-    public HeaderButton2(@Nullable int[] size) {
+    public HB_settings(@Nullable int[] size) {
         super(size, new boolean[] {true, false},
-                "Button 2",
+                "Settings",
                 new int[] {0, 0});
     }
 
@@ -20,6 +20,6 @@ public class HeaderButton2 extends Button {
     @Override
     public void action() {
         //TODO: finish this
-        System.out.println("Placeholder for Button 2 action.");
+        System.out.println("Placeholder for settings button action.");
     }
 }
