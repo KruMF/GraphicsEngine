@@ -19,7 +19,7 @@ public class Cell {
     private double value;
 
     public Cell() {
-        setValue(getRandomValue());
+        setRandomValue();
     }
 
     private static double getRandomValue() {
@@ -30,6 +30,10 @@ public class Cell {
 
     public void setValue(double value) {
         this.value = value;
+    }
+
+    public void setRandomValue() {
+        setValue(getRandomValue());
     }
 
     public double getValue() {

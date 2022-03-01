@@ -17,7 +17,7 @@ public class Page_2 extends CommonDemoPage {
 
     //TODO: add javadoc
     public Page_2(@NotNull Palette palette) {
-        super(null, palette, prepareCenter());
+        super(new KeyboardActions(), palette, prepareCenter());
     }
 
     private static ArrayList<? extends SimplePart> prepareCenter() {

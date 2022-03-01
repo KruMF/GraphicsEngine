@@ -22,7 +22,7 @@ public class GraphicsManager implements Runnable {
     public static ExitManager exitManager;
 
     public static boolean running;
-    private static final long REFRESH_DELAY = 30; //screen refresh delay in millis
+    private static final long REFRESH_DELAY = 15; //screen refresh delay in millis
 
     public static final String GRAPHICS_ENGINE_NAME = "Graphics Engine";
 

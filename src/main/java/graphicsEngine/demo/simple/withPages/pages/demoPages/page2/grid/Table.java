@@ -27,11 +27,10 @@ public class Table {
         }};
     }
 
-    // TODO:
-    //      * finish this
-    //      * call this to update values
-    //      * add javadoc
-    public void update() {
+    /**
+     * Randomizes cell values.
+     */
+    public void randomizeCellValues() {
         //check every column
         for (int i = 0; i < table.size(); i++) {
             ArrayList<Cell> column = table.get(i);
@@ -40,7 +39,7 @@ public class Table {
             for (int j = 0; j < column.size(); j++) {
                 Cell cell = column.get(j);
 
-                // update cell
+                cell.setRandomValue();
             }
         }
     }

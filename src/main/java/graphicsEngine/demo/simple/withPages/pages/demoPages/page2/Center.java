@@ -14,7 +14,7 @@ class Center extends SimplePart {
     private static final boolean DRAW_PAGE_MESSAGE = true;
     private static final int TABLE_MARGIN = 30;
 
-    private static final Table table = new Table();
+    protected static final Table table = new Table();
 
     //TODO: add javadoc
     protected Center() {
