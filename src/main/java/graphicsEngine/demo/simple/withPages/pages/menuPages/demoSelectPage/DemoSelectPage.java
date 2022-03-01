@@ -21,10 +21,12 @@ public class DemoSelectPage extends CommonMenuPage {
      * @param palette Color palette to use.
      */
     public DemoSelectPage(@NotNull Palette palette) {
-        super(palette, prepareCenter());
+        super(new KeyboardActions(), palette, prepareCenter());
     }
 
     private static ArrayList<? extends SimplePart> prepareCenter() {
-        return new ArrayList<>() {{add(new Center());}};
+        return new ArrayList<>() {{
+            add(new Center());
+        }};
     }
 }

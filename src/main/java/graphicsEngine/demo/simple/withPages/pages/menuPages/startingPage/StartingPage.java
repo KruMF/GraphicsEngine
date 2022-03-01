@@ -21,10 +21,12 @@ public class StartingPage extends CommonMenuPage {
      * @param palette Color palette to use.
      */
     public StartingPage(@NotNull Palette palette) {
-        super(palette, prepareCenter());
+        super(null, palette, prepareCenter());
     }
 
     private static ArrayList<? extends SimplePart> prepareCenter() {
-        return new ArrayList<>() {{add(new Center());}};
+        return new ArrayList<>() {{
+            add(new Center());
+        }};
     }
 }

@@ -18,9 +18,8 @@ public class MenuPageHeader extends HeaderWithButtons {
     }
 
     static ArrayList<DrawablePart> prepareButtons(int height) {
-        int[] buttonSize = new int[] {BUTTON_WIDTH, height};
+        int[] buttonSize = getButtonSize(height);
         return new ArrayList<>() {{
-            add(new HB_start(buttonSize));
             add(new HB_settings(buttonSize));
             add(new HB_demoSelect(buttonSize));
         }};

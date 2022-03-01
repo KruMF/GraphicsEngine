@@ -1,14 +1,17 @@
-package graphicsEngine.demo.simple.withPages.pages.menuPages.common.headerButtons;
+package graphicsEngine.demo.simple.withPages.common.header;
 
+import graphicsEngine.engine.GraphicsManager;
 import graphicsEngine.utilities.buttons.Button;
+
+import graphicsEngine.demo.simple.withPages.pages.menuPages.startingPage.StartingPage;
 
 import com.google.inject.internal.Nullable;
 
 // TODO: add javadoc
-public class HB_start extends Button {
+public class StartButton extends Button {
 
     //TODO: add javadoc
-    public HB_start(@Nullable int[] size) {
+    public StartButton(@Nullable int[] size) {
         super(size, new boolean[] {true, false},
                 "Start",
                 new int[] {0, 0});
@@ -19,7 +22,6 @@ public class HB_start extends Button {
      */
     @Override
     public void action() {
-        //TODO: finish this
-        System.out.println("Placeholder for start button action.");
+        GraphicsManager.pages.setActivePage(StartingPage.PAGE_KEY);
     }
 }

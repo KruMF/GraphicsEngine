@@ -4,7 +4,6 @@ import graphicsEngine.engine.data.colors.PanelColors;
 import graphicsEngine.utilities.simpleParts.DrawablePart;
 
 import graphicsEngine.demo.simple.withPages.common.header.HeaderWithButtons;
-import graphicsEngine.demo.simple.withPages.pages.demoPages.common.headerButtons.*;
 
 import java.util.ArrayList;
 
@@ -17,9 +16,7 @@ public class DemoPageHeader extends HeaderWithButtons {
     }
 
     static ArrayList<DrawablePart> prepareButtons(int height) {
-        int[] buttonSize = new int[] {BUTTON_WIDTH, height};
-        return new ArrayList<>() {{
-            add(new HB_start(buttonSize));
-        }};
+        int[] buttonSize = getButtonSize(height);
+        return new ArrayList<>();
     }
 }

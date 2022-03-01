@@ -1,6 +1,9 @@
 package graphicsEngine.demo.simple.withPages.pages.menuPages.common.headerButtons;
 
+import graphicsEngine.engine.GraphicsManager;
 import graphicsEngine.utilities.buttons.Button;
+
+import graphicsEngine.demo.simple.withPages.pages.menuPages.demoSelectPage.DemoSelectPage;
 
 import com.google.inject.internal.Nullable;
 
@@ -19,7 +22,6 @@ public class HB_demoSelect extends Button {
      */
     @Override
     public void action() {
-        //TODO: finish this
-        System.out.println("Placeholder for demoSelect button action.");
+        GraphicsManager.pages.setActivePage(DemoSelectPage.PAGE_KEY);
     }
 }
