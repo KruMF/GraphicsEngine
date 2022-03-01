@@ -1,5 +1,8 @@
 package graphicsEngine.demo.demoLauncher;
 
+import graphicsEngine.demo.advanced.DemoAdvanced;
+import graphicsEngine.demo.simple.withPages.DemoSimple;
+
 /**
  * TODO: Finish this and add javadoc
  */
@@ -9,11 +12,11 @@ class LaunchTypes {
     }
 
     static void launchSimple_withPages() {
-        unfinishedLauncherMessage("simple demo with pages");
+        DemoSimple.main(null);
     }
 
     static void launchAdvanced() {
-        unfinishedLauncherMessage("advanced demo");
+        DemoAdvanced.main(null);
     }
 
     //add new demo types here
