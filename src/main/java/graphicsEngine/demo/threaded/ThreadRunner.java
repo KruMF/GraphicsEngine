@@ -1,6 +1,6 @@
 package graphicsEngine.demo.threaded;
 
-// TODO: add javadoc
+// TODO: rework and add javadoc
 public class ThreadRunner implements Runnable {
     private static final long delay = 50;
     private boolean running;

@@ -1,7 +1,7 @@
 package graphicsEngine.demo.threaded;
 
 // TODO: needs rework
-public class DemoAdvanced {
+public class DemoThreaded {
     private static ThreadRunner threadRunner;
 
     public static void main(String[] args) {

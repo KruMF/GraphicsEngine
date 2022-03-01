@@ -1,7 +1,7 @@
 package graphicsEngine.demo.demoLauncher;
 
 import graphicsEngine.demo.paged.DemoPaged;
-import graphicsEngine.demo.threaded.DemoAdvanced;
+import graphicsEngine.demo.threaded.DemoThreaded;
 
 /**
  * TODO: Finish this and add javadoc
@@ -16,7 +16,7 @@ class LaunchTypes {
     }
 
     static void launchThreaded() {
-        DemoAdvanced.main(null);
+        DemoThreaded.main(null);
     }
 
     //add new demo types here
