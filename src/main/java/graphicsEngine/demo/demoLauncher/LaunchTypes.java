@@ -1,7 +1,7 @@
 package graphicsEngine.demo.demoLauncher;
 
-import graphicsEngine.demo.advanced.DemoAdvanced;
 import graphicsEngine.demo.simple.withPages.DemoSimple;
+import graphicsEngine.demo.advanced.DemoAdvanced;
 
 /**
  * TODO: Finish this and add javadoc
