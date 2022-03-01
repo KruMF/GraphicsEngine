@@ -1,9 +1,9 @@
 package graphicsEngine.presets.panels;
 
-import graphicsEngine.data.colors.PanelColors;
+import graphicsEngine.engine.data.colors.PanelColors;
+import graphicsEngine.utilities.simpleParts.DrawablePart;
 import graphicsEngine.utilities.containers.AlignmentType;
 import graphicsEngine.utilities.containers.Panel;
-import graphicsEngine.utilities.simpleParts.DrawablePart;
 
 import java.util.ArrayList;
 

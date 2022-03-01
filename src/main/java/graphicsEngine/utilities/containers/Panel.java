@@ -1,12 +1,12 @@
 package graphicsEngine.utilities.containers;
 
+import graphicsEngine.utilities.simpleParts.DrawablePart;
 import graphicsEngine.utilities.simpleParts.Background;
 import graphicsEngine.utilities.simpleParts.Border;
-import graphicsEngine.utilities.simpleParts.DrawablePart;
 
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.Objects;
+import java.awt.*;
 
 import com.google.inject.internal.Nullable;
 

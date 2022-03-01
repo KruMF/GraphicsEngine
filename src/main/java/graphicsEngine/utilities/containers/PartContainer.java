@@ -4,8 +4,8 @@ import graphicsEngine.utilities.simpleParts.DrawablePart;
 import graphicsEngine.utilities.simpleParts.SimplePart;
 
 import java.util.ArrayList;
-import java.awt.*;
 import java.util.Objects;
+import java.awt.*;
 
 import com.google.inject.internal.Nullable;
 import org.jetbrains.annotations.NotNull;

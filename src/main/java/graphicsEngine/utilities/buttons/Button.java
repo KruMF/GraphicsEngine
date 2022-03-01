@@ -1,13 +1,14 @@
 package graphicsEngine.utilities.buttons;
 
-import graphicsEngine.GraphicsManager;
-import graphicsEngine.data.colors.ButtonColors;
+import graphicsEngine.engine.GraphicsManager;
+import graphicsEngine.engine.data.colors.ButtonColors;
+import graphicsEngine.utilities.GraphicsHelper;
 import graphicsEngine.utilities.input.InputData;
 import graphicsEngine.utilities.simpleParts.Background;
 import graphicsEngine.utilities.simpleParts.Border;
 
-import java.awt.Graphics;
 import java.util.Objects;
+import java.awt.Graphics;
 
 import com.google.inject.internal.Nullable;
 import org.jetbrains.annotations.NotNull;
@@ -87,9 +88,9 @@ public abstract class Button extends MouseDetectablePart {
      */
     private void drawButtonText(@NotNull Graphics g) {
         g.setColor(GraphicsManager.data.palette.buttonColors.textColor);
-        g.drawString(text,
+        GraphicsHelper.drawStringCentered(g, text, new int[] {
                 location[0] + size[0] / 2 + textOffset[0],
-                location[1] + size[1] / 2 + textOffset[1]);
+                location[1] + size[1] / 2 + textOffset[1]});
     }
 
     /**

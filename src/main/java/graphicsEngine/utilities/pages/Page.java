@@ -1,15 +1,15 @@
 package graphicsEngine.utilities.pages;
 
-import graphicsEngine.GraphicsManager;
-import graphicsEngine.data.colors.Palette;
-import graphicsEngine.utilities.containers.LayerContainer;
+import graphicsEngine.engine.GraphicsManager;
+import graphicsEngine.engine.data.colors.Palette;
 import graphicsEngine.utilities.input.InputChecker;
 import graphicsEngine.utilities.simpleParts.Background;
 import graphicsEngine.utilities.simpleParts.DrawablePart;
+import graphicsEngine.utilities.containers.LayerContainer;
 
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.Objects;
+import java.awt.*;
 
 import com.google.inject.internal.Nullable;
 import org.jetbrains.annotations.NotNull;
@@ -25,7 +25,9 @@ public abstract class Page extends LayerContainer {
     /**
      * Creates a simple page with background and adds provided layers.
      *
-     * @param layers ArrayList of layers to add.
+     * @param inputChecker InputChecker to use. (Null - new InputChecker)
+     * @param palette      Color palette to use. (Null - default)
+     * @param layers       ArrayList of layers to add. (Null - blank page)
      */
     public Page(@Nullable InputChecker inputChecker, @Nullable Palette palette,
                 @Nullable ArrayList<DrawablePart> layers) {
