@@ -16,7 +16,7 @@ public class WindowParameters {
     public static final int DEFAULT_CLOSE_ACTION = JFrame.DO_NOTHING_ON_CLOSE;//DISPOSE_ON_CLOSE;//
 
     private static final int[]
-            WINDOW_SIZE_DEFAULT = new int[] {1300, 700},
+            WINDOW_SIZE_DEFAULT = new int[] {1200, 600},
             WINDOW_LOCATION_DEFAULT = new int[] {30, 30};
 
     private static final String WINDOW_TITLE_DEFAULT = "windowTitlePlaceholder";
