@@ -48,7 +48,7 @@ public class InputChecker {
      * Actions to be performed upon key pressing by key text.
      * Overridable for page-specific keyboard actions.
      *
-     * @param keyText Text of key pressed.
+     * @param keyText Text of the pressed key.
      */
     public void keyboardActions(@NotNull String keyText){
         System.out.println("Key " + keyText + " pressed. No actions set up.");

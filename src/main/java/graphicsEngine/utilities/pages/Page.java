@@ -25,7 +25,9 @@ public abstract class Page extends LayerContainer {
     /**
      * Creates a simple page with background and adds provided layers.
      *
-     * @param layers ArrayList of layers to add.
+     * @param inputChecker InputChecker to use. (Null - new InputChecker)
+     * @param palette      Color palette to use. (Null - default)
+     * @param layers       ArrayList of layers to add. (Null - blank page)
      */
     public Page(@Nullable InputChecker inputChecker, @Nullable Palette palette,
                 @Nullable ArrayList<DrawablePart> layers) {

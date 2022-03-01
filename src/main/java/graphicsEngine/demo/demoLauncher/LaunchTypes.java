@@ -1,21 +1,21 @@
 package graphicsEngine.demo.demoLauncher;
 
-import graphicsEngine.demo.simple.withPages.DemoSimple;
-import graphicsEngine.demo.advanced.DemoAdvanced;
+import graphicsEngine.demo.paged.DemoPaged;
+import graphicsEngine.demo.threaded.DemoAdvanced;
 
 /**
  * TODO: Finish this and add javadoc
  */
 class LaunchTypes {
-    static void launchSimple_simplest() {
+    static void launchSimplest() {
         unfinishedLauncherMessage("simplest possible demo");
     }
 
-    static void launchSimple_withPages() {
-        DemoSimple.main(null);
+    static void launchPaged() {
+        DemoPaged.main(null);
     }
 
-    static void launchAdvanced() {
+    static void launchThreaded() {
         DemoAdvanced.main(null);
     }
 
