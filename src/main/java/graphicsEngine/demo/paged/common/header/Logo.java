@@ -12,6 +12,8 @@ import org.jetbrains.annotations.NotNull;
  */
 public class Logo extends SimplePart {
     protected static final double PROPORTIONS = (double) 16 / 9;
+    private static final double DIAMETER_PROPORTIONS = 0.8;
+
     private static final Color
             BACKGROUND_COLOR = Color.red,
             CIRCLE_COLOR = Color.white;
@@ -37,17 +39,20 @@ public class Logo extends SimplePart {
     public void draw(@NotNull Graphics g,
                      @Nullable int[] location, @Nullable int[] size) {
         super.draw(g, location, size);
-        drawLogo(g);
+        drawBackground(g);
+        drawCircle(g);
     }
 
-    private void drawLogo(@NotNull Graphics g) {
+    private void drawBackground(@NotNull Graphics g) {
         g.setColor(BACKGROUND_COLOR);
         g.fillRect(this.location[0], this.location[1], this.size[0], this.size[1]);
+    }
 
+    private void drawCircle(@NotNull Graphics g) {
         g.setColor(CIRCLE_COLOR);
 
         // calculates diameter
-        double size = Math.min(this.size[0], this.size[1]) * PROPORTIONS;
+        double size = Math.min(this.size[0], this.size[1]) * DIAMETER_PROPORTIONS;
         // calculates final position of circle
         int[] location = new int[] {
                 (int) (this.location[0] + (double) this.size[0] / 2 - size / 2),
