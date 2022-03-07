@@ -41,10 +41,10 @@ public class GraphicsHelper {
     /**
      * Prints an array of strings vertically aligned.
      *
-     * @param g Graphics to use.
+     * @param g         Graphics to use.
      * @param rowNumber Number of the starting row (starts at 0).
-     * @param rows Array of strings to print.
-     * @param location Starting XY location.
+     * @param rows      Array of strings to print.
+     * @param location  Starting XY location.
      *
      * @return Number of rows printed.
      *
@@ -64,11 +64,11 @@ public class GraphicsHelper {
     /**
      * Draws and fills a table from specified parameters.
      *
-     * @param g Graphics to use.
-     * @param header Rows of text for table header.
+     * @param g          Graphics to use.
+     * @param header     Rows of text for table header.
      * @param columnData Titles and separations for columns.
-     * @param rows Array of data rows.
-     * @param location Starting location for whole table.
+     * @param rows       Array of data rows.
+     * @param location   Starting location for whole table.
      *
      * @return Total row count (including header and column titles).
      *

@@ -9,6 +9,8 @@ import org.jetbrains.annotations.NotNull;
 
 //TODO: add javadoc
 class Center extends SimplePart {
+    private static final int[] TEXT_LOCATION = new int[] {20, 20};
+
     //TODO: add javadoc
     protected Center() {
         super();
@@ -25,6 +27,19 @@ class Center extends SimplePart {
                         location[0] + size[0] / 2,
                         location[1] + size[1] / 2});
 
-        //draw stuff here
+        GraphicsHelper.drawStrings_VA(
+                g, 0, outputStringArray(), new int[] {
+                        TEXT_LOCATION[0] + this.location[0],
+                        TEXT_LOCATION[1] + this.location[1]
+                });
+
+        //draw other stuff here
+    }
+
+    private static String[] outputStringArray() {
+        return new String[] {
+                "string1",
+                "string2"
+        };
     }
 }
