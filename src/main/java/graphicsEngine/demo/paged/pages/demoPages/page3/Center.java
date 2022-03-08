@@ -38,8 +38,10 @@ class Center extends SimplePart {
 
     private static String[] outputStringArray() {
         return new String[] {
-                "string1",
-                "string2"
+                "Standard gravity component: ~" + Math.ceil(Calculator.getRadius_fromStandardGravity()) + " m",
+                "Gradient component: ~" + Math.ceil(Calculator.getRadius_fromForceGradient()) + " m",
+                "Rotor radius: ~" + Math.ceil(Calculator.getRadius()) + " m",
+                "Period: " + Calculator.rotationPeriod() + " s"
         };
     }
 }
