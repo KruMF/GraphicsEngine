@@ -8,7 +8,8 @@ class Calculator {
             MAX_RPM = 2,                // revolutions per minute
             STANDARD_GRAVITY = 9.80665, // acceleration [m / s^2]
             MAX_FORCE_GRADIENT = 0.05,  // fraction of difference between bottom to top
-            ROTOR_THICKNESS = 2;        // [m]
+            ROTOR_THICKNESS = 2,        // [m]
+            MAX_HUMAN_VELOCITY = 10;    // [m/s]
 
     static double getRadius() {
         return Math.max(
@@ -31,5 +32,13 @@ class Calculator {
 
     static double getRadius_fromForceGradient() {
         return ROTOR_THICKNESS / MAX_FORCE_GRADIENT;
+    }
+
+    static double tangentialVelocity() {
+        return angularVelocity() * getRadius();
+    }
+
+    static double getCoriolis() {
+        return 2 * MAX_HUMAN_VELOCITY * angularVelocity();
     }
 }

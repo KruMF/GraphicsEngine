@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 
 //TODO: add javadoc
 class Center extends SimplePart {
-    private static final int[] TEXT_LOCATION = new int[] {20, 20};
+    private static final int[] TEXT_LOCATION = new int[] {300, 50};
 
     //TODO: add javadoc
     protected Center() {
@@ -38,10 +38,14 @@ class Center extends SimplePart {
 
     private static String[] outputStringArray() {
         return new String[] {
-                "Standard gravity component: ~" + Math.ceil(Calculator.getRadius_fromStandardGravity()) + " m",
-                "Gradient component: ~" + Math.ceil(Calculator.getRadius_fromForceGradient()) + " m",
-                "Rotor radius: ~" + Math.ceil(Calculator.getRadius()) + " m",
-                "Period: " + Calculator.rotationPeriod() + " s"
+                "Standard gravity component: ~" + Math.round(Calculator.getRadius_fromStandardGravity()) + " m",
+                "Gradient component: ~" + Math.round(Calculator.getRadius_fromForceGradient()) + " m",
+                "Total rotor radius: ~" + Math.round(Calculator.getRadius()) + " m",
+                "",
+                "Period: " + Calculator.rotationPeriod() + " s",
+                "Tangential velocity: ~" + Calculator.tangentialVelocity() + " m/s",
+                "Coriolis effect: " + Calculator.getCoriolis() + " m/s^2"
+                        + ", when moving at: " + Calculator.MAX_HUMAN_VELOCITY + " m/s"
         };
     }
 }
