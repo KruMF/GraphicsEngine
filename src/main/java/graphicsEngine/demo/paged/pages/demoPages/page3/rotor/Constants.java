@@ -16,4 +16,14 @@ public class Constants {
     // physical constants
 
     public static final double STANDARD_GRAVITY = 9.80665; // acceleration [m / s^2]
+
+
+    // preferences
+
+    static final double G_FORCE = 1.00; // acceleration [g's]
+
+    // TODO: add javadoc
+    static double getGravity() {
+        return G_FORCE * Constants.STANDARD_GRAVITY;
+    }
 }

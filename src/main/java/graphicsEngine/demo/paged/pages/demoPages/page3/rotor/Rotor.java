@@ -2,32 +2,39 @@ package graphicsEngine.demo.paged.pages.demoPages.page3.rotor;
 
 /**
  * Calculates the size of a rotating living habitat for living in a weightless environment.
+ *
+ * TODO: finish this and add javadoc
  */
 public class Rotor {
+    // gets maximum angular velocity (omega) from inner joint limits and maximum coriolis effect
+    static double getAngularVelocityLimit() {
+        double maxOmega_fromInnerJoint = Limits.JointLimits.getOmega();
+        double maxOmega_fromCoriolis = Limits.HumanLimits.CoriolisLimits.getMaxOmega();
 
-    static double getRadius() {
         return Math.max(
-                getRadius_fromStandardGravity(),
-                getRadius_fromForceGradient());
+                maxOmega_fromInnerJoint,
+                maxOmega_fromCoriolis);
     }
 
-    static double getRadius_fromStandardGravity() {
-        return Constants.STANDARD_GRAVITY / Math.pow(angularVelocity(), 2);
+    // gets minimum radius for maximum gradient and maximum angular velocity (omega) at reference gravity
+    static double getRadius() {
+        double minRadius_fromGradient = Limits.HumanLimits.GradientLimits.getRadius();
+
+        double omegaLimit = getAngularVelocityLimit();
+        double minRadius_fromStandardGravity = Constants.getGravity() / Math.pow(omegaLimit, 2);
+
+        return Math.max(
+                minRadius_fromGradient,
+                minRadius_fromStandardGravity);
     }
 
-    private static double angularVelocity() {
-        return 2 * Math.PI / Limits.rotationPeriod();
+    // gets actual omega for given radius and constant reference acceleration
+    static double getAngularVelocity(double radius) {
+        return Math.sqrt(Constants.getGravity() / radius);
     }
 
-    static double getRadius_fromForceGradient() {
-        return Limits.HumanLimits.HEIGHT / Limits.HumanLimits.MAX_FORCE_GRADIENT;
-    }
-
-    static double tangentialVelocity() {
-        return angularVelocity() * getRadius();
-    }
-
-    static double getCoriolis() {
-        return 2 * Limits.HumanLimits.RUNNING_SPEED * angularVelocity();
+    // gets the tangential velocity in [m/s] for given radius and angular velocity
+    static double getTangentialVelocity(double radius, double angularVelocity) {
+        return radius * angularVelocity;
     }
 }
