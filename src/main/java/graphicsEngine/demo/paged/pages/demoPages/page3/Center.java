@@ -19,10 +19,10 @@ class Center extends SimplePart {
 
     static {
         textColumnLocations = new int[COLUMN_COUNT][];
+        int xOffset = 0;
         for (int i = 0; i < COLUMN_COUNT; i++) {
-            int xOffset = 0;
             if (i > 0) {
-                xOffset = TEXT_COLUMN_WIDTHS[i - 1];
+                xOffset += TEXT_COLUMN_WIDTHS[i - 1];
             }
             textColumnLocations[i] = new int[] {
                     TEXT_STARTING_LOCATION[0] + xOffset,
