@@ -26,4 +26,7 @@ public class Constants {
     static double getGravity() {
         return G_FORCE * Constants.STANDARD_GRAVITY;
     }
+
+
+    // add more constants here
 }

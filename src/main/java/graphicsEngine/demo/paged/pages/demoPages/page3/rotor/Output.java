@@ -1,53 +1,13 @@
 package graphicsEngine.demo.paged.pages.demoPages.page3.rotor;
 
+import graphicsEngine.demo.paged.pages.demoPages.page3.rotor.output.Utilities;
+
 import java.util.ArrayList;
 
 /**
  * Helper class for handling output data for rotor.
  */
-public class Output {
-    private static String[] lineSeparator() {
-        return new String[] {
-                "",
-                "----------"
-        };
-    }
-
-    private static String[] sectionTitle(String sectionTitle) {
-        return new String[] {
-                "----- " + sectionTitle + " -----"
-        };
-    }
-
-    private static String[] sectionSpacing() {
-        return new String[] {"", ""};
-    }
-
-    private static String[] sectionSeparator(String sectionTitle) {
-        return joinArrays(new ArrayList<>() {{
-            add(sectionTitle(sectionTitle));
-            add(sectionSpacing());
-        }});
-    }
-
-    private static String[] joinArrays(ArrayList<String[]> arrayList) {
-        String[] returnable = new String[getArrayLengthSum(arrayList)];
-        for (int i = 0, offset = 0; i < arrayList.size(); i++) {
-            String[] array = arrayList.get(i);
-            int arrayLength = array.length;
-            System.arraycopy(array, 0, returnable, offset, arrayLength);
-            offset += arrayLength;
-        }
-        return returnable;
-    }
-
-    private static int getArrayLengthSum(ArrayList<String[]> arrayList) {
-        int sum = 0;
-        for (String[] array : arrayList) {
-            sum += array.length;
-        }
-        return sum;
-    }
+public class Output extends Utilities {
 
     /**
      * Prepare output info for first column as array of strings.
@@ -65,7 +25,7 @@ public class Output {
             add(sectionSeparator("Coriolis effect limits"));
             add(coriolisLimitStringArray());
 
-            add(lineSeparator());
+            add(LINE_SEPARATOR);
             add(omegaLimitTotalStringArray());
 
             // radius limits
@@ -76,7 +36,7 @@ public class Output {
             add(sectionSeparator(""));
             add(forceGradientStringArray());
 
-            add(lineSeparator());
+            add(LINE_SEPARATOR);
             add(radiusLimitTotalStringArray());
         }};
         return joinArrays(columnParts);
