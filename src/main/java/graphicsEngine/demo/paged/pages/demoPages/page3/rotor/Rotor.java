@@ -1,5 +1,8 @@
 package graphicsEngine.demo.paged.pages.demoPages.page3.rotor;
 
+import graphicsEngine.demo.paged.pages.demoPages.page3.rotor.data.StandardConstants;
+import graphicsEngine.demo.paged.pages.demoPages.page3.rotor.data.Limits;
+
 /**
  * Calculates the size of a rotating living habitat for living in a weightless environment.
  *
@@ -21,7 +24,7 @@ public class Rotor {
         double minRadius_fromGradient = Limits.HumanLimits.GradientLimits.getRadius();
 
         double omegaLimit = getAngularVelocityLimit();
-        double minRadius_fromStandardGravity = Constants.getGravity() / Math.pow(omegaLimit, 2);
+        double minRadius_fromStandardGravity = Data.getGravity() / Math.pow(omegaLimit, 2);
 
         return Math.max(
                 minRadius_fromGradient,
@@ -30,7 +33,7 @@ public class Rotor {
 
     // gets actual omega for given radius and constant reference acceleration
     static double getAngularVelocity(double radius) {
-        return Math.sqrt(Constants.getGravity() / radius);
+        return Math.sqrt(Data.getGravity() / radius);
     }
 
     // gets the tangential velocity in [m/s] for given radius and angular velocity

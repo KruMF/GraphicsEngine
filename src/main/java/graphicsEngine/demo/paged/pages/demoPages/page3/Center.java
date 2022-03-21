@@ -1,5 +1,6 @@
 package graphicsEngine.demo.paged.pages.demoPages.page3;
 
+import graphicsEngine.demo.paged.pages.demoPages.page3.rotor.Data;
 import graphicsEngine.utilities.GraphicsHelper;
 import graphicsEngine.utilities.simpleParts.SimplePart;
 
@@ -15,6 +16,11 @@ class Center extends SimplePart {
     //TODO: add javadoc
     protected Center() {
         super();
+        prepareRotorData();
+    }
+
+    private void prepareRotorData() {
+        //initialize rotor data if necessary
     }
 
     //TODO: add javadoc

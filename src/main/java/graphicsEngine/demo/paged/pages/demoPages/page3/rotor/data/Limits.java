@@ -1,4 +1,4 @@
-package graphicsEngine.demo.paged.pages.demoPages.page3.rotor;
+package graphicsEngine.demo.paged.pages.demoPages.page3.rotor.data;
 
 // TODO: add javadoc
 public class Limits {
@@ -17,7 +17,7 @@ public class Limits {
          * @return rotation period in seconds at maximum RPM.
          */
         public static double getRotationPeriod() {
-            return Constants.SECONDS_IN_MINUTE / MAX_RPM;
+            return StandardConstants.SECONDS_IN_MINUTE / MAX_RPM;
         }
 
         /**
