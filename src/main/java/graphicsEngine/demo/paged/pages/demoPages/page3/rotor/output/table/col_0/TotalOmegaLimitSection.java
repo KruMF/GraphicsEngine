@@ -6,7 +6,7 @@ import graphicsEngine.demo.paged.pages.demoPages.page3.rotor.output.table.Sectio
 public class TotalOmegaLimitSection extends Section.NextSection {
     public TotalOmegaLimitSection() {
         super(null, new String[] {
-                "total max omega: " + " rad / s"
+                "Final maximum angular velocity: " + " rad / s"
         });
     }
 }

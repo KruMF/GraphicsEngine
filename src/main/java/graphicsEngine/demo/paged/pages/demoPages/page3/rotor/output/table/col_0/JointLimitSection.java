@@ -6,8 +6,11 @@ import graphicsEngine.demo.paged.pages.demoPages.page3.rotor.output.table.Sectio
 public class JointLimitSection extends Section.FirstSection {
     public JointLimitSection() {
         super("Inner joint limits", new String[] {
-                "Inner rotor limits:",
-                "radius, tangential v, period, max omega"
+                "max tangential speed: " + " m/s",
+                "reference radius: " + " m",
+                "rotational period: " + " s",
+                "RPM: ",
+                "angular velocity: " + " rad/s"
         });
     }
 }

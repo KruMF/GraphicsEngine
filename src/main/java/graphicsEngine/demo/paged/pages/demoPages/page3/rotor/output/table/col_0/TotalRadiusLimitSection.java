@@ -6,7 +6,7 @@ import graphicsEngine.demo.paged.pages.demoPages.page3.rotor.output.table.Sectio
 public class TotalRadiusLimitSection extends Section.NextSection {
     public TotalRadiusLimitSection() {
         super(null, new String[] {
-                "total minimum rotor radius: " + " m"
+                "Final minimum rotor radius: " + " m"
         });
     }
 }

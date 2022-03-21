@@ -6,8 +6,9 @@ import graphicsEngine.demo.paged.pages.demoPages.page3.rotor.output.table.Sectio
 public class CoriolisLimitSection extends Section.NextSection {
     public CoriolisLimitSection() {
         super("Coriolis effect limits", new String[] {
-                "Coriolis limits (for a human):",
-                "maximum omega: "
+                "Max Coriolis effect: " + " m/s^2 (" + " g)",
+                "Reference running speed: " + " m/s",
+                "Maximum angular velocity: " + " rad/s"
         });
     }
 }

@@ -7,6 +7,7 @@ public class GravityRequirementSection extends Section.NextSection {
     public GravityRequirementSection() {
         super("Standard gravity requirements", new String[] {
                 "G-force: " + " G",
+                "Acceleration: " + " m/s^2",
                 "minimum rotor radius: " + " m"
         });
     }

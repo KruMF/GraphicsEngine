@@ -6,8 +6,9 @@ import graphicsEngine.demo.paged.pages.demoPages.page3.rotor.output.table.Sectio
 public class GradientLimitSection extends Section.NextSection {
     public GradientLimitSection() {
         super("Force gradient limits", new String[] {
-                "gradient: " + " % at height: " + " m",
-                "minimum rotor radius: " + " m"
+                "Gradient: " + " %",
+                "Reference height: " + " m",
+                "Minimum rotor radius: " + " m"
         });
     }
 }
