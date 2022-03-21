@@ -3,6 +3,8 @@ package graphicsEngine.demo.paged.pages.demoPages.page3.rotor.output.table.col_0
 import graphicsEngine.demo.paged.pages.demoPages.page3.rotor.output.table.Section;
 import graphicsEngine.demo.paged.pages.demoPages.page3.rotor.data.Limits;
 
+import static graphicsEngine.demo.paged.pages.demoPages.page3.rotor.output.Utilities.roundNumber;
+
 // TODO: add javadoc
 public class GradientLimitSection extends Section.NextSection {
     public GradientLimitSection() {
@@ -11,9 +13,15 @@ public class GradientLimitSection extends Section.NextSection {
 
     private static String[] prepareData() {
         return new String[] {
-                "Gradient: " + (Limits.HumanLimits.GradientLimits.MAX_FORCE_GRADIENT * 100) + " %",
-                "Reference height: " + Limits.HumanLimits.GradientLimits.HEIGHT + " m",
-                "Minimum rotor radius: " + Limits.HumanLimits.GradientLimits.getRadius() + " m"
+                "Gradient: "
+                        + roundNumber(Limits.HumanLimits.GradientLimits.MAX_FORCE_GRADIENT * 100,2)
+                        + " %",
+                "Reference height: "
+                        + roundNumber(Limits.HumanLimits.GradientLimits.HEIGHT, 2)
+                        + " m",
+                "Minimum rotor radius: "
+                        + roundNumber(Limits.HumanLimits.GradientLimits.getRadius(), 3)
+                        + " m"
         };
     }
 }

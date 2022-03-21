@@ -1,6 +1,7 @@
 package graphicsEngine.demo.paged.pages.demoPages.page3.rotor.data;
 
 import graphicsEngine.demo.paged.pages.demoPages.page3.rotor.Data;
+import graphicsEngine.demo.paged.pages.demoPages.page3.rotor.Rotor;
 
 // TODO: add javadoc
 public class Limits {
@@ -28,7 +29,7 @@ public class Limits {
          * @return Angular velocity in [rad / s].
          */
         public static double getOmega() {
-            return 2 * Math.PI / getRotationPeriod();
+            return Rotor.getAngularVelocityFromPeriod(getRotationPeriod());
         }
 
         /**

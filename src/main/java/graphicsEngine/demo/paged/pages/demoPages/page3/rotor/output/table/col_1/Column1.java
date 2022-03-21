@@ -1,7 +1,10 @@
 package graphicsEngine.demo.paged.pages.demoPages.page3.rotor.output.table.col_1;
 
+import graphicsEngine.demo.paged.pages.demoPages.page3.rotor.Rotor;
 import graphicsEngine.demo.paged.pages.demoPages.page3.rotor.output.table.Column;
 import graphicsEngine.demo.paged.pages.demoPages.page3.rotor.output.table.Section;
+
+import static graphicsEngine.demo.paged.pages.demoPages.page3.rotor.output.Utilities.roundNumber;
 
 import java.util.ArrayList;
 
@@ -21,24 +24,34 @@ public class Column1 extends Column {
 
     private static class ActualParametersSection extends Section.FirstSection {
         public ActualParametersSection() {
-            super("Actual parameters", new String[] {
-                    "actual parameters"
-            });
+            super("Actual parameters", prepareData());
+        }
+
+        private static String[] prepareData() {
+            double
+                    radius = Rotor.getRadiusLimit(),
+                    omega = Rotor.getAngularVelocity(radius),
+                    period = Rotor.getPeriodFromAngularVelocity(omega);
+
+            return new String[] {
+                    "radius: " + roundNumber(radius, 3) + " m",
+                    "angular velocity: " + roundNumber(omega, 3) + " rad/s",
+                    "RPM: " + roundNumber(Rotor.getRPMFromPeriod(period), 2),
+                    "rotational period: " + roundNumber(period, 2) + " s",
+                    "tangential velocity: " + roundNumber(Rotor.getTangentialVelocity(radius, omega), 1) + " m/s"
+            };
         }
     }
 
     private static class OldInfoSection extends Section.NextSection {
         public OldInfoSection() {
-            super("Old info", new String[] {
-                    //"Standard gravity component: ~" + Math.round(Rotor.getRadius_fromStandardGravity()) + " m",
-                    //"Gradient component: ~" + Math.round(Rotor.getRadius_fromForceGradient()) + " m",
-                    //"Total rotor radius: ~" + Math.round(Rotor.getRadius()) + " m",
-                    "",
-                    //"Period: " + Limits.rotationPeriod() + " s",
-                    //"Tangential velocity: ~" + Rotor.tangentialVelocity() + " m/s",
-                    //"Coriolis effect: " + Limits.HumanLimits.CoriolisLimits.getCoriolis(Rotor.angularVelocity()) + " m/s^2"
-                    //        + ", when moving at: " + Limits.HumanLimits.CoriolisLimits.REFERENCE_RUNNING_SPEED + " m/s"
-            });
+            super("More info", prepareData());
+        }
+
+        private static String[] prepareData() {
+            return new String[] {
+                    "" // add info here
+            };
         }
     }
 }

@@ -1,6 +1,7 @@
 package graphicsEngine.demo.paged.pages.demoPages.page3.rotor;
 
 import graphicsEngine.demo.paged.pages.demoPages.page3.rotor.data.Limits;
+import graphicsEngine.demo.paged.pages.demoPages.page3.rotor.data.StandardConstants;
 
 /**
  * Calculates the size of a rotating living habitat for living in a weightless environment.
@@ -8,12 +9,27 @@ import graphicsEngine.demo.paged.pages.demoPages.page3.rotor.data.Limits;
  * TODO: finish this and add javadoc
  */
 public class Rotor {
+    //converts period to omega
+    public static double getAngularVelocityFromPeriod(double period) {
+        return 2 * Math.PI / period;
+    }
+
+    //converts omega to period
+    public static double getPeriodFromAngularVelocity(double angularVelocity) {
+        return 2 * Math.PI / angularVelocity;
+    }
+
+    //converts period to RPM
+    public static double getRPMFromPeriod(double period) {
+        return StandardConstants.SECONDS_IN_MINUTE / period;
+    }
+
     // gets maximum angular velocity (omega) from inner joint limits and maximum coriolis effect
     public static double getAngularVelocityLimit() {
         double maxOmega_fromInnerJoint = Limits.JointLimits.getOmega();
         double maxOmega_fromCoriolis = Limits.HumanLimits.CoriolisLimits.getMaxOmega();
 
-        return Math.max(
+        return Math.min(
                 maxOmega_fromInnerJoint,
                 maxOmega_fromCoriolis);
     }

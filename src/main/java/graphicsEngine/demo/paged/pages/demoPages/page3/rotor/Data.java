@@ -1,9 +1,6 @@
 package graphicsEngine.demo.paged.pages.demoPages.page3.rotor;
 
-import graphicsEngine.demo.paged.pages.demoPages.page3.rotor.data.Environment;
-import graphicsEngine.demo.paged.pages.demoPages.page3.rotor.data.StandardConstants;
-import graphicsEngine.demo.paged.pages.demoPages.page3.rotor.data.GeneralConstants;
-import graphicsEngine.demo.paged.pages.demoPages.page3.rotor.data.Preferences;
+import graphicsEngine.demo.paged.pages.demoPages.page3.rotor.data.*;
 
 // TODO: finish this and add javadoc
 public class Data {
