@@ -1,6 +1,5 @@
 package graphicsEngine.demo.paged.pages.demoPages.page3.rotor;
 
-import graphicsEngine.demo.paged.pages.demoPages.page3.rotor.data.StandardConstants;
 import graphicsEngine.demo.paged.pages.demoPages.page3.rotor.data.Limits;
 
 /**
@@ -19,12 +18,15 @@ public class Rotor {
                 maxOmega_fromCoriolis);
     }
 
-    // gets minimum radius for maximum gradient and maximum angular velocity (omega) at reference gravity
-    public static double getRadius() {
-        double minRadius_fromGradient = Limits.HumanLimits.GradientLimits.getRadius();
-
+    public static double getRadiusFromGravity() {
         double omegaLimit = getAngularVelocityLimit();
-        double minRadius_fromStandardGravity = Data.getGravity() / Math.pow(omegaLimit, 2);
+        return Data.getGravity() / Math.pow(omegaLimit, 2);
+    }
+
+    // gets minimum radius for maximum gradient and maximum angular velocity (omega) at reference gravity
+    public static double getRadiusLimit() {
+        double minRadius_fromGradient = Limits.HumanLimits.GradientLimits.getRadius();
+        double minRadius_fromStandardGravity = getRadiusFromGravity();
 
         return Math.max(
                 minRadius_fromGradient,

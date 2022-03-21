@@ -12,7 +12,7 @@ import graphicsEngine.utilities.GraphicsHelper;
 
 // TODO: finish this and add javadoc
 public class Column {
-    public static final int DEFAULT_WIDTH = 300;
+    public static final int DEFAULT_WIDTH = 400;
 
     public ArrayList<? extends Section> sections;
     public int width;
