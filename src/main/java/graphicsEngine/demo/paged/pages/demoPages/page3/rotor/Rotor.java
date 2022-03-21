@@ -10,7 +10,7 @@ import graphicsEngine.demo.paged.pages.demoPages.page3.rotor.data.Limits;
  */
 public class Rotor {
     // gets maximum angular velocity (omega) from inner joint limits and maximum coriolis effect
-    static double getAngularVelocityLimit() {
+    public static double getAngularVelocityLimit() {
         double maxOmega_fromInnerJoint = Limits.JointLimits.getOmega();
         double maxOmega_fromCoriolis = Limits.HumanLimits.CoriolisLimits.getMaxOmega();
 
@@ -20,7 +20,7 @@ public class Rotor {
     }
 
     // gets minimum radius for maximum gradient and maximum angular velocity (omega) at reference gravity
-    static double getRadius() {
+    public static double getRadius() {
         double minRadius_fromGradient = Limits.HumanLimits.GradientLimits.getRadius();
 
         double omegaLimit = getAngularVelocityLimit();
@@ -32,12 +32,12 @@ public class Rotor {
     }
 
     // gets actual omega for given radius and constant reference acceleration
-    static double getAngularVelocity(double radius) {
+    public static double getAngularVelocity(double radius) {
         return Math.sqrt(Data.getGravity() / radius);
     }
 
     // gets the tangential velocity in [m/s] for given radius and angular velocity
-    static double getTangentialVelocity(double radius, double angularVelocity) {
+    public static double getTangentialVelocity(double radius, double angularVelocity) {
         return radius * angularVelocity;
     }
 }

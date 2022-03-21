@@ -1,5 +1,7 @@
 package graphicsEngine.demo.paged.pages.demoPages.page3.rotor.data;
 
+import graphicsEngine.demo.paged.pages.demoPages.page3.rotor.Data;
+
 // TODO: add javadoc
 public class Limits {
 
@@ -80,7 +82,7 @@ public class Limits {
              * @return Angular velocity in [rad / s].
              */
             public static double getMaxOmega() {
-                return MAX_CORIOLIS / (2 * REFERENCE_RUNNING_SPEED);
+                return (MAX_CORIOLIS * Data.generalConstants.standardGravity) / (2 * REFERENCE_RUNNING_SPEED);
             }
         }
     }
