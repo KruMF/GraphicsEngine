@@ -1,4 +1,4 @@
-package graphicsEngine.utilities.simpleParts;
+package graphicsEngine.parts.simpleParts;
 
 import java.util.Objects;
 import java.awt.Graphics;

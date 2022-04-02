@@ -1,7 +1,7 @@
 package graphicsEngine.demo.paged.pages.demoPages.page1;
 
 import graphicsEngine.engine.data.colors.Palette;
-import graphicsEngine.utilities.simpleParts.SimplePart;
+import graphicsEngine.parts.simpleParts.SimplePart;
 
 import graphicsEngine.demo.paged.pages.demoPages.common.CommonDemoPage;
 

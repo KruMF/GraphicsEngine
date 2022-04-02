@@ -1,11 +1,11 @@
-package graphicsEngine.utilities.pages;
+package graphicsEngine.parts.pages;
 
 import graphicsEngine.engine.GraphicsManager;
 import graphicsEngine.engine.data.colors.Palette;
 import graphicsEngine.utilities.input.InputChecker;
-import graphicsEngine.utilities.simpleParts.Background;
-import graphicsEngine.utilities.simpleParts.DrawablePart;
-import graphicsEngine.utilities.containers.LayerContainer;
+import graphicsEngine.parts.simpleParts.Background;
+import graphicsEngine.parts.simpleParts.DrawablePart;
+import graphicsEngine.parts.containers.LayerContainer;
 
 import java.util.ArrayList;
 import java.util.Objects;

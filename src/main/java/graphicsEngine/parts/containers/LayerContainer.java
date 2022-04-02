@@ -1,6 +1,6 @@
-package graphicsEngine.utilities.containers;
+package graphicsEngine.parts.containers;
 
-import graphicsEngine.utilities.simpleParts.DrawablePart;
+import graphicsEngine.parts.simpleParts.DrawablePart;
 
 import java.util.ArrayList;
 import java.awt.*;

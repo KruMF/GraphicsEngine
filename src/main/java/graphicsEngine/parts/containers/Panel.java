@@ -1,8 +1,6 @@
-package graphicsEngine.utilities.containers;
+package graphicsEngine.parts.containers;
 
-import graphicsEngine.utilities.simpleParts.DrawablePart;
-import graphicsEngine.utilities.simpleParts.Background;
-import graphicsEngine.utilities.simpleParts.Border;
+import graphicsEngine.parts.simpleParts.DrawablePart;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -13,7 +11,7 @@ import com.google.inject.internal.Nullable;
 /**
  * A layer container with background and border pre-prepared.
  */
-public class Panel extends LayerContainer {
+public class Panel extends ContentsBox {
 
     /**
      * Creates a simple panel.
@@ -28,12 +26,10 @@ public class Panel extends LayerContainer {
     public Panel(@Nullable int[] size, @Nullable boolean[] fixedSize,
                  @Nullable Color background, @Nullable Color border,
                  @Nullable ArrayList<DrawablePart> panelParts, @Nullable AlignmentType alignment) {
-        super(size, fixedSize, new ArrayList<>());
-
-        parts.add(new Background(background));
-        parts.add(new Border(border));
-
-        parts.add(partContainer(panelParts, alignment));
+        super(
+                size, fixedSize,
+                background, border,
+                partContainer(panelParts, alignment));
     }
 
     private static PartContainer partContainer(@Nullable ArrayList<DrawablePart> panelParts,
@@ -42,25 +38,5 @@ public class Panel extends LayerContainer {
                 null, null,
                 panelParts,
                 Objects.requireNonNullElse(alignment, AlignmentType.TOP));
-    }
-
-    /**
-     * Sets the background color of the panel.
-     *
-     * @param color New color.
-     */
-    @SuppressWarnings("unused")
-    public void setBackgroundColor(@Nullable Color color) {
-        ((Background) parts.get(0)).setColor(color);
-    }
-
-    /**
-     * Sets the border color of the panel.
-     *
-     * @param color New color.
-     */
-    @SuppressWarnings("unused")
-    public void setBorderColor(@Nullable Color color) {
-        ((Border) parts.get(1)).setColor(color);
     }
 }

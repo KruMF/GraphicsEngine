@@ -3,10 +3,10 @@ package graphicsEngine.presets;
 import graphicsEngine.engine.data.colors.Palette;
 import graphicsEngine.engine.data.colors.PanelColors;
 import graphicsEngine.utilities.input.InputChecker;
-import graphicsEngine.utilities.simpleParts.SimplePart;
-import graphicsEngine.utilities.containers.AlignmentType;
-import graphicsEngine.utilities.containers.PartContainer;
-import graphicsEngine.utilities.pages.Page;
+import graphicsEngine.parts.simpleParts.SimplePart;
+import graphicsEngine.parts.containers.AlignmentType;
+import graphicsEngine.parts.containers.PartContainer;
+import graphicsEngine.parts.pages.Page;
 
 import graphicsEngine.presets.panels.CommonHeader;
 import graphicsEngine.presets.panels.CommonFooter;

@@ -14,7 +14,7 @@ import org.jetbrains.annotations.NotNull;
 
 // TODO: finish this and add javadoc
 public abstract class Table {
-    public static final int[] DEFAULT_LOCATION = new int[] {300, 50};
+    public static final int[] DEFAULT_LOCATION = new int[] {50, 50};
 
     private int[] location;
 

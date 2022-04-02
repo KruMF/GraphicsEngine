@@ -1,6 +1,6 @@
 package graphicsEngine.demo.paged.common.header;
 
-import graphicsEngine.utilities.simpleParts.SimplePart;
+import graphicsEngine.parts.simpleParts.SimplePart;
 
 import java.awt.*;
 

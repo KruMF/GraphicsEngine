@@ -2,8 +2,8 @@ package graphicsEngine.engine;
 
 import graphicsEngine.engine.data.GraphicsData;
 import graphicsEngine.utilities.input.InputManager;
-import graphicsEngine.utilities.pages.Page;
-import graphicsEngine.utilities.pages.PageManager;
+import graphicsEngine.parts.pages.Page;
+import graphicsEngine.parts.pages.PageManager;
 
 import java.util.HashMap;
 import java.util.Objects;

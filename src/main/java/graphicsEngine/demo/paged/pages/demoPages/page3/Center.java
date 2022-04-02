@@ -1,8 +1,7 @@
 package graphicsEngine.demo.paged.pages.demoPages.page3;
 
-import graphicsEngine.demo.paged.pages.demoPages.page3.rotor.Data;
-import graphicsEngine.utilities.GraphicsHelper;
-import graphicsEngine.utilities.simpleParts.SimplePart;
+import graphicsEngine.utilities.TextAligner;
+import graphicsEngine.parts.simpleParts.SimplePart;
 
 import graphicsEngine.demo.paged.pages.demoPages.page3.rotor.Output;
 
@@ -36,7 +35,7 @@ class Center extends SimplePart {
 
     private void drawPageMessage(@NotNull Graphics g) {
         g.setColor(Color.green);
-        GraphicsHelper.drawStringCentered(g, "This is the demo page 3",
+        TextAligner.drawStringCentered(g, "This is the demo page 3",
                 new int[] {
                         location[0] + size[0] / 2,
                         location[1] + size[1] / 2});

@@ -1,7 +1,7 @@
-package graphicsEngine.utilities.containers;
+package graphicsEngine.parts.containers;
 
-import graphicsEngine.utilities.simpleParts.DrawablePart;
-import graphicsEngine.utilities.simpleParts.SimplePart;
+import graphicsEngine.parts.simpleParts.DrawablePart;
+import graphicsEngine.parts.simpleParts.SimplePart;
 
 import java.util.ArrayList;
 import java.util.Objects;

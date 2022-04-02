@@ -1,9 +1,9 @@
 package graphicsEngine.demo.paged.common.header;
 
 import graphicsEngine.engine.data.colors.PanelColors;
-import graphicsEngine.utilities.simpleParts.DrawablePart;
-import graphicsEngine.utilities.containers.AlignmentType;
-import graphicsEngine.utilities.containers.PartContainer;
+import graphicsEngine.parts.simpleParts.DrawablePart;
+import graphicsEngine.parts.containers.AlignmentType;
+import graphicsEngine.parts.containers.PartContainer;
 import graphicsEngine.presets.panels.CommonHeader;
 
 import java.util.ArrayList;

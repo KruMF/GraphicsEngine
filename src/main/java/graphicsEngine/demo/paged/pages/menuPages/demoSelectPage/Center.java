@@ -1,7 +1,7 @@
 package graphicsEngine.demo.paged.pages.menuPages.demoSelectPage;
 
-import graphicsEngine.utilities.GraphicsHelper;
-import graphicsEngine.utilities.simpleParts.SimplePart;
+import graphicsEngine.utilities.TextAligner;
+import graphicsEngine.parts.simpleParts.SimplePart;
 
 import java.awt.*;
 
@@ -27,7 +27,7 @@ public class Center extends SimplePart {
         super.draw(g, location, size);
 
         g.setColor(Color.green);
-        GraphicsHelper.drawStringCentered(g, "This is the demo selection page",
+        TextAligner.drawStringCentered(g, "This is the demo selection page",
                 new int[] {
                         location[0] + size[0] / 2,
                         location[1] + size[1] / 2});

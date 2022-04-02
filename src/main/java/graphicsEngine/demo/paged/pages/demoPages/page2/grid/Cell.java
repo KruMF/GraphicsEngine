@@ -1,6 +1,6 @@
 package graphicsEngine.demo.paged.pages.demoPages.page2.grid;
 
-import graphicsEngine.utilities.GraphicsHelper;
+import graphicsEngine.utilities.TextAligner;
 
 import java.util.Random;
 import java.awt.*;
@@ -76,7 +76,7 @@ public class Cell {
 
     private void drawValue(Graphics g, int[] location) {
         g.setColor(TEXT_COLOR);
-        GraphicsHelper.drawStringCentered(g, prepareValueForShowing(), location);
+        TextAligner.drawStringCentered(g, prepareValueForShowing(), location);
     }
 
     private String prepareValueForShowing() {

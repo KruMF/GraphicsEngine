@@ -1,9 +1,9 @@
-package graphicsEngine.utilities.pages;
+package graphicsEngine.parts.pages;
 
 import graphicsEngine.engine.GraphicsManager;
 import graphicsEngine.utilities.input.InputData;
 
-import static graphicsEngine.utilities.GraphicsHelper.*;
+import static graphicsEngine.utilities.TextAligner.*;
 
 import java.awt.*;
 

@@ -1,7 +1,7 @@
 package graphicsEngine.demo.paged.pages.demoPages.page2;
 
 import graphicsEngine.engine.GraphicsManager;
-import graphicsEngine.utilities.pages.PageManager;
+import graphicsEngine.parts.pages.PageManager;
 
 import graphicsEngine.demo.paged.common.BlankKeyboardActions;
 

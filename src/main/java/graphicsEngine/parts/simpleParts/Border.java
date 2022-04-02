@@ -1,4 +1,4 @@
-package graphicsEngine.utilities.simpleParts;
+package graphicsEngine.parts.simpleParts;
 
 import java.awt.*;
 
@@ -6,21 +6,21 @@ import com.google.inject.internal.Nullable;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * A simple background with some color.
+ * A simple border with some color.
  */
-public class Background extends ColoredSimplePart {
+public class Border extends ColoredSimplePart {
 
     /**
-     * Creates a background.
+     * Creates a border.
      *
      * @param color Color. (null = transparent)
      */
-    public Background(@Nullable Color color) {
+    public Border(@Nullable Color color) {
         super(color);
     }
 
     /**
-     * Draws background.
+     * Draws border.
      *
      * @param g        Graphics to use.
      * @param location Starting location for drawing.
@@ -30,16 +30,15 @@ public class Background extends ColoredSimplePart {
     public void draw(@NotNull Graphics g,
                      @Nullable int[] location, @Nullable int[] size) {
         super.draw(g, location, size);
-        fillBackground(g);
+        drawBorders(g);
     }
 
     /**
-     * Fills a rectangle with specified color.
+     * Draws a rectangle with specified color.
      *
      * @param g Graphics to use.
      */
-    private void fillBackground(@NotNull Graphics g) {
-        g.setColor(getColor());
-        g.fillRect(location[0], location[1], size[0], size[1]);
+    private void drawBorders(@NotNull Graphics g) {
+        g.drawRect(location[0], location[1], size[0], size[1]);
     }
 }

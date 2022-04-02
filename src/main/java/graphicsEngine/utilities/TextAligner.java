@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Helper class for graphics.
  */
-public class GraphicsHelper {
+public class TextAligner {
     private static final int ROW_HEIGHT = 20, TEXT_OFFSET_FROM_BOTTOM = 5;
 
     //TODO: add javadoc

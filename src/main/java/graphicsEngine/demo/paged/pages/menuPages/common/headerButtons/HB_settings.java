@@ -1,7 +1,7 @@
 package graphicsEngine.demo.paged.pages.menuPages.common.headerButtons;
 
 import graphicsEngine.engine.GraphicsManager;
-import graphicsEngine.utilities.buttons.Button;
+import graphicsEngine.parts.interactive.buttons.Button;
 
 import graphicsEngine.demo.paged.pages.menuPages.settingsPage.SettingsPage;
 

@@ -3,7 +3,7 @@ package graphicsEngine.demo.paged;
 import graphicsEngine.engine.GraphicsManager;
 import graphicsEngine.engine.data.GraphicsData;
 import graphicsEngine.engine.data.colors.Palette;
-import graphicsEngine.utilities.pages.Page;
+import graphicsEngine.parts.pages.Page;
 
 import graphicsEngine.demo.paged.pages.menuPages.startingPage.StartingPage;
 import graphicsEngine.demo.paged.pages.menuPages.settingsPage.SettingsPage;

@@ -1,4 +1,4 @@
-package graphicsEngine.utilities.pages;
+package graphicsEngine.parts.pages;
 
 import graphicsEngine.utilities.input.InputManager;
 

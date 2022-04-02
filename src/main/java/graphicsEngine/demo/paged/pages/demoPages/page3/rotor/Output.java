@@ -11,9 +11,7 @@ import java.awt.Graphics;
  * TODO: update javadoc
  */
 public class Output extends Utilities {
-    public static final int[] TABLE_LOCATION = new int[] {300, 50};
-
-    public static Table table = new Table.ParticularTable(TABLE_LOCATION);
+    public static Table table = new Table.ParticularTable(null);
 
     // add other output types here
 

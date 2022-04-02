@@ -1,9 +1,9 @@
-package graphicsEngine.utilities.containers;
+package graphicsEngine.parts.containers;
 
 import graphicsEngine.utilities.input.InputData;
-import graphicsEngine.utilities.simpleParts.DrawablePart;
-import graphicsEngine.utilities.simpleParts.SimplePart;
-import graphicsEngine.utilities.buttons.Button;
+import graphicsEngine.parts.simpleParts.DrawablePart;
+import graphicsEngine.parts.simpleParts.SimplePart;
+import graphicsEngine.parts.interactive.buttons.Button;
 
 import java.util.ArrayList;
 import java.awt.*;

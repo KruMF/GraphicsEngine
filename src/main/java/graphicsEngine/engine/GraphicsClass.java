@@ -1,7 +1,7 @@
 package graphicsEngine.engine;
 
 import graphicsEngine.engine.data.windowParameters.WindowParameters;
-import graphicsEngine.utilities.pages.DebugLayer;
+import graphicsEngine.parts.pages.DebugLayer;
 
 import javax.swing.JPanel;
 import javax.swing.JFrame;

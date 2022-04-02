@@ -1,8 +1,8 @@
 package graphicsEngine.demo.paged.pages.demoPages.common;
 
 import graphicsEngine.engine.data.colors.Palette;
-import graphicsEngine.utilities.containers.AlignmentType;
-import graphicsEngine.utilities.simpleParts.SimplePart;
+import graphicsEngine.parts.simpleParts.SimplePart;
+import graphicsEngine.parts.containers.AlignmentType;
 
 import graphicsEngine.demo.paged.common.CommonPage;
 import graphicsEngine.demo.paged.common.BlankKeyboardActions;
@@ -29,6 +29,6 @@ public abstract class CommonDemoPage extends CommonPage {
                           @Nullable ArrayList<? extends SimplePart> centralParts) {
         super(keyboardActions, palette,
                 new DemoPageHeader(palette.panelColors),
-                centralParts, AlignmentType.TOP);
+                centralParts, AlignmentType.LEFT);
     }
 }

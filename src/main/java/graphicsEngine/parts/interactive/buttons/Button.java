@@ -1,14 +1,12 @@
-package graphicsEngine.utilities.buttons;
+package graphicsEngine.parts.interactive.buttons;
 
 import graphicsEngine.engine.GraphicsManager;
 import graphicsEngine.engine.data.colors.ButtonColors;
-import graphicsEngine.utilities.GraphicsHelper;
 import graphicsEngine.utilities.input.InputData;
-import graphicsEngine.utilities.simpleParts.Background;
-import graphicsEngine.utilities.simpleParts.Border;
+import graphicsEngine.parts.simpleParts.SimpleLabel;
+import graphicsEngine.parts.containers.ContentsBox;
 
-import java.util.Objects;
-import java.awt.Graphics;
+import java.awt.*;
 
 import com.google.inject.internal.Nullable;
 import org.jetbrains.annotations.NotNull;
@@ -17,10 +15,8 @@ import org.jetbrains.annotations.NotNull;
  * A simple abstract button. Must be extended.
  */
 public abstract class Button extends MouseDetectablePart {
-    Background background;
-    Border border;
-    String text;
-    int[] textOffset;
+    SimpleLabel label;      // for displaying text
+    ContentsBox boxing;     // for background and border
 
     /**
      * Creates a simple button.
@@ -33,10 +29,12 @@ public abstract class Button extends MouseDetectablePart {
     public Button(@Nullable int[] size, @Nullable boolean[] fixedSize,
                   @Nullable String text, @Nullable int[] textOffset) {
         super(size, fixedSize);
-        background = new Background(null);
-        border = new Border(null);
-        this.text = Objects.requireNonNullElse(text, "");
-        this.textOffset = Objects.requireNonNullElse(textOffset, new int[] {0, 0});
+        Color textColor = GraphicsManager.data.palette.buttonColors.textColor;
+        label = new SimpleLabel(text, textOffset, textColor);
+        boxing = new ContentsBox(
+                size, fixedSize,
+                null, null,
+                label);
     }
 
     /**
@@ -46,9 +44,8 @@ public abstract class Button extends MouseDetectablePart {
     public void draw(@NotNull Graphics g,
                      @Nullable int[] location, @Nullable int[] size) {
         super.draw(g, location, size);
-        background.draw(g, this.location, this.size);
-        border.draw(g, this.location, this.size);
-        drawButtonText(g);
+        boxing.draw(g, this.location, this.size);
+        label.draw(g, this.location, this.size);
     }
 
     /**
@@ -57,8 +54,8 @@ public abstract class Button extends MouseDetectablePart {
     @Override
     public void drawInactive() {
         ButtonColors colors = GraphicsManager.data.palette.buttonColors;
-        background.setColor(colors.bodyColor);
-        border.setColor(colors.borderColor);
+        boxing.setBackgroundColor(colors.bodyColor);
+        boxing.setBorderColor(colors.borderColor);
     }
 
     /**
@@ -67,8 +64,8 @@ public abstract class Button extends MouseDetectablePart {
     @Override
     public void drawHovered() {
         ButtonColors colors = GraphicsManager.data.palette.buttonColors;
-        background.setColor(colors.bodyColor);
-        border.setColor(colors.borderColor_active);
+        boxing.setBackgroundColor(colors.bodyColor);
+        boxing.setBorderColor(colors.borderColor_active);
     }
 
     /**
@@ -77,20 +74,8 @@ public abstract class Button extends MouseDetectablePart {
     @Override
     public void drawClicked() {
         ButtonColors colors = GraphicsManager.data.palette.buttonColors;
-        background.setColor(colors.bodyColor_active);
-        border.setColor(colors.borderColor_active);
-    }
-
-    /**
-     * Draws the text of a button.
-     *
-     * TODO: needs improvements
-     */
-    private void drawButtonText(@NotNull Graphics g) {
-        g.setColor(GraphicsManager.data.palette.buttonColors.textColor);
-        GraphicsHelper.drawStringCentered(g, text, new int[] {
-                location[0] + size[0] / 2 + textOffset[0],
-                location[1] + size[1] / 2 + textOffset[1]});
+        boxing.setBackgroundColor(colors.bodyColor_active);
+        boxing.setBorderColor(colors.borderColor_active);
     }
 
     /**

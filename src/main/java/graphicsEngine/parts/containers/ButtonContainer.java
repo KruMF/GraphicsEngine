@@ -1,4 +1,4 @@
-package graphicsEngine.utilities.containers;
+package graphicsEngine.parts.containers;
 
 import graphicsEngine.utilities.input.InputData;
 

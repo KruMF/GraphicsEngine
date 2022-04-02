@@ -1,7 +1,7 @@
-package graphicsEngine.utilities.buttons;
+package graphicsEngine.parts.interactive.buttons;
 
 import graphicsEngine.utilities.input.InputData;
-import graphicsEngine.utilities.simpleParts.SimplePart;
+import graphicsEngine.parts.simpleParts.SimplePart;
 
 import java.awt.*;
 

@@ -1,7 +1,7 @@
 package graphicsEngine.demo.paged.pages.demoPages.common;
 
 import graphicsEngine.engine.data.colors.PanelColors;
-import graphicsEngine.utilities.simpleParts.DrawablePart;
+import graphicsEngine.parts.simpleParts.DrawablePart;
 
 import graphicsEngine.demo.paged.common.header.HeaderWithButtons;
 

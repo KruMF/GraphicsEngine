@@ -1,8 +1,8 @@
 package graphicsEngine.demo.paged.pages.menuPages.common;
 
 import graphicsEngine.engine.data.colors.Palette;
-import graphicsEngine.utilities.simpleParts.SimplePart;
-import graphicsEngine.utilities.containers.AlignmentType;
+import graphicsEngine.parts.simpleParts.SimplePart;
+import graphicsEngine.parts.containers.AlignmentType;
 
 import graphicsEngine.demo.paged.common.BlankKeyboardActions;
 import graphicsEngine.demo.paged.common.CommonPage;

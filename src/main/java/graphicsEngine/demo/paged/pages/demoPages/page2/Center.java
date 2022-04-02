@@ -1,7 +1,7 @@
 package graphicsEngine.demo.paged.pages.demoPages.page2;
 
-import graphicsEngine.utilities.GraphicsHelper;
-import graphicsEngine.utilities.simpleParts.SimplePart;
+import graphicsEngine.utilities.TextAligner;
+import graphicsEngine.parts.simpleParts.SimplePart;
 
 import graphicsEngine.demo.paged.pages.demoPages.page2.grid.Table;
 
@@ -47,7 +47,7 @@ class Center extends SimplePart {
 
     private void drawPageMessage(Graphics g) {
         g.setColor(Color.green);
-        GraphicsHelper.drawStringCentered(g, "This is the demo page 2",
+        TextAligner.drawStringCentered(g, "This is the demo page 2",
                 new int[] {
                         location[0] + size[0] / 2,
                         location[1] + size[1] / 2});
