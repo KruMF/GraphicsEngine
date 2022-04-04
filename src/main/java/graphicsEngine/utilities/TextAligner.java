@@ -10,6 +10,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Helper class for graphics.
+ *
+ * TODO: fix javadoc
  */
 public class TextAligner {
     private static final int ROW_HEIGHT = 20, TEXT_OFFSET_FROM_BOTTOM = 5;
