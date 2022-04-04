@@ -1,9 +1,11 @@
 package graphicsEngine.utilities;
 
+import java.util.ArrayList;
+import java.util.Objects;
 import java.awt.*;
 import java.awt.font.TextLayout;
-import java.util.ArrayList;
 
+import com.google.inject.internal.Nullable;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -13,16 +15,40 @@ public class TextAligner {
     private static final int ROW_HEIGHT = 20, TEXT_OFFSET_FROM_BOTTOM = 5;
 
     //TODO: add javadoc
-    public static void drawStringCentered(Graphics g, String string, int[] location) {
+    public static void drawStringCentered(@NotNull Graphics g, @NotNull String string,
+                                          int[] location) {
+        drawStringCentered(g, string, location, null);
+    }
+
+    //TODO: add javadoc
+    public static void drawStringCentered(@NotNull Graphics g, @NotNull String string,
+                                          int[] location, @Nullable boolean[] centering) {
         Font font = g.getFont();
         FontMetrics fm = g.getFontMetrics();
         TextLayout textLayout = new TextLayout(string, font, fm.getFontRenderContext());
 
-        int x = location[0] - (int) (textLayout.getBounds().getWidth() / 2);
-        int height = fm.getAscent() + fm.getDescent();
-        int y = location[1] - height / 2 + fm.getAscent();
+        boolean[] actualCentering = new boolean[] {true, true};
+
+        if (centering != null) {
+            actualCentering[0] = Objects.requireNonNullElse(centering[0], true);
+            actualCentering[1] = Objects.requireNonNullElse(centering[1], true);
+        }
+
+        int dx = (int) (textLayout.getBounds().getWidth() / 2),
+                height = fm.getAscent() + fm.getDescent(),
+                dy = height / 2 + fm.getAscent(),
+                x = location[0] - getOffset(dx, actualCentering[0]),
+                y = location[1] - getOffset(dy, actualCentering[1]);
 
         g.drawString(string, x, y);
+    }
+
+    private static int getOffset(int delta, boolean offset) {
+        if (offset) {
+            return delta;
+        } else {
+            return 0;
+        }
     }
 
     /**
