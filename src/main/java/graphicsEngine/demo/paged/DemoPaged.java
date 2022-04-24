@@ -42,7 +42,11 @@ public class DemoPaged {
     }
 
     private static GraphicsData startingParameters() {
-        return new GraphicsData(null, null, true);
+        // Graphics data with default values.
+        return new GraphicsData();
+
+        // Graphics data with custom values.
+        //return new GraphicsData(null, null, true);
     }
 
     private static HashMap<String, Page> preparePages(@NotNull Palette palette) {

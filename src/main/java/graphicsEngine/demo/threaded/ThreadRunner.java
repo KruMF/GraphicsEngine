@@ -17,7 +17,7 @@ public class ThreadRunner implements Runnable {
     @Override
     public void run() {
         while (running) {
-            System.out.println("Thread running. X = " + x);
+            System.out.println("Main thread running. X = " + x);
 
             x++;
             endCheck();

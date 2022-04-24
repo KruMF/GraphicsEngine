@@ -17,6 +17,15 @@ public class GraphicsData {
     public boolean debugLayer;
 
     /**
+     * Creates graphics data with default values.
+     * Works as if parameters were null.
+     * TODO: remove debugLayer parameter
+     */
+    public GraphicsData() {
+        this(null, null, true);
+    }
+
+    /**
      * Creates graphics data.
      *
      * @param windowParameters Window parameters. (Null - default parameters)
