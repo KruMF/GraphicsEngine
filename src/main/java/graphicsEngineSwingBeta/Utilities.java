@@ -10,7 +10,7 @@ public class Utilities {
      *
      * @param message Message to print.
      */
-    static void printLine(String message) {
+    public static void printLine(String message) {
         System.out.println(message);
     }
 }

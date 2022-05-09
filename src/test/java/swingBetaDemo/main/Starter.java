@@ -1,9 +1,9 @@
 package swingBetaDemo.main;
 
-import graphicsEngineSwingBeta.GraphicsManager;
 import swingBetaDemo.data.Data;
+import swingBetaDemo.graphics.GraphicsAdapter;
 
-import static swingBetaDemo.main.Utilities.printLine;
+import static graphicsEngineSwingBeta.Utilities.printLine;
 
 //a helper class for starting everything
 class Starter {
@@ -17,6 +17,6 @@ class Starter {
     private static void startOtherThreads() {
         Data.resetValues(); //TODO: convert to a non-static object
 
-        Main.mainThread.graphics = new GraphicsManager();
+        Main.mainThread.graphics = new GraphicsAdapter();
     }
 }

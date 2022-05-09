@@ -1,10 +1,10 @@
 package swingBetaDemo.main;
 
 import ThreadAbstraction.AbstractUpdater;
-import graphicsEngineSwingBeta.GraphicsManager;
 import swingBetaDemo.calc.Calculations;
+import swingBetaDemo.graphics.GraphicsAdapter;
 
-import static swingBetaDemo.main.Utilities.printLine;
+import static graphicsEngineSwingBeta.Utilities.printLine;
 
 public class Main extends AbstractUpdater {
     public static void main(String[] args) {
@@ -14,7 +14,7 @@ public class Main extends AbstractUpdater {
     public static Main mainThread;
     private static final long THREAD_DELAY = 100L;
 
-    public GraphicsManager graphics;
+    GraphicsAdapter graphics;
 
     protected Main() {
         super(THREAD_DELAY);
@@ -31,7 +31,7 @@ public class Main extends AbstractUpdater {
     @Override
     public void endCheck() {
         if (ExitManager.determineEnd()) {
-            //end();
+            end();
         }
     }
 
