@@ -25,7 +25,6 @@ public abstract class AbstractWindow extends JFrame {
     public abstract void addParts();
 
     //manually reset parts
-    @SuppressWarnings("unused")
     public final void resetParts() {
         getContentPane().removeAll();
         addParts();
