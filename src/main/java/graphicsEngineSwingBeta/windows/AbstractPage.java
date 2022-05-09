@@ -1,4 +1,4 @@
-package graphicsEngineSwingBeta.parts;
+package graphicsEngineSwingBeta.windows;
 
 import javax.swing.*;
 

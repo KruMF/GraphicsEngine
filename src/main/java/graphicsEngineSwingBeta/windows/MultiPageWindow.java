@@ -1,30 +1,28 @@
 package graphicsEngineSwingBeta.windows;
 
-import graphicsEngineSwingBeta.parts.AbstractPage;
-
 import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.Objects;
 
+import static graphicsEngineSwingBeta.Utilities.printLine;
+
 import com.google.inject.internal.Nullable;
 import org.jetbrains.annotations.NotNull;
 
 // TODO: finish this and add javadoc
-public abstract class AbstractPagedWindow extends AbstractWindow {
-    private static final String EMPTY_KEY = "";
+public abstract class MultiPageWindow extends AbstractWindow {
     private Map<String, AbstractPage> pages;
-    private String activePage;
 
     @SuppressWarnings("unused")
-    public AbstractPagedWindow(
+    public MultiPageWindow(
             @NotNull WindowConfig config,
             @NotNull List<AbstractPage> pages) {
         this(config, pages, null);
     }
 
     @SuppressWarnings("unused")
-    public AbstractPagedWindow(
+    public MultiPageWindow(
             @NotNull WindowConfig config,
             @NotNull List<AbstractPage> pages,
             @Nullable String activePageKey) {
@@ -51,9 +49,11 @@ public abstract class AbstractPagedWindow extends AbstractWindow {
     }
 
     public final void setActivePage(@NotNull String key) {
-        if (pages.containsKey(key)) {
-            activePage = key;
+        if (!key.equals(EMPTY_KEY) && pages.containsKey(key)) {
+            super.setActivePage(key);
             resetParts();
+        } else {
+            printLine("Page not found");
         }
     }
 
