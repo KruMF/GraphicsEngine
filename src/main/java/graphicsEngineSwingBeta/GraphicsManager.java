@@ -1,33 +1,45 @@
 package graphicsEngineSwingBeta;
 
-import graphicsEngineSwingBeta.controlWindow.ControlWindow;
-import graphicsEngineSwingBeta.viewWinow.ViewWindow;
+import DelayCalculator.DelayOptions;
+import com.google.inject.internal.Nullable;
+import graphicsEngineSwingBeta.windowManager.AbstractWindow;
 import graphicsEngineSwingBeta.windowManager.WindowManager;
 
 import java.util.ArrayList;
 
 import static graphicsEngineSwingBeta.Utilities.printLine;
 
+import org.jetbrains.annotations.NotNull;
+
 //a class for containing graphics
 //TODO: add javadocs
 public class GraphicsManager {
-    private static final long DEFAULT_WINDOW_REFRESH_DELAY = 20L;
-
     public ArrayList<WindowManager> windows;
 
     public GraphicsManager() {
         windows = new ArrayList<>();
-
-        windows.add(new WindowManager(new ControlWindow(), DEFAULT_WINDOW_REFRESH_DELAY));
-        windows.get(0).start();
-
-        newViewWindow();
     }
 
-    public void newViewWindow() {
+    @SuppressWarnings("unused")
+    public final void newWindow(@NotNull WindowManager window) {
         int i = windows.size();
-        windows.add(new WindowManager(new ViewWindow(), DEFAULT_WINDOW_REFRESH_DELAY));
+        windows.add(window);
         windows.get(i).start();
+    }
+
+    @SuppressWarnings("unused")
+    public final void newWindow(@NotNull AbstractWindow window) {
+        newWindow(new WindowManager(window));
+    }
+
+    @SuppressWarnings("unused")
+    public final void newWindow(@NotNull AbstractWindow window, long delay) {
+        newWindow(new WindowManager(window, delay));
+    }
+
+    @SuppressWarnings("unused")
+    public final void newWindow(@NotNull AbstractWindow window, @Nullable DelayOptions delayOptions) {
+        newWindow(new WindowManager(window, delayOptions));
     }
 
     public void end() {

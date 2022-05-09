@@ -1,4 +1,4 @@
-package graphicsEngineSwingBeta.viewWinow.mainPanels;
+package swingBetaDemo.graphics.viewWinow.mainPanels;
 
 import java.awt.*;
 

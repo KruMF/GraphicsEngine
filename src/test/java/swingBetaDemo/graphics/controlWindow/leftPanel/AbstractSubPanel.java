@@ -1,6 +1,6 @@
-package graphicsEngineSwingBeta.controlWindow.leftPanel;
+package swingBetaDemo.graphics.controlWindow.leftPanel;
 
-import graphicsEngineSwingBeta.controlWindow.PanelColors;
+import swingBetaDemo.graphics.controlWindow.PanelColors;
 import com.google.inject.internal.Nullable;
 
 import javax.swing.*;

@@ -1,4 +1,4 @@
-package graphicsEngineSwingBeta.controlWindow;
+package swingBetaDemo.graphics.controlWindow;
 
 import swingBetaDemo.data.Data;
 

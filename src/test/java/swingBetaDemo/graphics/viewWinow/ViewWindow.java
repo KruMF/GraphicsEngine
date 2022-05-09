@@ -1,7 +1,7 @@
-package graphicsEngineSwingBeta.viewWinow;
+package swingBetaDemo.graphics.viewWinow;
 
-import graphicsEngineSwingBeta.viewWinow.mainPanels.*;
-import graphicsEngineSwingBeta.viewWinow.mainPanels.center.CenterContainer;
+import swingBetaDemo.graphics.viewWinow.mainPanels.*;
+import swingBetaDemo.graphics.viewWinow.mainPanels.center.CenterContainer;
 import graphicsEngineSwingBeta.windowManager.AbstractWindow;
 import graphicsEngineSwingBeta.windowManager.WindowConfig;
 

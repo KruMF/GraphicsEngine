@@ -1,4 +1,4 @@
-package graphicsEngineSwingBeta.controlWindow.leftPanel;
+package swingBetaDemo.graphics.controlWindow.leftPanel;
 
 import graphicsEngineSwingBeta.SimpleLabel;
 

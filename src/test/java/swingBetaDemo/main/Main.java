@@ -14,7 +14,7 @@ public class Main extends AbstractUpdater {
     public static Main mainThread;
     private static final long THREAD_DELAY = 100L;
 
-    GraphicsAdapter graphics;
+    protected GraphicsAdapter graphics;
 
     protected Main() {
         super(THREAD_DELAY);

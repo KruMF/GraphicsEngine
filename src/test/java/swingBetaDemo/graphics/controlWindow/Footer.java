@@ -1,4 +1,4 @@
-package graphicsEngineSwingBeta.controlWindow;
+package swingBetaDemo.graphics.controlWindow;
 
 import graphicsEngineSwingBeta.SimpleLabel;
 import com.google.inject.internal.Nullable;

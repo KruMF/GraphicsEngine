@@ -1,6 +1,6 @@
-package graphicsEngineSwingBeta.controlWindow;
+package swingBetaDemo.graphics.controlWindow;
 
-import graphicsEngineSwingBeta.controlWindow.leftPanel.LeftPanel;
+import swingBetaDemo.graphics.controlWindow.leftPanel.LeftPanel;
 import graphicsEngineSwingBeta.windowManager.AbstractWindow;
 import graphicsEngineSwingBeta.windowManager.WindowConfig;
 
