@@ -3,8 +3,8 @@ package swingBetaDemo.graphics.viewWinow;
 import graphicsEngineSwingBeta.PanelColors;
 import swingBetaDemo.graphics.viewWinow.mainPanels.*;
 import swingBetaDemo.graphics.viewWinow.mainPanels.center.CenterContainer;
-import graphicsEngineSwingBeta.windowManager.AbstractWindow;
-import graphicsEngineSwingBeta.windowManager.WindowConfig;
+import graphicsEngineSwingBeta.windows.AbstractWindow;
+import graphicsEngineSwingBeta.windows.WindowConfig;
 
 import java.awt.*;
 

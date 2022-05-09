@@ -1,7 +1,8 @@
-package graphicsEngineSwingBeta.windowManager;
+package graphicsEngineSwingBeta.windows;
 
 import DelayCalculator.DelayOptions;
 import ThreadAbstraction.AbstractUpdater;
+
 import com.google.inject.internal.Nullable;
 import org.jetbrains.annotations.NotNull;
 

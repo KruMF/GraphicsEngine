@@ -2,8 +2,8 @@ package swingBetaDemo.graphics.controlWindow;
 
 import graphicsEngineSwingBeta.PanelColors;
 import swingBetaDemo.graphics.controlWindow.leftPanel.LeftPanel;
-import graphicsEngineSwingBeta.windowManager.AbstractWindow;
-import graphicsEngineSwingBeta.windowManager.WindowConfig;
+import graphicsEngineSwingBeta.windows.AbstractWindow;
+import graphicsEngineSwingBeta.windows.WindowConfig;
 
 import javax.swing.*;
 import java.awt.*;

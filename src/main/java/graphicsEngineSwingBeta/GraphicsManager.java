@@ -1,14 +1,14 @@
 package graphicsEngineSwingBeta;
 
-import DelayCalculator.DelayOptions;
-import com.google.inject.internal.Nullable;
-import graphicsEngineSwingBeta.windowManager.AbstractWindow;
-import graphicsEngineSwingBeta.windowManager.WindowManager;
+import graphicsEngineSwingBeta.windows.AbstractWindow;
+import graphicsEngineSwingBeta.windows.WindowManager;
 
+import DelayCalculator.DelayOptions;
 import java.util.ArrayList;
 
 import static graphicsEngineSwingBeta.Utilities.printLine;
 
+import com.google.inject.internal.Nullable;
 import org.jetbrains.annotations.NotNull;
 
 //a class for containing graphics

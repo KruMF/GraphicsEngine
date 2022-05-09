@@ -1,7 +1,8 @@
 package swingBetaDemo.graphics;
 
 import graphicsEngineSwingBeta.AbstractGraphicsAdapter;
-import graphicsEngineSwingBeta.windowManager.WindowManager;
+import graphicsEngineSwingBeta.windows.WindowManager;
+
 import swingBetaDemo.graphics.controlWindow.ControlWindow;
 import swingBetaDemo.graphics.viewWinow.ViewWindow;
 

@@ -1,8 +1,8 @@
-package graphicsEngineSwingBeta.windowManager;
-
-import org.jetbrains.annotations.NotNull;
+package graphicsEngineSwingBeta.windows;
 
 import javax.swing.*;
+
+import org.jetbrains.annotations.NotNull;
 
 //TODO: add javadocs
 public abstract class AbstractWindow extends JFrame {

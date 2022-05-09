@@ -1,6 +1,6 @@
 package swingBetaDemo.graphics.controlWindow.leftPanel;
 
-import graphicsEngineSwingBeta.SimpleLabel;
+import graphicsEngineSwingBeta.parts.SimpleLabel;
 
 import javax.swing.border.LineBorder;
 import java.awt.*;

@@ -1,7 +1,7 @@
 package swingBetaDemo.graphics.controlWindow;
 
 import graphicsEngineSwingBeta.PanelColors;
-import graphicsEngineSwingBeta.SimpleLabel;
+import graphicsEngineSwingBeta.parts.SimpleLabel;
 import com.google.inject.internal.Nullable;
 
 import javax.swing.*;

@@ -1,10 +1,11 @@
-package graphicsEngineSwingBeta;
+package graphicsEngineSwingBeta.parts;
+
+import java.awt.*;
+import javax.swing.*;
+
+import java.util.Objects;
 
 import com.google.inject.internal.Nullable;
-
-import javax.swing.*;
-import java.awt.*;
-import java.util.Objects;
 
 //A simple JLabel with most commonly used functions
 // TODO: add javadocs
