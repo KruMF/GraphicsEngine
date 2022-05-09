@@ -2,8 +2,6 @@
 
 Currently available:
 * Simplest - everything in just one class.
-* Multi-threaded:
-  * Simple - with single page per window
-  * Multi-paged - with multiple pages <i>(currently not available)</i>
+* Paged - with multiple pages <i>(currently not available)</i>
 
 Further instructions will be in the directory of the demo.

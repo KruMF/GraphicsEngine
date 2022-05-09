@@ -1,0 +1,30 @@
+package graphicsEngineSandbox.graphics.viewWinow.mainPanels;
+
+import graphicsEngineSwingBeta.PanelColors;
+
+import java.awt.*;
+import javax.swing.*;
+
+public class LeftSidePanel extends JPanel {
+    private static final int[] TEXT_LOCATION = new int[] {5, 20};
+    private static final String TEXT = "Left side panel";
+
+    private PanelColors colors;
+
+    public LeftSidePanel(int width, PanelColors colors) {
+        setPreferredSize(new Dimension(width, Integer.MAX_VALUE));
+        this.colors = colors;
+        setBackground(this.colors.background);
+    }
+
+    @Override
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        drawText(g);
+    }
+
+    private void drawText(Graphics g) {
+        g.setColor(colors.text);
+        g.drawString(TEXT, TEXT_LOCATION[0], TEXT_LOCATION[1]);
+    }
+}
