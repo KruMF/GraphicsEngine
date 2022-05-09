@@ -16,10 +16,12 @@ public class ControlWindow extends AbstractWindow {
     }
 
     private static WindowConfig config() {
-        return new WindowConfig(
+        WindowConfig config = new WindowConfig(
                 "Control Window",
                 new int[] {400, 300},   //size
                 new int[] {25, 25});    //location
+        config.closeOperation = EXIT_ON_CLOSE;
+        return config;
     }
 
     @Override

@@ -10,17 +10,20 @@ import java.util.Objects;
 import com.google.inject.internal.Nullable;
 import org.jetbrains.annotations.NotNull;
 
+// TODO: finish this and add javadoc
 public abstract class AbstractPagedWindow extends AbstractWindow {
     private static final String EMPTY_KEY = "";
     private Map<String, AbstractPage> pages;
     private String activePage;
 
+    @SuppressWarnings("unused")
     public AbstractPagedWindow(
             @NotNull WindowConfig config,
             @NotNull List<AbstractPage> pages) {
         this(config, pages, null);
     }
 
+    @SuppressWarnings("unused")
     public AbstractPagedWindow(
             @NotNull WindowConfig config,
             @NotNull List<AbstractPage> pages,
