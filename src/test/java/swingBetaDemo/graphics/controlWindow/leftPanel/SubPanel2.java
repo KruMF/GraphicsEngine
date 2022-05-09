@@ -1,7 +1,7 @@
 package swingBetaDemo.graphics.controlWindow.leftPanel;
 
 import swingBetaDemo.data.Data;
-import swingBetaDemo.graphics.controlWindow.PanelColors;
+import graphicsEngineSwingBeta.PanelColors;
 
 import java.awt.*;
 

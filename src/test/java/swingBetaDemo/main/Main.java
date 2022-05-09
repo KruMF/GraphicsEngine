@@ -6,7 +6,9 @@ import swingBetaDemo.graphics.GraphicsAdapter;
 
 import static graphicsEngineSwingBeta.Utilities.printLine;
 
+// TODO: add javadoc
 public class Main extends AbstractUpdater {
+    // TODO: add javadoc
     public static void main(String[] args) {
         Starter.start();
     }
@@ -21,6 +23,7 @@ public class Main extends AbstractUpdater {
         printLine("Main thread initialized.");
     }
 
+    // TODO: add javadoc
     @Override
     public void update() {
         //TODO: put non-static data object here?
@@ -28,6 +31,7 @@ public class Main extends AbstractUpdater {
         calculations.start();
     }
 
+    // TODO: add javadoc
     @Override
     public void endCheck() {
         if (ExitManager.determineEnd()) {
@@ -35,6 +39,7 @@ public class Main extends AbstractUpdater {
         }
     }
 
+    // TODO: add javadoc
     @Override
     public void finish() {
         printLine("Main thread ending.");

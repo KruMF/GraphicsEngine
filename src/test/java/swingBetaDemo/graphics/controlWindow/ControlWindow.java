@@ -1,5 +1,6 @@
 package swingBetaDemo.graphics.controlWindow;
 
+import graphicsEngineSwingBeta.PanelColors;
 import swingBetaDemo.graphics.controlWindow.leftPanel.LeftPanel;
 import graphicsEngineSwingBeta.windowManager.AbstractWindow;
 import graphicsEngineSwingBeta.windowManager.WindowConfig;
@@ -7,6 +8,7 @@ import graphicsEngineSwingBeta.windowManager.WindowConfig;
 import javax.swing.*;
 import java.awt.*;
 
+// TODO: add javadoc
 public class ControlWindow extends AbstractWindow {
 
     public ControlWindow() {

@@ -1,5 +1,7 @@
 package swingBetaDemo.graphics.viewWinow.mainPanels;
 
+import graphicsEngineSwingBeta.PanelColors;
+
 import javax.swing.*;
 import java.awt.*;
 

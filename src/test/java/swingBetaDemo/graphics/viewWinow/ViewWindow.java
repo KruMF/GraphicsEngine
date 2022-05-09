@@ -1,5 +1,6 @@
 package swingBetaDemo.graphics.viewWinow;
 
+import graphicsEngineSwingBeta.PanelColors;
 import swingBetaDemo.graphics.viewWinow.mainPanels.*;
 import swingBetaDemo.graphics.viewWinow.mainPanels.center.CenterContainer;
 import graphicsEngineSwingBeta.windowManager.AbstractWindow;
@@ -7,6 +8,7 @@ import graphicsEngineSwingBeta.windowManager.WindowConfig;
 
 import java.awt.*;
 
+// TODO: add javadoc
 public class ViewWindow extends AbstractWindow {
     private static final int[]
             WINDOW_SIZE_ERROR_CORRECTION = new int[] {16, 39},

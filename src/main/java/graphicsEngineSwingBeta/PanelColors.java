@@ -1,4 +1,4 @@
-package swingBetaDemo.graphics.controlWindow;
+package graphicsEngineSwingBeta;
 
 import java.awt.*;
 

@@ -6,7 +6,9 @@ import swingBetaDemo.graphics.GraphicsAdapter;
 import static graphicsEngineSwingBeta.Utilities.printLine;
 
 //a helper class for starting everything
+// TODO: add javadoc
 class Starter {
+    // TODO: add javadoc
     protected static void start() {
         Main.mainThread = new Main();
         printLine("Initializing other threads.");

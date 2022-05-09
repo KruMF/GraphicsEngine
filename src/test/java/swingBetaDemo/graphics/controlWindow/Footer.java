@@ -1,5 +1,6 @@
 package swingBetaDemo.graphics.controlWindow;
 
+import graphicsEngineSwingBeta.PanelColors;
 import graphicsEngineSwingBeta.SimpleLabel;
 import com.google.inject.internal.Nullable;
 
