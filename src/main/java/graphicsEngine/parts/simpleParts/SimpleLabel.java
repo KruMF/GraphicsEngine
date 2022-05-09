@@ -53,4 +53,16 @@ public class SimpleLabel extends ColoredSimplePart {
                 location[0] + size[0] / 2 + textOffset[0],
                 location[1] + size[1] / 2 + textOffset[1]});
     }
+
+    public enum TextAlignment {
+        CENTER,
+        CENTER_LEFT,
+        CENTER_RIGHT,
+        TOP_CENTER,
+        TOP_LEFT,
+        TOP_RIGHT,
+        BOTTOM_CENTER,
+        BOTTOM_LEFT,
+        BOTTOM_RIGHT
+    }
 }
