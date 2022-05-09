@@ -1,6 +1,6 @@
 package graphicsEngine.oldPagedDemo.pages.demoPages.page3.rotor;
 
-import graphicsEngine.oldPagedDemo.paged.pages.demoPages.page3.rotor.data.*;
+import graphicsEngine.oldPagedDemo.pages.demoPages.page3.rotor.data.*;
 import graphicsEngine.oldPagedDemo.pages.demoPages.page3.rotor.data.Environment;
 import graphicsEngine.oldPagedDemo.pages.demoPages.page3.rotor.data.GeneralConstants;
 import graphicsEngine.oldPagedDemo.pages.demoPages.page3.rotor.data.Preferences;

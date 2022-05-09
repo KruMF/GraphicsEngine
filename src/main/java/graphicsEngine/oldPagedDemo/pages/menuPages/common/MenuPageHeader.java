@@ -6,7 +6,7 @@ import graphicsEngine.engine.data.colors.PanelColors;
 import graphicsEngine.parts.simpleParts.DrawablePart;
 
 import graphicsEngine.oldPagedDemo.common.header.HeaderWithButtons;
-import graphicsEngine.oldPagedDemo.paged.pages.menuPages.common.headerButtons.*;
+import graphicsEngine.oldPagedDemo.pages.menuPages.common.headerButtons.*;
 
 import java.util.ArrayList;
 
