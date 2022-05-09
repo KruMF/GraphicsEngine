@@ -48,7 +48,7 @@ public class ButtonGrid extends PartContainer {
         ArrayList<DrawablePart> returnable = new ArrayList<>();
         ArrayList<Button> currentRow = new ArrayList<>();
 
-        int[] buttonSize = getButtonSize();
+        int[] buttonSize = null;//getButtonSize();
 
         for (int i = 0; i < buttons.size(); i++) {
             currentRow.add(buttons.get(i));
@@ -63,7 +63,7 @@ public class ButtonGrid extends PartContainer {
     }
 
     private static ButtonRow generateSingleRow(ArrayList<Button> buttons, int maxButtonCountHorizontally) {
-        return new ButtonRow(buttons, buttonSize, maxButtonCountHorizontally);
+        return new ButtonRow(null/*buttons*/, null/*buttonSize*/, maxButtonCountHorizontally);
     }
 
     // TODO: needs rework
