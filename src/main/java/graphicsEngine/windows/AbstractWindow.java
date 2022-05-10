@@ -9,7 +9,6 @@ import org.jetbrains.annotations.NotNull;
 
 //TODO: add javadocs
 public abstract class AbstractWindow extends JFrame {
-    private static final int[] WINDOW_SIZE_ERROR_CORRECTION = new int[] {16, 39};
     protected static final String EMPTY_KEY = "";
     public String activePage;
 
@@ -18,16 +17,22 @@ public abstract class AbstractWindow extends JFrame {
         super(config.getTitle());
         setDefaultCloseOperation(config.closeOperation);
 
-        int[] size = config.getSize();
-        setSize(
-                size[0] + WINDOW_SIZE_ERROR_CORRECTION[0],
-                size[1] + WINDOW_SIZE_ERROR_CORRECTION[1]);
+        int[] size = correctWindowsSizeError(config.getSize());
+        setSize(size[0], size[1]);
         int[] location = config.getLocation();
         setLocation(location[0], location[1]);
 
         setActivePage(null);
         addParts();
         setVisible(true);
+    }
+
+    //TODO: add javadoc
+    public static int[] correctWindowsSizeError(int[] size) {
+        int[] errorCorrection = new int[] {16, 39};
+        return new int[] {
+                size[0] + errorCorrection[0],
+                size[1] + errorCorrection[1]};
     }
 
     //override this to add parts

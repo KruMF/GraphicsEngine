@@ -1,7 +1,6 @@
 package graphicsEngineSandbox.graphics.viewWinow;
 
 import graphicsEngineSandbox.graphics.viewWinow.mainPanels.LeftSidePanel;
-import graphicsEngineSandbox.graphics.viewWinow.mainPanels.MyPanel;
 import graphicsEngineSandbox.graphics.viewWinow.mainPanels.RightSidePanel;
 import graphicsEngine.PanelColors;
 import graphicsEngineSandbox.graphics.viewWinow.mainPanels.center.CenterContainer;
@@ -12,19 +11,19 @@ import java.awt.*;
 
 // TODO: add javadoc
 public class ViewWindow extends AbstractWindow {
-    private static final int[]
-            WINDOW_SIZE_ERROR_CORRECTION = new int[] {16, 39},
-            WINDOW_MINIMUM_SIZE = new int[] {
-                    700 + WINDOW_SIZE_ERROR_CORRECTION[0],
-                    400 + WINDOW_SIZE_ERROR_CORRECTION[1]};
+    private static final int[] WINDOW_MINIMUM_SIZE = new int[] {700, 400};
 
     public ViewWindow() {
         super(config());
-        setMinimumSize(new Dimension(WINDOW_MINIMUM_SIZE[0], WINDOW_MINIMUM_SIZE[1]));
+        int[] correctedMinimumSize = AbstractWindow.correctWindowsSizeError(WINDOW_MINIMUM_SIZE);
+        setMinimumSize(new Dimension(correctedMinimumSize[0], correctedMinimumSize[1]));
     }
 
     private static WindowConfig config() {
-        return new WindowConfig("View Window", WINDOW_MINIMUM_SIZE, new int[] {25, 350});
+        return new WindowConfig(
+                "View Window",
+                WINDOW_MINIMUM_SIZE,
+                new int[] {25, 350});
     }
 
     @Override
@@ -33,12 +32,8 @@ public class ViewWindow extends AbstractWindow {
 
         add(new LeftSidePanel(150, panelColors), BorderLayout.WEST);
         add(new RightSidePanel(150, panelColors), BorderLayout.EAST);
-        add(new CenterContainer(Color.cyan, Color.blue), BorderLayout.CENTER);
-    }
 
-    private void addDemoPanel(int[] paneSize) {
-        MyPanel panel = new MyPanel();
-        panel.setPreferredSize(new Dimension(Integer.MAX_VALUE, Integer.MAX_VALUE));
-        add(panel, BorderLayout.CENTER);
+
+        add(new CenterContainer(new PanelColors(Color.cyan, Color.yellow, Color.yellow)), BorderLayout.CENTER);
     }
 }

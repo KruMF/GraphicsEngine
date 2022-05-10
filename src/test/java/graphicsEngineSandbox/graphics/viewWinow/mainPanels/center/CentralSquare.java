@@ -1,23 +1,29 @@
 package graphicsEngineSandbox.graphics.viewWinow.mainPanels.center;
 
+import graphicsEngine.PanelColors;
+import graphicsEngine.parts.SimplePanel;
+
 import java.awt.*;
-import javax.swing.*;
 
-public class CentralSquare extends JPanel {
+public class CentralSquare extends SimplePanel {
     private static final int[] TEXT_LOCATION = new int[] {5, 20};
-    //private boolean square = true;
+    private static final PanelColors COLORS;
 
-    public CentralSquare(/*int[] preferredSize, */Color background) {
-        //setPreferredSize(new Dimension(preferredSize[0], preferredSize[1]));
-        //setPreferredSize(new Dimension(300, 300));
-        //setMaximumSize(new Dimension(150, 150));
-        setBackground(background);
+    static {
+        Color
+                background = new Color(30, 30, 150),
+                text = new Color(150, 150, 0),
+                border = new Color(200,180,100);
+
+        COLORS = new PanelColors(background, text, border);
+    }
+
+    public CentralSquare() {
+        super(COLORS, false);
     }
 
     @Override
     public Dimension getPreferredSize() {
-        //return super.getPreferredSize();
-
         Dimension maxSize = this.getParent().getSize();
         int a = Math.min(maxSize.width, maxSize.height);
         return new Dimension(a, a);
@@ -36,9 +42,10 @@ public class CentralSquare extends JPanel {
     }
 
     private void myGraphics(Graphics g) {
-        drawCircle(g, Color.yellow);
-        drawDiagonals(g, Color.yellow);
-        drawText(g, Color.white);
+        PanelColors colors = getPanelColors();
+        drawCircle(g, colors.border);
+        drawDiagonals(g, colors.border);
+        drawText(g, colors.text);
     }
 
     private void drawText(Graphics g, Color color) {
