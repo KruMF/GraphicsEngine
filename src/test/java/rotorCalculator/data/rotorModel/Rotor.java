@@ -2,7 +2,7 @@ package rotorCalculator.data.rotorModel;
 
 import rotorCalculator.data.Data;
 import rotorCalculator.data.constants.TimeConstants;
-import rotorCalculator.data.rotorModel.limits.HumanLimits;
+import rotorCalculator.humanModel.RotationalLimits;
 import rotorCalculator.data.rotorModel.limits.JointLimits;
 
 /**
@@ -29,7 +29,7 @@ public class Rotor {
     // gets maximum angular velocity (omega) from inner joint limits and maximum coriolis effect
     public static double getAngularVelocityLimit() {
         double maxOmega_fromInnerJoint = JointLimits.getOmega();
-        double maxOmega_fromCoriolis = HumanLimits.CoriolisLimits.getMaxOmega();
+        double maxOmega_fromCoriolis = RotationalLimits.CoriolisLimits.getMaxOmega();
 
         return Math.min(
                 maxOmega_fromInnerJoint,
@@ -43,7 +43,7 @@ public class Rotor {
 
     // gets minimum radius for maximum gradient and maximum angular velocity (omega) at reference gravity
     public static double getRadiusLimit() {
-        double minRadius_fromGradient = HumanLimits.GradientLimits.getRadius();
+        double minRadius_fromGradient = RotationalLimits.GradientLimits.getRadius();
         double minRadius_fromStandardGravity = getRadiusFromGravity();
 
         return Math.max(

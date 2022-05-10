@@ -16,7 +16,7 @@ public class GeneralConstants {
     }
 
     public GeneralConstants(@Nullable Environment environment) {
-        setConstants_default();
+        setConstants_notNull();
         switch (nonNullEnvironment(environment)) {
             case MOON : {
                 setConstants_moon();
@@ -38,7 +38,7 @@ public class GeneralConstants {
         return Objects.requireNonNullElse(environment, defaultEnvironment);
     }
 
-    private void setConstants_default() {
+    private void setConstants_notNull() {
         standardGravity = 0;
     }
 

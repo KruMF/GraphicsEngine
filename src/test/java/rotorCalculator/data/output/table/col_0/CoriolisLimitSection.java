@@ -1,7 +1,7 @@
 package rotorCalculator.data.output.table.col_0;
 
 import rotorCalculator.data.output.table.Section;
-import rotorCalculator.data.rotorModel.limits.HumanLimits;
+import rotorCalculator.humanModel.RotationalLimits;
 
 import static rotorCalculator.data.output.Utilities.roundNumber;
 
@@ -12,16 +12,16 @@ public class CoriolisLimitSection extends Section.NextSection {
     }
 
     private static String[] prepareData() {
-        double omega = HumanLimits.CoriolisLimits.getMaxOmega();
+        double omega = RotationalLimits.CoriolisLimits.getMaxOmega();
         return new String[] {
                 "Max Coriolis effect: "
-                        + roundNumber(HumanLimits.CoriolisLimits.getCoriolis(omega), 3)
+                        + roundNumber(RotationalLimits.CoriolisLimits.getCoriolis(omega), 3)
                         + " m/s^2"
                         + " ("
-                        + roundNumber(HumanLimits.CoriolisLimits.MAX_CORIOLIS * 100, 2)
+                        + roundNumber(RotationalLimits.CoriolisLimits.MAX_CORIOLIS * 100, 2)
                         + " %g)",
                 "Reference running speed: "
-                        + roundNumber(HumanLimits.CoriolisLimits.REFERENCE_RUNNING_SPEED, 1)
+                        + roundNumber(RotationalLimits.CoriolisLimits.REFERENCE_RUNNING_SPEED, 1)
                         + " m/s",
                 "Maximum angular velocity: "
                         + roundNumber(omega, 3)

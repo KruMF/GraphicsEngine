@@ -2,7 +2,6 @@ package rotorCalculator.data.output.table;
 
 import rotorCalculator.data.output.table.col_0.Column0;
 import rotorCalculator.data.output.table.col_1.Column1;
-import rotorCalculator.data.output.table.col_2.Column2;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -48,7 +47,6 @@ public abstract class Table {
             super(location, new ArrayList<>() {{
                 add(new Column0());
                 add(new Column1());
-                add(new Column2());
             }});
         }
     }

@@ -1,14 +1,17 @@
-package rotorCalculator.data.rotorModel.limits;
+package rotorCalculator.humanModel;
 
 import rotorCalculator.data.Data;
 
 // TODO: add javadoc
-public class HumanLimits {
+public class RotationalLimits {
     // TODO: add javadoc
     public static class GradientLimits {
-        public static final double
-                MAX_FORCE_GRADIENT = 0.05,  // difference of force between top and bottom as a fraction
-                HEIGHT = 1.80;              // average human height [m]
+        // difference of force between top and bottom as a fraction
+        // arbitrary number, corresponding to 5%
+        public static final double MAX_FORCE_GRADIENT = 0.05;
+
+        // average human height [m]
+        public static final double HEIGHT = 1.80;
 
         /**
          * Gets minimum radius for reference force gradient and average height.
@@ -22,9 +25,13 @@ public class HumanLimits {
 
     // TODO: add javadoc
     public static class CoriolisLimits {
-        public static final double
-                REFERENCE_RUNNING_SPEED = 10, // [m/s]
-                MAX_CORIOLIS = 0.2; // maximum sideways acceleration [number of g's]
+        // maximum running speed for coriolis calculation [m/s]
+        // somewhat arbitrary number
+        public static final double REFERENCE_RUNNING_SPEED = 10;
+
+        // maximum permissible sideways acceleration due to Coriolis effect [number of g's]
+        // arbitrary number, corresponding to 20%
+        public static final double MAX_CORIOLIS = 0.2;
 
         /**
          * Gets maximum coriolis effect for reference running speed and provided angular velocity.

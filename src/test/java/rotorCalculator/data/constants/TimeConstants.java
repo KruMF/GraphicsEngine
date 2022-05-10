@@ -3,7 +3,6 @@ package rotorCalculator.data.constants;
 import java.util.Objects;
 
 import com.google.inject.internal.Nullable;
-import rotorCalculator.data.constants.Environment;
 
 /**
  * A class for containing general constants.
