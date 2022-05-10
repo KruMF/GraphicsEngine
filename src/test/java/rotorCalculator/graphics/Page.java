@@ -1,7 +1,7 @@
 package rotorCalculator.graphics;
 
 import graphicsEngine.windows.AbstractPage;
-import graphicsEngine.PanelColors;
+import graphicsEngine.panels.PanelColors;
 
 import rotorCalculator.graphics.panels.LeftPanel;
 import rotorCalculator.graphics.panels.Center;

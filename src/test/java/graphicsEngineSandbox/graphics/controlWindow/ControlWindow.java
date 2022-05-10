@@ -1,6 +1,6 @@
 package graphicsEngineSandbox.graphics.controlWindow;
 
-import graphicsEngine.PanelColors;
+import graphicsEngine.panels.PanelColors;
 import graphicsEngineSandbox.graphics.controlWindow.leftPanel.LeftPanel;
 import graphicsEngine.windows.AbstractWindow;
 import graphicsEngine.windows.WindowConfig;

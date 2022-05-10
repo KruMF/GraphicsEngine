@@ -2,7 +2,7 @@ package graphicsEngineSandbox.graphics.viewWinow;
 
 import graphicsEngineSandbox.graphics.viewWinow.mainPanels.LeftSidePanel;
 import graphicsEngineSandbox.graphics.viewWinow.mainPanels.RightSidePanel;
-import graphicsEngine.PanelColors;
+import graphicsEngine.panels.PanelColors;
 import graphicsEngineSandbox.graphics.viewWinow.mainPanels.center.CenterContainer;
 import graphicsEngine.windows.AbstractWindow;
 import graphicsEngine.windows.WindowConfig;

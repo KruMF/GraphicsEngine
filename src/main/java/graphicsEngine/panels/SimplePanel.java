@@ -1,6 +1,4 @@
-package graphicsEngine.parts;
-
-import graphicsEngine.PanelColors;
+package graphicsEngine.panels;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;

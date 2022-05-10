@@ -1,4 +1,4 @@
-package graphicsEngine;
+package graphicsEngine.panels;
 
 import java.awt.*;
 

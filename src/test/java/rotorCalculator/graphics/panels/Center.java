@@ -1,7 +1,7 @@
 package rotorCalculator.graphics.panels;
 
-import graphicsEngine.PanelColors;
-import graphicsEngine.parts.SimplePanel;
+import graphicsEngine.panels.PanelColors;
+import graphicsEngine.panels.SimplePanel;
 
 import java.awt.*;
 
