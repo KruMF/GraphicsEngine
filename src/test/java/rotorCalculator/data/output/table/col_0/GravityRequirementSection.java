@@ -1,7 +1,7 @@
 package rotorCalculator.data.output.table.col_0;
 
 import rotorCalculator.data.Data;
-import rotorCalculator.data.Rotor;
+import rotorCalculator.data.rotorModel.Rotor;
 import rotorCalculator.data.output.table.Section;
 
 import static rotorCalculator.data.output.Utilities.roundNumber;

@@ -1,19 +1,22 @@
 package rotorCalculator.data;
 
-import rotorCalculator.data.rotorData.*;
+import rotorCalculator.data.constants.Environment;
+import rotorCalculator.data.constants.GeneralConstants;
+import rotorCalculator.data.constants.TimeConstants;
+import rotorCalculator.data.rotorModel.*;
 
 /**
  * A class for containing data for calculations.
  */
 public class Data {
     public static Environment environment;
-    public static StandardConstants standardConstants;
+    public static TimeConstants timeConstants;
     public static GeneralConstants generalConstants;
     public static Preferences preferences;
 
     static {
         environment = Environment.ROUGH;
-        standardConstants = new StandardConstants(environment);
+        timeConstants = new TimeConstants(environment);
         generalConstants = new GeneralConstants(environment);
         preferences = new Preferences(environment);
     }

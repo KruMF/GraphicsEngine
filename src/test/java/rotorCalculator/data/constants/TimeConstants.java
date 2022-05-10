@@ -1,13 +1,14 @@
-package rotorCalculator.data.rotorData;
+package rotorCalculator.data.constants;
 
 import java.util.Objects;
 
 import com.google.inject.internal.Nullable;
+import rotorCalculator.data.constants.Environment;
 
 /**
  * A class for containing general constants.
  */
-public class StandardConstants {
+public class TimeConstants {
 
     // time unit conversion constants
 
@@ -17,7 +18,7 @@ public class StandardConstants {
 
     public double hoursInDay;
 
-    public StandardConstants(@Nullable Environment environment) {
+    public TimeConstants(@Nullable Environment environment) {
         switch (Objects.requireNonNullElse(environment, Environment.ROUGH)) {
             case SI_STANDARD : {
                 hoursInDay = 23 + (56 + 4.0910 / SECONDS_IN_MINUTE) / MINUTES_IN_HOUR;

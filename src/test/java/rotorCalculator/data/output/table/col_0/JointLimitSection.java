@@ -1,7 +1,7 @@
 package rotorCalculator.data.output.table.col_0;
 
-import rotorCalculator.data.rotorData.Limits;
 import rotorCalculator.data.output.table.Section;
+import rotorCalculator.data.rotorModel.limits.JointLimits;
 
 import static rotorCalculator.data.output.Utilities.roundNumber;
 
@@ -14,18 +14,18 @@ public class JointLimitSection extends Section.FirstSection {
     private static String[] prepareData() {
         return new String[] {
                 "max tangential speed: "
-                        + roundNumber(Limits.JointLimits.getTangentialVelocity(), 2)
+                        + roundNumber(JointLimits.getTangentialVelocity(), 2)
                         + " m/s",
                 "reference radius: "
-                        + roundNumber(Limits.JointLimits.INNER_RADIUS, 3)
+                        + roundNumber(JointLimits.INNER_RADIUS, 3)
                         + " m",
                 "rotational period: "
-                        + roundNumber(Limits.JointLimits.getRotationPeriod(), 2)
+                        + roundNumber(JointLimits.getRotationPeriod(), 2)
                         + " s",
                 "RPM: "
-                        + roundNumber(Limits.JointLimits.MAX_RPM, 2),
+                        + roundNumber(JointLimits.MAX_RPM, 2),
                 "angular velocity: "
-                        + roundNumber(Limits.JointLimits.getOmega(), 3)
+                        + roundNumber(JointLimits.getOmega(), 3)
                         + " rad/s"
         };
     }

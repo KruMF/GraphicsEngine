@@ -1,7 +1,9 @@
-package rotorCalculator.data;
+package rotorCalculator.data.rotorModel;
 
-import rotorCalculator.data.rotorData.Limits;
-import rotorCalculator.data.rotorData.StandardConstants;
+import rotorCalculator.data.Data;
+import rotorCalculator.data.constants.TimeConstants;
+import rotorCalculator.data.rotorModel.limits.HumanLimits;
+import rotorCalculator.data.rotorModel.limits.JointLimits;
 
 /**
  * Calculates the size of a rotating living habitat for living in a weightless environment.
@@ -21,13 +23,13 @@ public class Rotor {
 
     //converts period to RPM
     public static double getRPMFromPeriod(double period) {
-        return StandardConstants.SECONDS_IN_MINUTE / period;
+        return TimeConstants.SECONDS_IN_MINUTE / period;
     }
 
     // gets maximum angular velocity (omega) from inner joint limits and maximum coriolis effect
     public static double getAngularVelocityLimit() {
-        double maxOmega_fromInnerJoint = Limits.JointLimits.getOmega();
-        double maxOmega_fromCoriolis = Limits.HumanLimits.CoriolisLimits.getMaxOmega();
+        double maxOmega_fromInnerJoint = JointLimits.getOmega();
+        double maxOmega_fromCoriolis = HumanLimits.CoriolisLimits.getMaxOmega();
 
         return Math.min(
                 maxOmega_fromInnerJoint,
@@ -41,7 +43,7 @@ public class Rotor {
 
     // gets minimum radius for maximum gradient and maximum angular velocity (omega) at reference gravity
     public static double getRadiusLimit() {
-        double minRadius_fromGradient = Limits.HumanLimits.GradientLimits.getRadius();
+        double minRadius_fromGradient = HumanLimits.GradientLimits.getRadius();
         double minRadius_fromStandardGravity = getRadiusFromGravity();
 
         return Math.max(

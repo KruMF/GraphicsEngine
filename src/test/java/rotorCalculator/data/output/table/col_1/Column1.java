@@ -1,6 +1,6 @@
 package rotorCalculator.data.output.table.col_1;
 
-import rotorCalculator.data.Rotor;
+import rotorCalculator.data.rotorModel.Rotor;
 import rotorCalculator.data.output.table.Column;
 import rotorCalculator.data.output.table.Section;
 

@@ -1,8 +1,9 @@
-package rotorCalculator.data.rotorData;
+package rotorCalculator.data.rotorModel;
 
 import java.util.Objects;
 
 import com.google.inject.internal.Nullable;
+import rotorCalculator.data.constants.Environment;
 
 // TODO: add javadoc
 public class Preferences {
