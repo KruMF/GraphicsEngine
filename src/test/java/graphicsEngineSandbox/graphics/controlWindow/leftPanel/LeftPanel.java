@@ -1,39 +1,19 @@
 package graphicsEngineSandbox.graphics.controlWindow.leftPanel;
 
 import graphicsEngine.PanelColors;
+import graphicsEngine.parts.SimplePanel;
 
 import java.awt.*;
 import javax.swing.*;
-import javax.swing.border.LineBorder;
-
-import java.util.Objects;
-
-import com.google.inject.internal.Nullable;
 
 //TODO: add javadocs
-public class LeftPanel extends JPanel {
+public class LeftPanel extends SimplePanel {
     static final int WIDTH = 150;
 
-    private PanelColors colors;
-
     public LeftPanel(PanelColors panelColors, boolean border) {
-        setColors(panelColors);
-        setBackground(colors.background);
+        super(panelColors, border);
         setPreferredSize(new Dimension(WIDTH, Integer.MAX_VALUE));
-        setBorderState(border);
         addMembers();
-    }
-
-    public void setColors(@Nullable PanelColors colors) {
-        this.colors = Objects.requireNonNullElse(colors, new PanelColors());
-    }
-
-    public void setBorderState(boolean state) {
-        if (state) {
-            setBorder(new LineBorder(colors.border));
-        } else {
-            setBorder(null);
-        }
     }
 
     private void addMembers() {
@@ -46,6 +26,8 @@ public class LeftPanel extends JPanel {
                         getPreferredHeight()));
                 setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
                 //setAlignmentX(Component.LEFT_ALIGNMENT);
+
+                PanelColors colors = getPanelColors();
                 add(new SubPanel1(colors, false));
                 add(new SubPanel1(colors, false));
                 add(new SubPanel2(colors, true));

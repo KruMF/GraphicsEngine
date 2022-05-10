@@ -17,10 +17,6 @@ class TextLabel extends SimpleLabel {
         setBorder(new LineBorder(borderColor));
     }
 
-    protected final void setTextColor(Color textColor) {
-        setForeground(textColor);
-    }
-
     @Override
     public Dimension getMaximumSize() {
         Dimension size = getPreferredSize();

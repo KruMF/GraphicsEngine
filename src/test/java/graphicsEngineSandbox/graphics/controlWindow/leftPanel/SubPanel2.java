@@ -19,7 +19,7 @@ class SubPanel2 extends AbstractSubPanel {
 
     @Override
     protected final void drawText(Graphics g) {
-        g.setColor(colors.text);
+        g.setColor(getPanelColors().text);
         g.drawString("X: " + Data.getX(), TEXT_LOCATION[0], TEXT_LOCATION[1]);
     }
 }
