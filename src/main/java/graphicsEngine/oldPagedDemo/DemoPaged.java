@@ -10,7 +10,6 @@ import graphicsEngine.oldPagedDemo.pages.menuPages.settingsPage.SettingsPage;
 import graphicsEngine.oldPagedDemo.pages.menuPages.demoSelectPage.DemoSelectPage;
 import graphicsEngine.oldPagedDemo.pages.demoPages.page1.Page_1;
 import graphicsEngine.oldPagedDemo.pages.demoPages.page2.Page_2;
-import graphicsEngine.oldPagedDemo.pages.demoPages.page3.Page_3;
 
 import java.util.HashMap;
 
@@ -56,7 +55,6 @@ public class DemoPaged {
             put(DemoSelectPage.PAGE_KEY, new DemoSelectPage(palette));
             put(Page_1.PAGE_KEY, new Page_1(palette));
             put(Page_2.PAGE_KEY, new Page_2(palette));
-            put(Page_3.PAGE_KEY, new Page_3(palette));
         }};
     }
 }

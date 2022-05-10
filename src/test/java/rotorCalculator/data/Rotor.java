@@ -36,7 +36,7 @@ public class Rotor {
 
     public static double getRadiusFromGravity() {
         double omegaLimit = getAngularVelocityLimit();
-        return graphicsEngine.oldPagedDemo.pages.demoPages.page3.rotor.Data.getGravity() / Math.pow(omegaLimit, 2);
+        return Data.getGravity() / Math.pow(omegaLimit, 2);
     }
 
     // gets minimum radius for maximum gradient and maximum angular velocity (omega) at reference gravity
