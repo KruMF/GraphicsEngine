@@ -1,8 +1,8 @@
 package graphicsEngineDemo.simplest;
 
-import graphicsEngineSwingBeta.AbstractGraphicsAdapter;
-import graphicsEngineSwingBeta.windows.AbstractWindow;
-import graphicsEngineSwingBeta.windows.WindowConfig;
+import graphicsEngine.AbstractGraphicsAdapter;
+import graphicsEngine.windows.AbstractWindow;
+import graphicsEngine.windows.WindowConfig;
 
 //TODO: add javadoc
 public class Main {

@@ -1,7 +1,7 @@
 package graphicsEngineSandbox.graphics.controlWindow;
 
-import graphicsEngineSwingBeta.PanelColors;
-import graphicsEngineSwingBeta.parts.SimpleLabel;
+import graphicsEngine.PanelColors;
+import graphicsEngine.parts.SimpleLabel;
 
 import java.awt.*;
 import javax.swing.*;

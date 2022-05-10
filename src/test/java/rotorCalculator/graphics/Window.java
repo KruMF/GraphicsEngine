@@ -1,7 +1,7 @@
 package rotorCalculator.graphics;
 
-import graphicsEngineSwingBeta.windows.AbstractWindow;
-import graphicsEngineSwingBeta.windows.WindowConfig;
+import graphicsEngine.windows.AbstractWindow;
+import graphicsEngine.windows.WindowConfig;
 
 //TODO: add javadoc
 public class Window extends AbstractWindow {

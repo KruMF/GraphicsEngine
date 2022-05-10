@@ -1,6 +1,6 @@
 package graphicsEngineDemo.paged.menuPages.settingsPage;
 
-import graphicsEngineSwingBeta.windows.AbstractPage;
+import graphicsEngine.windows.AbstractPage;
 
 //TODO: finish this and add javadoc
 public class SettingsPage extends AbstractPage {

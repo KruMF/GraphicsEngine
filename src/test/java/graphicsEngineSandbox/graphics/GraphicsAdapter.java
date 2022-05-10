@@ -1,7 +1,7 @@
 package graphicsEngineSandbox.graphics;
 
-import graphicsEngineSwingBeta.AbstractGraphicsAdapter;
-import graphicsEngineSwingBeta.windows.WindowManager;
+import graphicsEngine.AbstractGraphicsAdapter;
+import graphicsEngine.windows.WindowManager;
 
 import graphicsEngineSandbox.graphics.controlWindow.ControlWindow;
 import graphicsEngineSandbox.graphics.viewWinow.ViewWindow;

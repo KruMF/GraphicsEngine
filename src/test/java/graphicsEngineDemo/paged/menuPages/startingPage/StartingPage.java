@@ -1,6 +1,6 @@
 package graphicsEngineDemo.paged.menuPages.startingPage;
 
-import graphicsEngineSwingBeta.windows.AbstractPage;
+import graphicsEngine.windows.AbstractPage;
 
 //TODO: finish this and add javadoc
 public class StartingPage extends AbstractPage {

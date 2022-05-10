@@ -1,6 +1,6 @@
 package graphicsEngineDemo.paged;
 
-import static graphicsEngineSwingBeta.Utilities.printLine;
+import static graphicsEngine.Utilities.printLine;
 
 //TODO: finish this
 public class Main {

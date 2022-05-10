@@ -1,9 +1,9 @@
 package graphicsEngineSandbox.graphics.controlWindow;
 
-import graphicsEngineSwingBeta.PanelColors;
+import graphicsEngine.PanelColors;
 import graphicsEngineSandbox.graphics.controlWindow.leftPanel.LeftPanel;
-import graphicsEngineSwingBeta.windows.AbstractWindow;
-import graphicsEngineSwingBeta.windows.WindowConfig;
+import graphicsEngine.windows.AbstractWindow;
+import graphicsEngine.windows.WindowConfig;
 
 import javax.swing.*;
 import java.awt.*;

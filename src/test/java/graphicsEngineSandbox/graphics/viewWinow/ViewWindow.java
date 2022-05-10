@@ -3,10 +3,10 @@ package graphicsEngineSandbox.graphics.viewWinow;
 import graphicsEngineSandbox.graphics.viewWinow.mainPanels.LeftSidePanel;
 import graphicsEngineSandbox.graphics.viewWinow.mainPanels.MyPanel;
 import graphicsEngineSandbox.graphics.viewWinow.mainPanels.RightSidePanel;
-import graphicsEngineSwingBeta.PanelColors;
+import graphicsEngine.PanelColors;
 import graphicsEngineSandbox.graphics.viewWinow.mainPanels.center.CenterContainer;
-import graphicsEngineSwingBeta.windows.AbstractWindow;
-import graphicsEngineSwingBeta.windows.WindowConfig;
+import graphicsEngine.windows.AbstractWindow;
+import graphicsEngine.windows.WindowConfig;
 
 import java.awt.*;
 

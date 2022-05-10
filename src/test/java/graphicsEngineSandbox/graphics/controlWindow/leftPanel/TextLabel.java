@@ -1,6 +1,6 @@
 package graphicsEngineSandbox.graphics.controlWindow.leftPanel;
 
-import graphicsEngineSwingBeta.parts.SimpleLabel;
+import graphicsEngine.parts.SimpleLabel;
 
 import javax.swing.border.LineBorder;
 import java.awt.*;

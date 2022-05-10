@@ -1,6 +1,6 @@
 package rotorCalculator.data.output.table;
 
-import graphicsEngine.utilities.TextAligner;
+import graphicsEngineOld.utilities.TextAligner;
 import rotorCalculator.data.output.Utilities;
 
 import java.awt.*;

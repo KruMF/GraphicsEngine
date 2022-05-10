@@ -1,6 +1,6 @@
 package rotorCalculator.graphics;
 
-import graphicsEngineSwingBeta.AbstractGraphicsAdapter;
+import graphicsEngine.AbstractGraphicsAdapter;
 
 /**
  * Graphics adapter class for interfacing graphics engine.

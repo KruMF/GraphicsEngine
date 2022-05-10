@@ -1,6 +1,6 @@
 package graphicsEngineSandbox.graphics.controlWindow.leftPanel;
 
-import graphicsEngineSwingBeta.PanelColors;
+import graphicsEngine.PanelColors;
 
 import java.awt.*;
 import javax.swing.*;

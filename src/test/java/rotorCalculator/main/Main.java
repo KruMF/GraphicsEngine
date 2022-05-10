@@ -2,7 +2,7 @@ package rotorCalculator.main;
 
 import rotorCalculator.graphics.GraphicsAdapter;
 
-import static graphicsEngineSwingBeta.Utilities.printLine;
+import static graphicsEngine.Utilities.printLine;
 
 /**
  * Main class of the rotor calculator. Run main(args) to start.
