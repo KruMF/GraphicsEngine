@@ -29,10 +29,9 @@ public class Window extends AbstractWindow {
 
     /**
      * Adds parts to this window.
-     * TODO: can this be final?
      */
     @Override
-    public void addParts() {
-        //TODO: add parts here
+    public final void addParts() {
+        add(new Page());
     }
 }
