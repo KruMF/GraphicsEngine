@@ -2,7 +2,7 @@ package graphicsEngine.panels;
 
 import java.awt.*;
 
-//TODO: elevate and add javadoc
+//TODO: add javadoc
 public class PanelColors {
     public Color background, text, border;
 
