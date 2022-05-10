@@ -4,12 +4,19 @@ import rotorCalculator.graphics.GraphicsAdapter;
 
 import static graphicsEngineSwingBeta.Utilities.printLine;
 
-//TODO: finish this
+/**
+ * Main class of the rotor calculator. Run main(args) to start.
+ */
 public class Main {
+    /**
+     * Main of the rotor calculator. Run to start.
+     */
     public static void main(String[] args) {
-        printLine("Rotor calculator currently not finished, use with caution");
+        printLine("Starting rotor calculator.");
         //TODO: start data here
         //TODO: start main runner with calc here
         new GraphicsAdapter();
     }
+
+    //add more stuff here
 }

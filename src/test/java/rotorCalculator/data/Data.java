@@ -1,4 +1,4 @@
-package graphicsEngineSandbox.data;
+package rotorCalculator.data;
 
 /**
  * A class for containing data for calculations.

@@ -5,10 +5,18 @@ import graphicsEngineSwingBeta.windows.WindowConfig;
 
 //TODO: add javadoc
 public class Window extends AbstractWindow {
+    /**
+     * Creates a new Window object with hardcoded configuration.
+     */
     public Window() {
         super(config());
     }
 
+    /**
+     * Hardcoded configuration of a new Window object.
+     *
+     * @return Window configuration.
+     */
     private static WindowConfig config() {
         String title = "Rotor calculator";
         int[]
@@ -19,6 +27,10 @@ public class Window extends AbstractWindow {
         return config;
     }
 
+    /**
+     * Adds parts to this window.
+     * TODO: can this be final?
+     */
     @Override
     public void addParts() {
         //TODO: add parts here
