@@ -1,7 +1,5 @@
 package rotorCalculator.data.rotorData;
 
-import graphicsEngine.oldPagedDemo.pages.demoPages.page3.rotor.data.Environment;
-
 import java.util.Objects;
 
 import com.google.inject.internal.Nullable;
@@ -19,7 +17,7 @@ public class StandardConstants {
 
     public double hoursInDay;
 
-    public StandardConstants(@Nullable graphicsEngine.oldPagedDemo.pages.demoPages.page3.rotor.data.Environment environment) {
+    public StandardConstants(@Nullable Environment environment) {
         switch (Objects.requireNonNullElse(environment, Environment.ROUGH)) {
             case SI_STANDARD : {
                 hoursInDay = 23 + (56 + 4.0910 / SECONDS_IN_MINUTE) / MINUTES_IN_HOUR;

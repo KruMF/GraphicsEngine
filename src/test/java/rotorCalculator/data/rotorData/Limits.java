@@ -1,7 +1,7 @@
 package rotorCalculator.data.rotorData;
 
-import graphicsEngine.oldPagedDemo.pages.demoPages.page3.rotor.Data;
-import graphicsEngine.oldPagedDemo.pages.demoPages.page3.rotor.Rotor;
+import rotorCalculator.data.Data;
+import rotorCalculator.data.Rotor;
 
 // TODO: add javadoc
 public class Limits {

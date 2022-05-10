@@ -1,7 +1,5 @@
 package rotorCalculator.data.rotorData;
 
-import graphicsEngine.oldPagedDemo.pages.demoPages.page3.rotor.data.Environment;
-
 import java.util.Objects;
 
 import com.google.inject.internal.Nullable;
@@ -13,7 +11,7 @@ public class GeneralConstants {
 
     public double standardGravity; // acceleration [m / s^2]
 
-    public GeneralConstants(@Nullable graphicsEngine.oldPagedDemo.pages.demoPages.page3.rotor.data.Environment environment) {
+    public GeneralConstants(@Nullable Environment environment) {
         switch (Objects.requireNonNullElse(environment, Environment.ROUGH)) {
             case SI_STANDARD, MOON : {
                 standardGravity = 9.80665;

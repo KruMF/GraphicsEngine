@@ -1,7 +1,5 @@
 package rotorCalculator.data.rotorData;
 
-import graphicsEngine.oldPagedDemo.pages.demoPages.page3.rotor.data.Environment;
-
 import java.util.Objects;
 
 import com.google.inject.internal.Nullable;
@@ -10,7 +8,7 @@ import com.google.inject.internal.Nullable;
 public class Preferences {
     public double gForce; // acceleration [g's]
 
-    public Preferences(@Nullable graphicsEngine.oldPagedDemo.pages.demoPages.page3.rotor.data.Environment environment) {
+    public Preferences(@Nullable Environment environment) {
         switch (Objects.requireNonNullElse(environment, Environment.ROUGH)) {
             case MOON : {
                 gForce = 0.1654;
