@@ -1,9 +1,9 @@
 package rotorCalculator.graphics.panels.leftPanel.sections;
 
+import graphicsEngine.Utilities;
 import graphicsEngine.panels.PanelColors;
 
-import rotorCalculator.graphics.panels.leftPanel.Column1;
-
+import javax.swing.*;
 import javax.swing.border.LineBorder;
 import java.awt.*;
 
@@ -13,21 +13,17 @@ public class Section1 extends AbstractSection {
     public static final int HEIGHT = 150;
 
     public Section1(@Nullable PanelColors panelColors) {
-        super(new int[] {Column1.WIDTH, HEIGHT}, panelColors, true);
-        setBorder(new LineBorder(Color.cyan));
+        super(new int[] {Integer.MAX_VALUE, HEIGHT}, panelColors, true);
+
+        Utilities.BorderInterface.setBorderState(
+                this,
+                true,
+                Color.cyan);
     }
 
     @Override
-    public void addParts() {
-        //setLayout(new BorderLayout(0, 0));
-        /*add(
-                new JPanel() {
-                    {
-                        //
-                    }
-                },
-                BorderLayout.WEST);
-        */
+    public void addParts(JPanel p) {
+        //
     }
 
     @Override

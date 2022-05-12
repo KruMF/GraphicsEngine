@@ -1,7 +1,8 @@
 package graphicsEngine.panels;
 
+import graphicsEngine.Utilities;
+
 import javax.swing.*;
-import javax.swing.border.LineBorder;
 import java.util.Objects;
 
 import com.google.inject.internal.Nullable;
@@ -29,10 +30,9 @@ public abstract class SimplePanel extends JPanel {
     }
 
     public void setBorderState(boolean state) {
-        if (state) {
-            setBorder(new LineBorder(getPanelColors().border));
-        } else {
-            setBorder(null);
-        }
+        Utilities.BorderInterface.setBorderState(
+                this,
+                state,
+                getPanelColors().border);
     }
 }

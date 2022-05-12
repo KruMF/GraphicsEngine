@@ -25,6 +25,7 @@ abstract class AbstractColumn extends SimplePanel {
             {
                 setOpaque(false);
                 setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+                setAlignmentY(Component.TOP_ALIGNMENT);
             }
         };
         addParts(panel);

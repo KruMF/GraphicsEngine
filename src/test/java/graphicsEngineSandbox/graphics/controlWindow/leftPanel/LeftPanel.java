@@ -29,7 +29,7 @@ public class LeftPanel extends SimplePanel {
                         add(new SubPanel1(colors, false));
                         add(new SubPanel1(colors, false));
                         add(new SubPanel2(colors, true));
-                        add(new TextLabel(colors.border));
+                        add(new TextLabel(colors.border, true));
                     }
                 },
                 BorderLayout.NORTH);

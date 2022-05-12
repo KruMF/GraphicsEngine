@@ -4,6 +4,7 @@ import graphicsEngine.panels.PanelColors;
 import graphicsEngine.panels.SimplePanel;
 
 import java.awt.*;
+import javax.swing.*;
 
 import com.google.inject.internal.Nullable;
 
@@ -13,8 +14,7 @@ abstract class AbstractSection extends SimplePanel {
     protected AbstractSection(int[] size, @Nullable PanelColors panelColors, boolean border) {
         super(panelColors, border);
         setPreferredSize(new Dimension(size[0], size[1]));
-        //setAlignmentX(Component.LEFT_ALIGNMENT);
-        addParts();
+        prepareParts();
     }
 
     @Override
@@ -27,5 +27,25 @@ abstract class AbstractSection extends SimplePanel {
         }
     }
 
-    public abstract void addParts();
+    private void prepareParts() {
+        //setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        //setAlignmentX(Component.LEFT_ALIGNMENT);
+        //setAlignmentY(Component.TOP_ALIGNMENT);
+        setLayout(new BorderLayout(0, 0));
+        add(containerPanel(), BorderLayout.NORTH);
+    }
+
+    private JPanel containerPanel() {
+        JPanel panel = new JPanel() {
+            {
+                setOpaque(false);
+                setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+                setAlignmentY(Component.TOP_ALIGNMENT);
+            }
+        };
+        addParts(panel);
+        return panel;
+    }
+
+    public abstract void addParts(JPanel panel);
 }

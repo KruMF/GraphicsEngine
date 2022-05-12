@@ -1,5 +1,6 @@
 package graphicsEngineSandbox.graphics.controlWindow.leftPanel;
 
+import graphicsEngine.Utilities;
 import graphicsEngine.parts.SimpleLabel;
 
 import javax.swing.border.LineBorder;
@@ -11,12 +12,14 @@ class TextLabel extends SimpleLabel {
     protected static final int HEIGHT = 80;
     private static final Color TEXT_COLOR = Color.blue;
 
-    protected TextLabel(@NotNull Color borderColor) {
+    protected TextLabel(@NotNull Color borderColor, boolean border) {
         super("A label object", TEXT_COLOR);
         setPreferredSize(new Dimension(LeftPanel.WIDTH, HEIGHT));
 
-        //TODO: remove this when tests are completed
-        setBorder(new LineBorder(borderColor));
+        Utilities.BorderInterface.setBorderState(
+                this,
+                border,
+                borderColor);
     }
 
     @Override
