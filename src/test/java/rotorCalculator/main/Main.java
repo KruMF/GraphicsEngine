@@ -13,10 +13,17 @@ public class Main {
      */
     public static void main(String[] args) {
         printLine("Starting rotor calculator.");
-        //TODO: start data here
-        //TODO: start main runner with calc here
+        prepareData();
+        prepareResults();
+        //TODO: if needed, start main runner with calculations here
         new GraphicsAdapter();
     }
 
-    //add more stuff here
+    private static void prepareData() {
+        //TODO: start data here
+    }
+
+    private static void prepareResults() {
+        //TODO: calculate results beforehand
+    }
 }
