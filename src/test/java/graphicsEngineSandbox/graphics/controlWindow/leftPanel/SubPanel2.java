@@ -8,11 +8,11 @@ import java.awt.*;
 
 class SubPanel2 extends AbstractSubPanel {
     protected static final int HEIGHT = 60;
-    private static final int[] TEXT_LOCATION = new int[]{5, 20};
+    private static final int[] TEXT_LOCATION = new int[] {5, 20};
 
     protected SubPanel2(PanelColors panelColors, boolean border) {
         super(
-                new int[]{LeftPanel.WIDTH, HEIGHT},
+                new int[] {LeftPanel.WIDTH, HEIGHT},
                 panelColors,
                 border);
     }
