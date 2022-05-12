@@ -96,11 +96,10 @@ public interface ParticularSections {
         }
 
         //TODO:
-        // title: ""
+        // title: null
         // show values:
-        //  * :
-        //      -  + " m/s^2"
-        //      -
+        //  * Final maximum angular velocity:
+        //      - roundNumber(Rotor.getAngularVelocityLimit(), 3) + " rad/s"
     }
 
     class GravityRequirementSection extends AbstractSection {
@@ -117,11 +116,14 @@ public interface ParticularSections {
         }
 
         //TODO:
-        // title: ""
+        // title: "Standard gravity requirements"
         // show values:
-        //  * :
-        //      -  + " m/s^2"
-        //      -
+        //  * G-force:
+        //      - roundNumber(Data.preferences.gForce, 2) + " G"
+        //  * Acceleration:
+        //      - roundNumber(Data.getGravity(), 3) + " m/s^2"
+        //  * minimum rotor radius:
+        //      - roundNumber(Rotor.getRadiusFromGravity(), 3) + " m"
     }
 
     class GradientLimitSection extends AbstractSection {
@@ -138,11 +140,14 @@ public interface ParticularSections {
         }
 
         //TODO:
-        // title: ""
+        // title: "Force gradient limits"
         // show values:
-        //  * :
-        //      -  + " m/s^2"
-        //      -
+        //  * Gradient:
+        //      - roundNumber(RotationalLimits.GradientLimits.MAX_FORCE_GRADIENT * 100,2) + " %"
+        //  * Reference height:
+        //      - roundNumber(RotationalLimits.GradientLimits.HEIGHT, 2) + " m"
+        //  * Minimum rotor radius:
+        //      - roundNumber(RotationalLimits.GradientLimits.getRadius(), 3) + " m"
     }
 
     class TotalRadiusLimitSection extends AbstractSection {
@@ -159,11 +164,10 @@ public interface ParticularSections {
         }
 
         //TODO:
-        // title: ""
+        // title: null
         // show values:
-        //  * :
-        //      -  + " m/s^2"
-        //      -
+        //  * Final minimum rotor radius:
+        //      - roundNumber(Rotor.getRadiusLimit(), 3) + " m"
     }
 
     class ActualParameterSection extends AbstractSection {
