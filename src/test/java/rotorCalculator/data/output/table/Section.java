@@ -36,13 +36,6 @@ public abstract class Section {
 
     public abstract String[] setHeader(@NotNull String sectionTitle);
 
-    public String[] totalLines() {
-        return Utilities.joinArrays(new ArrayList<>() {{
-            add(header);
-            add(data);
-        }});
-    }
-
     public static String[] sectionTitle(String sectionTitle) {
         return new String[] {
                 "----- " + sectionTitle + " -----"
