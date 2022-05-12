@@ -106,6 +106,7 @@ public interface ParticularSections {
         }
     }
 
+    // TODO: finish this and add javadoc
     class CoriolisLimitSection extends AbstractSection {
         public static final int HEIGHT = 150;
 
@@ -172,6 +173,7 @@ public interface ParticularSections {
         }
     }
 
+    // TODO: finish this and add javadoc
     class TotalOmegaLimitSection extends AbstractSection {
         public static final int HEIGHT = 150;
 
@@ -203,6 +205,7 @@ public interface ParticularSections {
         }
     }
 
+    // TODO: finish this and add javadoc
     class GravityRequirementSection extends AbstractSection {
         public static final int HEIGHT = 150;
 
@@ -266,6 +269,7 @@ public interface ParticularSections {
         }
     }
 
+    // TODO: finish this and add javadoc
     class GradientLimitSection extends AbstractSection {
         public static final int HEIGHT = 150;
 
@@ -329,6 +333,7 @@ public interface ParticularSections {
         }
     }
 
+    // TODO: finish this and add javadoc
     class TotalRadiusLimitSection extends AbstractSection {
         public static final int HEIGHT = 150;
 
@@ -360,6 +365,7 @@ public interface ParticularSections {
         }
     }
 
+    // TODO: finish this and add javadoc
     class ActualParameterSection extends AbstractSection {
         public static final int HEIGHT = 150;
 
