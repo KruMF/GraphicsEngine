@@ -37,12 +37,11 @@ public interface ParticularSections {
 
             @Override
             public final String getText() {
-                /* TODO:
-                 * max tangential speed:
-                 *      - roundNumber(JointLimits.getTangentialVelocity(), 2)
-                 *      - " m/s"
-                 */
-                return super.getText();
+                // TODO: finish this
+                String label = "Max tangential speed: ";
+                int value = 0; //roundNumber(JointLimits.getTangentialVelocity(), 2)
+                String units = " m/s";
+                return label + value + units;
             }
         }
 
@@ -53,11 +52,11 @@ public interface ParticularSections {
 
             @Override
             public final String getText() {
-                /* TODO:
-                 * reference radius:
-                 *      - roundNumber(JointLimits.INNER_RADIUS, 3) + " m"
-                 */
-                return super.getText();
+                // TODO: finish this
+                String label = "Reference radius: ";
+                int value = 0; //roundNumber(JointLimits.INNER_RADIUS, 3)
+                String units = " m";
+                return label + value + units;
             }
         }
 
@@ -68,11 +67,11 @@ public interface ParticularSections {
 
             @Override
             public final String getText() {
-                /* TODO:
-                 * rotational period:
-                 *      - roundNumber(JointLimits.getRotationPeriod(), 2) + " s"
-                 */
-                return super.getText();
+                // TODO: finish this
+                String label = "Rotational period: ";
+                int value = 0; //roundNumber(JointLimits.getRotationPeriod(), 2)
+                String units = " s";
+                return label + value + units;
             }
         }
 
@@ -83,11 +82,11 @@ public interface ParticularSections {
 
             @Override
             public final String getText() {
-                /* TODO:
-                 * RPM:
-                 *      - roundNumber(JointLimits.MAX_RPM, 2)
-                 */
-                return super.getText();
+                // TODO: finish this
+                String label = "RPM: ";
+                int value = 0; //roundNumber(JointLimits.MAX_RPM, 2)
+                String units = "";
+                return label + value + units;
             }
         }
 
@@ -98,11 +97,11 @@ public interface ParticularSections {
 
             @Override
             public final String getText() {
-                /* TODO:
-                 * angular velocity:
-                 *      - roundNumber(JointLimits.getOmega(), 3) + " rad/s"
-                 */
-                return super.getText();
+                // TODO: finish this
+                String label = "Angular velocity: ";
+                int value = 0; //roundNumber(JointLimits.getOmega(), 3)
+                String units = " rad/s";
+                return label + value + units;
             }
         }
     }
@@ -130,6 +129,14 @@ public interface ParticularSections {
         //      - roundNumber(RotationalLimits.CoriolisLimits.REFERENCE_RUNNING_SPEED, 1) + " m/s"
         //  * Maximum angular velocity:
         //      - roundNumber(omega, 3) + " rad/s"
+
+        /*
+        // TODO: finish this
+        String label = ": ";
+        int value = 0; //
+        String units = " ";
+                return label + value + units;
+        */
     }
 
     class TotalOmegaLimitSection extends AbstractSection {
