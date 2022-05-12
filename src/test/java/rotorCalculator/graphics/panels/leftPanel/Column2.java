@@ -18,6 +18,6 @@ public class Column2 extends AbstractColumn {
     @Override
     public void addParts(JPanel p) {
         PanelColors colors = getPanelColors();
-        p.add(new ParticularSections.JointLimitSection(colors));
+        p.add(new ParticularSections.ActualParameterSection(colors));
     }
 }

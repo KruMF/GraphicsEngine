@@ -109,6 +109,8 @@ public interface ParticularSections {
     class CoriolisLimitSection extends AbstractSection {
         public static final int HEIGHT = 150;
 
+        // TODO: add title: "Coriolis effect limits"
+
         public CoriolisLimitSection(@Nullable PanelColors panelColors) {
             super(new int[] {Integer.MAX_VALUE, HEIGHT}, panelColors, true);
         }
@@ -116,31 +118,64 @@ public interface ParticularSections {
         @Override
         public void addParts(JPanel p) {
             PanelColors colors = getPanelColors();
-            //p.add(new SectionLabel(colors.text, colors.border));
+            p.add(new MaxCoriolisEffectLabel(colors.text, colors.border));
+            p.add(new ReferenceRunningSpeedLabel(colors.text, colors.border));
+            p.add(new MaxAngularVelocityLabel(colors.text, colors.border));
         }
 
-        //TODO:
-        // title: "Coriolis effect limits"
-        // show values:
-        //  * Max Coriolis effect:
-        //      - roundNumber(RotationalLimits.CoriolisLimits.getCoriolis(omega), 3) + " m/s^2"
-        //      - " (" + roundNumber(RotationalLimits.CoriolisLimits.MAX_CORIOLIS * 100, 2) + " %g)"
-        //  * Reference running speed:
-        //      - roundNumber(RotationalLimits.CoriolisLimits.REFERENCE_RUNNING_SPEED, 1) + " m/s"
-        //  * Maximum angular velocity:
-        //      - roundNumber(omega, 3) + " rad/s"
+        private static class MaxCoriolisEffectLabel extends SectionLabel {
+            protected MaxCoriolisEffectLabel(Color textColor, Color borderColor) {
+                super(textColor, true, borderColor);
+            }
 
-        /*
-        // TODO: finish this
-        String label = ": ";
-        int value = 0; //
-        String units = " ";
+            @Override
+            public final String getText() {
+                // TODO: finish this
+                String label = "Max Coriolis effect: ";
+                int value = 0; //roundNumber(RotationalLimits.CoriolisLimits.getCoriolis(omega), 3)
+                String units = " m/s^2";
+                //TODO:
+                // also add:
+                //      " (" + roundNumber(RotationalLimits.CoriolisLimits.MAX_CORIOLIS * 100, 2) + " %g)"
                 return label + value + units;
-        */
+            }
+        }
+
+        private static class ReferenceRunningSpeedLabel extends SectionLabel {
+            protected ReferenceRunningSpeedLabel(Color textColor, Color borderColor) {
+                super(textColor, true, borderColor);
+            }
+
+            @Override
+            public final String getText() {
+                // TODO: finish this
+                String label = "Reference running speed: ";
+                int value = 0; //roundNumber(RotationalLimits.CoriolisLimits.REFERENCE_RUNNING_SPEED, 1)
+                String units = " m/s";
+                return label + value + units;
+            }
+        }
+
+        private static class MaxAngularVelocityLabel extends SectionLabel {
+            protected MaxAngularVelocityLabel(Color textColor, Color borderColor) {
+                super(textColor, true, borderColor);
+            }
+
+            @Override
+            public final String getText() {
+                // TODO: finish this
+                String label = "Maximum angular velocity: ";
+                int value = 0; //roundNumber(omega, 3)
+                String units = " rad/s";
+                return label + value + units;
+            }
+        }
     }
 
     class TotalOmegaLimitSection extends AbstractSection {
         public static final int HEIGHT = 150;
+
+        //TODO: set no title
 
         public TotalOmegaLimitSection(@Nullable PanelColors panelColors) {
             super(new int[] {Integer.MAX_VALUE, HEIGHT}, panelColors, true);
@@ -149,18 +184,29 @@ public interface ParticularSections {
         @Override
         public void addParts(JPanel p) {
             PanelColors colors = getPanelColors();
-            //p.add(new SectionLabel(colors.text, colors.border));
+            p.add(new FinalMaxAngularVelocityLabel(colors.text, colors.border));
         }
 
-        //TODO:
-        // title: null
-        // show values:
-        //  * Final maximum angular velocity:
-        //      - roundNumber(Rotor.getAngularVelocityLimit(), 3) + " rad/s"
+        private static class FinalMaxAngularVelocityLabel extends SectionLabel {
+            protected FinalMaxAngularVelocityLabel(Color textColor, Color borderColor) {
+                super(textColor, true, borderColor);
+            }
+
+            @Override
+            public final String getText() {
+                // TODO: finish this
+                String label = "Final maximum angular velocity: ";
+                int value = 0; //roundNumber(Rotor.getAngularVelocityLimit(), 3)
+                String units = " rad/s";
+                return label + value + units;
+            }
+        }
     }
 
     class GravityRequirementSection extends AbstractSection {
         public static final int HEIGHT = 150;
+
+        // TODO: add title: "Standard gravity requirements"
 
         public GravityRequirementSection(@Nullable PanelColors panelColors) {
             super(new int[] {Integer.MAX_VALUE, HEIGHT}, panelColors, true);
@@ -169,22 +215,61 @@ public interface ParticularSections {
         @Override
         public void addParts(JPanel p) {
             PanelColors colors = getPanelColors();
-            //p.add(new SectionLabel(colors.text, colors.border));
+            p.add(new GForceLabel(colors.text, colors.border));
+            p.add(new AccelerationLabel(colors.text, colors.border));
+            p.add(new MinimumRadiusLabel(colors.text, colors.border));
         }
 
-        //TODO:
-        // title: "Standard gravity requirements"
-        // show values:
-        //  * G-force:
-        //      - roundNumber(Data.preferences.gForce, 2) + " G"
-        //  * Acceleration:
-        //      - roundNumber(Data.getGravity(), 3) + " m/s^2"
-        //  * minimum rotor radius:
-        //      - roundNumber(Rotor.getRadiusFromGravity(), 3) + " m"
+        private static class GForceLabel extends SectionLabel {
+            protected GForceLabel(Color textColor, Color borderColor) {
+                super(textColor, true, borderColor);
+            }
+
+            @Override
+            public final String getText() {
+                // TODO: finish this
+                String label = "G-force: ";
+                int value = 0; //roundNumber(Data.preferences.gForce, 2)
+                String units = " G";
+                return label + value + units;
+            }
+        }
+
+        private static class AccelerationLabel extends SectionLabel {
+            protected AccelerationLabel(Color textColor, Color borderColor) {
+                super(textColor, true, borderColor);
+            }
+
+            @Override
+            public final String getText() {
+                // TODO: finish this
+                String label = "Acceleration: ";
+                int value = 0; //roundNumber(Data.getGravity(), 3)
+                String units = " m/s^2";
+                return label + value + units;
+            }
+        }
+
+        private static class MinimumRadiusLabel extends SectionLabel {
+            protected MinimumRadiusLabel(Color textColor, Color borderColor) {
+                super(textColor, true, borderColor);
+            }
+
+            @Override
+            public final String getText() {
+                // TODO: finish this
+                String label = "Minimum rotor radius: ";
+                int value = 0; //roundNumber(Rotor.getRadiusFromGravity(), 3)
+                String units = " m";
+                return label + value + units;
+            }
+        }
     }
 
     class GradientLimitSection extends AbstractSection {
         public static final int HEIGHT = 150;
+
+        // TODO: add title: "Force gradient limits"
 
         public GradientLimitSection(@Nullable PanelColors panelColors) {
             super(new int[] {Integer.MAX_VALUE, HEIGHT}, panelColors, true);
@@ -193,22 +278,61 @@ public interface ParticularSections {
         @Override
         public void addParts(JPanel p) {
             PanelColors colors = getPanelColors();
-            //p.add(new SectionLabel(colors.text, colors.border));
+            p.add(new GradientLabel(colors.text, colors.border));
+            p.add(new ReferenceHeightLabel(colors.text, colors.border));
+            p.add(new MinimumRadiusLabel(colors.text, colors.border));
         }
 
-        //TODO:
-        // title: "Force gradient limits"
-        // show values:
-        //  * Gradient:
-        //      - roundNumber(RotationalLimits.GradientLimits.MAX_FORCE_GRADIENT * 100,2) + " %"
-        //  * Reference height:
-        //      - roundNumber(RotationalLimits.GradientLimits.HEIGHT, 2) + " m"
-        //  * Minimum rotor radius:
-        //      - roundNumber(RotationalLimits.GradientLimits.getRadius(), 3) + " m"
+        private static class GradientLabel extends SectionLabel {
+            protected GradientLabel(Color textColor, Color borderColor) {
+                super(textColor, true, borderColor);
+            }
+
+            @Override
+            public final String getText() {
+                // TODO: finish this
+                String label = "Gradient: ";
+                int value = 0; //roundNumber(RotationalLimits.GradientLimits.MAX_FORCE_GRADIENT * 100,2)
+                String units = " %";
+                return label + value + units;
+            }
+        }
+
+        private static class ReferenceHeightLabel extends SectionLabel {
+            protected ReferenceHeightLabel(Color textColor, Color borderColor) {
+                super(textColor, true, borderColor);
+            }
+
+            @Override
+            public final String getText() {
+                // TODO: finish this
+                String label = "Reference height: ";
+                int value = 0; //roundNumber(RotationalLimits.GradientLimits.HEIGHT, 2)
+                String units = " m";
+                return label + value + units;
+            }
+        }
+
+        private static class MinimumRadiusLabel extends SectionLabel {
+            protected MinimumRadiusLabel(Color textColor, Color borderColor) {
+                super(textColor, true, borderColor);
+            }
+
+            @Override
+            public final String getText() {
+                // TODO: finish this
+                String label = "Minimum rotor radius: ";
+                int value = 0; //roundNumber(RotationalLimits.GradientLimits.getRadius(), 3)
+                String units = " m";
+                return label + value + units;
+            }
+        }
     }
 
     class TotalRadiusLimitSection extends AbstractSection {
         public static final int HEIGHT = 150;
+
+        // TODO: set no title
 
         public TotalRadiusLimitSection(@Nullable PanelColors panelColors) {
             super(new int[] {Integer.MAX_VALUE, HEIGHT}, panelColors, true);
@@ -217,18 +341,29 @@ public interface ParticularSections {
         @Override
         public void addParts(JPanel p) {
             PanelColors colors = getPanelColors();
-            //p.add(new SectionLabel(colors.text, colors.border));
+            p.add(new FinalMinimumRadiusLabel(colors.text, colors.border));
         }
 
-        //TODO:
-        // title: null
-        // show values:
-        //  * Final minimum rotor radius:
-        //      - roundNumber(Rotor.getRadiusLimit(), 3) + " m"
+        private static class FinalMinimumRadiusLabel extends SectionLabel {
+            protected FinalMinimumRadiusLabel(Color textColor, Color borderColor) {
+                super(textColor, true, borderColor);
+            }
+
+            @Override
+            public final String getText() {
+                // TODO: finish this
+                String label = "Final minimum rotor radius: ";
+                int value = 0; //roundNumber(Rotor.getRadiusLimit(), 3)
+                String units = " m";
+                return label + value + units;
+            }
+        }
     }
 
     class ActualParameterSection extends AbstractSection {
         public static final int HEIGHT = 150;
+
+        // TODO: add title: "Actual values for selected rotor"
 
         public ActualParameterSection(@Nullable PanelColors panelColors) {
             super(new int[] {Integer.MAX_VALUE, HEIGHT}, panelColors, true);
@@ -237,19 +372,86 @@ public interface ParticularSections {
         @Override
         public void addParts(JPanel p) {
             PanelColors colors = getPanelColors();
-            //p.add(new SectionLabel(colors.text, colors.border));
+            p.add(new RadiusLabel(colors.text, colors.border));
+            p.add(new AngularVelocityLabel(colors.text, colors.border));
+            p.add(new RPMLabel(colors.text, colors.border));
+            p.add(new RotationalPeriodLabel(colors.text, colors.border));
+            p.add(new TangentialVelocityLabel(colors.text, colors.border));
         }
 
-        //TODO: show actual values for selected rotor:
-        //  * radius
-        //      - roundNumber(radius, 3) + " m"
-        //  * angular velocity
-        //      - roundNumber(omega, 3) + " rad/s"
-        //  * RPM
-        //      - roundNumber(Rotor.getRPMFromPeriod(period), 2)
-        //  * rotational period
-        //      - roundNumber(period, 2) + " s"
-        //  * tangential velocity
-        //      - roundNumber(Rotor.getTangentialVelocity(radius, omega), 1) + " m/s"
+        private static class RadiusLabel extends SectionLabel {
+            protected RadiusLabel(Color textColor, Color borderColor) {
+                super(textColor, true, borderColor);
+            }
+
+            @Override
+            public final String getText() {
+                // TODO: finish this
+                String label = "Radius: ";
+                int value = 0; //roundNumber(radius, 3)
+                String units = " m";
+                return label + value + units;
+            }
+        }
+
+        private static class AngularVelocityLabel extends SectionLabel {
+            protected AngularVelocityLabel(Color textColor, Color borderColor) {
+                super(textColor, true, borderColor);
+            }
+
+            @Override
+            public final String getText() {
+                // TODO: finish this
+                String label = "Angular velocity: ";
+                int value = 0; //roundNumber(omega, 3)
+                String units = " rad/s";
+                return label + value + units;
+            }
+        }
+
+        private static class RPMLabel extends SectionLabel {
+            protected RPMLabel(Color textColor, Color borderColor) {
+                super(textColor, true, borderColor);
+            }
+
+            @Override
+            public final String getText() {
+                // TODO: finish this
+                String label = "RPM: ";
+                int value = 0; //roundNumber(Rotor.getRPMFromPeriod(period), 2)
+                String units = "";
+                return label + value + units;
+            }
+        }
+
+        private static class RotationalPeriodLabel extends SectionLabel {
+            protected RotationalPeriodLabel(Color textColor, Color borderColor) {
+                super(textColor, true, borderColor);
+            }
+
+            @Override
+            public final String getText() {
+                // TODO: finish this
+                String label = "Rotational period: ";
+                int value = 0; //roundNumber(period, 2)
+                String units = " s";
+                return label + value + units;
+            }
+        }
+
+        private static class TangentialVelocityLabel extends SectionLabel {
+            protected TangentialVelocityLabel(Color textColor, Color borderColor) {
+                super(textColor, true, borderColor);
+            }
+
+            @Override
+            public final String getText() {
+                // TODO: finish this
+                String label = "Tangential velocity: ";
+                int value = 0; //roundNumber(Rotor.getTangentialVelocity(radius, omega), 1)
+                String units = " m/s";
+                return label + value + units;
+            }
+        }
     }
 }

@@ -19,5 +19,10 @@ public class Column1 extends AbstractColumn {
     public void addParts(JPanel p) {
         PanelColors colors = getPanelColors();
         p.add(new ParticularSections.JointLimitSection(colors));
+        p.add(new ParticularSections.CoriolisLimitSection(colors));
+        p.add(new ParticularSections.TotalOmegaLimitSection(colors));
+        p.add(new ParticularSections.GravityRequirementSection(colors));
+        p.add(new ParticularSections.GradientLimitSection(colors));
+        p.add(new ParticularSections.TotalRadiusLimitSection(colors));
     }
 }
