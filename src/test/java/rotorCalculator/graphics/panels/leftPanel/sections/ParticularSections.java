@@ -40,6 +40,21 @@ public interface ParticularSections {
             PanelColors colors = getPanelColors();
             //p.add(new SectionLabel(colors.text, colors.border));
         }
+
+        //TODO:
+        // title: "Inner joint limits"
+        // show values:
+        //  * max tangential speed:
+        //      - roundNumber(JointLimits.getTangentialVelocity(), 2)
+        //      - " m/s"
+        //  * reference radius:
+        //      - roundNumber(JointLimits.INNER_RADIUS, 3) + " m"
+        //  * rotational period:
+        //      - roundNumber(JointLimits.getRotationPeriod(), 2) + " s"
+        //  * RPM:
+        //      - roundNumber(JointLimits.MAX_RPM, 2)
+        //  * angular velocity:
+        //      - roundNumber(JointLimits.getOmega(), 3) + " rad/s"
     }
 
     class CoriolisLimitSection extends AbstractSection {
@@ -54,6 +69,17 @@ public interface ParticularSections {
             PanelColors colors = getPanelColors();
             //p.add(new SectionLabel(colors.text, colors.border));
         }
+
+        //TODO:
+        // title: "Coriolis effect limits"
+        // show values:
+        //  * Max Coriolis effect:
+        //      - roundNumber(RotationalLimits.CoriolisLimits.getCoriolis(omega), 3) + " m/s^2"
+        //      - " (" + roundNumber(RotationalLimits.CoriolisLimits.MAX_CORIOLIS * 100, 2) + " %g)"
+        //  * Reference running speed:
+        //      - roundNumber(RotationalLimits.CoriolisLimits.REFERENCE_RUNNING_SPEED, 1) + " m/s"
+        //  * Maximum angular velocity:
+        //      - roundNumber(omega, 3) + " rad/s"
     }
 
     class TotalOmegaLimitSection extends AbstractSection {
@@ -68,6 +94,13 @@ public interface ParticularSections {
             PanelColors colors = getPanelColors();
             //p.add(new SectionLabel(colors.text, colors.border));
         }
+
+        //TODO:
+        // title: ""
+        // show values:
+        //  * :
+        //      -  + " m/s^2"
+        //      -
     }
 
     class GravityRequirementSection extends AbstractSection {
@@ -82,6 +115,13 @@ public interface ParticularSections {
             PanelColors colors = getPanelColors();
             //p.add(new SectionLabel(colors.text, colors.border));
         }
+
+        //TODO:
+        // title: ""
+        // show values:
+        //  * :
+        //      -  + " m/s^2"
+        //      -
     }
 
     class GradientLimitSection extends AbstractSection {
@@ -96,6 +136,13 @@ public interface ParticularSections {
             PanelColors colors = getPanelColors();
             //p.add(new SectionLabel(colors.text, colors.border));
         }
+
+        //TODO:
+        // title: ""
+        // show values:
+        //  * :
+        //      -  + " m/s^2"
+        //      -
     }
 
     class TotalRadiusLimitSection extends AbstractSection {
@@ -110,6 +157,13 @@ public interface ParticularSections {
             PanelColors colors = getPanelColors();
             //p.add(new SectionLabel(colors.text, colors.border));
         }
+
+        //TODO:
+        // title: ""
+        // show values:
+        //  * :
+        //      -  + " m/s^2"
+        //      -
     }
 
     class ActualParameterSection extends AbstractSection {
@@ -125,31 +179,16 @@ public interface ParticularSections {
             //p.add(new SectionLabel(colors.text, colors.border));
         }
 
-        //TODO: print:
-        /*
-        * return new String[] {
-                    "radius: " + roundNumber(radius, 3) + " m",
-                    "angular velocity: " + roundNumber(omega, 3) + " rad/s",
-                    "RPM: " + roundNumber(Rotor.getRPMFromPeriod(period), 2),
-                    "rotational period: " + roundNumber(period, 2) + " s",
-                    "tangential velocity: " + roundNumber(Rotor.getTangentialVelocity(radius, omega), 1) + " m/s"
-            };
-        *
-        *
-        *
-        */
+        //TODO: show actual values for selected rotor:
+        //  * radius
+        //      - roundNumber(radius, 3) + " m"
+        //  * angular velocity
+        //      - roundNumber(omega, 3) + " rad/s"
+        //  * RPM
+        //      - roundNumber(Rotor.getRPMFromPeriod(period), 2)
+        //  * rotational period
+        //      - roundNumber(period, 2) + " s"
+        //  * tangential velocity
+        //      - roundNumber(Rotor.getTangentialVelocity(radius, omega), 1) + " m/s"
     }
-
-    //TODO:
-    //  add sections:
-    //      Angular velocity limits:
-    //      * joint limits
-    //      * coriolis limits
-    //      * total omega limits
-    //      Radius limits:
-    //      * gravity requirements
-    //      * gradient limits
-    //      * total radius limits
-    //      End results:
-    //      * summary of actual parameters
 }
