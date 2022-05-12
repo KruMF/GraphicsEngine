@@ -6,17 +6,21 @@ import graphicsEngine.parts.SimpleLabel;
 import java.awt.*;
 
 public class SectionLabel extends SimpleLabel {
-    protected static final int HEIGHT = 50;
+    protected static final int HEIGHT = 30;
     private static final int WIDTH = Integer.MAX_VALUE;
 
-    protected SectionLabel(Color textColor, Color borderColor) {
-        super("A label object", textColor);
+    public SectionLabel(Color textColor) {
+        this(textColor, false, null);
+    }
+
+    public SectionLabel(Color textColor, boolean border, Color borderColor) {
+        super(null, textColor);
         setPreferredSize(new Dimension(WIDTH, HEIGHT));
         setAlignmentX(Component.LEFT_ALIGNMENT);
 
         Utilities.BorderInterface.setBorderState(
                 this,
-                true,
+                border,
                 borderColor);
     }
 

@@ -9,27 +9,12 @@ import java.awt.*;
 import com.google.inject.internal.Nullable;
 
 public interface ParticularSections {
-    class Section2 extends AbstractSection {
-        public static final int HEIGHT = 150;
 
-        public Section2(@Nullable PanelColors panelColors) {
-            super(new int[] {Integer.MAX_VALUE, HEIGHT}, panelColors, true);
-
-            Utilities.BorderInterface.setBorderState(
-                    this,
-                    true,
-                    Color.black);
-        }
-
-        @Override
-        public void addParts(JPanel p) {
-            PanelColors colors = getPanelColors();
-            p.add(new SectionLabel(colors.text, colors.border));
-        }
-    }
-
+    // TODO: finish this and add javadoc
     class JointLimitSection extends AbstractSection {
         public static final int HEIGHT = 150;
+
+        // TODO: add title: "Inner joint limits"
 
         public JointLimitSection(@Nullable PanelColors panelColors) {
             super(new int[] {Integer.MAX_VALUE, HEIGHT}, panelColors, true);
@@ -38,23 +23,88 @@ public interface ParticularSections {
         @Override
         public void addParts(JPanel p) {
             PanelColors colors = getPanelColors();
-            //p.add(new SectionLabel(colors.text, colors.border));
+            p.add(new MaxTangentialSpeedLabel(colors.text, colors.border));
+            p.add(new ReferenceRadiusLabel(colors.text, colors.border));
+            p.add(new RotationalPeriodLabel(colors.text, colors.border));
+            p.add(new RPMLabel(colors.text, colors.border));
+            p.add(new AngularVelocityLabel(colors.text, colors.border));
         }
 
-        //TODO:
-        // title: "Inner joint limits"
-        // show values:
-        //  * max tangential speed:
-        //      - roundNumber(JointLimits.getTangentialVelocity(), 2)
-        //      - " m/s"
-        //  * reference radius:
-        //      - roundNumber(JointLimits.INNER_RADIUS, 3) + " m"
-        //  * rotational period:
-        //      - roundNumber(JointLimits.getRotationPeriod(), 2) + " s"
-        //  * RPM:
-        //      - roundNumber(JointLimits.MAX_RPM, 2)
-        //  * angular velocity:
-        //      - roundNumber(JointLimits.getOmega(), 3) + " rad/s"
+        private static class MaxTangentialSpeedLabel extends SectionLabel {
+            protected MaxTangentialSpeedLabel(Color textColor, Color borderColor) {
+                super(textColor, true, borderColor);
+            }
+
+            @Override
+            public final String getText() {
+                /* TODO:
+                 * max tangential speed:
+                 *      - roundNumber(JointLimits.getTangentialVelocity(), 2)
+                 *      - " m/s"
+                 */
+                return super.getText();
+            }
+        }
+
+        private static class ReferenceRadiusLabel extends SectionLabel {
+            protected ReferenceRadiusLabel(Color textColor, Color borderColor) {
+                super(textColor, true, borderColor);
+            }
+
+            @Override
+            public final String getText() {
+                /* TODO:
+                 * reference radius:
+                 *      - roundNumber(JointLimits.INNER_RADIUS, 3) + " m"
+                 */
+                return super.getText();
+            }
+        }
+
+        private static class RotationalPeriodLabel extends SectionLabel {
+            protected RotationalPeriodLabel(Color textColor, Color borderColor) {
+                super(textColor, true, borderColor);
+            }
+
+            @Override
+            public final String getText() {
+                /* TODO:
+                 * rotational period:
+                 *      - roundNumber(JointLimits.getRotationPeriod(), 2) + " s"
+                 */
+                return super.getText();
+            }
+        }
+
+        private static class RPMLabel extends SectionLabel {
+            protected RPMLabel(Color textColor, Color borderColor) {
+                super(textColor, true, borderColor);
+            }
+
+            @Override
+            public final String getText() {
+                /* TODO:
+                 * RPM:
+                 *      - roundNumber(JointLimits.MAX_RPM, 2)
+                 */
+                return super.getText();
+            }
+        }
+
+        private static class AngularVelocityLabel extends SectionLabel {
+            protected AngularVelocityLabel(Color textColor, Color borderColor) {
+                super(textColor, true, borderColor);
+            }
+
+            @Override
+            public final String getText() {
+                /* TODO:
+                 * angular velocity:
+                 *      - roundNumber(JointLimits.getOmega(), 3) + " rad/s"
+                 */
+                return super.getText();
+            }
+        }
     }
 
     class CoriolisLimitSection extends AbstractSection {

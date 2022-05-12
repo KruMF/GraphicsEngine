@@ -3,7 +3,6 @@ package rotorCalculator.graphics.panels.leftPanel;
 import graphicsEngine.panels.PanelColors;
 
 import rotorCalculator.graphics.panels.leftPanel.sections.ParticularSections;
-import rotorCalculator.graphics.panels.leftPanel.sections.Section1;
 
 import javax.swing.*;
 
@@ -19,8 +18,6 @@ public class Column1 extends AbstractColumn {
     @Override
     public void addParts(JPanel p) {
         PanelColors colors = getPanelColors();
-        p.add(new Section1(colors));
-        p.add(new Section1(colors));
-        p.add(new ParticularSections.Section2(colors));
+        p.add(new ParticularSections.JointLimitSection(colors));
     }
 }

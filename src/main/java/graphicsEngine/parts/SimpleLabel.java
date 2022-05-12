@@ -20,7 +20,7 @@ public class SimpleLabel extends JLabel {
         setForeground(colorNullCheck(textColor));
     }
 
-    private static String stringNullCheck(@Nullable String text) {
+    public static String stringNullCheck(@Nullable String text) {
         return Objects.requireNonNullElse(text, DEFAULT_TEXT);
     }
 

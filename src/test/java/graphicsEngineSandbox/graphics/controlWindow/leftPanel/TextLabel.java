@@ -3,7 +3,6 @@ package graphicsEngineSandbox.graphics.controlWindow.leftPanel;
 import graphicsEngine.Utilities;
 import graphicsEngine.parts.SimpleLabel;
 
-import javax.swing.border.LineBorder;
 import java.awt.*;
 
 import org.jetbrains.annotations.NotNull;
