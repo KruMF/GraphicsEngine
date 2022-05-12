@@ -1,19 +1,16 @@
-package graphicsEngineSandbox.graphics.controlWindow.leftPanel;
+package rotorCalculator.graphics.panels.leftPanel.sections;
 
 import graphicsEngine.parts.SimpleLabel;
 
 import javax.swing.border.LineBorder;
 import java.awt.*;
 
-import org.jetbrains.annotations.NotNull;
-
-class TextLabel extends SimpleLabel {
+public class SubPanelLabel extends SimpleLabel {
     protected static final int HEIGHT = 80;
-    private static final Color TEXT_COLOR = Color.blue;
 
-    protected TextLabel(@NotNull Color borderColor) {
-        super("A label object", TEXT_COLOR);
-        setPreferredSize(new Dimension(LeftPanel.WIDTH, HEIGHT));
+    protected SubPanelLabel(Color textColor, Color borderColor) {
+        super("A label object", textColor);
+        setPreferredSize(new Dimension(WIDTH, HEIGHT));
 
         //TODO: remove this when tests are completed
         setBorder(new LineBorder(borderColor));

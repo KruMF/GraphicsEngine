@@ -18,23 +18,21 @@ public class LeftPanel extends SimplePanel {
 
     private void addMembers() {
         setLayout(new BorderLayout(0, 0));
-        add(new JPanel() {
-            {
-                setOpaque(false);
-                setPreferredSize(new Dimension(
-                        LeftPanel.WIDTH,
-                        getPreferredHeight()));
-                setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-                //setAlignmentX(Component.LEFT_ALIGNMENT);
-
-                PanelColors colors = getPanelColors();
-                add(new SubPanel1(colors, false));
-                add(new SubPanel1(colors, false));
-                add(new SubPanel2(colors, true));
-                add(new TextLabel(colors.border));
-            }
-        }, BorderLayout.NORTH);
-
+        add(
+                new JPanel() {
+                    {
+                        setOpaque(false);
+                        setPreferredSize(new Dimension(LeftPanel.WIDTH, getPreferredHeight()));
+                        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+                        //setAlignmentX(Component.LEFT_ALIGNMENT);
+                        PanelColors colors = getPanelColors();
+                        add(new SubPanel1(colors, false));
+                        add(new SubPanel1(colors, false));
+                        add(new SubPanel2(colors, true));
+                        add(new TextLabel(colors.border));
+                    }
+                },
+                BorderLayout.NORTH);
     }
 
     private static int getPreferredHeight() {
