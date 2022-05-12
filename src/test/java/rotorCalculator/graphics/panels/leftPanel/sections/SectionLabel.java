@@ -5,10 +5,10 @@ import graphicsEngine.parts.SimpleLabel;
 import javax.swing.border.LineBorder;
 import java.awt.*;
 
-public class SubPanelLabel extends SimpleLabel {
+public class SectionLabel extends SimpleLabel {
     protected static final int HEIGHT = 80;
 
-    protected SubPanelLabel(Color textColor, Color borderColor) {
+    protected SectionLabel(Color textColor, Color borderColor) {
         super("A label object", textColor);
         setPreferredSize(new Dimension(WIDTH, HEIGHT));
 

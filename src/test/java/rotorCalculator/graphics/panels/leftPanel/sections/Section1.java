@@ -9,10 +9,10 @@ import java.awt.*;
 
 import com.google.inject.internal.Nullable;
 
-public class Sub1 extends AbstractSubPanel {
+public class Section1 extends AbstractSection {
     public static final int HEIGHT = 150;
 
-    public Sub1(@Nullable PanelColors panelColors) {
+    public Section1(@Nullable PanelColors panelColors) {
         super(new int[] {Column1.WIDTH, HEIGHT}, panelColors, true);
         setBorder(new LineBorder(Color.cyan));
     }

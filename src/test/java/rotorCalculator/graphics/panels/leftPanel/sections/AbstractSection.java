@@ -7,10 +7,10 @@ import java.awt.*;
 
 import com.google.inject.internal.Nullable;
 
-abstract class AbstractSubPanel extends SimplePanel {
+abstract class AbstractSection extends SimplePanel {
     private static final boolean DRAW_BACKGROUND = false;
 
-    protected AbstractSubPanel(int[] size, @Nullable PanelColors panelColors, boolean border) {
+    protected AbstractSection(int[] size, @Nullable PanelColors panelColors, boolean border) {
         super(panelColors, border);
         setPreferredSize(new Dimension(size[0], size[1]));
         //setAlignmentX(Component.LEFT_ALIGNMENT);
