@@ -8,8 +8,6 @@ import graphicsEngineOld.parts.pages.Page;
 import graphicsEngineOld.oldPagedDemo.pages.menuPages.startingPage.StartingPage;
 import graphicsEngineOld.oldPagedDemo.pages.menuPages.settingsPage.SettingsPage;
 import graphicsEngineOld.oldPagedDemo.pages.menuPages.demoSelectPage.DemoSelectPage;
-import graphicsEngineOld.oldPagedDemo.pages.demoPages.page1.Page_1;
-import graphicsEngineOld.oldPagedDemo.pages.demoPages.page2.Page_2;
 
 import java.util.HashMap;
 
@@ -53,8 +51,6 @@ public class DemoPaged {
             put(StartingPage.PAGE_KEY, new StartingPage(palette));
             put(SettingsPage.PAGE_KEY, new SettingsPage(palette));
             put(DemoSelectPage.PAGE_KEY, new DemoSelectPage(palette));
-            put(Page_1.PAGE_KEY, new Page_1(palette));
-            put(Page_2.PAGE_KEY, new Page_2(palette));
         }};
     }
 }
