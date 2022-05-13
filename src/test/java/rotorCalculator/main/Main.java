@@ -22,6 +22,7 @@ public class Main {
 
     private static void prepareData() {
         //TODO: start data here
+        Data.setRotor();
     }
 
     private static void prepareResults() {

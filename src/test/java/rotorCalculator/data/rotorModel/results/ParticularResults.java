@@ -1,8 +1,13 @@
 package rotorCalculator.data.rotorModel.results;
 
+import rotorCalculator.data.Data;
+import rotorCalculator.data.innerJointModel.InnerJoint;
+
 //TODO: finish this
 public interface ParticularResults {
     //
+
+    double DEFAULT_DOUBLE = 1.234567d;
 
     //
     abstract class AbstractResults {
@@ -27,20 +32,19 @@ public interface ParticularResults {
 
         //sets default values
         JointLimitResults() {
-            maxTangentialSpeed = 1.2345d;
-            referenceRadius = 1.2345d;
-            rotationalPeriod = 1.2345d;
-            rpm = 1.2345d;
-            angularVelocity = 1.2345d;
+            maxTangentialSpeed = DEFAULT_DOUBLE;
+            referenceRadius = DEFAULT_DOUBLE;
+            rotationalPeriod = DEFAULT_DOUBLE;
+            rpm = DEFAULT_DOUBLE;
+            angularVelocity = DEFAULT_DOUBLE;
         }
 
         public void setResults() {
-            //TODO: get actual results here
-            maxTangentialSpeed = 1.2345d;
-            referenceRadius = 1.2345d;
-            rotationalPeriod = 1.2345d;
-            rpm = 1.2345d;
-            angularVelocity = 1.2345d;
+            maxTangentialSpeed = Data.rotor.innerJoint.getTangentialVelocity();
+            referenceRadius = Data.rotor.innerJoint.radius;
+            rotationalPeriod = Data.rotor.innerJoint.getRotationPeriod();
+            rpm = Data.rotor.innerJoint.maxRPM;
+            angularVelocity = Data.rotor.innerJoint.getAngularVelocity();
         }
     }
 
@@ -53,16 +57,16 @@ public interface ParticularResults {
 
         //sets default values
         CoriolisLimitResults() {
-            maxCoriolisEffect = 1.2345d;
-            referenceRunningSpeed = 1.2345d;
-            maxAngularVelocity = 1.2345d;
+            maxCoriolisEffect = DEFAULT_DOUBLE;
+            referenceRunningSpeed = DEFAULT_DOUBLE;
+            maxAngularVelocity = DEFAULT_DOUBLE;
         }
 
         public void setResults() {
             //TODO: get actual results here
-            maxCoriolisEffect = 1.2345d;
-            referenceRunningSpeed = 1.2345d;
-            maxAngularVelocity = 1.2345d;
+            maxCoriolisEffect = DEFAULT_DOUBLE;
+            referenceRunningSpeed = DEFAULT_DOUBLE;
+            maxAngularVelocity = DEFAULT_DOUBLE;
         }
     }
 
@@ -72,12 +76,12 @@ public interface ParticularResults {
 
         //sets default values
         TotalOmegaLimitResults() {
-            finalMaxAngularVelocity = 1.2345d;
+            finalMaxAngularVelocity = DEFAULT_DOUBLE;
         }
 
         public void setResults() {
             //TODO: get actual results here
-            finalMaxAngularVelocity = 1.2345d;
+            finalMaxAngularVelocity = DEFAULT_DOUBLE;
         }
     }
 
@@ -90,16 +94,16 @@ public interface ParticularResults {
 
         //sets default values
         GravityRequirementResults() {
-            gForce = 1.2345d;
-            acceleration = 1.2345d;
-            minimumRadius = 1.2345d;
+            gForce = DEFAULT_DOUBLE;
+            acceleration = DEFAULT_DOUBLE;
+            minimumRadius = DEFAULT_DOUBLE;
         }
 
         public void setResults() {
             //TODO: get actual results here
-            gForce = 1.2345d;
-            acceleration = 1.2345d;
-            minimumRadius = 1.2345d;
+            gForce = DEFAULT_DOUBLE;
+            acceleration = DEFAULT_DOUBLE;
+            minimumRadius = DEFAULT_DOUBLE;
         }
     }
 
@@ -112,16 +116,16 @@ public interface ParticularResults {
 
         //sets default values
         GradientLimitResults() {
-            gradient = 1.2345d;
-            referenceHeight = 1.2345d;
-            minimumRadius = 1.2345d;
+            gradient = DEFAULT_DOUBLE;
+            referenceHeight = DEFAULT_DOUBLE;
+            minimumRadius = DEFAULT_DOUBLE;
         }
 
         public void setResults() {
             //TODO: get actual results here
-            gradient = 1.2345d;
-            referenceHeight = 1.2345d;
-            minimumRadius = 1.2345d;
+            gradient = DEFAULT_DOUBLE;
+            referenceHeight = DEFAULT_DOUBLE;
+            minimumRadius = DEFAULT_DOUBLE;
         }
     }
 
@@ -131,12 +135,12 @@ public interface ParticularResults {
 
         //sets default values
         TotalRadiusLimitResults() {
-            finalMinimumRadius = 1.2345d;
+            finalMinimumRadius = DEFAULT_DOUBLE;
         }
 
         public void setResults() {
             //TODO: get actual results here
-            finalMinimumRadius = 1.2345d;
+            finalMinimumRadius = DEFAULT_DOUBLE;
         }
     }
 
@@ -151,20 +155,20 @@ public interface ParticularResults {
 
         //sets default values
         ActualParameterResults() {
-            radius = 1.2345d;
-            angularVelocity = 1.2345d;
-            rpm = 1.2345d;
-            rotationalPeriod = 1.2345d;
-            tangentialVelocity = 1.2345d;
+            radius = DEFAULT_DOUBLE;
+            angularVelocity = DEFAULT_DOUBLE;
+            rpm = DEFAULT_DOUBLE;
+            rotationalPeriod = DEFAULT_DOUBLE;
+            tangentialVelocity = DEFAULT_DOUBLE;
         }
 
         public void setResults() {
             //TODO: get actual results here
-            radius = 1.2345d;
-            angularVelocity = 1.2345d;
-            rpm = 1.2345d;
-            rotationalPeriod = 1.2345d;
-            tangentialVelocity = 1.2345d;
+            radius = DEFAULT_DOUBLE;
+            angularVelocity = DEFAULT_DOUBLE;
+            rpm = DEFAULT_DOUBLE;
+            rotationalPeriod = DEFAULT_DOUBLE;
+            tangentialVelocity = DEFAULT_DOUBLE;
         }
     }
 }

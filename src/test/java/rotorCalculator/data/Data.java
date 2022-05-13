@@ -15,17 +15,23 @@ public class Data {
     public static GeneralConstants generalConstants;
     public static Preferences preferences;
 
-    public static ResultContainer results;
+    public static Rotor rotor;
 
-    public static void setResultContainer() {
-        results = new ResultContainer();
-    }
+    public static ResultContainer results;
 
     static {
         environment = Environment.ROUGH;
         timeConstants = new TimeConstants(environment);
         generalConstants = new GeneralConstants(environment);
         preferences = new Preferences(environment);
+    }
+
+    public static void setRotor() {
+        rotor = new Rotor();
+    }
+
+    public static void setResultContainer() {
+        results = new ResultContainer();
     }
 
     // TODO: add javadoc
