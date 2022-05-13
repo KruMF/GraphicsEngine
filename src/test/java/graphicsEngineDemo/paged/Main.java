@@ -5,7 +5,9 @@ import graphicsEngine.windows.MultiPageWindow;
 import graphicsEngine.windows.WindowConfig;
 import graphicsEngine.windows.AbstractPage;
 
-import java.awt.*;
+import graphicsEngineDemo.paged.demoPages.Page1;
+import graphicsEngineDemo.paged.demoPages.Page2;
+
 import java.util.List;
 import java.util.ArrayList;
 
@@ -50,28 +52,6 @@ public class Main {
                 add(new Page1());
                 add(new Page2());
             }};
-        }
-    }
-
-    protected static class Page1 extends AbstractPage {
-        protected Page1() {
-            super(Color.green);
-        }
-
-        @Override
-        public String getPageKey() {
-            return "page1";
-        }
-    }
-
-    protected static class Page2 extends AbstractPage {
-        protected Page2() {
-            super(Color.magenta);
-        }
-
-        @Override
-        public String getPageKey() {
-            return "page2";
         }
     }
 }
