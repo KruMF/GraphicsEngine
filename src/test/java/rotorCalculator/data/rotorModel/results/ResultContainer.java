@@ -12,7 +12,7 @@ public class ResultContainer {
 
     public ResultContainer() {
         initializeResults();
-        getResults();
+        setResults();
     }
 
     private void initializeResults() {
@@ -25,7 +25,14 @@ public class ResultContainer {
         actualParameterResults = new ParticularResults.ActualParameterResults();
     }
 
-    public void getResults() {
-        //TODO: get actual results here
+    //TODO: get actual results here, finish this
+    public final void setResults() {
+        jointLimitResults.setResults();
+        coriolisLimitResults.setResults();
+        totalOmegaLimitResults.setResults();
+        gravityRequirementResults.setResults();
+        gradientLimitResults.setResults();
+        totalRadiusLimitResults.setResults();
+        actualParameterResults.setResults();
     }
 }

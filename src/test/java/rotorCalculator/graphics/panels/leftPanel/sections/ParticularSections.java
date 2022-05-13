@@ -2,10 +2,14 @@ package rotorCalculator.graphics.panels.leftPanel.sections;
 
 import graphicsEngine.panels.PanelColors;
 
+import rotorCalculator.data.Data;
+
 import javax.swing.*;
 import java.awt.*;
 
 import com.google.inject.internal.Nullable;
+
+import static graphicsEngine.Utilities.roundNumber;
 
 public interface ParticularSections {
 
@@ -36,9 +40,8 @@ public interface ParticularSections {
 
             @Override
             public final String getText() {
-                // TODO: finish this
                 String label = "Max tangential speed: ";
-                int value = 0; //roundNumber(JointLimits.getTangentialVelocity(), 2)
+                String value = roundNumber(Data.results.jointLimitResults.maxTangentialSpeed, 2);
                 String units = " m/s";
                 return label + value + units;
             }
@@ -51,9 +54,8 @@ public interface ParticularSections {
 
             @Override
             public final String getText() {
-                // TODO: finish this
                 String label = "Reference radius: ";
-                int value = 0; //roundNumber(JointLimits.INNER_RADIUS, 3)
+                String value = roundNumber(Data.results.jointLimitResults.referenceRadius, 3);
                 String units = " m";
                 return label + value + units;
             }
@@ -66,9 +68,8 @@ public interface ParticularSections {
 
             @Override
             public final String getText() {
-                // TODO: finish this
                 String label = "Rotational period: ";
-                int value = 0; //roundNumber(JointLimits.getRotationPeriod(), 2)
+                String value = roundNumber(Data.results.jointLimitResults.rotationalPeriod, 2);
                 String units = " s";
                 return label + value + units;
             }
@@ -81,9 +82,8 @@ public interface ParticularSections {
 
             @Override
             public final String getText() {
-                // TODO: finish this
                 String label = "RPM: ";
-                int value = 0; //roundNumber(JointLimits.MAX_RPM, 2)
+                String value = roundNumber(Data.results.jointLimitResults.rpm, 2);
                 String units = "";
                 return label + value + units;
             }
@@ -96,9 +96,8 @@ public interface ParticularSections {
 
             @Override
             public final String getText() {
-                // TODO: finish this
                 String label = "Angular velocity: ";
-                int value = 0; //roundNumber(JointLimits.getOmega(), 3)
+                String value = roundNumber(Data.results.jointLimitResults.angularVelocity, 3);
                 String units = " rad/s";
                 return label + value + units;
             }
@@ -130,12 +129,11 @@ public interface ParticularSections {
 
             @Override
             public final String getText() {
-                // TODO: finish this
                 String label = "Max Coriolis effect: ";
-                int value = 0; //roundNumber(RotationalLimits.CoriolisLimits.getCoriolis(omega), 3)
+                String value = roundNumber(Data.results.coriolisLimitResults.maxCoriolisEffect, 3);
                 String units = " m/s^2";
                 //TODO:
-                // also add:
+                // also display value in "gees":
                 //      " (" + roundNumber(RotationalLimits.CoriolisLimits.MAX_CORIOLIS * 100, 2) + " %g)"
                 return label + value + units;
             }
@@ -148,9 +146,8 @@ public interface ParticularSections {
 
             @Override
             public final String getText() {
-                // TODO: finish this
                 String label = "Reference running speed: ";
-                int value = 0; //roundNumber(RotationalLimits.CoriolisLimits.REFERENCE_RUNNING_SPEED, 1)
+                String value = roundNumber(Data.results.coriolisLimitResults.referenceRunningSpeed, 1);
                 String units = " m/s";
                 return label + value + units;
             }
@@ -163,9 +160,8 @@ public interface ParticularSections {
 
             @Override
             public final String getText() {
-                // TODO: finish this
                 String label = "Maximum angular velocity: ";
-                int value = 0; //roundNumber(omega, 3)
+                String value = roundNumber(Data.results.coriolisLimitResults.maxAngularVelocity, 3);
                 String units = " rad/s";
                 return label + value + units;
             }
@@ -195,9 +191,8 @@ public interface ParticularSections {
 
             @Override
             public final String getText() {
-                // TODO: finish this
                 String label = "Final maximum angular velocity: ";
-                int value = 0; //roundNumber(Rotor.getAngularVelocityLimit(), 3)
+                String value = roundNumber(Data.results.totalOmegaLimitResults.finalMaxAngularVelocity, 3);
                 String units = " rad/s";
                 return label + value + units;
             }
@@ -229,9 +224,8 @@ public interface ParticularSections {
 
             @Override
             public final String getText() {
-                // TODO: finish this
                 String label = "G-force: ";
-                int value = 0; //roundNumber(Data.preferences.gForce, 2)
+                String value = roundNumber(Data.results.gravityRequirementResults.gForce, 2);
                 String units = " G";
                 return label + value + units;
             }
@@ -244,9 +238,8 @@ public interface ParticularSections {
 
             @Override
             public final String getText() {
-                // TODO: finish this
                 String label = "Acceleration: ";
-                int value = 0; //roundNumber(Data.getGravity(), 3)
+                String value = roundNumber(Data.results.gravityRequirementResults.acceleration, 3);
                 String units = " m/s^2";
                 return label + value + units;
             }
@@ -259,9 +252,8 @@ public interface ParticularSections {
 
             @Override
             public final String getText() {
-                // TODO: finish this
                 String label = "Minimum rotor radius: ";
-                int value = 0; //roundNumber(Rotor.getRadiusFromGravity(), 3)
+                String value = roundNumber(Data.results.gravityRequirementResults.minimumRadius, 3);
                 String units = " m";
                 return label + value + units;
             }
@@ -293,9 +285,8 @@ public interface ParticularSections {
 
             @Override
             public final String getText() {
-                // TODO: finish this
                 String label = "Gradient: ";
-                int value = 0; //roundNumber(RotationalLimits.GradientLimits.MAX_FORCE_GRADIENT * 100,2)
+                String value = roundNumber(Data.results.gradientLimitResults.gradient * 100, 2);
                 String units = " %";
                 return label + value + units;
             }
@@ -308,9 +299,8 @@ public interface ParticularSections {
 
             @Override
             public final String getText() {
-                // TODO: finish this
                 String label = "Reference height: ";
-                int value = 0; //roundNumber(RotationalLimits.GradientLimits.HEIGHT, 2)
+                String value = roundNumber(Data.results.gradientLimitResults.referenceHeight, 2);
                 String units = " m";
                 return label + value + units;
             }
@@ -323,9 +313,8 @@ public interface ParticularSections {
 
             @Override
             public final String getText() {
-                // TODO: finish this
                 String label = "Minimum rotor radius: ";
-                int value = 0; //roundNumber(RotationalLimits.GradientLimits.getRadius(), 3)
+                String value = roundNumber(Data.results.gradientLimitResults.minimumRadius, 3);
                 String units = " m";
                 return label + value + units;
             }
@@ -355,9 +344,8 @@ public interface ParticularSections {
 
             @Override
             public final String getText() {
-                // TODO: finish this
                 String label = "Final minimum rotor radius: ";
-                int value = 0; //roundNumber(Rotor.getRadiusLimit(), 3)
+                String value = roundNumber(Data.results.totalRadiusLimitResults.finalMinimumRadius, 3);
                 String units = " m";
                 return label + value + units;
             }
@@ -391,9 +379,8 @@ public interface ParticularSections {
 
             @Override
             public final String getText() {
-                // TODO: finish this
                 String label = "Radius: ";
-                int value = 0; //roundNumber(radius, 3)
+                String value = roundNumber(Data.results.actualParameterResults.radius, 3);
                 String units = " m";
                 return label + value + units;
             }
@@ -406,9 +393,8 @@ public interface ParticularSections {
 
             @Override
             public final String getText() {
-                // TODO: finish this
                 String label = "Angular velocity: ";
-                int value = 0; //roundNumber(omega, 3)
+                String value = roundNumber(Data.results.actualParameterResults.angularVelocity, 3);
                 String units = " rad/s";
                 return label + value + units;
             }
@@ -421,9 +407,8 @@ public interface ParticularSections {
 
             @Override
             public final String getText() {
-                // TODO: finish this
                 String label = "RPM: ";
-                int value = 0; //roundNumber(Rotor.getRPMFromPeriod(period), 2)
+                String value = roundNumber(Data.results.actualParameterResults.rpm, 2);
                 String units = "";
                 return label + value + units;
             }
@@ -436,9 +421,8 @@ public interface ParticularSections {
 
             @Override
             public final String getText() {
-                // TODO: finish this
                 String label = "Rotational period: ";
-                int value = 0; //roundNumber(period, 2)
+                String value = roundNumber(Data.results.actualParameterResults.rotationalPeriod, 2);
                 String units = " s";
                 return label + value + units;
             }
@@ -451,9 +435,9 @@ public interface ParticularSections {
 
             @Override
             public final String getText() {
-                // TODO: finish this
                 String label = "Tangential velocity: ";
-                int value = 0; //roundNumber(Rotor.getTangentialVelocity(radius, omega), 1)
+                String value = roundNumber(Data.results.actualParameterResults.tangentialVelocity, 1);
+                //Rotor.getTangentialVelocity(radius, omega)
                 String units = " m/s";
                 return label + value + units;
             }

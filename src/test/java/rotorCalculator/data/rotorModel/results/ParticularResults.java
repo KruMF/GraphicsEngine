@@ -9,7 +9,7 @@ public interface ParticularResults {
         //
 
         //
-        AbstractResults() {
+        protected AbstractResults() {
             //
         }
 
@@ -19,7 +19,7 @@ public interface ParticularResults {
     //
     class JointLimitResults extends AbstractResults {
         public double
-                maxTangentialSpeed,
+                maxTangentialSpeed = 5.5678d,
                 referenceRadius,
                 rotationalPeriod,
                 rpm,
@@ -30,22 +30,26 @@ public interface ParticularResults {
             //
         }
 
-        //
+        public void setResults() {
+            //TODO: get actual results here
+        }
     }
 
     //
     class CoriolisLimitResults extends AbstractResults {
         public double
-                MaxCoriolisEffect,
-                ReferenceRunningSpeed,
-                MaxAngularVelocity;
+                maxCoriolisEffect,
+                referenceRunningSpeed,
+                maxAngularVelocity;
 
         //
         CoriolisLimitResults() {
             //
         }
 
-        //
+        public void setResults() {
+            //TODO: get actual results here
+        }
     }
 
     //
@@ -57,7 +61,9 @@ public interface ParticularResults {
             //
         }
 
-        //
+        public void setResults() {
+            //TODO: get actual results here
+        }
     }
 
     //
@@ -72,7 +78,9 @@ public interface ParticularResults {
             //
         }
 
-        //
+        public void setResults() {
+            //TODO: get actual results here
+        }
     }
 
     //
@@ -87,7 +95,9 @@ public interface ParticularResults {
             //
         }
 
-        //
+        public void setResults() {
+            //TODO: get actual results here
+        }
     }
 
     //
@@ -99,7 +109,9 @@ public interface ParticularResults {
             //
         }
 
-        //
+        public void setResults() {
+            //TODO: get actual results here
+        }
     }
 
     //
@@ -116,6 +128,8 @@ public interface ParticularResults {
             //
         }
 
-        //
+        public void setResults() {
+            //TODO: get actual results here
+        }
     }
 }

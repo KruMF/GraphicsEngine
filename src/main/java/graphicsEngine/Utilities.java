@@ -24,6 +24,13 @@ public class Utilities {
         System.out.println(message);
     }
 
+    //rounds a number to a specified number of decimal places
+    // TODO: add javadoc
+    public static String roundNumber(double value, int decimalPlaces) {
+        double conversionCoefficient = Math.pow(10, decimalPlaces);
+        return String.valueOf(((int) (value * conversionCoefficient))/conversionCoefficient);
+    }
+
     // TODO: add javadoc
     public interface BorderInterface {
         static void setBorderState(@NotNull JComponent component, boolean state, @Nullable Color color) {
