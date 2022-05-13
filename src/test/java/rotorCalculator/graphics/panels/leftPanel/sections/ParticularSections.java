@@ -12,7 +12,7 @@ public interface ParticularSections {
 
     // TODO: finish this and add javadoc
     class JointLimitSection extends AbstractSection {
-        public static final int HEIGHT = 150;
+        public static final int HEIGHT = 120;
 
         // TODO: add title: "Inner joint limits"
 
@@ -22,17 +22,17 @@ public interface ParticularSections {
 
         @Override
         public void addParts(JPanel p) {
-            PanelColors colors = getPanelColors();
-            p.add(new MaxTangentialSpeedLabel(colors.text, colors.border));
-            p.add(new ReferenceRadiusLabel(colors.text, colors.border));
-            p.add(new RotationalPeriodLabel(colors.text, colors.border));
-            p.add(new RPMLabel(colors.text, colors.border));
-            p.add(new AngularVelocityLabel(colors.text, colors.border));
+            Color color = getPanelColors().text;
+            p.add(new MaxTangentialSpeedLabel(color));
+            p.add(new ReferenceRadiusLabel(color));
+            p.add(new RotationalPeriodLabel(color));
+            p.add(new RPMLabel(color));
+            p.add(new AngularVelocityLabel(color));
         }
 
         private static class MaxTangentialSpeedLabel extends SectionLabel {
-            protected MaxTangentialSpeedLabel(Color textColor, Color borderColor) {
-                super(textColor, true, borderColor);
+            protected MaxTangentialSpeedLabel(Color textColor) {
+                super(textColor);
             }
 
             @Override
@@ -46,8 +46,8 @@ public interface ParticularSections {
         }
 
         private static class ReferenceRadiusLabel extends SectionLabel {
-            protected ReferenceRadiusLabel(Color textColor, Color borderColor) {
-                super(textColor, true, borderColor);
+            protected ReferenceRadiusLabel(Color textColor) {
+                super(textColor);
             }
 
             @Override
@@ -61,8 +61,8 @@ public interface ParticularSections {
         }
 
         private static class RotationalPeriodLabel extends SectionLabel {
-            protected RotationalPeriodLabel(Color textColor, Color borderColor) {
-                super(textColor, true, borderColor);
+            protected RotationalPeriodLabel(Color textColor) {
+                super(textColor);
             }
 
             @Override
@@ -76,8 +76,8 @@ public interface ParticularSections {
         }
 
         private static class RPMLabel extends SectionLabel {
-            protected RPMLabel(Color textColor, Color borderColor) {
-                super(textColor, true, borderColor);
+            protected RPMLabel(Color textColor) {
+                super(textColor);
             }
 
             @Override
@@ -91,8 +91,8 @@ public interface ParticularSections {
         }
 
         private static class AngularVelocityLabel extends SectionLabel {
-            protected AngularVelocityLabel(Color textColor, Color borderColor) {
-                super(textColor, true, borderColor);
+            protected AngularVelocityLabel(Color textColor) {
+                super(textColor);
             }
 
             @Override
@@ -108,7 +108,7 @@ public interface ParticularSections {
 
     // TODO: finish this and add javadoc
     class CoriolisLimitSection extends AbstractSection {
-        public static final int HEIGHT = 150;
+        public static final int HEIGHT = 80;
 
         // TODO: add title: "Coriolis effect limits"
 
@@ -118,15 +118,15 @@ public interface ParticularSections {
 
         @Override
         public void addParts(JPanel p) {
-            PanelColors colors = getPanelColors();
-            p.add(new MaxCoriolisEffectLabel(colors.text, colors.border));
-            p.add(new ReferenceRunningSpeedLabel(colors.text, colors.border));
-            p.add(new MaxAngularVelocityLabel(colors.text, colors.border));
+            Color color = getPanelColors().text;
+            p.add(new MaxCoriolisEffectLabel(color));
+            p.add(new ReferenceRunningSpeedLabel(color));
+            p.add(new MaxAngularVelocityLabel(color));
         }
 
         private static class MaxCoriolisEffectLabel extends SectionLabel {
-            protected MaxCoriolisEffectLabel(Color textColor, Color borderColor) {
-                super(textColor, true, borderColor);
+            protected MaxCoriolisEffectLabel(Color textColor) {
+                super(textColor);
             }
 
             @Override
@@ -143,8 +143,8 @@ public interface ParticularSections {
         }
 
         private static class ReferenceRunningSpeedLabel extends SectionLabel {
-            protected ReferenceRunningSpeedLabel(Color textColor, Color borderColor) {
-                super(textColor, true, borderColor);
+            protected ReferenceRunningSpeedLabel(Color textColor) {
+                super(textColor);
             }
 
             @Override
@@ -158,8 +158,8 @@ public interface ParticularSections {
         }
 
         private static class MaxAngularVelocityLabel extends SectionLabel {
-            protected MaxAngularVelocityLabel(Color textColor, Color borderColor) {
-                super(textColor, true, borderColor);
+            protected MaxAngularVelocityLabel(Color textColor) {
+                super(textColor);
             }
 
             @Override
@@ -175,7 +175,7 @@ public interface ParticularSections {
 
     // TODO: finish this and add javadoc
     class TotalOmegaLimitSection extends AbstractSection {
-        public static final int HEIGHT = 150;
+        public static final int HEIGHT = 40;
 
         //TODO: set no title
 
@@ -185,13 +185,13 @@ public interface ParticularSections {
 
         @Override
         public void addParts(JPanel p) {
-            PanelColors colors = getPanelColors();
-            p.add(new FinalMaxAngularVelocityLabel(colors.text, colors.border));
+            Color color = getPanelColors().text;
+            p.add(new FinalMaxAngularVelocityLabel(color));
         }
 
         private static class FinalMaxAngularVelocityLabel extends SectionLabel {
-            protected FinalMaxAngularVelocityLabel(Color textColor, Color borderColor) {
-                super(textColor, true, borderColor);
+            protected FinalMaxAngularVelocityLabel(Color textColor) {
+                super(textColor);
             }
 
             @Override
@@ -207,7 +207,7 @@ public interface ParticularSections {
 
     // TODO: finish this and add javadoc
     class GravityRequirementSection extends AbstractSection {
-        public static final int HEIGHT = 150;
+        public static final int HEIGHT = 80;
 
         // TODO: add title: "Standard gravity requirements"
 
@@ -217,15 +217,15 @@ public interface ParticularSections {
 
         @Override
         public void addParts(JPanel p) {
-            PanelColors colors = getPanelColors();
-            p.add(new GForceLabel(colors.text, colors.border));
-            p.add(new AccelerationLabel(colors.text, colors.border));
-            p.add(new MinimumRadiusLabel(colors.text, colors.border));
+            Color color = getPanelColors().text;
+            p.add(new GForceLabel(color));
+            p.add(new AccelerationLabel(color));
+            p.add(new MinimumRadiusLabel(color));
         }
 
         private static class GForceLabel extends SectionLabel {
-            protected GForceLabel(Color textColor, Color borderColor) {
-                super(textColor, true, borderColor);
+            protected GForceLabel(Color textColor) {
+                super(textColor);
             }
 
             @Override
@@ -239,8 +239,8 @@ public interface ParticularSections {
         }
 
         private static class AccelerationLabel extends SectionLabel {
-            protected AccelerationLabel(Color textColor, Color borderColor) {
-                super(textColor, true, borderColor);
+            protected AccelerationLabel(Color textColor) {
+                super(textColor);
             }
 
             @Override
@@ -254,8 +254,8 @@ public interface ParticularSections {
         }
 
         private static class MinimumRadiusLabel extends SectionLabel {
-            protected MinimumRadiusLabel(Color textColor, Color borderColor) {
-                super(textColor, true, borderColor);
+            protected MinimumRadiusLabel(Color textColor) {
+                super(textColor);
             }
 
             @Override
@@ -271,7 +271,7 @@ public interface ParticularSections {
 
     // TODO: finish this and add javadoc
     class GradientLimitSection extends AbstractSection {
-        public static final int HEIGHT = 150;
+        public static final int HEIGHT = 80;
 
         // TODO: add title: "Force gradient limits"
 
@@ -281,15 +281,15 @@ public interface ParticularSections {
 
         @Override
         public void addParts(JPanel p) {
-            PanelColors colors = getPanelColors();
-            p.add(new GradientLabel(colors.text, colors.border));
-            p.add(new ReferenceHeightLabel(colors.text, colors.border));
-            p.add(new MinimumRadiusLabel(colors.text, colors.border));
+            Color color = getPanelColors().text;
+            p.add(new GradientLabel(color));
+            p.add(new ReferenceHeightLabel(color));
+            p.add(new MinimumRadiusLabel(color));
         }
 
         private static class GradientLabel extends SectionLabel {
-            protected GradientLabel(Color textColor, Color borderColor) {
-                super(textColor, true, borderColor);
+            protected GradientLabel(Color textColor) {
+                super(textColor);
             }
 
             @Override
@@ -303,8 +303,8 @@ public interface ParticularSections {
         }
 
         private static class ReferenceHeightLabel extends SectionLabel {
-            protected ReferenceHeightLabel(Color textColor, Color borderColor) {
-                super(textColor, true, borderColor);
+            protected ReferenceHeightLabel(Color textColor) {
+                super(textColor);
             }
 
             @Override
@@ -318,8 +318,8 @@ public interface ParticularSections {
         }
 
         private static class MinimumRadiusLabel extends SectionLabel {
-            protected MinimumRadiusLabel(Color textColor, Color borderColor) {
-                super(textColor, true, borderColor);
+            protected MinimumRadiusLabel(Color textColor) {
+                super(textColor);
             }
 
             @Override
@@ -335,7 +335,7 @@ public interface ParticularSections {
 
     // TODO: finish this and add javadoc
     class TotalRadiusLimitSection extends AbstractSection {
-        public static final int HEIGHT = 150;
+        public static final int HEIGHT = 40;
 
         // TODO: set no title
 
@@ -345,13 +345,13 @@ public interface ParticularSections {
 
         @Override
         public void addParts(JPanel p) {
-            PanelColors colors = getPanelColors();
-            p.add(new FinalMinimumRadiusLabel(colors.text, colors.border));
+            Color color = getPanelColors().text;
+            p.add(new FinalMinimumRadiusLabel(color));
         }
 
         private static class FinalMinimumRadiusLabel extends SectionLabel {
-            protected FinalMinimumRadiusLabel(Color textColor, Color borderColor) {
-                super(textColor, true, borderColor);
+            protected FinalMinimumRadiusLabel(Color textColor) {
+                super(textColor);
             }
 
             @Override
@@ -367,7 +367,7 @@ public interface ParticularSections {
 
     // TODO: finish this and add javadoc
     class ActualParameterSection extends AbstractSection {
-        public static final int HEIGHT = 150;
+        public static final int HEIGHT = 120;
 
         // TODO: add title: "Actual values for selected rotor"
 
@@ -377,17 +377,17 @@ public interface ParticularSections {
 
         @Override
         public void addParts(JPanel p) {
-            PanelColors colors = getPanelColors();
-            p.add(new RadiusLabel(colors.text, colors.border));
-            p.add(new AngularVelocityLabel(colors.text, colors.border));
-            p.add(new RPMLabel(colors.text, colors.border));
-            p.add(new RotationalPeriodLabel(colors.text, colors.border));
-            p.add(new TangentialVelocityLabel(colors.text, colors.border));
+            Color color = getPanelColors().text;
+            p.add(new RadiusLabel(color));
+            p.add(new AngularVelocityLabel(color));
+            p.add(new RPMLabel(color));
+            p.add(new RotationalPeriodLabel(color));
+            p.add(new TangentialVelocityLabel(color));
         }
 
         private static class RadiusLabel extends SectionLabel {
-            protected RadiusLabel(Color textColor, Color borderColor) {
-                super(textColor, true, borderColor);
+            protected RadiusLabel(Color textColor) {
+                super(textColor);
             }
 
             @Override
@@ -401,8 +401,8 @@ public interface ParticularSections {
         }
 
         private static class AngularVelocityLabel extends SectionLabel {
-            protected AngularVelocityLabel(Color textColor, Color borderColor) {
-                super(textColor, true, borderColor);
+            protected AngularVelocityLabel(Color textColor) {
+                super(textColor);
             }
 
             @Override
@@ -416,8 +416,8 @@ public interface ParticularSections {
         }
 
         private static class RPMLabel extends SectionLabel {
-            protected RPMLabel(Color textColor, Color borderColor) {
-                super(textColor, true, borderColor);
+            protected RPMLabel(Color textColor) {
+                super(textColor);
             }
 
             @Override
@@ -431,8 +431,8 @@ public interface ParticularSections {
         }
 
         private static class RotationalPeriodLabel extends SectionLabel {
-            protected RotationalPeriodLabel(Color textColor, Color borderColor) {
-                super(textColor, true, borderColor);
+            protected RotationalPeriodLabel(Color textColor) {
+                super(textColor);
             }
 
             @Override
@@ -446,8 +446,8 @@ public interface ParticularSections {
         }
 
         private static class TangentialVelocityLabel extends SectionLabel {
-            protected TangentialVelocityLabel(Color textColor, Color borderColor) {
-                super(textColor, true, borderColor);
+            protected TangentialVelocityLabel(Color textColor) {
+                super(textColor);
             }
 
             @Override

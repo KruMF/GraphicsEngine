@@ -20,7 +20,7 @@ public class Window extends AbstractWindow {
     private static WindowConfig config() {
         String title = "Rotor calculator";
         int[]
-                size = new int[] {800, 400},
+                size = new int[] {1000, 500},
                 location = new int[] {50, 50};
         WindowConfig config = new WindowConfig(title, size, location);
         config.closeOperation = EXIT_ON_CLOSE;

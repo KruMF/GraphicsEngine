@@ -9,7 +9,7 @@ import javax.swing.*;
 import com.google.inject.internal.Nullable;
 
 public class Column2 extends AbstractColumn {
-    public static final int WIDTH = 200;
+    public static final int WIDTH = 250;
 
     protected Column2(@Nullable PanelColors panelColors) {
         super(WIDTH, panelColors, true);

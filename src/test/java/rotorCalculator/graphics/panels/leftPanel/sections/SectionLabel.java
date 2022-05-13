@@ -6,7 +6,7 @@ import graphicsEngine.parts.SimpleLabel;
 import java.awt.*;
 
 public class SectionLabel extends SimpleLabel {
-    protected static final int HEIGHT = 30;
+    protected static final int HEIGHT = 20;
     private static final int WIDTH = Integer.MAX_VALUE;
 
     public SectionLabel(Color textColor) {
