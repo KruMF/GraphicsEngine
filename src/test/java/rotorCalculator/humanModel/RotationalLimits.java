@@ -4,52 +4,83 @@ import rotorCalculator.data.Data;
 
 // TODO: add javadoc
 public class RotationalLimits {
+    public GradientLimits gradientLimits;
+    public CoriolisLimits coriolisLimits;
+
+    protected RotationalLimits(double maxForceGradient, double maxCoriolisEffect) {
+        gradientLimits = new GradientLimits(maxForceGradient);
+        coriolisLimits = new CoriolisLimits(maxCoriolisEffect);
+    }
+
     // TODO: add javadoc
     public static class GradientLimits {
         // difference of force between top and bottom as a fraction
-        // arbitrary number, corresponding to 5%
-        public static final double MAX_FORCE_GRADIENT = 0.05;
+        private double maxGradient;
 
-        // average human height [m]
-        public static final double HEIGHT = 1.80;
+        protected GradientLimits(double gradient) {
+            setMaxGradient(gradient);
+        }
+
+        protected void setMaxGradient(double gradient) {
+            maxGradient = gradient;
+        }
+
+        //usable for output
+        public double getMaxGradient() {
+            return maxGradient;
+        }
 
         /**
-         * Gets minimum radius for reference force gradient and average height.
+         * Gets minimum radius for max force gradient and given height.
+         *
+         * @param height Reference height in [m].
          *
          * @return Minimum radius in [m].
          */
-        public static double getRadius() {
-            return HEIGHT / MAX_FORCE_GRADIENT;
+        public double getRadius(double height) {
+            return height / maxGradient;
         }
     }
 
     // TODO: add javadoc
     public static class CoriolisLimits {
-        // maximum running speed for coriolis calculation [m/s]
-        // somewhat arbitrary number
-        public static final double REFERENCE_RUNNING_SPEED = 10;
-
         // maximum permissible sideways acceleration due to Coriolis effect [number of g's]
-        // arbitrary number, corresponding to 20%
-        public static final double MAX_CORIOLIS = 0.2;
+        private double maxCoriolis;
 
-        /**
-         * Gets maximum coriolis effect for reference running speed and provided angular velocity.
-         *
-         * @param omega Angular velocity in [rad / s]
-         * @return Coriolis effect (acceleration in [m / s^2]).
-         */
-        public static double getCoriolis(double omega) {
-            return 2 * REFERENCE_RUNNING_SPEED * omega;
+        protected CoriolisLimits(double maxCoriolis) {
+            setMaxCoriolis(maxCoriolis);
+        }
+
+        protected void setMaxCoriolis(double maxCoriolis) {
+            this.maxCoriolis = maxCoriolis;
+        }
+
+        public double getMaxCoriolis() {
+            return maxCoriolis;
         }
 
         /**
-         * Gets maximum angular velocity (omega) for defined conditions.
+         * Gets maximum coriolis effect for given angular velocity and running speed.
          *
-         * @return Angular velocity in [rad / s].
+         * @param omega Angular velocity in [rad / s].
+         * @param velocity Velocity in [m / s].
+         *
+         * @return Coriolis effect (acceleration in [m / s^2]).
          */
-        public static double getMaxOmega() {
-            return (MAX_CORIOLIS * Data.generalConstants.standardGravity) / (2 * REFERENCE_RUNNING_SPEED);
+        public double getCoriolis(double omega, double velocity) {
+            return 2 * velocity * omega;
+        }
+
+        /**
+         * Gets maximum angular velocity (omega) for maximum coriolis effect at given running speed.
+         *
+         * @param velocity Running speed in [m / s].
+         *
+         * @return Maximum angular velocity in [rad / s].
+         */
+        public double getMaxOmega(double velocity) {
+            double g = Data.generalConstants.standardGravity;
+            return (maxCoriolis * g) / (2 * velocity);
         }
     }
 }

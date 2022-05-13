@@ -2,6 +2,8 @@ package rotorCalculator.data.rotorModel.results;
 
 import rotorCalculator.data.Data;
 import rotorCalculator.data.innerJointModel.InnerJoint;
+import rotorCalculator.humanModel.HumanModel;
+import rotorCalculator.humanModel.RotationalLimits;
 
 //TODO: finish this
 public interface ParticularResults {
@@ -63,10 +65,12 @@ public interface ParticularResults {
         }
 
         public void setResults() {
-            //TODO: get actual results here
-            maxCoriolisEffect = DEFAULT_DOUBLE;
-            referenceRunningSpeed = DEFAULT_DOUBLE;
-            maxAngularVelocity = DEFAULT_DOUBLE;
+            HumanModel human = Data.rotor.referenceHuman;
+            RotationalLimits.CoriolisLimits coriolisLimits = human.rotationalLimits.coriolisLimits;
+            double runningSpeed = human.maxRunningSpeed;
+            maxCoriolisEffect = coriolisLimits.getMaxCoriolis();
+            referenceRunningSpeed = runningSpeed;
+            maxAngularVelocity = coriolisLimits.getMaxOmega(runningSpeed);
         }
     }
 
@@ -80,8 +84,7 @@ public interface ParticularResults {
         }
 
         public void setResults() {
-            //TODO: get actual results here
-            finalMaxAngularVelocity = DEFAULT_DOUBLE;
+            finalMaxAngularVelocity = Data.rotor.getAngularVelocityLimit();
         }
     }
 

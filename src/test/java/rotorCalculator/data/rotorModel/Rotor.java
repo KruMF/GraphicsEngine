@@ -3,7 +3,7 @@ package rotorCalculator.data.rotorModel;
 import rotorCalculator.data.Data;
 import rotorCalculator.data.RotationUtilities;
 import rotorCalculator.data.innerJointModel.InnerJoint;
-import rotorCalculator.humanModel.RotationalLimits;
+import rotorCalculator.humanModel.HumanModel;
 
 /**
  * Calculates the size of a rotating living habitat for living in a weightless environment.
@@ -12,15 +12,20 @@ import rotorCalculator.humanModel.RotationalLimits;
  */
 public class Rotor {
     public InnerJoint innerJoint;
+    public HumanModel referenceHuman;
 
     public Rotor() {
         innerJoint = new InnerJoint();
+        referenceHuman = new HumanModel();
     }
 
     // gets maximum angular velocity (omega) from inner joint limits and maximum coriolis effect
     public double getAngularVelocityLimit() {
-        double maxOmega_fromInnerJoint = innerJoint.getAngularVelocity();
-        double maxOmega_fromCoriolis = RotationalLimits.CoriolisLimits.getMaxOmega();
+        double maxOmega_fromInnerJoint =
+                innerJoint.getAngularVelocity();
+        double maxOmega_fromCoriolis =
+                referenceHuman.rotationalLimits.coriolisLimits.getMaxOmega(
+                        referenceHuman.maxRunningSpeed);
 
         return Math.min(
                 maxOmega_fromInnerJoint,
@@ -34,7 +39,9 @@ public class Rotor {
 
     // gets minimum radius for maximum gradient and maximum angular velocity (omega) at reference gravity
     public double getRadiusLimit() {
-        double minRadius_fromGradient = RotationalLimits.GradientLimits.getRadius();
+        double minRadius_fromGradient =
+                referenceHuman.rotationalLimits.gradientLimits.getRadius(
+                        referenceHuman.height);
         double minRadius_fromStandardGravity = getRadiusFromGravity();
 
         return Math.max(
