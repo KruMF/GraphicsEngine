@@ -1,5 +1,6 @@
 package rotorCalculator.main;
 
+import rotorCalculator.data.Data;
 import rotorCalculator.graphics.GraphicsAdapter;
 
 import static graphicsEngine.Utilities.printLine;
@@ -25,5 +26,6 @@ public class Main {
 
     private static void prepareResults() {
         //TODO: calculate results beforehand
+        Data.setResultContainer();
     }
 }
