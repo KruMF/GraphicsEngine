@@ -1,6 +1,5 @@
 package rotorCalculator.graphics.panels.leftPanel.sections;
 
-import graphicsEngine.Utilities;
 import graphicsEngine.panels.PanelColors;
 
 import javax.swing.*;

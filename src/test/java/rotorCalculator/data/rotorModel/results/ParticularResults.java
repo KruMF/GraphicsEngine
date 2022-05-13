@@ -18,7 +18,12 @@ public interface ParticularResults {
 
     //
     class JointLimitResults extends AbstractResults {
-        //
+        public double
+                maxTangentialSpeed,
+                referenceRadius,
+                rotationalPeriod,
+                rpm,
+                angularVelocity;
 
         //
         JointLimitResults() {
@@ -30,7 +35,10 @@ public interface ParticularResults {
 
     //
     class CoriolisLimitResults extends AbstractResults {
-        //
+        public double
+                MaxCoriolisEffect,
+                ReferenceRunningSpeed,
+                MaxAngularVelocity;
 
         //
         CoriolisLimitResults() {
@@ -42,7 +50,7 @@ public interface ParticularResults {
 
     //
     class TotalOmegaLimitResults extends AbstractResults {
-        //
+        public double finalMaxAngularVelocity;
 
         //
         TotalOmegaLimitResults() {
@@ -54,7 +62,10 @@ public interface ParticularResults {
 
     //
     class GravityRequirementResults extends AbstractResults {
-        //
+        public double
+                gForce,
+                acceleration,
+                minimumRadius;
 
         //
         GravityRequirementResults() {
@@ -66,7 +77,10 @@ public interface ParticularResults {
 
     //
     class GradientLimitResults extends AbstractResults {
-        //
+        public double
+                gradient,
+                referenceHeight,
+                minimumRadius;
 
         //
         GradientLimitResults() {
@@ -78,7 +92,7 @@ public interface ParticularResults {
 
     //
     class TotalRadiusLimitResults extends AbstractResults {
-        //
+        public double finalMinimumRadius;
 
         //
         TotalRadiusLimitResults() {
@@ -90,7 +104,12 @@ public interface ParticularResults {
 
     //
     class ActualParameterResults extends AbstractResults {
-        //
+        public double
+                radius,
+                angularVelocity,
+                rpm,
+                rotationalPeriod,
+                tangentialVelocity;
 
         //
         ActualParameterResults() {
