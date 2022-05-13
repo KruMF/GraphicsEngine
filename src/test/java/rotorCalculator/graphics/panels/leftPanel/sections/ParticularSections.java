@@ -13,7 +13,7 @@ import static graphicsEngine.Utilities.roundNumber;
 
 public interface ParticularSections {
 
-    // TODO: finish this and add javadoc
+    // TODO: add javadoc
     class JointLimitSection extends AbstractSection {
         public static final int HEIGHT = 120;
 
@@ -26,25 +26,11 @@ public interface ParticularSections {
         @Override
         public void addParts(JPanel p) {
             Color color = getPanelColors().text;
-            p.add(new MaxTangentialSpeedLabel(color));
             p.add(new ReferenceRadiusLabel(color));
-            p.add(new RotationalPeriodLabel(color));
             p.add(new RPMLabel(color));
+            p.add(new RotationalPeriodLabel(color));
+            p.add(new MaxTangentialSpeedLabel(color));
             p.add(new AngularVelocityLabel(color));
-        }
-
-        private static class MaxTangentialSpeedLabel extends SectionLabel {
-            protected MaxTangentialSpeedLabel(Color textColor) {
-                super(textColor);
-            }
-
-            @Override
-            public final String getText() {
-                String label = "Max tangential speed: ";
-                String value = roundNumber(Data.results.jointLimitResults.maxTangentialSpeed, 2);
-                String units = " m/s";
-                return label + value + units;
-            }
         }
 
         private static class ReferenceRadiusLabel extends SectionLabel {
@@ -57,6 +43,20 @@ public interface ParticularSections {
                 String label = "Reference radius: ";
                 String value = roundNumber(Data.results.jointLimitResults.referenceRadius, 3);
                 String units = " m";
+                return label + value + units;
+            }
+        }
+
+        private static class RPMLabel extends SectionLabel {
+            protected RPMLabel(Color textColor) {
+                super(textColor);
+            }
+
+            @Override
+            public final String getText() {
+                String label = "RPM: ";
+                String value = roundNumber(Data.results.jointLimitResults.rpm, 2);
+                String units = "";
                 return label + value + units;
             }
         }
@@ -75,16 +75,16 @@ public interface ParticularSections {
             }
         }
 
-        private static class RPMLabel extends SectionLabel {
-            protected RPMLabel(Color textColor) {
+        private static class MaxTangentialSpeedLabel extends SectionLabel {
+            protected MaxTangentialSpeedLabel(Color textColor) {
                 super(textColor);
             }
 
             @Override
             public final String getText() {
-                String label = "RPM: ";
-                String value = roundNumber(Data.results.jointLimitResults.rpm, 2);
-                String units = "";
+                String label = "Max tangential speed: ";
+                String value = roundNumber(Data.results.jointLimitResults.maxTangentialSpeed, 2);
+                String units = " m/s";
                 return label + value + units;
             }
         }
@@ -104,7 +104,7 @@ public interface ParticularSections {
         }
     }
 
-    // TODO: finish this and add javadoc
+    // TODO: add javadoc
     class CoriolisLimitSection extends AbstractSection {
         public static final int HEIGHT = 80;
 
@@ -168,7 +168,7 @@ public interface ParticularSections {
         }
     }
 
-    // TODO: finish this and add javadoc
+    // TODO: add javadoc
     class TotalOmegaLimitSection extends AbstractSection {
         public static final int HEIGHT = 40;
 
@@ -199,7 +199,7 @@ public interface ParticularSections {
         }
     }
 
-    // TODO: finish this and add javadoc
+    // TODO: add javadoc
     class GravityRequirementSection extends AbstractSection {
         public static final int HEIGHT = 80;
 
@@ -260,7 +260,7 @@ public interface ParticularSections {
         }
     }
 
-    // TODO: finish this and add javadoc
+    // TODO: add javadoc
     class GradientLimitSection extends AbstractSection {
         public static final int HEIGHT = 80;
 
@@ -321,7 +321,7 @@ public interface ParticularSections {
         }
     }
 
-    // TODO: finish this and add javadoc
+    // TODO: add javadoc
     class TotalRadiusLimitSection extends AbstractSection {
         public static final int HEIGHT = 40;
 
@@ -352,7 +352,7 @@ public interface ParticularSections {
         }
     }
 
-    // TODO: finish this and add javadoc
+    // TODO: add javadoc
     class ActualParameterSection extends AbstractSection {
         public static final int HEIGHT = 120;
 
@@ -367,8 +367,8 @@ public interface ParticularSections {
             Color color = getPanelColors().text;
             p.add(new RadiusLabel(color));
             p.add(new AngularVelocityLabel(color));
-            p.add(new RPMLabel(color));
             p.add(new RotationalPeriodLabel(color));
+            p.add(new RPMLabel(color));
             p.add(new TangentialVelocityLabel(color));
         }
 
@@ -400,20 +400,6 @@ public interface ParticularSections {
             }
         }
 
-        private static class RPMLabel extends SectionLabel {
-            protected RPMLabel(Color textColor) {
-                super(textColor);
-            }
-
-            @Override
-            public final String getText() {
-                String label = "RPM: ";
-                String value = roundNumber(Data.results.actualParameterResults.rpm, 2);
-                String units = "";
-                return label + value + units;
-            }
-        }
-
         private static class RotationalPeriodLabel extends SectionLabel {
             protected RotationalPeriodLabel(Color textColor) {
                 super(textColor);
@@ -424,6 +410,20 @@ public interface ParticularSections {
                 String label = "Rotational period: ";
                 String value = roundNumber(Data.results.actualParameterResults.rotationalPeriod, 2);
                 String units = " s";
+                return label + value + units;
+            }
+        }
+
+        private static class RPMLabel extends SectionLabel {
+            protected RPMLabel(Color textColor) {
+                super(textColor);
+            }
+
+            @Override
+            public final String getText() {
+                String label = "RPM: ";
+                String value = roundNumber(Data.results.actualParameterResults.rpm, 2);
+                String units = "";
                 return label + value + units;
             }
         }

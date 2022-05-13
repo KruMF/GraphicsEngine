@@ -1,6 +1,7 @@
 package rotorCalculator.data.rotorModel.results;
 
 import rotorCalculator.data.Data;
+import rotorCalculator.data.RotationUtilities;
 import rotorCalculator.data.innerJointModel.InnerJoint;
 import rotorCalculator.humanModel.HumanModel;
 import rotorCalculator.humanModel.RotationalLimits;
@@ -103,10 +104,9 @@ public interface ParticularResults {
         }
 
         public void setResults() {
-            //TODO: get actual results here
-            gForce = DEFAULT_DOUBLE;
-            acceleration = DEFAULT_DOUBLE;
-            minimumRadius = DEFAULT_DOUBLE;
+            gForce = Data.preferences.gForce;
+            acceleration = Data.generalConstants.standardGravity;
+            minimumRadius = Data.rotor.getRadiusFromGravity();
         }
     }
 
@@ -125,10 +125,10 @@ public interface ParticularResults {
         }
 
         public void setResults() {
-            //TODO: get actual results here
-            gradient = DEFAULT_DOUBLE;
-            referenceHeight = DEFAULT_DOUBLE;
-            minimumRadius = DEFAULT_DOUBLE;
+            HumanModel human = Data.rotor.referenceHuman;
+            gradient = human.rotationalLimits.gradientLimits.getMaxGradient();
+            referenceHeight = human.height;
+            minimumRadius = human.rotationalLimits.gradientLimits.getRadius(human.height);
         }
     }
 
@@ -142,8 +142,7 @@ public interface ParticularResults {
         }
 
         public void setResults() {
-            //TODO: get actual results here
-            finalMinimumRadius = DEFAULT_DOUBLE;
+            finalMinimumRadius = Data.rotor.getRadiusLimit();
         }
     }
 
@@ -166,12 +165,11 @@ public interface ParticularResults {
         }
 
         public void setResults() {
-            //TODO: get actual results here
-            radius = DEFAULT_DOUBLE;
-            angularVelocity = DEFAULT_DOUBLE;
-            rpm = DEFAULT_DOUBLE;
-            rotationalPeriod = DEFAULT_DOUBLE;
-            tangentialVelocity = DEFAULT_DOUBLE;
+            radius = Data.rotor.getRadiusLimit();
+            angularVelocity = RotationUtilities.getAngularVelocity(radius, Data.getGravity());
+            rotationalPeriod = RotationUtilities.getPeriodFromAngularVelocity(angularVelocity);
+            rpm = RotationUtilities.getRPMFromPeriod(rotationalPeriod);
+            tangentialVelocity = RotationUtilities.getTangentialVelocity(radius, angularVelocity);
         }
     }
 }
