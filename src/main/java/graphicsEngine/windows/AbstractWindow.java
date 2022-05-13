@@ -22,7 +22,7 @@ public abstract class AbstractWindow extends JFrame {
         int[] location = config.getLocation();
         setLocation(location[0], location[1]);
 
-        setActivePage(null);
+        setActivePage(EMPTY_KEY);
         addParts();
         setVisible(true);
     }

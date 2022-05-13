@@ -12,7 +12,7 @@ import org.jetbrains.annotations.NotNull;
 
 // TODO: finish this and add javadoc
 public abstract class MultiPageWindow extends AbstractWindow {
-    private Map<String, AbstractPage> pages;
+    private Map<String, AbstractPage> pages;// = new HashMap<>();
 
     @SuppressWarnings("unused")
     public MultiPageWindow(
@@ -59,6 +59,8 @@ public abstract class MultiPageWindow extends AbstractWindow {
 
     @Override
     public final void addParts() {
-        add(pages.get(activePage));
+        if (pages != null && pages.size() > 0) {
+            add(pages.get(activePage));
+        }
     }
 }
