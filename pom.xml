@@ -6,16 +6,19 @@
 
     <groupId>com.github.Krumuvecis</groupId>
     <artifactId>GraphicsEngine</artifactId>
-    <version>0.7</version>
+    <version>0.8</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
-        <junit.jupiter.version>5.8.2</junit.jupiter.version>
-        <maven.surefire.version>3.0.0-M5</maven.surefire.version>
+        <maven.compiler.source>18</maven.compiler.source>
+        <maven.compiler.target>18</maven.compiler.target>
+        <maven.surefire.version>3.0.0-M7</maven.surefire.version>
 
-        <fileHandler.version>0.2.2</fileHandler.version>
+        <jetbrains.annotations.version>23.0.0</jetbrains.annotations.version>
+        <threadAbstraction.version>0.4.0</threadAbstraction.version>
+        <fileHandler.version>0.2.3</fileHandler.version>
+
+        <junit.jupiter.version>5.9.0-M1</junit.jupiter.version>
     </properties>
 
     <repositories>
@@ -26,6 +29,29 @@
     </repositories>
 
     <dependencies>
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>${maven.surefire.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>${jetbrains.annotations.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.github.Krumuvecis</groupId>
+            <artifactId>ThreadAbstraction</artifactId>
+            <version>${threadAbstraction.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.Krumuvecis</groupId>
+            <artifactId>FileHandler</artifactId>
+            <version>${fileHandler.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
@@ -38,23 +64,6 @@
             <version>${junit.jupiter.version}</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-surefire-plugin</artifactId>
-            <version>${maven.surefire.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.jetbrains</groupId>
-            <artifactId>annotations</artifactId>
-            <version>22.0.0</version>
-            <scope>compile</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>com.github.Krumuvecis</groupId>
-            <artifactId>FileHandler</artifactId>
-            <version>${fileHandler.version}</version>
-        </dependency>
     </dependencies>
 
     <build>
@@ -65,5 +74,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
