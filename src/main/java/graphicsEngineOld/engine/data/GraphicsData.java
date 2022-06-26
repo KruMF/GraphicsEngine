@@ -5,7 +5,7 @@ import graphicsEngineOld.engine.data.windowParameters.WindowParameters;
 
 import java.util.Objects;
 
-import com.google.inject.internal.Nullable;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Class for graphics data.

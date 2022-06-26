@@ -3,9 +3,10 @@ package graphicsEngine.input.listeners;
 import graphicsEngine.input.InputData;
 import graphicsEngineOld.engine.ExitManager;
 import graphicsEngineOld.engine.data.windowParameters.WindowParameters;
-import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
+
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Default window, keyboard and mouse listener adder for input.

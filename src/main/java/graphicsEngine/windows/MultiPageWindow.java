@@ -7,7 +7,7 @@ import java.util.Objects;
 
 import static graphicsEngine.Utilities.printLine;
 
-import com.google.inject.internal.Nullable;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 
 // TODO: finish this and add javadoc

@@ -3,7 +3,7 @@ package graphicsEngineOld.engine.data.colors;
 import java.util.Objects;
 import java.awt.*;
 
-import com.google.inject.internal.Nullable;
+import org.jetbrains.annotations.Nullable;
 
 //TODO: add javadoc
 public class PanelColors {

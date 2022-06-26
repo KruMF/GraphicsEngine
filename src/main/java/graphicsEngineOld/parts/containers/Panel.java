@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 import java.awt.*;
 
-import com.google.inject.internal.Nullable;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A layer container with background and border pre-prepared.

@@ -8,7 +8,7 @@ import graphicsEngineOld.parts.pages.PageManager;
 import java.util.HashMap;
 import java.util.Objects;
 
-import com.google.inject.internal.Nullable;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Graphics manager for managing graphics.

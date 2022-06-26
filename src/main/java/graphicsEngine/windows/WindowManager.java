@@ -3,7 +3,7 @@ package graphicsEngine.windows;
 import DelayCalculator.DelayOptions;
 import ThreadAbstraction.AbstractUpdater;
 
-import com.google.inject.internal.Nullable;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 
 //TODO:add javadocs

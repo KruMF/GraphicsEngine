@@ -3,13 +3,14 @@ package graphicsEngine.input.listeners;
 import graphicsEngine.input.InputData;
 import graphicsEngineOld.engine.ExitManager;
 import graphicsEngineOld.engine.data.windowParameters.WindowParameters;
-import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Window listener adder class.

@@ -1,11 +1,12 @@
 package graphicsEngine.input.listeners;
 
 import graphicsEngine.input.InputData;
-import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Keyboard listener adder class.

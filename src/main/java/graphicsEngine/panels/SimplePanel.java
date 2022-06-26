@@ -5,7 +5,7 @@ import graphicsEngine.Utilities;
 import javax.swing.*;
 import java.util.Objects;
 
-import com.google.inject.internal.Nullable;
+import org.jetbrains.annotations.Nullable;
 
 public abstract class SimplePanel extends JPanel {
     private PanelColors colors;

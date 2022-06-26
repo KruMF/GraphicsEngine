@@ -14,7 +14,7 @@ import graphicsEngineOld.presets.panels.CommonFooter;
 import java.util.ArrayList;
 import java.util.Objects;
 
-import com.google.inject.internal.Nullable;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 
 // TODO: add javadoc

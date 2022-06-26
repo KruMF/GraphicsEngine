@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Objects;
 import java.awt.Graphics;
 
-import com.google.inject.internal.Nullable;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 
 /**

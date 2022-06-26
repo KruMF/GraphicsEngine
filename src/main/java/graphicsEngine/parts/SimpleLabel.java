@@ -5,7 +5,7 @@ import javax.swing.*;
 
 import java.util.Objects;
 
-import com.google.inject.internal.Nullable;
+import org.jetbrains.annotations.Nullable;
 
 //A simple JLabel with most commonly used functions
 // TODO: add javadocs

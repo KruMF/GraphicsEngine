@@ -5,7 +5,7 @@ import javax.swing.*;
 
 import java.util.Objects;
 
-import com.google.inject.internal.Nullable;
+import org.jetbrains.annotations.Nullable;
 
 public abstract class AbstractPage extends JPanel {
     private static final Color DEFAULT_BACKGROUND = Color.black;

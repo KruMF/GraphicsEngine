@@ -4,7 +4,7 @@ import javax.swing.*;
 
 import java.util.Objects;
 
-import com.google.inject.internal.Nullable;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 
 //TODO: add javadocs

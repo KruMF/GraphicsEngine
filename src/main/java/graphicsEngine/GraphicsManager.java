@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 import static graphicsEngine.Utilities.printLine;
 
-import com.google.inject.internal.Nullable;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 
 //a class for containing graphics

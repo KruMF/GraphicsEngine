@@ -2,7 +2,7 @@ package graphicsEngineOld.utilities.input;
 
 import graphicsEngineOld.parts.containers.ButtonContainer;
 
-import com.google.inject.internal.Nullable;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 
 /**

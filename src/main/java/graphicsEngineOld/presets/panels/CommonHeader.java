@@ -7,7 +7,7 @@ import graphicsEngineOld.parts.containers.Panel;
 
 import java.util.ArrayList;
 
-import com.google.inject.internal.Nullable;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 
 // TODO: add javadoc

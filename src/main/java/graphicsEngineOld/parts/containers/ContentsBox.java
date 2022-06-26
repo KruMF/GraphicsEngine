@@ -7,7 +7,7 @@ import graphicsEngineOld.parts.simpleParts.Border;
 import java.awt.*;
 import java.util.ArrayList;
 
-import com.google.inject.internal.Nullable;
+import org.jetbrains.annotations.Nullable;
 
 // Background and border for a container.
 // TODO: finish this and add javadoc

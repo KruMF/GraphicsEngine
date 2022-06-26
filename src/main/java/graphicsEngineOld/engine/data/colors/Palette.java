@@ -3,7 +3,7 @@ package graphicsEngineOld.engine.data.colors;
 import java.util.Objects;
 import java.awt.Color;
 
-import com.google.inject.internal.Nullable;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Color palette class.

@@ -5,7 +5,7 @@ import java.util.Objects;
 import java.awt.*;
 import java.awt.font.TextLayout;
 
-import com.google.inject.internal.Nullable;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 
 /**

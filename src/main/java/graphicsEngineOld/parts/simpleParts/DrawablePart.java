@@ -2,7 +2,7 @@ package graphicsEngineOld.parts.simpleParts;
 
 import java.awt.Graphics;
 
-import com.google.inject.internal.Nullable;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 
 /**

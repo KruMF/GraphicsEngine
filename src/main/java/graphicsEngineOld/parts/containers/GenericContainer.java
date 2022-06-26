@@ -8,7 +8,7 @@ import graphicsEngineOld.parts.interactive.buttons.Button;
 import java.util.ArrayList;
 import java.awt.*;
 
-import com.google.inject.internal.Nullable;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 
 /**
