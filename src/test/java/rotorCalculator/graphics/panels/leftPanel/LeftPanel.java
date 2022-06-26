@@ -6,7 +6,7 @@ import graphicsEngine.panels.SimplePanel;
 import javax.swing.*;
 import java.awt.*;
 
-import com.google.inject.internal.Nullable;
+import org.jetbrains.annotations.Nullable;
 
 public class LeftPanel extends SimplePanel {
     private static final PanelColors SECTION_COLORS;

@@ -6,7 +6,7 @@ import rotorCalculator.graphics.panels.leftPanel.sections.ParticularSections;
 
 import javax.swing.*;
 
-import com.google.inject.internal.Nullable;
+import org.jetbrains.annotations.Nullable;
 
 public class Column2 extends AbstractColumn {
     public static final int WIDTH = 250;

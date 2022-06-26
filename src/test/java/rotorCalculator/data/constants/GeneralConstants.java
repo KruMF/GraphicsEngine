@@ -2,7 +2,7 @@ package rotorCalculator.data.constants;
 
 import java.util.Objects;
 
-import com.google.inject.internal.Nullable;
+import org.jetbrains.annotations.Nullable;
 
 // TODO: add javadoc
 public class GeneralConstants {

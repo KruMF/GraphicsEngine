@@ -6,7 +6,7 @@ import graphicsEngine.panels.SimplePanel;
 import java.awt.*;
 import javax.swing.*;
 
-import com.google.inject.internal.Nullable;
+import org.jetbrains.annotations.Nullable;
 
 abstract class AbstractColumn extends SimplePanel {
     protected AbstractColumn(int width, @Nullable PanelColors panelColors, boolean border) {

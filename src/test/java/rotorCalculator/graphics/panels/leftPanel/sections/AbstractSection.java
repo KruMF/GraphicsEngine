@@ -6,7 +6,7 @@ import graphicsEngine.panels.SimplePanel;
 import java.awt.*;
 import javax.swing.*;
 
-import com.google.inject.internal.Nullable;
+import org.jetbrains.annotations.Nullable;
 
 abstract class AbstractSection extends SimplePanel {
     private static final boolean DRAW_BACKGROUND = false;

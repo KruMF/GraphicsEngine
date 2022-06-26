@@ -2,7 +2,7 @@ package rotorCalculator.data.rotorModel;
 
 import java.util.Objects;
 
-import com.google.inject.internal.Nullable;
+import org.jetbrains.annotations.Nullable;
 import rotorCalculator.data.constants.Environment;
 
 // TODO: add javadoc

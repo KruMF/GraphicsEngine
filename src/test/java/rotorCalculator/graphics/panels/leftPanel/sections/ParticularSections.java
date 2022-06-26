@@ -7,7 +7,7 @@ import rotorCalculator.data.Data;
 import javax.swing.*;
 import java.awt.*;
 
-import com.google.inject.internal.Nullable;
+import org.jetbrains.annotations.Nullable;
 
 import static graphicsEngine.Utilities.roundNumber;
 

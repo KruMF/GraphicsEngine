@@ -7,7 +7,7 @@ import graphicsEngine.parts.*;
 import java.awt.*;
 import javax.swing.*;
 
-import com.google.inject.internal.Nullable;
+import org.jetbrains.annotations.Nullable;
 
 // TODO: add javadocs
 public class Footer extends SimplePanel {
