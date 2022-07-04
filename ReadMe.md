@@ -1,6 +1,6 @@
 # Graphics Engine
 
-[![](https://jitpack.io/v/Krumuvecis/GraphicsEngine.svg)](https://jitpack.io/#Krumuvecis/GraphicsEngine)
+[![](https://jitpack.io/v/KruMF/GraphicsEngine.svg)](https://jitpack.io/#KruMF/GraphicsEngine)
 
 by [Krumuvecis](https://github.com/Krumuvecis)
 
@@ -13,8 +13,8 @@ Free to use and modify for whatever purposes. No copyrights apply.
 * Maven compiler: 18
 * Maven Surefire: 3.0.0-M7
 * jetbrains annotations: 23.0.0
-* [ThreadAbstraction](https://github.com/Krumuvecis/ThreadAbstraction) : 0.4.0
-* [FileHandler](https://github.com/Krumuvecis/FileHandler) : 0.2.3
+* [ThreadAbstraction](https://github.com/KruMF/ThreadAbstraction) : 0.4.1
+* [FileHandler](https://github.com/KruMF/FileHandler) : 0.2.5
 * JUnit: Jupiter 5.9.0-M1
 
 

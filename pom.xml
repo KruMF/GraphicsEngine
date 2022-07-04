@@ -4,9 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.Krumuvecis</groupId>
+    <groupId>com.github.KruMF</groupId>
     <artifactId>GraphicsEngine</artifactId>
-    <version>0.8</version>
+    <version>0.8.3</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -15,8 +15,8 @@
         <maven.surefire.version>3.0.0-M7</maven.surefire.version>
 
         <jetbrains.annotations.version>23.0.0</jetbrains.annotations.version>
-        <threadAbstraction.version>0.4.0</threadAbstraction.version>
-        <fileHandler.version>0.2.3</fileHandler.version>
+        <threadAbstraction.version>0.4.1</threadAbstraction.version>
+        <fileHandler.version>0.2.5</fileHandler.version>
 
         <junit.jupiter.version>5.9.0-M1</junit.jupiter.version>
     </properties>
@@ -42,12 +42,12 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>com.github.Krumuvecis</groupId>
+            <groupId>com.github.KruMF</groupId>
             <artifactId>ThreadAbstraction</artifactId>
             <version>${threadAbstraction.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.github.Krumuvecis</groupId>
+            <groupId>com.github.KruMF</groupId>
             <artifactId>FileHandler</artifactId>
             <version>${fileHandler.version}</version>
         </dependency>
