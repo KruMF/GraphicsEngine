@@ -15,8 +15,9 @@ import java.awt.event.ActionListener;
 
 import org.jetbrains.annotations.Nullable;
 
+import static graphicsEngine.Utilities.printLine;
+
 /**
- * Copy-pasted from simplest demo
  * TODO: finish this
  */
 public class Main {
@@ -93,9 +94,7 @@ public class Main {
                 }
                 default -> buttonName = "A button";
             }
-            System.out.println(buttonName + " has been pressed");
-            //TODO: what's up with utils?
-            //printLine(buttonName + " has been pressed");
+            printLine(buttonName + " has been pressed");
         }
     }
 
