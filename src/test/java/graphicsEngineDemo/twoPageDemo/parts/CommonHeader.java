@@ -1,4 +1,4 @@
-package graphicsEngineDemo.twoPageDemo;
+package graphicsEngineDemo.twoPageDemo.parts;
 
 import graphicsEngine.panels.PanelColors;
 import graphicsEngine.presets.panels.AbstractHeader;
@@ -9,10 +9,10 @@ import java.awt.event.ActionListener;
 import org.jetbrains.annotations.Nullable;
 
 //TODO: finish this and add javadocs
-class CommonHeader extends AbstractHeader {
+public class CommonHeader extends AbstractHeader {
     private static final int HEIGHT = 50;
 
-    protected CommonHeader(@Nullable PanelColors panelColors,
+    public CommonHeader(@Nullable PanelColors panelColors,
                            @Nullable ActionListener actionListener) {
         super(panelColors, HEIGHT);
         addButtons(actionListener);

@@ -3,6 +3,9 @@ package graphicsEngineDemo.twoPageDemo;
 import graphicsEngine.panels.PanelColors;
 import graphicsEngine.presets.HeaderAndFooterPage;
 
+import graphicsEngineDemo.twoPageDemo.parts.CommonFooter;
+import graphicsEngineDemo.twoPageDemo.parts.CommonHeader;
+
 import java.awt.event.ActionListener;
 
 import org.jetbrains.annotations.Nullable;

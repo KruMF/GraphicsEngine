@@ -1,4 +1,4 @@
-package graphicsEngineDemo.twoPageDemo;
+package graphicsEngineDemo.twoPageDemo.parts;
 
 import graphicsEngine.panels.PanelColors;
 import graphicsEngine.presets.panels.AbstractFooter;
@@ -6,10 +6,10 @@ import graphicsEngine.presets.panels.AbstractFooter;
 import org.jetbrains.annotations.Nullable;
 
 //TODO: finish this and add javadocs
-class CommonFooter extends AbstractFooter {
+public class CommonFooter extends AbstractFooter {
     private static final int HEIGHT = 100;
 
-    protected CommonFooter(@Nullable PanelColors panelColors) {
+    public CommonFooter(@Nullable PanelColors panelColors) {
         super(panelColors, HEIGHT);
     }
 

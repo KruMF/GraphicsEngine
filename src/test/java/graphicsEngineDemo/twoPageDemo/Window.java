@@ -3,6 +3,9 @@ package graphicsEngineDemo.twoPageDemo;
 import graphicsEngine.windows.AbstractWindow;
 import graphicsEngine.windows.WindowConfig;
 
+import graphicsEngineDemo.twoPageDemo.parts.Button1;
+import graphicsEngineDemo.twoPageDemo.parts.Button2;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
