@@ -7,7 +7,7 @@ import java.util.Objects;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import static graphicsEngine.Utilities.printLine;
+import static consoleUtils.ConsoleUtils.printLine;
 
 //TODO: add javadoc
 public class SimpleJButton extends JButton {

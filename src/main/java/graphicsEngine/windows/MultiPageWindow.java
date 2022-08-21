@@ -5,10 +5,10 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.Objects;
 
-import static graphicsEngine.Utilities.printLine;
-
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
+
+import static consoleUtils.ConsoleUtils.printLine;
 
 // TODO: finish this and add javadoc
 public abstract class MultiPageWindow extends PagedWindow {

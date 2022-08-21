@@ -10,7 +10,7 @@ import graphicsEngineDemo.twoPageDemo.parts.Button2;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import static graphicsEngine.Utilities.printLine;
+import static consoleUtils.ConsoleUtils.printLine;
 
 //TODO: finish this and add javadocs
 class Window extends AbstractWindow implements ActionListener {

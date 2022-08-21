@@ -11,7 +11,7 @@ import graphicsEngineDemo.featurePreview.demoPages.Page2;
 import java.util.List;
 import java.util.ArrayList;
 
-import static graphicsEngine.Utilities.printLine;
+import static consoleUtils.ConsoleUtils.printLine;
 
 //TODO: finish this
 public class Main {
