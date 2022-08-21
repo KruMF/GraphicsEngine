@@ -51,7 +51,6 @@ public abstract class MultiPageWindow extends PagedWindow {
         String nonNullKey = Objects.requireNonNullElse(key, EMPTY_KEY);
         if (!nonNullKey.equals(EMPTY_KEY) && pages.containsKey(nonNullKey)) {
             super.setActivePage(nonNullKey);
-            resetParts();
         } else {
             printLine("Page not found");
         }

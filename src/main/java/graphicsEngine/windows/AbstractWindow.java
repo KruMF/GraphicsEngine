@@ -2,15 +2,11 @@ package graphicsEngine.windows;
 
 import javax.swing.JFrame;
 
-import java.util.Objects;
-
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 
 //TODO: add javadocs
 public abstract class AbstractWindow extends JFrame {
     protected static final String EMPTY_KEY = "";
-    private String activePage;
 
     //creates a window with required parameters
     public AbstractWindow(@NotNull WindowConfig config) {
@@ -22,7 +18,7 @@ public abstract class AbstractWindow extends JFrame {
         int[] location = config.getLocation();
         setLocation(location[0], location[1]);
 
-        setActivePage(null);
+        addParts();
         setVisible(true);
     }
 
@@ -32,21 +28,6 @@ public abstract class AbstractWindow extends JFrame {
         return new int[] {
                 size[0] + errorCorrection[0],
                 size[1] + errorCorrection[1]};
-    }
-
-    /**
-     * Get the key of the currently active page.
-     *
-     * @return String of the key.
-     */
-    public String getActivePage() {
-        return activePage;
-    }
-
-    //TODO: finish this and add javadoc
-    public void setActivePage(@Nullable String key) {
-        activePage = Objects.requireNonNullElse(key, EMPTY_KEY);
-        resetParts();
     }
 
     /**
