@@ -1,4 +1,4 @@
-package graphicsEngineDemo.twoPageDemo;
+package graphicsEngineDemo.twoPageDemo.pages;
 
 import graphicsEngine.panels.PanelColors;
 
@@ -7,8 +7,8 @@ import java.awt.event.ActionListener;
 import org.jetbrains.annotations.Nullable;
 
 //TODO: finish this and add javadocs
-class Page2 extends AbstractCommonPage {
-    protected Page2(@Nullable PanelColors panelColors,
+public class Page2 extends AbstractCommonPage {
+    public Page2(@Nullable PanelColors panelColors,
                     @Nullable ActionListener actionListener) {
         super(panelColors, actionListener);
     }

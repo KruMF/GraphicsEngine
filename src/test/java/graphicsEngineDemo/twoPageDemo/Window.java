@@ -3,6 +3,7 @@ package graphicsEngineDemo.twoPageDemo;
 import graphicsEngine.windows.AbstractWindow;
 import graphicsEngine.windows.WindowConfig;
 
+import graphicsEngineDemo.twoPageDemo.pages.Page1;
 import graphicsEngineDemo.twoPageDemo.parts.Button1;
 import graphicsEngineDemo.twoPageDemo.parts.Button2;
 

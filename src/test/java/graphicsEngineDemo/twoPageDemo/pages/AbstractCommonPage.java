@@ -1,4 +1,4 @@
-package graphicsEngineDemo.twoPageDemo;
+package graphicsEngineDemo.twoPageDemo.pages;
 
 import graphicsEngine.panels.PanelColors;
 import graphicsEngine.presets.HeaderAndFooterPage;
