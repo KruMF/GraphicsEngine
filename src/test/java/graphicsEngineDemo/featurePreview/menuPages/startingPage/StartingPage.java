@@ -1,4 +1,4 @@
-package graphicsEngineDemo.paged.menuPages.startingPage;
+package graphicsEngineDemo.featurePreview.menuPages.startingPage;
 
 import graphicsEngine.windows.AbstractPage;
 

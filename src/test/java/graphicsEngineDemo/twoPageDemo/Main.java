@@ -1,10 +1,13 @@
-package graphicsEngineDemo.simplest;
+package graphicsEngineDemo.twoPageDemo;
 
 import graphicsEngine.AbstractGraphicsAdapter;
-import graphicsEngine.windows.AbstractWindow;
 import graphicsEngine.windows.WindowConfig;
+import graphicsEngine.windows.AbstractWindow;
 
-//TODO: add javadoc
+/**
+ * Copy-pasted from simplest demo
+ * TODO: finish this
+ */
 public class Main {
     public static void main(String[] args) {
         new GraphicsAdapter();
