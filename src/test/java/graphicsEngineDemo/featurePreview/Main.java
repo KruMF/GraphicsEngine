@@ -5,6 +5,7 @@ import graphicsEngine.windows.MultiPageWindow;
 import graphicsEngine.windows.WindowConfig;
 import graphicsEngine.windows.AbstractPage;
 
+import graphicsEngine.windows.WindowUpdater;
 import graphicsEngineDemo.featurePreview.demoPages.Page1;
 import graphicsEngineDemo.featurePreview.demoPages.Page2;
 
@@ -18,7 +19,7 @@ public class Main {
     public static void main(String[] args) {
         printLine("Paged demo currently not available");
         new GraphicsAdapter() {{
-            graphics.newWindow(new Window());
+            newWindow(new WindowUpdater(new Window()));
         }};
     }
 

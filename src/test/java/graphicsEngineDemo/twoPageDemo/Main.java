@@ -1,6 +1,7 @@
 package graphicsEngineDemo.twoPageDemo;
 
 import graphicsEngine.GraphicsAdapter;
+import graphicsEngine.windows.WindowUpdater;
 
 /**
  * TODO: finish this
@@ -14,7 +15,7 @@ public class Main {
      */
     public static void main(String[] args) {
         new GraphicsAdapter() {{
-            graphics.newWindow(new Window());
+            newWindow(new WindowUpdater(new Window()));
         }};
     }
 }

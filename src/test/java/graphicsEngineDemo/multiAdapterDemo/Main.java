@@ -3,6 +3,7 @@ package graphicsEngineDemo.multiAdapterDemo;
 import graphicsEngine.GraphicsAdapter;
 import graphicsEngine.windows.AbstractWindow;
 import graphicsEngine.windows.WindowConfig;
+import graphicsEngine.windows.WindowUpdater;
 
 /**
  * TODO: finish this and add javadocs
@@ -19,11 +20,11 @@ public class Main {
      */
     public static void main(String[] args) {
         adapter1 = new GraphicsAdapter() {{
-            graphics.newWindow(new SimpleWindow1());
+            newWindow(new WindowUpdater(new SimpleWindow1()));
         }};
         adapter2 = new GraphicsAdapter() {{
-            graphics.newWindow(new SimpleWindow2());
-            graphics.newWindow(new PagedWindow());
+            newWindow(new WindowUpdater(new SimpleWindow2()));
+            newWindow(new WindowUpdater(new PagedWindow()));
         }};
     }
 

@@ -1,7 +1,6 @@
 package graphicsEngine.windows;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -20,19 +19,41 @@ public class WindowManager {
         int i = windows.size();
         windows.add(window);
         windows.get(i).start();
-        //getWindow(window.getWindowKey()).start(); //may produce nullPointerException
+    }
+
+    private int getWindowIndex(@Nullable String windowKey) throws NullPointerException {
+        if (windowKey != null && !windowKey.equals("")) {
+            for (int i = 0; i < windows.size(); i++) {
+                if (windows.get(i).getWindowKey().equals(windowKey)) {
+                    return i;
+                }
+            }
+        }
+        throw new NullPointerException();
     }
 
     //TODO: add javadoc
     public @Nullable WindowUpdater getWindow(@Nullable String windowKey) {
-        if (windowKey != null && !windowKey.equals("")) {
-            for (WindowUpdater window : windows) {
-                if (window.getWindowKey().equals(windowKey)) {
-                    return window;
-                }
-            }
+        try {
+            int index = getWindowIndex(windowKey);
+            return windows.get(index);
+        } catch (NullPointerException e) {
+            return null; //returns null if no such window found
         }
-        return null;
+    }
+
+    //TODO: add javadoc
+    public void endWindow(String windowKey) {
+        try {
+            int index = getWindowIndex(windowKey);
+            WindowUpdater window = getWindow(windowKey);
+            if (window == null) {
+                throw new NullPointerException();
+            }
+
+            window.end();
+            windows.remove(index);
+        } catch (NullPointerException ignored) {}
     }
 
     //TODO: add javadoc

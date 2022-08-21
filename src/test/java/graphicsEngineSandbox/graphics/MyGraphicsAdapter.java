@@ -16,11 +16,11 @@ public class MyGraphicsAdapter extends GraphicsAdapter {
     }
 
     private void newControlWindow() {
-        graphics.newWindow(new WindowUpdater(new ControlWindow()));
+        newWindow(new WindowUpdater(new ControlWindow()));
     }
 
     // TODO: add javadoc
     public void newViewWindow() {
-        graphics.newWindow(new WindowUpdater(new ViewWindow()));
+        newWindow(new WindowUpdater(new ViewWindow()));
     }
 }

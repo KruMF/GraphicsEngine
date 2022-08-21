@@ -3,6 +3,7 @@ package graphicsEngineDemo.simplestDemo;
 import graphicsEngine.GraphicsAdapter;
 import graphicsEngine.windows.AbstractWindow;
 import graphicsEngine.windows.WindowConfig;
+import graphicsEngine.windows.WindowUpdater;
 
 /**
  * Simplest possible use of the GraphicsEngine.
@@ -17,7 +18,7 @@ public class Main {
      */
     public static void main(String[] args) {
         new GraphicsAdapter() {{
-            graphics.newWindow(new Window());
+            newWindow(new WindowUpdater(new Window()));
         }};
     }
 
