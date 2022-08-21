@@ -23,7 +23,6 @@ public abstract class AbstractWindow extends JFrame {
         setLocation(location[0], location[1]);
 
         setActivePage(EMPTY_KEY);
-        addParts();
         setVisible(true);
     }
 
@@ -46,5 +45,6 @@ public abstract class AbstractWindow extends JFrame {
 
     public void setActivePage(@Nullable String key) {
         activePage = Objects.requireNonNullElse(key, EMPTY_KEY);
+        resetParts();
     }
 }
