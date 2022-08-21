@@ -14,10 +14,12 @@ public class Page2 extends AbstractCommonPage {
     }
 
     @Override
-    public void addParts() {}
+    public void addParts() {
+        //TODO: add a label here indicating page number
+    }
 
     @Override
     public String getPageKey() {
-        return "page1";
+        return "page2";
     }
 }
