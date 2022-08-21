@@ -1,6 +1,6 @@
 package graphicsEngine.windows;
 
-import javax.swing.*;
+import javax.swing.JFrame;
 
 import java.util.Objects;
 
@@ -10,7 +10,7 @@ import org.jetbrains.annotations.NotNull;
 //TODO: add javadocs
 public abstract class AbstractWindow extends JFrame {
     protected static final String EMPTY_KEY = "";
-    public String activePage;
+    private String activePage;
 
     //creates a window with required parameters
     public AbstractWindow(@NotNull WindowConfig config) {
@@ -22,7 +22,7 @@ public abstract class AbstractWindow extends JFrame {
         int[] location = config.getLocation();
         setLocation(location[0], location[1]);
 
-        setActivePage(EMPTY_KEY);
+        setActivePage(null);
         setVisible(true);
     }
 
@@ -34,17 +34,32 @@ public abstract class AbstractWindow extends JFrame {
                 size[1] + errorCorrection[1]};
     }
 
-    //override this to add parts
-    public abstract void addParts();
+    /**
+     * Get the key of the currently active page.
+     *
+     * @return String of the key.
+     */
+    public String getActivePage() {
+        return activePage;
+    }
 
-    //manually reset parts
+    //TODO: finish this and add javadoc
+    public void setActivePage(@Nullable String key) {
+        activePage = Objects.requireNonNullElse(key, EMPTY_KEY);
+        resetParts();
+    }
+
+    /**
+     * Call this to manually reset parts.
+     */
     public final void resetParts() {
         getContentPane().removeAll();
         addParts();
     }
 
-    public void setActivePage(@Nullable String key) {
-        activePage = Objects.requireNonNullElse(key, EMPTY_KEY);
-        resetParts();
-    }
+    /**
+     * Override this to add parts.
+     * Called upon creation and part reset.
+     */
+    public abstract void addParts();
 }

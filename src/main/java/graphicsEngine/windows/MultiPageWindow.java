@@ -60,7 +60,7 @@ public abstract class MultiPageWindow extends AbstractWindow {
     @Override
     public final void addParts() {
         if (pages != null && pages.size() > 0) {
-            add(pages.get(activePage));
+            add(pages.get(getActivePage()));
         }
     }
 }
