@@ -33,7 +33,8 @@ public class Main {
         }};
     }
 
-    private static class Window extends AbstractWindow {
+    private static class Window extends AbstractWindow implements ActionListener {
+
         public Window() {
             super(config());
         }
@@ -58,30 +59,10 @@ public class Main {
          */
         @Override
         public void addParts() {
-            add(new Page1(null));
+            add(new Page1(null, this));
             //TODO: add pages here; maybe use MultiPageWindow instead of AbstractWindow
         }
-    }
 
-    private static class CommonHeader extends AbstractHeader {
-        private static final int HEIGHT = 50;
-
-        private ButtonListener buttonListener;
-
-        protected CommonHeader(@Nullable PanelColors panelColors) {
-            super(panelColors, HEIGHT);
-        }
-
-        @Override
-        public void addParts() {
-            buttonListener = new ButtonListener();
-            setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
-            add(new Button1(buttonListener));
-            add(new Button2(buttonListener));
-        }
-    }
-
-    private static class ButtonListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             String buttonName;
@@ -95,6 +76,25 @@ public class Main {
                 default -> buttonName = "A button";
             }
             printLine(buttonName + " has been pressed");
+        }
+    }
+
+    private static class CommonHeader extends AbstractHeader {
+        private static final int HEIGHT = 50;
+
+        protected CommonHeader(@Nullable PanelColors panelColors,
+                               @Nullable ActionListener actionListener) {
+            super(panelColors, HEIGHT);
+            addButtons(actionListener);
+        }
+
+        @Override
+        public void addParts() {}
+
+        private void addButtons(@Nullable ActionListener actionListener) {
+            setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
+            add(new Button1(actionListener));
+            add(new Button2(actionListener));
         }
     }
 
@@ -124,14 +124,18 @@ public class Main {
     }
 
     private static abstract class AbstractCommonPage extends HeaderAndFooterPage {
-        protected AbstractCommonPage(@Nullable PanelColors panelColors) {
-            super(new CommonHeader(panelColors),new CommonFooter(panelColors));
+        protected AbstractCommonPage(@Nullable PanelColors panelColors,
+                                     @Nullable ActionListener actionListener) {
+            super(
+                    new CommonHeader(panelColors, actionListener),
+                    new CommonFooter(panelColors));
         }
     }
 
     private static class Page1 extends AbstractCommonPage {
-        protected Page1(@Nullable PanelColors panelColors) {
-            super(panelColors);
+        protected Page1(@Nullable PanelColors panelColors,
+                        @Nullable ActionListener actionListener) {
+            super(panelColors, actionListener);
         }
 
         @Override
