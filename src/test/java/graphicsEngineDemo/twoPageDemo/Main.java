@@ -3,10 +3,16 @@ package graphicsEngineDemo.twoPageDemo;
 import graphicsEngine.GraphicsAdapter;
 import graphicsEngine.panels.PanelColors;
 import graphicsEngine.presets.HeaderAndFooterPage;
+import graphicsEngine.presets.SimpleJButton;
 import graphicsEngine.presets.panels.AbstractFooter;
 import graphicsEngine.presets.panels.AbstractHeader;
 import graphicsEngine.windows.AbstractWindow;
 import graphicsEngine.windows.WindowConfig;
+
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import org.jetbrains.annotations.Nullable;
 
 /**
@@ -59,12 +65,52 @@ public class Main {
     private static class CommonHeader extends AbstractHeader {
         private static final int HEIGHT = 50;
 
+        private ButtonListener buttonListener;
+
         protected CommonHeader(@Nullable PanelColors panelColors) {
             super(panelColors, HEIGHT);
         }
 
         @Override
-        public void addParts() {}
+        public void addParts() {
+            buttonListener = new ButtonListener();
+            setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
+            add(new Button1(buttonListener));
+            add(new Button2(buttonListener));
+        }
+    }
+
+    private static class ButtonListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            String buttonName;
+            switch (e.getActionCommand()) {
+                case Button1.ACTION_COMMAND -> {
+                    buttonName = Button1.ACTION_COMMAND;
+                }
+                case Button2.ACTION_COMMAND -> {
+                    buttonName = Button2.ACTION_COMMAND;
+                }
+                default -> buttonName = "A button";
+            }
+            System.out.println(buttonName + " has been pressed");
+            //TODO: what's up with utils?
+            //printLine(buttonName + " has been pressed");
+        }
+    }
+
+    private static class Button1 extends SimpleJButton {
+        protected static final String ACTION_COMMAND = "button1";
+        protected Button1(@Nullable ActionListener actionListener) {
+            super("Page 1", ACTION_COMMAND, actionListener);
+        }
+    }
+
+    private static class Button2 extends SimpleJButton {
+        protected static final String ACTION_COMMAND = "button2";
+        protected Button2(@Nullable ActionListener actionListener) {
+            super("Page 2", ACTION_COMMAND, actionListener);
+        }
     }
 
     private static class CommonFooter extends AbstractFooter {
