@@ -29,27 +29,81 @@ public class Main {
 
     private static class SimpleWindow1 extends AbstractWindow {
         public SimpleWindow1() {
-            super(new WindowConfig());
+            super(config());
         }
 
+        /**
+         * Hardcoded configuration of a new SimpleWindow1 object.
+         *
+         * @return Window configuration.
+         */
+        private static WindowConfig config() {
+            String title = "Adapter 1 - Simple window 1";
+            int[]
+                    size = new int[] {200, 200},
+                    location = new int[] {50, 50};
+            WindowConfig config = new WindowConfig(title, size, location);
+            config.closeOperation = EXIT_ON_CLOSE;
+            return config;
+        }
+
+        /**
+         * Adds parts to this window.
+         */
         @Override
         public void addParts() {}
     }
 
     private static class SimpleWindow2 extends AbstractWindow {
         public SimpleWindow2() {
-            super(new WindowConfig());
+            super(config());
         }
 
+        /**
+         * Hardcoded configuration of a new SimpleWindow2 object.
+         *
+         * @return Window configuration.
+         */
+        private static WindowConfig config() {
+            String title = "Adapter 2 - Simple window 2";
+            int[]
+                    size = new int[] {200, 200},
+                    location = new int[] {50, 300};
+            WindowConfig config = new WindowConfig(title, size, location);
+            config.closeOperation = DO_NOTHING_ON_CLOSE;
+            return config;
+        }
+
+        /**
+         * Adds parts to this window.
+         */
         @Override
         public void addParts() {}
     }
 
     private static class PagedWindow extends AbstractWindow {
         public PagedWindow() {
-            super(new WindowConfig());
+            super(config());
         }
 
+        /**
+         * Hardcoded configuration of a new PagedWindow object.
+         *
+         * @return Window configuration.
+         */
+        private static WindowConfig config() {
+            String title = "Adapter 2 - Paged window";
+            int[]
+                    size = new int[] {600, 400},
+                    location = new int[] {300, 300};
+            WindowConfig config = new WindowConfig(title, size, location);
+            config.closeOperation = DO_NOTHING_ON_CLOSE;
+            return config;
+        }
+
+        /**
+         * Adds parts to this window.
+         */
         @Override
         public void addParts() {}
     }
