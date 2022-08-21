@@ -1,8 +1,8 @@
 package graphicsEngineDemo.twoPageDemo;
 
-import graphicsEngine.AbstractGraphicsAdapter;
-import graphicsEngine.windows.WindowConfig;
+import graphicsEngine.GraphicsAdapter;
 import graphicsEngine.windows.AbstractWindow;
+import graphicsEngine.windows.WindowConfig;
 
 /**
  * Copy-pasted from simplest demo
@@ -16,22 +16,37 @@ public class Main {
      * @param args Command-line arguments.
      */
     public static void main(String[] args) {
-        new GraphicsAdapter();
-    }
-
-    private static class GraphicsAdapter extends AbstractGraphicsAdapter {
-        protected GraphicsAdapter() {
-            super();
+        new GraphicsAdapter() {{
             graphics.newWindow(new Window());
-        }
+        }};
     }
 
     private static class Window extends AbstractWindow {
         public Window() {
-            super(new WindowConfig());
+            super(config());
         }
 
+        /**
+         * Hardcoded configuration of a new Window object.
+         *
+         * @return Window configuration.
+         */
+        private static WindowConfig config() {
+            String title = "Two page demo";
+            int[]
+                    size = new int[] {600, 400},
+                    location = new int[] {50, 50};
+            WindowConfig config = new WindowConfig(title, size, location);
+            config.closeOperation = EXIT_ON_CLOSE;
+            return config;
+        }
+
+        /**
+         * Adds parts to this window.
+         */
         @Override
-        public void addParts() {}
+        public void addParts() {
+            //TODO: add pages here; maybe use MultiPageWindow instead of AbstractWindow
+        }
     }
 }

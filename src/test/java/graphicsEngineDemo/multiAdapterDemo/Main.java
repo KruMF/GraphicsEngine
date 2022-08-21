@@ -1,6 +1,6 @@
 package graphicsEngineDemo.multiAdapterDemo;
 
-import graphicsEngine.AbstractGraphicsAdapter;
+import graphicsEngine.GraphicsAdapter;
 import graphicsEngine.windows.AbstractWindow;
 import graphicsEngine.windows.WindowConfig;
 
@@ -9,8 +9,8 @@ import graphicsEngine.windows.WindowConfig;
  */
 public class Main {
 
-    private static AbstractGraphicsAdapter adapter1;
-    private static AbstractGraphicsAdapter adapter2;
+    private static GraphicsAdapter adapter1;
+    private static GraphicsAdapter adapter2;
 
     /**
      * The main method.
@@ -18,10 +18,10 @@ public class Main {
      * @param args Command-line arguments.
      */
     public static void main(String[] args) {
-        adapter1 = new AbstractGraphicsAdapter() {{
+        adapter1 = new GraphicsAdapter() {{
             graphics.newWindow(new SimpleWindow1());
         }};
-        adapter2 = new AbstractGraphicsAdapter() {{
+        adapter2 = new GraphicsAdapter() {{
             graphics.newWindow(new SimpleWindow2());
             graphics.newWindow(new PagedWindow());
         }};

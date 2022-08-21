@@ -1,6 +1,6 @@
 package graphicsEngineDemo.featurePreview;
 
-import graphicsEngine.AbstractGraphicsAdapter;
+import graphicsEngine.GraphicsAdapter;
 import graphicsEngine.windows.MultiPageWindow;
 import graphicsEngine.windows.WindowConfig;
 import graphicsEngine.windows.AbstractPage;
@@ -17,14 +17,9 @@ import static graphicsEngine.Utilities.printLine;
 public class Main {
     public static void main(String[] args) {
         printLine("Paged demo currently not available");
-        new GraphicsAdapter();
-    }
-
-    private static class GraphicsAdapter extends AbstractGraphicsAdapter {
-        protected GraphicsAdapter() {
-            super();
+        new GraphicsAdapter() {{
             graphics.newWindow(new Window());
-        }
+        }};
     }
 
     private static class Window extends MultiPageWindow {

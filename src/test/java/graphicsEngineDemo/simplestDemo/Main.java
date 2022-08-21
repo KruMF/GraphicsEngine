@@ -1,6 +1,6 @@
 package graphicsEngineDemo.simplestDemo;
 
-import graphicsEngine.AbstractGraphicsAdapter;
+import graphicsEngine.GraphicsAdapter;
 import graphicsEngine.windows.AbstractWindow;
 import graphicsEngine.windows.WindowConfig;
 
@@ -16,7 +16,7 @@ public class Main {
      * @param args Command-line arguments.
      */
     public static void main(String[] args) {
-        new AbstractGraphicsAdapter() {{
+        new GraphicsAdapter() {{
             graphics.newWindow(new Window());
         }};
     }
@@ -29,6 +29,9 @@ public class Main {
             super(new WindowConfig());
         }
 
+        /**
+         * Adds parts to this window.
+         */
         @Override
         public void addParts() {}
     }

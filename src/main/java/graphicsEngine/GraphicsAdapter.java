@@ -6,12 +6,12 @@ package graphicsEngine;
  * Reference this to use the GraphicsEngine.
  * TODO: check redundancy
  */
-public class AbstractGraphicsAdapter {
+public class GraphicsAdapter {
     //TODO: seems redundant, originally meant for security
     public GraphicsManager graphics;
 
     //TODO: seems redundant, originally meant for security
-    public AbstractGraphicsAdapter() {
+    public GraphicsAdapter() {
         graphics = new GraphicsManager();
     }
 
