@@ -1,41 +1,44 @@
 package graphicsEngine.windows;
 
-import DelayCalculator.DelayOptions;
-import ThreadAbstraction.AbstractUpdater;
+import java.util.ArrayList;
+import java.util.Objects;
 
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
-//TODO:add javadocs
-public class WindowManager extends AbstractUpdater {
-    private AbstractWindow window;
+//a class for containing windows and their updaters
+//TODO: add javadocs
+public class WindowManager {
+    public ArrayList<WindowUpdater> windows;
 
-    public WindowManager(@NotNull AbstractWindow window) {
-        super();
-        setWindow(window);
+    public WindowManager() {
+        windows = new ArrayList<>();
     }
 
-    public WindowManager(@NotNull AbstractWindow window, long delay) {
-        super(delay);
-        setWindow(window);
+    //TODO: add javadoc
+    public void newWindow(@NotNull WindowUpdater window) {
+        int i = windows.size();
+        windows.add(window);
+        windows.get(i).start();
+        //getWindow(window.getWindowKey()).start(); //may produce nullPointerException
     }
 
-    public WindowManager(@NotNull AbstractWindow window, @Nullable DelayOptions delayOptions) {
-        super(delayOptions);
-        setWindow(window);
+    //TODO: add javadoc
+    public @Nullable WindowUpdater getWindow(@Nullable String windowKey) {
+        if (windowKey != null && !windowKey.equals("")) {
+            for (WindowUpdater window : windows) {
+                if (window.getWindowKey().equals(windowKey)) {
+                    return window;
+                }
+            }
+        }
+        return null;
     }
 
-    private void setWindow(AbstractWindow window) {
-        this.window = window;
-    }
-
-    @Override
-    public void update() {
-        window.repaint();
-    }
-
-    @Override
-    public void finish() {
-        window.dispose();
+    //TODO: add javadoc
+    public void end() {
+        for (WindowUpdater window : windows) {
+            window.end();
+        }
     }
 }

@@ -30,6 +30,8 @@ public abstract class AbstractWindow extends JFrame {
                 size[1] + errorCorrection[1]};
     }
 
+    public abstract String getWindowKey();
+
     /**
      * Call this to manually reset parts.
      */

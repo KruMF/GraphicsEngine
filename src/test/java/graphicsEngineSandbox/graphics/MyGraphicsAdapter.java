@@ -1,7 +1,7 @@
 package graphicsEngineSandbox.graphics;
 
 import graphicsEngine.GraphicsAdapter;
-import graphicsEngine.windows.WindowManager;
+import graphicsEngine.windows.WindowUpdater;
 
 import graphicsEngineSandbox.graphics.controlWindow.ControlWindow;
 import graphicsEngineSandbox.graphics.viewWinow.ViewWindow;
@@ -16,11 +16,11 @@ public class MyGraphicsAdapter extends GraphicsAdapter {
     }
 
     private void newControlWindow() {
-        graphics.newWindow(new WindowManager(new ControlWindow()));
+        graphics.newWindow(new WindowUpdater(new ControlWindow()));
     }
 
     // TODO: add javadoc
     public void newViewWindow() {
-        graphics.newWindow(new WindowManager(new ViewWindow()));
+        graphics.newWindow(new WindowUpdater(new ViewWindow()));
     }
 }

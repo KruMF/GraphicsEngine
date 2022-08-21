@@ -1,25 +1,37 @@
 package graphicsEngine;
 
+import graphicsEngine.windows.WindowManager;
+import graphicsEngine.windows.WindowUpdater;
+
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import static consoleUtils.ConsoleUtils.printLine;
+
 /**
  * A graphics adapter class.
  * Intended for allowing not to use the GraphicsManager directly.
  * Reference this to use the GraphicsEngine.
- * TODO: check redundancy
+ * TODO: check redundancy; originally meant for security; fix javadocs
  */
-public class GraphicsAdapter {
-    //TODO: seems redundant, originally meant for security
-    public GraphicsManager graphics;
-
-    //TODO: seems redundant, originally meant for security
+public class GraphicsAdapter extends WindowManager {
     public GraphicsAdapter() {
-        graphics = new GraphicsManager();
+        super();
     }
 
-    /**
-     * Call this to end graphics.
-     * TODO: seems redundant, originally meant for security
-     */
+    @Override
+    public final void newWindow(@NotNull WindowUpdater window) {
+        super.newWindow(window);
+    }
+
+    @Override
+    public final @Nullable WindowUpdater getWindow(@Nullable String windowKey) {
+        return super.getWindow(windowKey);
+    }
+
+    @Override
     public final void end() {
-        graphics.end();
+        printLine("Graphics ending.");
+        super.end();
     }
 }
