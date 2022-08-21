@@ -11,7 +11,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 
 // TODO: finish this and add javadoc
-public abstract class MultiPageWindow extends AbstractWindow {
+public abstract class MultiPageWindow extends PagedWindow {
     private Map<String, AbstractPage> pages;
 
     public MultiPageWindow(
