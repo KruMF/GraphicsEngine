@@ -1,15 +1,15 @@
 package graphicsEngineSandbox.graphics;
 
-import graphicsEngine.AbstractGraphicsAdapter;
+import graphicsEngine.GraphicsAdapter;
 import graphicsEngine.windows.WindowManager;
 
 import graphicsEngineSandbox.graphics.controlWindow.ControlWindow;
 import graphicsEngineSandbox.graphics.viewWinow.ViewWindow;
 
 // TODO: add javadoc
-public class GraphicsAdapter extends AbstractGraphicsAdapter {
+public class MyGraphicsAdapter extends GraphicsAdapter {
     // TODO: add javadoc
-    public GraphicsAdapter() {
+    public MyGraphicsAdapter() {
         super();
         newControlWindow();
         newViewWindow();

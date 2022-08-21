@@ -1,7 +1,7 @@
 package graphicsEngineSandbox.main;
 
 import graphicsEngineSandbox.data.Data;
-import graphicsEngineSandbox.graphics.GraphicsAdapter;
+import graphicsEngineSandbox.graphics.MyGraphicsAdapter;
 
 import static graphicsEngine.Utilities.printLine;
 
@@ -19,6 +19,6 @@ class Starter {
     private static void startOtherThreads() {
         Data.resetValues(); //TODO: convert to a non-static object
 
-        Main.mainThread.graphics = new GraphicsAdapter();
+        Main.mainThread.graphics = new MyGraphicsAdapter();
     }
 }

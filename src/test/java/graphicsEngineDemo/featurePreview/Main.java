@@ -1,12 +1,12 @@
-package graphicsEngineDemo.paged;
+package graphicsEngineDemo.featurePreview;
 
-import graphicsEngine.AbstractGraphicsAdapter;
+import graphicsEngine.GraphicsAdapter;
 import graphicsEngine.windows.MultiPageWindow;
 import graphicsEngine.windows.WindowConfig;
 import graphicsEngine.windows.AbstractPage;
 
-import graphicsEngineDemo.paged.demoPages.Page1;
-import graphicsEngineDemo.paged.demoPages.Page2;
+import graphicsEngineDemo.featurePreview.demoPages.Page1;
+import graphicsEngineDemo.featurePreview.demoPages.Page2;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -17,14 +17,9 @@ import static graphicsEngine.Utilities.printLine;
 public class Main {
     public static void main(String[] args) {
         printLine("Paged demo currently not available");
-        new GraphicsAdapter();
-    }
-
-    private static class GraphicsAdapter extends AbstractGraphicsAdapter {
-        protected GraphicsAdapter() {
-            super();
+        new GraphicsAdapter() {{
             graphics.newWindow(new Window());
-        }
+        }};
     }
 
     private static class Window extends MultiPageWindow {

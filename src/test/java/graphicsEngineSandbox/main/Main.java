@@ -2,13 +2,18 @@ package graphicsEngineSandbox.main;
 
 import ThreadAbstraction.AbstractUpdater;
 import graphicsEngineSandbox.calc.Calculations;
-import graphicsEngineSandbox.graphics.GraphicsAdapter;
+import graphicsEngineSandbox.graphics.MyGraphicsAdapter;
 
 import static graphicsEngine.Utilities.printLine;
 
 // TODO: add javadoc
 public class Main extends AbstractUpdater {
-    // TODO: add javadoc
+
+    /**
+     * The main method.
+     *
+     * @param args Command-line arguments.
+     */
     public static void main(String[] args) {
         Starter.start();
     }
@@ -16,7 +21,7 @@ public class Main extends AbstractUpdater {
     public static Main mainThread;
     private static final long THREAD_DELAY = 100L;
 
-    protected GraphicsAdapter graphics;
+    protected MyGraphicsAdapter graphics;
 
     protected Main() {
         super(THREAD_DELAY);

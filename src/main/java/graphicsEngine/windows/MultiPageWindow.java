@@ -12,16 +12,14 @@ import org.jetbrains.annotations.NotNull;
 
 // TODO: finish this and add javadoc
 public abstract class MultiPageWindow extends AbstractWindow {
-    private Map<String, AbstractPage> pages;// = new HashMap<>();
+    private Map<String, AbstractPage> pages;
 
-    @SuppressWarnings("unused")
     public MultiPageWindow(
             @NotNull WindowConfig config,
             @NotNull List<AbstractPage> pages) {
         this(config, pages, null);
     }
 
-    @SuppressWarnings("unused")
     public MultiPageWindow(
             @NotNull WindowConfig config,
             @NotNull List<AbstractPage> pages,
@@ -48,9 +46,11 @@ public abstract class MultiPageWindow extends AbstractWindow {
         pages.put(page.getPageKey(), page);
     }
 
-    public final void setActivePage(@NotNull String key) {
-        if (!key.equals(EMPTY_KEY) && pages.containsKey(key)) {
-            super.setActivePage(key);
+    @Override
+    public final void setActivePage(@Nullable String key) {
+        String nonNullKey = Objects.requireNonNullElse(key, EMPTY_KEY);
+        if (!nonNullKey.equals(EMPTY_KEY) && pages.containsKey(nonNullKey)) {
+            super.setActivePage(nonNullKey);
             resetParts();
         } else {
             printLine("Page not found");
@@ -60,7 +60,7 @@ public abstract class MultiPageWindow extends AbstractWindow {
     @Override
     public final void addParts() {
         if (pages != null && pages.size() > 0) {
-            add(pages.get(activePage));
+            add(pages.get(getActivePage()));
         }
     }
 }

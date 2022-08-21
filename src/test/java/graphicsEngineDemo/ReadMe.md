@@ -1,7 +1,9 @@
-<h1>Graphics engine demos</h1>
+# Graphics engine demos
 
-Currently available:
-* Simplest - everything in just one class.
-* Paged - with multiple pages <i>(currently not available)</i>
+Currently available demos:
+* Simplest demo - everything in just one class.
+* Two-page demo - one window, two pages.
+* Multi-adapter demo - *self explanatory...*
+* Feature preview - multiple pages <i>(currently not available)</i> containing various parts of GraphicsEngine and their use.
 
 Further instructions will be in the directory of the demo.
