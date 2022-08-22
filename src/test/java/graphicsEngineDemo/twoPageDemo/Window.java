@@ -6,6 +6,7 @@ import graphicsEngine.windows.WindowConfig;
 import graphicsEngineDemo.twoPageDemo.pages.Page1;
 import graphicsEngineDemo.twoPageDemo.parts.Button1;
 import graphicsEngineDemo.twoPageDemo.parts.Button2;
+import org.jetbrains.annotations.NotNull;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -32,6 +33,11 @@ class Window extends AbstractWindow implements ActionListener {
         WindowConfig config = new WindowConfig(title, size, location);
         config.closeOperation = EXIT_ON_CLOSE;
         return config;
+    }
+
+    @Override
+    public @NotNull String getWindowKey() {
+        return "window";
     }
 
     /**

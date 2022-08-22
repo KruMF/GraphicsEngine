@@ -1,18 +1,20 @@
-package graphicsEngine.windows;
+package graphicsEngine.windows.windowTypes;
 
 import java.util.List;
-import java.util.Map;
 import java.util.HashMap;
 import java.util.Objects;
 
+import graphicsEngine.windows.AbstractPage;
+import graphicsEngine.windows.AbstractWindow;
+import graphicsEngine.windows.WindowConfig;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 
 import static consoleUtils.ConsoleUtils.printLine;
 
 // TODO: finish this and add javadoc
-public abstract class MultiPageWindow extends PagedWindow {
-    private Map<String, AbstractPage> pages;
+public abstract class MultiPageWindow extends AbstractLayeredWindow {
+    private String activePage;
 
     public MultiPageWindow(
             @NotNull WindowConfig config,
@@ -32,7 +34,7 @@ public abstract class MultiPageWindow extends PagedWindow {
     private String getFirstKey() {
         if (pages.size() > 0) {
             return pages.keySet().stream().toList().get(0);
-        } else return EMPTY_KEY;
+        } else return AbstractWindow.EMPTY_KEY;
     }
 
     private void addPages(@NotNull List<AbstractPage> pages) {
@@ -48,8 +50,8 @@ public abstract class MultiPageWindow extends PagedWindow {
 
     @Override
     public final void setActivePage(@Nullable String key) {
-        String nonNullKey = Objects.requireNonNullElse(key, EMPTY_KEY);
-        if (!nonNullKey.equals(EMPTY_KEY) && pages.containsKey(nonNullKey)) {
+        String nonNullKey = Objects.requireNonNullElse(key, AbstractWindow.EMPTY_KEY);
+        if (!nonNullKey.equals(AbstractWindow.EMPTY_KEY) && pages.containsKey(nonNullKey)) {
             super.setActivePage(nonNullKey);
         } else {
             printLine("Page not found");
@@ -61,5 +63,20 @@ public abstract class MultiPageWindow extends PagedWindow {
         if (pages != null && pages.size() > 0) {
             add(pages.get(getActivePage()));
         }
+    }
+
+    /**
+     * Get the key of the currently active page.
+     *
+     * @return String of the key.
+     */
+    public String getActivePage() {
+        return activePage;
+    }
+
+    //TODO: finish this and add javadoc
+    public void setActivePage(@Nullable String key) {
+        activePage = Objects.requireNonNullElse(key, AbstractWindow.EMPTY_KEY);
+        resetParts();
     }
 }

@@ -1,13 +1,16 @@
 package graphicsEngineDemo.simplestDemo;
 
 import graphicsEngine.GraphicsAdapter;
-import graphicsEngine.windows.AbstractWindow;
-import graphicsEngine.windows.WindowConfig;
 import graphicsEngine.windows.WindowUpdater;
+import graphicsEngine.windows.WindowConfig;
+import graphicsEngine.windows.windowTypes.SimpleWindow;
+
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Simplest possible use of the GraphicsEngine.
  * Everything contained in just one class.
+ * TODO: finish this and add javadocs
  */
 public class Main {
 
@@ -25,9 +28,14 @@ public class Main {
     /**
      * The window to display.
      */
-    private static class Window extends AbstractWindow {
+    private static class Window extends SimpleWindow {
         public Window() {
             super(new WindowConfig());
+        }
+
+        @Override
+        public @NotNull String getWindowKey() {
+            return "window";
         }
 
         /**

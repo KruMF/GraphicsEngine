@@ -1,7 +1,7 @@
 package graphicsEngineDemo.featurePreview;
 
 import graphicsEngine.GraphicsAdapter;
-import graphicsEngine.windows.MultiPageWindow;
+import graphicsEngine.windows.windowTypes.MultiPageWindow;
 import graphicsEngine.windows.WindowConfig;
 import graphicsEngine.windows.AbstractPage;
 
@@ -11,6 +11,8 @@ import graphicsEngineDemo.featurePreview.demoPages.Page2;
 
 import java.util.List;
 import java.util.ArrayList;
+
+import org.jetbrains.annotations.NotNull;
 
 import static consoleUtils.ConsoleUtils.printLine;
 
@@ -48,6 +50,11 @@ public class Main {
                 add(new Page1());
                 add(new Page2());
             }};
+        }
+
+        @Override
+        public @NotNull String getWindowKey() {
+            return "window";
         }
     }
 }

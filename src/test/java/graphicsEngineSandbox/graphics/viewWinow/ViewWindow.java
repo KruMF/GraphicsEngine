@@ -9,6 +9,8 @@ import graphicsEngine.windows.WindowConfig;
 
 import java.awt.*;
 
+import org.jetbrains.annotations.NotNull;
+
 // TODO: add javadoc
 public class ViewWindow extends AbstractWindow {
     private static final int[] WINDOW_MINIMUM_SIZE = new int[] {700, 400};
@@ -24,6 +26,11 @@ public class ViewWindow extends AbstractWindow {
                 "View Window",
                 WINDOW_MINIMUM_SIZE,
                 new int[] {25, 350});
+    }
+
+    @Override
+    public @NotNull String getWindowKey() {
+        return "viewWindow";
     }
 
     @Override

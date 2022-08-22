@@ -4,6 +4,7 @@ import graphicsEngine.GraphicsAdapter;
 import graphicsEngine.windows.AbstractWindow;
 import graphicsEngine.windows.WindowConfig;
 import graphicsEngine.windows.WindowUpdater;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * TODO: finish this and add javadocs
@@ -48,6 +49,11 @@ public class Main {
             return config;
         }
 
+        @Override
+        public @NotNull String getWindowKey() {
+            return "window";
+        }
+
         /**
          * Adds parts to this window.
          */
@@ -75,6 +81,11 @@ public class Main {
             return config;
         }
 
+        @Override
+        public @NotNull String getWindowKey() {
+            return "simpleWindow";
+        }
+
         /**
          * Adds parts to this window.
          */
@@ -100,6 +111,11 @@ public class Main {
             WindowConfig config = new WindowConfig(title, size, location);
             config.closeOperation = DO_NOTHING_ON_CLOSE;
             return config;
+        }
+
+        @Override
+        public @NotNull String getWindowKey() {
+            return "pagedWindow";
         }
 
         /**
