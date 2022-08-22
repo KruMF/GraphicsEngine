@@ -31,6 +31,7 @@ public class Main {
     private static class Window extends SimpleWindow {
         public Window() {
             super(new WindowConfig());
+            setDefaultCloseOperation(EXIT_ON_CLOSE);
         }
 
         @Override
