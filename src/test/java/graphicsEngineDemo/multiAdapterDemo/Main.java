@@ -1,9 +1,10 @@
 package graphicsEngineDemo.multiAdapterDemo;
 
 import graphicsEngine.GraphicsAdapter;
-import graphicsEngine.windows.AbstractWindow;
 import graphicsEngine.windows.WindowConfig;
 import graphicsEngine.windows.WindowUpdater;
+import graphicsEngine.windows.windowTypes.SimpleWindow;
+
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -29,7 +30,7 @@ public class Main {
         }};
     }
 
-    private static class SimpleWindow1 extends AbstractWindow {
+    private static class SimpleWindow1 extends SimpleWindow {
         public SimpleWindow1() {
             super(config());
         }
@@ -61,7 +62,7 @@ public class Main {
         public void addParts() {}
     }
 
-    private static class SimpleWindow2 extends AbstractWindow {
+    private static class SimpleWindow2 extends SimpleWindow {
         public SimpleWindow2() {
             super(config());
         }
@@ -93,7 +94,7 @@ public class Main {
         public void addParts() {}
     }
 
-    private static class PagedWindow extends AbstractWindow {
+    private static class PagedWindow extends SimpleWindow {
         public PagedWindow() {
             super(config());
         }
