@@ -1,4 +1,4 @@
-package graphicsEngineDemo.twoPageDemo.parts;
+package graphicsEngineDemo.overlayDemo.parts;
 
 import graphicsEngine.panels.PanelColors;
 import graphicsEngine.presets.panels.AbstractHeader;
