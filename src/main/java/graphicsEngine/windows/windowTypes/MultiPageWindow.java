@@ -14,12 +14,18 @@ import static consoleUtils.ConsoleUtils.printLine;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-// TODO: finish this and add javadoc
-public abstract class MultiPageWindow {/*extends AbstractLayeredWindow {
-    protected Map<String, AbstractPage> pages;
-    private String activePage;
+import javax.swing.*;
 
-    public MultiPageWindow(
+// TODO: finish this and add javadoc
+public abstract class MultiPageWindow extends AbstractLayeredWindow {
+    /*protected Map<String, AbstractPage> pages;
+    private String activePage;*/
+
+    MultiPageWindow(@NotNull WindowConfig config, @Nullable JPanel overlay) {
+        super(config, overlay);
+    }
+
+    /*public MultiPageWindow(
             @NotNull WindowConfig config,
             @NotNull List<AbstractPage> pages) {
         this(config, pages, null);
@@ -32,15 +38,15 @@ public abstract class MultiPageWindow {/*extends AbstractLayeredWindow {
         super(config);
         addPages(pages);
         setActivePage(Objects.requireNonNullElse(activePageKey, getFirstKey()));
-    }
+    }*/
 
-    private String getFirstKey() {
+    /*private String getFirstKey() {
         if (pages.size() > 0) {
             return pages.keySet().stream().toList().get(0);
         } else return AbstractWindow.EMPTY_KEY;
-    }
+    }*/
 
-    private void addPages(@NotNull List<AbstractPage> pages) {
+    /*private void addPages(@NotNull List<AbstractPage> pages) {
         this.pages = new HashMap<>();
         for (AbstractPage page : pages) {
             addPage(page);
@@ -49,9 +55,9 @@ public abstract class MultiPageWindow {/*extends AbstractLayeredWindow {
 
     private void addPage(@NotNull AbstractPage page) {
         pages.put(page.getPageKey(), page);
-    }
+    }*/
 
-    @Override
+    /*@Override
     public final void setActivePage(@Nullable String key) {
         String nonNullKey = Objects.requireNonNullElse(key, AbstractWindow.EMPTY_KEY);
         if (!nonNullKey.equals(AbstractWindow.EMPTY_KEY) && pages.containsKey(nonNullKey)) {
@@ -59,14 +65,14 @@ public abstract class MultiPageWindow {/*extends AbstractLayeredWindow {
         } else {
             printLine("Page not found");
         }
-    }
+    }*/
 
     @Override
     public final void addParts() {
-        if (pages != null && pages.size() > 0) {
+        /*if (pages != null && pages.size() > 0) {
             add(pages.get(getActivePage()));
-        }
-    }*/
+        }*/
+    }
 
     /**
      * Get the key of the currently active page.

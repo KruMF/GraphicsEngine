@@ -1,11 +1,8 @@
 package graphicsEngineDemo.featurePreview;
 
-import graphicsEngine.GraphicsAdapter;
-import graphicsEngine.windows.windowTypes.MultiPageWindow;
 import graphicsEngine.windows.WindowConfig;
 import graphicsEngine.windows.AbstractPage;
 
-import graphicsEngine.windows.WindowUpdater;
 import graphicsEngineDemo.featurePreview.demoPages.Page1;
 import graphicsEngineDemo.featurePreview.demoPages.Page2;
 
@@ -15,27 +12,28 @@ import java.util.ArrayList;
 import org.jetbrains.annotations.NotNull;
 
 import static consoleUtils.ConsoleUtils.printLine;
+import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
 //TODO: finish this
 public class Main {
-    /*public static void main(String[] args) {
+    public static void main(String[] args) {
         printLine("Paged demo currently not available");
-        new GraphicsAdapter() {{
+        /*new GraphicsAdapter() {{
             newWindow(new WindowUpdater(new Window()));
-        }};
+        }};*/
     }
 
-    private static class Window extends MultiPageWindow {
+    private static class Window /*extends MultiPageWindow*/ {
         protected Window() {
-            super(config(), preparePages());
-        }*/
+            /*super(config(), preparePages());*/
+        }
 
         /**
          * Hardcoded configuration of a new Window object.
          *
          * @return Window configuration.
          */
-        /*private static WindowConfig config() {
+        private static WindowConfig config() {
             String title = "Paged demo";
             int[]
                     size = new int[] {500, 500},
@@ -52,9 +50,9 @@ public class Main {
             }};
         }
 
-        @Override
+        //@Override
         public @NotNull String getWindowKey() {
             return "window";
         }
-    }*/
+    }
 }
