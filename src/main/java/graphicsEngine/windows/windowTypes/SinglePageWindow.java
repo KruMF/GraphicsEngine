@@ -1,19 +1,14 @@
 package graphicsEngine.windows.windowTypes;
 
-import java.util.Map;
-
-import graphicsEngine.windows.AbstractPage;
-import graphicsEngine.windows.AbstractWindow;
 import graphicsEngine.windows.WindowConfig;
+
+import javax.swing.JPanel;
+
 import org.jetbrains.annotations.NotNull;
 
 // TODO: finish this and add javadoc
 public abstract class SinglePageWindow extends AbstractLayeredWindow {
-    protected Map<String, AbstractPage> pages;
-
-    public SinglePageWindow(@NotNull WindowConfig config) {
-        super(config);
+    public SinglePageWindow(@NotNull WindowConfig config, @NotNull JPanel overlay) {
+        super(config, overlay);
     }
-
-
 }

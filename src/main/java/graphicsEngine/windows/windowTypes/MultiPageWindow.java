@@ -2,18 +2,21 @@ package graphicsEngine.windows.windowTypes;
 
 import java.util.List;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 import graphicsEngine.windows.AbstractPage;
 import graphicsEngine.windows.AbstractWindow;
 import graphicsEngine.windows.WindowConfig;
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.annotations.NotNull;
 
 import static consoleUtils.ConsoleUtils.printLine;
 
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
 // TODO: finish this and add javadoc
 public abstract class MultiPageWindow extends AbstractLayeredWindow {
+    protected Map<String, AbstractPage> pages;
     private String activePage;
 
     public MultiPageWindow(
