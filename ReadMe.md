@@ -27,7 +27,7 @@ Maven support recently added. Detailed info coming...
 
 ## Standalone demo
 
-Check `graphicsEngine\demo` for standalone demo versions.
+Check `src\test\java\graphicsEngineDemo` for standalone demo versions.
 
 *Launch instructions available there.*
 
