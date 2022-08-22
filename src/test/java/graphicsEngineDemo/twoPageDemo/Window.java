@@ -3,6 +3,7 @@ package graphicsEngineDemo.twoPageDemo;
 import graphicsEngine.windows.AbstractWindow;
 import graphicsEngine.windows.WindowConfig;
 
+import graphicsEngine.windows.windowTypes.MultiPageWindow;
 import graphicsEngineDemo.twoPageDemo.pages.Page1;
 import graphicsEngineDemo.twoPageDemo.parts.Button1;
 import graphicsEngineDemo.twoPageDemo.parts.Button2;
@@ -12,12 +13,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import static consoleUtils.ConsoleUtils.printLine;
+import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
 //TODO: finish this and add javadocs
-class Window extends AbstractWindow implements ActionListener {
+class Window /*extends MultiPageWindow*/ implements ActionListener {
 
     public Window() {
-        super(config());
+        //super(config());
     }
 
     /**
@@ -35,7 +37,7 @@ class Window extends AbstractWindow implements ActionListener {
         return config;
     }
 
-    @Override
+    //@Override
     public @NotNull String getWindowKey() {
         return "window";
     }
@@ -43,12 +45,12 @@ class Window extends AbstractWindow implements ActionListener {
     /**
      * Adds parts to this window.
      */
-    @Override
+    /*@Override
     public void addParts() {
         add(new Page1(null, this));
         //TODO: add pages here; maybe use MultiPageWindow instead of AbstractWindow
         //add(new Page2(null, this));
-    }
+    }*/
 
     /**
      * Invoked when an action occurs.
@@ -61,9 +63,11 @@ class Window extends AbstractWindow implements ActionListener {
         switch (e.getActionCommand()) {
             case Button1.ACTION_COMMAND -> {
                 buttonName = Button1.ACTION_COMMAND;
+                //TODO: switch to page 1 here
             }
             case Button2.ACTION_COMMAND -> {
                 buttonName = Button2.ACTION_COMMAND;
+                //TODO: switch to page 2 here
             }
             default -> buttonName = "A button";
         }

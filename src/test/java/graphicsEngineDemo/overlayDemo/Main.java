@@ -40,6 +40,7 @@ public class Main {
             {
                 setOpaque(false);
             }
+
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
@@ -48,8 +49,9 @@ public class Main {
             }
         };
 
-        public Window() {
+        private Window() {
             super(new WindowConfig(), OVERLAY);
+            setDefaultCloseOperation(EXIT_ON_CLOSE);
         }
 
         @Override

@@ -3,6 +3,8 @@ package graphicsEngineDemo.twoPageDemo;
 import graphicsEngine.GraphicsAdapter;
 import graphicsEngine.windows.WindowUpdater;
 
+import static consoleUtils.ConsoleUtils.printLine;
+
 /**
  * TODO: finish this
  */
@@ -14,8 +16,9 @@ public class Main {
      * @param args Command-line arguments.
      */
     public static void main(String[] args) {
-        new GraphicsAdapter() {{
+        printLine("Two-page demo currently not available");
+        /*new GraphicsAdapter() {{
             newWindow(new WindowUpdater(new Window()));
-        }};
+        }};*/
     }
 }

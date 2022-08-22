@@ -17,7 +17,7 @@ import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 //TODO: finish this
 public class Main {
     public static void main(String[] args) {
-        printLine("Paged demo currently not available");
+        printLine("Feature preview demo currently not available");
         /*new GraphicsAdapter() {{
             newWindow(new WindowUpdater(new Window()));
         }};*/
