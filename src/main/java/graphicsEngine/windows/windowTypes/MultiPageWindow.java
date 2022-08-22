@@ -15,7 +15,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 // TODO: finish this and add javadoc
-public abstract class MultiPageWindow extends AbstractLayeredWindow {
+public abstract class MultiPageWindow {/*extends AbstractLayeredWindow {
     protected Map<String, AbstractPage> pages;
     private String activePage;
 
@@ -66,14 +66,14 @@ public abstract class MultiPageWindow extends AbstractLayeredWindow {
         if (pages != null && pages.size() > 0) {
             add(pages.get(getActivePage()));
         }
-    }
+    }*/
 
     /**
      * Get the key of the currently active page.
      *
      * @return String of the key.
      */
-    public String getActivePage() {
+    /*public String getActivePage() {
         return activePage;
     }
 
@@ -81,5 +81,5 @@ public abstract class MultiPageWindow extends AbstractLayeredWindow {
     public void setActivePage(@Nullable String key) {
         activePage = Objects.requireNonNullElse(key, AbstractWindow.EMPTY_KEY);
         resetParts();
-    }
+    }*/
 }

@@ -3,9 +3,10 @@ package graphicsEngine.presets;
 import graphicsEngine.presets.panels.AbstractFooter;
 import graphicsEngine.presets.panels.AbstractHeader;
 import graphicsEngine.windows.AbstractPage;
-import org.jetbrains.annotations.Nullable;
 
-import java.awt.*;
+import java.awt.BorderLayout;
+
+import org.jetbrains.annotations.Nullable;
 
 public abstract class HeaderAndFooterPage extends AbstractPage {
 

@@ -23,13 +23,13 @@ abstract class AbstractLayeredWindow extends AbstractWindow {
         showOverlay();
     }
 
-    void showOverlay() {
+    public void showOverlay() {
         getGlassPane().setVisible(true);
     }
-    void hideOverlay() {
+    public void hideOverlay() {
         getGlassPane().setVisible(false);
     }
-    void toggleOverlay() {
+    public void toggleOverlay() {
         getGlassPane().setVisible(!getGlassPane().isVisible());
     }
 }

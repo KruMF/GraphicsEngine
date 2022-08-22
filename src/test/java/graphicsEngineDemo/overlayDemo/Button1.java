@@ -1,4 +1,4 @@
-package graphicsEngineDemo.overlayDemo.parts;
+package graphicsEngineDemo.overlayDemo;
 
 import graphicsEngine.presets.SimpleJButton;
 

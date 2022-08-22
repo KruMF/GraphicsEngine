@@ -1,5 +1,6 @@
 package graphicsEngine.windows.windowTypes;
 
+import graphicsEngine.windows.AbstractPage;
 import graphicsEngine.windows.WindowConfig;
 
 import javax.swing.JPanel;
@@ -12,4 +13,11 @@ public abstract class SinglePageWindow extends AbstractLayeredWindow {
     public SinglePageWindow(@NotNull WindowConfig config, @Nullable JPanel overlay) {
         super(config, overlay);
     }
+
+    @Override
+    public final void addParts() {
+        add(addPage());
+    }
+
+    public abstract AbstractPage addPage();
 }

@@ -18,7 +18,7 @@ import static consoleUtils.ConsoleUtils.printLine;
 
 //TODO: finish this
 public class Main {
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         printLine("Paged demo currently not available");
         new GraphicsAdapter() {{
             newWindow(new WindowUpdater(new Window()));
@@ -28,14 +28,14 @@ public class Main {
     private static class Window extends MultiPageWindow {
         protected Window() {
             super(config(), preparePages());
-        }
+        }*/
 
         /**
          * Hardcoded configuration of a new Window object.
          *
          * @return Window configuration.
          */
-        private static WindowConfig config() {
+        /*private static WindowConfig config() {
             String title = "Paged demo";
             int[]
                     size = new int[] {500, 500},
@@ -56,5 +56,5 @@ public class Main {
         public @NotNull String getWindowKey() {
             return "window";
         }
-    }
+    }*/
 }

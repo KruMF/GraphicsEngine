@@ -50,6 +50,11 @@ class Window extends AbstractWindow implements ActionListener {
         //add(new Page2(null, this));
     }
 
+    /**
+     * Invoked when an action occurs.
+     *
+     * @param e the event to be processed
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         String buttonName;
