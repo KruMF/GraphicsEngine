@@ -85,6 +85,10 @@ public class Main {
                     buttonName = Button2.ACTION_COMMAND;
                     hideOverlay();
                 }
+                case Button3.ACTION_COMMAND -> {
+                    buttonName = Button3.ACTION_COMMAND;
+                    toggleOverlay();
+                }
                 default -> buttonName = "A button";
             }
             printLine(buttonName + " has been pressed");

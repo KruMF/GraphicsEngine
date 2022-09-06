@@ -43,6 +43,7 @@ class Page extends HeaderAndFooterPage {
             setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
             add(new Button1(actionListener));
             add(new Button2(actionListener));
+            add(new Button3(actionListener));
         }
     }
 
