@@ -10,7 +10,6 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Simplest possible use of the GraphicsEngine.
  * Everything contained in just one class.
- * TODO: finish this and add javadocs
  */
 public class Main {
 
@@ -29,11 +28,20 @@ public class Main {
      * The window to display.
      */
     private static class Window extends SimpleWindow {
+        /**
+         * Creates the window.
+         */
         public Window() {
             super(new WindowConfig());
-            setDefaultCloseOperation(EXIT_ON_CLOSE);
+            setDefaultCloseOperation(EXIT_ON_CLOSE); // Not necessary; added for easier use.
         }
 
+        /**
+         * Gets the key of the window.
+         * Intended for multi-window cases.
+         *
+         * @return The key of this window.
+         */
         @Override
         public @NotNull String getWindowKey() {
             return "window";
