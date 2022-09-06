@@ -1,10 +1,10 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Demo - multiAdapter" type="Application" factoryName="Application">
-    <option name="MAIN_CLASS_NAME" value="graphicsEngineDemo.multiAdapterDemo.Main" />
+    <option name="MAIN_CLASS_NAME" value="graphicsEngineDemo.d4_multiAdapterDemo.Main" />
     <module name="GraphicsEngine" />
     <extension name="coverage">
       <pattern>
-        <option name="PATTERN" value="graphicsEngineDemo.multiAdapterDemo.*" />
+        <option name="PATTERN" value="graphicsEngineDemo.d4_multiAdapterDemo.*" />
         <option name="ENABLED" value="true" />
       </pattern>
     </extension>

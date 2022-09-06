@@ -1,10 +1,10 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Demo - simplest" type="Application" factoryName="Application">
-    <option name="MAIN_CLASS_NAME" value="graphicsEngineDemo.simplestDemo.Main" />
+    <option name="MAIN_CLASS_NAME" value="graphicsEngineDemo.d1_simplestDemo.Main" />
     <module name="GraphicsEngine" />
     <extension name="coverage">
       <pattern>
-        <option name="PATTERN" value="graphicsEngineDemo.simplestDemo.*" />
+        <option name="PATTERN" value="graphicsEngineDemo.d1_simplestDemo.*" />
         <option name="ENABLED" value="true" />
       </pattern>
     </extension>

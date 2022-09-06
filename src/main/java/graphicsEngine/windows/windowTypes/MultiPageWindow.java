@@ -21,7 +21,7 @@ public abstract class MultiPageWindow extends AbstractLayeredWindow {
     /*protected Map<String, AbstractPage> pages;
     private String activePage;*/
 
-    MultiPageWindow(@NotNull WindowConfig config, @Nullable JPanel overlay) {
+    public MultiPageWindow(@NotNull WindowConfig config, @Nullable JPanel overlay) {
         super(config, overlay);
     }
 

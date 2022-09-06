@@ -1,10 +1,10 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Demo - overlay" type="Application" factoryName="Application">
-    <option name="MAIN_CLASS_NAME" value="graphicsEngineDemo.overlayDemo.Main" />
+    <option name="MAIN_CLASS_NAME" value="graphicsEngineDemo.d2_overlayDemo.Main" />
     <module name="GraphicsEngine" />
     <extension name="coverage">
       <pattern>
-        <option name="PATTERN" value="graphicsEngineDemo.overlayDemo.*" />
+        <option name="PATTERN" value="graphicsEngineDemo.d2_overlayDemo.*" />
         <option name="ENABLED" value="true" />
       </pattern>
     </extension>
