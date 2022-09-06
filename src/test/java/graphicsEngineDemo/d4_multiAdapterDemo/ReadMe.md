@@ -6,7 +6,7 @@ This is a demo for demonstrating the capability to simultaneously run multiple i
 
 ## Instructions
 
-Look for `Main.java` to launch.
+Run `Main.main(String[] args)` to launch this demo.
 
 ## Notice
 
