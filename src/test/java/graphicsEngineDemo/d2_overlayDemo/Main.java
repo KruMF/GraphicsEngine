@@ -6,13 +6,13 @@ import graphicsEngine.windows.WindowConfig;
 import graphicsEngine.windows.WindowUpdater;
 import graphicsEngine.windows.windowTypes.SinglePageWindow;
 
-import java.awt.*;
+import java.awt.Graphics;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JPanel;
 
 import org.jetbrains.annotations.NotNull;
-
 
 import static consoleUtils.ConsoleUtils.printLine;
 
@@ -36,6 +36,9 @@ public class Main {
      * The window to display.
      */
     private static class Window extends SinglePageWindow implements ActionListener {
+        private static final String WINDOW_TITLE = "Overlay demo";
+        private static final Color OVERLAY_COLOR = new Color(100, 0, 0, 100);
+
         private static final JPanel OVERLAY = new JPanel() {
             {
                 setOpaque(false);
@@ -44,7 +47,7 @@ public class Main {
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
-                g.setColor(new Color(100, 0, 0, 100));
+                g.setColor(OVERLAY_COLOR);
                 g.fillRect(0, 0, this.getWidth(), this.getHeight());
             }
         };
@@ -52,6 +55,7 @@ public class Main {
         private Window() {
             super(new WindowConfig(), OVERLAY);
             setDefaultCloseOperation(EXIT_ON_CLOSE);
+            setTitle(WINDOW_TITLE);
         }
 
         @Override
