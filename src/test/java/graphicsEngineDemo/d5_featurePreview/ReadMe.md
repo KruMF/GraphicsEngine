@@ -1,7 +1,11 @@
-<h1>Paged demo</h1>
+# Feature-preview demo
 
-This is a directory for multi-paged graphics demo.
+## Abstract
+
+This is a general demo for previewing various features of the Graphics Engine.
+
+*Currently not working...*
+
+## Instructions
 
 Look for `Main.java` to launch.
-
-<i>Currently not available...</i>
