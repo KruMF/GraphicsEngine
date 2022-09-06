@@ -10,12 +10,12 @@ Free to use and modify for whatever purposes. No copyrights apply.
 ## Requirements
 
 * JDK: 18
-* Maven compiler: 18
-* Maven Surefire: 3.0.0-M7
-* jetbrains annotations: 23.0.0
-* [ThreadAbstraction](https://github.com/KruMF/ThreadAbstraction) : 0.4.1
+* Maven compiler (source & target) : 18
+* [Maven Surefire Plugin](https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin) : 3.0.0-M7
+* [JetBrains Java Annotations](https://mvnrepository.com/artifact/org.jetbrains/annotations) : 23.0.0
+* [ThreadAbstraction](https://github.com/KruMF/ThreadAbstraction) : 0.4.2
 * [FileHandler](https://github.com/KruMF/FileHandler) : 0.2.5
-* JUnit: Jupiter 5.9.0-M1
+* JUnit: Jupiter 5.9.0
 
 
 ## Instructions
@@ -27,7 +27,7 @@ Maven support recently added. Detailed info coming...
 
 ## Standalone demo
 
-Check `graphicsEngine\demo` for standalone demo versions.
+Check `src\test\java\graphicsEngineDemo` for standalone demo versions.
 
 *Launch instructions available there.*
 

@@ -3,7 +3,7 @@ package graphicsEngineSandbox.main;
 import graphicsEngineSandbox.data.Data;
 import graphicsEngineSandbox.graphics.MyGraphicsAdapter;
 
-import static graphicsEngine.Utilities.printLine;
+import static consoleUtils.ConsoleUtils.printLine;
 
 //a helper class for starting everything
 // TODO: add javadoc

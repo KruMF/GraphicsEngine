@@ -4,7 +4,7 @@ import ThreadAbstraction.AbstractUpdater;
 import graphicsEngineSandbox.calc.Calculations;
 import graphicsEngineSandbox.graphics.MyGraphicsAdapter;
 
-import static graphicsEngine.Utilities.printLine;
+import static consoleUtils.ConsoleUtils.printLine;
 
 // TODO: add javadoc
 public class Main extends AbstractUpdater {

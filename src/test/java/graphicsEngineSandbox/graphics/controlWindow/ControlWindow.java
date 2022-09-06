@@ -8,6 +8,8 @@ import graphicsEngine.windows.WindowConfig;
 import javax.swing.*;
 import java.awt.*;
 
+import org.jetbrains.annotations.NotNull;
+
 // TODO: add javadoc
 public class ControlWindow extends AbstractWindow {
 
@@ -22,6 +24,11 @@ public class ControlWindow extends AbstractWindow {
                 new int[] {25, 25});    //location
         config.closeOperation = EXIT_ON_CLOSE;
         return config;
+    }
+
+    @Override
+    public @NotNull String getWindowKey() {
+        return "controlWindow";
     }
 
     @Override
