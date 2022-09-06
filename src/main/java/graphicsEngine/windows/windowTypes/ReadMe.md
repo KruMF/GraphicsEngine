@@ -1,6 +1,7 @@
-Types of usable windows:
-* SimpleWindow - only contents
-* SinglePageWindow - contents and overlays *(Currently not available)*
-  * contents contains a single page
-* MultiPageWindow - contents and overlays *(Currently not available)*
-  * contents contains multiple pages
+# Window classification
+
+| Class            | Super                                          | Features                                             | Availability              |
+|------------------|------------------------------------------------|------------------------------------------------------|---------------------------|
+| SimpleWindow     | `AbstractWindow`                               | Only contents                                        | Available                 |
+| SinglePageWindow | `AbstractLayeredWindow extends AbstractWindow` | * Contents - contains a single page <br> * Overlays  | *Currently not available* |
+| MultiPageWindow  | `AbstractLayeredWindow extends AbstractWindow` | * Contents - contains multiple pages <br> * Overlays | *Currently not available* |
