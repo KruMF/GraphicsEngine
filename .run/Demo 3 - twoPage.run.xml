@@ -1,10 +1,10 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Demo - simplest" type="Application" factoryName="Application">
-    <option name="MAIN_CLASS_NAME" value="graphicsEngineDemo.d1_simplestDemo.Main" />
+  <configuration default="false" name="Demo 3 - twoPage" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="graphicsEngineDemo.d3_twoPageDemo.Main" />
     <module name="GraphicsEngine" />
     <extension name="coverage">
       <pattern>
-        <option name="PATTERN" value="graphicsEngineDemo.d1_simplestDemo.*" />
+        <option name="PATTERN" value="graphicsEngineDemo.d3_twoPageDemo.parts.*" />
         <option name="ENABLED" value="true" />
       </pattern>
     </extension>
