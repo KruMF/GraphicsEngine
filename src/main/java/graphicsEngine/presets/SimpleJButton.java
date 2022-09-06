@@ -9,7 +9,9 @@ import org.jetbrains.annotations.Nullable;
 
 import static consoleUtils.ConsoleUtils.printLine;
 
-//TODO: add javadoc
+/**
+ * A simple JButton with text and ActionListener.
+ */
 public class SimpleJButton extends JButton {
     private static final String DEFAULT_TEXT = "Button";
     private static final ActionListener
