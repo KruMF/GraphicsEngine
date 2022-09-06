@@ -10,6 +10,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 //contents and overlays
+//TODO: finish this and add javadocs
 abstract class AbstractLayeredWindow extends AbstractWindow {
     private JPanel overlay = new JPanel();
     AbstractLayeredWindow(@NotNull WindowConfig config, @Nullable JPanel overlay) {
@@ -26,9 +27,11 @@ abstract class AbstractLayeredWindow extends AbstractWindow {
     public void showOverlay() {
         getGlassPane().setVisible(true);
     }
+
     public void hideOverlay() {
         getGlassPane().setVisible(false);
     }
+
     public void toggleOverlay() {
         getGlassPane().setVisible(!getGlassPane().isVisible());
     }

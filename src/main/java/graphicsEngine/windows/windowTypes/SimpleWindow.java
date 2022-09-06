@@ -5,7 +5,7 @@ import graphicsEngine.windows.WindowConfig;
 
 import org.jetbrains.annotations.NotNull;
 
-//only contents
+//TODO: finish this and add javadocs
 public abstract class SimpleWindow extends AbstractWindow {
     public SimpleWindow(@NotNull WindowConfig config) {
         super(config);
