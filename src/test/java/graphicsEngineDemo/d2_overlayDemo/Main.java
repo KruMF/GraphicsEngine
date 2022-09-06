@@ -5,19 +5,18 @@ import graphicsEngine.windows.AbstractPage;
 import graphicsEngine.windows.WindowConfig;
 import graphicsEngine.windows.WindowUpdater;
 import graphicsEngine.windows.windowTypes.SinglePageWindow;
+import graphicsEngine.presets.SimpleOverlay;
 
-import java.awt.Graphics;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JPanel;
-
-import org.jetbrains.annotations.NotNull;
 
 import static consoleUtils.ConsoleUtils.printLine;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
- * TODO: finish this and add javadocs
+ * TODO: add javadoc
  */
 public class Main {
 
@@ -39,18 +38,7 @@ public class Main {
         private static final String WINDOW_TITLE = "Overlay demo";
         private static final Color OVERLAY_COLOR = new Color(100, 0, 0, 100);
 
-        private static final JPanel OVERLAY = new JPanel() {
-            {
-                setOpaque(false);
-            }
-
-            @Override
-            protected void paintComponent(Graphics g) {
-                super.paintComponent(g);
-                g.setColor(OVERLAY_COLOR);
-                g.fillRect(0, 0, this.getWidth(), this.getHeight());
-            }
-        };
+        private static final SimpleOverlay OVERLAY = new SimpleOverlay(OVERLAY_COLOR);
 
         private Window() {
             super(new WindowConfig(), OVERLAY);
@@ -58,13 +46,24 @@ public class Main {
             setTitle(WINDOW_TITLE);
         }
 
+        /**
+         * Redundant as there is only one window.
+         * TODO: finish this javadoc
+         *
+         * @return The key of this window.
+         */
         @Override
-        public @NotNull String getWindowKey() {
+        public final @NotNull String getWindowKey() {
             return "window";
         }
 
+        /**
+         * Prepares a page to add to this window.
+         *
+         * @return An AbstractPage object.
+         */
         @Override
-        public AbstractPage addPage() {
+        public final @NotNull AbstractPage addPage() {
             return new Page(null, this);
         }
 
@@ -74,24 +73,13 @@ public class Main {
          * @param e the event to be processed
          */
         @Override
-        public void actionPerformed(ActionEvent e) {
-            String buttonName;
+        public final void actionPerformed(ActionEvent e) {
             switch (e.getActionCommand()) {
-                case Button1.ACTION_COMMAND -> {
-                    buttonName = Button1.ACTION_COMMAND;
-                    showOverlay();
-                }
-                case Button2.ACTION_COMMAND -> {
-                    buttonName = Button2.ACTION_COMMAND;
-                    hideOverlay();
-                }
-                case Button3.ACTION_COMMAND -> {
-                    buttonName = Button3.ACTION_COMMAND;
-                    toggleOverlay();
-                }
-                default -> buttonName = "A button";
+                case Buttons.ACTION_COMMAND_1 -> showOverlay();
+                case Buttons.ACTION_COMMAND_2 -> hideOverlay();
+                case Buttons.ACTION_COMMAND_3 -> toggleOverlay();
+                default -> printLine("A button has been pressed but no action set up");
             }
-            printLine(buttonName + " has been pressed");
         }
     }
 }

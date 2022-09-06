@@ -41,9 +41,9 @@ class Page extends HeaderAndFooterPage {
 
         private void addButtons(@Nullable ActionListener actionListener) {
             setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
-            add(new Button1(actionListener));
-            add(new Button2(actionListener));
-            add(new Button3(actionListener));
+            add(new Buttons.Button1(actionListener));
+            add(new Buttons.Button2(actionListener));
+            add(new Buttons.Button3(actionListener));
         }
     }
 
