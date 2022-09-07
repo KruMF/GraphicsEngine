@@ -36,9 +36,8 @@ abstract class AbstractLayeredWindow extends AbstractWindow {
         Component glassPane = getGlassPane();
         if (glassPane instanceof SimpleOverlay) {
             return (SimpleOverlay) glassPane;
-        } else {
-            throw new ClassCastException();
         }
+        throw new ClassCastException();
     }
 
     //TODO: add javadoc
