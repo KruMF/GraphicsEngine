@@ -1,9 +1,9 @@
 package graphicsEngine.presets;
 
+import java.util.Objects;
 import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.JPanel;
-import java.util.Objects;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -15,6 +15,15 @@ public class SimpleOverlay extends JPanel {
 
     public SimpleOverlay(@Nullable Color color) {
         setOpaque(false);
+        setColor(color);
+    }
+
+    /**
+     * Sets the color of the background;
+     *
+     * @param color New color.
+     */
+    public void setColor(@Nullable Color color) {
         this.color = Objects.requireNonNullElse(color, DEFAULT_COLOR);
     }
 
