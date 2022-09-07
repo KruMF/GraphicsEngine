@@ -1,8 +1,8 @@
 package graphicsEngine;
 
-import java.awt.*;
-import javax.swing.JComponent;
+import java.awt.Color;
 import javax.swing.ImageIcon;
+import javax.swing.JComponent;
 import javax.swing.border.LineBorder;
 
 import java.util.Objects;
@@ -17,18 +17,6 @@ public class Utilities {
     private static final String
             RESOURCES_PATH = "src/main/resources/graphicsEngine/",
             SAMPLE_IMAGE_RELATIVE_PATH = "images/sample.png";
-    private static final Color DEFAULT_BORDER_COLOR = Color.red;
-
-    // TODO: add javadoc
-    public interface BorderInterface {
-        static void setBorderState(@NotNull JComponent component, boolean state, @Nullable Color color) {
-            if (state) {
-                component.setBorder(new LineBorder(Objects.requireNonNullElse(color, DEFAULT_BORDER_COLOR)));
-            } else {
-                component.setBorder(null);
-            }
-        }
-    }
 
     //TODO: add javadoc
     public static @NotNull ImageIcon getSampleIcon() {
@@ -38,5 +26,18 @@ public class Utilities {
     @SuppressWarnings("SameParameterValue")
     private static @NotNull String getFulResourcePath(@NotNull String relative) {
         return RESOURCES_PATH + relative;
+    }
+
+    // TODO: add javadoc
+    public interface BorderInterface {
+        Color DEFAULT_BORDER_COLOR = Color.red;
+
+        static void setBorderState(@NotNull JComponent component, boolean state, @Nullable Color color) {
+            if (state) {
+                component.setBorder(new LineBorder(Objects.requireNonNullElse(color, DEFAULT_BORDER_COLOR)));
+            } else {
+                component.setBorder(null);
+            }
+        }
     }
 }
