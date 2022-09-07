@@ -6,8 +6,7 @@ import graphicsEngine.windows.windowTypes.MultiPageWindow;
 
 import graphicsEngineDemo.d3_twoPageDemo.pages.Page1;
 import graphicsEngineDemo.d3_twoPageDemo.pages.Page2;
-import graphicsEngineDemo.d3_twoPageDemo.parts.Button1;
-import graphicsEngineDemo.d3_twoPageDemo.parts.Button2;
+import graphicsEngineDemo.d3_twoPageDemo.parts.Buttons;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -68,18 +67,14 @@ class Window extends MultiPageWindow implements ActionListener {
      */
     @Override
     public void actionPerformed(ActionEvent e) {
-        String buttonName;
         switch (e.getActionCommand()) {
-            case Button1.ACTION_COMMAND -> {
-                buttonName = Button1.ACTION_COMMAND;
-                //TODO: switch to page 1 here
+            case Buttons.Button1.ACTION_COMMAND -> {
+                setActivePage((new Page1(null, null)).getPageKey());
             }
-            case Button2.ACTION_COMMAND -> {
-                buttonName = Button2.ACTION_COMMAND;
-                //TODO: switch to page 2 here
+            case Buttons.Button2.ACTION_COMMAND -> {
+                setActivePage((new Page2(null, null)).getPageKey());
             }
-            default -> buttonName = "A button";
+            default -> printLine("A button has been pressed but no action set up");
         }
-        printLine(buttonName + " has been pressed");
     }
 }

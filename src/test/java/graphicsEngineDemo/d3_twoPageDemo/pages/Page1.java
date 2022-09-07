@@ -2,6 +2,7 @@ package graphicsEngineDemo.d3_twoPageDemo.pages;
 
 import graphicsEngine.panels.PanelColors;
 
+import java.awt.*;
 import java.awt.event.ActionListener;
 
 import org.jetbrains.annotations.Nullable;
@@ -11,6 +12,7 @@ public class Page1 extends AbstractCommonPage {
     public Page1(@Nullable PanelColors panelColors,
                     @Nullable ActionListener actionListener) {
         super(panelColors, actionListener);
+        setBackground(Color.cyan);
     }
 
     @Override
