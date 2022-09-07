@@ -41,6 +41,7 @@ public abstract class AbstractWindow extends JFrame {
     public final void resetParts() {
         getContentPane().removeAll();
         addParts();
+        getContentPane().validate();
     }
 
     /**

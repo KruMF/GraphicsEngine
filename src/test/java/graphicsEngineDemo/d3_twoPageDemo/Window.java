@@ -1,22 +1,31 @@
 package graphicsEngineDemo.d3_twoPageDemo;
 
 import graphicsEngine.windows.WindowConfig;
+import graphicsEngine.windows.AbstractPage;
+import graphicsEngine.windows.windowTypes.MultiPageWindow;
 
+import graphicsEngineDemo.d3_twoPageDemo.pages.Page1;
+import graphicsEngineDemo.d3_twoPageDemo.pages.Page2;
 import graphicsEngineDemo.d3_twoPageDemo.parts.Button1;
 import graphicsEngineDemo.d3_twoPageDemo.parts.Button2;
-import org.jetbrains.annotations.NotNull;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
+import java.util.ArrayList;
 
 import static consoleUtils.ConsoleUtils.printLine;
-import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
+
+import org.jetbrains.annotations.NotNull;
 
 //TODO: finish this and add javadocs
-class Window /*extends MultiPageWindow*/ implements ActionListener {
-
+class Window extends MultiPageWindow implements ActionListener {
+    //TODO: add javadocs
     public Window() {
-        //super(config());
+        super(config(), null);
+        try {
+            setActivePage(getFirstKey());
+        } catch (NullPointerException ignored) {}
     }
 
     /**
@@ -34,20 +43,23 @@ class Window /*extends MultiPageWindow*/ implements ActionListener {
         return config;
     }
 
-    //@Override
-    public @NotNull String getWindowKey() {
+    //TODO: add javadocs
+    @Override
+    public final @NotNull String getWindowKey() {
         return "window";
     }
 
     /**
-     * Adds parts to this window.
+     * Adds pages to this window.
      */
-    /*@Override
-    public void addParts() {
-        add(new Page1(null, this));
-        //TODO: add pages here; maybe use MultiPageWindow instead of AbstractWindow
-        //add(new Page2(null, this));
-    }*/
+    @Override
+    public @NotNull List<AbstractPage> getInitialPages() {
+        ActionListener actionListener = this;
+        return new ArrayList<>() {{
+            add(new Page1(null, actionListener));
+            add(new Page2(null, actionListener));
+        }};
+    }
 
     /**
      * Invoked when an action occurs.

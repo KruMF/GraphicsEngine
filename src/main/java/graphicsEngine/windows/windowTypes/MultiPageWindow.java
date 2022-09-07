@@ -12,6 +12,8 @@ import java.util.Objects;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import static consoleUtils.ConsoleUtils.printLine;
+
 // TODO: finish this and add javadoc
 public abstract class MultiPageWindow extends AbstractLayeredWindow {
     private static final String EMPTY_KEY = "";
@@ -26,7 +28,8 @@ public abstract class MultiPageWindow extends AbstractLayeredWindow {
         addPages(getInitialPages());
     }
 
-    /*private @NotNull String getFirstKey() throws NullPointerException {
+    //TODO: add javadoc
+    public @NotNull String getFirstKey() throws NullPointerException {
         if (pages == null) {
             throw new NullPointerException();
         }
@@ -36,7 +39,7 @@ public abstract class MultiPageWindow extends AbstractLayeredWindow {
                     EMPTY_KEY);
         }
         return EMPTY_KEY;
-    }*/
+    }
 
     private void addPages(@NotNull List<AbstractPage> pages) {
         for (AbstractPage page : pages) {
@@ -63,7 +66,7 @@ public abstract class MultiPageWindow extends AbstractLayeredWindow {
 
     //TODO: add javadoc
     public @Nullable AbstractPage getActivePage() {
-        if (pages.containsKey(getActivePageKey())) {
+        if (pages != null && pages.containsKey(getActivePageKey())) {
             return pages.get(activePage);
         }
         return null;
