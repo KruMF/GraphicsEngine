@@ -13,6 +13,7 @@ public class Buttons {
     public static final String ACTION_COMMAND_1 = "show";
     public static final String ACTION_COMMAND_2 = "hide";
     public static final String ACTION_COMMAND_3 = "toggle";
+    public static final String ACTION_COMMAND_4 = "color";
 
     /**
      * A simple button for showing the overlay.
@@ -38,6 +39,15 @@ public class Buttons {
     public static class Button3 extends SimpleJButton {
         protected Button3(@Nullable ActionListener actionListener) {
             super("Toggle", ACTION_COMMAND_3, actionListener);
+        }
+    }
+
+    /**
+     * A simple button for toggling the color of the overlay.
+     */
+    public static class Button4 extends SimpleJButton {
+        protected Button4(@Nullable ActionListener actionListener) {
+            super("Color", ACTION_COMMAND_4, actionListener);
         }
     }
 }

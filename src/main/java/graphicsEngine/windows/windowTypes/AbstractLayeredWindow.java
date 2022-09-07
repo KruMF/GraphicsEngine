@@ -22,7 +22,7 @@ abstract class AbstractLayeredWindow extends AbstractWindow {
     }
 
     //TODO: add javadoc
-    void setOverlay(@Nullable SimpleOverlay overlay) {
+    public void setOverlay(@Nullable SimpleOverlay overlay) {
         setGlassPane(Objects.requireNonNullElse(overlay, getDefaultOverlay()));
     }
 
