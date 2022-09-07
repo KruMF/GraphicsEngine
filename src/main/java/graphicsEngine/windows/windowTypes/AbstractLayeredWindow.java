@@ -15,7 +15,8 @@ import org.jetbrains.annotations.Nullable;
 abstract class AbstractLayeredWindow extends AbstractWindow {
 
     //TODO: add javadoc
-    AbstractLayeredWindow(@NotNull WindowConfig config, @Nullable SimpleOverlay overlay) {
+    AbstractLayeredWindow(@NotNull WindowConfig config,
+                          @Nullable SimpleOverlay overlay) {
         super(config);
         setOverlay(overlay);
         hideOverlay();
@@ -26,17 +27,17 @@ abstract class AbstractLayeredWindow extends AbstractWindow {
         setGlassPane(Objects.requireNonNullElse(overlay, getDefaultOverlay()));
     }
 
-    private static SimpleOverlay getDefaultOverlay() {
+    private static @NotNull SimpleOverlay getDefaultOverlay() {
         return new SimpleOverlay(null);
     }
 
     //TODO: finish this and add javadoc
-    public @Nullable SimpleOverlay getOverlay() {
+    public @NotNull SimpleOverlay getOverlay() throws ClassCastException {
         Component glassPane = getGlassPane();
         if (glassPane instanceof SimpleOverlay) {
             return (SimpleOverlay) glassPane;
         } else {
-            return null;
+            throw new ClassCastException();
         }
     }
 

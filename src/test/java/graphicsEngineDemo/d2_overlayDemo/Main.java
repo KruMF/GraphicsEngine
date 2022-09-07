@@ -96,9 +96,10 @@ public class Main {
         }
 
         private void setOverlayColor(@Nullable Color color) {
-            SimpleOverlay overlay = getOverlay();
-            if (overlay != null) {
-                overlay.setColor(color);
+            try {
+                getOverlay().setColor(color);
+            } catch (ClassCastException ignored) {
+                //glassPane does not contain a SimpleOverlay object
             }
         }
     }
