@@ -24,4 +24,9 @@ public class Page1 extends AbstractCommonPage {
     public String getPageKey() {
         return "page1";
     }
+
+    //TODO: add javadoc
+    public static String getStaticPageKey() {
+        return (new Page1(null, null)).getPageKey();
+    }
 }

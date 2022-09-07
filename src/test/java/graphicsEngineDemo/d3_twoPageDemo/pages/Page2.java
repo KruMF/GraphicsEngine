@@ -22,4 +22,9 @@ public class Page2 extends AbstractCommonPage {
     public String getPageKey() {
         return "page2";
     }
+
+    //TODO: add javadoc
+    public static String getStaticPageKey() {
+        return (new Page2(null, null)).getPageKey();
+    }
 }

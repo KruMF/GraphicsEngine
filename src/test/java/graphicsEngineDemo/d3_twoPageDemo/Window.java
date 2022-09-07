@@ -22,7 +22,7 @@ class Window extends MultiPageWindow implements ActionListener {
     //TODO: add javadocs
     public Window() {
         super(config(), null);
-        setActivePage(new Page1(null, null).getPageKey());
+        setActivePage(Page1.getStaticPageKey());
     }
 
     /**
@@ -66,12 +66,8 @@ class Window extends MultiPageWindow implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {
-            case Buttons.Button1.ACTION_COMMAND -> {
-                setActivePage((new Page1(null, null)).getPageKey());
-            }
-            case Buttons.Button2.ACTION_COMMAND -> {
-                setActivePage((new Page2(null, null)).getPageKey());
-            }
+            case Buttons.Button1.ACTION_COMMAND -> setActivePage(Page1.getStaticPageKey());
+            case Buttons.Button2.ACTION_COMMAND -> setActivePage(Page2.getStaticPageKey());
             default -> printLine("A button has been pressed but no action set up");
         }
     }
