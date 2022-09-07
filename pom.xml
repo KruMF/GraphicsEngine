@@ -6,7 +6,7 @@
 
     <groupId>com.github.KruMF</groupId>
     <artifactId>GraphicsEngine</artifactId>
-    <version>0.8.6</version>
+    <version>0.8.7</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
