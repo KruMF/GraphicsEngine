@@ -21,7 +21,6 @@ import org.jetbrains.annotations.Nullable;
  * TODO: add javadoc
  */
 public class Main {
-
     /**
      * The main method.
      *
@@ -79,10 +78,10 @@ public class Main {
         @Override
         public final void actionPerformed(ActionEvent e) {
             switch (e.getActionCommand()) {
-                case Buttons.ACTION_COMMAND_1 -> showOverlay();
-                case Buttons.ACTION_COMMAND_2 -> hideOverlay();
-                case Buttons.ACTION_COMMAND_3 -> toggleOverlay();
-                case Buttons.ACTION_COMMAND_4 -> toggleOverlayColor();
+                case Buttons.Button1.ACTION_COMMAND -> showOverlay();
+                case Buttons.Button2.ACTION_COMMAND -> hideOverlay();
+                case Buttons.Button3.ACTION_COMMAND -> toggleOverlay();
+                case Buttons.Button4.ACTION_COMMAND -> toggleOverlayColor();
                 default -> printLine("A button has been pressed but no action set up");
             }
         }
@@ -90,9 +89,9 @@ public class Main {
         private void toggleOverlayColor() {
             overlayColorState = !overlayColorState;
             if(overlayColorState) {
-                setOverlayColor(Overlay.COLOR_1);
+                setOverlayColor(OverlayColors.GREEN);
             } else {
-                setOverlayColor(Overlay.COLOR_0);
+                setOverlayColor(OverlayColors.RED);
             }
         }
 
@@ -104,15 +103,23 @@ public class Main {
         }
     }
 
-    //TODO: add javadoc
+    /**
+     * TODO: finish this javadoc
+     */
     private static class Overlay extends SimpleOverlay {
-        protected static final Color COLOR_0 = new Color(100, 0, 0, 100);
-        protected static final Color COLOR_1 = new Color(0, 100, 0, 100);
-
+        //TODO: add javadoc
         protected Overlay(@Nullable ActionListener actionListener) {
-            super(COLOR_0);
+            super(OverlayColors.RED);
             setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
             add(new Buttons.Button4(actionListener));
         }
+    }
+
+    /**
+     * TODO: finish this javadoc
+     */
+    private static class OverlayColors {
+        protected static final Color RED = new Color(100, 0, 0, 100);
+        protected static final Color GREEN = new Color(0, 100, 0, 100);
     }
 }
