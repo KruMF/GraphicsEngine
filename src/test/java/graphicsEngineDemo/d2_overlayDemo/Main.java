@@ -11,6 +11,7 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.BoxLayout;
+import javax.swing.ImageIcon;
 
 import static consoleUtils.ConsoleUtils.printLine;
 
@@ -47,6 +48,10 @@ public class Main {
 
             overlayColorState = false;
             setOverlay(new Overlay(this));
+
+            //Testing functionality. TODO: remove this from here
+            ImageIcon icon = new ImageIcon("src/main/resources/graphicsEngine/sample.png");
+            setIcon(icon);
         }
 
         /**

@@ -1,6 +1,7 @@
 package graphicsEngine.windows;
 
 import javax.swing.JFrame;
+import javax.swing.ImageIcon;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -29,6 +30,11 @@ public abstract class AbstractWindow extends JFrame {
 
         addParts();
         setVisible(true);
+    }
+
+    //TODO: add javadoc
+    public void setIcon(@NotNull ImageIcon icon) {
+        setIconImage(icon.getImage());
     }
 
     //TODO: add javadoc
