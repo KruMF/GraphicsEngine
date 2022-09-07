@@ -47,7 +47,7 @@ public class Buttons {
      */
     public static class Button4 extends SimpleJButton {
         protected Button4(@Nullable ActionListener actionListener) {
-            super("Color", ACTION_COMMAND_4, actionListener);
+            super("Toggle color", ACTION_COMMAND_4, actionListener);
         }
     }
 }
