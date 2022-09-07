@@ -38,7 +38,7 @@ public class Buttons {
      */
     public static class Button3 extends SimpleJButton {
         protected Button3(@Nullable ActionListener actionListener) {
-            super("Toggle", ACTION_COMMAND_3, actionListener);
+            super("Toggle visibility", ACTION_COMMAND_3, actionListener);
         }
     }
 
