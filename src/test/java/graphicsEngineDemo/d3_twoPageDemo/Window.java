@@ -22,9 +22,7 @@ class Window extends MultiPageWindow implements ActionListener {
     //TODO: add javadocs
     public Window() {
         super(config(), null);
-        try {
-            setActivePage(getFirstKey());
-        } catch (NullPointerException ignored) {}
+        setActivePage(new Page1(null, null).getPageKey());
     }
 
     /**

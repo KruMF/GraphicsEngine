@@ -28,19 +28,6 @@ public abstract class MultiPageWindow extends AbstractLayeredWindow {
         addPages(getInitialPages());
     }
 
-    //TODO: add javadoc
-    public @NotNull String getFirstKey() throws NullPointerException {
-        if (pages == null) {
-            throw new NullPointerException();
-        }
-        if (pages.size() > 0) {
-            return Objects.requireNonNullElse(
-                    pages.keySet().stream().toList().get(0),
-                    EMPTY_KEY);
-        }
-        return EMPTY_KEY;
-    }
-
     private void addPages(@NotNull List<AbstractPage> pages) {
         for (AbstractPage page : pages) {
             addPage(page);
