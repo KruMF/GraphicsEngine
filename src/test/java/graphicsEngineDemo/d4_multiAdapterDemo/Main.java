@@ -78,7 +78,7 @@ public class Main {
                     size = new int[] {300, 200},
                     location = new int[] {50, 300};
             WindowConfig config = new WindowConfig(title, size, location);
-            config.closeOperation = DO_NOTHING_ON_CLOSE;
+            config.closeOperation = DISPOSE_ON_CLOSE;
             return config;
         }
 
@@ -110,7 +110,7 @@ public class Main {
                     size = new int[] {600, 400},
                     location = new int[] {400, 300};
             WindowConfig config = new WindowConfig(title, size, location);
-            config.closeOperation = DO_NOTHING_ON_CLOSE;
+            config.closeOperation = DISPOSE_ON_CLOSE;
             return config;
         }
 

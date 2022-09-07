@@ -13,6 +13,7 @@ import java.awt.event.ActionListener;
 import javax.swing.BoxLayout;
 
 import static consoleUtils.ConsoleUtils.printLine;
+import static graphicsEngine.Utilities.getSampleIcon;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -47,6 +48,8 @@ public class Main {
 
             overlayColorState = false;
             setOverlay(new Overlay(this));
+
+            setIcon(getSampleIcon()); //Testing functionality. TODO: remove this from here
         }
 
         /**
@@ -66,7 +69,7 @@ public class Main {
          * @return An AbstractPage object.
          */
         @Override
-        public final @NotNull AbstractPage addPage() {
+        public final @NotNull AbstractPage getPage() {
             return new Page(null, this);
         }
 

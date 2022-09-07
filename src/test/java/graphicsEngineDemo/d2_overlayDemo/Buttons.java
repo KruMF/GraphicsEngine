@@ -9,11 +9,11 @@ import org.jetbrains.annotations.Nullable;
 /**
  * A class for containing buttons.
  */
-public class Buttons {
+class Buttons {
     /**
      * A simple button for showing the overlay.
      */
-    public static class Button1 extends SimpleJButton {
+    protected static class Button1 extends SimpleJButton {
         public static final String ACTION_COMMAND = "show";
 
         protected Button1(@Nullable ActionListener actionListener) {
@@ -24,7 +24,7 @@ public class Buttons {
     /**
      * A simple button for hiding the overlay.
      */
-    public static class Button2 extends SimpleJButton {
+    protected static class Button2 extends SimpleJButton {
         public static final String ACTION_COMMAND = "hide";
 
         protected Button2(@Nullable ActionListener actionListener) {
@@ -35,7 +35,7 @@ public class Buttons {
     /**
      * A simple button for toggling the visibility of the overlay.
      */
-    public static class Button3 extends SimpleJButton {
+    protected static class Button3 extends SimpleJButton {
         public static final String ACTION_COMMAND = "toggle";
 
         protected Button3(@Nullable ActionListener actionListener) {
@@ -46,7 +46,7 @@ public class Buttons {
     /**
      * A simple button for toggling the color of the overlay.
      */
-    public static class Button4 extends SimpleJButton {
+    protected static class Button4 extends SimpleJButton {
         public static final String ACTION_COMMAND = "color";
 
         protected Button4(@Nullable ActionListener actionListener) {
