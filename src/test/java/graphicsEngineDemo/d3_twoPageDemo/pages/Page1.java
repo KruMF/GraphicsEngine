@@ -1,25 +1,25 @@
 package graphicsEngineDemo.d3_twoPageDemo.pages;
 
-import graphicsEngine.panels.PanelColors;
-
-import java.awt.*;
+import java.awt.Color;
 import java.awt.event.ActionListener;
 
 import org.jetbrains.annotations.Nullable;
 
-//TODO: finish this and add javadocs
+//TODO: add javadocs
 public class Page1 extends AbstractCommonPage {
-    public Page1(@Nullable PanelColors panelColors,
-                    @Nullable ActionListener actionListener) {
-        super(panelColors, actionListener);
-        setBackground(Color.cyan);
+    //TODO: add javadoc
+    public Page1() {
+        this(null, null);
     }
 
-    @Override
-    public void addParts() {
-        //TODO: add a label here indicating page number
+    //TODO: add javadoc
+    public Page1(@Nullable ActionListener actionListener,
+                 @Nullable Color background) {
+        super(actionListener, "This is page 1");
+        setBackground(background);
     }
 
+    //TODO: add javadoc
     @Override
     public String getPageKey() {
         return "page1";
@@ -27,6 +27,6 @@ public class Page1 extends AbstractCommonPage {
 
     //TODO: add javadoc
     public static String getStaticPageKey() {
-        return (new Page1(null, null)).getPageKey();
+        return (new Page1()).getPageKey();
     }
 }

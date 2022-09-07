@@ -1,30 +1,50 @@
 package graphicsEngine.parts;
 
-import java.awt.*;
-import javax.swing.*;
-
 import java.util.Objects;
+import java.awt.Component;
+import java.awt.Color;
+import javax.swing.JLabel;
 
 import org.jetbrains.annotations.Nullable;
 
 //A simple JLabel with most commonly used functions
-// TODO: add javadocs
+//TODO: add javadocs
 public class SimpleLabel extends JLabel {
     private static final String DEFAULT_TEXT = "A label";
-    private static final Color DEFAULT_COLOR = Color.black;
+    private static final Color
+            DEFAULT_COLOR = Color.black,
+            DEFAULT_BACKGROUND_COLOR = new Color(0,0,0,0);
 
+    //TODO: add javadoc
     public SimpleLabel(@Nullable String text, @Nullable Color textColor) {
+        this(text, textColor, null);
+    }
+
+    //TODO: add javadoc
+    public SimpleLabel(@Nullable String text,
+                       @Nullable Color textColor,
+                       @Nullable Color background) {
         setAlignmentX(Component.LEFT_ALIGNMENT);
         setOpaque(false);
-        setText(stringNullCheck(text));
-        setForeground(colorNullCheck(textColor));
+        setText(text);
+        setTextColor(textColor);
+        setBackground(background);
     }
 
-    public static String stringNullCheck(@Nullable String text) {
-        return Objects.requireNonNullElse(text, DEFAULT_TEXT);
+    //TODO: add javadoc
+    @Override
+    public void setText(@Nullable String text) {
+        super.setText(Objects.requireNonNullElse(text, DEFAULT_TEXT));
     }
 
-    private static Color colorNullCheck(@Nullable Color color) {
-        return Objects.requireNonNullElse(color, DEFAULT_COLOR);
+    //TODO: add javadoc
+    public void setTextColor(@Nullable Color color) {
+        setForeground(Objects.requireNonNullElse(color, DEFAULT_COLOR));
+    }
+
+    //TODO: add javadoc
+    @Override
+    public void setBackground(@Nullable Color background) {
+        super.setBackground(Objects.requireNonNullElse(background, DEFAULT_BACKGROUND_COLOR));
     }
 }

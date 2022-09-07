@@ -8,18 +8,19 @@ import graphicsEngineDemo.d3_twoPageDemo.pages.Page1;
 import graphicsEngineDemo.d3_twoPageDemo.pages.Page2;
 import graphicsEngineDemo.d3_twoPageDemo.parts.Buttons;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.List;
 import java.util.ArrayList;
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import static consoleUtils.ConsoleUtils.printLine;
 
 import org.jetbrains.annotations.NotNull;
 
-//TODO: finish this and add javadocs
+//TODO: add javadocs
 class Window extends MultiPageWindow implements ActionListener {
-    //TODO: add javadocs
+    //TODO: add javadoc
     public Window() {
         super(config(), null);
         setActivePage(Page1.getStaticPageKey());
@@ -40,7 +41,7 @@ class Window extends MultiPageWindow implements ActionListener {
         return config;
     }
 
-    //TODO: add javadocs
+    //TODO: add javadoc
     @Override
     public final @NotNull String getWindowKey() {
         return "window";
@@ -53,8 +54,8 @@ class Window extends MultiPageWindow implements ActionListener {
     public @NotNull List<AbstractPage> getInitialPages() {
         ActionListener actionListener = this;
         return new ArrayList<>() {{
-            add(new Page1(null, actionListener));
-            add(new Page2(null, actionListener));
+            add(new Page1(actionListener, new Color(200, 120, 0)));
+            add(new Page2(actionListener, new Color(200,80,100)));
         }};
     }
 
