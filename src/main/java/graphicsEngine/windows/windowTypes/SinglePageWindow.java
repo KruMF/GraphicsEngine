@@ -18,9 +18,9 @@ public abstract class SinglePageWindow extends AbstractLayeredWindow {
     //TODO: add javadoc
     @Override
     public final void addParts() {
-        add(addPage());
+        add(getPage());
     }
 
     //TODO: add javadoc
-    public abstract AbstractPage addPage();
+    public abstract AbstractPage getPage();
 }

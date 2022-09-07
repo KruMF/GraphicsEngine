@@ -33,11 +33,6 @@ public abstract class AbstractWindow extends JFrame {
     }
 
     //TODO: add javadoc
-    public void setIcon(@NotNull ImageIcon icon) {
-        setIconImage(icon.getImage());
-    }
-
-    //TODO: add javadoc
     public @NotNull abstract String getWindowKey();
 
     /**
@@ -53,4 +48,13 @@ public abstract class AbstractWindow extends JFrame {
      * Called upon creation and part reset.
      */
     public abstract void addParts();
+
+    /**
+     * Sets the icon of the window.
+     *
+     * @param icon ImageIcon object.
+     */
+    public void setIcon(@NotNull ImageIcon icon) {
+        setIconImage(icon.getImage());
+    }
 }

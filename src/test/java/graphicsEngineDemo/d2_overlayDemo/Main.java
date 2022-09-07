@@ -69,7 +69,7 @@ public class Main {
          * @return An AbstractPage object.
          */
         @Override
-        public final @NotNull AbstractPage addPage() {
+        public final @NotNull AbstractPage getPage() {
             return new Page(null, this);
         }
 
