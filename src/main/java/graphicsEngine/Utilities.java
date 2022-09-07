@@ -16,11 +16,11 @@ import org.jetbrains.annotations.NotNull;
 public class Utilities {
     private static final String
             RESOURCES_PATH = "src/main/resources/graphicsEngine/",
-            SAMPLE_IMAGE_RELATIVE_PATH = "images/sample.png";
+            SAMPLE_ICON_RELATIVE_PATH = "images/sample_icon.png";
 
     //TODO: add javadoc
     public static @NotNull ImageIcon getSampleIcon() {
-        return new ImageIcon(getFulResourcePath(SAMPLE_IMAGE_RELATIVE_PATH));
+        return new ImageIcon(getFulResourcePath(SAMPLE_ICON_RELATIVE_PATH));
     }
 
     @SuppressWarnings("SameParameterValue")
