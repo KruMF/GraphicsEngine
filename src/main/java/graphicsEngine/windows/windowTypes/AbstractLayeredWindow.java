@@ -10,7 +10,7 @@ import java.util.Objects;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-//contents and overlays
+//contents and overlay
 //TODO: finish this and add javadocs
 abstract class AbstractLayeredWindow extends AbstractWindow {
 
