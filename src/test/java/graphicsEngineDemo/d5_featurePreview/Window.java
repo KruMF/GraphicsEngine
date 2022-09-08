@@ -4,6 +4,9 @@ import graphicsEngine.windows.WindowConfig;
 import graphicsEngine.windows.windowTypes.MultiPageWindow;
 import graphicsEngine.windows.AbstractPage;
 import graphicsEngineDemo.d5_featurePreview.common.CommonHeaderButtons;
+import graphicsEngineDemo.d5_featurePreview.demoPages.Page1;
+import graphicsEngineDemo.d5_featurePreview.demoPages.Page2;
+import graphicsEngineDemo.d5_featurePreview.menuPages.demoSelectPage.DemoSelectButtons;
 import graphicsEngineDemo.d5_featurePreview.menuPages.startingPage.StartingPage;
 import graphicsEngineDemo.d5_featurePreview.menuPages.settingsPage.SettingsPage;
 import graphicsEngineDemo.d5_featurePreview.menuPages.demoSelectPage.DemoSelectPage;
@@ -56,8 +59,8 @@ public class Window extends MultiPageWindow implements ActionListener {
             add(new StartingPage(actionListener));
             add(new SettingsPage(actionListener));
             add(new DemoSelectPage(actionListener));
-            //add(new Page1());
-            //add(new Page2());
+            add(new Page1(actionListener));
+            add(new Page2(actionListener));
         }};
     }
 
@@ -68,6 +71,12 @@ public class Window extends MultiPageWindow implements ActionListener {
      */
     @Override
     public void actionPerformed(ActionEvent e) {
+        if (headerButtonActionCheck(e)) return;
+        if (demoSelectButtonActionCheck(e)) return;
+        printLine("A button has been pressed but no action set up");
+    }
+
+    private boolean headerButtonActionCheck(ActionEvent e) {
         switch (e.getActionCommand()) {
             case CommonHeaderButtons.Button_Start.ACTION_COMMAND ->
                     setActivePage(StartingPage.getStaticPageKey());
@@ -75,7 +84,23 @@ public class Window extends MultiPageWindow implements ActionListener {
                     setActivePage(SettingsPage.getStaticPageKey());
             case CommonHeaderButtons.Button_DemoSelect.ACTION_COMMAND ->
                     setActivePage(DemoSelectPage.getStaticPageKey());
-            default -> printLine("A button has been pressed but no action set up");
+            default -> {
+                return false;
+            }
         }
+        return true;
+    }
+
+    private boolean demoSelectButtonActionCheck(ActionEvent e) {
+        switch (e.getActionCommand()) {
+            case DemoSelectButtons.Button_Page1.ACTION_COMMAND ->
+                    setActivePage(Page1.getStaticPageKey());
+            case DemoSelectButtons.Button_Page2.ACTION_COMMAND ->
+                    setActivePage(Page2.getStaticPageKey());
+            default -> {
+                return false;
+            }
+        }
+        return true;
     }
 }

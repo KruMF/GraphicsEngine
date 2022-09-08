@@ -1,15 +1,16 @@
 package graphicsEngineDemo.d5_featurePreview.menuPages.startingPage;
 
-import graphicsEngine.panels.PanelColors;
-import graphicsEngineDemo.d3_twoPageDemo.pages.Page1;
-import graphicsEngineDemo.d5_featurePreview.common.AbstractCommonPage;
+import graphicsEngineDemo.d5_featurePreview.common.AbstractMenuPage;
 
+import java.util.List;
+import java.awt.Component;
 import java.awt.event.ActionListener;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 //TODO: finish this and add javadoc
-public class StartingPage extends AbstractCommonPage {
+public class StartingPage extends AbstractMenuPage {
     //TODO: add javadoc
     public StartingPage() {
         this(null);
@@ -22,18 +23,18 @@ public class StartingPage extends AbstractCommonPage {
 
     //TODO: add javadoc
     @Override
-    public final String getPageKey() {
+    public final @NotNull String getPageKey() {
         return "start";
     }
 
     //TODO: add javadoc
-    @Override
-    public void addParts() {
-        //
+    public static @NotNull String getStaticPageKey() {
+        return (new StartingPage()).getPageKey();
     }
 
     //TODO: add javadoc
-    public static String getStaticPageKey() {
-        return (new StartingPage()).getPageKey();
+    @Override
+    public @Nullable List<Component> initialCentralComponents(@Nullable ActionListener actionListener) {
+        return null;
     }
 }

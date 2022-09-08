@@ -1,14 +1,16 @@
 package graphicsEngineDemo.d5_featurePreview.menuPages.settingsPage;
 
-import graphicsEngine.panels.PanelColors;
-import graphicsEngineDemo.d5_featurePreview.common.AbstractCommonPage;
+import graphicsEngineDemo.d5_featurePreview.common.AbstractMenuPage;
 
+import java.util.List;
+import java.awt.Component;
 import java.awt.event.ActionListener;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 //TODO: finish this and add javadoc
-public class SettingsPage extends AbstractCommonPage {
+public class SettingsPage extends AbstractMenuPage {
     //TODO: add javadoc
     public SettingsPage() {
         this(null);
@@ -21,18 +23,18 @@ public class SettingsPage extends AbstractCommonPage {
 
     //TODO: add javadoc
     @Override
-    public final String getPageKey() {
+    public final @NotNull String getPageKey() {
         return "settings";
     }
 
     //TODO: add javadoc
-    @Override
-    public void addParts() {
-        //
+    public static @NotNull String getStaticPageKey() {
+        return (new SettingsPage()).getPageKey();
     }
 
     //TODO: add javadoc
-    public static String getStaticPageKey() {
-        return (new SettingsPage()).getPageKey();
+    @Override
+    public @Nullable List<Component> initialCentralComponents(@Nullable ActionListener actionListener) {
+        return null;
     }
 }
