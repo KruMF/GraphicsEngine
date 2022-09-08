@@ -37,7 +37,6 @@ public class ContentsBox extends LayerContainer {
      *
      * @param color New color.
      */
-    @SuppressWarnings("unused")
     public void setBackgroundColor(@Nullable Color color) {
         ((Background) parts.get(0)).setColor(color);
     }
@@ -47,7 +46,6 @@ public class ContentsBox extends LayerContainer {
      *
      * @param color New color.
      */
-    @SuppressWarnings("unused")
     public void setBorderColor(@Nullable Color color) {
         ((Border) parts.get(1)).setColor(color);
     }

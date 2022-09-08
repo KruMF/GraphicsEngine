@@ -20,11 +20,6 @@ public class SimpleLabel extends ColoredSimplePart {
     private int[] textOffset;
 
     // TODO: add javadoc
-    public SimpleLabel(@Nullable String text) {
-        this(text, null, null);
-    }
-
-    // TODO: add javadoc
     public SimpleLabel(@Nullable String text, @Nullable int[] textOffset, @Nullable Color color) {
         super(color);
         setText(text);
@@ -52,17 +47,5 @@ public class SimpleLabel extends ColoredSimplePart {
         TextAligner.drawStringCentered(g, text, new int[] {
                 location[0] + size[0] / 2 + textOffset[0],
                 location[1] + size[1] / 2 + textOffset[1]});
-    }
-
-    public enum TextAlignment {
-        CENTER,
-        CENTER_LEFT,
-        CENTER_RIGHT,
-        TOP_CENTER,
-        TOP_LEFT,
-        TOP_RIGHT,
-        BOTTOM_CENTER,
-        BOTTOM_LEFT,
-        BOTTOM_RIGHT
     }
 }
