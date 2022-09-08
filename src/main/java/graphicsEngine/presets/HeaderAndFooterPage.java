@@ -8,8 +8,9 @@ import java.awt.BorderLayout;
 
 import org.jetbrains.annotations.Nullable;
 
+//TODO: add javadoc
 public abstract class HeaderAndFooterPage extends AbstractPage {
-
+    //TODO: add javadoc
     public HeaderAndFooterPage(@Nullable AbstractHeader header,
                                @Nullable AbstractFooter footer) {
         super();
@@ -28,5 +29,6 @@ public abstract class HeaderAndFooterPage extends AbstractPage {
         }
     }
 
+    //TODO: add javadoc
     public abstract void addParts();
 }

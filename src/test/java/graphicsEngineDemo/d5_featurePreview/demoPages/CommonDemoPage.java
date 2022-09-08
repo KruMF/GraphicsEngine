@@ -1,15 +1,19 @@
 package graphicsEngineDemo.d5_featurePreview.demoPages;
 
-import graphicsEngine.windows.AbstractPage;
+import graphicsEngineDemo.d5_featurePreview.common.AbstractCommonPage;
 
-import java.awt.*;
+import java.awt.event.ActionListener;
 
-public abstract class CommonDemoPage extends AbstractPage {
-    CommonDemoPage() {
-        super();
+import org.jetbrains.annotations.Nullable;
+
+//TODO: add javadoc
+public abstract class CommonDemoPage extends AbstractCommonPage {
+    //TODO: add javadoc
+    public CommonDemoPage(@Nullable ActionListener actionListener) {
+        super(actionListener);
     }
 
-    CommonDemoPage(Color backgroundColor) {
-        super(backgroundColor);
-    }
+    //TODO: add javadoc
+    @Override
+    public final void addParts() {}
 }

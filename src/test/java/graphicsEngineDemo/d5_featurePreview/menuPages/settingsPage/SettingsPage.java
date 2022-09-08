@@ -1,15 +1,44 @@
 package graphicsEngineDemo.d5_featurePreview.menuPages.settingsPage;
 
-import graphicsEngine.windows.AbstractPage;
+import graphicsEngine.parts.SimpleLabel;
+import graphicsEngineDemo.d5_featurePreview.common.AbstractMenuPage;
+
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.awt.event.ActionListener;
+
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 //TODO: finish this and add javadoc
-public class SettingsPage extends AbstractPage {
+public class SettingsPage extends AbstractMenuPage {
+    //TODO: add javadoc
     public SettingsPage() {
-        super();
+        this(null);
     }
 
+    //TODO: add javadoc
+    public SettingsPage(@Nullable ActionListener actionListener) {
+        super(actionListener);
+    }
+
+    //TODO: add javadoc
     @Override
-    public String getPageKey() {
+    public final @NotNull String getPageKey() {
         return "settings";
+    }
+
+    //TODO: add javadoc
+    public static @NotNull String getStaticPageKey() {
+        return (new SettingsPage()).getPageKey();
+    }
+
+    //TODO: add javadoc
+    @Override
+    public @Nullable List<Component> initialCentralComponents(@Nullable ActionListener actionListener) {
+        return new ArrayList<>() {{
+            add(new SimpleLabel("Settings page", Color.white));
+        }};
     }
 }
