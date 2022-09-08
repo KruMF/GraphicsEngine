@@ -1,6 +1,7 @@
 package graphicsEngineDemo.d1_simplestDemo;
 
 import graphicsEngine.GraphicsAdapter;
+import graphicsEngine.windows.WindowManager;
 import graphicsEngine.windows.WindowUpdater;
 import graphicsEngine.windows.WindowConfig;
 import graphicsEngine.windows.windowTypes.SimpleWindow;
@@ -20,7 +21,7 @@ public class Main {
      */
     public static void main(String[] args) {
         new GraphicsAdapter() {{
-            newWindow(new WindowUpdater(new Window()));
+            newWindow(new WindowUpdater(new Window(this)));
         }};
     }
 
@@ -30,9 +31,11 @@ public class Main {
     private static class Window extends SimpleWindow {
         /**
          * Creates the window.
+         *
+         * @param windowManager A WindowManager object.
          */
-        public Window() {
-            super(new WindowConfig());
+        public Window(@NotNull WindowManager windowManager) {
+            super(windowManager, new WindowConfig());
             setDefaultCloseOperation(EXIT_ON_CLOSE); // Not necessary; added for easier use.
         }
 

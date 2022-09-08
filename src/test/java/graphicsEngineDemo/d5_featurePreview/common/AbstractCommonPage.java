@@ -1,6 +1,5 @@
 package graphicsEngineDemo.d5_featurePreview.common;
 
-import graphicsEngine.panels.PanelColors;
 import graphicsEngine.presets.HeaderAndFooterPage;
 
 import java.awt.event.ActionListener;

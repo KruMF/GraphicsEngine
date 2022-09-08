@@ -2,10 +2,8 @@
 
 ## Abstract
 
-This is a general demo for previewing various features of the Graphics Engine.
-
-*Currently not working...*
+This is a general demo for previewing various features and capabilities of the Graphics Engine.
 
 ## Instructions
 
-Look for `Main.java` to launch.
+Run `Main.main(String[] args)` to launch this demo.

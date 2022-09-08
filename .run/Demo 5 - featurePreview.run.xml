@@ -4,7 +4,7 @@
     <module name="GraphicsEngine" />
     <extension name="coverage">
       <pattern>
-        <option name="PATTERN" value="graphicsEngineDemo.d5_featurePreview.*" />
+        <option name="PATTERN" value="graphicsEngineDemo.d5_featurePreview.window.*" />
         <option name="ENABLED" value="true" />
       </pattern>
     </extension>

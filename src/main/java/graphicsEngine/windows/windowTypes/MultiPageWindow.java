@@ -1,7 +1,8 @@
 package graphicsEngine.windows.windowTypes;
 
-import graphicsEngine.windows.AbstractPage;
+import graphicsEngine.windows.WindowManager;
 import graphicsEngine.windows.WindowConfig;
+import graphicsEngine.windows.AbstractPage;
 import graphicsEngine.presets.SimpleOverlay;
 
 import java.util.List;
@@ -20,9 +21,11 @@ public abstract class MultiPageWindow extends AbstractLayeredWindow {
     private final Map<String, AbstractPage> pages;
     private String activePage;
 
-    public MultiPageWindow(@NotNull WindowConfig config,
+    //TODO: add javadoc
+    public MultiPageWindow(@NotNull WindowManager windowManager,
+                           @NotNull WindowConfig config,
                            @Nullable SimpleOverlay overlay) {
-        super(config, overlay);
+        super(windowManager, config, overlay);
         this.pages = new HashMap<>();
         activePage = EMPTY_KEY;
         addPages(getInitialPages());

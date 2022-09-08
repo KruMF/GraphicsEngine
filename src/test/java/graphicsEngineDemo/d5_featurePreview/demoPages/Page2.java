@@ -1,6 +1,6 @@
 package graphicsEngineDemo.d5_featurePreview.demoPages;
 
-import java.awt.*;
+import java.awt.Color;
 import java.awt.event.ActionListener;
 
 import org.jetbrains.annotations.NotNull;
@@ -8,8 +8,7 @@ import org.jetbrains.annotations.Nullable;
 
 //TODO: add javadoc
 public class Page2 extends CommonDemoPage {
-    //TODO: add javadoc
-    public Page2() {
+    private Page2() {
         this(null);
     }
 

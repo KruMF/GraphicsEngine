@@ -26,13 +26,6 @@ public class PageManager {
         setActivePage(initialActivePage(activePage));
     }
 
-    /**
-     * Empty constructor for a blank page manager containing no pages.
-     */
-    public PageManager() {
-        this(null, null);
-    }
-
     private HashMap<String, Page> initialPages(@Nullable HashMap<String, Page> pages) {
         return Objects.requireNonNullElse(pages, new HashMap<>());
     }
@@ -46,21 +39,6 @@ public class PageManager {
         if ((activePage != null) && (pages.containsKey(activePage))) {
             this.activePage = activePage;
         }
-    }
-
-    //todo: add javadoc
-    public void addPage(@Nullable String key, @Nullable Page page) {
-        if (checkAddableKeyValidity(key) && checkAddablePageValidity(page)) {
-            pages.put(key, page);
-        }
-    }
-
-    private boolean checkAddableKeyValidity(@Nullable String key) {
-        return !(key == null || pages.containsKey(key));
-    }
-
-    private boolean checkAddablePageValidity(@Nullable Page page) {
-        return !(page == null);
     }
 
     /**

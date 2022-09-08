@@ -1,8 +1,9 @@
 package graphicsEngineDemo.d3_twoPageDemo;
 
+import graphicsEngine.windows.WindowManager;
 import graphicsEngine.windows.WindowConfig;
-import graphicsEngine.windows.AbstractPage;
 import graphicsEngine.windows.windowTypes.MultiPageWindow;
+import graphicsEngine.windows.AbstractPage;
 
 import graphicsEngineDemo.d3_twoPageDemo.pages.Page1;
 import graphicsEngineDemo.d3_twoPageDemo.pages.Page2;
@@ -21,8 +22,8 @@ import org.jetbrains.annotations.NotNull;
 //TODO: add javadocs
 class Window extends MultiPageWindow implements ActionListener {
     //TODO: add javadoc
-    public Window() {
-        super(config(), null);
+    public Window(@NotNull WindowManager windowManager) {
+        super(windowManager, config(), null);
         setActivePage(Page1.getStaticPageKey());
     }
 

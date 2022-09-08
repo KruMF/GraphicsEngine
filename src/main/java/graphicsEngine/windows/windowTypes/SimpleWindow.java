@@ -1,14 +1,23 @@
 package graphicsEngine.windows.windowTypes;
 
-import graphicsEngine.windows.AbstractWindow;
+import graphicsEngine.windows.WindowManager;
 import graphicsEngine.windows.WindowConfig;
+import graphicsEngine.windows.AbstractWindow;
 
 import org.jetbrains.annotations.NotNull;
 
-//has only contents, nothing much to add
-//TODO: finish this and add javadocs
+/**
+ * A simple window; has only contents.
+ */
 public abstract class SimpleWindow extends AbstractWindow {
-    public SimpleWindow(@NotNull WindowConfig config) {
-        super(config);
+    /**
+     * Creates a new SimpleWindow with specified configuration.
+     *
+     * @param windowManager A WindowManager object
+     * @param config        Window configuration.
+     */
+    public SimpleWindow(@NotNull WindowManager windowManager,
+                        @NotNull WindowConfig config) {
+        super(windowManager, config);
     }
 }

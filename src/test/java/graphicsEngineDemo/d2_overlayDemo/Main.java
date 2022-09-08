@@ -3,6 +3,7 @@ package graphicsEngineDemo.d2_overlayDemo;
 import graphicsEngine.GraphicsAdapter;
 import graphicsEngine.windows.AbstractPage;
 import graphicsEngine.windows.WindowConfig;
+import graphicsEngine.windows.WindowManager;
 import graphicsEngine.windows.WindowUpdater;
 import graphicsEngine.windows.windowTypes.SinglePageWindow;
 import graphicsEngine.presets.SimpleOverlay;
@@ -18,7 +19,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * TODO: add javadoc
+ * GraphicsEngine demo demonstrating the use of overlays.
  */
 public class Main {
     /**
@@ -28,7 +29,7 @@ public class Main {
      */
     public static void main(String[] args) {
         new GraphicsAdapter() {{
-            newWindow(new WindowUpdater(new Window()));
+            newWindow(new WindowUpdater(new Window(this)));
         }};
     }
 
@@ -40,8 +41,9 @@ public class Main {
 
         private boolean overlayColorState;
 
-        private Window() {
-            super(new WindowConfig(), null);
+        //TODO: add javadoc
+        private Window(@NotNull WindowManager windowManager) {
+            super(windowManager, new WindowConfig(), null);
             setDefaultCloseOperation(EXIT_ON_CLOSE);
             setTitle(WINDOW_TITLE);
 

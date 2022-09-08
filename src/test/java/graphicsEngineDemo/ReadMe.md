@@ -7,6 +7,6 @@ Currently available demos:
 * Overlay demo - one page, with overlay.
 * Two-page demo - one window, two pages.
 * Multi-adapter demo - *self explanatory...*
-* Feature preview - multiple pages *(currently not available)* containing various parts of GraphicsEngine and their use.
+* Feature preview - multiple pages demonstrating various features of the GraphicsEngine.
 
 Further instructions will be in the corresponding directory of the demo.

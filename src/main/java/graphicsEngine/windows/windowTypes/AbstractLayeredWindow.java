@@ -1,28 +1,41 @@
 package graphicsEngine.windows.windowTypes;
 
-import graphicsEngine.windows.AbstractWindow;
+import graphicsEngine.windows.WindowManager;
 import graphicsEngine.windows.WindowConfig;
+import graphicsEngine.windows.AbstractWindow;
 import graphicsEngine.presets.SimpleOverlay;
 
-import java.awt.Component;
 import java.util.Objects;
+import java.awt.Component;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-//contents and overlay
-//TODO: finish this and add javadocs
+/**
+ * An abstract layered window containing contents and an overlay.
+ */
 abstract class AbstractLayeredWindow extends AbstractWindow {
 
-    //TODO: add javadoc
-    AbstractLayeredWindow(@NotNull WindowConfig config,
+    /**
+     * Creates a new AbstractWindow with specified configuration and overlay.
+     *
+     * @param windowManager A WindowManager object
+     * @param config        Window configuration.
+     * @param overlay       Overlay
+     */
+    AbstractLayeredWindow(@NotNull WindowManager windowManager,
+                          @NotNull WindowConfig config,
                           @Nullable SimpleOverlay overlay) {
-        super(config);
+        super(windowManager, config);
         setOverlay(overlay);
         hideOverlay();
     }
 
-    //TODO: add javadoc
+    /**
+     * Sets the overlay.
+     *
+     * @param overlay A SimpleOverlay object.
+     */
     public void setOverlay(@Nullable SimpleOverlay overlay) {
         setGlassPane(Objects.requireNonNullElse(overlay, getDefaultOverlay()));
     }
@@ -31,7 +44,12 @@ abstract class AbstractLayeredWindow extends AbstractWindow {
         return new SimpleOverlay(null);
     }
 
-    //TODO: finish this and add javadoc
+    /**
+     * Gets the overlay.
+     *
+     * @return The overlay.
+     * @throws ClassCastException if glassPane does not contain a SimpleOverlay object.
+     */
     public @NotNull SimpleOverlay getOverlay() throws ClassCastException {
         Component glassPane = getGlassPane();
         if (glassPane instanceof SimpleOverlay) {
@@ -40,18 +58,25 @@ abstract class AbstractLayeredWindow extends AbstractWindow {
         throw new ClassCastException();
     }
 
-    //TODO: add javadoc
+    /**
+     * Shows the overlay.
+     */
     public void showOverlay() {
         getGlassPane().setVisible(true);
     }
 
-    //TODO: add javadoc
+    /**
+     * Hides the overlay.
+     */
     public void hideOverlay() {
         getGlassPane().setVisible(false);
     }
 
-    //TODO: add javadoc
+    /**
+     * Toggles visibility of the overlay.
+     */
     public void toggleOverlay() {
-        getGlassPane().setVisible(!getGlassPane().isVisible());
+        Component pane = getGlassPane();
+        pane.setVisible(!(pane.isVisible()));
     }
 }

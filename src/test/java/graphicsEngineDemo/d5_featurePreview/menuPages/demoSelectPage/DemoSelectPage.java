@@ -12,8 +12,7 @@ import org.jetbrains.annotations.Nullable;
 
 //TODO: finish this and add javadoc
 public class DemoSelectPage extends AbstractMenuPage {
-    //TODO: add javadoc
-    public DemoSelectPage() {
+    private DemoSelectPage() {
         this(null);
     }
 

@@ -5,12 +5,16 @@ import java.util.ArrayList;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-//a class for containing windows and their updaters
-//TODO: add javadocs
-public class WindowManager {
+/**
+ * A utility class for containing windows and their updaters.
+ * Meant to be extended by GraphicsAdapter.
+ */
+public abstract class WindowManager {
     private final ArrayList<WindowUpdater> windows;
 
-    //TODO: add javadoc
+    /**
+     * Creates a new WindowManager, initially with no windows.
+     */
     public WindowManager() {
         windows = new ArrayList<>();
     }
@@ -18,7 +22,7 @@ public class WindowManager {
     /**
      * Use this to add new windows.
      *
-     * @param window Window to add.
+     * @param window A corresponding WindowUpdater object.
      */
     public void newWindow(@NotNull WindowUpdater window) {
         int i = windows.size();
@@ -38,13 +42,13 @@ public class WindowManager {
     }
 
     /**
-     * Gets a specified window.
+     * Gets a WindowUpdater object that contains a window with corresponding key.
      * If multiple windows with the same key exist, returns the first one.
      * Returns null, if provided key is null or no such window found.
      *
      * @param windowKey Key of the window.
      *
-     * @return The specified window.
+     * @return The specified WindowUpdater object.
      */
     public @Nullable WindowUpdater getWindow(@Nullable String windowKey) {
         try {

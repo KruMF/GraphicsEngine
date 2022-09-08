@@ -1,11 +1,12 @@
 package graphicsEngineSandbox.graphics.viewWinow;
 
+import graphicsEngine.windows.WindowManager;
+import graphicsEngine.windows.WindowConfig;
+import graphicsEngine.windows.AbstractWindow;
+import graphicsEngine.panels.PanelColors;
 import graphicsEngineSandbox.graphics.viewWinow.mainPanels.LeftSidePanel;
 import graphicsEngineSandbox.graphics.viewWinow.mainPanels.RightSidePanel;
-import graphicsEngine.panels.PanelColors;
 import graphicsEngineSandbox.graphics.viewWinow.mainPanels.center.CenterContainer;
-import graphicsEngine.windows.AbstractWindow;
-import graphicsEngine.windows.WindowConfig;
 
 import java.awt.*;
 
@@ -15,8 +16,8 @@ import org.jetbrains.annotations.NotNull;
 public class ViewWindow extends AbstractWindow {
     private static final int[] WINDOW_MINIMUM_SIZE = new int[] {700, 400};
 
-    public ViewWindow() {
-        super(config());
+    public ViewWindow(@NotNull WindowManager windowManager) {
+        super(windowManager, config());
         int[] correctedMinimumSize = AbstractWindow.correctWindowsSizeError(WINDOW_MINIMUM_SIZE);
         setMinimumSize(new Dimension(correctedMinimumSize[0], correctedMinimumSize[1]));
     }
