@@ -1,5 +1,6 @@
 package graphicsEngineDemo.d5_featurePreview.demoPages;
 
+import java.awt.*;
 import java.awt.event.ActionListener;
 
 import org.jetbrains.annotations.NotNull;
@@ -15,6 +16,7 @@ public class Page1 extends CommonDemoPage {
     //TODO: add javadoc
     public Page1(@Nullable ActionListener actionListener) {
         super(actionListener);
+        setBackground(new Color(150, 50, 50));
     }
 
     //TODO: add javadoc
