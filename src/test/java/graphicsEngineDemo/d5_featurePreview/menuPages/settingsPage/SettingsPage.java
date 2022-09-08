@@ -3,9 +3,10 @@ package graphicsEngineDemo.d5_featurePreview.menuPages.settingsPage;
 import graphicsEngine.parts.SimpleLabel;
 import graphicsEngineDemo.d5_featurePreview.common.AbstractMenuPage;
 
-import java.awt.*;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.ArrayList;
+import java.awt.Color;
+import java.awt.Component;
 import java.awt.event.ActionListener;
 
 import org.jetbrains.annotations.NotNull;
@@ -13,8 +14,7 @@ import org.jetbrains.annotations.Nullable;
 
 //TODO: finish this and add javadoc
 public class SettingsPage extends AbstractMenuPage {
-    //TODO: add javadoc
-    public SettingsPage() {
+    private SettingsPage() {
         this(null);
     }
 

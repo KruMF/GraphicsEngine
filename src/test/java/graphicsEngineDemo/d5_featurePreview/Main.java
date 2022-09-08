@@ -3,6 +3,7 @@ package graphicsEngineDemo.d5_featurePreview;
 import graphicsEngine.GraphicsAdapter;
 
 import graphicsEngine.windows.WindowUpdater;
+import graphicsEngineDemo.d5_featurePreview.window.Window;
 
 /**
  * A general demo for previewing various features and capabilities of the Graphics Engine.

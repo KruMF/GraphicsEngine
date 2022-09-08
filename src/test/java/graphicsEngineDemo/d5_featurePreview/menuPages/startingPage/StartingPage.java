@@ -14,8 +14,7 @@ import org.jetbrains.annotations.Nullable;
 
 //TODO: finish this and add javadoc
 public class StartingPage extends AbstractMenuPage {
-    //TODO: add javadoc
-    public StartingPage() {
+    private StartingPage() {
         this(null);
     }
 
