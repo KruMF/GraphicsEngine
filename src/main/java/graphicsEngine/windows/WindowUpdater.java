@@ -6,24 +6,44 @@ import ThreadAbstraction.AbstractUpdater;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 
-//TODO:add javadocs
+/**
+ * A class for joining window and the thread that updates it.
+ */
 public class WindowUpdater extends AbstractUpdater {
     private AbstractWindow window;
 
-    //default delayOptions
+    /**
+     * Creates a window updater with default delay options.
+     *
+     * @param window A window to update.
+     */
     public WindowUpdater(@NotNull AbstractWindow window) {
         super();
         setWindow(window);
     }
 
-    //delay in milliseconds
-    public WindowUpdater(@NotNull AbstractWindow window, long delay) {
+    /**
+     * Creates a window updater with specified delay in milliseconds.
+     *
+     * @param window A window to update.
+     * @param delay  Delay in milliseconds.
+     */
+    @SuppressWarnings("unused")
+    public WindowUpdater(@NotNull AbstractWindow window,
+                         long delay) {
         super(delay);
         setWindow(window);
     }
 
-    //custom delayOptions
-    public WindowUpdater(@NotNull AbstractWindow window, @Nullable DelayOptions delayOptions) {
+    /**
+     * Creates a window updater with specified delay options.
+     *
+     * @param window       A window to update.
+     * @param delayOptions Delay options.
+     */
+    @SuppressWarnings("unused")
+    public WindowUpdater(@NotNull AbstractWindow window,
+                         @Nullable DelayOptions delayOptions) {
         super(delayOptions);
         setWindow(window);
     }
@@ -32,15 +52,26 @@ public class WindowUpdater extends AbstractUpdater {
         this.window = window;
     }
 
+    /**
+     * Gets the key of the contained window.
+     *
+     * @return The key of the window.
+     */
     public final String getWindowKey() {
         return window.getWindowKey();
     }
 
+    /**
+     * Gets called when thread runs.
+     */
     @Override
     public final void update() {
         window.repaint();
     }
 
+    /**
+     * Happens upon finishing thread.
+     */
     @Override
     public void finish() {
         window.dispose();
