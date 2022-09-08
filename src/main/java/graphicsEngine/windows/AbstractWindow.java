@@ -31,9 +31,11 @@ public abstract class AbstractWindow extends JFrame {
     /**
      * Creates a new AbstractWindow with specified configuration.
      *
-     * @param config Window configuration.
+     * @param windowManager A WindowManager object.
+     * @param config        Window configuration.
      */
-    public AbstractWindow(@NotNull WindowConfig config) {
+    public AbstractWindow(@NotNull WindowManager windowManager,
+                          @NotNull WindowConfig config) {
         super(config.getTitle());
         setDefaultCloseOperation(config.closeOperation);
 
@@ -41,6 +43,8 @@ public abstract class AbstractWindow extends JFrame {
         setSize(size[0], size[1]);
         int[] location = config.getLocation();
         setLocation(location[0], location[1]);
+
+        addWindowListener(new CommonWindowListener(windowManager, getWindowKey(), config.closeOperation));
 
         addParts();
         setVisible(true);

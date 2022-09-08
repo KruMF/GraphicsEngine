@@ -1,7 +1,8 @@
 package graphicsEngine.windows.windowTypes;
 
-import graphicsEngine.windows.AbstractWindow;
+import graphicsEngine.windows.WindowManager;
 import graphicsEngine.windows.WindowConfig;
+import graphicsEngine.windows.AbstractWindow;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -12,9 +13,11 @@ public abstract class SimpleWindow extends AbstractWindow {
     /**
      * Creates a new SimpleWindow with specified configuration.
      *
-     * @param config Window configuration.
+     * @param windowManager A WindowManager object
+     * @param config        Window configuration.
      */
-    public SimpleWindow(@NotNull WindowConfig config) {
-        super(config);
+    public SimpleWindow(@NotNull WindowManager windowManager,
+                        @NotNull WindowConfig config) {
+        super(windowManager, config);
     }
 }

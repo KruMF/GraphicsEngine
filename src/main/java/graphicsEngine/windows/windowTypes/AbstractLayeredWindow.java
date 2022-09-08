@@ -1,7 +1,8 @@
 package graphicsEngine.windows.windowTypes;
 
-import graphicsEngine.windows.AbstractWindow;
+import graphicsEngine.windows.WindowManager;
 import graphicsEngine.windows.WindowConfig;
+import graphicsEngine.windows.AbstractWindow;
 import graphicsEngine.presets.SimpleOverlay;
 
 import java.util.Objects;
@@ -18,12 +19,14 @@ abstract class AbstractLayeredWindow extends AbstractWindow {
     /**
      * Creates a new AbstractWindow with specified configuration and overlay.
      *
-     * @param config  Window configuration.
-     * @param overlay Overlay
+     * @param windowManager A WindowManager object
+     * @param config        Window configuration.
+     * @param overlay       Overlay
      */
-    AbstractLayeredWindow(@NotNull WindowConfig config,
+    AbstractLayeredWindow(@NotNull WindowManager windowManager,
+                          @NotNull WindowConfig config,
                           @Nullable SimpleOverlay overlay) {
-        super(config);
+        super(windowManager, config);
         setOverlay(overlay);
         hideOverlay();
     }

@@ -1,8 +1,9 @@
 package graphicsEngineDemo.d4_multiAdapterDemo;
 
 import graphicsEngine.GraphicsAdapter;
-import graphicsEngine.windows.WindowConfig;
+import graphicsEngine.windows.WindowManager;
 import graphicsEngine.windows.WindowUpdater;
+import graphicsEngine.windows.WindowConfig;
 import graphicsEngine.windows.windowTypes.SimpleWindow;
 
 import org.jetbrains.annotations.NotNull;
@@ -21,17 +22,18 @@ public class Main {
      */
     public static void main(String[] args) {
         adapter1 = new GraphicsAdapter() {{
-            newWindow(new WindowUpdater(new SimpleWindow1()));
+            newWindow(new WindowUpdater(new SimpleWindow1(this)));
         }};
         adapter2 = new GraphicsAdapter() {{
-            newWindow(new WindowUpdater(new SimpleWindow2()));
-            newWindow(new WindowUpdater(new PagedWindow()));
+            newWindow(new WindowUpdater(new SimpleWindow2(this)));
+            newWindow(new WindowUpdater(new PagedWindow(this)));
         }};
     }
 
     private static class SimpleWindow1 extends SimpleWindow {
-        public SimpleWindow1() {
-            super(config());
+        //TODO: add javadoc
+        public SimpleWindow1(@NotNull WindowManager windowManager) {
+            super(windowManager, config());
         }
 
         /**
@@ -62,8 +64,9 @@ public class Main {
     }
 
     private static class SimpleWindow2 extends SimpleWindow {
-        public SimpleWindow2() {
-            super(config());
+        //TODO: add javadoc
+        public SimpleWindow2(@NotNull WindowManager windowManager) {
+            super(windowManager, config());
         }
 
         /**
@@ -94,8 +97,9 @@ public class Main {
     }
 
     private static class PagedWindow extends SimpleWindow {
-        public PagedWindow() {
-            super(config());
+        //TODO: add javadoc
+        public PagedWindow(@NotNull WindowManager windowManager) {
+            super(windowManager, config());
         }
 
         /**

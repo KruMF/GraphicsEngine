@@ -1,20 +1,21 @@
 package graphicsEngineSandbox.graphics.controlWindow;
 
+import graphicsEngine.windows.WindowManager;
+import graphicsEngine.windows.WindowConfig;
+import graphicsEngine.windows.AbstractWindow;
 import graphicsEngine.panels.PanelColors;
 import graphicsEngineSandbox.graphics.controlWindow.leftPanel.LeftPanel;
-import graphicsEngine.windows.AbstractWindow;
-import graphicsEngine.windows.WindowConfig;
 
-import javax.swing.*;
 import java.awt.*;
+import javax.swing.JPanel;
 
 import org.jetbrains.annotations.NotNull;
 
 // TODO: add javadoc
 public class ControlWindow extends AbstractWindow {
 
-    public ControlWindow() {
-        super(config());
+    public ControlWindow(@NotNull WindowManager windowManager) {
+        super(windowManager, config());
     }
 
     private static WindowConfig config() {

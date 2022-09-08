@@ -1,5 +1,6 @@
 package graphicsEngineDemo.d5_featurePreview.window;
 
+import graphicsEngine.windows.WindowManager;
 import graphicsEngine.windows.AbstractPage;
 import graphicsEngineDemo.d5_featurePreview.menuPages.startingPage.StartingPage;
 import graphicsEngineDemo.d5_featurePreview.menuPages.settingsPage.SettingsPage;
@@ -19,8 +20,8 @@ import org.jetbrains.annotations.NotNull;
 //TODO: add javadoc
 public class Window extends WindowUtilities {
     //TODO: add javadoc
-    public Window() {
-        super();
+    public Window(@NotNull WindowManager windowManager) {
+        super(windowManager);
         setActivePage(StartingPage.getStaticPageKey());
         setIcon(getSampleIcon());
     }

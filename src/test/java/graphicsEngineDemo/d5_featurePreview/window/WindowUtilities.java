@@ -1,5 +1,6 @@
 package graphicsEngineDemo.d5_featurePreview.window;
 
+import graphicsEngine.windows.WindowManager;
 import graphicsEngine.windows.WindowConfig;
 import graphicsEngine.windows.windowTypes.MultiPageWindow;
 
@@ -13,8 +14,8 @@ import static consoleUtils.ConsoleUtils.printLine;
 //TODO: add javadoc
 abstract class WindowUtilities extends MultiPageWindow implements ActionListener {
     //TODO: add javadoc
-    public WindowUtilities() {
-        super(config(), null);
+    public WindowUtilities(@NotNull WindowManager windowManager) {
+        super(windowManager, config(), null);
     }
 
     /**

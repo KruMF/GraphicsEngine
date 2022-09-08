@@ -1,5 +1,6 @@
 package graphicsEngine.windows.windowTypes;
 
+import graphicsEngine.windows.WindowManager;
 import graphicsEngine.windows.WindowConfig;
 import graphicsEngine.windows.AbstractPage;
 import graphicsEngine.presets.SimpleOverlay;
@@ -10,9 +11,10 @@ import org.jetbrains.annotations.Nullable;
 // TODO: finish this and add javadoc
 public abstract class SinglePageWindow extends AbstractLayeredWindow {
     //TODO: add javadoc
-    public SinglePageWindow(@NotNull WindowConfig config,
+    public SinglePageWindow(@NotNull WindowManager windowManager,
+                            @NotNull WindowConfig config,
                             @Nullable SimpleOverlay overlay) {
-        super(config, overlay);
+        super(windowManager, config, overlay);
     }
 
     //TODO: add javadoc
