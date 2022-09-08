@@ -1,15 +1,39 @@
 package graphicsEngineDemo.d5_featurePreview.menuPages.startingPage;
 
-import graphicsEngine.windows.AbstractPage;
+import graphicsEngine.panels.PanelColors;
+import graphicsEngineDemo.d3_twoPageDemo.pages.Page1;
+import graphicsEngineDemo.d5_featurePreview.common.AbstractCommonPage;
+
+import java.awt.event.ActionListener;
+
+import org.jetbrains.annotations.Nullable;
 
 //TODO: finish this and add javadoc
-public class StartingPage extends AbstractPage {
+public class StartingPage extends AbstractCommonPage {
+    //TODO: add javadoc
     public StartingPage() {
-        super();
+        this(null);
     }
 
+    //TODO: add javadoc
+    public StartingPage(@Nullable ActionListener actionListener) {
+        super(actionListener);
+    }
+
+    //TODO: add javadoc
     @Override
-    public String getPageKey() {
+    public final String getPageKey() {
         return "start";
+    }
+
+    //TODO: add javadoc
+    @Override
+    public void addParts() {
+        //
+    }
+
+    //TODO: add javadoc
+    public static String getStaticPageKey() {
+        return (new StartingPage()).getPageKey();
     }
 }

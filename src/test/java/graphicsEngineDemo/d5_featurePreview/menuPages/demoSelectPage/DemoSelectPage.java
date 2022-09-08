@@ -1,15 +1,38 @@
 package graphicsEngineDemo.d5_featurePreview.menuPages.demoSelectPage;
 
-import graphicsEngine.windows.AbstractPage;
+import graphicsEngine.panels.PanelColors;
+import graphicsEngineDemo.d5_featurePreview.common.AbstractCommonPage;
+
+import java.awt.event.ActionListener;
+
+import org.jetbrains.annotations.Nullable;
 
 //TODO: finish this and add javadoc
-public class DemoSelectPage extends AbstractPage {
+public class DemoSelectPage extends AbstractCommonPage {
+    //TODO: add javadoc
     public DemoSelectPage() {
-        super();
+        this(null);
     }
 
+    //TODO: add javadoc
+    public DemoSelectPage(@Nullable ActionListener actionListener) {
+        super(actionListener);
+    }
+
+    //TODO: add javadoc
     @Override
-    public String getPageKey() {
+    public final String getPageKey() {
         return "demoSelect";
+    }
+
+    //TODO: add javadoc
+    @Override
+    public void addParts() {
+        //
+    }
+
+    //TODO: add javadoc
+    public static String getStaticPageKey() {
+        return (new DemoSelectPage()).getPageKey();
     }
 }

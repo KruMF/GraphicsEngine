@@ -3,20 +3,29 @@ package graphicsEngineDemo.d5_featurePreview;
 import graphicsEngine.windows.WindowConfig;
 import graphicsEngine.windows.windowTypes.MultiPageWindow;
 import graphicsEngine.windows.AbstractPage;
-
+import graphicsEngineDemo.d5_featurePreview.menuPages.demoSelectPage.DemoSelectPage;
+import graphicsEngineDemo.d5_featurePreview.menuPages.settingsPage.SettingsPage;
+import graphicsEngineDemo.d5_featurePreview.menuPages.startingPage.StartingPage;
 import graphicsEngineDemo.d5_featurePreview.demoPages.Page1;
 import graphicsEngineDemo.d5_featurePreview.demoPages.Page2;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import static consoleUtils.ConsoleUtils.printLine;
+import static graphicsEngine.Utilities.getSampleIcon;
 
 import org.jetbrains.annotations.NotNull;
 
 //TODO: add javadoc
-public class Window extends MultiPageWindow {
+public class Window extends MultiPageWindow implements ActionListener {
     //TODO: add javadoc
     public Window() {
         super(config(), null);
+        setActivePage(StartingPage.getStaticPageKey());
+        setIcon(getSampleIcon());
     }
 
     /**
@@ -25,7 +34,7 @@ public class Window extends MultiPageWindow {
      * @return Window configuration.
      */
     private static WindowConfig config() {
-        String title = "Paged demo";
+        String title = "Feature-preview demo";
         int[]
             size = new int[] {500, 500},
             location = new int[] {50, 50};
@@ -43,9 +52,27 @@ public class Window extends MultiPageWindow {
     //TODO: add javadoc
     @Override
     public @NotNull List<AbstractPage> getInitialPages() {
+        ActionListener actionListener = this;
         return new ArrayList<>() {{
-            add(new Page1());
-            add(new Page2());
+            add(new StartingPage(actionListener));
+            add(new SettingsPage(actionListener));
+            add(new DemoSelectPage(actionListener));
+            //add(new Page1());
+            //add(new Page2());
         }};
+    }
+
+    /**
+     * Invoked when an action occurs.
+     *
+     * @param e the event to be processed
+     */
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        switch (e.getActionCommand()) {
+            //case Buttons.Button1.ACTION_COMMAND -> setActivePage(graphicsEngineDemo.d3_twoPageDemo.pages.Page1.getStaticPageKey());
+            //case Buttons.Button2.ACTION_COMMAND -> setActivePage(graphicsEngineDemo.d3_twoPageDemo.pages.Page2.getStaticPageKey());
+            default -> printLine("A button has been pressed but no action set up");
+        }
     }
 }

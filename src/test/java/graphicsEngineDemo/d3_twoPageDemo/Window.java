@@ -32,7 +32,7 @@ class Window extends MultiPageWindow implements ActionListener {
      * @return Window configuration.
      */
     private static WindowConfig config() {
-        String title = "Two page demo";
+        String title = "Two-page demo";
         int[]
                 size = new int[]{600, 400},
                 location = new int[]{50, 50};
