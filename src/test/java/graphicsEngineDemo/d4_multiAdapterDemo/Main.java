@@ -11,7 +11,6 @@ import org.jetbrains.annotations.NotNull;
  * TODO: finish this and add javadocs
  */
 public class Main {
-
     private static GraphicsAdapter adapter1;
     private static GraphicsAdapter adapter2;
 

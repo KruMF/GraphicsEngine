@@ -6,7 +6,11 @@ import graphicsEngine.windows.WindowUpdater;
 
 //TODO: add javadoc
 public class Main {
-    //TODO: add javadoc
+    /**
+     * The main method.
+     *
+     * @param args Command-line arguments.
+     */
     public static void main(String[] args) {
         new GraphicsAdapter() {{
             newWindow(new WindowUpdater(new Window()));
