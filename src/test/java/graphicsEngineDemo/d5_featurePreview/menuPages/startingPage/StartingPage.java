@@ -1,8 +1,11 @@
 package graphicsEngineDemo.d5_featurePreview.menuPages.startingPage;
 
+import graphicsEngine.parts.SimpleLabel;
 import graphicsEngineDemo.d5_featurePreview.common.AbstractMenuPage;
 
 import java.util.List;
+import java.util.ArrayList;
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.ActionListener;
 
@@ -35,6 +38,8 @@ public class StartingPage extends AbstractMenuPage {
     //TODO: add javadoc
     @Override
     public @Nullable List<Component> initialCentralComponents(@Nullable ActionListener actionListener) {
-        return null;
+        return new ArrayList<>() {{
+            add(new SimpleLabel("Starting page", Color.white));
+        }};
     }
 }

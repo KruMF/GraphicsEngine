@@ -1,9 +1,11 @@
 package graphicsEngineDemo.d5_featurePreview.menuPages.settingsPage;
 
+import graphicsEngine.parts.SimpleLabel;
 import graphicsEngineDemo.d5_featurePreview.common.AbstractMenuPage;
 
+import java.awt.*;
+import java.util.ArrayList;
 import java.util.List;
-import java.awt.Component;
 import java.awt.event.ActionListener;
 
 import org.jetbrains.annotations.NotNull;
@@ -35,6 +37,8 @@ public class SettingsPage extends AbstractMenuPage {
     //TODO: add javadoc
     @Override
     public @Nullable List<Component> initialCentralComponents(@Nullable ActionListener actionListener) {
-        return null;
+        return new ArrayList<>() {{
+            add(new SimpleLabel("Settings page", Color.white));
+        }};
     }
 }
