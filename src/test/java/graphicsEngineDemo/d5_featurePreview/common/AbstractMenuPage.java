@@ -1,12 +1,13 @@
 package graphicsEngineDemo.d5_featurePreview.common;
 
-import java.awt.*;
 import java.util.List;
+import java.awt.Color;
+import java.awt.Component;
 import java.awt.event.ActionListener;
+import javax.swing.JPanel;
+import javax.swing.BoxLayout;
 
 import org.jetbrains.annotations.Nullable;
-
-import javax.swing.*;
 
 //TODO: add javadoc
 public abstract class AbstractMenuPage extends AbstractCommonPage {
