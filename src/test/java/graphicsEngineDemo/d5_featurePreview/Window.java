@@ -3,11 +3,10 @@ package graphicsEngineDemo.d5_featurePreview;
 import graphicsEngine.windows.WindowConfig;
 import graphicsEngine.windows.windowTypes.MultiPageWindow;
 import graphicsEngine.windows.AbstractPage;
-import graphicsEngineDemo.d5_featurePreview.menuPages.demoSelectPage.DemoSelectPage;
-import graphicsEngineDemo.d5_featurePreview.menuPages.settingsPage.SettingsPage;
+import graphicsEngineDemo.d5_featurePreview.common.CommonHeaderButtons;
 import graphicsEngineDemo.d5_featurePreview.menuPages.startingPage.StartingPage;
-import graphicsEngineDemo.d5_featurePreview.demoPages.Page1;
-import graphicsEngineDemo.d5_featurePreview.demoPages.Page2;
+import graphicsEngineDemo.d5_featurePreview.menuPages.settingsPage.SettingsPage;
+import graphicsEngineDemo.d5_featurePreview.menuPages.demoSelectPage.DemoSelectPage;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -70,8 +69,12 @@ public class Window extends MultiPageWindow implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {
-            //case Buttons.Button1.ACTION_COMMAND -> setActivePage(graphicsEngineDemo.d3_twoPageDemo.pages.Page1.getStaticPageKey());
-            //case Buttons.Button2.ACTION_COMMAND -> setActivePage(graphicsEngineDemo.d3_twoPageDemo.pages.Page2.getStaticPageKey());
+            case CommonHeaderButtons.Button_Start.ACTION_COMMAND ->
+                    setActivePage(StartingPage.getStaticPageKey());
+            case CommonHeaderButtons.Button_Settings.ACTION_COMMAND ->
+                    setActivePage(SettingsPage.getStaticPageKey());
+            case CommonHeaderButtons.Button_DemoSelect.ACTION_COMMAND ->
+                    setActivePage(DemoSelectPage.getStaticPageKey());
             default -> printLine("A button has been pressed but no action set up");
         }
     }
