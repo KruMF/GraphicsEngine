@@ -38,7 +38,7 @@ public class Window extends MultiPageWindow implements ActionListener {
     private static WindowConfig config() {
         String title = "Feature-preview demo";
         int[]
-            size = new int[] {500, 500},
+            size = new int[] {600, 400},
             location = new int[] {50, 50};
         WindowConfig config = new WindowConfig(title, size, location);
         config.closeOperation = EXIT_ON_CLOSE;
