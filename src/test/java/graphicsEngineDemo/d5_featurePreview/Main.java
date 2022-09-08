@@ -4,7 +4,9 @@ import graphicsEngine.GraphicsAdapter;
 
 import graphicsEngine.windows.WindowUpdater;
 
-//TODO: add javadoc
+/**
+ * A general demo for previewing various features and capabilities of the Graphics Engine.
+ */
 public class Main {
     /**
      * The main method.

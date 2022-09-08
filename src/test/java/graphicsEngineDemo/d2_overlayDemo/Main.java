@@ -18,7 +18,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * TODO: add javadoc
+ * GraphicsEngine demo demonstrating the use of overlays.
  */
 public class Main {
     /**

@@ -8,7 +8,7 @@ import graphicsEngine.windows.windowTypes.SimpleWindow;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * TODO: finish this and add javadocs
+ * GraphicsEngine demo demonstrating the capability to simultaneously run multiple graphics adapters.
  */
 public class Main {
     private static GraphicsAdapter adapter1;

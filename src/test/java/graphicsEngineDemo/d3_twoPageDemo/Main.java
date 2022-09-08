@@ -3,10 +3,8 @@ package graphicsEngineDemo.d3_twoPageDemo;
 import graphicsEngine.GraphicsAdapter;
 import graphicsEngine.windows.WindowUpdater;
 
-import static consoleUtils.ConsoleUtils.printLine;
-
 /**
- * TODO: finish this
+ * GraphicsEngine demo demonstrating support of multiple pages within a single window.
  */
 public class Main {
     /**
@@ -15,7 +13,6 @@ public class Main {
      * @param args Command-line arguments.
      */
     public static void main(String[] args) {
-        printLine("Starting two-page demo...");
         new GraphicsAdapter() {{
             newWindow(new WindowUpdater(new Window()));
         }};
