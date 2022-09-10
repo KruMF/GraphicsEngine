@@ -8,6 +8,7 @@ import graphicsEngineDemo.d5_featurePreview.menuPages.settingsPage.SettingsPage;
 import graphicsEngineDemo.d5_featurePreview.menuPages.demoSelectPage.DemoSelectPage;
 import graphicsEngineDemo.d5_featurePreview.demoPages.Page1;
 import graphicsEngineDemo.d5_featurePreview.demoPages.Page2;
+import graphicsEngineDemo.d5_featurePreview.demoPages.Page3;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -38,6 +39,7 @@ public class Window extends WindowUtilities {
             add(new DemoSelectPage(panelColors, actionListener));
             add(new Page1(panelColors, actionListener));
             add(new Page2(panelColors, actionListener));
+            add(new Page3(panelColors, actionListener));
         }};
     }
 

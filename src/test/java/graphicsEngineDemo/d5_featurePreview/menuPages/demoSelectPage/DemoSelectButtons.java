@@ -25,4 +25,13 @@ public class DemoSelectButtons {
             super("Page 2", ACTION_COMMAND, actionListener);
         }
     }
+
+    //TODO: add javadocs
+    public static class Button_Page3 extends SimpleJButton {
+        public static final String ACTION_COMMAND = "page_demo3";
+
+        protected Button_Page3(@Nullable ActionListener actionListener) {
+            super("Page 3", ACTION_COMMAND, actionListener);
+        }
+    }
 }

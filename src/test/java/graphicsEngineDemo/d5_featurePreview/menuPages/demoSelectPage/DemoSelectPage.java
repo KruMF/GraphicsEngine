@@ -7,11 +7,10 @@ import graphicsEngineDemo.d5_featurePreview.common.AbstractMenuPage;
 
 import java.awt.*;
 import java.awt.event.ActionListener;
+import javax.swing.*;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-
-import javax.swing.*;
 
 //TODO: finish this and add javadoc
 public class DemoSelectPage extends AbstractMenuPage {
@@ -45,6 +44,7 @@ public class DemoSelectPage extends AbstractMenuPage {
             setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
             add(new DemoSelectButtons.Button_Page1(actionListener));
             add(new DemoSelectButtons.Button_Page2(actionListener));
+            add(new DemoSelectButtons.Button_Page3(actionListener));
             //Add more buttons here
         }}, BorderLayout.CENTER);
         return body;

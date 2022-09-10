@@ -7,6 +7,7 @@ import graphicsEngineDemo.d5_featurePreview.menuPages.demoSelectPage.DemoSelectP
 import graphicsEngineDemo.d5_featurePreview.menuPages.demoSelectPage.DemoSelectButtons;
 import graphicsEngineDemo.d5_featurePreview.demoPages.Page1;
 import graphicsEngineDemo.d5_featurePreview.demoPages.Page2;
+import graphicsEngineDemo.d5_featurePreview.demoPages.Page3;
 
 import java.awt.event.ActionEvent;
 
@@ -39,6 +40,8 @@ public class ButtonActions {
                     window.setActivePage(Page1.getStaticPageKey());
             case DemoSelectButtons.Button_Page2.ACTION_COMMAND ->
                     window.setActivePage(Page2.getStaticPageKey());
+            case DemoSelectButtons.Button_Page3.ACTION_COMMAND ->
+                    window.setActivePage(Page3.getStaticPageKey());
             default -> {
                 return false;
             }
