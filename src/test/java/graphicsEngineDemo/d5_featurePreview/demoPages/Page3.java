@@ -58,7 +58,8 @@ public class Page3 extends PageWithPanel {
     public @Nullable JPanel getPageCenter(@Nullable ActionListener actionListener) {
         return new JPanel() {{
             setBackground(Utilities.EMPTY_COLOR);
-            add(new SimpleLabel("Demo 3", Color.white));
+            add(new DynamicLabel(Color.red, null));
+            //add(new SimpleLabel("Demo 3", Color.white));
             //Add parts here
         }};
     }
@@ -73,5 +74,23 @@ public class Page3 extends PageWithPanel {
             add(new SimpleLabel("Side panel", Color.white));
             //Add parts here
         }
+    }
+
+    private static class DynamicLabel extends SimpleLabel {
+
+        public DynamicLabel(@Nullable Color textColor) {
+            super(null, textColor);
+        }
+
+        public DynamicLabel(@Nullable Color textColor,
+                            @Nullable Color background) {
+            super(null, textColor, background);
+        }
+
+         @Override
+         public void paintComponent(Graphics g) {
+            g.setColor(getForeground());
+            g.drawString("mystring", 5, 15);
+         }
     }
 }
