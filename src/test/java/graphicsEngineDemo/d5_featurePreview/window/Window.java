@@ -1,5 +1,6 @@
 package graphicsEngineDemo.d5_featurePreview.window;
 
+import graphicsEngine.panels.PanelColors;
 import graphicsEngine.windows.WindowManager;
 import graphicsEngine.windows.AbstractPage;
 import graphicsEngineDemo.d5_featurePreview.menuPages.startingPage.StartingPage;
@@ -30,12 +31,13 @@ public class Window extends WindowUtilities {
     @Override
     public @NotNull List<AbstractPage> getInitialPages() {
         ActionListener actionListener = this;
+        PanelColors panelColors = new PanelColors();
         return new ArrayList<>() {{
-            add(new StartingPage(actionListener));
-            add(new SettingsPage(actionListener));
-            add(new DemoSelectPage(actionListener));
-            add(new Page1(actionListener));
-            add(new Page2(actionListener));
+            add(new StartingPage(panelColors, actionListener));
+            add(new SettingsPage(panelColors, actionListener));
+            add(new DemoSelectPage(panelColors, actionListener));
+            add(new Page1(panelColors, actionListener));
+            add(new Page2(panelColors, actionListener));
         }};
     }
 

@@ -1,38 +1,31 @@
 package graphicsEngineDemo.d5_featurePreview.common;
 
-import java.util.List;
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.event.ActionListener;
-import javax.swing.JPanel;
-import javax.swing.BoxLayout;
+import graphicsEngine.Utilities;
+import graphicsEngine.panels.PanelColors;
 
+import java.awt.Component;
+import java.awt.BorderLayout;
+import java.awt.event.ActionListener;
+
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import javax.swing.*;
 
 //TODO: add javadoc
 public abstract class AbstractMenuPage extends AbstractCommonPage {
     //TODO: add javadoc
-    public AbstractMenuPage(@Nullable ActionListener actionListener) {
-        super(actionListener);
-        addComponents(initialCentralComponents(actionListener));
+    public AbstractMenuPage(@Nullable PanelColors panelColors,
+                            @Nullable ActionListener actionListener) {
+        super(panelColors, actionListener);
     }
 
     //TODO: add javadoc
     @Override
-    public final void addParts() {}
-
-    private void addComponents(@Nullable List<Component> components) {
-        add(new JPanel() {{
-            setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-            setBackground(new Color(0,0,0,0));
-            if (components != null && components.size() > 0) {
-                for (Component component : components) {
-                    add(component);
-                }
-            }
-        }});
+    public @NotNull Component getPageBody(@Nullable ActionListener actionListener) {
+        return new JPanel() {{
+            setLayout(new BorderLayout(0, 0));
+            setBackground(Utilities.EMPTY_COLOR);
+        }};
     }
-
-    //TODO: add javadoc
-    public abstract @Nullable List<Component> initialCentralComponents(@Nullable ActionListener actionListener);
 }

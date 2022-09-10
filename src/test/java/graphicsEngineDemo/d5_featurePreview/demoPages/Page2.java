@@ -1,20 +1,27 @@
 package graphicsEngineDemo.d5_featurePreview.demoPages;
 
-import java.awt.Color;
+import graphicsEngine.Utilities;
+import graphicsEngine.panels.PanelColors;
+import graphicsEngine.parts.SimpleLabel;
+import graphicsEngine.presets.panels.VerticalPanel;
+
+import java.awt.*;
 import java.awt.event.ActionListener;
+import javax.swing.*;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 //TODO: add javadoc
-public class Page2 extends CommonDemoPage {
+public class Page2 extends PageWithPanel {
     private Page2() {
-        this(null);
+        this(null, null);
     }
 
     //TODO: add javadoc
-    public Page2(@Nullable ActionListener actionListener) {
-        super(actionListener);
+    public Page2(@Nullable PanelColors headerAndFooterColors,
+                 @Nullable ActionListener actionListener) {
+        super(headerAndFooterColors, null, actionListener);
         setBackground(new Color(50, 150, 50));
     }
 
@@ -27,5 +34,44 @@ public class Page2 extends CommonDemoPage {
     //TODO: add javadoc
     public static @NotNull String getStaticPageKey() {
         return (new Page2()).getPageKey();
+    }
+
+    /**
+     * TODO: finish this javadoc
+     *
+     * @param actionListener
+     * @return
+     */
+    @Override
+    public final @NotNull VerticalPanel getLeftSidePanel(@Nullable PanelColors panelColors,
+                                                         @Nullable ActionListener actionListener) {
+        return new SidePanel(panelColors);
+    }
+
+    /**
+     * TODO: finish this javadoc
+     *
+     * @param actionListener
+     * @return
+     */
+    @Override
+    public @Nullable JPanel getPageCenter(@Nullable ActionListener actionListener) {
+        return new JPanel() {{
+            setBackground(Utilities.EMPTY_COLOR);
+            add(new SimpleLabel("Demo 2", Color.white));
+            //Add parts here
+        }};
+    }
+
+    //TODO: add javadoc
+    private static class SidePanel extends CommonSidePanel {
+        private static final int WIDTH = 100;
+
+        //TODO: add javadoc
+        public SidePanel(@Nullable PanelColors panelColors) {
+            super(panelColors, WIDTH);
+            add(new SimpleLabel("Side panel", Color.white));
+            //Add parts here
+        }
     }
 }
