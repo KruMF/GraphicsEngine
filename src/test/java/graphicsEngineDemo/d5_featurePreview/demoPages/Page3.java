@@ -87,10 +87,10 @@ public class Page3 extends PageWithPanel {
             super(null, textColor, background);
         }
 
-         @Override
-         public void paintComponent(Graphics g) {
+        @Override
+        public void paintComponent(Graphics g) {
             g.setColor(getForeground());
             g.drawString("mystring", 5, 15);
-         }
+        }
     }
 }
