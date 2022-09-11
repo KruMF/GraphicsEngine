@@ -1,13 +1,11 @@
-package graphicsEngineDemo.d5_featurePreview.demoPages;
+package graphicsEngineDemo.d5_featurePreview.demoPages.page3;
 
-import graphicsEngine.Utilities;
 import graphicsEngine.panels.PanelColors;
-import graphicsEngine.parts.SimpleLabel;
 import graphicsEngine.presets.panels.VerticalPanel;
+import graphicsEngineDemo.d5_featurePreview.demoPages.PageWithPanel;
 
 import java.util.List;
 import java.awt.Color;
-import java.awt.Graphics;
 import java.awt.event.ActionListener;
 import javax.swing.JPanel;
 
@@ -56,41 +54,6 @@ public class Page3 extends PageWithPanel {
      */
     @Override
     public @Nullable JPanel getPageCenter() {
-        return new JPanel() {{
-            setBackground(Utilities.EMPTY_COLOR);
-            add(new DynamicLabel(Color.red, null));
-            //add(new SimpleLabel("Demo 3", Color.white));
-            //Add parts here
-        }};
-    }
-
-    //TODO: add javadoc
-    private static class SidePanel extends CommonSidePanel {
-        private static final int WIDTH = 200;
-
-        //TODO: add javadoc
-        public SidePanel(@Nullable PanelColors panelColors) {
-            super(panelColors, WIDTH);
-            add(new SimpleLabel("Demo page 3 - Side panel", getPanelColors().text));
-            //Add parts here
-        }
-    }
-
-    private static class DynamicLabel extends SimpleLabel {
-
-        public DynamicLabel(@Nullable Color textColor) {
-            super(null, textColor);
-        }
-
-        public DynamicLabel(@Nullable Color textColor,
-                            @Nullable Color background) {
-            super(null, textColor, background);
-        }
-
-        @Override
-        public void paintComponent(Graphics g) {
-            setText("A dynamically changeable string");
-            super.paintComponent(g);
-        }
+        return new Center();
     }
 }

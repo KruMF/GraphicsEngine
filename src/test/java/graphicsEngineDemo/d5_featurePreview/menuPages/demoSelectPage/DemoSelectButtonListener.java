@@ -4,7 +4,7 @@ import graphicsEngine.presets.SimpleJButton;
 import graphicsEngineDemo.d5_featurePreview.window.Window;
 import graphicsEngineDemo.d5_featurePreview.demoPages.Page1;
 import graphicsEngineDemo.d5_featurePreview.demoPages.Page2;
-import graphicsEngineDemo.d5_featurePreview.demoPages.Page3;
+import graphicsEngineDemo.d5_featurePreview.demoPages.page3.Page3;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
