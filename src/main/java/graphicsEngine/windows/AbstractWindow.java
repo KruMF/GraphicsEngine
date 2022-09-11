@@ -1,9 +1,14 @@
 package graphicsEngine.windows;
 
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Objects;
+import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.ImageIcon;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An abstract window with required configuration and methods.
@@ -30,12 +35,15 @@ public abstract class AbstractWindow extends JFrame {
 
     /**
      * Creates a new AbstractWindow with specified configuration.
+     * Adds known action listeners to this window.
      *
-     * @param windowManager A WindowManager object.
-     * @param config        Window configuration.
+     * @param windowManager      A WindowManager object.
+     * @param config             Window configuration.
+     * @param actionListenerList List of action listeners to add to this window.
      */
     public AbstractWindow(@NotNull WindowManager windowManager,
-                          @NotNull WindowConfig config) {
+                          @NotNull WindowConfig config,
+                          @Nullable List<ActionListener> actionListenerList) {
         super(config.getTitle());
         setDefaultCloseOperation(config.closeOperation);
 
@@ -44,10 +52,24 @@ public abstract class AbstractWindow extends JFrame {
         int[] location = config.getLocation();
         setLocation(location[0], location[1]);
 
+        //TODO: remove window listener from here
         addWindowListener(new CommonWindowListener(windowManager, getWindowKey(), config.closeOperation));
+        addListeners(actionListenerList);
 
         addParts();
         setVisible(true);
+    }
+
+    /**
+     * Adds known listeners to this page.
+     * Override this to add custom listeners.
+     *
+     * @param list List of listeners to add.
+     *
+     * @return Remaining unknown listeners.
+     */
+    public @NotNull List<ActionListener> addListeners(@Nullable List<ActionListener> list) {
+        return Objects.requireNonNullElse(list, new ArrayList<>());
     }
 
     /**

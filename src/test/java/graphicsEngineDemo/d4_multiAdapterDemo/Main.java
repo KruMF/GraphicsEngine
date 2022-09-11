@@ -33,7 +33,7 @@ public class Main {
     private static class SimpleWindow1 extends SimpleWindow {
         //TODO: add javadoc
         public SimpleWindow1(@NotNull WindowManager windowManager) {
-            super(windowManager, config());
+            super(windowManager, config(), null);
         }
 
         /**
@@ -66,7 +66,7 @@ public class Main {
     private static class SimpleWindow2 extends SimpleWindow {
         //TODO: add javadoc
         public SimpleWindow2(@NotNull WindowManager windowManager) {
-            super(windowManager, config());
+            super(windowManager, config(), null);
         }
 
         /**
@@ -99,7 +99,7 @@ public class Main {
     private static class PagedWindow extends SimpleWindow {
         //TODO: add javadoc
         public PagedWindow(@NotNull WindowManager windowManager) {
-            super(windowManager, config());
+            super(windowManager, config(), null);
         }
 
         /**

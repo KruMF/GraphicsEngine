@@ -28,6 +28,11 @@ public class Utilities {
         return RESOURCES_PATH + relative;
     }
 
+    /**
+     * Transparent, non-null color.
+     */
+    public static final Color EMPTY_COLOR = new Color(0, 0, 0, 0);
+
     // TODO: add javadoc
     public interface BorderInterface {
         Color DEFAULT_BORDER_COLOR = Color.red;

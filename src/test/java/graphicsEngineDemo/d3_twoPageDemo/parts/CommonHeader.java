@@ -23,7 +23,7 @@ public class CommonHeader extends AbstractHeader {
 
     private void addButtons(@Nullable ActionListener actionListener) {
         setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
-        add(new Buttons.Button1(actionListener));
-        add(new Buttons.Button2(actionListener));
+        add(new ButtonListener.Button1(actionListener));
+        add(new ButtonListener.Button2(actionListener));
     }
 }

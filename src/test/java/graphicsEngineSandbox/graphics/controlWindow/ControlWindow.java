@@ -15,7 +15,7 @@ import org.jetbrains.annotations.NotNull;
 public class ControlWindow extends AbstractWindow {
 
     public ControlWindow(@NotNull WindowManager windowManager) {
-        super(windowManager, config());
+        super(windowManager, config(), null);
     }
 
     private static WindowConfig config() {

@@ -7,6 +7,7 @@ import graphicsEngine.presets.panels.VerticalPanel;
 
 import java.util.List;
 import java.awt.Color;
+import java.awt.Graphics;
 import java.awt.event.ActionListener;
 import javax.swing.JPanel;
 
@@ -14,27 +15,27 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 //TODO: add javadoc
-public class Page2 extends PageWithPanel {
-    private Page2() {
+public class Page3 extends PageWithPanel {
+    private Page3() {
         this(null, null);
     }
 
     //TODO: add javadoc
-    public Page2(@Nullable List<ActionListener> actionListenerList,
+    public Page3(@Nullable List<ActionListener> actionListenerList,
                  @Nullable PanelColors headerAndFooterColors) {
         super(actionListenerList, headerAndFooterColors);
-        setBackground(new Color(50, 150, 50));
+        setBackground(new Color(50, 50, 150));
     }
 
     //TODO: add javadoc
     @Override
     public final @NotNull String getPageKey() {
-        return "page2";
+        return "page3";
     }
 
     //TODO: add javadoc
     public static @NotNull String getStaticPageKey() {
-        return (new Page2()).getPageKey();
+        return (new Page3()).getPageKey();
     }
 
     /**
@@ -57,7 +58,8 @@ public class Page2 extends PageWithPanel {
     public @Nullable JPanel getPageCenter() {
         return new JPanel() {{
             setBackground(Utilities.EMPTY_COLOR);
-            add(new SimpleLabel("Center", Color.white));
+            add(new DynamicLabel(Color.red, null));
+            //add(new SimpleLabel("Demo 3", Color.white));
             //Add parts here
         }};
     }
@@ -69,8 +71,26 @@ public class Page2 extends PageWithPanel {
         //TODO: add javadoc
         public SidePanel(@Nullable PanelColors panelColors) {
             super(panelColors, WIDTH);
-            add(new SimpleLabel("Demo page 2 - Side panel", getPanelColors().text));
+            add(new SimpleLabel("Demo page 3 - Side panel", getPanelColors().text));
             //Add parts here
+        }
+    }
+
+    private static class DynamicLabel extends SimpleLabel {
+
+        public DynamicLabel(@Nullable Color textColor) {
+            super(null, textColor);
+        }
+
+        public DynamicLabel(@Nullable Color textColor,
+                            @Nullable Color background) {
+            super(null, textColor, background);
+        }
+
+        @Override
+        public void paintComponent(Graphics g) {
+            setText("A dynamically changeable string");
+            super.paintComponent(g);
         }
     }
 }

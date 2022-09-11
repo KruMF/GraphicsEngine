@@ -8,13 +8,13 @@ import java.awt.Dimension;
 import org.jetbrains.annotations.Nullable;
 
 //TODO: add javadoc
-public abstract class HorizontalPanel extends SimplePanel {
+public abstract class VerticalPanel extends SimplePanel {
     //TODO: add javadoc
-    public HorizontalPanel(@Nullable PanelColors panelColors, int height) {
+    public VerticalPanel(@Nullable PanelColors panelColors, int width) {
         super(panelColors, false);
         setPreferredSize(new Dimension(
-                Integer.MAX_VALUE,
-                height));
+                width,
+                Integer.MAX_VALUE));
         addParts();
     }
 

@@ -35,7 +35,7 @@ public class Main {
          * @param windowManager A WindowManager object.
          */
         public Window(@NotNull WindowManager windowManager) {
-            super(windowManager, new WindowConfig());
+            super(windowManager, new WindowConfig(), null);
             setDefaultCloseOperation(EXIT_ON_CLOSE); // Not necessary; added for easier use.
         }
 

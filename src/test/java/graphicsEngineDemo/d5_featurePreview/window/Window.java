@@ -2,17 +2,20 @@ package graphicsEngineDemo.d5_featurePreview.window;
 
 import graphicsEngine.windows.WindowManager;
 import graphicsEngine.windows.AbstractPage;
+import graphicsEngineDemo.d5_featurePreview.common.header.HeaderButtonListener;
+import graphicsEngineDemo.d5_featurePreview.menuPages.demoSelectPage.DemoSelectButtonListener;
 import graphicsEngineDemo.d5_featurePreview.menuPages.startingPage.StartingPage;
 import graphicsEngineDemo.d5_featurePreview.menuPages.settingsPage.SettingsPage;
 import graphicsEngineDemo.d5_featurePreview.menuPages.demoSelectPage.DemoSelectPage;
 import graphicsEngineDemo.d5_featurePreview.demoPages.Page1;
 import graphicsEngineDemo.d5_featurePreview.demoPages.Page2;
+import graphicsEngineDemo.d5_featurePreview.demoPages.Page3;
 
 import java.util.List;
 import java.util.ArrayList;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import static graphicsEngineDemo.d5_featurePreview.common.CommonColors.HEADER_AND_FOOTER_COLORS;
 import static graphicsEngine.Utilities.getSampleIcon;
 
 import org.jetbrains.annotations.NotNull;
@@ -29,25 +32,32 @@ public class Window extends WindowUtilities {
     //TODO: add javadoc
     @Override
     public @NotNull List<AbstractPage> getInitialPages() {
-        ActionListener actionListener = this;
         return new ArrayList<>() {{
-            add(new StartingPage(actionListener));
-            add(new SettingsPage(actionListener));
-            add(new DemoSelectPage(actionListener));
-            add(new Page1(actionListener));
-            add(new Page2(actionListener));
+            add(new StartingPage(getHeaderListener(), HEADER_AND_FOOTER_COLORS));
+            add(new SettingsPage(getHeaderListener(), HEADER_AND_FOOTER_COLORS));
+            add(new DemoSelectPage(getDemoSelectListeners(), HEADER_AND_FOOTER_COLORS));
+            add(new Page1(getHeaderListener(), HEADER_AND_FOOTER_COLORS));
+            add(new Page2(getHeaderListener(), HEADER_AND_FOOTER_COLORS));
+            add(new Page3(getDemoPage3Listeners(), HEADER_AND_FOOTER_COLORS));
         }};
     }
 
-    //TODO: add javadoc
-    @Override
-    public final boolean headerButtonActionCheck(ActionEvent e) {
-        return ButtonActions.headerButtonActions(e, this);
+    private @NotNull List<ActionListener> getHeaderListener() {
+        Window window = this;
+        return new ArrayList<>() {{
+            add(new HeaderButtonListener(window));
+        }};
     }
 
-    //TODO: add javadoc
-    @Override
-    public final boolean demoSelectButtonActionCheck(ActionEvent e) {
-        return ButtonActions.demoSelectButtonActions(e, this);
+    private @NotNull List<ActionListener> getDemoSelectListeners() {
+        List<ActionListener> listeners = getHeaderListener();
+        listeners.add(new DemoSelectButtonListener(this));
+        return listeners;
+    }
+
+    private @NotNull List<ActionListener> getDemoPage3Listeners() {
+        List<ActionListener> listeners = getHeaderListener();
+        //TODO: add custom listener here
+        return listeners;
     }
 }

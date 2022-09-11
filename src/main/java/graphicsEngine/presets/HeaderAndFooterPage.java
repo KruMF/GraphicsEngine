@@ -1,33 +1,47 @@
 package graphicsEngine.presets;
 
+import graphicsEngine.windows.AbstractPage;
+import graphicsEngine.panels.PanelColors;
 import graphicsEngine.presets.panels.AbstractFooter;
 import graphicsEngine.presets.panels.AbstractHeader;
-import graphicsEngine.windows.AbstractPage;
 
-import java.awt.BorderLayout;
+import java.awt.*;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Objects;
+import java.awt.event.ActionListener;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 //TODO: add javadoc
 public abstract class HeaderAndFooterPage extends AbstractPage {
     //TODO: add javadoc
-    public HeaderAndFooterPage(@Nullable AbstractHeader header,
-                               @Nullable AbstractFooter footer) {
-        super();
+    public HeaderAndFooterPage(@Nullable List<ActionListener> actionListenerList,
+                               @Nullable Color backgroundColor,
+                               @Nullable PanelColors headerAndFooterColors) {
+        super(actionListenerList, backgroundColor);
         setLayout(new BorderLayout(0, 0));
-        addHeaderAndFooter(header, footer);
+        addHeaderAndFooter(headerAndFooterColors);
         addParts();
     }
 
-    private void addHeaderAndFooter(@Nullable AbstractHeader header,
-                                    @Nullable AbstractFooter footer) {
+    private void addHeaderAndFooter(@Nullable PanelColors headerAndFooterColors) {
+        AbstractHeader header = getHeader(headerAndFooterColors);
         if (header != null) {
             add(header, BorderLayout.NORTH);
         }
+        AbstractFooter footer = getFooter(headerAndFooterColors);
         if (footer != null) {
             add(footer, BorderLayout.SOUTH);
         }
     }
+
+    //TODO: add javadoc
+    public abstract @Nullable AbstractHeader getHeader(@Nullable PanelColors headerColors);
+
+    //TODO: add javadoc
+    public abstract @Nullable AbstractFooter getFooter(@Nullable PanelColors footerColors);
 
     //TODO: add javadoc
     public abstract void addParts();

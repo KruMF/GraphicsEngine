@@ -5,6 +5,8 @@ import graphicsEngine.windows.WindowConfig;
 import graphicsEngine.windows.AbstractWindow;
 import graphicsEngine.presets.SimpleOverlay;
 
+import java.awt.event.ActionListener;
+import java.util.List;
 import java.util.Objects;
 import java.awt.Component;
 
@@ -25,8 +27,9 @@ abstract class AbstractLayeredWindow extends AbstractWindow {
      */
     AbstractLayeredWindow(@NotNull WindowManager windowManager,
                           @NotNull WindowConfig config,
+                          @Nullable List<ActionListener> actionListenerList,
                           @Nullable SimpleOverlay overlay) {
-        super(windowManager, config);
+        super(windowManager, config, actionListenerList);
         setOverlay(overlay);
         hideOverlay();
     }
