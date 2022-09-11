@@ -4,13 +4,13 @@ import graphicsEngine.panels.PanelColors;
 import graphicsEngine.parts.SimpleLabel;
 import graphicsEngineDemo.d5_featurePreview.common.AbstractMenuPage;
 
+import java.util.List;
 import java.awt.*;
 import java.awt.event.ActionListener;
+import javax.swing.*;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-
-import javax.swing.*;
 
 //TODO: finish this and add javadoc
 public class SettingsPage extends AbstractMenuPage {
@@ -19,9 +19,9 @@ public class SettingsPage extends AbstractMenuPage {
     }
 
     //TODO: add javadoc
-    public SettingsPage(@Nullable PanelColors panelColors,
-                        @Nullable ActionListener actionListener) {
-        super(panelColors, actionListener);
+    public SettingsPage(@Nullable List<ActionListener> actionListenerList,
+                        @Nullable PanelColors panelColors) {
+        super(actionListenerList, panelColors);
     }
 
     //TODO: add javadoc
@@ -37,8 +37,8 @@ public class SettingsPage extends AbstractMenuPage {
 
     //TODO: add javadoc
     @Override
-    public @NotNull Component getPageBody(@Nullable ActionListener actionListener) {
-        JPanel body = (JPanel) super.getPageBody(actionListener);
+    public @NotNull Component getPageBody() {
+        JPanel body = (JPanel) super.getPageBody();
         body.add(new SimpleLabel("Settings page", Color.white), BorderLayout.NORTH);
         //Add parts here
         return body;

@@ -5,6 +5,7 @@ import graphicsEngine.panels.PanelColors;
 import graphicsEngine.parts.SimpleLabel;
 import graphicsEngineDemo.d5_featurePreview.common.AbstractMenuPage;
 
+import java.util.List;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import javax.swing.*;
@@ -14,13 +15,15 @@ import org.jetbrains.annotations.Nullable;
 
 //TODO: finish this and add javadoc
 public class DemoSelectPage extends AbstractMenuPage {
+    DemoSelectButtonListener demoSelectButtonListener;
     private DemoSelectPage() {
         this(null, null);
     }
 
     //TODO: add javadoc
-    public DemoSelectPage(@Nullable PanelColors panelColors, @Nullable ActionListener actionListener) {
-        super(panelColors, actionListener);
+    public DemoSelectPage(@Nullable List<ActionListener> actionListenerList,
+                          @Nullable PanelColors panelColors) {
+        super(actionListenerList, panelColors);
     }
 
     //TODO: add javadoc
@@ -34,17 +37,39 @@ public class DemoSelectPage extends AbstractMenuPage {
         return (new DemoSelectPage()).getPageKey();
     }
 
+    /**
+     * Adds known listeners to this page.
+     * Override this to add custom listeners.
+     *
+     * @param list List of listeners to add.
+     *
+     * @return Remaining unknown listeners.
+     */
+    @Override
+    public @NotNull List<ActionListener> addListeners(@Nullable List<ActionListener> list) {
+        List<ActionListener> remainder = super.addListeners(list);
+        for (int i = 0; i < remainder.size(); i++) {
+            ActionListener listener = remainder.get(i);
+            if (listener instanceof DemoSelectButtonListener) {
+                demoSelectButtonListener = (DemoSelectButtonListener) listener;
+                remainder.remove(i);
+                i--;
+            }
+        }
+        return remainder;
+    }
+
     //TODO: add javadoc
     @Override
-    public @NotNull Component getPageBody(@Nullable ActionListener actionListener) {
-        JPanel body = (JPanel) super.getPageBody(actionListener);
+    public @NotNull Component getPageBody() {
+        JPanel body = (JPanel) super.getPageBody();
         body.add(new SimpleLabel("Select demo:", Color.white), BorderLayout.NORTH);
         body.add(new JPanel() {{
             setBackground(Utilities.EMPTY_COLOR);
             setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-            add(new DemoSelectButtons.Button_Page1(actionListener));
-            add(new DemoSelectButtons.Button_Page2(actionListener));
-            add(new DemoSelectButtons.Button_Page3(actionListener));
+            add(new DemoSelectButtonListener.Button_Page1(demoSelectButtonListener));
+            add(new DemoSelectButtonListener.Button_Page2(demoSelectButtonListener));
+            add(new DemoSelectButtonListener.Button_Page3(demoSelectButtonListener));
             //Add more buttons here
         }}, BorderLayout.CENTER);
         return body;

@@ -4,26 +4,25 @@ import graphicsEngine.windows.WindowManager;
 import graphicsEngine.windows.WindowConfig;
 import graphicsEngine.windows.windowTypes.MultiPageWindow;
 import graphicsEngine.windows.AbstractPage;
-
 import graphicsEngineDemo.d3_twoPageDemo.pages.Page1;
 import graphicsEngineDemo.d3_twoPageDemo.pages.Page2;
-import graphicsEngineDemo.d3_twoPageDemo.parts.Buttons;
+import graphicsEngineDemo.d3_twoPageDemo.parts.ButtonListener;
 
 import java.util.List;
 import java.util.ArrayList;
 import java.awt.Color;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import static consoleUtils.ConsoleUtils.printLine;
-
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 //TODO: add javadocs
-class Window extends MultiPageWindow implements ActionListener {
+public class Window extends MultiPageWindow {
+    private ButtonListener buttonListener;
+
     //TODO: add javadoc
     public Window(@NotNull WindowManager windowManager) {
-        super(windowManager, config(), null);
+        super(windowManager, config(), null, null);
         setActivePage(Page1.getStaticPageKey());
     }
 
@@ -42,6 +41,20 @@ class Window extends MultiPageWindow implements ActionListener {
         return config;
     }
 
+    /**
+     * Adds known listeners to this page.
+     * Override this to add custom listeners.
+     *
+     * @param list List of listeners to add.
+     *
+     * @return Remaining unknown listeners.
+     */
+    @Override
+    public @NotNull List<ActionListener> addListeners(@Nullable List<ActionListener> list) {
+        buttonListener = new ButtonListener(this);
+        return super.addListeners(list);
+    }
+
     //TODO: add javadoc
     @Override
     public final @NotNull String getWindowKey() {
@@ -53,24 +66,9 @@ class Window extends MultiPageWindow implements ActionListener {
      */
     @Override
     public @NotNull List<AbstractPage> getInitialPages() {
-        ActionListener actionListener = this;
         return new ArrayList<>() {{
-            add(new Page1(actionListener, new Color(200, 120, 0)));
-            add(new Page2(actionListener, new Color(200,80,100)));
+            add(new Page1(buttonListener, new Color(200, 120, 0)));
+            add(new Page2(buttonListener, new Color(200,80,100)));
         }};
-    }
-
-    /**
-     * Invoked when an action occurs.
-     *
-     * @param e the event to be processed
-     */
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        switch (e.getActionCommand()) {
-            case Buttons.Button1.ACTION_COMMAND -> setActivePage(Page1.getStaticPageKey());
-            case Buttons.Button2.ACTION_COMMAND -> setActivePage(Page2.getStaticPageKey());
-            default -> printLine("A button has been pressed but no action set up");
-        }
     }
 }

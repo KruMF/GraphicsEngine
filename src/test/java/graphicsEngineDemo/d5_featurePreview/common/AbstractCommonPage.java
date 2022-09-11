@@ -3,23 +3,64 @@ package graphicsEngineDemo.d5_featurePreview.common;
 import graphicsEngine.Utilities;
 import graphicsEngine.panels.PanelColors;
 import graphicsEngine.presets.HeaderAndFooterPage;
+import graphicsEngine.presets.panels.AbstractHeader;
+import graphicsEngine.presets.panels.AbstractFooter;
+import graphicsEngineDemo.d5_featurePreview.common.header.CommonHeader;
+import graphicsEngineDemo.d5_featurePreview.common.header.HeaderButtonListener;
 
-import java.awt.*;
-import java.awt.event.ActionListener;
+import java.util.List;
 import java.util.Objects;
-
-import org.jetbrains.annotations.Nullable;
-
+import java.awt.Component;
+import java.awt.BorderLayout;
+import java.awt.event.ActionListener;
 import javax.swing.*;
+
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 //TODO: finish this and add javadoc
 public abstract class AbstractCommonPage extends HeaderAndFooterPage {
+    private HeaderButtonListener headerButtonListener;
+
     //TODO: add javadoc
-    public AbstractCommonPage(@Nullable PanelColors panelColors, @Nullable ActionListener actionListener) {
-        super(
-                new CommonHeader(panelColors, actionListener),
-                new CommonFooter(panelColors));
-        addBody(getPageBody(actionListener));
+    public AbstractCommonPage(@Nullable List<ActionListener> actionListenerList,
+                              @Nullable PanelColors panelColors) {
+        super(actionListenerList, null, panelColors);
+        addBody(getPageBody());
+    }
+
+    /**
+     * Adds known listeners to this page.
+     * Override this to add custom listeners.
+     *
+     * @param list List of listeners to add.
+     *
+     * @return Remaining unknown listeners.
+     */
+    @Override
+    public @NotNull List<ActionListener> addListeners(@Nullable List<ActionListener> list) {
+        List<ActionListener> remainder = super.addListeners(list);
+        for (int i = 0; i < remainder.size(); i++) {
+            ActionListener listener = remainder.get(i);
+            if (listener instanceof HeaderButtonListener) {
+                headerButtonListener = (HeaderButtonListener) listener;
+                remainder.remove(i);
+                i--;
+            }
+        }
+        return remainder;
+    }
+
+    //TODO: add javadoc
+    @Override
+    public @NotNull AbstractHeader getHeader(@Nullable PanelColors headerColors) {
+        return new CommonHeader(headerColors, headerButtonListener);
+    }
+
+    //TODO: add javadoc
+    @Override
+    public @NotNull AbstractFooter getFooter(@Nullable PanelColors footerColors) {
+        return new CommonFooter(footerColors);
     }
 
     //TODO: add javadoc
@@ -35,5 +76,5 @@ public abstract class AbstractCommonPage extends HeaderAndFooterPage {
     }
 
     //TODO: add javadoc
-    public abstract @Nullable Component getPageBody(@Nullable ActionListener actionListener);
+    public abstract @Nullable Component getPageBody();
 }

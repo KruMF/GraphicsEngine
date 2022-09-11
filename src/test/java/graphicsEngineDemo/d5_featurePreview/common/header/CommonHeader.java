@@ -1,10 +1,9 @@
-package graphicsEngineDemo.d5_featurePreview.common;
+package graphicsEngineDemo.d5_featurePreview.common.header;
 
 import graphicsEngine.panels.PanelColors;
 import graphicsEngine.presets.panels.AbstractHeader;
 
 import javax.swing.BoxLayout;
-import java.awt.event.ActionListener;
 
 import org.jetbrains.annotations.Nullable;
 
@@ -14,19 +13,19 @@ public class CommonHeader extends AbstractHeader {
 
     //TODO: add javadoc
     public CommonHeader(@Nullable PanelColors panelColors,
-                        @Nullable ActionListener actionListener) {
+                        @Nullable HeaderButtonListener buttonListener) {
         super(panelColors, HEIGHT);
-        addButtons(actionListener);
+        addButtons(buttonListener);
     }
 
     //TODO: add javadoc
     @Override
     public void addParts() {}
 
-    private void addButtons(@Nullable ActionListener actionListener) {
+    private void addButtons(@Nullable HeaderButtonListener buttonListener) {
         setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
-        add(new CommonHeaderButtons.Button_Start(actionListener));
-        add(new CommonHeaderButtons.Button_Settings(actionListener));
-        add(new CommonHeaderButtons.Button_DemoSelect(actionListener));
+        add(new HeaderButtonListener.Button_Start(buttonListener));
+        add(new HeaderButtonListener.Button_Settings(buttonListener));
+        add(new HeaderButtonListener.Button_DemoSelect(buttonListener));
     }
 }

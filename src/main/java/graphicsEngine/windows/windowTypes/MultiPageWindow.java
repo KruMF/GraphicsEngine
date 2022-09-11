@@ -5,6 +5,7 @@ import graphicsEngine.windows.WindowConfig;
 import graphicsEngine.windows.AbstractPage;
 import graphicsEngine.presets.SimpleOverlay;
 
+import java.awt.event.ActionListener;
 import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
@@ -24,8 +25,9 @@ public abstract class MultiPageWindow extends AbstractLayeredWindow {
     //TODO: add javadoc
     public MultiPageWindow(@NotNull WindowManager windowManager,
                            @NotNull WindowConfig config,
+                           @Nullable List<ActionListener> actionListenerList,
                            @Nullable SimpleOverlay overlay) {
-        super(windowManager, config, overlay);
+        super(windowManager, config, actionListenerList, overlay);
         this.pages = new HashMap<>();
         activePage = EMPTY_KEY;
         addPages(getInitialPages());

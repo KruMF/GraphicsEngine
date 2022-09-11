@@ -5,6 +5,7 @@ import graphicsEngine.panels.PanelColors;
 import graphicsEngine.parts.SimpleLabel;
 import graphicsEngine.presets.panels.VerticalPanel;
 
+import java.util.List;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import javax.swing.*;
@@ -19,9 +20,9 @@ public class Page2 extends PageWithPanel {
     }
 
     //TODO: add javadoc
-    public Page2(@Nullable PanelColors headerAndFooterColors,
-                 @Nullable ActionListener actionListener) {
-        super(headerAndFooterColors, null, actionListener);
+    public Page2(@Nullable List<ActionListener> actionListenerList,
+                 @Nullable PanelColors headerAndFooterColors) {
+        super(actionListenerList, headerAndFooterColors, null);
         setBackground(new Color(50, 150, 50));
     }
 
@@ -39,23 +40,21 @@ public class Page2 extends PageWithPanel {
     /**
      * TODO: finish this javadoc
      *
-     * @param actionListener
+     * @param panelColors
      * @return
      */
     @Override
-    public final @NotNull VerticalPanel getLeftSidePanel(@Nullable PanelColors panelColors,
-                                                         @Nullable ActionListener actionListener) {
+    public final @NotNull VerticalPanel getLeftSidePanel(@Nullable PanelColors panelColors) {
         return new SidePanel(panelColors);
     }
 
     /**
      * TODO: finish this javadoc
      *
-     * @param actionListener
      * @return
      */
     @Override
-    public @Nullable JPanel getPageCenter(@Nullable ActionListener actionListener) {
+    public @Nullable JPanel getPageCenter() {
         return new JPanel() {{
             setBackground(Utilities.EMPTY_COLOR);
             add(new SimpleLabel("Demo 2", Color.white));

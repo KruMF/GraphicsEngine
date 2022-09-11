@@ -7,6 +7,7 @@ import graphicsEngine.presets.panels.VerticalPanel;
 
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.util.List;
 import javax.swing.*;
 
 import org.jetbrains.annotations.NotNull;
@@ -19,9 +20,9 @@ public class Page3 extends PageWithPanel {
     }
 
     //TODO: add javadoc
-    public Page3(@Nullable PanelColors headerAndFooterColors,
-                 @Nullable ActionListener actionListener) {
-        super(headerAndFooterColors, null, actionListener);
+    public Page3(@Nullable List<ActionListener> actionListenerList,
+                 @Nullable PanelColors headerAndFooterColors) {
+        super(actionListenerList, headerAndFooterColors, null);
         setBackground(new Color(50, 50, 150));
     }
 
@@ -39,23 +40,21 @@ public class Page3 extends PageWithPanel {
     /**
      * TODO: finish this javadoc
      *
-     * @param actionListener
+     * @param panelColors
      * @return
      */
     @Override
-    public final @NotNull VerticalPanel getLeftSidePanel(@Nullable PanelColors panelColors,
-                                                         @Nullable ActionListener actionListener) {
+    public final @NotNull VerticalPanel getLeftSidePanel(@Nullable PanelColors panelColors) {
         return new SidePanel(panelColors);
     }
 
     /**
      * TODO: finish this javadoc
      *
-     * @param actionListener
      * @return
      */
     @Override
-    public @Nullable JPanel getPageCenter(@Nullable ActionListener actionListener) {
+    public @Nullable JPanel getPageCenter() {
         return new JPanel() {{
             setBackground(Utilities.EMPTY_COLOR);
             add(new DynamicLabel(Color.red, null));

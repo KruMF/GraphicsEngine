@@ -17,7 +17,7 @@ public class ViewWindow extends AbstractWindow {
     private static final int[] WINDOW_MINIMUM_SIZE = new int[] {700, 400};
 
     public ViewWindow(@NotNull WindowManager windowManager) {
-        super(windowManager, config());
+        super(windowManager, config(), null);
         int[] correctedMinimumSize = AbstractWindow.correctWindowsSizeError(WINDOW_MINIMUM_SIZE);
         setMinimumSize(new Dimension(correctedMinimumSize[0], correctedMinimumSize[1]));
     }

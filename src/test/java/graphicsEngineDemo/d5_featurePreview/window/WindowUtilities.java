@@ -4,18 +4,14 @@ import graphicsEngine.windows.WindowManager;
 import graphicsEngine.windows.WindowConfig;
 import graphicsEngine.windows.windowTypes.MultiPageWindow;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 import org.jetbrains.annotations.NotNull;
 
-import static consoleUtils.ConsoleUtils.printLine;
-
 //TODO: add javadoc
-abstract class WindowUtilities extends MultiPageWindow implements ActionListener {
+abstract class WindowUtilities extends MultiPageWindow {
+
     //TODO: add javadoc
     public WindowUtilities(@NotNull WindowManager windowManager) {
-        super(windowManager, config(), null);
+        super(windowManager, config(), null, null);
     }
 
     /**
@@ -38,22 +34,4 @@ abstract class WindowUtilities extends MultiPageWindow implements ActionListener
     public @NotNull String getWindowKey() {
         return "window";
     }
-
-    /**
-     * Invoked when an action occurs.
-     *
-     * @param e the event to be processed
-     */
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if (headerButtonActionCheck(e)) return;
-        if (demoSelectButtonActionCheck(e)) return;
-        printLine("A button has been pressed but no action set up");
-    }
-
-    //TODO: add javadoc
-    public abstract boolean headerButtonActionCheck(ActionEvent e);
-
-    //TODO: add javadoc
-    public abstract boolean demoSelectButtonActionCheck(ActionEvent e);
 }

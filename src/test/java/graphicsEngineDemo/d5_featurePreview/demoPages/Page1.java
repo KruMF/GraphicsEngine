@@ -6,6 +6,7 @@ import graphicsEngine.parts.SimpleLabel;
 
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.util.List;
 import javax.swing.*;
 
 import org.jetbrains.annotations.NotNull;
@@ -18,9 +19,9 @@ public class Page1 extends CommonDemoPage {
     }
 
     //TODO: add javadoc
-    public Page1(@Nullable PanelColors panelColors,
-                 @Nullable ActionListener actionListener) {
-        super(panelColors, actionListener);
+    public Page1(@Nullable List<ActionListener> actionListenerList,
+                 @Nullable PanelColors panelColors) {
+        super(actionListenerList, panelColors);
         setBackground(new Color(150, 50, 50));
     }
 
@@ -37,7 +38,7 @@ public class Page1 extends CommonDemoPage {
 
     //TODO: add javadoc
     @Override
-    public @Nullable Component getPageBody(@Nullable ActionListener actionListener) {
+    public @Nullable Component getPageBody() {
         return new JPanel() {{
             setBackground(Utilities.EMPTY_COLOR);
             setLayout(new BorderLayout(0, 0));
