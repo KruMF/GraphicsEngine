@@ -3,6 +3,7 @@ package graphicsEngineDemo.d5_featurePreview.demoPages;
 import graphicsEngine.Utilities;
 import graphicsEngine.panels.PanelColors;
 import graphicsEngine.presets.panels.VerticalPanel;
+import graphicsEngineDemo.d5_featurePreview.common.CommonColors;
 
 import java.util.List;
 import java.awt.*;
@@ -13,14 +14,18 @@ import org.jetbrains.annotations.Nullable;
 
 //TODO: add javadoc
 public abstract class PageWithPanel extends CommonDemoPage {
-    private final PanelColors sidePanelColors;
+    private PanelColors sidePanelColors;
 
     //TODO: add javadoc
     public PageWithPanel(@Nullable List<ActionListener> actionListenerList,
-                         @Nullable PanelColors headerAndFooterColors,
-                         @Nullable PanelColors panelColors) {
+                         @Nullable PanelColors headerAndFooterColors) {
         super(actionListenerList, headerAndFooterColors);
-        sidePanelColors = panelColors;
+    }
+
+    //TODO: add javadoc
+    @Override
+    public void setBodyParameters() {
+        sidePanelColors = CommonColors.SIDE_PANEL_COLORS;
     }
 
     //TODO: add javadoc

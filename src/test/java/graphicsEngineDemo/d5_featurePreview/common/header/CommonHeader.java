@@ -9,7 +9,7 @@ import org.jetbrains.annotations.Nullable;
 
 //TODO: add javadoc
 public class CommonHeader extends AbstractHeader {
-    private static final int HEIGHT = 50;
+    private static final int HEIGHT = 40;
 
     //TODO: add javadoc
     public CommonHeader(@Nullable PanelColors panelColors,

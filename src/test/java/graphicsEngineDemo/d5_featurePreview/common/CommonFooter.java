@@ -7,7 +7,7 @@ import org.jetbrains.annotations.Nullable;
 
 //TODO: add javadoc
 public class CommonFooter extends AbstractFooter {
-    private static final int HEIGHT = 0;
+    private static final int HEIGHT = 40;
 
     //TODO: add javadoc
     public CommonFooter(@Nullable PanelColors panelColors) {

@@ -6,9 +6,9 @@ import graphicsEngine.parts.SimpleLabel;
 import graphicsEngine.presets.panels.VerticalPanel;
 
 import java.util.List;
-import java.awt.*;
+import java.awt.Color;
 import java.awt.event.ActionListener;
-import javax.swing.*;
+import javax.swing.JPanel;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -22,7 +22,7 @@ public class Page2 extends PageWithPanel {
     //TODO: add javadoc
     public Page2(@Nullable List<ActionListener> actionListenerList,
                  @Nullable PanelColors headerAndFooterColors) {
-        super(actionListenerList, headerAndFooterColors, null);
+        super(actionListenerList, headerAndFooterColors);
         setBackground(new Color(50, 150, 50));
     }
 
@@ -57,19 +57,19 @@ public class Page2 extends PageWithPanel {
     public @Nullable JPanel getPageCenter() {
         return new JPanel() {{
             setBackground(Utilities.EMPTY_COLOR);
-            add(new SimpleLabel("Demo 2", Color.white));
+            add(new SimpleLabel("Center", Color.white));
             //Add parts here
         }};
     }
 
     //TODO: add javadoc
     private static class SidePanel extends CommonSidePanel {
-        private static final int WIDTH = 100;
+        private static final int WIDTH = 200;
 
         //TODO: add javadoc
         public SidePanel(@Nullable PanelColors panelColors) {
             super(panelColors, WIDTH);
-            add(new SimpleLabel("Side panel", Color.white));
+            add(new SimpleLabel("Demo page 2 - Side panel", getPanelColors().text));
             //Add parts here
         }
     }

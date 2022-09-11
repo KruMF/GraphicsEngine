@@ -1,6 +1,5 @@
 package graphicsEngineDemo.d5_featurePreview.window;
 
-import graphicsEngine.panels.PanelColors;
 import graphicsEngine.windows.WindowManager;
 import graphicsEngine.windows.AbstractPage;
 import graphicsEngineDemo.d5_featurePreview.common.header.HeaderButtonListener;
@@ -16,6 +15,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.awt.event.ActionListener;
 
+import static graphicsEngineDemo.d5_featurePreview.common.CommonColors.HEADER_AND_FOOTER_COLORS;
 import static graphicsEngine.Utilities.getSampleIcon;
 
 import org.jetbrains.annotations.NotNull;
@@ -32,14 +32,13 @@ public class Window extends WindowUtilities {
     //TODO: add javadoc
     @Override
     public @NotNull List<AbstractPage> getInitialPages() {
-        PanelColors panelColors = new PanelColors();
         return new ArrayList<>() {{
-            add(new StartingPage(getHeaderListener(), panelColors));
-            add(new SettingsPage(getHeaderListener(), panelColors));
-            add(new DemoSelectPage(getDemoSelectListeners(), panelColors));
-            add(new Page1(getHeaderListener(), panelColors));
-            add(new Page2(getHeaderListener(), panelColors));
-            add(new Page3(getHeaderListener(), panelColors));
+            add(new StartingPage(getHeaderListener(), HEADER_AND_FOOTER_COLORS));
+            add(new SettingsPage(getHeaderListener(), HEADER_AND_FOOTER_COLORS));
+            add(new DemoSelectPage(getDemoSelectListeners(), HEADER_AND_FOOTER_COLORS));
+            add(new Page1(getHeaderListener(), HEADER_AND_FOOTER_COLORS));
+            add(new Page2(getHeaderListener(), HEADER_AND_FOOTER_COLORS));
+            add(new Page3(getDemoPage3Listeners(), HEADER_AND_FOOTER_COLORS));
         }};
     }
 
@@ -53,6 +52,12 @@ public class Window extends WindowUtilities {
     private @NotNull List<ActionListener> getDemoSelectListeners() {
         List<ActionListener> listeners = getHeaderListener();
         listeners.add(new DemoSelectButtonListener(this));
+        return listeners;
+    }
+
+    private @NotNull List<ActionListener> getDemoPage3Listeners() {
+        List<ActionListener> listeners = getHeaderListener();
+        //TODO: add custom listener here
         return listeners;
     }
 }

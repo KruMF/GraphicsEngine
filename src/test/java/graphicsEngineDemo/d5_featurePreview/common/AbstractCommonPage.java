@@ -26,6 +26,7 @@ public abstract class AbstractCommonPage extends HeaderAndFooterPage {
     public AbstractCommonPage(@Nullable List<ActionListener> actionListenerList,
                               @Nullable PanelColors panelColors) {
         super(actionListenerList, null, panelColors);
+        setBodyParameters();
         addBody(getPageBody());
     }
 
@@ -66,6 +67,9 @@ public abstract class AbstractCommonPage extends HeaderAndFooterPage {
     //TODO: add javadoc
     @Override
     public final void addParts() {}
+
+    //TODO: add javadoc
+    public abstract void setBodyParameters();
 
     private void addBody(@Nullable Component center) {
         add(new JPanel() {{

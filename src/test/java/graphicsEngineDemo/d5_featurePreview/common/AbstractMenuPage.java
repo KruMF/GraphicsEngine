@@ -22,6 +22,12 @@ public abstract class AbstractMenuPage extends AbstractCommonPage {
 
     //TODO: add javadoc
     @Override
+    public void setBodyParameters() {
+        //TODO: set body parameters here
+    }
+
+    //TODO: add javadoc
+    @Override
     public @NotNull Component getPageBody() {
         return new JPanel() {{
             setLayout(new BorderLayout(0, 0));

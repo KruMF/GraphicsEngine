@@ -5,10 +5,11 @@ import graphicsEngine.panels.PanelColors;
 import graphicsEngine.parts.SimpleLabel;
 import graphicsEngine.presets.panels.VerticalPanel;
 
-import java.awt.*;
-import java.awt.event.ActionListener;
 import java.util.List;
-import javax.swing.*;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.event.ActionListener;
+import javax.swing.JPanel;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -22,7 +23,7 @@ public class Page3 extends PageWithPanel {
     //TODO: add javadoc
     public Page3(@Nullable List<ActionListener> actionListenerList,
                  @Nullable PanelColors headerAndFooterColors) {
-        super(actionListenerList, headerAndFooterColors, null);
+        super(actionListenerList, headerAndFooterColors);
         setBackground(new Color(50, 50, 150));
     }
 
@@ -65,12 +66,12 @@ public class Page3 extends PageWithPanel {
 
     //TODO: add javadoc
     private static class SidePanel extends CommonSidePanel {
-        private static final int WIDTH = 100;
+        private static final int WIDTH = 200;
 
         //TODO: add javadoc
         public SidePanel(@Nullable PanelColors panelColors) {
             super(panelColors, WIDTH);
-            add(new SimpleLabel("Side panel", Color.white));
+            add(new SimpleLabel("Demo page 3 - Side panel", getPanelColors().text));
             //Add parts here
         }
     }
@@ -88,8 +89,8 @@ public class Page3 extends PageWithPanel {
 
         @Override
         public void paintComponent(Graphics g) {
-            g.setColor(getForeground());
-            g.drawString("mystring", 5, 15);
+            setText("A dynamically changeable string");
+            super.paintComponent(g);
         }
     }
 }

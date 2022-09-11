@@ -38,6 +38,12 @@ public class Page1 extends CommonDemoPage {
 
     //TODO: add javadoc
     @Override
+    public void setBodyParameters() {
+        //TODO: set body parameters here
+    }
+
+    //TODO: add javadoc
+    @Override
     public @Nullable Component getPageBody() {
         return new JPanel() {{
             setBackground(Utilities.EMPTY_COLOR);

@@ -1,23 +1,31 @@
 package graphicsEngine.panels;
 
-import java.awt.*;
+import java.util.Objects;
+import java.awt.Color;
+
+import org.jetbrains.annotations.Nullable;
 
 //TODO: add javadoc
 public class PanelColors {
+    //TODO: make private and use getters
     public Color background, text, border;
 
     private static final Color
-            DEFAULT_COLOR_BACKGROUND = Color.lightGray,
+            DEFAULT_COLOR_BACKGROUND = new Color(204, 204, 204),//Color.lightGray,
             DEFAULT_COLOR_TEXT = Color.darkGray,
             DEFAULT_COLOR_BORDER = Color.red;
 
+    //TODO: add javadoc
     public PanelColors() {
-        this(DEFAULT_COLOR_BACKGROUND, DEFAULT_COLOR_TEXT, DEFAULT_COLOR_BORDER);
+        this(null, null, null);
     }
 
-    public PanelColors(Color background, Color text, Color border) {
-        this.background = background;
-        this.text = text;
-        this.border = border;
+    //TODO: add javadoc
+    public PanelColors(@Nullable Color background,
+                       @Nullable Color text,
+                       @Nullable Color border) {
+        this.background = Objects.requireNonNullElse(background, DEFAULT_COLOR_BACKGROUND);
+        this.text = Objects.requireNonNullElse(text, DEFAULT_COLOR_TEXT);
+        this.border = Objects.requireNonNullElse(border, DEFAULT_COLOR_BORDER);
     }
 }

@@ -5,6 +5,7 @@ import graphicsEngine.Utilities;
 import java.util.Objects;
 import javax.swing.JPanel;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 //TODO: add javadoc
@@ -25,7 +26,7 @@ public abstract class SimplePanel extends JPanel {
     }
 
     //TODO: add javadoc
-    public final PanelColors getPanelColors() {
+    public final @NotNull PanelColors getPanelColors() {
         return colors;
     }
 
