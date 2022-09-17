@@ -2,15 +2,28 @@ package graphicsEngineDemo.d5_featurePreview.demoPages.page3.data;
 
 //TODO: finish this and add javadoc
 public class Data {
-    int myVariable;
-    int increment;
+    private int
+            variable,
+            delta;
 
-    protected Data(int value, int increment) {
-        myVariable = value;
-        this.increment = increment;
+    //TODO: add javadoc
+    protected Data(int value, int delta) {
+        variable = value;
+        this.delta = delta;
     }
 
-    protected void updateValues() {
-        myVariable += increment;
+    //TODO: add javadoc
+    public int getVariableValue() {
+        return variable;
+    }
+
+    //TODO: add javadoc
+    protected void add() {
+        variable += delta;
+    }
+
+    //TODO: add javadoc
+    protected void subtract() {
+        variable -= delta;
     }
 }

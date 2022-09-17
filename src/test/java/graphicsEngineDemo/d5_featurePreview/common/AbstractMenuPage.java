@@ -2,14 +2,13 @@ package graphicsEngineDemo.d5_featurePreview.common;
 
 import graphicsEngine.Utilities;
 import graphicsEngine.panels.PanelColors;
+import graphicsEngine.panels.StaticPanel;
 
 import java.util.List;
 import java.awt.Component;
 import java.awt.BorderLayout;
 import java.awt.event.ActionListener;
-import javax.swing.*;
 
-import graphicsEngine.panels.StaticPanel;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
