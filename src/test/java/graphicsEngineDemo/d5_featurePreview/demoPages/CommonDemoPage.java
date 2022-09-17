@@ -3,8 +3,8 @@ package graphicsEngineDemo.d5_featurePreview.demoPages;
 import graphicsEngine.panels.PanelColors;
 import graphicsEngineDemo.d5_featurePreview.common.AbstractCommonPage;
 
-import java.awt.event.ActionListener;
 import java.util.List;
+import java.awt.event.ActionListener;
 
 import org.jetbrains.annotations.Nullable;
 

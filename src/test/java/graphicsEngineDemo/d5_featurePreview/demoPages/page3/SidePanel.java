@@ -14,7 +14,7 @@ class SidePanel extends PageWithPanel.CommonSidePanel {
     protected SidePanel(@Nullable PanelColors panelColors) {
         super(panelColors, WIDTH);
         add(new SimpleLabel("Demo page 3 - Side panel", getPanelColors().text));
-        add(new SimpleLabel("Demo page 3 - Side panel", getPanelColors().text));
+        add(new SimpleLabel("Some text", getPanelColors().text));
         //Add parts here
     }
 }

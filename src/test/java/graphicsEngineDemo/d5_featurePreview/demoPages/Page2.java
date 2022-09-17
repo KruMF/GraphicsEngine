@@ -2,11 +2,12 @@ package graphicsEngineDemo.d5_featurePreview.demoPages;
 
 import graphicsEngine.Utilities;
 import graphicsEngine.panels.PanelColors;
+import graphicsEngine.panels.StaticPanel;
 import graphicsEngine.parts.SimpleLabel;
 import graphicsEngine.presets.panels.VerticalPanel;
 
+import java.awt.*;
 import java.util.List;
-import java.awt.Color;
 import java.awt.event.ActionListener;
 import javax.swing.JPanel;
 
@@ -55,11 +56,16 @@ public class Page2 extends PageWithPanel {
      */
     @Override
     public @Nullable JPanel getPageCenter() {
-        return new JPanel() {{
-            setBackground(Utilities.EMPTY_COLOR);
-            add(new SimpleLabel("Center", Color.white));
-            //Add parts here
-        }};
+        return new StaticPanel(
+                null,
+                new PanelColors(Utilities.EMPTY_COLOR, Color.white, null),
+                false) {
+            {
+                //setLayout(new BorderLayout(0, 0));
+                add(new SimpleLabel("Center", getPanelColors().text), BorderLayout.NORTH);
+                //Add parts here
+            }
+        };
     }
 
     //TODO: add javadoc

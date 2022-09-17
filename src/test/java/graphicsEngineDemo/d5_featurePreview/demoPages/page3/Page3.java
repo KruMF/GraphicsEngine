@@ -3,6 +3,7 @@ package graphicsEngineDemo.d5_featurePreview.demoPages.page3;
 import graphicsEngine.panels.PanelColors;
 import graphicsEngine.presets.panels.VerticalPanel;
 import graphicsEngineDemo.d5_featurePreview.demoPages.PageWithPanel;
+import graphicsEngineDemo.d5_featurePreview.demoPages.page3.data.DataUpdater;
 
 import java.util.List;
 import java.awt.Color;
@@ -14,6 +15,8 @@ import org.jetbrains.annotations.Nullable;
 
 //TODO: add javadoc
 public class Page3 extends PageWithPanel {
+    public final DataUpdater data;
+
     private Page3() {
         this(null, null);
     }
@@ -23,6 +26,7 @@ public class Page3 extends PageWithPanel {
                  @Nullable PanelColors headerAndFooterColors) {
         super(actionListenerList, headerAndFooterColors);
         setBackground(new Color(50, 50, 150));
+        data = new DataUpdater();
     }
 
     //TODO: add javadoc
@@ -54,6 +58,6 @@ public class Page3 extends PageWithPanel {
      */
     @Override
     public @Nullable JPanel getPageCenter() {
-        return new Center();
+        return new Center(this);
     }
 }

@@ -1,15 +1,14 @@
 package graphicsEngineSandbox.graphics.controlWindow.leftPanel;
 
 import graphicsEngine.panels.PanelColors;
-import graphicsEngine.panels.SimplePanel;
+import graphicsEngine.panels.StaticPanel;
 
 import java.awt.*;
 
-abstract class AbstractSubPanel extends SimplePanel {
+abstract class AbstractSubPanel extends StaticPanel {
     protected AbstractSubPanel(int[] size, PanelColors panelColors, boolean border) {
-        super(panelColors, border);
+        super(new Dimension(size[0], size[1]), panelColors, border);
         setOpaque(false);
-        setPreferredSize(new Dimension(size[0], size[1]));
         setAlignmentX(Component.LEFT_ALIGNMENT);
     }
 

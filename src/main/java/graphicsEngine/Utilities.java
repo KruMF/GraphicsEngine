@@ -1,11 +1,10 @@
 package graphicsEngine;
 
+import java.util.Objects;
 import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JComponent;
 import javax.swing.border.LineBorder;
-
-import java.util.Objects;
 
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
@@ -14,6 +13,11 @@ import org.jetbrains.annotations.NotNull;
  * A utility class for containing generic methods.
  */
 public class Utilities {
+    /**
+     * Transparent, non-null color.
+     */
+    public static final Color EMPTY_COLOR = new Color(0, 0, 0, 0);
+
     private static final String
             RESOURCES_PATH = "src/main/resources/graphicsEngine/",
             SAMPLE_ICON_RELATIVE_PATH = "images/sample_icon.png";
@@ -27,11 +31,6 @@ public class Utilities {
     private static @NotNull String getFulResourcePath(@NotNull String relative) {
         return RESOURCES_PATH + relative;
     }
-
-    /**
-     * Transparent, non-null color.
-     */
-    public static final Color EMPTY_COLOR = new Color(0, 0, 0, 0);
 
     // TODO: add javadoc
     public interface BorderInterface {

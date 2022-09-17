@@ -18,9 +18,6 @@ public class CommonHeader extends AbstractHeader {
         addButtons(actionListener);
     }
 
-    @Override
-    public void addParts() {}
-
     private void addButtons(@Nullable ActionListener actionListener) {
         setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
         add(new ButtonListener.Button1(actionListener));

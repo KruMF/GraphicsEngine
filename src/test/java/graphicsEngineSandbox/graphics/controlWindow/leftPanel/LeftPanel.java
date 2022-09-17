@@ -1,18 +1,17 @@
 package graphicsEngineSandbox.graphics.controlWindow.leftPanel;
 
 import graphicsEngine.panels.PanelColors;
-import graphicsEngine.panels.SimplePanel;
+import graphicsEngine.panels.StaticPanel;
 
 import java.awt.*;
 import javax.swing.*;
 
 //TODO: add javadocs
-public class LeftPanel extends SimplePanel {
+public class LeftPanel extends StaticPanel {
     static final int WIDTH = 150;
 
     public LeftPanel(PanelColors panelColors, boolean border) {
-        super(panelColors, border);
-        setPreferredSize(new Dimension(WIDTH, Integer.MAX_VALUE));
+        super(new Dimension(WIDTH, Integer.MAX_VALUE), panelColors, border);
         addMembers();
     }
 

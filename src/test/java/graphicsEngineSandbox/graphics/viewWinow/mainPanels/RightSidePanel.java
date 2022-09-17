@@ -1,17 +1,16 @@
 package graphicsEngineSandbox.graphics.viewWinow.mainPanels;
 
 import graphicsEngine.panels.PanelColors;
-import graphicsEngine.panels.SimplePanel;
+import graphicsEngine.panels.StaticPanel;
 
 import java.awt.*;
 
-public class RightSidePanel extends SimplePanel {
+public class RightSidePanel extends StaticPanel {
     private static final int[] TEXT_LOCATION = new int[] {5, 20};
     private static final String TEXT = "Right side panel";
 
     public RightSidePanel(int width, PanelColors colors) {
-        super(colors, false);
-        setPreferredSize(new Dimension(width, Integer.MAX_VALUE));
+        super(new Dimension(width, Integer.MAX_VALUE), colors, false);
     }
 
     @Override

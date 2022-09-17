@@ -1,14 +1,14 @@
 package graphicsEngineSandbox.graphics.viewWinow.mainPanels.center;
 
 import graphicsEngine.panels.PanelColors;
-import graphicsEngine.panels.SimplePanel;
+import graphicsEngine.panels.StaticPanel;
 
 import java.awt.*;
 import javax.swing.*;
 
-public class CenterContainer extends SimplePanel {
+public class CenterContainer extends StaticPanel {
     public CenterContainer(PanelColors panelColors) {
-        super(panelColors, false);
+        super(null, panelColors, false);
         setLayout(new BorderLayout(0,0));
         add(new CentralSquare(), BorderLayout.WEST);
         add(

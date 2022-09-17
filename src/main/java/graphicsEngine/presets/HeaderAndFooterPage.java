@@ -5,13 +5,11 @@ import graphicsEngine.panels.PanelColors;
 import graphicsEngine.presets.panels.AbstractFooter;
 import graphicsEngine.presets.panels.AbstractHeader;
 
-import java.awt.*;
 import java.util.List;
-import java.util.ArrayList;
-import java.util.Objects;
+import java.awt.Color;
+import java.awt.BorderLayout;
 import java.awt.event.ActionListener;
 
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 //TODO: add javadoc

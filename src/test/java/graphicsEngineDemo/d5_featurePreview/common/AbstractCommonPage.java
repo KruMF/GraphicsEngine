@@ -18,6 +18,8 @@ import javax.swing.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import static consoleUtils.ConsoleUtils.printLine;
+
 //TODO: finish this and add javadoc
 public abstract class AbstractCommonPage extends HeaderAndFooterPage {
     private HeaderButtonListener headerButtonListener;
@@ -72,11 +74,23 @@ public abstract class AbstractCommonPage extends HeaderAndFooterPage {
     public abstract void setBodyParameters();
 
     private void addBody(@Nullable Component center) {
-        add(new JPanel() {{
-            setLayout(new BorderLayout(0, 0));
-            setBackground(Utilities.EMPTY_COLOR);
-            add(Objects.requireNonNullElse(center, new JPanel()), BorderLayout.CENTER);
-        }});
+        add(new JPanel() {
+            {
+                setLayout(new BorderLayout(0, 0));
+                setBackground(Utilities.EMPTY_COLOR);
+                add(Objects.requireNonNullElse(center, new JPanel()), BorderLayout.CENTER);
+            }
+
+            @Override
+            public void repaint() {
+                printLine("commonAbstractPage body being repainted");
+                Component[] components = getComponents();
+                for (Component component : components) {
+                    component.repaint();
+                }
+                super.repaint();
+            }
+        });
     }
 
     //TODO: add javadoc

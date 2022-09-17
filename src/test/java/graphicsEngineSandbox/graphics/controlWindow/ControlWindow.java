@@ -4,10 +4,10 @@ import graphicsEngine.windows.WindowManager;
 import graphicsEngine.windows.WindowConfig;
 import graphicsEngine.windows.AbstractWindow;
 import graphicsEngine.panels.PanelColors;
+import graphicsEngine.panels.StaticPanel;
 import graphicsEngineSandbox.graphics.controlWindow.leftPanel.LeftPanel;
 
 import java.awt.*;
-import javax.swing.JPanel;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -42,11 +42,13 @@ public class ControlWindow extends AbstractWindow {
         add(new CentralPanel(), BorderLayout.CENTER);
     }
 
-    private static class CentralPanel extends JPanel {
+    private static class CentralPanel extends StaticPanel {
         private static final Color BACKGROUND = new Color(110, 120, 40);
 
         protected CentralPanel() {
-            setBackground(BACKGROUND);
+            super(null,
+                    new PanelColors(BACKGROUND, null, null),
+                    false);
         }
     }
 }

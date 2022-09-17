@@ -2,6 +2,7 @@ package graphicsEngineDemo.d5_featurePreview.demoPages;
 
 import graphicsEngine.Utilities;
 import graphicsEngine.panels.PanelColors;
+import graphicsEngine.panels.DynamicPanel;
 import graphicsEngine.presets.panels.VerticalPanel;
 import graphicsEngineDemo.d5_featurePreview.common.CommonColors;
 
@@ -11,6 +12,8 @@ import java.awt.event.ActionListener;
 import javax.swing.JPanel;
 
 import org.jetbrains.annotations.Nullable;
+
+import static consoleUtils.ConsoleUtils.printLine;
 
 //TODO: add javadoc
 public abstract class PageWithPanel extends CommonDemoPage {
@@ -24,6 +27,17 @@ public abstract class PageWithPanel extends CommonDemoPage {
 
     //TODO: add javadoc
     @Override
+    public void repaint() {
+        printLine("panelPage being repainted");
+        Component[] components = getComponents();
+        for (Component component : components) {
+            component.repaint();
+        }
+        super.repaint();
+    }
+
+    //TODO: add javadoc
+    @Override
     public void setBodyParameters() {
         sidePanelColors = CommonColors.SIDE_PANEL_COLORS;
     }
@@ -31,18 +45,22 @@ public abstract class PageWithPanel extends CommonDemoPage {
     //TODO: add javadoc
     @Override
     public @Nullable Component getPageBody() {
-        return new JPanel() {{
-            setBackground(Utilities.EMPTY_COLOR);
-            setLayout(new BorderLayout(0, 0));
-            VerticalPanel leftSidePanel = getLeftSidePanel(sidePanelColors);
-            if (leftSidePanel != null) {
-                add(leftSidePanel, BorderLayout.WEST);
+        return new DynamicPanel(
+                null,
+                new PanelColors(Utilities.EMPTY_COLOR, null, null),
+                false) {
+            {
+                setLayout(new BorderLayout(0, 0));
+                VerticalPanel leftSidePanel = getLeftSidePanel(sidePanelColors);
+                if (leftSidePanel != null) {
+                    add(leftSidePanel, BorderLayout.WEST);
+                }
+                JPanel centralPanel = getPageCenter();
+                if (centralPanel != null) {
+                    add(centralPanel, BorderLayout.CENTER);
+                }
             }
-            JPanel centralPanel = getPageCenter();
-            if (centralPanel != null) {
-                add(centralPanel, BorderLayout.CENTER);
-            }
-        }};
+        };
     }
 
     //TODO: add javadoc
@@ -58,11 +76,5 @@ public abstract class PageWithPanel extends CommonDemoPage {
         public CommonSidePanel(@Nullable PanelColors panelColors, int width) {
             super(panelColors, width);
         }
-
-        /**
-         * TODO: finish this javadoc
-         */
-        @Override
-        public void addParts() {}
     }
 }

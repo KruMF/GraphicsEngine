@@ -1,7 +1,7 @@
 package graphicsEngineSandbox.graphics.controlWindow;
 
 import graphicsEngine.panels.PanelColors;
-import graphicsEngine.panels.SimplePanel;
+import graphicsEngine.panels.StaticPanel;
 import graphicsEngine.parts.*;
 
 import java.awt.*;
@@ -10,14 +10,13 @@ import javax.swing.*;
 import org.jetbrains.annotations.Nullable;
 
 // TODO: add javadocs
-public class Footer extends SimplePanel {
+public class Footer extends StaticPanel {
     private static final int
             HEIGHT = 25,
             TEXT_OFFSET_X = 10;
 
     public Footer(@Nullable PanelColors panelColors, boolean border) {
-        super(panelColors, border);
-        setPreferredSize(new Dimension(Integer.MAX_VALUE, HEIGHT));
+        super(new Dimension(Integer.MAX_VALUE, HEIGHT), panelColors, border);
         addMembers();
     }
 

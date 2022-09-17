@@ -12,7 +12,4 @@ public class CommonFooter extends AbstractFooter {
     public CommonFooter(@Nullable PanelColors panelColors) {
         super(panelColors, HEIGHT);
     }
-
-    @Override
-    public void addParts() {}
 }

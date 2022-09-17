@@ -9,6 +9,7 @@ import java.awt.BorderLayout;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
+import graphicsEngine.panels.StaticPanel;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -29,9 +30,13 @@ public abstract class AbstractMenuPage extends AbstractCommonPage {
     //TODO: add javadoc
     @Override
     public @NotNull Component getPageBody() {
-        return new JPanel() {{
-            setLayout(new BorderLayout(0, 0));
-            setBackground(Utilities.EMPTY_COLOR);
-        }};
+        return new StaticPanel(
+                null,
+                new PanelColors(Utilities.EMPTY_COLOR, null, null),
+                false) {
+            {
+                setLayout(new BorderLayout(0, 0));
+            }
+        };
     }
 }

@@ -1,11 +1,12 @@
 package graphicsEngine.parts;
 
+import graphicsEngine.Utilities;
+
 import java.util.Objects;
 import java.awt.Component;
 import java.awt.Color;
 import javax.swing.JLabel;
 
-import graphicsEngine.Utilities;
 import org.jetbrains.annotations.Nullable;
 
 //A simple JLabel with most commonly used functions

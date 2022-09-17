@@ -3,21 +3,30 @@ package graphicsEngine.panels;
 import graphicsEngine.Utilities;
 
 import java.util.Objects;
+import java.awt.Dimension;
 import javax.swing.JPanel;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 //TODO: add javadoc
-public abstract class SimplePanel extends JPanel {
+abstract class SimplePanel extends JPanel {
     private PanelColors colors;
 
     //TODO: add javadoc
-    protected SimplePanel(@Nullable PanelColors panelColors, boolean border) {
+    protected SimplePanel(@Nullable Dimension sizeLimits,
+                          @Nullable PanelColors panelColors,
+                          boolean drawBorder) {
         super();
+        setSizeLimits(sizeLimits);
         setPanelColors(panelColors);
         resetBackground();
-        setBorderState(border);
+        setBorderState(drawBorder);
+        addParts();
+    }
+
+    private void setSizeLimits(@Nullable Dimension size) {
+        setPreferredSize(size);
     }
 
     //TODO: add javadoc
@@ -42,4 +51,7 @@ public abstract class SimplePanel extends JPanel {
                 state,
                 getPanelColors().border);
     }
+
+    //TODO: add javadoc
+    public abstract void addParts();
 }

@@ -1,11 +1,11 @@
 package graphicsEngineSandbox.graphics.viewWinow.mainPanels.center;
 
 import graphicsEngine.panels.PanelColors;
-import graphicsEngine.panels.SimplePanel;
+import graphicsEngine.panels.StaticPanel;
 
 import java.awt.*;
 
-public class CentralSquare extends SimplePanel {
+public class CentralSquare extends StaticPanel {
     private static final int[] TEXT_LOCATION = new int[] {5, 20};
     private static final PanelColors COLORS;
 
@@ -19,7 +19,7 @@ public class CentralSquare extends SimplePanel {
     }
 
     public CentralSquare() {
-        super(COLORS, false);
+        super(null, COLORS, false);
     }
 
     @Override
