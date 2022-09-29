@@ -1,7 +1,8 @@
 package graphicsEngineDemo.d5_featurePreview.demoPages;
 
-import graphicsEngine.Utilities;
-import graphicsEngine.panels.PanelColors;
+import graphicsEngine.colors.ColorUtilities;
+import graphicsEngine.colors.SimpleColorScheme;
+import graphicsEngine.panels.BorderProperties;
 import graphicsEngine.panels.DynamicPanel;
 import graphicsEngine.presets.panels.VerticalPanel;
 import graphicsEngineDemo.d5_featurePreview.common.CommonColors;
@@ -17,12 +18,12 @@ import static consoleUtils.ConsoleUtils.printLine;
 
 //TODO: add javadoc
 public abstract class PageWithPanel extends CommonDemoPage {
-    private PanelColors sidePanelColors;
+    private SimpleColorScheme sidePanelColors;
 
     //TODO: add javadoc
     public PageWithPanel(@Nullable List<ActionListener> actionListenerList,
-                         @Nullable PanelColors headerAndFooterColors) {
-        super(actionListenerList, headerAndFooterColors);
+                         @Nullable SimpleColorScheme colors) {
+        super(actionListenerList, colors);
     }
 
     //TODO: add javadoc
@@ -47,8 +48,8 @@ public abstract class PageWithPanel extends CommonDemoPage {
     public @Nullable Component getPageBody() {
         return new DynamicPanel(
                 null,
-                new PanelColors(Utilities.EMPTY_COLOR, null, null),
-                false) {
+                new SimpleColorScheme(ColorUtilities.DEFAULT_COLOR_TRANSPARENT, null),
+                null) {
             {
                 setLayout(new BorderLayout(0, 0));
                 VerticalPanel leftSidePanel = getLeftSidePanel(sidePanelColors);
@@ -64,7 +65,7 @@ public abstract class PageWithPanel extends CommonDemoPage {
     }
 
     //TODO: add javadoc
-    public abstract @Nullable VerticalPanel getLeftSidePanel(@Nullable PanelColors panelColors);
+    public abstract @Nullable VerticalPanel getLeftSidePanel(@Nullable SimpleColorScheme panelColors);
 
     //TODO: add javadoc
     public abstract @Nullable JPanel getPageCenter();
@@ -73,8 +74,10 @@ public abstract class PageWithPanel extends CommonDemoPage {
     public static class CommonSidePanel extends VerticalPanel {
 
         //TODO: add javadoc
-        public CommonSidePanel(@Nullable PanelColors panelColors, int width) {
-            super(panelColors, width);
+        public CommonSidePanel(@Nullable SimpleColorScheme panelColors,
+                               int width,
+                               @Nullable BorderProperties borderProperties) {
+            super(panelColors, width, borderProperties);
         }
     }
 }

@@ -1,8 +1,9 @@
 package graphicsEngineDemo.d5_featurePreview.demoPages.page3;
 
 import graphicsEngine.Utilities;
+import graphicsEngine.colors.ColorUtilities;
+import graphicsEngine.colors.SimpleColorScheme;
 import graphicsEngine.panels.DynamicPanel;
-import graphicsEngine.panels.PanelColors;
 import graphicsEngine.parts.SimpleLabel;
 
 import java.awt.Color;
@@ -14,9 +15,10 @@ import org.jetbrains.annotations.Nullable;
 
 class Center extends DynamicPanel {
     protected Center(Page3 page) {
-        super(null,
-                new PanelColors(Utilities.EMPTY_COLOR, null, null),
-                false);
+        super(
+                null,
+                new SimpleColorScheme(ColorUtilities.DEFAULT_COLOR_TRANSPARENT, null),
+                null);
         add(new DynamicLabel(page, Color.red), BorderLayout.PAGE_START);
         //add(new SimpleLabel("Demo 3", Color.white));
         //Add parts here

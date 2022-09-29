@@ -1,6 +1,6 @@
 package graphicsEngineDemo.d5_featurePreview.menuPages.startingPage;
 
-import graphicsEngine.panels.PanelColors;
+import graphicsEngine.colors.SimpleColorScheme;
 import graphicsEngine.parts.SimpleLabel;
 import graphicsEngineDemo.d5_featurePreview.common.AbstractMenuPage;
 
@@ -20,8 +20,8 @@ public class StartingPage extends AbstractMenuPage {
 
     //TODO: add javadoc
     public StartingPage(@Nullable List<ActionListener> actionListenerList,
-                        @Nullable PanelColors panelColors) {
-        super(actionListenerList, panelColors);
+                        @Nullable SimpleColorScheme colors) {
+        super(actionListenerList, colors);
     }
 
     //TODO: add javadoc

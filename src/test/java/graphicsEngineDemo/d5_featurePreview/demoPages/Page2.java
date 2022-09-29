@@ -1,7 +1,9 @@
 package graphicsEngineDemo.d5_featurePreview.demoPages;
 
 import graphicsEngine.Utilities;
-import graphicsEngine.panels.PanelColors;
+import graphicsEngine.colors.ColorUtilities;
+import graphicsEngine.colors.SimpleColorScheme;
+import graphicsEngine.panels.BorderProperties;
 import graphicsEngine.panels.StaticPanel;
 import graphicsEngine.parts.SimpleLabel;
 import graphicsEngine.presets.panels.VerticalPanel;
@@ -22,8 +24,8 @@ public class Page2 extends PageWithPanel {
 
     //TODO: add javadoc
     public Page2(@Nullable List<ActionListener> actionListenerList,
-                 @Nullable PanelColors headerAndFooterColors) {
-        super(actionListenerList, headerAndFooterColors);
+                 @Nullable SimpleColorScheme colors) {
+        super(actionListenerList, colors);
         setBackground(new Color(50, 150, 50));
     }
 
@@ -41,12 +43,12 @@ public class Page2 extends PageWithPanel {
     /**
      * TODO: finish this javadoc
      *
-     * @param panelColors
+     * @param colors
      * @return
      */
     @Override
-    public final @NotNull VerticalPanel getLeftSidePanel(@Nullable PanelColors panelColors) {
-        return new SidePanel(panelColors);
+    public final @NotNull VerticalPanel getLeftSidePanel(@Nullable SimpleColorScheme colors) {
+        return new SidePanel(colors, null);
     }
 
     /**
@@ -58,11 +60,11 @@ public class Page2 extends PageWithPanel {
     public @Nullable JPanel getPageCenter() {
         return new StaticPanel(
                 null,
-                new PanelColors(Utilities.EMPTY_COLOR, Color.white, null),
-                false) {
+                new SimpleColorScheme(ColorUtilities.DEFAULT_COLOR_TRANSPARENT, Color.white),
+                null) {
             {
                 //setLayout(new BorderLayout(0, 0));
-                add(new SimpleLabel("Center", getPanelColors().text), BorderLayout.NORTH);
+                add(new SimpleLabel("Center", getPanelColors().getSecondaryColor()), BorderLayout.NORTH);
                 //Add parts here
             }
         };
@@ -73,9 +75,10 @@ public class Page2 extends PageWithPanel {
         private static final int WIDTH = 200;
 
         //TODO: add javadoc
-        public SidePanel(@Nullable PanelColors panelColors) {
-            super(panelColors, WIDTH);
-            add(new SimpleLabel("Demo page 2 - Side panel", getPanelColors().text));
+        public SidePanel(@Nullable SimpleColorScheme panelColors,
+                         @Nullable BorderProperties borderProperties) {
+            super(panelColors, WIDTH, borderProperties);
+            add(new SimpleLabel("Demo page 2 - Side panel", getPanelColors().getSecondaryColor()));
             //Add parts here
         }
     }

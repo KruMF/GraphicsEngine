@@ -1,7 +1,7 @@
 package graphicsEngineDemo.d5_featurePreview.menuPages.demoSelectPage;
 
 import graphicsEngine.Utilities;
-import graphicsEngine.panels.PanelColors;
+import graphicsEngine.colors.SimpleColorScheme;
 import graphicsEngine.parts.SimpleLabel;
 import graphicsEngineDemo.d5_featurePreview.common.AbstractMenuPage;
 
@@ -22,8 +22,8 @@ public class DemoSelectPage extends AbstractMenuPage {
 
     //TODO: add javadoc
     public DemoSelectPage(@Nullable List<ActionListener> actionListenerList,
-                          @Nullable PanelColors panelColors) {
-        super(actionListenerList, panelColors);
+                          @Nullable SimpleColorScheme colors) {
+        super(actionListenerList, colors);
     }
 
     //TODO: add javadoc

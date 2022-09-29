@@ -1,7 +1,7 @@
 package graphicsEngineDemo.d5_featurePreview.demoPages;
 
-import graphicsEngine.Utilities;
-import graphicsEngine.panels.PanelColors;
+import graphicsEngine.colors.ColorUtilities;
+import graphicsEngine.colors.SimpleColorScheme;
 import graphicsEngine.panels.StaticPanel;
 import graphicsEngine.parts.SimpleLabel;
 
@@ -22,8 +22,8 @@ public class Page1 extends CommonDemoPage {
 
     //TODO: add javadoc
     public Page1(@Nullable List<ActionListener> actionListenerList,
-                 @Nullable PanelColors panelColors) {
-        super(actionListenerList, panelColors);
+                 @Nullable SimpleColorScheme colors) {
+        super(actionListenerList, colors);
         setBackground(new Color(150, 50, 50));
     }
 
@@ -49,11 +49,11 @@ public class Page1 extends CommonDemoPage {
     public @Nullable Component getPageBody() {
         return new StaticPanel(
                 null,
-                new PanelColors(Utilities.EMPTY_COLOR, Color.white, null),
-                false) {
+                new SimpleColorScheme(ColorUtilities.DEFAULT_COLOR_TRANSPARENT, Color.white),
+                null) {
             {
                 setLayout(new BorderLayout(0, 0));
-                add(new SimpleLabel("Demo 1", getPanelColors().text), BorderLayout.NORTH);
+                add(new SimpleLabel("Demo 1", getPanelColors().getSecondaryColor()), BorderLayout.NORTH);
                 //Add parts to body here
             }
         };

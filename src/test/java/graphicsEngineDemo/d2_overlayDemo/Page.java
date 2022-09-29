@@ -1,6 +1,7 @@
 package graphicsEngineDemo.d2_overlayDemo;
 
-import graphicsEngine.panels.PanelColors;
+import graphicsEngine.colors.SimpleColorScheme;
+import graphicsEngine.panels.BorderProperties;
 import graphicsEngine.presets.HeaderAndFooterPage;
 import graphicsEngine.presets.panels.AbstractHeader;
 import graphicsEngine.presets.panels.AbstractFooter;
@@ -17,14 +18,14 @@ import org.jetbrains.annotations.Nullable;
 class Page extends HeaderAndFooterPage {
     private ButtonListener headerButtonListener;
 
-    protected Page(@Nullable PanelColors panelColors,
+    protected Page(@Nullable SimpleColorScheme panelColors,
                    @Nullable ActionListener actionListener) {
         super(new ArrayList<>() {
                     {
                         add(actionListener);
                     }
                 }, null,
-                panelColors);
+                panelColors, null);
     }
 
     /**
@@ -49,19 +50,18 @@ class Page extends HeaderAndFooterPage {
         return remainder;
     }
 
-    @Override
-    public final void addParts() {}
-
     //TODO: add javadoc
     @Override
-    public @NotNull AbstractHeader getHeader(@Nullable PanelColors headerColors) {
-        return new CommonHeader(headerColors, headerButtonListener);
+    public @NotNull AbstractHeader getHeader(@Nullable SimpleColorScheme headerColors,
+                                             @Nullable BorderProperties borderProperties) {
+        return new CommonHeader(headerColors, borderProperties, headerButtonListener);
     }
 
     //TODO: add javadoc
     @Override
-    public @NotNull AbstractFooter getFooter(@Nullable PanelColors footerColors) {
-        return new Footer(footerColors);
+    public @NotNull AbstractFooter getFooter(@Nullable SimpleColorScheme footerColors,
+                                             @Nullable BorderProperties borderProperties) {
+        return new Footer(footerColors, borderProperties);
     }
 
     @Override
@@ -72,14 +72,12 @@ class Page extends HeaderAndFooterPage {
     private static class CommonHeader extends AbstractHeader {
         private static final int HEIGHT = 50;
 
-        public CommonHeader(@Nullable PanelColors panelColors,
+        public CommonHeader(@Nullable SimpleColorScheme panelColors,
+                            @Nullable BorderProperties borderProperties,
                             @Nullable ActionListener actionListener) {
-            super(panelColors, HEIGHT);
+            super(panelColors, HEIGHT, borderProperties);
             addButtons(actionListener);
         }
-
-        @Override
-        public final void addParts() {}
 
         private void addButtons(@Nullable ActionListener actionListener) {
             setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
@@ -92,11 +90,9 @@ class Page extends HeaderAndFooterPage {
     private static class Footer extends AbstractFooter {
         private static final int HEIGHT = 100;
 
-        public Footer(@Nullable PanelColors panelColors) {
-            super(panelColors, HEIGHT);
+        public Footer(@Nullable SimpleColorScheme panelColors,
+                      @Nullable BorderProperties borderProperties) {
+            super(panelColors, HEIGHT, borderProperties);
         }
-
-        @Override
-        public final void addParts() {}
     }
 }

@@ -1,7 +1,9 @@
 package graphicsEngineDemo.d3_twoPageDemo.pages;
 
+import graphicsEngine.Utilities;
+import graphicsEngine.colors.SimpleColorScheme;
+import graphicsEngine.panels.BorderProperties;
 import graphicsEngine.parts.SimpleLabel;
-import graphicsEngine.panels.PanelColors;
 import graphicsEngine.presets.HeaderAndFooterPage;
 import graphicsEngine.presets.panels.AbstractFooter;
 import graphicsEngine.presets.panels.AbstractHeader;
@@ -38,7 +40,7 @@ abstract class AbstractCommonPage extends HeaderAndFooterPage {
                         add(buttonListener);
                     }
                 },
-                null, null);
+                null, null, null);
         this.labelText = Objects.requireNonNullElse(labelText, DEFAULT_LABEL);
         addCenterAndLabel();
     }
@@ -67,24 +69,22 @@ abstract class AbstractCommonPage extends HeaderAndFooterPage {
 
     //TODO: add javadoc
     @Override
-    public @NotNull AbstractHeader getHeader(@Nullable PanelColors headerColors) {
-        return new CommonHeader(headerColors, headerButtonListener);
+    public @NotNull AbstractHeader getHeader(@Nullable SimpleColorScheme headerColors,
+                                             @Nullable BorderProperties borderProperties) {
+        return new CommonHeader(headerColors, borderProperties, headerButtonListener);
     }
 
     //TODO: add javadoc
     @Override
-    public @NotNull AbstractFooter getFooter(@Nullable PanelColors footerColors) {
-        return new CommonFooter(footerColors);
+    public @NotNull AbstractFooter getFooter(@Nullable SimpleColorScheme footerColors,
+                                             @Nullable BorderProperties borderProperties) {
+        return new CommonFooter(footerColors, borderProperties);
     }
-
-    //TODO: add javadoc
-    @Override
-    public void addParts() {}
 
     private void addCenterAndLabel() {
         add(new JPanel() {{
             setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-            setBackground(new Color(0,0,0,0));
+            setBackground(Utilities.EMPTY_COLOR);
             add(new SimpleLabel(labelText, LABEL_TEXT_COLOR));
         }});
     }

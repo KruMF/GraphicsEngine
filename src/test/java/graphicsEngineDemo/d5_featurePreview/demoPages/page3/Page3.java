@@ -1,6 +1,6 @@
 package graphicsEngineDemo.d5_featurePreview.demoPages.page3;
 
-import graphicsEngine.panels.PanelColors;
+import graphicsEngine.colors.SimpleColorScheme;
 import graphicsEngine.presets.panels.VerticalPanel;
 import graphicsEngineDemo.d5_featurePreview.demoPages.PageWithPanel;
 import graphicsEngineDemo.d5_featurePreview.demoPages.page3.data.DataUpdater;
@@ -23,8 +23,8 @@ public class Page3 extends PageWithPanel {
 
     //TODO: add javadoc
     public Page3(@Nullable List<ActionListener> actionListenerList,
-                 @Nullable PanelColors headerAndFooterColors) {
-        super(actionListenerList, headerAndFooterColors);
+                 @Nullable SimpleColorScheme colors) {
+        super(actionListenerList, colors);
         setBackground(new Color(50, 50, 150));
         data = new DataUpdater();
     }
@@ -43,12 +43,12 @@ public class Page3 extends PageWithPanel {
     /**
      * TODO: finish this javadoc
      *
-     * @param panelColors
+     * @param colors
      * @return
      */
     @Override
-    public final @NotNull VerticalPanel getLeftSidePanel(@Nullable PanelColors panelColors) {
-        return new SidePanel(panelColors);
+    public final @NotNull VerticalPanel getLeftSidePanel(@Nullable SimpleColorScheme colors) {
+        return new SidePanel(colors, null);
     }
 
     /**

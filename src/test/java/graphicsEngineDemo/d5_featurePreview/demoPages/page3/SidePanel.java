@@ -1,6 +1,7 @@
 package graphicsEngineDemo.d5_featurePreview.demoPages.page3;
 
-import graphicsEngine.panels.PanelColors;
+import graphicsEngine.colors.SimpleColorScheme;
+import graphicsEngine.panels.BorderProperties;
 import graphicsEngine.parts.SimpleLabel;
 import graphicsEngineDemo.d5_featurePreview.demoPages.PageWithPanel;
 
@@ -11,10 +12,11 @@ class SidePanel extends PageWithPanel.CommonSidePanel {
     private static final int WIDTH = 200;
 
     //TODO: add javadoc
-    protected SidePanel(@Nullable PanelColors panelColors) {
-        super(panelColors, WIDTH);
-        add(new SimpleLabel("Demo page 3 - Side panel", getPanelColors().text));
-        add(new SimpleLabel("Some text", getPanelColors().text));
+    protected SidePanel(@Nullable SimpleColorScheme colors,
+                        @Nullable BorderProperties borderProperties) {
+        super(colors, WIDTH, borderProperties);
+        add(new SimpleLabel("Demo page 3 - Side panel", getPanelColors().getSecondaryColor()));
+        add(new SimpleLabel("Some text", getPanelColors().getSecondaryColor()));
         //Add parts here
     }
 }

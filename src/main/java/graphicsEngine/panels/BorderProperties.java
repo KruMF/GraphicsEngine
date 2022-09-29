@@ -10,11 +10,11 @@ public class BorderProperties implements BorderInterface {
     private @NotNull Color borderColor = DEFAULT_BORDER_COLOR;
     private boolean drawBorders = DEFAULT_BORDER_STATE;
 
-    BorderProperties() {
+    public BorderProperties() {
         this(null, DEFAULT_BORDER_STATE);
     }
 
-    BorderProperties(@Nullable Color color,
+    public BorderProperties(@Nullable Color color,
                      boolean drawBorders) {
         setBorderColor(color);
         setBorderState(drawBorders);

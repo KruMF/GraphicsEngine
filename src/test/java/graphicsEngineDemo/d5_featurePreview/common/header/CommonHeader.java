@@ -1,6 +1,7 @@
 package graphicsEngineDemo.d5_featurePreview.common.header;
 
-import graphicsEngine.panels.PanelColors;
+import graphicsEngine.colors.SimpleColorScheme;
+import graphicsEngine.panels.BorderProperties;
 import graphicsEngine.presets.panels.AbstractHeader;
 
 import javax.swing.BoxLayout;
@@ -12,9 +13,10 @@ public class CommonHeader extends AbstractHeader {
     private static final int HEIGHT = 40;
 
     //TODO: add javadoc
-    public CommonHeader(@Nullable PanelColors panelColors,
+    public CommonHeader(@Nullable SimpleColorScheme colors,
+                        @Nullable BorderProperties borderProperties,
                         @Nullable HeaderButtonListener buttonListener) {
-        super(panelColors, HEIGHT);
+        super(colors, HEIGHT, borderProperties);
         addButtons(buttonListener);
     }
 

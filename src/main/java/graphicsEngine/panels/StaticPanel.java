@@ -1,16 +1,26 @@
 package graphicsEngine.panels;
 
-import org.jetbrains.annotations.Nullable;
+import graphicsEngine.colors.SimpleColorScheme;
 
-import java.awt.*;
+import java.awt.Dimension;
+
+import org.jetbrains.annotations.Nullable;
 
 //TODO: add javadoc
 public class StaticPanel extends SimplePanel {
+
+    //auto-stretching panel
+    //TODO: add javadoc
+    public StaticPanel(@Nullable SimpleColorScheme colors) {
+        super(colors);
+    }
+
+    //custom size and border state
     //TODO: add javadoc
     public StaticPanel(@Nullable Dimension sizeLimits,
-                       @Nullable PanelColors panelColors,
-                       boolean drawBorder) {
-        super(sizeLimits, panelColors, drawBorder);
+                       @Nullable SimpleColorScheme colors,
+                       @Nullable BorderProperties borderProperties) {
+        super(sizeLimits, colors, borderProperties);
     }
 
     //doesn't repaint children

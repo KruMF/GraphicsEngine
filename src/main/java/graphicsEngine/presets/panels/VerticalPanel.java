@@ -1,7 +1,8 @@
 package graphicsEngine.presets.panels;
 
-import graphicsEngine.panels.PanelColors;
 import graphicsEngine.panels.StaticPanel;
+import graphicsEngine.colors.SimpleColorScheme;
+import graphicsEngine.panels.BorderProperties;
 
 import java.awt.Dimension;
 
@@ -10,8 +11,12 @@ import org.jetbrains.annotations.Nullable;
 //TODO: add javadoc
 public abstract class VerticalPanel extends StaticPanel {
     //TODO: add javadoc
-    public VerticalPanel(@Nullable PanelColors panelColors, int width) {
-        super(new Dimension(width, Integer.MAX_VALUE), panelColors, false);
-        addParts();
+    public VerticalPanel(@Nullable SimpleColorScheme colors,
+                         int width,
+                         @Nullable BorderProperties borderProperties) {
+        super(
+                new Dimension(width, Integer.MAX_VALUE),
+                colors,
+                borderProperties);
     }
 }

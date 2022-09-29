@@ -1,7 +1,8 @@
 package graphicsEngineDemo.d5_featurePreview.common;
 
 import graphicsEngine.Utilities;
-import graphicsEngine.panels.PanelColors;
+import graphicsEngine.colors.ColorUtilities;
+import graphicsEngine.colors.SimpleColorScheme;
 import graphicsEngine.panels.StaticPanel;
 
 import java.util.List;
@@ -16,8 +17,8 @@ import org.jetbrains.annotations.Nullable;
 public abstract class AbstractMenuPage extends AbstractCommonPage {
     //TODO: add javadoc
     public AbstractMenuPage(@Nullable List<ActionListener> actionListenerList,
-                            @Nullable PanelColors panelColors) {
-        super(actionListenerList, panelColors);
+                            @Nullable SimpleColorScheme colors) {
+        super(actionListenerList, colors);
     }
 
     //TODO: add javadoc
@@ -31,8 +32,8 @@ public abstract class AbstractMenuPage extends AbstractCommonPage {
     public @NotNull Component getPageBody() {
         return new StaticPanel(
                 null,
-                new PanelColors(Utilities.EMPTY_COLOR, null, null),
-                false) {
+                new SimpleColorScheme(ColorUtilities.DEFAULT_COLOR_TRANSPARENT, null),
+                null) {
             {
                 setLayout(new BorderLayout(0, 0));
             }

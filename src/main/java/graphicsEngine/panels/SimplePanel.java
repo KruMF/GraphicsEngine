@@ -1,6 +1,6 @@
 package graphicsEngine.panels;
 
-import graphicsEngine.Utilities;
+import graphicsEngine.colors.SimpleColorScheme;
 
 import java.util.Objects;
 import java.awt.Dimension;
@@ -11,17 +11,24 @@ import org.jetbrains.annotations.Nullable;
 
 //TODO: add javadoc
 abstract class SimplePanel extends JPanel {
-    private PanelColors colors;
+    private @NotNull SimpleColorScheme colors = new SimpleColorScheme();
+    private @NotNull BorderProperties borderProperties = new BorderProperties();
 
+    //auto-stretching panel
+    //TODO: add javadoc
+    protected SimplePanel(@Nullable SimpleColorScheme colors) {
+        this(null, colors, null);
+    }
+
+    //custom size and border state
     //TODO: add javadoc
     protected SimplePanel(@Nullable Dimension sizeLimits,
-                          @Nullable PanelColors panelColors,
-                          boolean drawBorder) {
+                          @Nullable SimpleColorScheme colors,
+                          @Nullable BorderProperties borderProperties) {
         super();
         setSizeLimits(sizeLimits);
-        setPanelColors(panelColors);
-        resetBackground();
-        setBorderState(drawBorder);
+        setPanelColors(colors);
+        setBorderProperties(borderProperties);
         addParts();
     }
 
@@ -30,26 +37,45 @@ abstract class SimplePanel extends JPanel {
     }
 
     //TODO: add javadoc
-    public final void setPanelColors(@Nullable PanelColors colors) {
-        this.colors = Objects.requireNonNullElse(colors, new PanelColors());
+    public final void setPanelColors(@Nullable SimpleColorScheme colors) {
+        this.colors = Objects.requireNonNullElse(colors, new SimpleColorScheme());
+        resetBackground();
     }
 
     //TODO: add javadoc
-    public final @NotNull PanelColors getPanelColors() {
+    public final @NotNull SimpleColorScheme getPanelColors() {
         return colors;
     }
 
     //TODO: add javadoc
     public void resetBackground() {
-        setBackground(colors.background);
+        setBackground(colors.getBaseColor());
+    }
+
+    private void setBorderProperties(BorderProperties properties) {
+        borderProperties = Objects.requireNonNullElse(
+                properties,
+                new BorderProperties());
+        setComponentBorderState();
     }
 
     //TODO: add javadoc
     public void setBorderState(boolean state) {
-        Utilities.BorderInterface.setBorderState(
+        borderProperties.setBorderState(state);
+        setComponentBorderState();
+    }
+
+    //TODO: add javadoc
+    public void toggleBorderState() {
+        borderProperties.toggleBorderState();
+        setComponentBorderState();
+    }
+
+    private void setComponentBorderState() {
+        BorderInterface.setComponentBorderState(
                 this,
-                state,
-                getPanelColors().border);
+                borderProperties.getBorderColor(),
+                borderProperties.getBorderState());
     }
 
     //TODO: add javadoc

@@ -1,7 +1,8 @@
 package graphicsEngineDemo.d5_featurePreview.common;
 
 import graphicsEngine.Utilities;
-import graphicsEngine.panels.PanelColors;
+import graphicsEngine.colors.SimpleColorScheme;
+import graphicsEngine.panels.BorderProperties;
 import graphicsEngine.presets.HeaderAndFooterPage;
 import graphicsEngine.presets.panels.AbstractHeader;
 import graphicsEngine.presets.panels.AbstractFooter;
@@ -26,8 +27,8 @@ public abstract class AbstractCommonPage extends HeaderAndFooterPage {
 
     //TODO: add javadoc
     public AbstractCommonPage(@Nullable List<ActionListener> actionListenerList,
-                              @Nullable PanelColors panelColors) {
-        super(actionListenerList, null, panelColors);
+                              @Nullable SimpleColorScheme colors) {
+        super(actionListenerList, null, colors, null);
         setBodyParameters();
         addBody(getPageBody());
     }
@@ -56,14 +57,16 @@ public abstract class AbstractCommonPage extends HeaderAndFooterPage {
 
     //TODO: add javadoc
     @Override
-    public @NotNull AbstractHeader getHeader(@Nullable PanelColors headerColors) {
-        return new CommonHeader(headerColors, headerButtonListener);
+    public @NotNull AbstractHeader getHeader(@Nullable SimpleColorScheme headerColors,
+                                             @Nullable BorderProperties borderProperties) {
+        return new CommonHeader(headerColors, borderProperties, headerButtonListener);
     }
 
     //TODO: add javadoc
     @Override
-    public @NotNull AbstractFooter getFooter(@Nullable PanelColors footerColors) {
-        return new CommonFooter(footerColors);
+    public @NotNull AbstractFooter getFooter(@Nullable SimpleColorScheme footerColors,
+                                             @Nullable BorderProperties borderProperties) {
+        return new CommonFooter(footerColors, borderProperties);
     }
 
     //TODO: add javadoc

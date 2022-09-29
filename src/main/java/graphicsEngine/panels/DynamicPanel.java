@@ -3,15 +3,24 @@ package graphicsEngine.panels;
 import java.awt.Component;
 import java.awt.Dimension;
 
+import graphicsEngine.colors.SimpleColorScheme;
 import org.jetbrains.annotations.Nullable;
 
 //TODO: add javadoc
 public class DynamicPanel extends SimplePanel {
+
+    //auto-stretching panel
+    //TODO: add javadoc
+    public DynamicPanel(@Nullable SimpleColorScheme colors) {
+        super(colors);
+    }
+
+    //custom size and border state
     //TODO: add javadoc
     public DynamicPanel(@Nullable Dimension sizeLimits,
-                        @Nullable PanelColors panelColors,
-                        boolean drawBorder) {
-        super(sizeLimits, panelColors, drawBorder);
+                        @Nullable SimpleColorScheme colors,
+                        @Nullable BorderProperties borderProperties) {
+        super(sizeLimits, colors, borderProperties);
     }
 
     //repaints all children

@@ -1,6 +1,6 @@
 package graphicsEngine.presets;
 
-import graphicsEngine.panels.PanelColors;
+import graphicsEngine.colors.SimpleColorScheme;
 import graphicsEngine.panels.StaticPanel;
 
 import java.util.Objects;
@@ -16,12 +16,12 @@ public class SimpleOverlay extends StaticPanel {
 
     //TODO: add javadoc
     public SimpleOverlay(@Nullable Color color) {
-        super(null, getNewPanelColors(color), false);
+        super(null, getNewPanelColors(color), null);
         setOpaque(false);
     }
 
-    private static PanelColors getNewPanelColors(@Nullable Color color) {
-        return new PanelColors(getNonNullBackgroundColor(color), null, null);
+    private static SimpleColorScheme getNewPanelColors(@Nullable Color color) {
+        return new SimpleColorScheme(getNonNullBackgroundColor(color), null);
     }
 
     private static Color getNonNullBackgroundColor(@Nullable Color color) {
@@ -45,7 +45,7 @@ public class SimpleOverlay extends StaticPanel {
     }
 
     private void fillBackground(@NotNull Graphics g) {
-        g.setColor(getPanelColors().background);
+        g.setColor(getPanelColors().getBaseColor());
         g.fillRect(0, 0, this.getWidth(), this.getHeight());
     }
 }
