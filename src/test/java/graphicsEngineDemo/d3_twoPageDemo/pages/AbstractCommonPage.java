@@ -1,6 +1,6 @@
 package graphicsEngineDemo.d3_twoPageDemo.pages;
 
-import graphicsEngine.Utilities;
+import graphicsEngine.colors.ColorUtilities;
 import graphicsEngine.colors.SimpleColorScheme;
 import graphicsEngine.panels.BorderProperties;
 import graphicsEngine.parts.SimpleLabel;
@@ -27,7 +27,7 @@ abstract class AbstractCommonPage extends HeaderAndFooterPage {
     private ButtonListener headerButtonListener;
 
     private static final Color
-            DEFAULT_BACKGROUND = Color.black,
+            DEFAULT_BACKGROUND = ColorUtilities.DEFAULT_COLOR_OPAQUE,
             LABEL_TEXT_COLOR = new Color(30, 30, 150);
     private static final String DEFAULT_LABEL = "No label defined for this page";
     private final String labelText;
@@ -84,7 +84,7 @@ abstract class AbstractCommonPage extends HeaderAndFooterPage {
     private void addCenterAndLabel() {
         add(new JPanel() {{
             setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-            setBackground(Utilities.EMPTY_COLOR);
+            setBackground(ColorUtilities.DEFAULT_COLOR_TRANSPARENT);
             add(new SimpleLabel(labelText, LABEL_TEXT_COLOR));
         }});
     }

@@ -1,6 +1,6 @@
 package graphicsEngineDemo.d5_featurePreview.menuPages.demoSelectPage;
 
-import graphicsEngine.Utilities;
+import graphicsEngine.colors.ColorUtilities;
 import graphicsEngine.colors.SimpleColorScheme;
 import graphicsEngine.parts.SimpleLabel;
 import graphicsEngineDemo.d5_featurePreview.common.AbstractMenuPage;
@@ -65,7 +65,7 @@ public class DemoSelectPage extends AbstractMenuPage {
         JPanel body = (JPanel) super.getPageBody();
         body.add(new SimpleLabel("Select demo:", Color.white), BorderLayout.NORTH);
         body.add(new JPanel() {{
-            setBackground(Utilities.EMPTY_COLOR);
+            setBackground(ColorUtilities.DEFAULT_COLOR_TRANSPARENT);
             setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
             add(new DemoSelectButtonListener.Button_Page1(demoSelectButtonListener));
             add(new DemoSelectButtonListener.Button_Page2(demoSelectButtonListener));
