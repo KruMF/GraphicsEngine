@@ -1,21 +1,26 @@
 package graphicsEngineSandbox.graphics.controlWindow.leftPanel;
 
-import graphicsEngine.panels.PanelColors;
+import graphicsEngine.colors.SimpleColorScheme;
+import graphicsEngine.panels.BorderProperties;
 import graphicsEngine.panels.StaticPanel;
 
 import java.awt.*;
 import javax.swing.*;
 
+import org.jetbrains.annotations.Nullable;
+
 //TODO: add javadocs
 public class LeftPanel extends StaticPanel {
     static final int WIDTH = 150;
 
-    public LeftPanel(PanelColors panelColors, boolean border) {
-        super(new Dimension(WIDTH, Integer.MAX_VALUE), panelColors, border);
-        addMembers();
+    public LeftPanel(@Nullable SimpleColorScheme colors,
+                     @Nullable BorderProperties borderProperties) {
+        super(new Dimension(WIDTH, Integer.MAX_VALUE), colors, borderProperties);
     }
 
-    private void addMembers() {
+    @Override
+    public void addParts() {
+        super.addParts();
         setLayout(new BorderLayout(0, 0));
         add(
                 new JPanel() {
@@ -24,11 +29,11 @@ public class LeftPanel extends StaticPanel {
                         setPreferredSize(new Dimension(LeftPanel.WIDTH, getPreferredHeight()));
                         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
                         //setAlignmentX(Component.LEFT_ALIGNMENT);
-                        PanelColors colors = getPanelColors();
-                        add(new SubPanel1(colors, false));
-                        add(new SubPanel1(colors, false));
-                        add(new SubPanel2(colors, true));
-                        add(new TextLabel(colors.border, true));
+                        SimpleColorScheme colors = new SimpleColorScheme();
+                        add(new SubPanel1(colors, null));
+                        add(new SubPanel1(colors, null));
+                        add(new SubPanel2(colors, new BorderProperties(null, true)));
+                        add(new TextLabel(new BorderProperties(null, true)));
                     }
                 },
                 BorderLayout.NORTH);

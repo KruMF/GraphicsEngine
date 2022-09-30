@@ -1,9 +1,9 @@
 package graphicsEngineSandbox.graphics.controlWindow;
 
+import graphicsEngine.colors.SimpleColorScheme;
 import graphicsEngine.windows.WindowManager;
 import graphicsEngine.windows.WindowConfig;
 import graphicsEngine.windows.AbstractWindow;
-import graphicsEngine.panels.PanelColors;
 import graphicsEngine.panels.StaticPanel;
 import graphicsEngineSandbox.graphics.controlWindow.leftPanel.LeftPanel;
 
@@ -34,12 +34,20 @@ public class ControlWindow extends AbstractWindow {
 
     @Override
     public void addParts() {
-        PanelColors panelColors = new PanelColors();
-
         setLayout(new BorderLayout());
-        add(new Footer(panelColors, false), BorderLayout.SOUTH);
-        add(new LeftPanel(panelColors, false), BorderLayout.WEST);
-        add(new CentralPanel(), BorderLayout.CENTER);
+        add(
+                new Footer(
+                        new SimpleColorScheme(Color.gray, null),
+                        null),
+                BorderLayout.SOUTH);
+        add(
+                new LeftPanel(
+                        new SimpleColorScheme(Color.lightGray, null),
+                        null),
+                BorderLayout.WEST);
+        add(
+                new CentralPanel(),
+                BorderLayout.CENTER);
     }
 
     private static class CentralPanel extends StaticPanel {
@@ -47,8 +55,8 @@ public class ControlWindow extends AbstractWindow {
 
         protected CentralPanel() {
             super(null,
-                    new PanelColors(BACKGROUND, null, null),
-                    false);
+                    new SimpleColorScheme(BACKGROUND, null),
+                    null);
         }
     }
 }

@@ -8,7 +8,7 @@ import javax.swing.border.LineBorder;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-interface BorderInterface {
+public interface BorderInterface {
     Color DEFAULT_BORDER_COLOR = Color.red;
     boolean DEFAULT_BORDER_STATE = false;
 
