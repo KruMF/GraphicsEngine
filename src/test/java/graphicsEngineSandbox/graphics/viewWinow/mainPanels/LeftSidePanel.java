@@ -1,17 +1,20 @@
 package graphicsEngineSandbox.graphics.viewWinow.mainPanels;
 
-import graphicsEngine.panels.PanelColors;
-import graphicsEngine.panels.SimplePanel;
+import graphicsEngine.colors.SimpleColorScheme;
+import graphicsEngine.panels.StaticPanel;
 
-import java.awt.*;
+import java.awt.Dimension;
+import java.awt.Graphics;
 
-public class LeftSidePanel extends SimplePanel {
-    private static final int[] TEXT_LOCATION = new int[] {5, 20};
-    private static final String TEXT = "Left side panel";
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
-    public LeftSidePanel(int width, PanelColors colors) {
-        super(colors, false);
-        setPreferredSize(new Dimension(width, Integer.MAX_VALUE));
+public class LeftSidePanel extends StaticPanel {
+    private static final int @NotNull [] TEXT_LOCATION = new int[] {5, 20};
+    private static final @NotNull String TEXT = "Left side panel";
+
+    public LeftSidePanel(int width, @Nullable SimpleColorScheme colors) {
+        super(new Dimension(width, Integer.MAX_VALUE), colors, null);
     }
 
     @Override
@@ -20,8 +23,8 @@ public class LeftSidePanel extends SimplePanel {
         drawText(g);
     }
 
-    private void drawText(Graphics g) {
-        g.setColor(getPanelColors().text);
+    private void drawText(@NotNull Graphics g) {
+        g.setColor(getPanelColors().getSecondaryColor());
         g.drawString(TEXT, TEXT_LOCATION[0], TEXT_LOCATION[1]);
     }
 }

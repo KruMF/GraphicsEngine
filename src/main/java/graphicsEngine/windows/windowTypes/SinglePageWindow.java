@@ -5,11 +5,12 @@ import graphicsEngine.windows.WindowConfig;
 import graphicsEngine.windows.AbstractPage;
 import graphicsEngine.presets.SimpleOverlay;
 
+import java.util.Objects;
+import java.util.List;
+import java.awt.event.ActionListener;
+
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-
-import java.awt.event.ActionListener;
-import java.util.List;
 
 // TODO: finish this and add javadoc
 public abstract class SinglePageWindow extends AbstractLayeredWindow {
@@ -29,4 +30,12 @@ public abstract class SinglePageWindow extends AbstractLayeredWindow {
 
     //TODO: add javadoc
     public abstract AbstractPage getPage();
+
+    @Override
+    public void repaint() {
+        try {
+            Objects.requireNonNull(getContentPane()).repaint();
+        } catch (NullPointerException ignored) {}
+        super.repaint();
+    }
 }

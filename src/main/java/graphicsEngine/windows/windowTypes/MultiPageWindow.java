@@ -5,16 +5,14 @@ import graphicsEngine.windows.WindowConfig;
 import graphicsEngine.windows.AbstractPage;
 import graphicsEngine.presets.SimpleOverlay;
 
-import java.awt.event.ActionListener;
+import java.util.Objects;
 import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
-import java.util.Objects;
+import java.awt.event.ActionListener;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-
-import static consoleUtils.ConsoleUtils.printLine;
 
 // TODO: finish this and add javadoc
 public abstract class MultiPageWindow extends AbstractLayeredWindow {
@@ -83,5 +81,13 @@ public abstract class MultiPageWindow extends AbstractLayeredWindow {
         if (activePage != null) {
             add(activePage);
         }
+    }
+
+    @Override
+    public void repaint() {
+        try {
+            Objects.requireNonNull(getActivePage()).repaint();
+        } catch (NullPointerException ignored) {}
+        super.repaint();
     }
 }

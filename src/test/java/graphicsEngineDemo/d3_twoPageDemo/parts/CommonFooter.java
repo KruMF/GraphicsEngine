@@ -1,6 +1,7 @@
 package graphicsEngineDemo.d3_twoPageDemo.parts;
 
-import graphicsEngine.panels.PanelColors;
+import graphicsEngine.colors.SimpleColorScheme;
+import graphicsEngine.panels.BorderProperties;
 import graphicsEngine.presets.panels.AbstractFooter;
 
 import org.jetbrains.annotations.Nullable;
@@ -9,10 +10,8 @@ import org.jetbrains.annotations.Nullable;
 public class CommonFooter extends AbstractFooter {
     private static final int HEIGHT = 100;
 
-    public CommonFooter(@Nullable PanelColors panelColors) {
-        super(panelColors, HEIGHT);
+    public CommonFooter(@Nullable SimpleColorScheme colors,
+                        @Nullable BorderProperties borderProperties) {
+        super(colors, HEIGHT, borderProperties);
     }
-
-    @Override
-    public void addParts() {}
 }

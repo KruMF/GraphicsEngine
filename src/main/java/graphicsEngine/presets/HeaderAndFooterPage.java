@@ -1,17 +1,16 @@
 package graphicsEngine.presets;
 
+import graphicsEngine.colors.SimpleColorScheme;
+import graphicsEngine.panels.BorderProperties;
 import graphicsEngine.windows.AbstractPage;
-import graphicsEngine.panels.PanelColors;
 import graphicsEngine.presets.panels.AbstractFooter;
 import graphicsEngine.presets.panels.AbstractHeader;
 
-import java.awt.*;
 import java.util.List;
-import java.util.ArrayList;
-import java.util.Objects;
+import java.awt.Color;
+import java.awt.BorderLayout;
 import java.awt.event.ActionListener;
 
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 //TODO: add javadoc
@@ -19,30 +18,32 @@ public abstract class HeaderAndFooterPage extends AbstractPage {
     //TODO: add javadoc
     public HeaderAndFooterPage(@Nullable List<ActionListener> actionListenerList,
                                @Nullable Color backgroundColor,
-                               @Nullable PanelColors headerAndFooterColors) {
+                               @Nullable SimpleColorScheme headerAndFooterColors,
+                               @Nullable BorderProperties borderProperties) {
         super(actionListenerList, backgroundColor);
         setLayout(new BorderLayout(0, 0));
-        addHeaderAndFooter(headerAndFooterColors);
-        addParts();
+        addHeaderAndFooter(headerAndFooterColors, borderProperties);
     }
 
-    private void addHeaderAndFooter(@Nullable PanelColors headerAndFooterColors) {
-        AbstractHeader header = getHeader(headerAndFooterColors);
+    private void addHeaderAndFooter(@Nullable SimpleColorScheme headerAndFooterColors,
+                                    @Nullable BorderProperties borderProperties) {
+        AbstractHeader header = getHeader(headerAndFooterColors, borderProperties);
         if (header != null) {
             add(header, BorderLayout.NORTH);
         }
-        AbstractFooter footer = getFooter(headerAndFooterColors);
+        AbstractFooter footer = getFooter(headerAndFooterColors, borderProperties);
         if (footer != null) {
             add(footer, BorderLayout.SOUTH);
         }
     }
 
     //TODO: add javadoc
-    public abstract @Nullable AbstractHeader getHeader(@Nullable PanelColors headerColors);
+    public abstract @Nullable AbstractHeader getHeader(
+            @Nullable SimpleColorScheme headerColors,
+            @Nullable BorderProperties borderProperties);
 
     //TODO: add javadoc
-    public abstract @Nullable AbstractFooter getFooter(@Nullable PanelColors footerColors);
-
-    //TODO: add javadoc
-    public abstract void addParts();
+    public abstract @Nullable AbstractFooter getFooter(
+            @Nullable SimpleColorScheme footerColors,
+            @Nullable BorderProperties borderProperties);
 }

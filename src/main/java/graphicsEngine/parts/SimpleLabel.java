@@ -1,18 +1,19 @@
 package graphicsEngine.parts;
 
+import graphicsEngine.colors.ColorUtilities;
+
 import java.util.Objects;
 import java.awt.Component;
 import java.awt.Color;
 import javax.swing.JLabel;
 
-import graphicsEngine.Utilities;
 import org.jetbrains.annotations.Nullable;
 
 //A simple JLabel with most commonly used functions
 //TODO: add javadocs
 public class SimpleLabel extends JLabel {
     private static final String DEFAULT_TEXT = "A label";
-    private static final Color DEFAULT_COLOR = Color.black;
+    private static final Color DEFAULT_COLOR = ColorUtilities.DEFAULT_COLOR_OPAQUE;
 
     //TODO: add javadoc
     public SimpleLabel(@Nullable String text, @Nullable Color textColor) {
@@ -44,6 +45,8 @@ public class SimpleLabel extends JLabel {
     //TODO: add javadoc
     @Override
     public void setBackground(@Nullable Color background) {
-        super.setBackground(Objects.requireNonNullElse(background, Utilities.EMPTY_COLOR));
+        super.setBackground(Objects.requireNonNullElse(
+                background,
+                ColorUtilities.DEFAULT_COLOR_TRANSPARENT));
     }
 }

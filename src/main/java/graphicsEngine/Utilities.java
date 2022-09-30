@@ -1,13 +1,7 @@
 package graphicsEngine;
 
-import java.awt.Color;
 import javax.swing.ImageIcon;
-import javax.swing.JComponent;
-import javax.swing.border.LineBorder;
 
-import java.util.Objects;
-
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -26,23 +20,5 @@ public class Utilities {
     @SuppressWarnings("SameParameterValue")
     private static @NotNull String getFulResourcePath(@NotNull String relative) {
         return RESOURCES_PATH + relative;
-    }
-
-    /**
-     * Transparent, non-null color.
-     */
-    public static final Color EMPTY_COLOR = new Color(0, 0, 0, 0);
-
-    // TODO: add javadoc
-    public interface BorderInterface {
-        Color DEFAULT_BORDER_COLOR = Color.red;
-
-        static void setBorderState(@NotNull JComponent component, boolean state, @Nullable Color color) {
-            if (state) {
-                component.setBorder(new LineBorder(Objects.requireNonNullElse(color, DEFAULT_BORDER_COLOR)));
-            } else {
-                component.setBorder(null);
-            }
-        }
     }
 }

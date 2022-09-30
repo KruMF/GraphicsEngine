@@ -1,23 +1,22 @@
 package graphicsEngine.presets.panels;
 
-import graphicsEngine.panels.PanelColors;
-import graphicsEngine.panels.SimplePanel;
+import graphicsEngine.panels.StaticPanel;
+import graphicsEngine.colors.SimpleColorScheme;
+import graphicsEngine.panels.BorderProperties;
 
 import java.awt.Dimension;
 
 import org.jetbrains.annotations.Nullable;
 
 //TODO: add javadoc
-public abstract class VerticalPanel extends SimplePanel {
+public abstract class VerticalPanel extends StaticPanel {
     //TODO: add javadoc
-    public VerticalPanel(@Nullable PanelColors panelColors, int width) {
-        super(panelColors, false);
-        setPreferredSize(new Dimension(
-                width,
-                Integer.MAX_VALUE));
-        addParts();
+    public VerticalPanel(@Nullable SimpleColorScheme colors,
+                         int width,
+                         @Nullable BorderProperties borderProperties) {
+        super(
+                new Dimension(width, Integer.MAX_VALUE),
+                colors,
+                borderProperties);
     }
-
-    //TODO: add javadoc
-    public abstract void addParts();
 }

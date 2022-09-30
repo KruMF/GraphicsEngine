@@ -1,6 +1,7 @@
 package graphicsEngineDemo.d3_twoPageDemo.parts;
 
-import graphicsEngine.panels.PanelColors;
+import graphicsEngine.colors.SimpleColorScheme;
+import graphicsEngine.panels.BorderProperties;
 import graphicsEngine.presets.panels.AbstractHeader;
 
 import javax.swing.BoxLayout;
@@ -12,14 +13,12 @@ import org.jetbrains.annotations.Nullable;
 public class CommonHeader extends AbstractHeader {
     private static final int HEIGHT = 50;
 
-    public CommonHeader(@Nullable PanelColors panelColors,
+    public CommonHeader(@Nullable SimpleColorScheme colors,
+                        @Nullable BorderProperties borderProperties,
                         @Nullable ActionListener actionListener) {
-        super(panelColors, HEIGHT);
+        super(colors, HEIGHT, borderProperties);
         addButtons(actionListener);
     }
-
-    @Override
-    public void addParts() {}
 
     private void addButtons(@Nullable ActionListener actionListener) {
         setLayout(new BoxLayout(this, BoxLayout.X_AXIS));

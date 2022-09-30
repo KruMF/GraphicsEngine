@@ -1,12 +1,16 @@
 package graphicsEngine.presets.panels;
 
-import graphicsEngine.panels.PanelColors;
+import graphicsEngine.colors.SimpleColorScheme;
+import graphicsEngine.panels.BorderProperties;
 
 import org.jetbrains.annotations.Nullable;
 
+//TODO: add javadoc
 public abstract class AbstractFooter extends HorizontalPanel {
-    public AbstractFooter(@Nullable PanelColors panelColors,
-                          int height) {
-        super(panelColors, height);
+    //TODO: add javadoc
+    public AbstractFooter(@Nullable SimpleColorScheme panelColors,
+                          int height,
+                          @Nullable BorderProperties borderProperties) {
+        super(panelColors, height, borderProperties);
     }
 }

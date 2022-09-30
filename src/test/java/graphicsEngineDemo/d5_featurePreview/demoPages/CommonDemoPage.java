@@ -1,10 +1,10 @@
 package graphicsEngineDemo.d5_featurePreview.demoPages;
 
-import graphicsEngine.panels.PanelColors;
+import graphicsEngine.colors.SimpleColorScheme;
 import graphicsEngineDemo.d5_featurePreview.common.AbstractCommonPage;
 
-import java.awt.event.ActionListener;
 import java.util.List;
+import java.awt.event.ActionListener;
 
 import org.jetbrains.annotations.Nullable;
 
@@ -12,7 +12,7 @@ import org.jetbrains.annotations.Nullable;
 public abstract class CommonDemoPage extends AbstractCommonPage {
     //TODO: add javadoc
     public CommonDemoPage(@Nullable List<ActionListener> actionListenerList,
-                          @Nullable PanelColors panelColors) {
-        super(actionListenerList, panelColors);
+                          @Nullable SimpleColorScheme colors) {
+        super(actionListenerList, colors);
     }
 }
