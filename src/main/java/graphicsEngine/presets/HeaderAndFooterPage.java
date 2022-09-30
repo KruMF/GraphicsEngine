@@ -1,10 +1,10 @@
 package graphicsEngine.presets;
 
+import graphicsEngine.colors.SimpleColorScheme;
 import graphicsEngine.panels.BorderProperties;
 import graphicsEngine.windows.AbstractPage;
 import graphicsEngine.presets.panels.AbstractFooter;
 import graphicsEngine.presets.panels.AbstractHeader;
-import graphicsEngine.colors.SimpleColorScheme;
 
 import java.util.List;
 import java.awt.Color;

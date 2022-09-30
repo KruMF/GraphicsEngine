@@ -6,10 +6,6 @@ import graphicsEngine.windows.windowTypes.MultiPageWindow;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Objects;
-
-import static consoleUtils.ConsoleUtils.printLine;
-
 //TODO: add javadoc
 abstract class WindowUtilities extends MultiPageWindow {
 
@@ -37,14 +33,5 @@ abstract class WindowUtilities extends MultiPageWindow {
     @Override
     public @NotNull String getWindowKey() {
         return "window";
-    }
-
-    @Override
-    public void repaint() {
-        printLine("window being repainted");
-        try {
-            Objects.requireNonNull(getActivePage()).repaint();
-        } catch (NullPointerException ignored) {}
-        super.repaint();
     }
 }

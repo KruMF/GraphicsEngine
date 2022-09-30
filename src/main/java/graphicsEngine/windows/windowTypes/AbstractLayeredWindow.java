@@ -5,10 +5,10 @@ import graphicsEngine.windows.WindowConfig;
 import graphicsEngine.windows.AbstractWindow;
 import graphicsEngine.presets.SimpleOverlay;
 
-import java.awt.event.ActionListener;
-import java.util.List;
 import java.util.Objects;
+import java.util.List;
 import java.awt.Component;
+import java.awt.event.ActionListener;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -81,5 +81,13 @@ abstract class AbstractLayeredWindow extends AbstractWindow {
     public void toggleOverlay() {
         Component pane = getGlassPane();
         pane.setVisible(!(pane.isVisible()));
+    }
+
+    @Override
+    public void repaint() {
+        try {
+            Objects.requireNonNull(getGlassPane()).repaint();
+        } catch (NullPointerException ignored) {}
+        super.repaint();
     }
 }

@@ -1,11 +1,11 @@
 package graphicsEngine.windows;
 
-import graphicsEngine.panels.StaticPanel;
 import graphicsEngine.colors.SimpleColorScheme;
+import graphicsEngine.panels.DynamicPanel;
 
+import java.util.Objects;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Objects;
 import java.awt.Color;
 import java.awt.event.ActionListener;
 
@@ -13,7 +13,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 //TODO: add javadoc
-public abstract class AbstractPage extends StaticPanel {
+public abstract class AbstractPage extends DynamicPanel {
 
     //completely blank
     //TODO: add javadoc

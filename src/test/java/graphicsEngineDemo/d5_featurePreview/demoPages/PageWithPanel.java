@@ -8,13 +8,12 @@ import graphicsEngine.presets.panels.VerticalPanel;
 import graphicsEngineDemo.d5_featurePreview.common.CommonColors;
 
 import java.util.List;
-import java.awt.*;
+import java.awt.Component;
+import java.awt.BorderLayout;
 import java.awt.event.ActionListener;
 import javax.swing.JPanel;
 
 import org.jetbrains.annotations.Nullable;
-
-import static consoleUtils.ConsoleUtils.printLine;
 
 //TODO: add javadoc
 public abstract class PageWithPanel extends CommonDemoPage {
@@ -24,17 +23,6 @@ public abstract class PageWithPanel extends CommonDemoPage {
     public PageWithPanel(@Nullable List<ActionListener> actionListenerList,
                          @Nullable SimpleColorScheme colors) {
         super(actionListenerList, colors);
-    }
-
-    //TODO: add javadoc
-    @Override
-    public void repaint() {
-        printLine("panelPage being repainted");
-        Component[] components = getComponents();
-        for (Component component : components) {
-            component.repaint();
-        }
-        super.repaint();
     }
 
     //TODO: add javadoc
