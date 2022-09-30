@@ -1,25 +1,24 @@
 package graphicsEngineDemo.d5_featurePreview.common;
 
-import graphicsEngine.Utilities;
+import graphicsEngine.colors.ColorUtilities;
 import graphicsEngine.colors.SimpleColorScheme;
 import graphicsEngine.panels.BorderProperties;
+import graphicsEngine.panels.DynamicPanel;
 import graphicsEngine.presets.HeaderAndFooterPage;
 import graphicsEngine.presets.panels.AbstractHeader;
 import graphicsEngine.presets.panels.AbstractFooter;
 import graphicsEngineDemo.d5_featurePreview.common.header.CommonHeader;
 import graphicsEngineDemo.d5_featurePreview.common.header.HeaderButtonListener;
 
-import java.util.List;
 import java.util.Objects;
+import java.util.List;
 import java.awt.Component;
 import java.awt.BorderLayout;
 import java.awt.event.ActionListener;
-import javax.swing.*;
+import javax.swing.JPanel;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-
-import static consoleUtils.ConsoleUtils.printLine;
 
 //TODO: finish this and add javadoc
 public abstract class AbstractCommonPage extends HeaderAndFooterPage {
@@ -77,21 +76,16 @@ public abstract class AbstractCommonPage extends HeaderAndFooterPage {
     public abstract void setBodyParameters();
 
     private void addBody(@Nullable Component center) {
-        add(new JPanel() {
-            {
-                setLayout(new BorderLayout(0, 0));
-                setBackground(Utilities.EMPTY_COLOR);
-                add(Objects.requireNonNullElse(center, new JPanel()), BorderLayout.CENTER);
-            }
-
+        add(new DynamicPanel(
+                null,
+                new SimpleColorScheme(
+                        ColorUtilities.DEFAULT_COLOR_TRANSPARENT,
+                        null),
+                null) {
             @Override
-            public void repaint() {
-                printLine("commonAbstractPage body being repainted");
-                Component[] components = getComponents();
-                for (Component component : components) {
-                    component.repaint();
-                }
-                super.repaint();
+            public void addParts() {
+                setLayout(new BorderLayout(0, 0));
+                add(Objects.requireNonNullElse(center, new JPanel()), BorderLayout.CENTER);
             }
         });
     }

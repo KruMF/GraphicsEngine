@@ -14,21 +14,15 @@ abstract class SimplePanel extends JPanel {
     private @NotNull SimpleColorScheme colors = new SimpleColorScheme();
     private @NotNull BorderProperties borderProperties = new BorderProperties();
 
-    //auto-stretching panel
-    //TODO: add javadoc
-    protected SimplePanel(@Nullable SimpleColorScheme colors) {
-        this(null, colors, null);
-    }
-
     //custom size and border state
     //TODO: add javadoc
     protected SimplePanel(@Nullable Dimension sizeLimits,
                           @Nullable SimpleColorScheme colors,
                           @Nullable BorderProperties borderProperties) {
         super();
-        setSizeLimits(sizeLimits);
-        setPanelColors(colors);
-        setBorderProperties(borderProperties);
+        setSizeLimits(sizeLimits); // null - auto-stretching
+        setPanelColors(colors); // null - default colors
+        setBorderProperties(borderProperties); // null - default border, with default state
         addParts();
     }
 

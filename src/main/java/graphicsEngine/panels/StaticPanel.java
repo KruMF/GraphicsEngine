@@ -12,7 +12,7 @@ public class StaticPanel extends SimplePanel {
     //auto-stretching panel
     //TODO: add javadoc
     public StaticPanel(@Nullable SimpleColorScheme colors) {
-        super(colors);
+        this(null, colors, null);
     }
 
     //custom size and border state

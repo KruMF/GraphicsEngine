@@ -1,9 +1,10 @@
 package graphicsEngine.panels;
 
+import graphicsEngine.colors.SimpleColorScheme;
+
 import java.awt.Component;
 import java.awt.Dimension;
 
-import graphicsEngine.colors.SimpleColorScheme;
 import org.jetbrains.annotations.Nullable;
 
 //TODO: add javadoc
@@ -12,7 +13,7 @@ public class DynamicPanel extends SimplePanel {
     //auto-stretching panel
     //TODO: add javadoc
     public DynamicPanel(@Nullable SimpleColorScheme colors) {
-        super(colors);
+        this(null, colors, null);
     }
 
     //custom size and border state
