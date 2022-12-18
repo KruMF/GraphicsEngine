@@ -2,7 +2,7 @@ package graphicsEngineDemo.d5_featurePreview.menuPages.demoSelectPage;
 
 import graphicsEngine.colors.ColorUtilities;
 import graphicsEngine.colors.SimpleColorScheme;
-import graphicsEngine.parts.SimpleLabel;
+import graphicsEngine.parts.labels.SimpleLabel;
 import graphicsEngineDemo.d5_featurePreview.common.AbstractMenuPage;
 
 import java.util.List;
@@ -70,6 +70,7 @@ public class DemoSelectPage extends AbstractMenuPage {
             add(new DemoSelectButtonListener.Button_Page1(demoSelectButtonListener));
             add(new DemoSelectButtonListener.Button_Page2(demoSelectButtonListener));
             add(new DemoSelectButtonListener.Button_Page3(demoSelectButtonListener));
+            add(new DemoSelectButtonListener.Button_Page4(demoSelectButtonListener));
             //Add more buttons here
         }}, BorderLayout.CENTER);
         return body;

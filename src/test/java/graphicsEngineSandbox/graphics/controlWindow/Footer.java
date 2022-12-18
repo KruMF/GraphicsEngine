@@ -3,7 +3,7 @@ package graphicsEngineSandbox.graphics.controlWindow;
 import graphicsEngine.colors.SimpleColorScheme;
 import graphicsEngine.panels.BorderProperties;
 import graphicsEngine.panels.StaticPanel;
-import graphicsEngine.parts.SimpleLabel;
+import graphicsEngine.parts.labels.SimpleLabel;
 
 import java.awt.Dimension;
 import javax.swing.BoxLayout;

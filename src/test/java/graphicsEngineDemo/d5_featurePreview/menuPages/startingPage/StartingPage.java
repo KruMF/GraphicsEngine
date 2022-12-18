@@ -1,7 +1,7 @@
 package graphicsEngineDemo.d5_featurePreview.menuPages.startingPage;
 
 import graphicsEngine.colors.SimpleColorScheme;
-import graphicsEngine.parts.SimpleLabel;
+import graphicsEngine.parts.labels.SimpleLabel;
 import graphicsEngineDemo.d5_featurePreview.common.AbstractMenuPage;
 
 import java.util.List;

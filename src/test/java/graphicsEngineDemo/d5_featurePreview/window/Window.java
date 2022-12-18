@@ -10,6 +10,7 @@ import graphicsEngineDemo.d5_featurePreview.menuPages.demoSelectPage.DemoSelectP
 import graphicsEngineDemo.d5_featurePreview.demoPages.Page1;
 import graphicsEngineDemo.d5_featurePreview.demoPages.Page2;
 import graphicsEngineDemo.d5_featurePreview.demoPages.page3.Page3;
+import graphicsEngineDemo.d5_featurePreview.demoPages.page4.Page4;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -39,6 +40,7 @@ public class Window extends WindowUtilities {
             add(new Page1(getHeaderListener(), HEADER_AND_FOOTER_COLORS));
             add(new Page2(getHeaderListener(), HEADER_AND_FOOTER_COLORS));
             add(new Page3(getDemoPage3Listeners(), HEADER_AND_FOOTER_COLORS));
+            add(new Page4(getDemoPage4Listeners(), HEADER_AND_FOOTER_COLORS));
         }};
     }
 
@@ -56,6 +58,12 @@ public class Window extends WindowUtilities {
     }
 
     private @NotNull List<ActionListener> getDemoPage3Listeners() {
+        List<ActionListener> listeners = getHeaderListener();
+        //TODO: add custom listener here
+        return listeners;
+    }
+
+    private @NotNull List<ActionListener> getDemoPage4Listeners() {
         List<ActionListener> listeners = getHeaderListener();
         //TODO: add custom listener here
         return listeners;

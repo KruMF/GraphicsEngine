@@ -1,6 +1,4 @@
-package graphicsEngine.parts;
-
-import graphicsEngine.colors.ColorUtilities;
+package graphicsEngine.parts.labels;
 
 import java.util.Objects;
 import java.awt.Component;
@@ -8,6 +6,8 @@ import java.awt.Color;
 import javax.swing.JLabel;
 
 import org.jetbrains.annotations.Nullable;
+
+import graphicsEngine.colors.ColorUtilities;
 
 //A simple JLabel with most commonly used functions
 //TODO: add javadocs

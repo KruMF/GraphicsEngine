@@ -1,11 +1,12 @@
-package graphicsEngineDemo.d5_featurePreview.demoPages.page3;
+package graphicsEngineDemo.d5_featurePreview.demoPages.page4;
+
+import org.jetbrains.annotations.Nullable;
 
 import graphicsEngine.colors.SimpleColorScheme;
 import graphicsEngine.panels.BorderProperties;
 import graphicsEngine.parts.labels.SimpleLabel;
-import graphicsEngineDemo.d5_featurePreview.demoPages.PageWithPanel;
 
-import org.jetbrains.annotations.Nullable;
+import graphicsEngineDemo.d5_featurePreview.demoPages.PageWithPanel;
 
 //TODO: add javadoc
 class SidePanel extends PageWithPanel.CommonSidePanel {
@@ -15,7 +16,7 @@ class SidePanel extends PageWithPanel.CommonSidePanel {
     protected SidePanel(@Nullable SimpleColorScheme colors,
                         @Nullable BorderProperties borderProperties) {
         super(colors, WIDTH, borderProperties);
-        add(new SimpleLabel("Demo page 3 - Side panel", getPanelColors().getSecondaryColor()));
+        add(new SimpleLabel("Demo page 4 - Side panel", getPanelColors().getSecondaryColor()));
         add(new SimpleLabel("Some text", getPanelColors().getSecondaryColor()));
         //Add parts here
     }

@@ -5,6 +5,7 @@ import graphicsEngineDemo.d5_featurePreview.window.Window;
 import graphicsEngineDemo.d5_featurePreview.demoPages.Page1;
 import graphicsEngineDemo.d5_featurePreview.demoPages.Page2;
 import graphicsEngineDemo.d5_featurePreview.demoPages.page3.Page3;
+import graphicsEngineDemo.d5_featurePreview.demoPages.page4.Page4;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -42,6 +43,8 @@ public class DemoSelectButtonListener implements ActionListener {
                     window.setActivePage(Page2.getStaticPageKey());
             case Button_Page3.ACTION_COMMAND ->
                     window.setActivePage(Page3.getStaticPageKey());
+            case Button_Page4.ACTION_COMMAND ->
+                    window.setActivePage(Page4.getStaticPageKey());
             default -> {
                 return false;
             }
@@ -73,6 +76,15 @@ public class DemoSelectButtonListener implements ActionListener {
 
         protected Button_Page3(@Nullable ActionListener actionListener) {
             super("Page 3", ACTION_COMMAND, actionListener);
+        }
+    }
+
+    //TODO: add javadocs
+    public static class Button_Page4 extends SimpleJButton {
+        public static final String ACTION_COMMAND = "page_demo4";
+
+        protected Button_Page4(@Nullable ActionListener actionListener) {
+            super("Page 4", ACTION_COMMAND, actionListener);
         }
     }
 }
