@@ -1,10 +1,9 @@
 package graphicsEngineDemo.d5_featurePreview.demoPages.page3;
 
-import graphicsEngine.Utilities;
 import graphicsEngine.colors.ColorUtilities;
 import graphicsEngine.colors.SimpleColorScheme;
 import graphicsEngine.panels.DynamicPanel;
-import graphicsEngine.parts.SimpleLabel;
+import graphicsEngine.parts.labels.SimpleLabel;
 
 import java.awt.Color;
 import java.awt.BorderLayout;

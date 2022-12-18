@@ -2,7 +2,7 @@ package graphicsEngineDemo.d5_featurePreview.demoPages.page3;
 
 import graphicsEngine.colors.SimpleColorScheme;
 import graphicsEngine.panels.BorderProperties;
-import graphicsEngine.parts.SimpleLabel;
+import graphicsEngine.parts.labels.SimpleLabel;
 import graphicsEngineDemo.d5_featurePreview.demoPages.PageWithPanel;
 
 import org.jetbrains.annotations.Nullable;

@@ -3,7 +3,7 @@ package graphicsEngineDemo.d5_featurePreview.demoPages;
 import graphicsEngine.colors.ColorUtilities;
 import graphicsEngine.colors.SimpleColorScheme;
 import graphicsEngine.panels.StaticPanel;
-import graphicsEngine.parts.SimpleLabel;
+import graphicsEngine.parts.labels.SimpleLabel;
 
 import java.awt.Color;
 import java.awt.Component;

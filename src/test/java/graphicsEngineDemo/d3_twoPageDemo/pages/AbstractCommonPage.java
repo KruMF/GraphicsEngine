@@ -3,7 +3,7 @@ package graphicsEngineDemo.d3_twoPageDemo.pages;
 import graphicsEngine.colors.ColorUtilities;
 import graphicsEngine.colors.SimpleColorScheme;
 import graphicsEngine.panels.BorderProperties;
-import graphicsEngine.parts.SimpleLabel;
+import graphicsEngine.parts.labels.SimpleLabel;
 import graphicsEngine.presets.HeaderAndFooterPage;
 import graphicsEngine.presets.panels.AbstractFooter;
 import graphicsEngine.presets.panels.AbstractHeader;

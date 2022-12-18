@@ -1,11 +1,10 @@
 package graphicsEngineDemo.d5_featurePreview.demoPages;
 
-import graphicsEngine.Utilities;
 import graphicsEngine.colors.ColorUtilities;
 import graphicsEngine.colors.SimpleColorScheme;
 import graphicsEngine.panels.BorderProperties;
 import graphicsEngine.panels.StaticPanel;
-import graphicsEngine.parts.SimpleLabel;
+import graphicsEngine.parts.labels.SimpleLabel;
 import graphicsEngine.presets.panels.VerticalPanel;
 
 import java.awt.*;

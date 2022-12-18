@@ -2,7 +2,7 @@ package graphicsEngineSandbox.graphics.controlWindow.leftPanel;
 
 import graphicsEngine.panels.BorderInterface;
 import graphicsEngine.panels.BorderProperties;
-import graphicsEngine.parts.SimpleLabel;
+import graphicsEngine.parts.labels.SimpleLabel;
 
 import java.awt.Dimension;
 import java.awt.Color;
