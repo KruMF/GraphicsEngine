@@ -70,6 +70,7 @@ public class DemoSelectPage extends AbstractMenuPage {
             add(new DemoSelectButtonListener.Button_Page1(demoSelectButtonListener));
             add(new DemoSelectButtonListener.Button_Page2(demoSelectButtonListener));
             add(new DemoSelectButtonListener.Button_Page3(demoSelectButtonListener));
+            add(new DemoSelectButtonListener.Button_Page4(demoSelectButtonListener));
             //Add more buttons here
         }}, BorderLayout.CENTER);
         return body;

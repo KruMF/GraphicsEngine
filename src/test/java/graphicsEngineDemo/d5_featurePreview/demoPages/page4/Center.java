@@ -1,28 +1,28 @@
-package graphicsEngineDemo.d5_featurePreview.demoPages.page3;
+package graphicsEngineDemo.d5_featurePreview.demoPages.page4;
+
+import java.awt.*;
+
+import org.jetbrains.annotations.Nullable;
+
+import static consoleUtils.ConsoleUtils.printLine;
 
 import graphicsEngine.colors.ColorUtilities;
 import graphicsEngine.colors.SimpleColorScheme;
 import graphicsEngine.panels.DynamicPanel;
 import graphicsEngine.parts.labels.SimpleLabel;
 
-import java.awt.Color;
-import java.awt.BorderLayout;
-
-import static consoleUtils.ConsoleUtils.printLine;
-
-import org.jetbrains.annotations.Nullable;
-
 class Center extends DynamicPanel {
-    protected Center(Page3 page) {
+    protected Center(Page4 page) {
         super(
                 null,
                 new SimpleColorScheme(ColorUtilities.DEFAULT_COLOR_TRANSPARENT, null),
                 null);
-        add(new DynamicLabel(page, Color.red), BorderLayout.PAGE_START);
-        //add(new SimpleLabel("Demo 3", Color.white));
+        //add(new DynamicLabel(page, Color.red), BorderLayout.PAGE_START);
+        add(new SimpleLabel("Demo 4", Color.white));
         //Add parts here
     }
 
+    /*
     //TODO: use parts.labels.DynamicLabel
     private static class DynamicLabel extends SimpleLabel {
         private final Page3 page;
@@ -57,5 +57,5 @@ class Center extends DynamicPanel {
             }
             return "A dynamically changeable string. X: " + valueString;
         }
-    }
+    }*/
 }
