@@ -9,13 +9,16 @@ Free to use and modify for whatever purposes. No copyrights apply.
 
 ## Requirements
 
+### For running and compiling
+
 * JDK: 18
-* Maven compiler (source & target) : 18
-* [Maven Surefire Plugin](https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin) : 3.0.0-M7
+* Maven compiler: 18
+
+### Dependencies
+
 * [JetBrains Java Annotations](https://mvnrepository.com/artifact/org.jetbrains/annotations) : 23.0.0
 * [ThreadAbstraction](https://github.com/KruMF/ThreadAbstraction) : 0.4.2
 * [FileHandler](https://github.com/KruMF/FileHandler) : 0.2.5
-* JUnit: Jupiter 5.9.0
 
 
 ## Instructions
