@@ -1,10 +1,10 @@
 package graphicsEngine.pages.panels;
 
-import graphicsEngine.panels.VerticalPanel;
 import org.jetbrains.annotations.Nullable;
 
 import graphicsEngine.colors.SimpleColorScheme;
 import graphicsEngine.panels.BorderProperties;
+import graphicsEngine.panels.VerticalPanel;
 
 //TODO: add javadocs
 public abstract class AbstractLeftPanel extends VerticalPanel {

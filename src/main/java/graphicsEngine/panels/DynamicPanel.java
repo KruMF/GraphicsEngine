@@ -1,13 +1,13 @@
 package graphicsEngine.panels;
 
-import graphicsEngine.colors.SimpleColorScheme;
-
 import java.awt.Component;
 import java.awt.Dimension;
 
 import org.jetbrains.annotations.Nullable;
 
-//TODO: add javadoc
+import graphicsEngine.colors.SimpleColorScheme;
+
+//TODO: add javadocs
 public class DynamicPanel extends SimplePanel {
 
     //auto-stretching panel

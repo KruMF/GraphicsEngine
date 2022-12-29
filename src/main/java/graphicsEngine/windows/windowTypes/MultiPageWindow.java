@@ -1,10 +1,5 @@
 package graphicsEngine.windows.windowTypes;
 
-import graphicsEngine.windows.WindowManager;
-import graphicsEngine.windows.WindowConfig;
-import graphicsEngine.pages.AbstractPage;
-import graphicsEngine.presets.SimpleOverlay;
-
 import java.util.Objects;
 import java.util.List;
 import java.util.Map;
@@ -13,6 +8,11 @@ import java.awt.event.ActionListener;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import graphicsEngine.windows.WindowManager;
+import graphicsEngine.windows.WindowConfig;
+import graphicsEngine.pages.AbstractPage;
+import graphicsEngine.presets.SimpleOverlay;
 
 // TODO: finish this and add javadoc
 public abstract class MultiPageWindow extends AbstractLayeredWindow {

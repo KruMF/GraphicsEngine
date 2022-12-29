@@ -1,8 +1,8 @@
 package graphicsEngine.parts;
 
+import java.util.Objects;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
-import java.util.Objects;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

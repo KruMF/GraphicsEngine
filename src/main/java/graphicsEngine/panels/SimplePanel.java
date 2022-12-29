@@ -1,13 +1,13 @@
 package graphicsEngine.panels;
 
-import graphicsEngine.colors.SimpleColorScheme;
-
 import java.util.Objects;
 import java.awt.Dimension;
 import javax.swing.JPanel;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import graphicsEngine.colors.SimpleColorScheme;
 
 //TODO: add javadoc
 public abstract class SimplePanel extends JPanel {

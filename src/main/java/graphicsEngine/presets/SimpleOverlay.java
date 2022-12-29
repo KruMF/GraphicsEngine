@@ -1,14 +1,14 @@
 package graphicsEngine.presets;
 
-import graphicsEngine.colors.SimpleColorScheme;
-import graphicsEngine.panels.StaticPanel;
-
 import java.util.Objects;
 import java.awt.Color;
 import java.awt.Graphics;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import graphicsEngine.colors.SimpleColorScheme;
+import graphicsEngine.panels.StaticPanel;
 
 //TODO: add javadocs
 public class SimpleOverlay extends StaticPanel {

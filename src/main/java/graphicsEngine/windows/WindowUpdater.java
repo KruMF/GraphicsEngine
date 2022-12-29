@@ -1,10 +1,10 @@
 package graphicsEngine.windows;
 
-import DelayCalculator.DelayOptions;
-import ThreadAbstraction.AbstractUpdater;
-
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
+
+import DelayCalculator.DelayOptions;
+import ThreadAbstraction.AbstractUpdater;
 
 /**
  * A class for joining window and the thread that updates it.

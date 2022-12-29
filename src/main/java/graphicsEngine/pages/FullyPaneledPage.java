@@ -1,19 +1,21 @@
 package graphicsEngine.pages;
 
-import graphicsEngine.colors.ColorUtilities;
-import graphicsEngine.colors.SimpleColorScheme;
-import graphicsEngine.pages.panels.PanelLocation;
-import graphicsEngine.panels.BorderProperties;
-import graphicsEngine.panels.DynamicPanel;
-import graphicsEngine.pages.panels.AbstractLeftPanel;
-import graphicsEngine.pages.panels.AbstractRightPanel;
-import graphicsEngine.panels.SimplePanel;
+import java.util.List;
+import java.awt.Color;
+import java.awt.BorderLayout;
+import java.awt.event.ActionListener;
+
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.awt.*;
-import java.awt.event.ActionListener;
-import java.util.List;
+import graphicsEngine.colors.ColorUtilities;
+import graphicsEngine.colors.SimpleColorScheme;
+import graphicsEngine.panels.BorderProperties;
+import graphicsEngine.panels.SimplePanel;
+import graphicsEngine.panels.DynamicPanel;
+import graphicsEngine.pages.panels.PanelLocation;
+import graphicsEngine.pages.panels.AbstractLeftPanel;
+import graphicsEngine.pages.panels.AbstractRightPanel;
 
 //TODO: add javadocs
 public abstract class FullyPaneledPage extends HeaderAndFooterPage implements HorizontalDivisionInterface {

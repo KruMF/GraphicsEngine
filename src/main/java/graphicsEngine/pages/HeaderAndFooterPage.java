@@ -1,19 +1,20 @@
 package graphicsEngine.pages;
 
+import java.util.List;
+import java.awt.Color;
+import java.awt.BorderLayout;
+import java.awt.event.ActionListener;
+
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
 import graphicsEngine.colors.SimpleColorScheme;
+import graphicsEngine.panels.BorderProperties;
+import graphicsEngine.panels.SimplePanel;
+import graphicsEngine.panels.DynamicPanel;
 import graphicsEngine.pages.panels.AbstractFooter;
 import graphicsEngine.pages.panels.AbstractHeader;
 import graphicsEngine.pages.panels.PanelLocation;
-import graphicsEngine.panels.BorderProperties;
-
-import java.awt.*;
-import java.util.List;
-import java.awt.event.ActionListener;
-
-import graphicsEngine.panels.DynamicPanel;
-import graphicsEngine.panels.SimplePanel;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 //TODO: add javadoc
 public abstract class HeaderAndFooterPage extends AbstractPage implements VerticalDivisionInterface {

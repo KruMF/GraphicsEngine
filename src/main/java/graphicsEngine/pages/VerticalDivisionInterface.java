@@ -1,11 +1,12 @@
 package graphicsEngine.pages;
 
+import org.jetbrains.annotations.Nullable;
+
 import graphicsEngine.colors.SimpleColorScheme;
-import graphicsEngine.pages.panels.AbstractFooter;
-import graphicsEngine.pages.panels.AbstractHeader;
 import graphicsEngine.panels.BorderProperties;
 import graphicsEngine.panels.DynamicPanel;
-import org.jetbrains.annotations.Nullable;
+import graphicsEngine.pages.panels.AbstractFooter;
+import graphicsEngine.pages.panels.AbstractHeader;
 
 //TODO: add javadocs
 public interface VerticalDivisionInterface {

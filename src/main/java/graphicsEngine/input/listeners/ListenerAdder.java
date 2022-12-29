@@ -1,12 +1,13 @@
 package graphicsEngine.input.listeners;
 
-import graphicsEngine.input.InputData;
-import graphicsEngineOld.engine.ExitManager;
-import graphicsEngineOld.engine.data.windowParameters.WindowParameters;
-
-import javax.swing.*;
+import javax.swing.JFrame;
 
 import org.jetbrains.annotations.NotNull;
+
+import graphicsEngine.input.InputData;
+
+import graphicsEngineOld.engine.ExitManager;
+import graphicsEngineOld.engine.data.windowParameters.WindowParameters;
 
 /**
  * Default window, keyboard and mouse listener adder for input.

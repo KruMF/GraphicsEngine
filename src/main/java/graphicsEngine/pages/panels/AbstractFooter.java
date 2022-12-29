@@ -1,10 +1,10 @@
 package graphicsEngine.pages.panels;
 
+import org.jetbrains.annotations.Nullable;
+
 import graphicsEngine.colors.SimpleColorScheme;
 import graphicsEngine.panels.BorderProperties;
-
 import graphicsEngine.panels.HorizontalPanel;
-import org.jetbrains.annotations.Nullable;
 
 //TODO: add javadoc
 public abstract class AbstractFooter extends HorizontalPanel {

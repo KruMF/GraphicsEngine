@@ -1,6 +1,6 @@
 package graphicsEngine.windows;
 
-import javax.swing.*;
+import javax.swing.WindowConstants;
 
 //TODO: add javadocs
 public class WindowConfig {

@@ -2,11 +2,11 @@ package graphicsEngine.windows;
 
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
-
-import static consoleUtils.ConsoleUtils.printLine;
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
 import org.jetbrains.annotations.NotNull;
+
+import static consoleUtils.ConsoleUtils.printLine;
 
 //TODO: add javadocs
 class CommonWindowListener implements WindowListener {

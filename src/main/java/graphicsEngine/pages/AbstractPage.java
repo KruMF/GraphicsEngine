@@ -1,8 +1,5 @@
 package graphicsEngine.pages;
 
-import graphicsEngine.colors.SimpleColorScheme;
-import graphicsEngine.panels.DynamicPanel;
-
 import java.util.Objects;
 import java.util.List;
 import java.util.ArrayList;
@@ -11,6 +8,9 @@ import java.awt.event.ActionListener;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import graphicsEngine.colors.SimpleColorScheme;
+import graphicsEngine.panels.DynamicPanel;
 
 //TODO: add javadoc
 public abstract class AbstractPage extends DynamicPanel {
