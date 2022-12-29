@@ -1,8 +1,9 @@
-package graphicsEngine.presets.panels;
+package graphicsEngine.pages.panels;
 
 import graphicsEngine.colors.SimpleColorScheme;
 import graphicsEngine.panels.BorderProperties;
 
+import graphicsEngine.panels.HorizontalPanel;
 import org.jetbrains.annotations.Nullable;
 
 //TODO: add javadoc

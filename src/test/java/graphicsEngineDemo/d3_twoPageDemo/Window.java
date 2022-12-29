@@ -3,7 +3,7 @@ package graphicsEngineDemo.d3_twoPageDemo;
 import graphicsEngine.windows.WindowManager;
 import graphicsEngine.windows.WindowConfig;
 import graphicsEngine.windows.windowTypes.MultiPageWindow;
-import graphicsEngine.windows.AbstractPage;
+import graphicsEngine.pages.AbstractPage;
 import graphicsEngineDemo.d3_twoPageDemo.pages.Page1;
 import graphicsEngineDemo.d3_twoPageDemo.pages.Page2;
 import graphicsEngineDemo.d3_twoPageDemo.parts.ButtonListener;

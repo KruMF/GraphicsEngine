@@ -1,8 +1,6 @@
-package graphicsEngine.presets.panels;
+package graphicsEngine.panels;
 
-import graphicsEngine.panels.StaticPanel;
 import graphicsEngine.colors.SimpleColorScheme;
-import graphicsEngine.panels.BorderProperties;
 
 import java.awt.Dimension;
 

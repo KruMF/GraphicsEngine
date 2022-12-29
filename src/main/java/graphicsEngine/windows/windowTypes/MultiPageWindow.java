@@ -2,7 +2,7 @@ package graphicsEngine.windows.windowTypes;
 
 import graphicsEngine.windows.WindowManager;
 import graphicsEngine.windows.WindowConfig;
-import graphicsEngine.windows.AbstractPage;
+import graphicsEngine.pages.AbstractPage;
 import graphicsEngine.presets.SimpleOverlay;
 
 import java.util.Objects;

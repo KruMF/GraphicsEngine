@@ -1,6 +1,6 @@
 package graphicsEngineDemo.d3_twoPageDemo.parts;
 
-import graphicsEngine.presets.SimpleJButton;
+import graphicsEngine.parts.SimpleJButton;
 import graphicsEngineDemo.d3_twoPageDemo.Window;
 import graphicsEngineDemo.d3_twoPageDemo.pages.Page1;
 import graphicsEngineDemo.d3_twoPageDemo.pages.Page2;

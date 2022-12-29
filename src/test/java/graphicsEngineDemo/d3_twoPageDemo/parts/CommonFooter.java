@@ -2,7 +2,7 @@ package graphicsEngineDemo.d3_twoPageDemo.parts;
 
 import graphicsEngine.colors.SimpleColorScheme;
 import graphicsEngine.panels.BorderProperties;
-import graphicsEngine.presets.panels.AbstractFooter;
+import graphicsEngine.pages.panels.AbstractFooter;
 
 import org.jetbrains.annotations.Nullable;
 

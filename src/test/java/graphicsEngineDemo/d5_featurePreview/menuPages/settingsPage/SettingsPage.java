@@ -1,13 +1,15 @@
 package graphicsEngineDemo.d5_featurePreview.menuPages.settingsPage;
 
+import graphicsEngine.colors.ColorUtilities;
 import graphicsEngine.colors.SimpleColorScheme;
+import graphicsEngine.panels.BorderProperties;
+import graphicsEngine.panels.DynamicPanel;
 import graphicsEngine.parts.labels.SimpleLabel;
 import graphicsEngineDemo.d5_featurePreview.common.AbstractMenuPage;
 
 import java.util.List;
 import java.awt.*;
 import java.awt.event.ActionListener;
-import javax.swing.*;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -21,7 +23,11 @@ public class SettingsPage extends AbstractMenuPage {
     //TODO: add javadoc
     public SettingsPage(@Nullable List<ActionListener> actionListenerList,
                         @Nullable SimpleColorScheme colors) {
-        super(actionListenerList, colors);
+        super(actionListenerList);
+        prepareFixedPanels(
+                colors,
+                new SimpleColorScheme(ColorUtilities.DEFAULT_COLOR_TRANSPARENT, null),
+                null);
     }
 
     //TODO: add javadoc
@@ -35,12 +41,13 @@ public class SettingsPage extends AbstractMenuPage {
         return (new SettingsPage()).getPageKey();
     }
 
-    //TODO: add javadoc
+    //
     @Override
-    public @NotNull Component getPageBody() {
-        JPanel body = (JPanel) super.getPageBody();
-        body.add(new SimpleLabel("Settings page", Color.white), BorderLayout.NORTH);
-        //Add parts here
-        return body;
+    public @Nullable DynamicPanel getBody(@Nullable SimpleColorScheme colors,
+                                          @Nullable BorderProperties borderProperties) {
+        return new DynamicPanel(colors) {{
+            setLayout(new BorderLayout(0, 0));
+            add(new SimpleLabel("Settings page", Color.white), BorderLayout.NORTH);
+        }};
     }
 }

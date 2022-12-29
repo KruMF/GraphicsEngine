@@ -1,6 +1,6 @@
 package graphicsEngineDemo.d2_overlayDemo;
 
-import graphicsEngine.presets.SimpleJButton;
+import graphicsEngine.parts.SimpleJButton;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

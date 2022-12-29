@@ -1,6 +1,6 @@
 package graphicsEngineDemo.d5_featurePreview.menuPages.demoSelectPage;
 
-import graphicsEngine.presets.SimpleJButton;
+import graphicsEngine.parts.SimpleJButton;
 import graphicsEngineDemo.d5_featurePreview.window.Window;
 import graphicsEngineDemo.d5_featurePreview.demoPages.Page1;
 import graphicsEngineDemo.d5_featurePreview.demoPages.Page2;

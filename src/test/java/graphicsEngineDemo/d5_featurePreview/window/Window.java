@@ -1,7 +1,7 @@
 package graphicsEngineDemo.d5_featurePreview.window;
 
 import graphicsEngine.windows.WindowManager;
-import graphicsEngine.windows.AbstractPage;
+import graphicsEngine.pages.AbstractPage;
 import graphicsEngineDemo.d5_featurePreview.common.header.HeaderButtonListener;
 import graphicsEngineDemo.d5_featurePreview.menuPages.demoSelectPage.DemoSelectButtonListener;
 import graphicsEngineDemo.d5_featurePreview.menuPages.startingPage.StartingPage;

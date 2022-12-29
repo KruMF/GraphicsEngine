@@ -5,7 +5,7 @@ import graphicsEngine.colors.SimpleColorScheme;
 import graphicsEngine.panels.BorderProperties;
 import graphicsEngine.panels.StaticPanel;
 import graphicsEngine.parts.labels.SimpleLabel;
-import graphicsEngine.presets.panels.VerticalPanel;
+import graphicsEngine.panels.VerticalPanel;
 
 import java.awt.*;
 import java.util.List;
@@ -17,6 +17,8 @@ import org.jetbrains.annotations.Nullable;
 
 //TODO: add javadoc
 public class Page2 extends PageWithPanel {
+    private static final @NotNull Color BACKGROUND_COLOR = new Color(50, 150, 50);
+
     private Page2() {
         this(null, null);
     }
@@ -24,8 +26,12 @@ public class Page2 extends PageWithPanel {
     //TODO: add javadoc
     public Page2(@Nullable List<ActionListener> actionListenerList,
                  @Nullable SimpleColorScheme colors) {
-        super(actionListenerList, colors);
-        setBackground(new Color(50, 150, 50));
+        super(actionListenerList);
+        setBackground(BACKGROUND_COLOR);
+        prepareFixedPanels(
+                colors,
+                new SimpleColorScheme(ColorUtilities.DEFAULT_COLOR_TRANSPARENT, null),
+                null);
     }
 
     //TODO: add javadoc

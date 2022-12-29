@@ -1,4 +1,4 @@
-package graphicsEngine.presets;
+package graphicsEngine.parts;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;

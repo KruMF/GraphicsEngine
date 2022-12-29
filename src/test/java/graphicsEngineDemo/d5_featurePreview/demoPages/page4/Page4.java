@@ -4,11 +4,12 @@ import java.util.List;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
+import graphicsEngine.colors.ColorUtilities;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import graphicsEngine.colors.SimpleColorScheme;
-import graphicsEngine.presets.panels.VerticalPanel;
+import graphicsEngine.panels.VerticalPanel;
 import graphicsEngineDemo.d5_featurePreview.demoPages.PageWithPanel;
 
 public class Page4 extends PageWithPanel {
@@ -19,9 +20,13 @@ public class Page4 extends PageWithPanel {
     //TODO: add javadoc
     public Page4(@Nullable List<ActionListener> actionListenerList,
                  @Nullable SimpleColorScheme colors) {
-        super(actionListenerList, colors);
+        super(actionListenerList);
         //setBackground(new Color(50, 50, 150));
         //data = new DataUpdater();
+        prepareFixedPanels(
+                colors,
+                new SimpleColorScheme(ColorUtilities.DEFAULT_COLOR_TRANSPARENT, null),
+                null);
     }
 
     //TODO: add javadoc

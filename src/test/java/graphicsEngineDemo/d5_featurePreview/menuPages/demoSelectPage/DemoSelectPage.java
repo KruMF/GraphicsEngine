@@ -2,6 +2,8 @@ package graphicsEngineDemo.d5_featurePreview.menuPages.demoSelectPage;
 
 import graphicsEngine.colors.ColorUtilities;
 import graphicsEngine.colors.SimpleColorScheme;
+import graphicsEngine.panels.BorderProperties;
+import graphicsEngine.panels.DynamicPanel;
 import graphicsEngine.parts.labels.SimpleLabel;
 import graphicsEngineDemo.d5_featurePreview.common.AbstractMenuPage;
 
@@ -23,7 +25,11 @@ public class DemoSelectPage extends AbstractMenuPage {
     //TODO: add javadoc
     public DemoSelectPage(@Nullable List<ActionListener> actionListenerList,
                           @Nullable SimpleColorScheme colors) {
-        super(actionListenerList, colors);
+        super(actionListenerList);
+        prepareFixedPanels(
+                colors,
+                new SimpleColorScheme(ColorUtilities.DEFAULT_COLOR_TRANSPARENT, null),
+                null);
     }
 
     //TODO: add javadoc
@@ -59,12 +65,19 @@ public class DemoSelectPage extends AbstractMenuPage {
         return remainder;
     }
 
-    //TODO: add javadoc
+    //
     @Override
-    public @NotNull Component getPageBody() {
-        JPanel body = (JPanel) super.getPageBody();
-        body.add(new SimpleLabel("Select demo:", Color.white), BorderLayout.NORTH);
-        body.add(new JPanel() {{
+    public @Nullable DynamicPanel getBody(@Nullable SimpleColorScheme colors,
+                                          @Nullable BorderProperties borderProperties) {
+        return new DynamicPanel(colors) {{
+            setLayout(new BorderLayout(0, 0));
+            add(new SimpleLabel("Select demo:", Color.white), BorderLayout.NORTH);
+            add(getButtonPanel(), BorderLayout.CENTER);
+        }};
+    }
+
+    private @NotNull JPanel getButtonPanel() {
+        return new JPanel() {{
             setBackground(ColorUtilities.DEFAULT_COLOR_TRANSPARENT);
             setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
             add(new DemoSelectButtonListener.Button_Page1(demoSelectButtonListener));
@@ -72,7 +85,6 @@ public class DemoSelectPage extends AbstractMenuPage {
             add(new DemoSelectButtonListener.Button_Page3(demoSelectButtonListener));
             add(new DemoSelectButtonListener.Button_Page4(demoSelectButtonListener));
             //Add more buttons here
-        }}, BorderLayout.CENTER);
-        return body;
+        }};
     }
 }

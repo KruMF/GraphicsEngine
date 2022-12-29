@@ -1,4 +1,4 @@
-package graphicsEngine.windows;
+package graphicsEngine.pages;
 
 import graphicsEngine.colors.SimpleColorScheme;
 import graphicsEngine.panels.DynamicPanel;
