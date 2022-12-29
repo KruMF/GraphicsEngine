@@ -2,7 +2,7 @@ package graphicsEngineDemo.d5_featurePreview.common.header;
 
 import graphicsEngine.colors.SimpleColorScheme;
 import graphicsEngine.panels.BorderProperties;
-import graphicsEngine.presets.panels.AbstractHeader;
+import graphicsEngine.pages.panels.AbstractHeader;
 
 import javax.swing.BoxLayout;
 

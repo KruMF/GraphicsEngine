@@ -2,15 +2,16 @@ package graphicsEngineDemo.d2_overlayDemo;
 
 import graphicsEngine.colors.SimpleColorScheme;
 import graphicsEngine.panels.BorderProperties;
-import graphicsEngine.presets.HeaderAndFooterPage;
-import graphicsEngine.presets.panels.AbstractHeader;
-import graphicsEngine.presets.panels.AbstractFooter;
+import graphicsEngine.pages.HeaderAndFooterPage;
+import graphicsEngine.pages.panels.AbstractHeader;
+import graphicsEngine.pages.panels.AbstractFooter;
 
 import java.util.List;
 import java.util.ArrayList;
 import java.awt.event.ActionListener;
 import javax.swing.BoxLayout;
 
+import graphicsEngine.panels.DynamicPanel;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -18,14 +19,19 @@ import org.jetbrains.annotations.Nullable;
 class Page extends HeaderAndFooterPage {
     private ButtonListener headerButtonListener;
 
-    protected Page(@Nullable SimpleColorScheme panelColors,
-                   @Nullable ActionListener actionListener) {
-        super(new ArrayList<>() {
-                    {
-                        add(actionListener);
-                    }
-                }, null,
-                panelColors, null);
+    protected Page(@Nullable ActionListener actionListener,
+                   @Nullable SimpleColorScheme panelColors) {
+        super(
+                new ArrayList<>() {{
+                    add(actionListener);
+                }},
+                null);
+        prepareFixedPanels(panelColors, null, null);
+    }
+
+    @Override
+    public String getPageKey() {
+        return "page";
     }
 
     /**
@@ -64,9 +70,11 @@ class Page extends HeaderAndFooterPage {
         return new Footer(footerColors, borderProperties);
     }
 
+    //TODO: add javadoc
     @Override
-    public String getPageKey() {
-        return "page";
+    public @Nullable DynamicPanel getBody(@Nullable SimpleColorScheme colors,
+                                          @Nullable BorderProperties borderProperties) {
+        return null;
     }
 
     private static class CommonHeader extends AbstractHeader {

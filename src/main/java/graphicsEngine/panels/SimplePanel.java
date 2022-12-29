@@ -1,7 +1,5 @@
 package graphicsEngine.panels;
 
-import graphicsEngine.colors.SimpleColorScheme;
-
 import java.util.Objects;
 import java.awt.Dimension;
 import javax.swing.JPanel;
@@ -9,8 +7,10 @@ import javax.swing.JPanel;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import graphicsEngine.colors.SimpleColorScheme;
+
 //TODO: add javadoc
-abstract class SimplePanel extends JPanel {
+public abstract class SimplePanel extends JPanel {
     private @NotNull SimpleColorScheme colors = new SimpleColorScheme();
     private @NotNull BorderProperties borderProperties = new BorderProperties();
 

@@ -1,10 +1,5 @@
 package graphicsEngine.windows.windowTypes;
 
-import graphicsEngine.windows.WindowManager;
-import graphicsEngine.windows.WindowConfig;
-import graphicsEngine.windows.AbstractWindow;
-import graphicsEngine.presets.SimpleOverlay;
-
 import java.util.Objects;
 import java.util.List;
 import java.awt.Component;
@@ -12,6 +7,11 @@ import java.awt.event.ActionListener;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import graphicsEngine.windows.WindowManager;
+import graphicsEngine.windows.WindowConfig;
+import graphicsEngine.windows.AbstractWindow;
+import graphicsEngine.presets.SimpleOverlay;
 
 /**
  * An abstract layered window containing contents and an overlay.

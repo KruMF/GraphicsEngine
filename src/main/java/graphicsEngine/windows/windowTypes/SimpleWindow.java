@@ -1,14 +1,14 @@
 package graphicsEngine.windows.windowTypes;
 
-import graphicsEngine.windows.WindowManager;
-import graphicsEngine.windows.WindowConfig;
-import graphicsEngine.windows.AbstractWindow;
-
 import java.util.List;
 import java.awt.event.ActionListener;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import graphicsEngine.windows.WindowManager;
+import graphicsEngine.windows.WindowConfig;
+import graphicsEngine.windows.AbstractWindow;
 
 /**
  * A simple window; has only contents.

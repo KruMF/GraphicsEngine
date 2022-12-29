@@ -1,6 +1,6 @@
 package graphicsEngineDemo.d2_overlayDemo;
 
-import graphicsEngine.windows.AbstractPage;
+import graphicsEngine.pages.AbstractPage;
 import graphicsEngine.windows.WindowConfig;
 import graphicsEngine.windows.WindowManager;
 import graphicsEngine.windows.windowTypes.SinglePageWindow;
@@ -63,7 +63,7 @@ class Window extends SinglePageWindow {
      */
     @Override
     public final @NotNull AbstractPage getPage() {
-        return new Page(null, headerButtonListener);
+        return new Page(headerButtonListener, null);
     }
 
     //TODO: add javadoc

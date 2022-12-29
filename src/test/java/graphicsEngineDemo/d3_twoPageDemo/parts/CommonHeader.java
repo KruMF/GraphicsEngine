@@ -2,7 +2,7 @@ package graphicsEngineDemo.d3_twoPageDemo.parts;
 
 import graphicsEngine.colors.SimpleColorScheme;
 import graphicsEngine.panels.BorderProperties;
-import graphicsEngine.presets.panels.AbstractHeader;
+import graphicsEngine.pages.panels.AbstractHeader;
 
 import javax.swing.BoxLayout;
 import java.awt.event.ActionListener;

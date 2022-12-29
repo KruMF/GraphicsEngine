@@ -1,12 +1,10 @@
-package graphicsEngine.presets.panels;
-
-import graphicsEngine.panels.StaticPanel;
-import graphicsEngine.colors.SimpleColorScheme;
-import graphicsEngine.panels.BorderProperties;
+package graphicsEngine.panels;
 
 import java.awt.Dimension;
 
 import org.jetbrains.annotations.Nullable;
+
+import graphicsEngine.colors.SimpleColorScheme;
 
 //TODO: add javadoc
 public abstract class VerticalPanel extends StaticPanel {

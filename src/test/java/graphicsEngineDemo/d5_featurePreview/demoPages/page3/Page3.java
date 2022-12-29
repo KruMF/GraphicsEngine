@@ -1,7 +1,8 @@
 package graphicsEngineDemo.d5_featurePreview.demoPages.page3;
 
+import graphicsEngine.colors.ColorUtilities;
 import graphicsEngine.colors.SimpleColorScheme;
-import graphicsEngine.presets.panels.VerticalPanel;
+import graphicsEngine.panels.VerticalPanel;
 import graphicsEngineDemo.d5_featurePreview.demoPages.PageWithPanel;
 import graphicsEngineDemo.d5_featurePreview.demoPages.page3.data.DataUpdater;
 
@@ -15,6 +16,8 @@ import org.jetbrains.annotations.Nullable;
 
 //TODO: add javadoc
 public class Page3 extends PageWithPanel {
+    private static final @NotNull Color BACKGROUND_COLOR = new Color(50, 50, 150);
+
     public final DataUpdater data;
 
     private Page3() {
@@ -24,9 +27,13 @@ public class Page3 extends PageWithPanel {
     //TODO: add javadoc
     public Page3(@Nullable List<ActionListener> actionListenerList,
                  @Nullable SimpleColorScheme colors) {
-        super(actionListenerList, colors);
-        setBackground(new Color(50, 50, 150));
+        super(actionListenerList);
+        setBackground(BACKGROUND_COLOR);
         data = new DataUpdater();
+        prepareFixedPanels(
+                colors,
+                new SimpleColorScheme(ColorUtilities.DEFAULT_COLOR_TRANSPARENT, null),
+                null);
     }
 
     //TODO: add javadoc

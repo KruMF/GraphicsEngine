@@ -1,11 +1,12 @@
 package graphicsEngine.panels;
 
-import java.awt.Color;
 import java.util.Objects;
+import java.awt.Color;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+//TODO: add javadocs
 public class BorderProperties implements BorderInterface {
     private @NotNull Color borderColor = DEFAULT_BORDER_COLOR;
     private boolean drawBorders = DEFAULT_BORDER_STATE;

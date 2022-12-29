@@ -1,9 +1,9 @@
 package graphicsEngine.input;
 
-import graphicsEngineOld.parts.containers.ButtonContainer;
-
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
+
+import graphicsEngineOld.parts.containers.ButtonContainer;
 
 /**
  * A class for checking user input.

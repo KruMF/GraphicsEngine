@@ -1,21 +1,15 @@
 package graphicsEngineDemo.d5_featurePreview.common;
 
-import graphicsEngine.colors.ColorUtilities;
 import graphicsEngine.colors.SimpleColorScheme;
 import graphicsEngine.panels.BorderProperties;
-import graphicsEngine.panels.DynamicPanel;
-import graphicsEngine.presets.HeaderAndFooterPage;
-import graphicsEngine.presets.panels.AbstractHeader;
-import graphicsEngine.presets.panels.AbstractFooter;
+import graphicsEngine.pages.HeaderAndFooterPage;
+import graphicsEngine.pages.panels.AbstractHeader;
+import graphicsEngine.pages.panels.AbstractFooter;
 import graphicsEngineDemo.d5_featurePreview.common.header.CommonHeader;
 import graphicsEngineDemo.d5_featurePreview.common.header.HeaderButtonListener;
 
-import java.util.Objects;
 import java.util.List;
-import java.awt.Component;
-import java.awt.BorderLayout;
 import java.awt.event.ActionListener;
-import javax.swing.JPanel;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -25,11 +19,8 @@ public abstract class AbstractCommonPage extends HeaderAndFooterPage {
     private HeaderButtonListener headerButtonListener;
 
     //TODO: add javadoc
-    public AbstractCommonPage(@Nullable List<ActionListener> actionListenerList,
-                              @Nullable SimpleColorScheme colors) {
-        super(actionListenerList, null, colors, null);
-        setBodyParameters();
-        addBody(getPageBody());
+    public AbstractCommonPage(@Nullable List<ActionListener> actionListenerList) {
+        super(actionListenerList, null);
     }
 
     /**
@@ -56,40 +47,19 @@ public abstract class AbstractCommonPage extends HeaderAndFooterPage {
 
     //TODO: add javadoc
     @Override
-    public @NotNull AbstractHeader getHeader(@Nullable SimpleColorScheme headerColors,
+    public @NotNull AbstractHeader getHeader(@Nullable SimpleColorScheme colors,
                                              @Nullable BorderProperties borderProperties) {
-        return new CommonHeader(headerColors, borderProperties, headerButtonListener);
+        return new CommonHeader(colors, borderProperties, headerButtonListener);
     }
 
     //TODO: add javadoc
     @Override
-    public @NotNull AbstractFooter getFooter(@Nullable SimpleColorScheme footerColors,
+    public @NotNull AbstractFooter getFooter(@Nullable SimpleColorScheme colors,
                                              @Nullable BorderProperties borderProperties) {
-        return new CommonFooter(footerColors, borderProperties);
+        return new CommonFooter(colors, borderProperties);
     }
 
     //TODO: add javadoc
     @Override
     public final void addParts() {}
-
-    //TODO: add javadoc
-    public abstract void setBodyParameters();
-
-    private void addBody(@Nullable Component center) {
-        add(new DynamicPanel(
-                null,
-                new SimpleColorScheme(
-                        ColorUtilities.DEFAULT_COLOR_TRANSPARENT,
-                        null),
-                null) {
-            @Override
-            public void addParts() {
-                setLayout(new BorderLayout(0, 0));
-                add(Objects.requireNonNullElse(center, new JPanel()), BorderLayout.CENTER);
-            }
-        });
-    }
-
-    //TODO: add javadoc
-    public abstract @Nullable Component getPageBody();
 }

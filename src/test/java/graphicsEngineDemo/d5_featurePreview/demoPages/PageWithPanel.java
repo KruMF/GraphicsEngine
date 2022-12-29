@@ -1,14 +1,12 @@
 package graphicsEngineDemo.d5_featurePreview.demoPages;
 
-import graphicsEngine.colors.ColorUtilities;
 import graphicsEngine.colors.SimpleColorScheme;
 import graphicsEngine.panels.BorderProperties;
 import graphicsEngine.panels.DynamicPanel;
-import graphicsEngine.presets.panels.VerticalPanel;
+import graphicsEngine.panels.VerticalPanel;
 import graphicsEngineDemo.d5_featurePreview.common.CommonColors;
 
 import java.util.List;
-import java.awt.Component;
 import java.awt.BorderLayout;
 import java.awt.event.ActionListener;
 import javax.swing.JPanel;
@@ -20,36 +18,26 @@ public abstract class PageWithPanel extends CommonDemoPage {
     private SimpleColorScheme sidePanelColors;
 
     //TODO: add javadoc
-    public PageWithPanel(@Nullable List<ActionListener> actionListenerList,
-                         @Nullable SimpleColorScheme colors) {
-        super(actionListenerList, colors);
-    }
-
-    //TODO: add javadoc
-    @Override
-    public void setBodyParameters() {
+    public PageWithPanel(@Nullable List<ActionListener> actionListenerList) {
+        super(actionListenerList);
         sidePanelColors = CommonColors.SIDE_PANEL_COLORS;
     }
 
-    //TODO: add javadoc
+    //
     @Override
-    public @Nullable Component getPageBody() {
-        return new DynamicPanel(
-                null,
-                new SimpleColorScheme(ColorUtilities.DEFAULT_COLOR_TRANSPARENT, null),
-                null) {
-            {
-                setLayout(new BorderLayout(0, 0));
-                VerticalPanel leftSidePanel = getLeftSidePanel(sidePanelColors);
-                if (leftSidePanel != null) {
-                    add(leftSidePanel, BorderLayout.WEST);
-                }
-                JPanel centralPanel = getPageCenter();
-                if (centralPanel != null) {
-                    add(centralPanel, BorderLayout.CENTER);
-                }
+    public @Nullable DynamicPanel getBody(@Nullable SimpleColorScheme colors,
+                                          @Nullable BorderProperties borderProperties) {
+        return new DynamicPanel(colors) {{
+            setLayout(new BorderLayout(0, 0));
+            @Nullable VerticalPanel leftSidePanel = getLeftSidePanel(sidePanelColors);
+            if (leftSidePanel != null) {
+                add(leftSidePanel, BorderLayout.WEST);
             }
-        };
+            @Nullable JPanel centralPanel = getPageCenter();
+            if (centralPanel != null) {
+                add(centralPanel, BorderLayout.CENTER);
+            }
+        }};
     }
 
     //TODO: add javadoc

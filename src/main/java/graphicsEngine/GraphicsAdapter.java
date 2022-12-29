@@ -1,12 +1,12 @@
 package graphicsEngine;
 
-import graphicsEngine.windows.WindowManager;
-import graphicsEngine.windows.WindowUpdater;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import static consoleUtils.ConsoleUtils.printLine;
 
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
+import graphicsEngine.windows.WindowManager;
+import graphicsEngine.windows.WindowUpdater;
 
 /**
  * A graphics adapter class.

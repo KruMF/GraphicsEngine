@@ -6,8 +6,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import graphicsEngine.colors.SimpleColorScheme;
+import graphicsEngine.panels.HorizontalPanel;
 import graphicsEngine.parts.labels.DynamicLabel;
-import graphicsEngine.presets.panels.HorizontalPanel;
 
 //TODO: add javadocs
 abstract class PaneledSlider extends HorizontalPanel {
