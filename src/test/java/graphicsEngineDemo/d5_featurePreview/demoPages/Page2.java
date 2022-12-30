@@ -28,7 +28,7 @@ public class Page2 extends PageWithPanel {
                  @Nullable SimpleColorScheme colors) {
         super(actionListenerList);
         setBackground(BACKGROUND_COLOR);
-        prepareFixedPanels(
+        initializePanels(
                 colors,
                 new SimpleColorScheme(ColorUtilities.DEFAULT_COLOR_TRANSPARENT, null),
                 null);

@@ -27,7 +27,7 @@ public class Page1 extends CommonDemoPage {
                  @Nullable SimpleColorScheme colors) {
         super(actionListenerList);
         setBackground(BACKGROUND_COLOR);
-        prepareFixedPanels(
+        initializePanels(
                 colors,
                 new SimpleColorScheme(ColorUtilities.DEFAULT_COLOR_TRANSPARENT, Color.white),
                 null);

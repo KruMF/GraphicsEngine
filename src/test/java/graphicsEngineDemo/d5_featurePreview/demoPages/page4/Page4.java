@@ -23,7 +23,7 @@ public class Page4 extends PageWithPanel {
         super(actionListenerList);
         //setBackground(new Color(50, 50, 150));
         //data = new DataUpdater();
-        prepareFixedPanels(
+        initializePanels(
                 colors,
                 new SimpleColorScheme(ColorUtilities.DEFAULT_COLOR_TRANSPARENT, null),
                 null);

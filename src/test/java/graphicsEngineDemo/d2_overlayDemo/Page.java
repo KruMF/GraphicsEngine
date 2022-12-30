@@ -26,7 +26,7 @@ class Page extends HeaderAndFooterPage {
                     add(actionListener);
                 }},
                 null);
-        prepareFixedPanels(panelColors, null, null);
+        initializePanels(panelColors, null, null);
     }
 
     @Override

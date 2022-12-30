@@ -24,7 +24,7 @@ public class StartingPage extends AbstractMenuPage {
     public StartingPage(@Nullable List<ActionListener> actionListenerList,
                         @Nullable SimpleColorScheme colors) {
         super(actionListenerList);
-        prepareFixedPanels(
+        initializePanels(
                 colors,
                 new SimpleColorScheme(ColorUtilities.DEFAULT_COLOR_TRANSPARENT, null),
                 null);

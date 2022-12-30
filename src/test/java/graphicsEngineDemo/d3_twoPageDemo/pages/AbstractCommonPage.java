@@ -41,7 +41,7 @@ abstract class AbstractCommonPage extends HeaderAndFooterPage {
                 }},
                 null);
         this.labelText = Objects.requireNonNullElse(labelText, DEFAULT_LABEL);
-        prepareFixedPanels(null, getBodyColors(), null);
+        initializePanels(null, getBodyColors(), null);
     }
 
     private static SimpleColorScheme getBodyColors() {

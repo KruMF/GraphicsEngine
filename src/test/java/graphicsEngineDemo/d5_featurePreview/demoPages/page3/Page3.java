@@ -30,7 +30,7 @@ public class Page3 extends PageWithPanel {
         super(actionListenerList);
         setBackground(BACKGROUND_COLOR);
         data = new DataUpdater();
-        prepareFixedPanels(
+        initializePanels(
                 colors,
                 new SimpleColorScheme(ColorUtilities.DEFAULT_COLOR_TRANSPARENT, null),
                 null);
