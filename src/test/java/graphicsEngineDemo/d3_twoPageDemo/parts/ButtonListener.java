@@ -1,17 +1,18 @@
 package graphicsEngineDemo.d3_twoPageDemo.parts;
 
-import graphicsEngine.parts.SimpleJButton;
-import graphicsEngineDemo.d3_twoPageDemo.Window;
-import graphicsEngineDemo.d3_twoPageDemo.pages.Page1;
-import graphicsEngineDemo.d3_twoPageDemo.pages.Page2;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import static consoleUtils.ConsoleUtils.printLine;
-
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import static consoleUtils.ConsoleUtils.printLine;
+
+import graphicsEngine.parts.SimpleJButton;
+
+import graphicsEngineDemo.d3_twoPageDemo.Window;
+import graphicsEngineDemo.d3_twoPageDemo.pages.Page1;
+import graphicsEngineDemo.d3_twoPageDemo.pages.Page2;
 
 //TODO: add javadoc
 public class ButtonListener implements ActionListener {

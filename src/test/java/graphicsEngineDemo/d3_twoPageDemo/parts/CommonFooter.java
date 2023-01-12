@@ -1,10 +1,10 @@
 package graphicsEngineDemo.d3_twoPageDemo.parts;
 
+import org.jetbrains.annotations.Nullable;
+
 import graphicsEngine.colors.SimpleColorScheme;
 import graphicsEngine.panels.BorderProperties;
 import graphicsEngine.pages.panels.AbstractFooter;
-
-import org.jetbrains.annotations.Nullable;
 
 //TODO: finish this and add javadocs
 public class CommonFooter extends AbstractFooter {

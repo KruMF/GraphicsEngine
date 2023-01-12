@@ -1,13 +1,13 @@
 package graphicsEngineDemo.d3_twoPageDemo.parts;
 
+import java.awt.event.ActionListener;
+import javax.swing.BoxLayout;
+
+import org.jetbrains.annotations.Nullable;
+
 import graphicsEngine.colors.SimpleColorScheme;
 import graphicsEngine.panels.BorderProperties;
 import graphicsEngine.pages.panels.AbstractHeader;
-
-import javax.swing.BoxLayout;
-import java.awt.event.ActionListener;
-
-import org.jetbrains.annotations.Nullable;
 
 //TODO: finish this and add javadocs
 public class CommonHeader extends AbstractHeader {

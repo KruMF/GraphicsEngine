@@ -1,26 +1,27 @@
 package graphicsEngineDemo.d3_twoPageDemo.pages;
 
-import graphicsEngine.colors.ColorUtilities;
-import graphicsEngine.colors.SimpleColorScheme;
-import graphicsEngine.panels.BorderProperties;
-import graphicsEngine.panels.DynamicPanel;
-import graphicsEngine.parts.labels.SimpleLabel;
-import graphicsEngine.pages.HeaderAndFooterPage;
-import graphicsEngine.pages.panels.AbstractFooter;
-import graphicsEngine.pages.panels.AbstractHeader;
-import graphicsEngineDemo.d3_twoPageDemo.parts.CommonHeader;
-import graphicsEngineDemo.d3_twoPageDemo.parts.ButtonListener;
-import graphicsEngineDemo.d3_twoPageDemo.parts.CommonFooter;
-
+import java.util.Objects;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Objects;
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import javax.swing.BoxLayout;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import graphicsEngine.colors.ColorUtilities;
+import graphicsEngine.colors.SimpleColorScheme;
+import graphicsEngine.panels.BorderProperties;
+import graphicsEngine.panels.DynamicPanel;
+import graphicsEngine.pages.HeaderAndFooterPage;
+import graphicsEngine.pages.panels.AbstractFooter;
+import graphicsEngine.pages.panels.AbstractHeader;
+import graphicsEngine.parts.labels.SimpleLabel;
+
+import graphicsEngineDemo.d3_twoPageDemo.parts.CommonHeader;
+import graphicsEngineDemo.d3_twoPageDemo.parts.ButtonListener;
+import graphicsEngineDemo.d3_twoPageDemo.parts.CommonFooter;
 
 //TODO: add javadoc
 abstract class AbstractCommonPage extends HeaderAndFooterPage {
