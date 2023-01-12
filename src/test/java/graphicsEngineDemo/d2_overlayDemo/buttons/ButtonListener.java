@@ -3,9 +3,9 @@ package graphicsEngineDemo.d2_overlayDemo.buttons;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import static consoleUtils.ConsoleUtils.printLine;
-
 import org.jetbrains.annotations.NotNull;
+
+import static consoleUtils.ConsoleUtils.printLine;
 
 import graphicsEngineDemo.d2_overlayDemo.Window;
 

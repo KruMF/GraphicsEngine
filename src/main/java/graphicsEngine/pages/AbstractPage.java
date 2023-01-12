@@ -22,7 +22,7 @@ public abstract class AbstractPage extends DynamicPanel {
     }
 
     //TODO: add javadoc
-    public AbstractPage(@Nullable List<ActionListener> actionListenerList,
+    public AbstractPage(@Nullable List<@Nullable ActionListener> actionListenerList,
                         @Nullable Color backgroundColor) {
         super(
                 null,
@@ -32,7 +32,7 @@ public abstract class AbstractPage extends DynamicPanel {
     }
 
     //TODO: add javadoc
-    public abstract String getPageKey();
+    public abstract @NotNull String getPageKey();
 
     /**
      * Adds known listeners to this page.
@@ -42,7 +42,7 @@ public abstract class AbstractPage extends DynamicPanel {
      *
      * @return Remaining unknown listeners.
      */
-    public @NotNull List<ActionListener> addListeners(@Nullable List<ActionListener> list) {
+    public @NotNull List<@Nullable ActionListener> addListeners(@Nullable List<@Nullable ActionListener> list) {
         return Objects.requireNonNullElse(list, new ArrayList<>());
     }
 }

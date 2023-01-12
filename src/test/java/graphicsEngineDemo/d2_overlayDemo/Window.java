@@ -20,8 +20,8 @@ import graphicsEngineDemo.d2_overlayDemo.buttons.ButtonListener;
  * The window to display.
  */
 public class Window extends SinglePageWindow {
-    private static final String WINDOW_TITLE = "Overlay demo";
-    private ButtonListener buttonListener;
+    private static final @NotNull String WINDOW_TITLE = "Overlay demo";
+    private @Nullable ButtonListener buttonListener;
 
     //TODO: add javadoc
     protected Window(@NotNull WindowManager windowManager) {
@@ -29,6 +29,17 @@ public class Window extends SinglePageWindow {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setTitle(WINDOW_TITLE);
         setOverlay(new Overlay(buttonListener));
+    }
+
+    /**
+     * Redundant as there is only one window.
+     * TODO: finish this javadoc
+     *
+     * @return The key of this window.
+     */
+    @Override
+    public final @NotNull String getWindowKey() {
+        return "window";
     }
 
     /**
@@ -43,17 +54,6 @@ public class Window extends SinglePageWindow {
     public @NotNull List<ActionListener> addListeners(@Nullable List<ActionListener> list) {
         buttonListener = new ButtonListener(this);
         return super.addListeners(list);
-    }
-
-    /**
-     * Redundant as there is only one window.
-     * TODO: finish this javadoc
-     *
-     * @return The key of this window.
-     */
-    @Override
-    public final @NotNull String getWindowKey() {
-        return "window";
     }
 
     /**

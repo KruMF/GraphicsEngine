@@ -18,11 +18,11 @@ import graphicsEngineDemo.d2_overlayDemo.buttons.*;
 
 //TODO: add javadocs
 public class Page extends HeaderAndFooterPage {
-    private ButtonListener headerButtonListener;
+    private ButtonListener buttonListener;
 
     //TODO: add javadoc
     public Page(@Nullable ActionListener actionListener,
-                   @Nullable SimpleColorScheme panelColors) {
+                @Nullable SimpleColorScheme panelColors) {
         super(
                 new ArrayList<>() {{
                     add(actionListener);
@@ -33,7 +33,7 @@ public class Page extends HeaderAndFooterPage {
 
     //TODO: add javadoc
     @Override
-    public String getPageKey() {
+    public @NotNull String getPageKey() {
         return "page";
     }
 
@@ -46,12 +46,12 @@ public class Page extends HeaderAndFooterPage {
      * @return Remaining unknown listeners.
      */
     @Override
-    public @NotNull List<ActionListener> addListeners(@Nullable List<ActionListener> list) {
-        List<ActionListener> remainder = super.addListeners(list);
+    public @NotNull List<@Nullable ActionListener> addListeners(@Nullable List<@Nullable ActionListener> list) {
+        @Nullable List<ActionListener> remainder = super.addListeners(list);
         for (int i = 0; i < remainder.size(); i++) {
-            ActionListener listener = remainder.get(i);
+            @Nullable ActionListener listener = remainder.get(i);
             if (listener instanceof ButtonListener) {
-                headerButtonListener = (ButtonListener) listener;
+                buttonListener = (ButtonListener) listener;
                 remainder.remove(i);
                 i--;
             }
@@ -63,7 +63,7 @@ public class Page extends HeaderAndFooterPage {
     @Override
     public @NotNull AbstractHeader getHeader(@Nullable SimpleColorScheme headerColors,
                                              @Nullable BorderProperties borderProperties) {
-        return new Header(headerColors, borderProperties, headerButtonListener);
+        return new Header(headerColors, borderProperties, buttonListener);
     }
 
     //TODO: add javadoc

@@ -31,7 +31,7 @@ public class Window extends MultiPageWindow {
      *
      * @return Window configuration.
      */
-    private static WindowConfig config() {
+    private static @NotNull WindowConfig config() {
         String title = "Two-page demo";
         int[]
                 size = new int[]{600, 400},

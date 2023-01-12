@@ -12,7 +12,7 @@ class Footer extends AbstractFooter {
 
     //TODO: add javadoc
     protected Footer(@Nullable SimpleColorScheme panelColors,
-                  @Nullable BorderProperties borderProperties) {
+                     @Nullable BorderProperties borderProperties) {
         super(panelColors, HEIGHT, borderProperties);
     }
 }

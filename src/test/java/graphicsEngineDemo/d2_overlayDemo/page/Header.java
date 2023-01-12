@@ -17,8 +17,8 @@ class Header extends AbstractHeader {
 
     //TODO: add javadoc
     protected Header(@Nullable SimpleColorScheme panelColors,
-                  @Nullable BorderProperties borderProperties,
-                  @Nullable ActionListener actionListener) {
+                     @Nullable BorderProperties borderProperties,
+                     @Nullable ActionListener actionListener) {
         super(panelColors, HEIGHT, borderProperties);
         addButtons(actionListener);
     }

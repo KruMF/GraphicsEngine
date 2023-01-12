@@ -5,6 +5,7 @@ import graphicsEngine.windows.WindowUpdater;
 
 /**
  * GraphicsEngine demo demonstrating support of multiple pages within a single window.
+ * See <b><code>ReadMe.md<code/></b> for more info.
  */
 public class Main {
     /**
