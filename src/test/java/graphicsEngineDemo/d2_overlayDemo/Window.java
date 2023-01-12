@@ -1,10 +1,5 @@
 package graphicsEngineDemo.d2_overlayDemo;
 
-import graphicsEngine.pages.AbstractPage;
-import graphicsEngine.windows.WindowConfig;
-import graphicsEngine.windows.WindowManager;
-import graphicsEngine.windows.windowTypes.SinglePageWindow;
-
 import java.util.List;
 import java.awt.Color;
 import java.awt.event.ActionListener;
@@ -12,17 +7,24 @@ import java.awt.event.ActionListener;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import graphicsEngine.windows.WindowConfig;
+import graphicsEngine.windows.WindowManager;
+import graphicsEngine.windows.windowTypes.SinglePageWindow;
+import graphicsEngine.pages.AbstractPage;
+
+import graphicsEngineDemo.d2_overlayDemo.buttons.ButtonListener;
+
 /**
  * The window to display.
  */
-class Window extends SinglePageWindow {
+public class Window extends SinglePageWindow {
     private static final String WINDOW_TITLE = "Overlay demo";
 
     private boolean overlayColorState;
     private ButtonListener headerButtonListener;
 
     //TODO: add javadoc
-    Window(@NotNull WindowManager windowManager) {
+    protected Window(@NotNull WindowManager windowManager) {
         super(windowManager, new WindowConfig(), null, null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setTitle(WINDOW_TITLE);
@@ -67,7 +69,7 @@ class Window extends SinglePageWindow {
     }
 
     //TODO: add javadoc
-    void toggleOverlayColor() {
+    public void toggleOverlayColor() {
         overlayColorState = !overlayColorState;
         if (overlayColorState) {
             setOverlayColor(OverlayColors.GREEN);

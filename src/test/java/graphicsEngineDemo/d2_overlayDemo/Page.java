@@ -1,19 +1,21 @@
 package graphicsEngineDemo.d2_overlayDemo;
 
-import graphicsEngine.colors.SimpleColorScheme;
-import graphicsEngine.panels.BorderProperties;
-import graphicsEngine.pages.HeaderAndFooterPage;
-import graphicsEngine.pages.panels.AbstractHeader;
-import graphicsEngine.pages.panels.AbstractFooter;
-
 import java.util.List;
 import java.util.ArrayList;
 import java.awt.event.ActionListener;
 import javax.swing.BoxLayout;
 
-import graphicsEngine.panels.DynamicPanel;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import graphicsEngine.colors.SimpleColorScheme;
+import graphicsEngine.panels.BorderProperties;
+import graphicsEngine.panels.DynamicPanel;
+import graphicsEngine.pages.HeaderAndFooterPage;
+import graphicsEngine.pages.panels.AbstractHeader;
+import graphicsEngine.pages.panels.AbstractFooter;
+
+import graphicsEngineDemo.d2_overlayDemo.buttons.*;
 
 //TODO: add javadocs
 class Page extends HeaderAndFooterPage {
@@ -89,9 +91,9 @@ class Page extends HeaderAndFooterPage {
 
         private void addButtons(@Nullable ActionListener actionListener) {
             setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
-            add(new ButtonListener.Button1(actionListener));
-            add(new ButtonListener.Button2(actionListener));
-            add(new ButtonListener.Button3(actionListener));
+            add(new Button1(actionListener));
+            add(new Button2(actionListener));
+            add(new Button3(actionListener));
         }
     }
 
