@@ -5,8 +5,9 @@ import java.awt.event.ActionListener;
 
 import static consoleUtils.ConsoleUtils.printLine;
 
-import graphicsEngineDemo.d2_overlayDemo.Window;
 import org.jetbrains.annotations.NotNull;
+
+import graphicsEngineDemo.d2_overlayDemo.Window;
 
 /**
  * A class for containing buttons.

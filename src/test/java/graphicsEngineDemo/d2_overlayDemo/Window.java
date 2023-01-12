@@ -1,7 +1,6 @@
 package graphicsEngineDemo.d2_overlayDemo;
 
 import java.util.List;
-import java.awt.Color;
 import java.awt.event.ActionListener;
 
 import org.jetbrains.annotations.NotNull;
@@ -11,7 +10,10 @@ import graphicsEngine.windows.WindowConfig;
 import graphicsEngine.windows.WindowManager;
 import graphicsEngine.windows.windowTypes.SinglePageWindow;
 import graphicsEngine.pages.AbstractPage;
+import graphicsEngine.presets.SimpleOverlay;
 
+import graphicsEngineDemo.d2_overlayDemo.page.Page;
+import graphicsEngineDemo.d2_overlayDemo.overlay.Overlay;
 import graphicsEngineDemo.d2_overlayDemo.buttons.ButtonListener;
 
 /**
@@ -19,18 +21,14 @@ import graphicsEngineDemo.d2_overlayDemo.buttons.ButtonListener;
  */
 public class Window extends SinglePageWindow {
     private static final String WINDOW_TITLE = "Overlay demo";
-
-    private boolean overlayColorState;
-    private ButtonListener headerButtonListener;
+    private ButtonListener buttonListener;
 
     //TODO: add javadoc
     protected Window(@NotNull WindowManager windowManager) {
         super(windowManager, new WindowConfig(), null, null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setTitle(WINDOW_TITLE);
-
-        overlayColorState = false;
-        setOverlay(new Overlay(headerButtonListener));
+        setOverlay(new Overlay(buttonListener));
     }
 
     /**
@@ -43,7 +41,7 @@ public class Window extends SinglePageWindow {
      */
     @Override
     public @NotNull List<ActionListener> addListeners(@Nullable List<ActionListener> list) {
-        headerButtonListener = new ButtonListener(this);
+        buttonListener = new ButtonListener(this);
         return super.addListeners(list);
     }
 
@@ -65,22 +63,16 @@ public class Window extends SinglePageWindow {
      */
     @Override
     public final @NotNull AbstractPage getPage() {
-        return new Page(headerButtonListener, null);
+        return new Page(buttonListener, null);
     }
 
     //TODO: add javadoc
     public void toggleOverlayColor() {
-        overlayColorState = !overlayColorState;
-        if (overlayColorState) {
-            setOverlayColor(OverlayColors.GREEN);
-        } else {
-            setOverlayColor(OverlayColors.RED);
-        }
-    }
-
-    private void setOverlayColor(@Nullable Color color) {
         try {
-            getOverlay().setColor(color);
+            @NotNull SimpleOverlay simpleOverlay = getOverlay(); //throws ClassCastException
+            if (simpleOverlay instanceof Overlay) {
+                ((Overlay) simpleOverlay).toggleColor();
+            }
         } catch (ClassCastException ignored) {
             //glassPane does not contain a SimpleOverlay object
         }

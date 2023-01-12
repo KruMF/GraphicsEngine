@@ -1,9 +1,8 @@
-package graphicsEngineDemo.d2_overlayDemo;
+package graphicsEngineDemo.d2_overlayDemo.page;
 
 import java.util.List;
 import java.util.ArrayList;
 import java.awt.event.ActionListener;
-import javax.swing.BoxLayout;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -18,10 +17,11 @@ import graphicsEngine.pages.panels.AbstractFooter;
 import graphicsEngineDemo.d2_overlayDemo.buttons.*;
 
 //TODO: add javadocs
-class Page extends HeaderAndFooterPage {
+public class Page extends HeaderAndFooterPage {
     private ButtonListener headerButtonListener;
 
-    protected Page(@Nullable ActionListener actionListener,
+    //TODO: add javadoc
+    public Page(@Nullable ActionListener actionListener,
                    @Nullable SimpleColorScheme panelColors) {
         super(
                 new ArrayList<>() {{
@@ -31,6 +31,7 @@ class Page extends HeaderAndFooterPage {
         initializePanels(panelColors, null, null);
     }
 
+    //TODO: add javadoc
     @Override
     public String getPageKey() {
         return "page";
@@ -62,7 +63,7 @@ class Page extends HeaderAndFooterPage {
     @Override
     public @NotNull AbstractHeader getHeader(@Nullable SimpleColorScheme headerColors,
                                              @Nullable BorderProperties borderProperties) {
-        return new CommonHeader(headerColors, borderProperties, headerButtonListener);
+        return new Header(headerColors, borderProperties, headerButtonListener);
     }
 
     //TODO: add javadoc
@@ -77,32 +78,5 @@ class Page extends HeaderAndFooterPage {
     public @Nullable DynamicPanel getBody(@Nullable SimpleColorScheme colors,
                                           @Nullable BorderProperties borderProperties) {
         return null;
-    }
-
-    private static class CommonHeader extends AbstractHeader {
-        private static final int HEIGHT = 50;
-
-        public CommonHeader(@Nullable SimpleColorScheme panelColors,
-                            @Nullable BorderProperties borderProperties,
-                            @Nullable ActionListener actionListener) {
-            super(panelColors, HEIGHT, borderProperties);
-            addButtons(actionListener);
-        }
-
-        private void addButtons(@Nullable ActionListener actionListener) {
-            setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
-            add(new Button1(actionListener));
-            add(new Button2(actionListener));
-            add(new Button3(actionListener));
-        }
-    }
-
-    private static class Footer extends AbstractFooter {
-        private static final int HEIGHT = 100;
-
-        public Footer(@Nullable SimpleColorScheme panelColors,
-                      @Nullable BorderProperties borderProperties) {
-            super(panelColors, HEIGHT, borderProperties);
-        }
     }
 }
