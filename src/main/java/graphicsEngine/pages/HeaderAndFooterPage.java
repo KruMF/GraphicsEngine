@@ -30,9 +30,9 @@ public abstract class HeaderAndFooterPage extends AbstractPage implements Vertic
 
     //this has to be called manually in constructor in order to support custom parameters
     //TODO: add javadoc
-    public final void prepareFixedPanels(@Nullable SimpleColorScheme headerAndFooterColors,
-                                         @Nullable SimpleColorScheme bodyColors,
-                                         @Nullable BorderProperties borderProperties) {
+    public final void initializePanels(@Nullable SimpleColorScheme headerAndFooterColors,
+                                       @Nullable SimpleColorScheme bodyColors,
+                                       @Nullable BorderProperties borderProperties) {
         setLayout(new BorderLayout(0, 0));
         setHeaderAndFooter(headerAndFooterColors, borderProperties);
         addHeaderAndFooter();
@@ -66,7 +66,7 @@ public abstract class HeaderAndFooterPage extends AbstractPage implements Vertic
         }
     }
 
-    //
+    //TODO: add javadoc
     public @Nullable SimplePanel getPanelByLocation(@NotNull PanelLocation location) {
         try {
             return switch (location) {

@@ -7,6 +7,7 @@ import graphicsEngineDemo.d5_featurePreview.window.Window;
 
 /**
  * A general demo for previewing various features and capabilities of the Graphics Engine.
+ * See <b><code>ReadMe.md<code/></b> for more info.
  */
 public class Main {
     /**

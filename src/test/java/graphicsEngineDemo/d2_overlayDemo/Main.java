@@ -5,6 +5,7 @@ import graphicsEngine.windows.WindowUpdater;
 
 /**
  * GraphicsEngine demo demonstrating the use of overlays.
+ * See <b><code>ReadMe.md<code/></b> for more info.
  */
 public class Main {
     /**

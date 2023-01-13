@@ -1,12 +1,12 @@
 package graphicsEngineDemo.d5_featurePreview.common.header;
 
-import graphicsEngine.colors.SimpleColorScheme;
-import graphicsEngine.panels.BorderProperties;
-import graphicsEngine.pages.panels.AbstractHeader;
-
 import javax.swing.BoxLayout;
 
 import org.jetbrains.annotations.Nullable;
+
+import graphicsEngine.colors.SimpleColorScheme;
+import graphicsEngine.panels.BorderProperties;
+import graphicsEngine.pages.panels.AbstractHeader;
 
 //TODO: add javadoc
 public class CommonHeader extends AbstractHeader {

@@ -1,48 +1,34 @@
 package graphicsEngineDemo.d2_overlayDemo;
 
-import graphicsEngine.pages.AbstractPage;
-import graphicsEngine.windows.WindowConfig;
-import graphicsEngine.windows.WindowManager;
-import graphicsEngine.windows.windowTypes.SinglePageWindow;
-
 import java.util.List;
-import java.awt.Color;
 import java.awt.event.ActionListener;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import graphicsEngine.windows.WindowConfig;
+import graphicsEngine.windows.WindowManager;
+import graphicsEngine.windows.windowTypes.SinglePageWindow;
+import graphicsEngine.pages.AbstractPage;
+import graphicsEngine.presets.SimpleOverlay;
+
+import graphicsEngineDemo.d2_overlayDemo.page.Page;
+import graphicsEngineDemo.d2_overlayDemo.overlay.Overlay;
+import graphicsEngineDemo.d2_overlayDemo.buttons.ButtonListener;
+
 /**
  * The window to display.
  */
-class Window extends SinglePageWindow {
-    private static final String WINDOW_TITLE = "Overlay demo";
-
-    private boolean overlayColorState;
-    private ButtonListener headerButtonListener;
+public class Window extends SinglePageWindow {
+    private static final @NotNull String WINDOW_TITLE = "Overlay demo";
+    private @Nullable ButtonListener buttonListener;
 
     //TODO: add javadoc
-    Window(@NotNull WindowManager windowManager) {
+    protected Window(@NotNull WindowManager windowManager) {
         super(windowManager, new WindowConfig(), null, null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setTitle(WINDOW_TITLE);
-
-        overlayColorState = false;
-        setOverlay(new Overlay(headerButtonListener));
-    }
-
-    /**
-     * Adds known listeners to this page.
-     * Override this to add custom listeners.
-     *
-     * @param list List of listeners to add.
-     *
-     * @return Remaining unknown listeners.
-     */
-    @Override
-    public @NotNull List<ActionListener> addListeners(@Nullable List<ActionListener> list) {
-        headerButtonListener = new ButtonListener(this);
-        return super.addListeners(list);
+        setOverlay(new Overlay(buttonListener));
     }
 
     /**
@@ -57,28 +43,36 @@ class Window extends SinglePageWindow {
     }
 
     /**
+     * Adds known listeners to this page.
+     * Override this to add custom listeners.
+     *
+     * @param list List of listeners to add.
+     *
+     * @return Remaining unknown listeners.
+     */
+    @Override
+    public @NotNull List<ActionListener> addListeners(@Nullable List<ActionListener> list) {
+        buttonListener = new ButtonListener(this);
+        return super.addListeners(list);
+    }
+
+    /**
      * Prepares a page to add to this window.
      *
      * @return An AbstractPage object.
      */
     @Override
     public final @NotNull AbstractPage getPage() {
-        return new Page(headerButtonListener, null);
+        return new Page(buttonListener, null);
     }
 
     //TODO: add javadoc
-    void toggleOverlayColor() {
-        overlayColorState = !overlayColorState;
-        if (overlayColorState) {
-            setOverlayColor(OverlayColors.GREEN);
-        } else {
-            setOverlayColor(OverlayColors.RED);
-        }
-    }
-
-    private void setOverlayColor(@Nullable Color color) {
+    public void toggleOverlayColor() {
         try {
-            getOverlay().setColor(color);
+            @NotNull SimpleOverlay simpleOverlay = getOverlay(); //throws ClassCastException
+            if (simpleOverlay instanceof Overlay) {
+                ((Overlay) simpleOverlay).toggleColor();
+            }
         } catch (ClassCastException ignored) {
             //glassPane does not contain a SimpleOverlay object
         }

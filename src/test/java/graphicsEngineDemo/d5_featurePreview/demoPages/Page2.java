@@ -1,19 +1,20 @@
 package graphicsEngineDemo.d5_featurePreview.demoPages;
 
-import graphicsEngine.colors.ColorUtilities;
-import graphicsEngine.colors.SimpleColorScheme;
-import graphicsEngine.panels.BorderProperties;
-import graphicsEngine.panels.StaticPanel;
-import graphicsEngine.parts.labels.SimpleLabel;
-import graphicsEngine.panels.VerticalPanel;
-
-import java.awt.*;
 import java.util.List;
+import java.awt.Color;
+import java.awt.BorderLayout;
 import java.awt.event.ActionListener;
 import javax.swing.JPanel;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import graphicsEngine.colors.ColorUtilities;
+import graphicsEngine.colors.SimpleColorScheme;
+import graphicsEngine.panels.BorderProperties;
+import graphicsEngine.panels.StaticPanel;
+import graphicsEngine.panels.VerticalPanel;
+import graphicsEngine.parts.labels.SimpleLabel;
 
 //TODO: add javadoc
 public class Page2 extends PageWithPanel {
@@ -28,7 +29,7 @@ public class Page2 extends PageWithPanel {
                  @Nullable SimpleColorScheme colors) {
         super(actionListenerList);
         setBackground(BACKGROUND_COLOR);
-        prepareFixedPanels(
+        initializePanels(
                 colors,
                 new SimpleColorScheme(ColorUtilities.DEFAULT_COLOR_TRANSPARENT, null),
                 null);

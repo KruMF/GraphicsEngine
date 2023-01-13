@@ -1,18 +1,19 @@
 package graphicsEngineDemo.d5_featurePreview.common.header;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import static consoleUtils.ConsoleUtils.printLine;
+
 import graphicsEngine.parts.SimpleJButton;
+
 import graphicsEngineDemo.d5_featurePreview.window.Window;
 import graphicsEngineDemo.d5_featurePreview.menuPages.startingPage.StartingPage;
 import graphicsEngineDemo.d5_featurePreview.menuPages.settingsPage.SettingsPage;
 import graphicsEngineDemo.d5_featurePreview.menuPages.demoSelectPage.DemoSelectPage;
-
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-import static consoleUtils.ConsoleUtils.printLine;
-
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 //TODO: add javadocs
 public class HeaderButtonListener implements ActionListener {

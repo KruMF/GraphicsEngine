@@ -1,17 +1,18 @@
 package graphicsEngineDemo.d5_featurePreview.demoPages;
 
-import graphicsEngine.colors.SimpleColorScheme;
-import graphicsEngine.panels.BorderProperties;
-import graphicsEngine.panels.DynamicPanel;
-import graphicsEngine.panels.VerticalPanel;
-import graphicsEngineDemo.d5_featurePreview.common.CommonColors;
-
 import java.util.List;
 import java.awt.BorderLayout;
 import java.awt.event.ActionListener;
 import javax.swing.JPanel;
 
 import org.jetbrains.annotations.Nullable;
+
+import graphicsEngine.colors.SimpleColorScheme;
+import graphicsEngine.panels.BorderProperties;
+import graphicsEngine.panels.DynamicPanel;
+import graphicsEngine.panels.VerticalPanel;
+
+import graphicsEngineDemo.d5_featurePreview.common.CommonColors;
 
 //TODO: add javadoc
 public abstract class PageWithPanel extends CommonDemoPage {

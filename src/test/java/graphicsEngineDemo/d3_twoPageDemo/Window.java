@@ -1,13 +1,5 @@
 package graphicsEngineDemo.d3_twoPageDemo;
 
-import graphicsEngine.windows.WindowManager;
-import graphicsEngine.windows.WindowConfig;
-import graphicsEngine.windows.windowTypes.MultiPageWindow;
-import graphicsEngine.pages.AbstractPage;
-import graphicsEngineDemo.d3_twoPageDemo.pages.Page1;
-import graphicsEngineDemo.d3_twoPageDemo.pages.Page2;
-import graphicsEngineDemo.d3_twoPageDemo.parts.ButtonListener;
-
 import java.util.List;
 import java.util.ArrayList;
 import java.awt.Color;
@@ -15,6 +7,15 @@ import java.awt.event.ActionListener;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import graphicsEngine.windows.WindowManager;
+import graphicsEngine.windows.WindowConfig;
+import graphicsEngine.windows.windowTypes.MultiPageWindow;
+import graphicsEngine.pages.AbstractPage;
+
+import graphicsEngineDemo.d3_twoPageDemo.pages.Page1;
+import graphicsEngineDemo.d3_twoPageDemo.pages.Page2;
+import graphicsEngineDemo.d3_twoPageDemo.parts.ButtonListener;
 
 //TODO: add javadocs
 public class Window extends MultiPageWindow {
@@ -31,7 +32,7 @@ public class Window extends MultiPageWindow {
      *
      * @return Window configuration.
      */
-    private static WindowConfig config() {
+    private static @NotNull WindowConfig config() {
         String title = "Two-page demo";
         int[]
                 size = new int[]{600, 400},

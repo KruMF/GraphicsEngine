@@ -1,18 +1,19 @@
 package graphicsEngineDemo.d5_featurePreview.common;
 
-import graphicsEngine.colors.SimpleColorScheme;
-import graphicsEngine.panels.BorderProperties;
-import graphicsEngine.pages.HeaderAndFooterPage;
-import graphicsEngine.pages.panels.AbstractHeader;
-import graphicsEngine.pages.panels.AbstractFooter;
-import graphicsEngineDemo.d5_featurePreview.common.header.CommonHeader;
-import graphicsEngineDemo.d5_featurePreview.common.header.HeaderButtonListener;
-
 import java.util.List;
 import java.awt.event.ActionListener;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import graphicsEngine.colors.SimpleColorScheme;
+import graphicsEngine.panels.BorderProperties;
+import graphicsEngine.pages.HeaderAndFooterPage;
+import graphicsEngine.pages.panels.AbstractHeader;
+import graphicsEngine.pages.panels.AbstractFooter;
+
+import graphicsEngineDemo.d5_featurePreview.common.header.CommonHeader;
+import graphicsEngineDemo.d5_featurePreview.common.header.HeaderButtonListener;
 
 //TODO: finish this and add javadoc
 public abstract class AbstractCommonPage extends HeaderAndFooterPage {

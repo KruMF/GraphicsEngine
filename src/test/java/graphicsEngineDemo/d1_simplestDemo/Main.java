@@ -1,16 +1,17 @@
 package graphicsEngineDemo.d1_simplestDemo;
 
+import org.jetbrains.annotations.NotNull;
+
 import graphicsEngine.GraphicsAdapter;
+import graphicsEngine.windows.WindowConfig;
 import graphicsEngine.windows.WindowManager;
 import graphicsEngine.windows.WindowUpdater;
-import graphicsEngine.windows.WindowConfig;
 import graphicsEngine.windows.windowTypes.SimpleWindow;
-
-import org.jetbrains.annotations.NotNull;
 
 /**
  * Simplest possible use of the GraphicsEngine.
  * Everything contained in just one class.
+ * See <b><code>ReadMe.md<code/></b> for more info.
  */
 public class Main {
 

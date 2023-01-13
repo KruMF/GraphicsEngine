@@ -1,15 +1,16 @@
 package graphicsEngineDemo.d4_multiAdapterDemo;
 
+import org.jetbrains.annotations.NotNull;
+
 import graphicsEngine.GraphicsAdapter;
 import graphicsEngine.windows.WindowManager;
 import graphicsEngine.windows.WindowUpdater;
 import graphicsEngine.windows.WindowConfig;
 import graphicsEngine.windows.windowTypes.SimpleWindow;
 
-import org.jetbrains.annotations.NotNull;
-
 /**
  * GraphicsEngine demo demonstrating the capability to simultaneously run multiple graphics adapters.
+ * See <b><code>ReadMe.md<code/></b> for more info.
  */
 public class Main {
     private static GraphicsAdapter adapter1;
