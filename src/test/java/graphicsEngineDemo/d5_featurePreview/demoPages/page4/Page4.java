@@ -2,16 +2,18 @@ package graphicsEngineDemo.d5_featurePreview.demoPages.page4;
 
 import java.util.List;
 import java.awt.event.ActionListener;
-import javax.swing.*;
+import javax.swing.JPanel;
 
-import graphicsEngine.colors.ColorUtilities;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import graphicsEngine.colors.ColorUtilities;
 import graphicsEngine.colors.SimpleColorScheme;
 import graphicsEngine.panels.VerticalPanel;
+
 import graphicsEngineDemo.d5_featurePreview.demoPages.PageWithPanel;
 
+//TODO: add javadocs
 public class Page4 extends PageWithPanel {
     private Page4() {
         this(null, null);

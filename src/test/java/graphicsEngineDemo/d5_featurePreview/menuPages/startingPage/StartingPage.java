@@ -1,18 +1,20 @@
 package graphicsEngineDemo.d5_featurePreview.menuPages.startingPage;
 
+import java.util.List;
+import java.awt.Color;
+import java.awt.BorderLayout;
+import java.awt.event.ActionListener;
+
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
 import graphicsEngine.colors.ColorUtilities;
 import graphicsEngine.colors.SimpleColorScheme;
 import graphicsEngine.panels.BorderProperties;
 import graphicsEngine.panels.DynamicPanel;
 import graphicsEngine.parts.labels.SimpleLabel;
+
 import graphicsEngineDemo.d5_featurePreview.common.AbstractMenuPage;
-
-import java.util.List;
-import java.awt.*;
-import java.awt.event.ActionListener;
-
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 //TODO: finish this and add javadoc
 public class StartingPage extends AbstractMenuPage {

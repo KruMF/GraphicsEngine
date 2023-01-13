@@ -1,19 +1,20 @@
 package graphicsEngineDemo.d5_featurePreview.menuPages.demoSelectPage;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import static consoleUtils.ConsoleUtils.printLine;
+
 import graphicsEngine.parts.SimpleJButton;
+
 import graphicsEngineDemo.d5_featurePreview.window.Window;
 import graphicsEngineDemo.d5_featurePreview.demoPages.Page1;
 import graphicsEngineDemo.d5_featurePreview.demoPages.Page2;
 import graphicsEngineDemo.d5_featurePreview.demoPages.page3.Page3;
 import graphicsEngineDemo.d5_featurePreview.demoPages.page4.Page4;
-
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-import static consoleUtils.ConsoleUtils.printLine;
-
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 //TODO: add javadocs
 public class DemoSelectButtonListener implements ActionListener {

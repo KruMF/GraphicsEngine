@@ -1,16 +1,13 @@
 package graphicsEngineDemo.d5_featurePreview.demoPages.page4;
 
-import java.awt.*;
-
-import org.jetbrains.annotations.Nullable;
-
-import static consoleUtils.ConsoleUtils.printLine;
+import java.awt.Color;
 
 import graphicsEngine.colors.ColorUtilities;
 import graphicsEngine.colors.SimpleColorScheme;
 import graphicsEngine.panels.DynamicPanel;
 import graphicsEngine.parts.labels.SimpleLabel;
 
+//TODO: add javadocs
 class Center extends DynamicPanel {
     protected Center(Page4 page) {
         super(

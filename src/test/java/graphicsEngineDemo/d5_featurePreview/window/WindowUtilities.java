@@ -1,10 +1,10 @@
 package graphicsEngineDemo.d5_featurePreview.window;
 
+import org.jetbrains.annotations.NotNull;
+
 import graphicsEngine.windows.WindowManager;
 import graphicsEngine.windows.WindowConfig;
 import graphicsEngine.windows.windowTypes.MultiPageWindow;
-
-import org.jetbrains.annotations.NotNull;
 
 //TODO: add javadoc
 abstract class WindowUtilities extends MultiPageWindow {

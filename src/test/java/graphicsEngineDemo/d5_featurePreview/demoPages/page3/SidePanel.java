@@ -1,11 +1,12 @@
 package graphicsEngineDemo.d5_featurePreview.demoPages.page3;
 
+import org.jetbrains.annotations.Nullable;
+
 import graphicsEngine.colors.SimpleColorScheme;
 import graphicsEngine.panels.BorderProperties;
 import graphicsEngine.parts.labels.SimpleLabel;
-import graphicsEngineDemo.d5_featurePreview.demoPages.PageWithPanel;
 
-import org.jetbrains.annotations.Nullable;
+import graphicsEngineDemo.d5_featurePreview.demoPages.PageWithPanel;
 
 //TODO: add javadoc
 class SidePanel extends PageWithPanel.CommonSidePanel {

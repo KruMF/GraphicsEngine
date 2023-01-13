@@ -1,25 +1,26 @@
 package graphicsEngineDemo.d5_featurePreview.window;
 
+import java.util.List;
+import java.util.ArrayList;
+import java.awt.event.ActionListener;
+
+import org.jetbrains.annotations.NotNull;
+
+import static graphicsEngine.Utilities.getSampleIcon;
+
 import graphicsEngine.windows.WindowManager;
 import graphicsEngine.pages.AbstractPage;
+
+import static graphicsEngineDemo.d5_featurePreview.common.CommonColors.HEADER_AND_FOOTER_COLORS;
 import graphicsEngineDemo.d5_featurePreview.common.header.HeaderButtonListener;
-import graphicsEngineDemo.d5_featurePreview.menuPages.demoSelectPage.DemoSelectButtonListener;
 import graphicsEngineDemo.d5_featurePreview.menuPages.startingPage.StartingPage;
 import graphicsEngineDemo.d5_featurePreview.menuPages.settingsPage.SettingsPage;
+import graphicsEngineDemo.d5_featurePreview.menuPages.demoSelectPage.DemoSelectButtonListener;
 import graphicsEngineDemo.d5_featurePreview.menuPages.demoSelectPage.DemoSelectPage;
 import graphicsEngineDemo.d5_featurePreview.demoPages.Page1;
 import graphicsEngineDemo.d5_featurePreview.demoPages.Page2;
 import graphicsEngineDemo.d5_featurePreview.demoPages.page3.Page3;
 import graphicsEngineDemo.d5_featurePreview.demoPages.page4.Page4;
-
-import java.util.List;
-import java.util.ArrayList;
-import java.awt.event.ActionListener;
-
-import static graphicsEngineDemo.d5_featurePreview.common.CommonColors.HEADER_AND_FOOTER_COLORS;
-import static graphicsEngine.Utilities.getSampleIcon;
-
-import org.jetbrains.annotations.NotNull;
 
 //TODO: add javadoc
 public class Window extends WindowUtilities {

@@ -1,18 +1,19 @@
 package graphicsEngineDemo.d5_featurePreview.demoPages;
 
+import java.util.List;
+import java.awt.Color;
+import java.awt.BorderLayout;
+import java.awt.event.ActionListener;
+
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
 import graphicsEngine.colors.ColorUtilities;
 import graphicsEngine.colors.SimpleColorScheme;
 import graphicsEngine.panels.BorderProperties;
 import graphicsEngine.panels.DynamicPanel;
+
 import graphicsEngine.parts.labels.SimpleLabel;
-
-import java.awt.Color;
-import java.awt.BorderLayout;
-import java.awt.event.ActionListener;
-import java.util.List;
-
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 //TODO: add javadoc
 public class Page1 extends CommonDemoPage {
