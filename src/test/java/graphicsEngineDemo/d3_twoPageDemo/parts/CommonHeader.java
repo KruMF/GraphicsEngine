@@ -1,0 +1,28 @@
+package graphicsEngineDemo.d3_twoPageDemo.parts;
+
+import java.awt.event.ActionListener;
+import javax.swing.BoxLayout;
+
+import org.jetbrains.annotations.Nullable;
+
+import graphicsEngine.colors.SimpleColorScheme;
+import graphicsEngine.panels.BorderProperties;
+import graphicsEngine.pages.panels.AbstractHeader;
+
+//TODO: finish this and add javadocs
+public class CommonHeader extends AbstractHeader {
+    private static final int HEIGHT = 50;
+
+    public CommonHeader(@Nullable SimpleColorScheme colors,
+                        @Nullable BorderProperties borderProperties,
+                        @Nullable ActionListener actionListener) {
+        super(colors, HEIGHT, borderProperties);
+        addButtons(actionListener);
+    }
+
+    private void addButtons(@Nullable ActionListener actionListener) {
+        setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
+        add(new ButtonListener.Button1(actionListener));
+        add(new ButtonListener.Button2(actionListener));
+    }
+}

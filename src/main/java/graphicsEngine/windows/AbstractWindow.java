@@ -1,19 +1,49 @@
 package graphicsEngine.windows;
 
-import javax.swing.*;
-
+import java.util.List;
+import java.util.ArrayList;
 import java.util.Objects;
+import java.awt.event.ActionListener;
+import javax.swing.JFrame;
+import javax.swing.ImageIcon;
 
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
-//TODO: add javadocs
+/**
+ * An abstract window with required configuration and methods.
+ */
 public abstract class AbstractWindow extends JFrame {
-    protected static final String EMPTY_KEY = "";
-    public String activePage;
+    /**
+     * Window size correction constant.
+     */
+    public static final int[] SIZE_ERROR_CORRECTION = new int[] {16, 39};
 
-    //creates a window with required parameters
-    public AbstractWindow(@NotNull WindowConfig config) {
+    /**
+     * Corrects window size error that happens due to title bar and borders.
+     * Uses hardcoded values.
+     *
+     * @param size Initial size.
+     *
+     * @return Corrected size.
+     */
+    public static int[] correctWindowsSizeError(int[] size) {
+        return new int[] {
+                size[0] + SIZE_ERROR_CORRECTION[0],
+                size[1] + SIZE_ERROR_CORRECTION[1]};
+    }
+
+    /**
+     * Creates a new AbstractWindow with specified configuration.
+     * Adds known action listeners to this window.
+     *
+     * @param windowManager      A WindowManager object.
+     * @param config             Window configuration.
+     * @param actionListenerList List of action listeners to add to this window.
+     */
+    public AbstractWindow(@NotNull WindowManager windowManager,
+                          @NotNull WindowConfig config,
+                          @Nullable List<ActionListener> actionListenerList) {
         super(config.getTitle());
         setDefaultCloseOperation(config.closeOperation);
 
@@ -22,29 +52,54 @@ public abstract class AbstractWindow extends JFrame {
         int[] location = config.getLocation();
         setLocation(location[0], location[1]);
 
-        setActivePage(EMPTY_KEY);
+        //TODO: remove window listener from here
+        addWindowListener(new CommonWindowListener(windowManager, getWindowKey(), config.closeOperation));
+        addListeners(actionListenerList);
+
         addParts();
         setVisible(true);
     }
 
-    //TODO: add javadoc
-    public static int[] correctWindowsSizeError(int[] size) {
-        int[] errorCorrection = new int[] {16, 39};
-        return new int[] {
-                size[0] + errorCorrection[0],
-                size[1] + errorCorrection[1]};
+    /**
+     * Adds known listeners to this page.
+     * Override this to add custom listeners.
+     *
+     * @param list List of listeners to add.
+     *
+     * @return Remaining unknown listeners.
+     */
+    public @NotNull List<ActionListener> addListeners(@Nullable List<ActionListener> list) {
+        return Objects.requireNonNullElse(list, new ArrayList<>());
     }
 
-    //override this to add parts
-    public abstract void addParts();
+    /**
+     * Gets the key of the window.
+     *
+     * @return The key of the window.
+     */
+    public @NotNull abstract String getWindowKey();
 
-    //manually reset parts
+    /**
+     * Call this to manually reset parts.
+     */
     public final void resetParts() {
         getContentPane().removeAll();
         addParts();
+        getContentPane().validate();
     }
 
-    public void setActivePage(@Nullable String key) {
-        activePage = Objects.requireNonNullElse(key, EMPTY_KEY);
+    /**
+     * Override this to add parts.
+     * Called upon creation and part reset.
+     */
+    public abstract void addParts();
+
+    /**
+     * Sets the icon of the window.
+     *
+     * @param icon ImageIcon object.
+     */
+    public void setIcon(@NotNull ImageIcon icon) {
+        setIconImage(icon.getImage());
     }
 }

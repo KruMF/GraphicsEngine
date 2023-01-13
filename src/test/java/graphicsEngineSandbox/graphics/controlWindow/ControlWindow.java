@@ -1,18 +1,21 @@
 package graphicsEngineSandbox.graphics.controlWindow;
 
-import graphicsEngine.panels.PanelColors;
-import graphicsEngineSandbox.graphics.controlWindow.leftPanel.LeftPanel;
-import graphicsEngine.windows.AbstractWindow;
+import graphicsEngine.colors.SimpleColorScheme;
+import graphicsEngine.windows.WindowManager;
 import graphicsEngine.windows.WindowConfig;
+import graphicsEngine.windows.AbstractWindow;
+import graphicsEngine.panels.StaticPanel;
+import graphicsEngineSandbox.graphics.controlWindow.leftPanel.LeftPanel;
 
-import javax.swing.*;
 import java.awt.*;
+
+import org.jetbrains.annotations.NotNull;
 
 // TODO: add javadoc
 public class ControlWindow extends AbstractWindow {
 
-    public ControlWindow() {
-        super(config());
+    public ControlWindow(@NotNull WindowManager windowManager) {
+        super(windowManager, config(), null);
     }
 
     private static WindowConfig config() {
@@ -25,20 +28,35 @@ public class ControlWindow extends AbstractWindow {
     }
 
     @Override
-    public void addParts() {
-        PanelColors panelColors = new PanelColors();
-
-        setLayout(new BorderLayout());
-        add(new Footer(panelColors, false), BorderLayout.SOUTH);
-        add(new LeftPanel(panelColors, false), BorderLayout.WEST);
-        add(new CentralPanel(), BorderLayout.CENTER);
+    public @NotNull String getWindowKey() {
+        return "controlWindow";
     }
 
-    private static class CentralPanel extends JPanel {
+    @Override
+    public void addParts() {
+        setLayout(new BorderLayout());
+        add(
+                new Footer(
+                        new SimpleColorScheme(Color.gray, null),
+                        null),
+                BorderLayout.SOUTH);
+        add(
+                new LeftPanel(
+                        new SimpleColorScheme(Color.lightGray, null),
+                        null),
+                BorderLayout.WEST);
+        add(
+                new CentralPanel(),
+                BorderLayout.CENTER);
+    }
+
+    private static class CentralPanel extends StaticPanel {
         private static final Color BACKGROUND = new Color(110, 120, 40);
 
         protected CentralPanel() {
-            setBackground(BACKGROUND);
+            super(null,
+                    new SimpleColorScheme(BACKGROUND, null),
+                    null);
         }
     }
 }

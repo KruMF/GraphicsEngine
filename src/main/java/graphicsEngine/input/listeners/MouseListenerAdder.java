@@ -1,11 +1,11 @@
 package graphicsEngine.input.listeners;
 
-import graphicsEngine.input.InputData;
-
-import javax.swing.*;
+import javax.swing.JFrame;
 import java.awt.event.*;
 
 import org.jetbrains.annotations.NotNull;
+
+import graphicsEngine.input.InputData;
 
 /**
  * Mouse listener adder class.

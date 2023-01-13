@@ -1,16 +1,17 @@
 package graphicsEngine.input.listeners;
 
-import graphicsEngine.input.InputData;
-import graphicsEngineOld.engine.ExitManager;
-import graphicsEngineOld.engine.data.windowParameters.WindowParameters;
-
-import javax.swing.*;
+import javax.swing.JFrame;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
 import org.jetbrains.annotations.NotNull;
+
+import graphicsEngine.input.InputData;
+
+import graphicsEngineOld.engine.ExitManager;
+import graphicsEngineOld.engine.data.windowParameters.WindowParameters;
 
 /**
  * Window listener adder class.

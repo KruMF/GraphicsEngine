@@ -2,10 +2,8 @@ package graphicsEngineOld.engine;
 
 import graphicsEngineOld.engine.data.GraphicsData;
 import graphicsEngineOld.utilities.input.InputManager;
-import graphicsEngineOld.parts.pages.Page;
 import graphicsEngineOld.parts.pages.PageManager;
 
-import java.util.HashMap;
 import java.util.Objects;
 
 import org.jetbrains.annotations.Nullable;
@@ -39,43 +37,6 @@ public class GraphicsManager implements Runnable {
         data = Objects.requireNonNullElse(graphicsData, new GraphicsData(
                 null, null,
                 true));
-    }
-
-    /**
-     * Initializes GraphicsManager.
-     * Gets it ready for thread running.
-     *
-     * @param exitManager Extended ExitManager for ending controller upon closing graphics. (Null - default)
-     * @param pages Pages to display. (Null or empty - no pages)
-     * @param activePage Key of the first active page. (Null - acts as if no pages present)
-     */
-    public static void initialize(@Nullable ExitManager exitManager,
-                                  @Nullable HashMap<String, Page> pages, @Nullable String activePage) {
-        System.out.println(GRAPHICS_ENGINE_NAME + ": Initializing.");
-        setupGraphics(pages, activePage);
-        setupIO(exitManager);
-        running = true;
-    }
-
-    private static void setupGraphics(@Nullable HashMap<String, Page> pages, @Nullable String activePage) {
-        // Has to be before graphics.
-        GraphicsManager.pages = new PageManager(pages, activePage);
-
-        // Graphics.
-        graphics = new GraphicsClass();
-        graphics.initialize();
-    }
-
-    private static void setupIO(@Nullable ExitManager exitManager) {
-        // Has to be before input.
-        GraphicsManager.exitManager = Objects.requireNonNullElse(
-                exitManager,
-                new ExitManager());
-
-        // Input.
-        input = new InputManager(
-                graphics.window, data.windowParameters,
-                GraphicsManager.exitManager);
     }
 
     /**

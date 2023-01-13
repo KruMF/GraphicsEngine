@@ -1,20 +1,25 @@
 package graphicsEngineSandbox.graphics.viewWinow;
 
+import graphicsEngine.colors.SimpleColorScheme;
+import graphicsEngine.windows.WindowManager;
+import graphicsEngine.windows.WindowConfig;
+import graphicsEngine.windows.AbstractWindow;
+import graphicsEngine.windows.windowTypes.SimpleWindow;
 import graphicsEngineSandbox.graphics.viewWinow.mainPanels.LeftSidePanel;
 import graphicsEngineSandbox.graphics.viewWinow.mainPanels.RightSidePanel;
-import graphicsEngine.panels.PanelColors;
 import graphicsEngineSandbox.graphics.viewWinow.mainPanels.center.CenterContainer;
-import graphicsEngine.windows.AbstractWindow;
-import graphicsEngine.windows.WindowConfig;
 
 import java.awt.*;
 
+import org.jetbrains.annotations.NotNull;
+
 // TODO: add javadoc
-public class ViewWindow extends AbstractWindow {
+public class ViewWindow extends SimpleWindow {
     private static final int[] WINDOW_MINIMUM_SIZE = new int[] {700, 400};
 
-    public ViewWindow() {
-        super(config());
+    public ViewWindow(@NotNull WindowManager windowManager) {
+        super(windowManager, config(), null);
+        //TODO: maybe rework? could use something like setMinimumSize(getSize())
         int[] correctedMinimumSize = AbstractWindow.correctWindowsSizeError(WINDOW_MINIMUM_SIZE);
         setMinimumSize(new Dimension(correctedMinimumSize[0], correctedMinimumSize[1]));
     }
@@ -27,13 +32,18 @@ public class ViewWindow extends AbstractWindow {
     }
 
     @Override
+    public @NotNull String getWindowKey() {
+        return "viewWindow";
+    }
+
+    @Override
     public void addParts() {
-        PanelColors panelColors = new PanelColors();
+        SimpleColorScheme
+                panelColors = new SimpleColorScheme(Color.gray, null),
+                centerColors = new SimpleColorScheme(Color.cyan, Color.yellow);
 
         add(new LeftSidePanel(150, panelColors), BorderLayout.WEST);
         add(new RightSidePanel(150, panelColors), BorderLayout.EAST);
-
-
-        add(new CenterContainer(new PanelColors(Color.cyan, Color.yellow, Color.yellow)), BorderLayout.CENTER);
+        add(new CenterContainer(centerColors), BorderLayout.CENTER);
     }
 }

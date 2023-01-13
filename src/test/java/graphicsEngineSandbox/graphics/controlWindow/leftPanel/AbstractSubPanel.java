@@ -1,15 +1,20 @@
 package graphicsEngineSandbox.graphics.controlWindow.leftPanel;
 
-import graphicsEngine.panels.PanelColors;
-import graphicsEngine.panels.SimplePanel;
+import graphicsEngine.colors.SimpleColorScheme;
+import graphicsEngine.panels.BorderProperties;
+import graphicsEngine.panels.StaticPanel;
 
 import java.awt.*;
 
-abstract class AbstractSubPanel extends SimplePanel {
-    protected AbstractSubPanel(int[] size, PanelColors panelColors, boolean border) {
-        super(panelColors, border);
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+abstract class AbstractSubPanel extends StaticPanel {
+    protected AbstractSubPanel(int @NotNull [] size,
+                               @Nullable SimpleColorScheme colors,
+                               @Nullable BorderProperties borderProperties) {
+        super(new Dimension(size[0], size[1]), colors, borderProperties);
         setOpaque(false);
-        setPreferredSize(new Dimension(size[0], size[1]));
         setAlignmentX(Component.LEFT_ALIGNMENT);
     }
 

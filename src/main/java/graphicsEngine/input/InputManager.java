@@ -1,11 +1,14 @@
 package graphicsEngine.input;
 
-import graphicsEngine.input.listeners.ListenerAdder;
-import graphicsEngineOld.engine.ExitManager;
-import graphicsEngineOld.engine.data.windowParameters.WindowParameters;
+import javax.swing.JFrame;
+
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.*;
+import graphicsEngine.input.listeners.ListenerAdder;
+
+import graphicsEngineOld.engine.ExitManager;
+import graphicsEngineOld.engine.data.windowParameters.WindowParameters;
+
 
 /**
  * Input manager for managing input.
